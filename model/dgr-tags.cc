@@ -371,4 +371,77 @@ TimestampTag::Print (std::ostream &os) const
   os << "t=" << m_timestamp.GetMilliSeconds () << "ms";
 }
 
+
+//----------------------------------------------------------------------
+//-- NSTag
+//------------------------------------------------------
+
+NSTag::NSTag ()
+{
+  NS_LOG_FUNCTION (this);
+}
+
+void
+NSTag::SetNS (bool ns)
+{
+  NS_LOG_FUNCTION (this << ns);
+  m_ns = ns;
+}
+
+bool
+NSTag::GetNS (void) const
+{
+  NS_LOG_FUNCTION (this << m_ns);
+  return m_ns;
+}
+
+NS_OBJECT_ENSURE_REGISTERED (NSTag);
+
+TypeId
+NSTag::GetTypeId (void)
+{
+  static TypeId tid = TypeId ("NSTag")
+    .SetParent<Tag> ()
+    .SetGroupName ("dgrv2")
+    .AddConstructor<NSTag> ();
+  return tid;
+}
+
+TypeId
+NSTag::GetInstanceTypeId (void) const
+{
+  return GetTypeId ();
+}
+
+uint32_t
+NSTag::GetSerializedSize (void) const
+{
+  NS_LOG_FUNCTION (this);
+  return 1;     // 1 bytes
+}
+
+void
+NSTag::Serialize (TagBuffer i) const
+{
+  NS_LOG_FUNCTION (this << &i);
+  bool ns = m_ns;
+  i.Write ((const uint8_t *)&ns, 1);
+}
+
+void
+NSTag::Deserialize (TagBuffer i)
+{
+  NS_LOG_FUNCTION (this << &i);
+  bool ns;
+  i.Read ((uint8_t *)&ns, 1);
+  m_ns = ns;
+}
+
+void
+NSTag::Print (std::ostream &os) const
+{
+  NS_LOG_FUNCTION (this << &os);
+  os << "ns = " << m_ns;
+}
+
 }

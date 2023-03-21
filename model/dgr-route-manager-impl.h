@@ -949,6 +949,167 @@ private:
                                    Ipv4Mask amask = Ipv4Mask ("255.255.255.255"));
 };
 
+// /**
+//  * @brief The Neighbor State DataBase (NSDB) of the DGR Route Manager.
+//  *
+//  * Each node in the simulation participating in DGR routing has a
+//  * DGRRouter interface.  The primary job of this interface is to export
+//  * DGR Router Neighbor State (NSAs).  These advertisements in
+//  * turn contain a number of Neighbor Queue State Records that describe the 
+//  * neigbors.
+//  *
+//  * This class implements a searchable database of LSAs gathered from every
+//  * router in the simulation.
+//  */
+// class DGRNSDB
+// {
+// public:
+// /**
+//  * @brief Construct an empty Neighbor State Database.
+//  *
+//  * The database map composing the Neighbor State Database is initialized in
+//  * this constructor.
+//  */
+//   DGRNSDB ();
+
+// /**
+//  * @brief Destroy an empty Neighbor State Database.
+//  *
+//  * The database map is walked and all of the Neighbor State Advertisements stored
+//  * in the database are freed; then the database map itself is clear ()ed to
+//  * release any remaining resources.
+//  */
+//   ~DGRNSDB ();
+
+// /**
+//  * @brief Insert an interface / Queue States map into the Queue
+//  * State Database.
+//  *
+//  * The interface and queue state map given as parameters are converted
+//  * to an NSDBPair_t pair and are inserted into the NSDBMap_t.
+//  *
+//  * @param iface The interface number associated with neighbor state.
+//  * @param ns The neighbor queue state of each interface.
+//  */
+//   void Insert (uint32_t iface, NSDBMap_t ns);
+
+// /**
+//  * @brief Insert a interface / Queue State into the Queue
+//  * State Database
+//  * 
+//  * The neighbor interface and queue state given as parameters are converted
+//  * to an QSDBPair_t pair and are inserted into the QSDBMap_t
+// */
+//   void IntsertNeighbor (uint32_t iface, uint32_t state);
+
+// /**
+//  * @brief Look up the Queue State Advertisement associated with the given
+//  * interface.
+//  *
+//  * The database map is searched for the given interface and next_interface
+//  * and a Queue State is returned
+//  *
+//  * @see DGRRoutingLSA
+//  * @see Ipv4Address
+//  * @param addr The IP address associated with the LSA.  Typically the Router 
+//  * ID.
+//  * @returns A pointer to the Link State Advertisement for the router specified
+//  * by the IP address addr.
+//  */
+//   uint32_t GetQueueState (uint32_t iface, uint32_t niface) const;
+
+// /**
+//  * @brief Set all LSA flags to an initialized state, for SPF computation
+//  *
+//  * This function walks the database and resets the status flags of all of the
+//  * contained Link State Advertisements to LSA_SPF_NOT_EXPLORED.  This is done
+//  * prior to each SPF calculation to reset the state of the DGRVertex structures
+//  * that will reference the LSAs during the calculation.
+//  *
+//  * @see DGRRoutingLSA
+//  * @see DGRVertex
+//  */
+//   void Initialize ();
+
+// /**
+//  * @brief UpdateQueueState
+// */
+//   void UpdateQueueState ();
+
+// private:
+//   typedef std::map<uint32_t, uint32_t> QSDBMap_t; //!< container of IPv4 addresses / Link State Advertisements
+//   typedef std::pair<uint32_t, uint32_t> QSDBPair_t;
+//   typedef std::map<uint32, QSDBMap_t> NSDBMap_t;
+//   typedef std::pair<uint32_t, QSDBMap_t> NSDBPair_t;
+  
+//   NSDBMap_t m_database; //!< database of IPv4 addresses / Link State Advertisements
+
+// /**
+//  * @brief DGRRouteManagerLSDB copy construction is disallowed.  There's no 
+//  * need for it and a compiler provided shallow copy would be wrong.
+//  * @param lsdb object to copy from
+//  */
+//   DGRRouteManagerLSDB (DGRRouteManagerLSDB& lsdb);
+
+// /**
+//  * @brief The DGRVertex copy assignment operator is disallowed.  There's no 
+//  * need for it and a compiler provided shallow copy would be wrong.
+//  * @param lsdb object to copy from
+//  * @returns the copied object
+//  */
+//   DGRRouteManagerLSDB& operator= (DGRRouteManagerLSDB& lsdb);
+// };
+
+enum QStatus {
+    Empty = 0,   /** Less than 25 % */
+    Idle,        /** Larger than 25 % and less than 50% */
+    Busy,       /** Larger than 50 % and less than 75% */
+    Congestion  /** Larger than 75 % */
+  };
+
+class NeighborStatus
+{
+public:
+  QStatus GetQStatus (void) const;
+  void SetQStatus (QStatus qs);
+  double_t GetVariance (void) const;
+  void SetVariance (double_t sigma);
+  double_t GetAverage (void) const;
+  void SetAverage (double_t mean);
+  uint32_t GetSampleNumber (void) const;
+  void SetSampleNumber (uint32_t total);
+private:
+  QStatus m_qs;
+  double_t m_sigma; /** variance */
+  double_t m_mean;  /** average */  
+  uint32_t m_total; /** sample number*/
+};  
+
+class DGRRoutingNSA
+{
+public:
+  DGRRoutingNSA();
+  DGRRoutingNSA (DGRRoutingNSA& nsa);
+  ~DGRRoutingNSA();
+  DGRRoutingNSA& operator= (const DGRRoutingNSA& nsa);
+  uint32_t GetInterface (void) const;
+  void SetInterface (uint32_t iface);
+  void Insert (uint32_t iface, NeighborStatus* status);
+  NeighborStatus* GetNSA (uint32_t iface);
+  uint32_t GetNNeighborStatus (void) const;
+  void Refresh (void);
+  void Print (std::ostream &os) const;
+  void UpdateNeighborStatus (NeighborStatus status, uint32_t delay);
+  NeighborStatus GetStatus (void) const;
+  void SetStatus (NeighborStatus status);
+
+private:
+  uint32_t m_iface_id;;   //!< interface ID
+  typedef std::map<uint32_t, NeighborStatus*> NSMap_t; //!< container of IPv4 addresses / Link State Advertisements
+  typedef std::pair<uint32_t, NeighborStatus*> NSPair_t;
+  NSMap_t m_records;
+};
+
 } // namespace ns3
 
 #endif /* GLOBAL_ROUTE_MANAGER_IMPL_H */

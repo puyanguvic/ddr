@@ -27,6 +27,7 @@
 #include <queue>
 #include <algorithm>
 #include <iostream>
+#include <cmath>
 #include "ns3/assert.h"
 #include "ns3/fatal-error.h"
 #include "ns3/log.h"
@@ -2301,6 +2302,177 @@ DGRRouteManagerImpl::DGRVertexAddParent (DGRVertex* v)
       if ((parent = v->GetParent (i++)) == 0) break;
       parent->AddChild (v);
     }
+}
+
+// -----------------------------------
+// NeighborStatus
+// -----------------------------------
+QStatus
+NeighborStatus::GetQStatus (void) const
+{
+  NS_LOG_FUNCTION (this);
+  return m_qs;
+
+}
+
+void
+NeighborStatus::SetQStatus (QStatus qs)
+{
+  NS_LOG_FUNCTION (this);
+  m_qs = qs;
+}
+
+double_t
+NeighborStatus::GetVariance (void) const
+{
+  NS_LOG_FUNCTION (this);
+  return m_sigma;
+}
+
+void
+NeighborStatus::SetVariance (double_t sigma)
+{
+  NS_LOG_FUNCTION (this << sigma);
+  m_sigma = sigma;
+}
+
+double_t
+NeighborStatus::GetAverage (void) const
+{
+  NS_LOG_FUNCTION (this);
+  return m_mean;
+}
+
+void
+NeighborStatus::SetAverage (double_t mean)
+{
+  NS_LOG_FUNCTION (this << mean);
+  m_mean = mean;
+}
+
+uint32_t
+NeighborStatus::GetSampleNumber (void) const
+{
+  NS_LOG_FUNCTION (this);
+  return m_total;
+}
+
+void
+NeighborStatus::SetSampleNumber (uint32_t total)
+{
+  NS_LOG_FUNCTION (this << total);
+  m_total = total;
+}
+
+// -----------------------------------
+// DGRRoutingNSA
+// -----------------------------------
+DGRRoutingNSA::DGRRoutingNSA ()
+  :
+    m_iface_id (0),
+    m_records ()
+{
+  NS_LOG_FUNCTION (this);
+
+}
+
+DGRRoutingNSA::DGRRoutingNSA (DGRRoutingNSA& nsa)
+  :
+    m_iface_id (nsa.m_iface_id),
+    m_records (nsa.m_records)
+{
+  NS_LOG_FUNCTION (this << &nsa);
+}
+
+DGRRoutingNSA::~DGRRoutingNSA()
+{
+  NS_LOG_FUNCTION (this);
+}
+
+DGRRoutingNSA&
+DGRRoutingNSA::operator= (const DGRRoutingNSA& nsa)
+{
+  NS_LOG_FUNCTION (this << &nsa);
+  m_iface_id = nsa.m_iface_id;
+  m_records = nsa.m_records;
+  return *this;
+}
+
+uint32_t
+DGRRoutingNSA::GetInterface (void) const
+{
+  NS_LOG_FUNCTION (this);
+  return m_iface_id;
+}
+
+void
+DGRRoutingNSA::SetInterface (uint32_t iface)
+{
+  NS_LOG_FUNCTION (this << iface);
+  m_iface_id = iface;
+}
+
+void
+DGRRoutingNSA::Insert (uint32_t iface, NeighborStatus* status)
+{
+  NS_LOG_FUNCTION (this << iface << status);
+  m_records.insert (NSPair_t (iface, status));
+}
+
+NeighborStatus*
+DGRRoutingNSA::GetNSA (uint32_t iface)
+{
+  return m_records.at (iface);
+}
+ 
+ 
+uint32_t
+DGRRoutingNSA::GetNNeighborStatus (void) const
+{
+  return m_records.size ();
+}
+
+void
+DGRRoutingNSA::Refresh (void)
+{
+  for (auto &val : m_records)
+    {
+      val.second->SetQStatus (Empty);
+      val.second->SetSampleNumber (0);
+      val.second->SetAverage (0.0);
+      val.second->SetVariance (0.0);
+    }
+}
+
+void
+DGRRoutingNSA::Print (std::ostream &os) const
+{
+  os << "Interface: " << m_iface_id;
+  for (auto &val : m_records)
+    {
+      os << "Next_Iface " << val.first 
+      << ", Queue Status: " << val.second->GetQStatus ()
+      << ", Sample Number: " << val.second->GetSampleNumber ()
+      << ", Average Delay: " << val.second->GetAverage ()
+      << "ms, Variance: " << val.second->GetVariance ()
+      << std::endl;
+    }
+}
+
+void
+DGRRoutingNSA::UpdateNeighborStatus (uint32_t nIface, QStatus qStatus, uint32_t delay)
+{
+  NeighborStatus* ns = m_records.at (nIface);
+  double_t mu = ns->GetAverage ();
+  double_t sigma = ns->GetVariance ();
+  uint32_t n = ns->GetSampleNumber ();
+  double_t mu_new = n/(n+1)*mu + 1/(n+1)*delay;
+  double_t sigma_new = n/pow(n+1,2) * pow (delay - mu_new, 2) + n/(n+1)*pow(sigma, 2);
+  double_t sigma_new = sqrt (sigma_new);
+  ns->SetQStatus (qStatus);
+  ns->SetAverage (mu_new);
+  ns->SetSampleNumber (n + 1);
+  ns->SetVariance (sigma_new);
 }
 
 } // namespace ns3

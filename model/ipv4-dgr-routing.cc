@@ -34,7 +34,7 @@
 #include "dgr-route-manager.h"
 #include "ns3/point-to-point-module.h"
 #include "ns3/ipv4-list-routing.h"
-#include "dgr-virtual-queue-disc.h"
+#include "dgrv2-queue-disc.h"
 #include "dgr-tags.h"
 // #include "budget-tag.h"
 // #include "flag-tag.h"
@@ -296,7 +296,7 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
           Ptr <NetDevice> dev = m_ipv4->GetNetDevice ((*i)->GetInterface ());
           //get the queue disc on the device
           Ptr<QueueDisc> disc = m_ipv4->GetNetDevice (0)->GetNode ()->GetObject<TrafficControlLayer> ()->GetRootQueueDiscOnDevice (dev);
-          Ptr<DGRVirtualQueueDisc> dvq = DynamicCast <DGRVirtualQueueDisc> (disc);
+          Ptr<DGRv2QueueDisc> dvq = DynamicCast <DGRv2QueueDisc> (disc);
           uint32_t dvq_length = dvq->GetInternalQueue (1) ->GetCurrentSize ().GetValue ();
           uint32_t dvq_max = dvq->GetInternalQueue (1)->GetMaxSize ().GetValue ();
           if (dvq_length >= dvq_max * 0.75)
@@ -320,7 +320,7 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
                   Ptr<NetDevice> next_dev = d_node->GetDevice ((*i)->GetNextInterface ());
                   // std::cout << "next node: " << d_node->GetId () << "next interface: " << (*i)->GetNextInterface () << std::endl;
                   Ptr<QueueDisc> next_disc = d_node->GetObject<TrafficControlLayer> ()->GetRootQueueDiscOnDevice (next_dev);
-                  Ptr<DGRVirtualQueueDisc> next_dvq = DynamicCast <DGRVirtualQueueDisc> (next_disc);
+                  Ptr<DGRv2QueueDisc> next_dvq = DynamicCast <DGRv2QueueDisc> (next_disc);
                   uint32_t next_dvq_length = next_dvq->GetInternalQueue (1)->GetCurrentSize ().GetValue ();
                   uint32_t next_dvq_max = next_dvq->GetInternalQueue (1)->GetMaxSize ().GetValue ();
                   uint32_t next_dvq_slow_length = next_dvq->GetInternalQueue (2)->GetCurrentSize ().GetValue ();

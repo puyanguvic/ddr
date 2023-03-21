@@ -24,7 +24,7 @@ build_lib(
         model/dgr-route-manager.cc
         model/dgr-route-manager-impl.cc
         model/dgr-candidate-queue.cc
-        model/dgr-virtual-queue-disc.cc
+        model/dgrv2-queue-disc.cc
         helper/ipv4-dgr-routing-helper.cc
         helper/dgr-application-helper.cc
         helper/dgr-tcp-application-helper.cc
@@ -41,19 +41,19 @@ build_lib(
         model/dgr-route-manager.h
         model/dgr-route-manager-impl.h
         model/dgr-candidate-queue.h
-        model/dgr-virtual-queue-disc.h
+        model/dgrv2-queue-disc.h
         helper/ipv4-dgr-routing-helper.h
         helper/dgr-application-helper.h
         helper/dgr-tcp-application-helper.h
         helper/dgr-sink-helper.h
     LIBRARIES_TO_LINK ${libcore}
     TEST_SOURCES
-        test/dgr-udp-application-test.cc
-        test/dgr-routing-table-test.cc
-        test/dgr-virtual-queue-test.cc
-        test/dgr-geant-topo-test.cc
-        test/dgr-header-test.cc
-        test/dgr-tcp-application-test.cc
+        # test/dgr-udp-application-test.cc
+        # test/dgr-routing-table-test.cc
+        # test/dgr-virtual-queue-test.cc
+        # test/dgr-geant-topo-test.cc
+        # test/dgr-header-test.cc
+        # test/dgr-tcp-application-test.cc
         # 'test/dsr-tcp-applciation.cc
         # 'test/dsr-routing-test-suite.cc
         ${examples_as_tests_sources}

@@ -22,6 +22,11 @@
 
 #include "ns3/node-container.h"
 #include "ns3/ipv4-routing-helper.h"
+#include "ns3/net-device-container.h"
+#include "ns3/object-factory.h"
+#include "ns3/queue-disc-container.h"
+#include "ns3/queue.h"
+#include "ns3/dgrv2-module.h"
 
 namespace ns3 {
 
@@ -84,6 +89,35 @@ public:
    *
    */
   static void RecomputeRoutingTables (void);
+
+
+  /**
+   * \param node Node
+   * \return a QueueDisc container with the queue discs installed on the node
+   * 
+   * \brief This method create the DGRv2 QueueDisc (along with it's internal queues,
+   * classes) configured with the methods provided by this class and installs them 
+   * on the given node. Additionally, if configured, a queue limits object is 
+   * installed on each transmission queue of the device.
+  */
+  QueueDiscContainer Install (Ptr<Node> node);
+
+  /**
+   * \param c netdevic container
+   * \return a QeueuDisc container with the root queue disc installed on the device
+   * 
+   * \brief This method create the DGRv2 QueueDisc (along with it's internal queues,
+   * classes) configured with the methods provided by this class and installs them 
+   * on the given node. Additionally, if configured, a queue limits object is 
+   * installed on each transmission queue of the device.
+  */
+  QueueDiscContainer Install (NetDeviceContainer c);
+
+  /**
+   * This method intall DGRv2Queue into NetDevice
+  */
+  QueueDiscContainer Install (Ptr<NetDevice> d);
+
 private:
   /**
    * \brief Assignment operator declared private and not implemented to disallow

@@ -230,6 +230,53 @@ private:
     Time m_timestamp;  
 };
 
+
+/**
+ * \brief This class implements a tag used to mark 
+ * the neighbor state broadcast packet.
+*/
+class NSTag : public Tag
+{
+public:
+    NSTag ();
+
+    /**
+     * \brief Set the tag's nTag
+     * \param nTag the flag
+    */
+    void SetNS (bool ns);
+
+    /**
+     * \brief Get the tag's flag
+     * \return the flag
+    */
+    bool GetNS (void) const;
+
+    /**
+     * \brief Get the Type ID
+     * \return the object TypeId
+    */
+    static TypeId GetTypeId (void);
+
+    // inherited function, no need to doc.
+    TypeId GetInstanceTypeId (void) const override;
+    
+    // inherited function, no need to doc.
+    uint32_t GetSerializedSize (void) const override;
+
+    // inherited function, no need to doc.
+    void Serialize (TagBuffer i) const override;
+
+    // inherited function, no need to doc.
+    void Deserialize (TagBuffer i) override;
+
+    // inherited function, no need to doc.
+    void Print (std::ostream &os) const override;
+
+private:
+    bool m_ns;  
+};
+
 } // namespace ns3
 
 #endif /* DGRTAGS_H */

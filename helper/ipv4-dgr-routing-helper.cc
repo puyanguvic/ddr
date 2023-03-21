@@ -21,6 +21,7 @@
 #include "ns3/dgr-router-interface.h"
 #include "ns3/ipv4-dgr-routing.h"
 #include "ns3/ipv4-list-routing.h"
+#include "ns3/traffic-control-layer.h"
 #include "ns3/log.h"
 
 namespace ns3 {
@@ -46,7 +47,9 @@ Ipv4DGRRoutingHelper::Create (Ptr<Node> node) const
 {
   NS_LOG_LOGIC ("Adding DGRRouter interface to node " <<
                 node->GetId ());
+  // install DGRv2 Queue to netdevices
 
+  // install DGR router to node.
   Ptr<DGRRouter> dgrRouter = CreateObject<DGRRouter> ();
   node->AggregateObject (dgrRouter);
 
@@ -71,5 +74,45 @@ Ipv4DGRRoutingHelper::RecomputeRoutingTables (void)
   DGRRouteManager::InitializeRoutes ();
 }
 
+
+QueueDiscContainer
+Ipv4DGRRoutingHelper::Install (Ptr<Node> node)
+{
+  NetDeviceContainer container;
+  for (uint32_t i = 0; i < node->GetNDevices (); i ++)
+    {
+      container.Add (node->GetDevice (i));
+    }
+  return Install (container);
+}
+
+QueueDiscContainer 
+Ipv4DGRRoutingHelper::Install(NetDeviceContainer c)
+{
+  QueueDiscContainer container;
+  for (NetDeviceContainer::Iterator i = c.Begin (); i != c.End (); ++i)
+    {
+      container.Add (Install (*i));
+    }
+  return container;
+}
+
+QueueDiscContainer
+Ipv4DGRRoutingHelper::Install (Ptr<NetDevice> d)
+{
+  QueueDiscContainer container;
+  // A TrafficControlLayer object is aggregated by the InternetStackHelper, but check
+  // anyway because a queue disc has no effect without a TrafficControlLayer object
+  Ptr<TrafficControlLayer> tc = d->GetNode ()->GetObject<TrafficControlLayer> ();
+  NS_ASSERT (tc);
+
+  // Generate the DGRv2Qeueu Object
+  ObjectFactory queueFactory;
+  queueFactory.SetTypeId ("ns3::DGRv2QueueDisc");
+  Ptr<DGRv2QueueDisc> qdisc = queueFactory.Create<DGRv2QueueDisc> ();
+  tc->SetRootQueueDiscOnDevice (d, qdisc);
+  container.Add (qdisc);
+  return container;
+}
 
 } // namespace ns3
