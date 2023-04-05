@@ -1,13 +1,13 @@
 /* -*- Mode:C++; c-file-style:"gnu"; indent-tabs-mode:nil; -*- */
 
-#include "dgr-header.h"
+#include "neighbor-info-header.h"
 #include "ns3/simulator.h"
 
 namespace ns3 {
 
-NS_LOG_COMPONENT_DEFINE ("DGRHeader");
+NS_LOG_COMPONENT_DEFINE ("NeighborInfoHeader");
 
-NS_OBJECT_ENSURE_REGISTERED (DGRHeader);
+NS_OBJECT_ENSURE_REGISTERED (NeighborInfoHeader);
 
 DGRHeader::DGRHeader ()
   : ID (0xff),

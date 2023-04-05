@@ -1,17 +1,17 @@
 /* -*- Mode:C++; c-file-style:"gnu"; indent-tabs-mode:nil; -*- */
-#ifndef DGR_HEADER_H
-#define DGR_HEADER_H
+#ifndef NEIGHBORINFO_HEADER_H
+#define NEIGHBORINFO_HEADER_H
 
 #include "ns3/header.h"
 #include "ns3/nstime.h"
 
 namespace ns3 {
 
-class DGRHeader : public Header
+class NeighborInfoHeader : public Header
  {
  public:
-   DGRHeader ();
-   ~DGRHeader ();
+   NeighborInfoHeader ();
+   ~NeighborInfoHeader ();
    static TypeId GetTypeId (void);
    virtual TypeId GetInstanceTypeId (void) const;
    virtual void Print (std::ostream &os) const;
@@ -38,5 +38,5 @@ class DGRHeader : public Header
 
 }
 
-#endif /* DGR_HEADER_H */
+#endif /* NEIGHBORINFO_HEADER_H */
 
