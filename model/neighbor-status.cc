@@ -78,6 +78,18 @@ NeighborStatus::~NeighborStatus ()
   m_state.clear ();
 }
 
+uint32_t
+NeighborStatus::GetInterface (void) const
+{
+  return m_iface;
+}
+
+void
+NeighborStatus::SetInterface (uint32_t iface)
+{
+  m_iface = iface;
+}
+
 QStatus
 NeighborStatus::GetCurrentState (void) const
 {

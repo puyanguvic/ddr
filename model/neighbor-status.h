@@ -43,6 +43,8 @@ public:
   NeighborStatus ();
   ~NeighborStatus ();
 
+  uint32_t GetInterface (void) const;
+  void SetInterface (uint32_t iface);
   QStatus GetCurrentState (void) const;
   void Insert (QStatus stat , StateStatistic* ss);
   StateStatistic* GetCurrentStateStatistic (void) const;
@@ -51,8 +53,9 @@ public:
   void Print (std::ostream &os) const;
   
 private:
+  uint32_t m_iface;
   QStatus m_currentState;
-  typedef std::map<uint32_t, StateStatistic*> NSMap_t;
+  typedef std::map<uint32_t, StateStatistic*> NSMap_t; /** status, statistic*/
   typedef std::pair<uint32_t, StateStatistic*> NSPair_t;
   NSMap_t m_state;
 };  

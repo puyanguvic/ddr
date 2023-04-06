@@ -1217,4 +1217,71 @@ Ipv4DGRRouting::SetIpv4 (Ptr<Ipv4> ipv4)
   m_ipv4 = ipv4;
 }
 
+NeighborStatus*
+Ipv4DGRRouting::GetNeighborStatus (uint32_t iface, uint32_t nextIface)
+{
+  NeighborStatus* ret;
+  IfaceNSMap_t::const_iterator it = m_ifaceNS.find (iface);
+  if (it != m_ifaceNS.end())
+    {
+      NeighborStatusList_t *nslist = it->second;
+      NeighborStatusList_t::const_iterator i;
+      for (i = nslist->begin (); i != nslist->end (); i ++)
+        {
+          if(i != nslist->end() && nextIface == (*i)->GetInterface ())
+            {
+              ret = *i;
+              return ret;
+            }
+        }
+      ret = new NeighborStatus ();
+      nslist->push_back (ret);
+    }
+  else
+    {
+      ret = new NeighborStatus ();
+      ret->SetInterface (nextIface);
+      NeighborStatusList_t temp;
+      temp.push_back (ret);
+      NeighborStatusList_t *list;
+      list = &temp;
+      m_ifaceNS.insert (IfaceNSPair_t (iface, list));
+    }
+    return ret;
+}
+
+void
+Ipv4DGRRouting::UpdateNeighborStatus (uint32_t iface, uint32_t nextIface, QStatus qstat, uint32_t delay)
+{
+  IfaceNSMap_t::const_iterator it = m_ifaceNS.find (iface);
+  if (it != m_ifaceNS.end())
+    {
+      NeighborStatusList_t *nslist = it->second;
+      NeighborStatusList_t::const_iterator i;
+      for (i = nslist->begin (); i != nslist->end (); i ++)
+        {
+          if(i != nslist->end() && nextIface == (*i)->GetInterface ())
+            {
+              (*i)->UpdateStatus (qstat, delay);
+            }
+        }
+      NeighborStatus* temp = new NeighborStatus ();
+      temp->SetInterface (nextIface);
+      temp->UpdateStatus (qstat, delay);
+      nslist->push_back (temp);
+    }
+  else
+    {
+      NeighborStatus* temp = new NeighborStatus ();
+      temp->SetInterface (nextIface);
+      temp->UpdateStatus (qstat, delay);
+      NeighborStatusList_t tempList;
+      tempList.push_back (temp);
+      NeighborStatusList_t *list;
+      list = &tempList;
+      m_ifaceNS.insert (IfaceNSPair_t (iface, list));
+    }
+
+}
+
 } // namespace ns3

@@ -34,6 +34,7 @@
 #include "ns3/nstime.h"
 #include "dgr-route-manager-impl.h"
 #include "ipv4-dgr-routing-table-entry.h"
+#include "neighbor-status.h"
 
 namespace ns3 {
 
@@ -266,6 +267,8 @@ public:
   Ptr<Ipv4Route> LookupUniRoute (Ipv4Address dest, Ptr<NetDevice> oif = 0);
   Ptr<Ipv4Route> LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDevice> idev = 0); // budget in microsecond
 
+  void UpdateNeighborStatus (uint32_t iface, uint32_t next_iface, QStatus qstat, uint32_t delay);
+  NeighborStatus* GetNeighborStatus (uint32_t iface, uint32_t nextIface);
 protected:
   void DoDispose (void);
 
@@ -298,10 +301,16 @@ private:
   /// iterator of container of Ipv4RoutingTableEntry (routes to external AS)
   typedef std::list<Ipv4DGRRoutingTableEntry *>::iterator ASExternalRoutesI;
 
+  /// container of Neighbor Status
+  typedef std::list<NeighborStatus *> NeighborStatusList_t;
+
+  typedef std::map<uint32_t, NeighborStatusList_t *> IfaceNSMap_t;
+  typedef std::pair<uint32_t, NeighborStatusList_t *> IfaceNSPair_t;
+  
   HostRoutes m_hostRoutes;             //!< Routes to hosts
   NetworkRoutes m_networkRoutes;       //!< Routes to networks
   ASExternalRoutes m_ASexternalRoutes; //!< External routes imported
-
+  IfaceNSMap_t m_ifaceNS; //!< Storage of the interface status
   Ptr<Ipv4> m_ipv4; //!< associated IPv4 instance
 
   // DGRRouteManagerNSDB* m_nsdb;
