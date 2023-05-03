@@ -295,7 +295,7 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
           // get the output device
           Ptr <NetDevice> dev = m_ipv4->GetNetDevice ((*i)->GetInterface ());
           //get the queue disc on the device
-          Ptr<QueueDisc> disc = m_ipv4->GetNetDevice (0)->GetNode ()->GetObject<TrafficControlLayer> ()->GetRootQueueDiscOnDevice (dev);
+          Ptr<QueueDisc> disc = m_ipv4->GetObject<Node> ()->GetObject<TrafficControlLayer> ()->GetRootQueueDiscOnDevice (dev);
           Ptr<DGRv2QueueDisc> dvq = DynamicCast <DGRv2QueueDisc> (disc);
           uint32_t dvq_length = dvq->GetInternalQueue (1) ->GetCurrentSize ().GetValue ();
           uint32_t dvq_max = dvq->GetInternalQueue (1)->GetMaxSize ().GetValue ();
@@ -1221,67 +1221,77 @@ NeighborStatus*
 Ipv4DGRRouting::GetNeighborStatus (uint32_t iface, uint32_t nextIface)
 {
   NeighborStatus* ret;
-  IfaceNSMap_t::const_iterator it = m_ifaceNS.find (iface);
-  if (it != m_ifaceNS.end())
+  
+  NeighborStatusMap_t::const_iterator ifaceIt = m_NSdatabase.find (iface);
+  if (ifaceIt != m_NSdatabase.end ())
     {
-      NeighborStatusList_t *nslist = it->second;
-      NeighborStatusList_t::const_iterator i;
-      for (i = nslist->begin (); i != nslist->end (); i ++)
+      IfaceStateMap_t* ifaceMap = ifaceIt->second;
+      IfaceStateMap_t::const_iterator it = ifaceMap->find (nextIface);
+      if (it != ifaceMap->end ())
         {
-          if(i != nslist->end() && nextIface == (*i)->GetInterface ())
-            {
-              ret = *i;
-              return ret;
-            }
+          ret = it->second;
+          return ret;
         }
-      ret = new NeighborStatus ();
-      nslist->push_back (ret);
+      else
+        {
+          /* Install a new <nIface, NeighborStatus *> pair to the IfaceMap */
+          ret = new NeighborStatus ();
+          ifaceMap->insert (IfaceStatePair_t (nextIface, ret));
+          return ret;
+        }
     }
   else
     {
+      IfaceStateMap_t* ifaceMap = new IfaceStateMap_t ();
       ret = new NeighborStatus ();
-      ret->SetInterface (nextIface);
-      NeighborStatusList_t temp;
-      temp.push_back (ret);
-      NeighborStatusList_t *list;
-      list = &temp;
-      m_ifaceNS.insert (IfaceNSPair_t (iface, list));
+      ifaceMap->insert(IfaceStatePair_t (nextIface, ret));
+      m_NSdatabase.insert (NeighborStatusPair_t (iface, ifaceMap));
+      return ret;
     }
-    return ret;
 }
 
 void
 Ipv4DGRRouting::UpdateNeighborStatus (uint32_t iface, uint32_t nextIface, QStatus qstat, uint32_t delay)
 {
-  IfaceNSMap_t::const_iterator it = m_ifaceNS.find (iface);
-  if (it != m_ifaceNS.end())
-    {
-      NeighborStatusList_t *nslist = it->second;
-      NeighborStatusList_t::const_iterator i;
-      for (i = nslist->begin (); i != nslist->end (); i ++)
-        {
-          if(i != nslist->end() && nextIface == (*i)->GetInterface ())
-            {
-              (*i)->UpdateStatus (qstat, delay);
-            }
-        }
-      NeighborStatus* temp = new NeighborStatus ();
-      temp->SetInterface (nextIface);
-      temp->UpdateStatus (qstat, delay);
-      nslist->push_back (temp);
-    }
-  else
-    {
-      NeighborStatus* temp = new NeighborStatus ();
-      temp->SetInterface (nextIface);
-      temp->UpdateStatus (qstat, delay);
-      NeighborStatusList_t tempList;
-      tempList.push_back (temp);
-      NeighborStatusList_t *list;
-      list = &tempList;
-      m_ifaceNS.insert (IfaceNSPair_t (iface, list));
-    }
+  std::cout << "iface: " << iface << ", nIface: " << nextIface << std::endl;
+  NeighborStatus* ns = GetNeighborStatus (iface, nextIface);
+  ns->UpdateStatus (qstat, delay);
+}
 
+void
+Ipv4DGRRouting::PrintNeighborStatus (std::ostream &os) const
+{
+  // NS_LOG_FUNCTION (this);
+  os << "Neighbor Status: " << std::endl;
+  for (auto &t:m_NSdatabase)
+    {
+      os << "Interface: " << t.first << std::endl;
+      IfaceStateMap_t *ifaceMap = t.second;
+      for (auto &k:*ifaceMap)
+        {
+          os << "Next Interface: " << k.first << std::endl;
+          k.second->Print (os);
+        }
+    }
+}
+
+void
+Ipv4DGRRouting::NeighborStatusBroadcast ()
+{
+  // todo: Get the status of each netdevice
+    // todo: Get the node.
+  Ptr <Node> node = m_ipv4->GetObject<Node> ();
+  for (uint32_t index = 0; index < node->GetNDevices (); index ++)
+    {
+      Ptr<NetDevice> dev = node->GetDevice (index);
+      Ptr<QueueDisc> disc = m_ipv4->GetObject<Node> ()->GetObject<TrafficControlLayer> ()->GetRootQueueDiscOnDevice (dev);
+      Ptr<DGRv2QueueDisc> dvq = DynamicCast <DGRv2QueueDisc> (disc);
+      dvq->GetCurrentSize ();
+
+    }
+  // todo: generate neighbor status broadcast packet
+  // todo: Get the Ipv4 Address of the neighbor
+  // todo: send packet to the Adddress 
 }
 
 } // namespace ns3

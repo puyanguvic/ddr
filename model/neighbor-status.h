@@ -12,14 +12,6 @@ enum QStatus {
     Congestion  /** Larger than 75 % */
   };
 
-// struct StaticState
-// {
-//   double_t sigma; /** variance */
-//   double_t mean;  /** average */
-//   uint32_t total; /** sample number*/
-//   StaticState () : sigma(0), mean (0), total (0){};
-// };
-
 class StateStatistic
 {
   public:
@@ -43,8 +35,6 @@ public:
   NeighborStatus ();
   ~NeighborStatus ();
 
-  uint32_t GetInterface (void) const;
-  void SetInterface (uint32_t iface);
   QStatus GetCurrentState (void) const;
   void Insert (QStatus stat , StateStatistic* ss);
   StateStatistic* GetCurrentStateStatistic (void) const;
@@ -53,7 +43,6 @@ public:
   void Print (std::ostream &os) const;
   
 private:
-  uint32_t m_iface;
   QStatus m_currentState;
   typedef std::map<uint32_t, StateStatistic*> NSMap_t; /** status, statistic*/
   typedef std::pair<uint32_t, StateStatistic*> NSPair_t;

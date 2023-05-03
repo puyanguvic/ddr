@@ -78,18 +78,6 @@ NeighborStatus::~NeighborStatus ()
   m_state.clear ();
 }
 
-uint32_t
-NeighborStatus::GetInterface (void) const
-{
-  return m_iface;
-}
-
-void
-NeighborStatus::SetInterface (uint32_t iface)
-{
-  m_iface = iface;
-}
-
 QStatus
 NeighborStatus::GetCurrentState (void) const
 {
@@ -142,6 +130,7 @@ NeighborStatus::UpdateStatus (QStatus status, uint32_t delay)
   double_t sigma = it->second->GetVariance ();
   double_t mean = it->second->GetAverage ();
   uint32_t total = it->second->GetNSample ();
+  std::cout << "Before update: mean: " << mean << ", variance: " << sigma << ", total: " << total << std::endl;
   it->second->SetAverage ((mean*total + delay)/(total + 1.0));
   it->second->SetVariance (total / pow(total + 1, 2) * pow(delay - mean, 2) + total/(total+1)*sigma);
   it->second->SetNSample (total + 1);

@@ -24,6 +24,7 @@
 #define IPV4_DGR_ROUTING_H
 
 #include <list>
+#include <map>
 #include <stdint.h>
 #include "ns3/ipv4-address.h"
 #include "ns3/ipv4-header.h"
@@ -269,6 +270,9 @@ public:
 
   void UpdateNeighborStatus (uint32_t iface, uint32_t next_iface, QStatus qstat, uint32_t delay);
   NeighborStatus* GetNeighborStatus (uint32_t iface, uint32_t nextIface);
+  void PrintNeighborStatus (std::ostream &os) const;
+  void NeighborStatusBroadcast ();
+  
 protected:
   void DoDispose (void);
 
@@ -300,20 +304,19 @@ private:
   typedef std::list<Ipv4DGRRoutingTableEntry *>::const_iterator ASExternalRoutesCI;
   /// iterator of container of Ipv4RoutingTableEntry (routes to external AS)
   typedef std::list<Ipv4DGRRoutingTableEntry *>::iterator ASExternalRoutesI;
+ 
+  typedef std::map<uint32_t, NeighborStatus *> IfaceStateMap_t; //!<  <nextIface, NeighborStatus> pair
+  typedef std::pair<uint32_t, NeighborStatus *> IfaceStatePair_t;
 
-  /// container of Neighbor Status
-  typedef std::list<NeighborStatus *> NeighborStatusList_t;
+  typedef std::map<uint32_t, IfaceStateMap_t *> NeighborStatusMap_t; //!< <Iface, IfaceStateMap_t> pair
+  typedef std::pair<uint32_t, IfaceStateMap_t *> NeighborStatusPair_t;
 
-  typedef std::map<uint32_t, NeighborStatusList_t *> IfaceNSMap_t;
-  typedef std::pair<uint32_t, NeighborStatusList_t *> IfaceNSPair_t;
-  
+
   HostRoutes m_hostRoutes;             //!< Routes to hosts
   NetworkRoutes m_networkRoutes;       //!< Routes to networks
   ASExternalRoutes m_ASexternalRoutes; //!< External routes imported
-  IfaceNSMap_t m_ifaceNS; //!< Storage of the interface status
+  NeighborStatusMap_t m_NSdatabase;
   Ptr<Ipv4> m_ipv4; //!< associated IPv4 instance
-
-  // DGRRouteManagerNSDB* m_nsdb;
 };
 
 } // Namespace ns3

@@ -575,7 +575,7 @@ DGRRouteManagerImpl::DeleteDGRRoutes ()
     {
       Ptr<Node> node = *i;
       Ptr<DGRRouter> router = node->GetObject<DGRRouter> ();
-      if (router == 0)
+      if (!router)
         {
           continue;
         }
@@ -777,7 +777,7 @@ DGRRouteManagerImpl::InitializeRoutes ()
                   NS_LOG_LOGIC ("Found a P2P record from " << 
                                 v->GetVertexId () << " to " << w_lsa->GetLinkStateId ());
                   Ptr<DGRRouter> router = node->GetObject<DGRRouter> ();
-                  if (router == 0)
+                  if (!router)
                     {
                       continue;
                     }
@@ -1692,7 +1692,7 @@ DGRRouteManagerImpl::SPFAddASExternal (DGRRoutingLSA *extlsa, DGRVertex *v)
 // 
       Ptr<DGRRouter> rtr = node->GetObject<DGRRouter> ();
 
-      if (rtr == 0)
+      if (!rtr)
         {
           NS_LOG_LOGIC ("No DGRRouter interface on node " << node->GetId ());
           continue;
@@ -1743,7 +1743,7 @@ DGRRouteManagerImpl::SPFAddASExternal (DGRRoutingLSA *extlsa, DGRVertex *v)
 // which the packets should be send for forwarding.
 //
           Ptr<DGRRouter> router = node->GetObject<DGRRouter> ();
-          if (router == 0)
+          if (!router)
             {
               continue;
             }
@@ -1869,7 +1869,7 @@ DGRRouteManagerImpl::SPFIntraAddStub (DGRRoutingLinkRecord *l, DGRVertex* v)
       Ptr<DGRRouter> rtr = 
         node->GetObject<DGRRouter> ();
 
-      if (rtr == 0)
+      if (!rtr)
         {
           NS_LOG_LOGIC ("No DGRRouter interface on node " << 
                         node->GetId ());
@@ -1921,7 +1921,7 @@ DGRRouteManagerImpl::SPFIntraAddStub (DGRRoutingLinkRecord *l, DGRVertex* v)
 //
 
           Ptr<DGRRouter> router = node->GetObject<DGRRouter> ();
-          if (router == nullptr)
+          if (!router)
             {
               continue;
             }
@@ -1992,7 +1992,7 @@ DGRRouteManagerImpl::FindOutgoingInterfaceId (Ipv4Address a, Ipv4Mask amask)
 // If the node doesn't have a DGRRouter interface it can't be the one
 // we're interested in.
 //
-      if (rtr == nullptr)
+      if (!rtr)
         {
           continue;
         }
@@ -2092,7 +2092,7 @@ DGRRouteManagerImpl::SPFIntraAddRouter (DGRVertex* v, DGRVertex* v_init, Ipv4Add
       Ptr<DGRRouter> rtr = 
         node->GetObject<DGRRouter> ();
 
-      if (rtr == nullptr)
+      if (!rtr)
         {
           NS_LOG_LOGIC ("No GlobalRouter interface on node " << 
                         node->GetId ());
@@ -2151,7 +2151,7 @@ DGRRouteManagerImpl::SPFIntraAddRouter (DGRVertex* v, DGRVertex* v_init, Ipv4Add
                   continue;
                 }
               Ptr<DGRRouter> router = node->GetObject<DGRRouter> ();
-              if (router == nullptr)
+              if (!router)
                 {
                   continue;
                 }
@@ -2206,7 +2206,7 @@ DGRRouteManagerImpl::SPFIntraAddTransit (DGRVertex* v)
       Ptr<DGRRouter> rtr = 
         node->GetObject<DGRRouter> ();
 
-      if (rtr == 0)
+      if (!rtr)
         {
           NS_LOG_LOGIC ("No DGRRouter interface on node " << 
                         node->GetId ());
@@ -2245,7 +2245,7 @@ DGRRouteManagerImpl::SPFIntraAddTransit (DGRVertex* v)
           Ipv4Address tempip = lsa->GetLinkStateId ();
           tempip = tempip.CombineMask (tempmask);
           Ptr<DGRRouter> router = node->GetObject<DGRRouter> ();
-          if (router == 0)
+          if (!router)
             {
               continue;
             }
