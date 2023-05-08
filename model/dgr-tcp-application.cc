@@ -12,6 +12,7 @@
 #include "ns3/trace-source-accessor.h"
 #include "ns3/tcp-socket-factory.h"
 #include "ns3/boolean.h"
+#include "ns3/network-module.h"
 #include "dgr-tcp-application.h"
 #include "dgr-tags.h"
 

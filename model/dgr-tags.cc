@@ -300,76 +300,76 @@ PriorityTag::Print (std::ostream &os) const
   os << "Priority=" << m_priority;
 }
 
-//----------------------------------------------------------------------
-//-- TimestampTag
-//------------------------------------------------------
-TimestampTag::TimestampTag ()
-{
-  NS_LOG_FUNCTION (this);
-}
+// //----------------------------------------------------------------------
+// //-- TimestampTag
+// //------------------------------------------------------
+// TimestampTag::TimestampTag ()
+// {
+//   NS_LOG_FUNCTION (this);
+// }
 
-void
-TimestampTag::SetTimestamp (Time timestamp)
-{
-  NS_LOG_FUNCTION (this << timestamp);
-  m_timestamp = timestamp;
-}
+// void
+// TimestampTag::SetTimestamp (Time timestamp)
+// {
+//   NS_LOG_FUNCTION (this << timestamp);
+//   m_timestamp = timestamp;
+// }
 
-Time
-TimestampTag::GetTimestamp (void) const
-{
-  NS_LOG_FUNCTION (this);
-  return m_timestamp;
-}
+// Time
+// TimestampTag::GetTimestamp (void) const
+// {
+//   NS_LOG_FUNCTION (this);
+//   return m_timestamp;
+// }
 
-NS_OBJECT_ENSURE_REGISTERED (TimestampTag);
+// NS_OBJECT_ENSURE_REGISTERED (TimestampTag);
 
-TypeId
-TimestampTag::GetTypeId (void)
-{
-  static TypeId tid = TypeId ("TimestampTag")
-    .SetParent<Tag> ()
-    .SetGroupName ("dgr-rl")
-    .AddConstructor<TimestampTag> ();
-  return tid;
-}
+// TypeId
+// TimestampTag::GetTypeId (void)
+// {
+//   static TypeId tid = TypeId ("TimestampTag")
+//     .SetParent<Tag> ()
+//     .SetGroupName ("dgr-rl")
+//     .AddConstructor<TimestampTag> ();
+//   return tid;
+// }
 
-TypeId
-TimestampTag::GetInstanceTypeId (void) const
-{
-  return GetTypeId ();
-}
+// TypeId
+// TimestampTag::GetInstanceTypeId (void) const
+// {
+//   return GetTypeId ();
+// }
 
-uint32_t
-TimestampTag::GetSerializedSize (void) const
-{
-  NS_LOG_FUNCTION (this);
-  return 8;     // 8 bytes
-}
+// uint32_t
+// TimestampTag::GetSerializedSize (void) const
+// {
+//   NS_LOG_FUNCTION (this);
+//   return 8;     // 8 bytes
+// }
 
-void
-TimestampTag::Serialize (TagBuffer i) const
-{
-  NS_LOG_FUNCTION (this << &i);
-  int64_t t = m_timestamp.GetNanoSeconds ();
-  i.Write ((const uint8_t *)&t, 8);
-}
+// void
+// TimestampTag::Serialize (TagBuffer i) const
+// {
+//   NS_LOG_FUNCTION (this << &i);
+//   int64_t t = m_timestamp.GetNanoSeconds ();
+//   i.Write ((const uint8_t *)&t, 8);
+// }
 
-void
-TimestampTag::Deserialize (TagBuffer i)
-{
-  NS_LOG_FUNCTION (this << &i);
-  int64_t t;
-  i.Read ((uint8_t *)&t, 8);
-  m_timestamp = NanoSeconds (t);
-}
+// void
+// TimestampTag::Deserialize (TagBuffer i)
+// {
+//   NS_LOG_FUNCTION (this << &i);
+//   int64_t t;
+//   i.Read ((uint8_t *)&t, 8);
+//   m_timestamp = NanoSeconds (t);
+// }
 
-void
-TimestampTag::Print (std::ostream &os) const
-{
-  NS_LOG_FUNCTION (this << &os);
-  os << "t=" << m_timestamp.GetMilliSeconds () << "ms";
-}
+// void
+// TimestampTag::Print (std::ostream &os) const
+// {
+//   NS_LOG_FUNCTION (this << &os);
+//   os << "t=" << m_timestamp.GetMilliSeconds () << "ms";
+// }
 
 
 //----------------------------------------------------------------------

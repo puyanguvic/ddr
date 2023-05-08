@@ -2,11 +2,12 @@
 
 #include <cmath>
 #include "ns3/core-module.h"
+#include "ns3/log.h"
 #include "neighbor-status.h"
 
 namespace ns3 {
 
-// NS_LOG_COMPONENT_DEFINE ("NeighborStatus");
+NS_LOG_COMPONENT_DEFINE ("NeighborStatus");
 
 StateStatistic::StateStatistic ()
   : m_sigma (0),

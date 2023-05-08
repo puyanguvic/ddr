@@ -189,46 +189,46 @@ private:
 };
 
 
-class TimestampTag : public Tag
-{
-public:
-    TimestampTag ();
-    /**
-     * \brief Set the timestamp
-     * \param timestamp the timestamp
-    */
-    void SetTimestamp (Time timestamp);
+// class TimestampTag : public Tag
+// {
+// public:
+//     TimestampTag ();
+//     /**
+//      * \brief Set the timestamp
+//      * \param timestamp the timestamp
+//     */
+//     void SetTimestamp (Time timestamp);
 
-    /**
-     * \brief Get the tag's timestamp
-     * \return the timestamp
-    */
-    Time GetTimestamp (void) const;
+//     /**
+//      * \brief Get the tag's timestamp
+//      * \return the timestamp
+//     */
+//     Time GetTimestamp (void) const;
 
-    /**
-     * \brief Get the Type ID
-     * \return the object TypeId
-    */
-    static TypeId GetTypeId (void);
+//     /**
+//      * \brief Get the Type ID
+//      * \return the object TypeId
+//     */
+//     static TypeId GetTypeId (void);
 
-    // inherited function, no need to doc.
-    TypeId GetInstanceTypeId (void) const override;
+//     // inherited function, no need to doc.
+//     TypeId GetInstanceTypeId (void) const override;
     
-    // inherited function, no need to doc.
-    uint32_t GetSerializedSize (void) const override;
+//     // inherited function, no need to doc.
+//     uint32_t GetSerializedSize (void) const override;
 
-    // inherited function, no need to doc.
-    void Serialize (TagBuffer i) const override;
+//     // inherited function, no need to doc.
+//     void Serialize (TagBuffer i) const override;
 
-    // inherited function, no need to doc.
-    void Deserialize (TagBuffer i) override;
+//     // inherited function, no need to doc.
+//     void Deserialize (TagBuffer i) override;
 
-    // inherited function, no need to doc.
-    void Print (std::ostream &os) const override;
+//     // inherited function, no need to doc.
+//     void Print (std::ostream &os) const override;
 
-private:
-    Time m_timestamp;  
-};
+// private:
+//     Time m_timestamp;  
+// };
 
 
 /**

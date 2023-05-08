@@ -293,9 +293,9 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
           if (!m_ipv4->IsUp ((*i)->GetInterface ())) continue;
 
           // get the output device
-          Ptr <NetDevice> dev = m_ipv4->GetNetDevice ((*i)->GetInterface ());
+          Ptr <NetDevice> dev_local = m_ipv4->GetNetDevice ((*i)->GetInterface ());
           //get the queue disc on the device
-          Ptr<QueueDisc> disc = m_ipv4->GetObject<Node> ()->GetObject<TrafficControlLayer> ()->GetRootQueueDiscOnDevice (dev);
+          Ptr<QueueDisc> disc = m_ipv4->GetObject<Node> ()->GetObject<TrafficControlLayer> ()->GetRootQueueDiscOnDevice (dev_local);
           Ptr<DGRv2QueueDisc> dvq = DynamicCast <DGRv2QueueDisc> (disc);
           uint32_t dvq_length = dvq->GetInternalQueue (1) ->GetCurrentSize ().GetValue ();
           uint32_t dvq_max = dvq->GetInternalQueue (1)->GetMaxSize ().GetValue ();
@@ -305,43 +305,41 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
               NS_LOG_LOGIC ("Congestion happened, skipping");
               continue;
             }
-          
-          // get the nexthop queue infomation
-          Ptr<Channel> channel = dev->GetChannel ();
-          PointToPointChannel *p2pchannel = dynamic_cast <PointToPointChannel *> (PeekPointer (channel));
-          if (p2pchannel != 0)
+        
+          //
+          // Get queue info on the other side
+          //
+          if ((*i)->GetNextInterface () != 0xffffffff)
             {
-              Ptr<Node> node = dev->GetNode ();
-              Ptr<PointToPointNetDevice> d_dev = p2pchannel->GetDestination (0) == dev ? p2pchannel->GetDestination (1) : p2pchannel->GetDestination (0);
-              Ptr<Node> d_node = d_dev->GetNode ();
-              // std::cout << "at node: " << node->GetId () << ", " << std::endl;
-              if ((*i)->GetNextInterface () != 0xffffffff)
+              // get the nexthop queue infomation
+              Ptr<Channel> ch = dev_local->GetChannel ();
+              //
+              // Get the net device on the other side of point-to-point
+              //
+              Ptr<NetDevice> dev_remote = ch->GetDevice (0) == dev_local ? ch->GetDevice (1) : ch->GetDevice (0);
+              Ptr<Node> node_remote = dev_remote->GetNode ();
+              Ptr<NetDevice> dev_next = node_remote->GetDevice ((*i)->GetNextInterface ());
+
+              Ptr<QueueDisc> queue_next = dev_next->GetObject <TrafficControlLayer> ()->GetRootQueueDiscOnDevice (dev_next);
+              Ptr<DGRv2QueueDisc> dvq_next = DynamicCast <DGRv2QueueDisc> (queue_next);
+              uint32_t dvq_slow_next = dvq_next->GetInternalQueue (1)->GetCurrentSize ().GetValue ();
+              uint32_t dvq_slow_max_next = dvq_next->GetInternalQueue (1)->GetMaxSize ().GetValue ();
+              uint32_t dvq_normal_next = dvq_next->GetInternalQueue (2)->GetCurrentSize ().GetValue ();
+              uint32_t dvq_normal_max_next = 155;  // next_dvq->GetInternalQueue (2)-> GetMaxSize ().GetValue ();
+              // if (next_dvq_slow_length != 0) std::cout << "slow lane current: " << next_dvq_slow_length  << "slow_max: " << next_dvq_slow_max << std::endl;
+              // std::cout <<"next node " << d_node->GetId () << " next dvq_length: " << next_dvq_length  << "    " << next_dvq_max << std::endl;
+              if (dvq_slow_next >= dvq_slow_max_next * 0.75 || dvq_normal_next >= dvq_normal_max_next * 0.75)
                 {
-                  Ptr<NetDevice> next_dev = d_node->GetDevice ((*i)->GetNextInterface ());
-                  // std::cout << "next node: " << d_node->GetId () << "next interface: " << (*i)->GetNextInterface () << std::endl;
-                  Ptr<QueueDisc> next_disc = d_node->GetObject<TrafficControlLayer> ()->GetRootQueueDiscOnDevice (next_dev);
-                  Ptr<DGRv2QueueDisc> next_dvq = DynamicCast <DGRv2QueueDisc> (next_disc);
-                  uint32_t next_dvq_length = next_dvq->GetInternalQueue (1)->GetCurrentSize ().GetValue ();
-                  uint32_t next_dvq_max = next_dvq->GetInternalQueue (1)->GetMaxSize ().GetValue ();
-                  uint32_t next_dvq_slow_length = next_dvq->GetInternalQueue (2)->GetCurrentSize ().GetValue ();
-                  uint32_t next_dvq_slow_max = 155;  // next_dvq->GetInternalQueue (2)-> GetMaxSize ().GetValue ();
-                  // if (next_dvq_slow_length != 0) std::cout << "slow lane current: " << next_dvq_slow_length  << "slow_max: " << next_dvq_slow_max << std::endl;
-                  // std::cout <<"next node " << d_node->GetId () << " next dvq_length: " << next_dvq_length  << "    " << next_dvq_max << std::endl;
-                  if (next_dvq_length >= next_dvq_max * 0.75 || next_dvq_slow_length >= next_dvq_slow_max * 0.75)
-                    {
-                      // std::cout << "congestion happend at next node: " << d_node->GetId () << std::endl;
-                      NS_LOG_LOGIC ("Congestion happend in next hop, skipping");
-                      continue;
-                    }
-                  if (d_dev == next_dev)
-                    {
-                      continue;
-                    }
+                  // std::cout << "congestion happend at next node: " << d_node->GetId () << std::endl;
+                  NS_LOG_LOGIC ("Congestion happend in next hop, skipping");
+                  continue;
+                }
+              if (dev_remote == dev_next)
+                {
+                  continue;
                 }
             }
-
-          // find the nexthop queue
-
+            
           if ((*i)->GetDistance () > bgt || (*i)->GetDistance () > dist)
             {
               // std::cout << "at node: " << dev->GetNode ()->GetId ();
