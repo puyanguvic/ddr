@@ -30,17 +30,19 @@
 #include "ns3/ipv4-routing-table-entry.h"
 #include "ns3/boolean.h"
 #include "ns3/node.h"
+#include "ns3/socket-factory.h"
+#include "ns3/udp-socket-factory.h"
 #include "ipv4-dgr-routing.h"
 #include "dgr-route-manager.h"
 #include "ns3/point-to-point-module.h"
 #include "ns3/ipv4-list-routing.h"
 #include "dgrv2-queue-disc.h"
 #include "dgr-tags.h"
-// #include "budget-tag.h"
-// #include "flag-tag.h"
-// #include "timestamp-tag.h"
-// #include "priority-tag.h"
-// #include "dist-tag.h"
+
+#define DGR_PORT 666
+
+
+
 namespace ns3 {
 
 NS_LOG_COMPONENT_DEFINE ("Ipv4DGRRouting");
@@ -75,6 +77,49 @@ Ipv4DGRRouting::Ipv4DGRRouting ()
   NS_LOG_FUNCTION (this);
 
   m_rand = CreateObject<UniformRandomVariable> ();
+
+  // initialize unicast socket and broadcast socket of DGR
+  Ipv4Address loopback("127.0.0.1");
+  for (uint32_t i = 0; i < m_ipv4->GetNInterfaces (); i ++)
+    {
+      Ipv4Address addr = m_ipv4->GetAddress(i, 0).GetLocal ();
+      if (addr == loopback)
+        {
+          continue;
+        }
+      
+      // Create a socket ot listen to all the interfaces
+      if (!m_multicastRecvSocket)
+        {
+          m_multicastRecvSocket = Socket::CreateSocket (GetObject<Node> (), UdpSocketFactory::GetTypeId ());
+          m_multicastRecvSocket->SetAllowBroadcast(true);
+          InetSocketAddress inetAddr (Ipv4Address::GetAny (), DGR_PORT);
+          m_multicastRecvSocket->SetRecvCallback (MakeCallback (&DGR::Recv, this));
+          if (m_multicastRecvSocket->Bind (inetAddr))
+            {
+              NS_FATAL_ERROR ("Failed to bind () DGR socket");
+            }
+          m_multicastRecvSocket->SetIpRecvTtl (true);
+          m_multicastRecvSocket->SetRecvPktInfo (true);
+        }
+      
+      // Create a socket to send packets from this specific interfaces
+      Ptr<Socket> socket = Socket::CreateSocket(GetObject<Node> (), UdpSocketFactory::GetTypeId ());
+      socket->SetAllowBroadcast (true);
+      socket->SetIpTtl (1);
+      InetSocketAddress inetAddr (m_ipv4->GetAddress (i, 0).GetLocal (), DGR_PORT);
+      socket->SetRecvCallback (MakeCallback (&DGR::Recv, this));
+      socket->BindToNetDevice (m_ipv4->GetNetDevice (i));
+      if (socket->Bind (inetAddr))
+        {
+          NS_FATAL_ERROR ("Failed to bind() DGR socket");
+        }
+      socket->SetRecvPktInfo (true);
+      m_unicastSocketList[socket] = m_ipv4->GetAddress(i, 0);
+    }
+
+
+
 }
 
 Ipv4DGRRouting::~Ipv4DGRRouting ()
@@ -339,7 +384,7 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
                   continue;
                 }
             }
-            
+
           if ((*i)->GetDistance () > bgt || (*i)->GetDistance () > dist)
             {
               // std::cout << "at node: " << dev->GetNode ()->GetId ();
@@ -1290,6 +1335,17 @@ Ipv4DGRRouting::NeighborStatusBroadcast ()
   // todo: generate neighbor status broadcast packet
   // todo: Get the Ipv4 Address of the neighbor
   // todo: send packet to the Adddress 
+}
+
+void
+Ipv4DGRRouting::Recv (Ptr<Socket> socket)
+{
+  Ptr<Packet> receivedPacket;
+  Address sourceAddress;
+  receivedPacket = socket->RecvFrom (sourceAddress);
+
+  /// todo:
+  /// process the neighbor info packet 
 }
 
 } // namespace ns3

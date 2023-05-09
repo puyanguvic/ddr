@@ -317,6 +317,25 @@ private:
   ASExternalRoutes m_ASexternalRoutes; //!< External routes imported
   NeighborStatusMap_t m_NSdatabase;
   Ptr<Ipv4> m_ipv4; //!< associated IPv4 instance
+
+  // use a socket list to neighbors
+  /// One socket per interface, each bound to that interface's address
+  /// (reason: for Neighbor status sensing, we need to know on which interface
+  /// the messages arrive)
+  typedef std::map<Ptr<Socket>, Ipv4InterfaceAddress> SocketList;
+  /// socket list type iterator
+  typedef std::map<Ptr<Socket>, Ipv4InterfaceAddress>::iterator SocketListI;
+  /// socket list type const iterator
+  typedef std::map<Ptr<Socket>, Ipv4InterfaceAddress>::const_iterator SocketListCI;
+
+  SocketList  m_unicastSocketList; //!< list of sockets for unicast messages (socket, interface index)
+  Ptr<Socket> m_multicastRecvSocket; //!< multicast receive socket
+
+  /**
+   * Receive an DGR message
+   * \param socket The receiving socket
+  */
+  void Recv (Ptr<Socket> socket);
 };
 
 } // Namespace ns3
