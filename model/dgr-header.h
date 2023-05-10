@@ -1,23 +1,59 @@
 /* -*- Mode:C++; c-file-style:"gnu"; indent-tabs-mode:nil; -*- */
-#ifndef NEIGHBORINFO_HEADER_H
-#define NEIGHBORINFO_HEADER_H
+#ifndef DGR_HEADER_H
+#define DGR_HEADER_H
 
 #include "ns3/header.h"
 #include "ns3/nstime.h"
 
+#include <list>
+
+
 namespace ns3 {
 
-class NeighborInfoHeader : public Header
+/**
+ * \ingroup dgrv2
+ * \brief DGR v2 Queue Status Entry (QSE)
+*/
+class DgrHeader : public Header
  {
  public:
-   NeighborInfoHeader ();
-   ~NeighborInfoHeader ();
+   DgrHeader ();
+   
+   ~DgrHeader ();
+
+   /**
+    * \brief Get the type ID
+    * \return The object TypeId.
+   */
    static TypeId GetTypeId (void);
-   virtual TypeId GetInstanceTypeId (void) const;
-   virtual void Print (std::ostream &os) const;
-   virtual void Serialize (Buffer::Iterator start) const;
-   virtual uint32_t Deserialize (Buffer::Iterator start);
-   virtual uint32_t GetSerializedSize (void) const;
+
+   /**
+    * \brief Return the instance type identifier
+    * \return instance type ID
+   */
+   TypeId GetInstanceTypeId (void) const;
+   
+   void Print (std::ostream &os) const;
+   
+   /**
+    * \brief Get the serialize size of the packet.
+    * \return size
+   */
+   uint32_t GetSerializedSize (void) const;
+
+   /**
+    * \brief serialize the packet.
+    * \param start Buffer iterator
+   */
+   void Serialize (Buffer::Iterator start) const;
+
+   /**
+    * \brief Deserialize the packet.
+    * \param start Buffer iterator.
+    * \return Size of packet
+   */
+   uint32_t Deserialize (Buffer::Iterator start);
+   
 
    void SetTxTime (Time txTime);
    Time GetTxTime (void) const;
@@ -29,14 +65,15 @@ class NeighborInfoHeader : public Header
    bool GetFlag (void) const;
 
  private:
-   uint8_t ID;
-   Time m_txTime;
-   uint32_t m_budget;
-   uint8_t m_priority;
-   bool m_flag;
+    uint8_t m_command;        //!< command type
+    std::list<dfd> m_qseList; //!< list of the QSE in the message
  };
 
 }
 
 #endif /* NEIGHBORINFO_HEADER_H */
+
+
+
+
 

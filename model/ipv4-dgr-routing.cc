@@ -1340,9 +1340,27 @@ Ipv4DGRRouting::NeighborStatusBroadcast ()
 void
 Ipv4DGRRouting::Recv (Ptr<Socket> socket)
 {
-  Ptr<Packet> receivedPacket;
-  Address sourceAddress;
-  receivedPacket = socket->RecvFrom (sourceAddress);
+  NS_LOG_FUNCTION (this << socket);
+
+  Address sender;
+  Ptr<Packet> packet = socket->RecvFrom (sender);
+  InetSocketAddress senderAddr = InetSocketAddress::ConvertFrom (sender);
+  NS_LOG_INFO ("Received " << *packet << " from " << senderAddr.GetIpv4 () << ":"
+                           << senderAddr.GetPort ());
+  
+  Ipv4Address senderAddress = senderAddr.GetIpv4 ();
+  uint32_t senderport = senderAddr.GetPort ();
+
+  if (socket == m_multicastRecvSocket)
+    {
+      NS_LOG_LOGIC ("Received a packet from the multicast socket");
+    }
+  else
+    {
+      NS_LOG_LOGIC ("Received a packet from one of the unicast sockets");
+    }
+
+  DgrHeader hdr;
 
   /// todo:
   /// process the neighbor info packet 
