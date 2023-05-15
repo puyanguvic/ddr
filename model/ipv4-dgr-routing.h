@@ -336,6 +336,31 @@ private:
    * \param socket The receiving socket
   */
   void Recv (Ptr<Socket> socket);
+
+  /**
+   * \brief Sending Updates on all interfaces.
+   * \param periodic true for periodic update, else triggered.
+  */
+  void DoSendRouteUpdate (bool periodic);
+
+  /**
+   * \brief Send Route Request on all interfaces
+  */
+  void SendRouteRequest ();
+
+  /**
+   * \brief Send Triggered Routing Updates on all interfaces.
+  */
+  void SendTriggeredRouteUpdate ();
+
+  /**
+   * \brief Send Unsolicited Routing Updates on all interfaces.
+  */
+  void SendUnsolicitedRouteUpdate ();
+
+  
+
+
 };
 
 } // Namespace ns3

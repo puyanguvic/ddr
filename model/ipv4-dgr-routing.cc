@@ -80,43 +80,43 @@ Ipv4DGRRouting::Ipv4DGRRouting ()
 
   // initialize unicast socket and broadcast socket of DGR
   Ipv4Address loopback("127.0.0.1");
-  for (uint32_t i = 0; i < m_ipv4->GetNInterfaces (); i ++)
-    {
-      Ipv4Address addr = m_ipv4->GetAddress(i, 0).GetLocal ();
-      if (addr == loopback)
-        {
-          continue;
-        }
+  // for (uint32_t i = 0; i < m_ipv4->GetNInterfaces (); i ++)
+  //   {
+  //     Ipv4Address addr = m_ipv4->GetAddress(i, 0).GetLocal ();
+  //     if (addr == loopback)
+  //       {
+  //         continue;
+  //       }
       
-      // Create a socket ot listen to all the interfaces
-      if (!m_multicastRecvSocket)
-        {
-          m_multicastRecvSocket = Socket::CreateSocket (GetObject<Node> (), UdpSocketFactory::GetTypeId ());
-          m_multicastRecvSocket->SetAllowBroadcast(true);
-          InetSocketAddress inetAddr (Ipv4Address::GetAny (), DGR_PORT);
-          m_multicastRecvSocket->SetRecvCallback (MakeCallback (&DGR::Recv, this));
-          if (m_multicastRecvSocket->Bind (inetAddr))
-            {
-              NS_FATAL_ERROR ("Failed to bind () DGR socket");
-            }
-          m_multicastRecvSocket->SetIpRecvTtl (true);
-          m_multicastRecvSocket->SetRecvPktInfo (true);
-        }
+  //     // Create a socket ot listen to all the interfaces
+  //     if (!m_multicastRecvSocket)
+  //       {
+  //         m_multicastRecvSocket = Socket::CreateSocket (GetObject<Node> (), UdpSocketFactory::GetTypeId ());
+  //         m_multicastRecvSocket->SetAllowBroadcast(true);
+  //         InetSocketAddress inetAddr (Ipv4Address::GetAny (), DGR_PORT);
+  //         m_multicastRecvSocket->SetRecvCallback (MakeCallback (&DGR::Recv, this));
+  //         if (m_multicastRecvSocket->Bind (inetAddr))
+  //           {
+  //             NS_FATAL_ERROR ("Failed to bind () DGR socket");
+  //           }
+  //         m_multicastRecvSocket->SetIpRecvTtl (true);
+  //         m_multicastRecvSocket->SetRecvPktInfo (true);
+  //       }
       
-      // Create a socket to send packets from this specific interfaces
-      Ptr<Socket> socket = Socket::CreateSocket(GetObject<Node> (), UdpSocketFactory::GetTypeId ());
-      socket->SetAllowBroadcast (true);
-      socket->SetIpTtl (1);
-      InetSocketAddress inetAddr (m_ipv4->GetAddress (i, 0).GetLocal (), DGR_PORT);
-      socket->SetRecvCallback (MakeCallback (&DGR::Recv, this));
-      socket->BindToNetDevice (m_ipv4->GetNetDevice (i));
-      if (socket->Bind (inetAddr))
-        {
-          NS_FATAL_ERROR ("Failed to bind() DGR socket");
-        }
-      socket->SetRecvPktInfo (true);
-      m_unicastSocketList[socket] = m_ipv4->GetAddress(i, 0);
-    }
+  //     // Create a socket to send packets from this specific interfaces
+  //     Ptr<Socket> socket = Socket::CreateSocket(GetObject<Node> (), UdpSocketFactory::GetTypeId ());
+  //     socket->SetAllowBroadcast (true);
+  //     socket->SetIpTtl (1);
+  //     InetSocketAddress inetAddr (m_ipv4->GetAddress (i, 0).GetLocal (), DGR_PORT);
+  //     socket->SetRecvCallback (MakeCallback (&DGR::Recv, this));
+  //     socket->BindToNetDevice (m_ipv4->GetNetDevice (i));
+  //     if (socket->Bind (inetAddr))
+  //       {
+  //         NS_FATAL_ERROR ("Failed to bind() DGR socket");
+  //       }
+  //     socket->SetRecvPktInfo (true);
+  //     m_unicastSocketList[socket] = m_ipv4->GetAddress(i, 0);
+  //   }
 
 
 
@@ -1360,7 +1360,7 @@ Ipv4DGRRouting::Recv (Ptr<Socket> socket)
       NS_LOG_LOGIC ("Received a packet from one of the unicast sockets");
     }
 
-  DgrHeader hdr;
+  // DgrHeader hdr;
 
   /// todo:
   /// process the neighbor info packet 
