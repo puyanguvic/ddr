@@ -133,7 +133,6 @@ public:
                        uint32_t interface);
 
   /**
-   * \author Pu Yang
    * \brief Add a host route to the global routing table with the distance 
    * between root and destination
    * \param dest The Ipv4Address destination for this route.
@@ -335,7 +334,7 @@ private:
    * Receive an DGR message
    * \param socket The receiving socket
   */
-  void Recv (Ptr<Socket> socket);
+  void Receive (Ptr<Socket> socket);
 
   /**
    * \brief Sending Updates on all interfaces.

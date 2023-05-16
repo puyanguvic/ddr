@@ -10,11 +10,13 @@
 
 namespace ns3 {
 
-NS_LOG_COMPONENT_DEFINE ("ns3::DGRTags");
+// NS_LOG_COMPONENT_DEFINE ("ns3::DGRTags");
 
 //----------------------------------------------------------------------
 //-- BudgetTag
 //------------------------------------------------------
+NS_LOG_COMPONENT_DEFINE ("BudgetTag");
+NS_OBJECT_ENSURE_REGISTERED (BudgetTag);
 
 BudgetTag::BudgetTag ()
 {
@@ -87,6 +89,8 @@ BudgetTag::Print (std::ostream &os) const
 //----------------------------------------------------------------------
 //-- DistTag
 //------------------------------------------------------
+NS_LOG_COMPONENT_DEFINE ("DistTag");
+NS_OBJECT_ENSURE_REGISTERED (DistTag);
 
 DistTag::DistTag ()
 {
@@ -159,6 +163,8 @@ DistTag::Print (std::ostream &os) const
 //----------------------------------------------------------------------
 //-- FlagTag
 //------------------------------------------------------
+NS_LOG_COMPONENT_DEFINE ("FlagTag");
+NS_OBJECT_ENSURE_REGISTERED (FlagTag);
 
 FlagTag::FlagTag ()
 {
@@ -231,6 +237,8 @@ FlagTag::Print (std::ostream &os) const
 //----------------------------------------------------------------------
 //-- PriorityTag
 //------------------------------------------------------
+NS_LOG_COMPONENT_DEFINE ("PriorityTag");
+NS_OBJECT_ENSURE_REGISTERED (PriorityTag);
 
 PriorityTag::PriorityTag ()
 {
@@ -376,6 +384,9 @@ PriorityTag::Print (std::ostream &os) const
 //-- NSTag
 //------------------------------------------------------
 
+NS_LOG_COMPONENT_DEFINE ("NSTag");
+NS_OBJECT_ENSURE_REGISTERED (NSTag);
+
 NSTag::NSTag ()
 {
   NS_LOG_FUNCTION (this);
@@ -443,5 +454,27 @@ NSTag::Print (std::ostream &os) const
   NS_LOG_FUNCTION (this << &os);
   os << "ns = " << m_ns;
 }
+
+//----------------------------------------------------------------------
+//-- DgrNse
+//------------------------------------------------------
+NS_LOG_COMPONENT_DEFINE ("DgrNse");
+NS_OBJECT_ENSURE_REGISTERED (DgrNse);
+
+DgrNse::DgrNse ()
+    : m_iface (0),
+      m_queueLength (0)
+{
+}
+
+TypeId
+DgrNse::GetTypeId ()
+{
+  static TypeId tid = 
+      TypeId ("ns3::DgrNse").SetParent<Header>().SetGroupName ("dgr").AddConstructor<DgrNse> ();
+  return tid;
+}
+
+
 
 }

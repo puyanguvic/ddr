@@ -1338,7 +1338,7 @@ Ipv4DGRRouting::NeighborStatusBroadcast ()
 }
 
 void
-Ipv4DGRRouting::Recv (Ptr<Socket> socket)
+Ipv4DGRRouting::Receive (Ptr<Socket> socket)
 {
   NS_LOG_FUNCTION (this << socket);
 
@@ -1360,6 +1360,32 @@ Ipv4DGRRouting::Recv (Ptr<Socket> socket)
       NS_LOG_LOGIC ("Received a packet from one of the unicast sockets");
     }
 
+  Ipv4PacketInfoTag interfaceInfo;
+  if (!packet->RemovePacketTag (interfaceInfo))
+    {
+      NS_ABORT_MSG ("No incoming interface on This message, aborting,");
+    }
+  uint32_t incomingIf = interfaceInfor.GetRecvIf ();
+  Ptr<Node> node = this->GetObject<Node> ();
+  Ptr<NetDevice> dev = node->GetDevice (incomingIf);
+  uint32_t ipInterfaceIndex = m_ipv4->GetInterfaceForAddress (dev);
+
+  SocketIpTtlTag hoplimitTag;
+  if (!packet->RemovePacketTag (hoplimitTag))
+  {
+    NS_ABORT_MSG ("No incoming Hop count on message, aborting");
+  }
+  uint8_t hopLimit = hoplimitTag.GetTtl ();
+  
+  int32_t interfaceForAddress = m_ipv4->GetInterfaceForAddress (senderAddress);
+  if (interfaceForAddress != -1)
+    {
+      NS_LOG_LOGIC ("Ignoring a packet sent by myself.");
+      return ;
+    }
+
+  DgrHeader hdr;
+  packet->RemoveHeader (hdr);
   // DgrHeader hdr;
 
   /// todo:

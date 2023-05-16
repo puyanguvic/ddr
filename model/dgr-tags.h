@@ -277,6 +277,187 @@ private:
     bool m_ns;  
 };
 
+
+/**
+ * \ingroup dgr
+ * \brief dgr v2 Neighbor Status Entry (DNE) 
+*/
+class DgrNse : public Header
+{
+  public:
+    DgrNse ();
+    
+    /**
+     * \brief Get the type ID.
+     * \return The object TypeId
+    */
+    static TypeId GetTypeId ();
+
+    /**
+     * \brief Return the instance type identifier
+     * \return Instance type ID.
+    */
+    TypeId GetInstanceTypeId () const override;
+
+    void Print (std::ostream& os) const override;
+
+    /**
+     * \brief Get the serialized size of the packet
+     * \return size
+    */
+    uint32_t GetSerializedSize () const override;
+
+    /**
+     * \brief Serialize the packet.
+     * \param start Buffer iterator 
+    */
+    void Serialize (Buffer::Iterator start) const override;
+
+    /**
+     * \brief Deserialize the packet
+     * \param start Buffer iterator
+     * \return size of the packet
+    */
+    uint32_t Deserialize (Buffer::Iterator start) override;
+
+    /**
+     * \brief Set the interface
+     * \param command the interface
+    */
+    void SetIface (uint32_t iface);
+
+    /**
+     * \brief Get the iface
+     * \returns the iface
+    */
+    uint32_t GetIface () const;
+
+    /**
+     * \brief Set the queue length
+     * \param length the queue length
+    */
+    void SetLength (uint32_t length);
+
+    /**
+     * \brief Get the queue length
+     * \return the queue length
+    */
+    uint32_t GetLength () const;
+
+  private:
+    uint32_t m_iface;       //!< interafce
+    uint32_t m_queueLength; //!< current queue length
+};
+
+/**
+ * \brief Stream insertion operator
+ * 
+ * \param os the reference to the output stream
+ * \param h the Neighbor status Entry
+ * \returns the reference to te output stream
+*/
+std::ostream& operator<<(std::ostream& os, const DgrNse & h);
+
+/**
+ * \ingroup dgr
+ * \brief dgr header 
+*/
+class DgrHeader : public Header
+{
+    public:
+        DgrHeader ();
+    
+    /**
+     * \brief Get the type ID
+     * \return the object TypeId
+    */
+    static TypeId GetTypeId ();
+
+    /**
+     * \brief Return the instance type identifier.
+     * \return the object TypeId
+    */
+    TypeId GetInstanceTypeId () const override;
+
+    void Print (std::ostream &os) const override;
+
+    /**
+     * \brief Get the serialized size of the packet
+     * \return size
+    */
+    uint32_t GetSerializedSize () const override;
+
+    /**
+     * \brief Serialize the packet.
+     * \param start Buffer iterator 
+    */
+    void Serialize (Buffer::Iterator start) const override;
+
+    /**
+     * \brief Deserialize the packet
+     * \param start Buffer iterator
+     * \return size of the packet
+    */
+    uint32_t Deserialize (Buffer::Iterator start) override;
+
+    /**
+     * Commands to be used in Dgr headers
+    */
+    enum Command_e
+    {
+        REQUEST = 0x1,
+        RESPONSE = 0x2,
+    };
+
+    /**
+     * \brief Set the command
+     * \param command the command
+    */
+    void SetCommand (Command_e command);
+
+    /**
+     * \brief Get the command
+     * \returns the command
+    */
+   Command_e GetCommand () const;
+
+   /**
+    * \brief Add a DGR Neighbor Status Entry (DNE) to the message
+    * \param dne the DNE
+   */
+   void AddDnse (DgrNse dne);
+
+   /**
+    * \brief Clear all the DNEs from the header
+   */
+   void ClearDnes ();
+
+   /**
+    * \brief Get the number of DNEs includes in the message
+    * \returns the number of DNEs in the message
+   */
+   uint16_t GetDneNumber () const;
+
+   /**
+    * \brief Get the list of DNEs included in the message
+    * \returns the list of DNEs in the message
+   */
+   std::list<DgrNse> GetDneList () const;
+
+private:
+   uint8_t m_command;           //!< command type
+   std::list<DgrNse> m_rteList;  //!< list of the DNEs in the message
+};
+
+/**
+ * \brief Stream insertion operator
+ * 
+ * \param os the reference to the output stream
+ * \param h the DGR header
+ * \returns the reference to the output stream
+*/
+std::ostream& operator<< (std::ostream& os, const DgrHeader& h);
+
 } // namespace ns3
 
 #endif /* DGRTAGS_H */
