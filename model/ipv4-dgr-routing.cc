@@ -28,6 +28,7 @@
 #include "ns3/net-device.h"
 #include "ns3/ipv4-route.h"
 #include "ns3/ipv4-routing-table-entry.h"
+#include "ns3/ipv4-packet-info-tag.h"
 #include "ns3/boolean.h"
 #include "ns3/node.h"
 #include "ns3/socket-factory.h"
@@ -1365,10 +1366,10 @@ Ipv4DGRRouting::Receive (Ptr<Socket> socket)
     {
       NS_ABORT_MSG ("No incoming interface on This message, aborting,");
     }
-  uint32_t incomingIf = interfaceInfor.GetRecvIf ();
+  uint32_t incomingIf = interfaceInfo.GetRecvIf ();
   Ptr<Node> node = this->GetObject<Node> ();
   Ptr<NetDevice> dev = node->GetDevice (incomingIf);
-  uint32_t ipInterfaceIndex = m_ipv4->GetInterfaceForAddress (dev);
+  uint32_t ipInterfaceIndex = m_ipv4->GetInterfaceForDevice (dev);
 
   SocketIpTtlTag hoplimitTag;
   if (!packet->RemovePacketTag (hoplimitTag))

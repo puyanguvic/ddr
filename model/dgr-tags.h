@@ -6,6 +6,7 @@
 #include "ns3/tag.h"
 #include "ns3/packet.h"
 #include "ns3/nstime.h"
+#include <list>
 
 namespace ns3 {
 
@@ -277,10 +278,9 @@ private:
     bool m_ns;  
 };
 
-
 /**
  * \ingroup dgr
- * \brief dgr v2 Neighbor Status Entry (DNE) 
+ * \brief dgr v2 Neighbor Status Entry (NSE) 
 */
 class DgrNse : public Header
 {
@@ -324,29 +324,19 @@ class DgrNse : public Header
      * \brief Set the interface
      * \param command the interface
     */
-    void SetIface (uint32_t iface);
+    void SetInterface (uint32_t iface);
 
     /**
      * \brief Get the iface
      * \returns the iface
     */
-    uint32_t GetIface () const;
+    uint32_t GetInterface () const;
 
-    /**
-     * \brief Set the queue length
-     * \param length the queue length
-    */
-    void SetLength (uint32_t length);
-
-    /**
-     * \brief Get the queue length
-     * \return the queue length
-    */
-    uint32_t GetLength () const;
-
+    void SetQueueSize (uint32_t qSize);
+    uint32_t GetQueueSize () const;
   private:
-    uint32_t m_iface;       //!< interafce
-    uint32_t m_queueLength; //!< current queue length
+    uint32_t m_iface;
+    uint32_t m_qSize;
 };
 
 /**
@@ -422,31 +412,31 @@ class DgrHeader : public Header
    Command_e GetCommand () const;
 
    /**
-    * \brief Add a DGR Neighbor Status Entry (DNE) to the message
-    * \param dne the DNE
+    * \brief Add a DGR Neighbor Status Entry (NSE) to the message
+    * \param nse the Neighbor Status Entry
    */
-   void AddDnse (DgrNse dne);
+   void AddNse (DgrNse nse);
 
    /**
-    * \brief Clear all the DNEs from the header
+    * \brief Clear all the NSEs from the header
    */
-   void ClearDnes ();
+   void ClearNses ();
 
    /**
-    * \brief Get the number of DNEs includes in the message
+    * \brief Get the number of NSEs includes in the message
     * \returns the number of DNEs in the message
    */
-   uint16_t GetDneNumber () const;
+   uint16_t GetNseNumber () const;
 
    /**
-    * \brief Get the list of DNEs included in the message
+    * \brief Get the list of NSEs included in the message
     * \returns the list of DNEs in the message
    */
-   std::list<DgrNse> GetDneList () const;
+   std::list<DgrNse> GetNseList () const;
 
 private:
    uint8_t m_command;           //!< command type
-   std::list<DgrNse> m_rteList;  //!< list of the DNEs in the message
+   std::list<DgrNse> m_nseList;  //!< list of the DNEs in the message
 };
 
 /**
