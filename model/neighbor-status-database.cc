@@ -59,7 +59,8 @@ StatusUnit::Print (std::ostream &os) const
 {
   os << "variance = " << m_sigma
      << ", average = " << m_mean
-     << ", sample number" << m_total;
+     << ", sample number = " << m_total
+     << std::endl;
 }
 
 //----------------------------------------------------------------------
@@ -72,17 +73,11 @@ NeighborStatusEntry::NeighborStatusEntry ()
 
 NeighborStatusEntry::~NeighborStatusEntry ()
 {
-  NSMap_t::iterator i;
-  for (i = m_database.begin (); i != m_database.end (); i ++)
-    {
-      StatusUnit* temp = i->second;
-      delete temp;
-    }
   m_database.clear ();
 }
 
 void
-NeighborStatusEntry::Insert (uint32_t n_iface, StatusUnit* su)
+NeighborStatusEntry::Insert (uint32_t n_iface, StatusUnit su)
 {
   NSMap_t::iterator it = m_database.find (n_iface);
   if (it != m_database.end ())
@@ -104,12 +99,12 @@ NeighborStatusEntry::GetNumStatusUnit () const
 void
 NeighborStatusEntry::Print (std::ostream &os) const
 {
-  os << "Interface    StatusUnit" << std::endl;
+  os << "Next_Iface    StatusUnit" << std::endl;
   NSMap_t::const_iterator ci;
   for (ci = m_database.begin (); ci != m_database.end (); ci ++)
     {
       os << ci->first << "    ";
-      ci->second->Print (os);
+      ci->second.Print (os);
     }
 }
 
@@ -127,27 +122,22 @@ DgrNSDB::DgrNSDB ()
 DgrNSDB::~DgrNSDB ()
 {
   NS_LOG_FUNCTION (this);
-  NSDBMap_t::iterator i;
-  for (i = m_database.begin (); i != m_database.end (); i ++)
-    {
-      NS_LOG_LOGIC ("Free NSE");
-      NeighborStatusEntry* temp = i->second;
-      delete temp;
-    }
+  // NSDBMap_t::iterator i;
+  // for (i = m_database.begin (); i != m_database.end (); i ++)
+  //   {
+  //     NS_LOG_LOGIC ("Free NSE");
+  //     NeighborStatusEntry* temp = i->second;
+  //     delete temp;
+  //   }
   NS_LOG_LOGIC ("Clear map");
-  m_database.clear ();
+  Initialize ();
 }
 
 void
 DgrNSDB::Initialize ()
 {
   NS_LOG_FUNCTION (this);
-  NSDBMap_t::iterator i;
-  for (i = m_database.begin(); i != m_database.end (); i ++)
-    {
-      NeighborStatusEntry* temp = i->second;
-      delete temp;
-    }
+  m_database.clear ();
 }
 
 NeighborStatusEntry*
@@ -178,6 +168,19 @@ DgrNSDB::Update (uint32_t iface, NeighborStatusEntry* nse)
     {
       m_database.insert (NSDBPair_t (iface, nse));
     }
+}
+
+void
+DgrNSDB::Print (std::ostream &os) const
+{
+  os << "At node: " << std::endl;
+  NSDBMap_t::const_iterator ci;
+  for (ci = m_database.begin (); ci != m_database.end (); ci ++)
+    {
+      os << "Interface = " << ci->first << std::endl;
+      ci->second->Print (os);
+    }
+
 }
 
 }

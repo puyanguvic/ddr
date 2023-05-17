@@ -3,6 +3,8 @@
 #define NEIGHBOR_STATUS_Database_H
 
 #include "ns3/core-module.h"
+#include <map>
+#include <utility>
 namespace ns3 {
 
 
@@ -30,14 +32,14 @@ public:
   NeighborStatusEntry ();
   ~NeighborStatusEntry ();
 
-  void Insert (uint32_t n_iface , StatusUnit* su);
+  void Insert (uint32_t n_iface , StatusUnit su);
   uint32_t GetNumStatusUnit () const;
   void Print (std::ostream &os) const;
   
 private:
-  typedef std::map<uint32_t, StatusUnit*>
+  typedef std::map<uint32_t, StatusUnit>
       NSMap_t; /** status, statistic*/
-  typedef std::pair<uint32_t, StatusUnit*> 
+  typedef std::pair<uint32_t, StatusUnit> 
       NSPair_t; //!< pair of <interface, StatusUnit>
   NSMap_t m_database;
 };  
@@ -92,9 +94,11 @@ class DgrNSDB : public Object
     */
     void Update (uint32_t iface, NeighborStatusEntry* nse);
 
-
-
-
+    /**
+     * \brief Print the database
+     * 
+    */
+    void Print (std::ostream &os) const;
   private:
     typedef std::map<uint32_t, NeighborStatusEntry*> 
         NSDBMap_t;  //!< container of <interface, NeighborStatusEntry>
