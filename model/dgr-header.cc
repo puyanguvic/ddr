@@ -239,6 +239,5 @@ operator<< (std::ostream& os, const DgrHeader& h)
   return os;
 }
 
-
 }
 

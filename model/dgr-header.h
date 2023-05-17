@@ -182,7 +182,7 @@ std::ostream& operator<< (std::ostream& os, const DgrHeader& h);
 
 }
 
-#endif /* NEIGHBORINFO_HEADER_H */
+#endif /* DGR_HEADER_H */
 
 
 

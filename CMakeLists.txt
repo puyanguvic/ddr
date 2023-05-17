@@ -15,6 +15,7 @@ build_lib(
     SOURCE_FILES
         # model/dgr-tags.cc
         model/dgr-header.cc
+        model/neighbor-status-database.cc
         # model/dgr-udp-application.cc
         # model/dgr-tcp-application.cc
         # model/dgr-sink.cc
@@ -33,6 +34,7 @@ build_lib(
     HEADER_FILES
         # model/dgr-tags.h
         model/dgr-header.h
+        model/neighbor-status-database.h
         # model/dgr-udp-application.h
         # model/dgr-tcp-application.h
         # model/dgr-sink.h
