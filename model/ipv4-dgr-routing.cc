@@ -1415,4 +1415,56 @@ Ipv4DGRRouting::DoSendNeighborStatusUpdate (bool periodic)
     }
 }
 
+void
+Ipv4DGRRouting::SendNeighborStatusRequest ()
+{
+  NS_LOG_FUNCTION (this);
+
+  Ptr<Packet> p = Create<Packet> ();
+  SocketIpTtlTag ttlTag;
+  p->RemovePacketTag (ttlTag);
+  ttlTag.SetTtl (1);
+  p->AddPacketTag (ttlTag);
+
+  DgrHeader hdr;
+  hdr.SetCommand (DgrHeader::REQUEST);
+
+  DgrNse nse;
+  nse.SetInterface ();
+  nse.SetQueueSize ();
+
+  hdr.AddNse (nse);
+  p->AddHeader (hdr);
+
+  for (SocketListI iter = m_unicastSocketList.begin (); iter != m_unicastSocketList.end (); iter ++)
+    {
+      uint32_t interface = iter->second;
+      if (m_interfaceExclusions.find (interface) == m_interfaceExclusions.end ())
+        {
+          NS_LOG_DEBUG ("SendTo: " << *p);
+          iter->first->SendTo (p, 0, InetSocketAddress ( ipadd, port));
+        }
+    }
+
+}
+
+void
+Ipv4DGRRouting::HandleResponses (DgrHeader hdr,
+                                Ipv4Address senderAddress,
+                                uint32_t incomingInterface,
+                                uint8_t hopLimit)
+{
+  NS_LOG_FUNCTION (this << senderAddress << incomingInterface << int(hopLimit) << hdr);
+  if (m_interfaceExclusions.find (incomingInterface) != m_interfaceExclusions.end ())
+    {
+      NS_LOG_LOGIC ("Ignoring an update message from an excluded interface: " << incomingInterface);
+      return;
+    }
+  std::list<DgrNse> nses = hdr.GetNseList ();
+
+  // process NSEs
+  
+
+}
+
 } // namespace ns3
