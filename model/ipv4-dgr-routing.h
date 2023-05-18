@@ -35,7 +35,7 @@
 #include "ns3/nstime.h"
 #include "dgr-route-manager-impl.h"
 #include "ipv4-dgr-routing-table-entry.h"
-#include "neighbor-status.h"
+#include "neighbor-status-database.h"
 
 namespace ns3 {
 
@@ -266,11 +266,6 @@ public:
    */
   Ptr<Ipv4Route> LookupUniRoute (Ipv4Address dest, Ptr<NetDevice> oif = 0);
   Ptr<Ipv4Route> LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDevice> idev = 0); // budget in microsecond
-
-  void UpdateNeighborStatus (uint32_t iface, uint32_t next_iface, QStatus qstat, uint32_t delay);
-  NeighborStatus* GetNeighborStatus (uint32_t iface, uint32_t nextIface);
-  void PrintNeighborStatus (std::ostream &os) const;
-  void NeighborStatusBroadcast ();
   
 protected:
   void DoDispose (void);
@@ -303,18 +298,10 @@ private:
   typedef std::list<Ipv4DGRRoutingTableEntry *>::const_iterator ASExternalRoutesCI;
   /// iterator of container of Ipv4RoutingTableEntry (routes to external AS)
   typedef std::list<Ipv4DGRRoutingTableEntry *>::iterator ASExternalRoutesI;
- 
-  typedef std::map<uint32_t, NeighborStatus *> IfaceStateMap_t; //!<  <nextIface, NeighborStatus> pair
-  typedef std::pair<uint32_t, NeighborStatus *> IfaceStatePair_t;
-
-  typedef std::map<uint32_t, IfaceStateMap_t *> NeighborStatusMap_t; //!< <Iface, IfaceStateMap_t> pair
-  typedef std::pair<uint32_t, IfaceStateMap_t *> NeighborStatusPair_t;
-
 
   HostRoutes m_hostRoutes;             //!< Routes to hosts
   NetworkRoutes m_networkRoutes;       //!< Routes to networks
   ASExternalRoutes m_ASexternalRoutes; //!< External routes imported
-  NeighborStatusMap_t m_NSdatabase;
   Ptr<Ipv4> m_ipv4; //!< associated IPv4 instance
 
   // use a socket list neighbors
@@ -353,9 +340,9 @@ private:
   void DoSendNeighborStatusUpdate (bool periodic);
 
   /**
-   * \brief Send Route Request on all interfaces
+   * \brief Send Neighbor Status Request on all interfaces
   */
-  void SendRouteRequest ();
+  void SendNeighborStatusRequest ();
 
   /**
    * \brief Send Triggered Routing Updates on all interfaces.
@@ -367,9 +354,33 @@ private:
   */
   void SendUnsolicitedRouteUpdate ();
 
-  void HandleResponses (hdr, senderAddress, ipInterfaceIndex, hopLimit);
+  /**
+   * \brief Handle DGR requests.
+   * 
+   * \param hdr message header (Including NSEs)
+   * \param senderAddress sender address
+   * \param senderPort sender port
+   * \param incomingInterface incoming interface
+   * \param hopLimit packet's hop limit
+  */
+  void HandleRequests (DgrHeader hdr,
+                        Ipv4Address senderAddress,
+                        uint16_t senderPort,
+                        uint32_t incomingInterface,
+                        uint8_t hopLimit);
 
-  void HandleRequests (hdr, senderAddress, ipInterfaceIndex, hopLimit);
+  /**
+   * \brief Handle DGR responses.
+   * 
+   * \param hdr message header (including NSEs)
+   * \param senderAddress sender address
+   * \param incomingInterface incoming interface
+   * \param hopLimit packet's hop limit
+  */
+  void HandleResponses (DgrHeader hdr,
+                       Ipv4Address senderAddress,
+                       uint32_t incomingInterface,
+                       uint8_t hopLimit);
 
 
 

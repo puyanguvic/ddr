@@ -35,6 +35,7 @@
 #include "ns3/udp-socket-factory.h"
 #include "ipv4-dgr-routing.h"
 #include "dgr-header.h"
+#include "ns3/udp-header.h"
 #include "dgr-route-manager.h"
 #include "ns3/point-to-point-module.h"
 #include "ns3/ipv4-list-routing.h"
@@ -1262,83 +1263,6 @@ Ipv4DGRRouting::SetIpv4 (Ptr<Ipv4> ipv4)
   m_ipv4 = ipv4;
 }
 
-NeighborStatus*
-Ipv4DGRRouting::GetNeighborStatus (uint32_t iface, uint32_t nextIface)
-{
-  NeighborStatus* ret;
-  
-  NeighborStatusMap_t::const_iterator ifaceIt = m_NSdatabase.find (iface);
-  if (ifaceIt != m_NSdatabase.end ())
-    {
-      IfaceStateMap_t* ifaceMap = ifaceIt->second;
-      IfaceStateMap_t::const_iterator it = ifaceMap->find (nextIface);
-      if (it != ifaceMap->end ())
-        {
-          ret = it->second;
-          return ret;
-        }
-      else
-        {
-          /* Install a new <nIface, NeighborStatus *> pair to the IfaceMap */
-          ret = new NeighborStatus ();
-          ifaceMap->insert (IfaceStatePair_t (nextIface, ret));
-          return ret;
-        }
-    }
-  else
-    {
-      IfaceStateMap_t* ifaceMap = new IfaceStateMap_t ();
-      ret = new NeighborStatus ();
-      ifaceMap->insert(IfaceStatePair_t (nextIface, ret));
-      m_NSdatabase.insert (NeighborStatusPair_t (iface, ifaceMap));
-      return ret;
-    }
-}
-
-void
-Ipv4DGRRouting::UpdateNeighborStatus (uint32_t iface, uint32_t nextIface, QStatus qstat, uint32_t delay)
-{
-  std::cout << "iface: " << iface << ", nIface: " << nextIface << std::endl;
-  NeighborStatus* ns = GetNeighborStatus (iface, nextIface);
-  ns->UpdateStatus (qstat, delay);
-}
-
-void
-Ipv4DGRRouting::PrintNeighborStatus (std::ostream &os) const
-{
-  // NS_LOG_FUNCTION (this);
-  os << "Neighbor Status: " << std::endl;
-  for (auto &t:m_NSdatabase)
-    {
-      os << "Interface: " << t.first << std::endl;
-      IfaceStateMap_t *ifaceMap = t.second;
-      for (auto &k:*ifaceMap)
-        {
-          os << "Next Interface: " << k.first << std::endl;
-          k.second->Print (os);
-        }
-    }
-}
-
-void
-Ipv4DGRRouting::NeighborStatusBroadcast ()
-{
-  // todo: Get the status of each netdevice
-    // todo: Get the node.
-  Ptr <Node> node = m_ipv4->GetObject<Node> ();
-  for (uint32_t index = 0; index < node->GetNDevices (); index ++)
-    {
-      Ptr<NetDevice> dev = node->GetDevice (index);
-      Ptr<QueueDisc> disc = m_ipv4->GetObject<Node> ()->GetObject<TrafficControlLayer> ()->GetRootQueueDiscOnDevice (dev);
-      Ptr<DGRv2QueueDisc> dvq = DynamicCast <DGRv2QueueDisc> (disc);
-      dvq->GetCurrentSize ();
-
-    }
-  // todo: generate neighbor status broadcast packet
-  // todo: Get the Ipv4 Address of the neighbor
-  // todo: send packet to the Adddress 
-}
-
 void
 Ipv4DGRRouting::Receive (Ptr<Socket> socket)
 {
@@ -1420,7 +1344,7 @@ Ipv4DGRRouting::SendTriggeredNeighborStatusUpdate ()
 
   Time delay = Seconds (m_rand->GetValue (m_minTriggeredUpdateDelay.GetSeconds (),
                                          m_maxTriggeredUpdateDelay.GetSeconds ()));
-  m_nextTriggeredUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::DoSendRouteUpdate, this, false);
+  m_nextTriggeredUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::DoSendNeighborStatusUpdate, this, false);
 }
 
 void
@@ -1446,19 +1370,45 @@ Ipv4DGRRouting::DoSendNeighborStatusUpdate (bool periodic)
     {
       uint32_t interface = iter->second;
 
-      if (m_interfaceExclusions.find (interface) == m_interfaceExclusions.end)
+      if (m_interfaceExclusions.find (interface) == m_interfaceExclusions.end ())
         {
           uint16_t mtu = m_ipv4->GetMtu (interface);
           uint16_t maxNse = (mtu - Ipv4Header().GetSerializedSize () -
                              UdpHeader ().GetSerializedSize () - DgrHeader ().GetSerializedSize ())/
-                            DgrNse.GetSerializedSize ();
+                            DgrNse ().GetSerializedSize ();
           
           Ptr<Packet> p = Create<Packet> ();
           SocketIpTtlTag ttlTag;
           ttlTag.SetTtl (1);
           p->AddPacketTag (ttlTag);
 
+          DgrHeader hdr;
+          hdr.SetCommand (DgrHeader::RESPONSE);
+          
+          // Find the Status of every netdevice and put it in
+          // TODO: Finish this function when finish the NSE definiation
+          for(m_ipv4->get )
+            {
+              DgrNse nse;
+              nse.SetInterface ();
+              nse.SetQueueSize ();
+              hdr.AddNse (nse);
 
+              if (hdr.GetNseNumber () == maxNse)
+                {
+                  p->AddHeader (hdr);
+                  NS_LOG_DEBUG ("SendTo: "<< *p);
+                  iter->first->Sendto(p, 0, InetSocketAddress (,));
+                  p->RemoveHeader (hdr);
+                  hdr.ClearNses ();
+                }
+            }
+            if (hdr.GetNseNumber () > 0)
+              {
+                p->AddHeader (hdr);
+                NS_LOG_DEBUG ("Sendto: " << *p);
+                iter->first->Sendto (p, 0, InetSocketAddress ());
+              }
         }
 
 
