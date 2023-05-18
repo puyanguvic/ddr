@@ -34,6 +34,7 @@
 #include "ns3/socket-factory.h"
 #include "ns3/udp-socket-factory.h"
 #include "ipv4-dgr-routing.h"
+#include "dgr-header.h"
 #include "dgr-route-manager.h"
 #include "ns3/point-to-point-module.h"
 #include "ns3/ipv4-list-routing.h"
@@ -1387,10 +1388,68 @@ Ipv4DGRRouting::Receive (Ptr<Socket> socket)
 
   DgrHeader hdr;
   packet->RemoveHeader (hdr);
-  // DgrHeader hdr;
+  if (hdr.GetCommand () == DgrHeader::RESPONSE)
+    {
+      NS_LOG_LOGIC ("The message is a Response from " << senderAddr.GetIpv4 () << ":"
+                                                      << senderAddr.GetPort ());
+      HandleResponses (hdr, senderAddress, ipInterfaceIndex, hopLimit);
 
-  /// todo:
-  /// process the neighbor info packet 
+    }
+  else if (hdr.GetCommand () == DgrHeader::REQUEST)
+    {
+      NS_LOG_LOGIC ("This message is a Request from " << senderAddr.GetIpv4 () << ":"
+                                                      << senderAddr.GetPort ());
+      HandleRequests (hdr, senderAddress, senderPort, ipInterfaceIndex, hopLimit);
+    }
+  else
+    {
+      NS_LOG_LOGIC ("Ignoring message with unknown command: " << int(hdr.GetCommand ()));
+    }
+}
+
+void
+Ipv4DGRRouting::SendTriggeredNeighborStatusUpdate ()
+{
+  NS_LOG_FUNCTION (this);
+
+  if (m_nextTriggeredUpdate.IsRunning ())
+    {
+      NS_LOG_LOGIC ("Skipping Triggered Update due to cooldown.");
+      return;
+    }
+
+  Time delay = Seconds (m_rng->GetValue (m_minTriggeredUpdateDelay.GetSeconds (),
+                                         m_maxTriggeredUpdateDelay.GetSeconds ()));
+  m_nextTriggeredUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::DoSendRouteUpdate, this, false);
+}
+
+void
+Ipv4DGRRouting::SendUnsolicitedRouteUpdate ()
+{
+  NS_LOG_FUNCTION (this);
+  if (m_nextTriggeredUpdate.IsRunning ())
+    {
+      m_nextTriggeredUpdate.Cancel ();
+    }
+  
+  DoSendNeighborStatusUpdate (true);
+  Time delay = m_unsolicitedUpdate + Seconds (m_rng->GetValue (0, 0.5 * m_unsolicitedUpdate.GetSeconds ()));
+  m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedRouteUpdate, this);
+}
+
+void
+Ipv4DGRRouting::DoSendNeighborStatusUpdate (bool periodic)
+{
+  NS_LOG_FUNCTION (this << (periodic ? " periodic" : " triggered"));
+
+  for (SocketListI iter = m_unicastSocketList.begin (); iter != m_unicastSocketList.end (); iter ++)
+    {
+      uint32_t interface = iter->second;
+
+      if (m_in)
+
+
+    }
 }
 
 } // namespace ns3

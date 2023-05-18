@@ -317,7 +317,7 @@ private:
   NeighborStatusMap_t m_NSdatabase;
   Ptr<Ipv4> m_ipv4; //!< associated IPv4 instance
 
-  // use a socket list to neighbors
+  // use a socket list neighbors
   /// One socket per interface, each bound to that interface's address
   /// (reason: for Neighbor status sensing, we need to know on which interface
   /// the messages arrive)
@@ -330,17 +330,27 @@ private:
   SocketList  m_unicastSocketList; //!< list of sockets for unicast messages (socket, interface index)
   Ptr<Socket> m_multicastRecvSocket; //!< multicast receive socket
 
+  EventId m_nextUnsolicitedUpdate; //!< Next Unsolicited Update event
+  EventId m_nextTriggeredUpdate; //!< Next Triggered Update event
+
+  Ptr<UniformRandomVariable> m_rng; //!< Rng stream
+
+  Time m_minTriggeredUpdateDelay; //!< Min cooldown delay after a Triggered Update.
+  Time m_maxTriggeredUpdateDelay; //!< Max cooldown delay after a Triggered Update.  
+  Time m_unsolicitedUpdate;       //!< time between two Unsolicited Routing Updates.  
+
   /**
    * Receive an DGR message
-   * \param socket The receiving socket
+   * 
+   * \param socket the socket the packet was received from.
   */
   void Receive (Ptr<Socket> socket);
 
   /**
-   * \brief Sending Updates on all interfaces.
+   * \brief Sending Neighbor Status Updates on all interfaces.
    * \param periodic true for periodic update, else triggered.
   */
-  void DoSendRouteUpdate (bool periodic);
+  void DoSendNeighborStatusUpdate (bool periodic);
 
   /**
    * \brief Send Route Request on all interfaces
@@ -350,12 +360,18 @@ private:
   /**
    * \brief Send Triggered Routing Updates on all interfaces.
   */
-  void SendTriggeredRouteUpdate ();
+  void SendTriggeredNeighborStatusUpdate ();
 
   /**
    * \brief Send Unsolicited Routing Updates on all interfaces.
   */
   void SendUnsolicitedRouteUpdate ();
+
+  void HandleResponses (hdr, senderAddress, ipInterfaceIndex, hopLimit);
+
+  void HandleRequests (hdr, senderAddress, ipInterfaceIndex, hopLimit);
+
+
 
   
 
