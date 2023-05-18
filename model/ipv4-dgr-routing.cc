@@ -1418,7 +1418,7 @@ Ipv4DGRRouting::SendTriggeredNeighborStatusUpdate ()
       return;
     }
 
-  Time delay = Seconds (m_rng->GetValue (m_minTriggeredUpdateDelay.GetSeconds (),
+  Time delay = Seconds (m_rand->GetValue (m_minTriggeredUpdateDelay.GetSeconds (),
                                          m_maxTriggeredUpdateDelay.GetSeconds ()));
   m_nextTriggeredUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::DoSendRouteUpdate, this, false);
 }
@@ -1433,7 +1433,7 @@ Ipv4DGRRouting::SendUnsolicitedRouteUpdate ()
     }
   
   DoSendNeighborStatusUpdate (true);
-  Time delay = m_unsolicitedUpdate + Seconds (m_rng->GetValue (0, 0.5 * m_unsolicitedUpdate.GetSeconds ()));
+  Time delay = m_unsolicitedUpdate + Seconds (m_rand->GetValue (0, 0.5 * m_unsolicitedUpdate.GetSeconds ()));
   m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedRouteUpdate, this);
 }
 
@@ -1446,7 +1446,20 @@ Ipv4DGRRouting::DoSendNeighborStatusUpdate (bool periodic)
     {
       uint32_t interface = iter->second;
 
-      if (m_in)
+      if (m_interfaceExclusions.find (interface) == m_interfaceExclusions.end)
+        {
+          uint16_t mtu = m_ipv4->GetMtu (interface);
+          uint16_t maxNse = (mtu - Ipv4Header().GetSerializedSize () -
+                             UdpHeader ().GetSerializedSize () - DgrHeader ().GetSerializedSize ())/
+                            DgrNse.GetSerializedSize ();
+          
+          Ptr<Packet> p = Create<Packet> ();
+          SocketIpTtlTag ttlTag;
+          ttlTag.SetTtl (1);
+          p->AddPacketTag (ttlTag);
+
+
+        }
 
 
     }

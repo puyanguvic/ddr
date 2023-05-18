@@ -321,11 +321,11 @@ private:
   /// One socket per interface, each bound to that interface's address
   /// (reason: for Neighbor status sensing, we need to know on which interface
   /// the messages arrive)
-  typedef std::map<Ptr<Socket>, Ipv4InterfaceAddress> SocketList;
+  typedef std::map<Ptr<Socket>, uint32_t> SocketList;
   /// socket list type iterator
-  typedef std::map<Ptr<Socket>, Ipv4InterfaceAddress>::iterator SocketListI;
+  typedef std::map<Ptr<Socket>, uint32_t>::iterator SocketListI;
   /// socket list type const iterator
-  typedef std::map<Ptr<Socket>, Ipv4InterfaceAddress>::const_iterator SocketListCI;
+  typedef std::map<Ptr<Socket>, uint32_t>::const_iterator SocketListCI;
 
   SocketList  m_unicastSocketList; //!< list of sockets for unicast messages (socket, interface index)
   Ptr<Socket> m_multicastRecvSocket; //!< multicast receive socket
@@ -333,12 +333,12 @@ private:
   EventId m_nextUnsolicitedUpdate; //!< Next Unsolicited Update event
   EventId m_nextTriggeredUpdate; //!< Next Triggered Update event
 
-  Ptr<UniformRandomVariable> m_rng; //!< Rng stream
-
   Time m_minTriggeredUpdateDelay; //!< Min cooldown delay after a Triggered Update.
   Time m_maxTriggeredUpdateDelay; //!< Max cooldown delay after a Triggered Update.  
   Time m_unsolicitedUpdate;       //!< time between two Unsolicited Routing Updates.  
 
+
+  std::set<uint32_t> m_interfaceExclusions; //!<Set of excluded interfaces
   /**
    * Receive an DGR message
    * 
