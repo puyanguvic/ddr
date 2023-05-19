@@ -11,19 +11,19 @@ namespace ns3 {
 class StatusUnit
 {
   public:
-  StatusUnit ();
-  ~StatusUnit ();
-  double_t GetVariance (void) const;
-  void SetVariance (double_t sigma);
-  double_t GetAverage (void) const;
-  void SetAverage (double_t mean);
-  uint32_t GetNSample (void) const;
-  void SetNSample (uint32_t total);
-  void Print (std::ostream &os) const;
+    StatusUnit ();
+    ~StatusUnit ();
+    double_t GetVariance (void) const;
+    void SetVariance (double_t sigma);
+    double_t GetAverage (void) const;
+    void SetAverage (double_t mean);
+    uint32_t GetNSample (void) const;
+    void SetNSample (uint32_t total);
+    void Print (std::ostream &os) const;
   private:
-  double_t m_sigma; /** variance */
-  double_t m_mean; /** average */
-  uint32_t m_total; /** sample number */
+    double_t m_sigma; /** variance */
+    double_t m_mean; /** average */
+    uint32_t m_total; /** sample number */
 };
 
 class NeighborStatusEntry

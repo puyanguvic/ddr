@@ -5,6 +5,7 @@
 #include "ns3/queue-disc.h"
 #include "ns3/object.h"
 #include "ns3/packet-filter.h"
+#include "dgr-header.h"
 
 namespace ns3 {
 
@@ -28,7 +29,7 @@ class DGRv2QueueDisc : public QueueDisc {
     static constexpr const char* LIMIT_EXCEEDED_DROP = "Queue disc limit exceeded";  //!< Packet dropped due to queue disc limit exceeded
 
     // Get current queue state
-    int32_t GetQueueState ();
+    DgrNse GetQueueStatus ();
   private:
     uint32_t m_fastWeight;
     uint32_t m_normalWeight;

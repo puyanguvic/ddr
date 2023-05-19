@@ -14,6 +14,8 @@ NS_LOG_COMPONENT_DEFINE ("DgrHeader");
 NS_OBJECT_ENSURE_REGISTERED (DgrNse);
 
 DgrNse::DgrNse ()
+    : m_iface (0),
+      m_qSize (0)
 {
 }
 

@@ -261,11 +261,12 @@ DGRv2QueueDisc::Classify ()
   return 88;
 }
 
-int32_t
-DGRv2QueueDisc::GetQueueState ()
+DgrNse
+DGRv2QueueDisc::GetQueueStatus ()
 {
-  uint32_t ret = 4 * GetInternalQueue (0)->GetCurrentSize ().GetValue ()/(GetInternalQueue (0)->GetMaxSize ().GetValue ()+1);
-  return ret;
+  DgrNse nse;
+  nse.SetQueueSize (GetInternalQueue (0)->GetCurrentSize ().GetValue ());
+  return nse;
 }
 
 // ------------------------------ QueuePacketFilter --------------------------------

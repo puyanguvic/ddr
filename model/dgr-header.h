@@ -1,4 +1,5 @@
 /* -*- Mode:C++; c-file-style:"gnu"; indent-tabs-mode:nil; -*- */
+
 #ifndef DGR_HEADER_H
 #define DGR_HEADER_H
 
@@ -168,7 +169,7 @@ class DgrHeader : public Header
 
 private:
    uint8_t m_command;           //!< command type
-   std::list<DgrNse> m_nseList;  //!< list of the DNEs in the message
+   std::list<DgrNse> m_nseList; //!< list of the DNEs in the message
 };
 
 /**

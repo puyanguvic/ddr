@@ -303,6 +303,8 @@ private:
   NetworkRoutes m_networkRoutes;       //!< Routes to networks
   ASExternalRoutes m_ASexternalRoutes; //!< External routes imported
   Ptr<Ipv4> m_ipv4; //!< associated IPv4 instance
+  
+  DgrNSDB* m_nsdb; //!< the Neighbor State DataBase (NSDB) of the DGR Rout
 
   // use a socket list neighbors
   /// One socket per interface, each bound to that interface's address
@@ -324,8 +326,8 @@ private:
   Time m_maxTriggeredUpdateDelay; //!< Max cooldown delay after a Triggered Update.  
   Time m_unsolicitedUpdate;       //!< time between two Unsolicited Routing Updates.  
 
-
   std::set<uint32_t> m_interfaceExclusions; //!<Set of excluded interfaces
+  
   /**
    * Receive an DGR message
    * 
@@ -364,10 +366,10 @@ private:
    * \param hopLimit packet's hop limit
   */
   void HandleRequests (DgrHeader hdr,
-                        Ipv4Address senderAddress,
-                        uint16_t senderPort,
-                        uint32_t incomingInterface,
-                        uint8_t hopLimit);
+                      Ipv4Address senderAddress,
+                      uint16_t senderPort,
+                      uint32_t incomingInterface,
+                      uint8_t hopLimit);
 
   /**
    * \brief Handle DGR responses.
@@ -381,12 +383,6 @@ private:
                        Ipv4Address senderAddress,
                        uint32_t incomingInterface,
                        uint8_t hopLimit);
-
-
-
-  
-
-
 };
 
 } // Namespace ns3
