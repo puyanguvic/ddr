@@ -25,7 +25,7 @@
 #include "ns3/packet.h"
 #include "ns3/network-module.h"
 #include "ns3/traffic-control-module.h"
-#include "ns3/net-device.h"
+#include "ns3/loopback-net-device.h"
 #include "ns3/ipv4-route.h"
 #include "ns3/ipv4-routing-table-entry.h"
 #include "ns3/ipv4-packet-info-tag.h"
@@ -43,8 +43,6 @@
 #include "dgr-tags.h"
 
 #define DGR_PORT 666
-
-
 
 namespace ns3 {
 
@@ -80,50 +78,10 @@ Ipv4DGRRouting::Ipv4DGRRouting ()
   NS_LOG_FUNCTION (this);
 
   m_rand = CreateObject<UniformRandomVariable> ();
-
-  // initialize unicast socket and broadcast socket of DGR
-  Ipv4Address loopback("127.0.0.1");
-  // for (uint32_t i = 0; i < m_ipv4->GetNInterfaces (); i ++)
-  //   {
-  //     Ipv4Address addr = m_ipv4->GetAddress(i, 0).GetLocal ();
-  //     if (addr == loopback)
-  //       {
-  //         continue;
-  //       }
-      
-  //     // Create a socket ot listen to all the interfaces
-  //     if (!m_multicastRecvSocket)
-  //       {
-  //         m_multicastRecvSocket = Socket::CreateSocket (GetObject<Node> (), UdpSocketFactory::GetTypeId ());
-  //         m_multicastRecvSocket->SetAllowBroadcast(true);
-  //         InetSocketAddress inetAddr (Ipv4Address::GetAny (), DGR_PORT);
-  //         m_multicastRecvSocket->SetRecvCallback (MakeCallback (&DGR::Recv, this));
-  //         if (m_multicastRecvSocket->Bind (inetAddr))
-  //           {
-  //             NS_FATAL_ERROR ("Failed to bind () DGR socket");
-  //           }
-  //         m_multicastRecvSocket->SetIpRecvTtl (true);
-  //         m_multicastRecvSocket->SetRecvPktInfo (true);
-  //       }
-      
-  //     // Create a socket to send packets from this specific interfaces
-  //     Ptr<Socket> socket = Socket::CreateSocket(GetObject<Node> (), UdpSocketFactory::GetTypeId ());
-  //     socket->SetAllowBroadcast (true);
-  //     socket->SetIpTtl (1);
-  //     InetSocketAddress inetAddr (m_ipv4->GetAddress (i, 0).GetLocal (), DGR_PORT);
-  //     socket->SetRecvCallback (MakeCallback (&DGR::Recv, this));
-  //     socket->BindToNetDevice (m_ipv4->GetNetDevice (i));
-  //     if (socket->Bind (inetAddr))
-  //       {
-  //         NS_FATAL_ERROR ("Failed to bind() DGR socket");
-  //       }
-  //     socket->SetRecvPktInfo (true);
-  //     m_unicastSocketList[socket] = m_ipv4->GetAddress(i, 0);
-  //   }
-
-
-
 }
+
+
+
 
 Ipv4DGRRouting::~Ipv4DGRRouting ()
 {
@@ -926,6 +884,7 @@ void
 Ipv4DGRRouting::DoDispose (void)
 {
   NS_LOG_FUNCTION (this);
+  // TODO: Realise memorys 
   for (HostRoutesI i = m_hostRoutes.begin (); 
        i != m_hostRoutes.end (); 
        i = m_hostRoutes.erase (i)) 
@@ -946,6 +905,53 @@ Ipv4DGRRouting::DoDispose (void)
     }
 
   Ipv4RoutingProtocol::DoDispose ();
+}
+
+void
+Ipv4DGRRouting::DoInitialize ()
+{
+  NS_LOG_FUNCTION (this);
+
+  bool addedGlobal = false;
+  m_intitialized = true;
+
+  Time delay = m_unsolicitedUpdate + 
+               Seconds (m_rand->GetValue (0, 0.5*m_unsolicitedUpdate.GetSeconds ()));
+  m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedRouteUpdate, this);
+
+  for (uint32_t i = 0; i < m_ipv4->GetNInterfaces (); i ++)
+    {
+      Ptr<LoopbackNetDevice> check = DynamicCast<LoopbackNetDevice>(m_ipv4->GetNetDevice ());
+      if (check)
+        {
+          continue;
+        }
+      
+      bool activeInterface = false;
+      if (m_interfaceExclusions.find (i) == m_interfaceExclusions.end ())
+        {
+          activeInterface = true;
+          m_ipv4->SetForwarding (i, true);
+        }
+      
+      for (uint32_t j = 0; j < m_ipv4->GetNAddresses (i); j ++)
+        {
+          Ipv4InterfaceAddress address = m_ipv4->GetAddress (i, j);
+          if (address.GetScope () != Ipv4InterfaceAddress::HOST && activeInterface == true)
+            {
+              NS_LOG_LOGIC ("DGR: add socket to " << address.GetLocal ());
+              TypeId tid = TypeId::LookupByName ("ns3::UdpSocketFactory");
+              Ptr<Node> theNode = GetObject<Node> ();
+              Ptr<Socket> socket = Socket::CreateSocket (theNode, tid);
+              InetSocketAddress local = InetSocketAddress (address.GetLocal (), DGR_PORT);
+              socket->BindToNetDevice (m_ipv4->GetNetDevice (i));
+              int ret = socket->Bind (local);
+              NS_ASSERT_MSG (ret == 0, "Bind unsuccessful");
+
+              socket->SetRecvCallback ()
+            }
+        }
+    }
 }
 
 // Formatted like output of "route -n" command
@@ -1275,7 +1281,7 @@ Ipv4DGRRouting::Receive (Ptr<Socket> socket)
                            << senderAddr.GetPort ());
   
   Ipv4Address senderAddress = senderAddr.GetIpv4 ();
-  uint32_t senderport = senderAddr.GetPort ();
+  uint32_t senderPort = senderAddr.GetPort ();
 
   if (socket == m_multicastRecvSocket)
     {
@@ -1373,9 +1379,11 @@ Ipv4DGRRouting::DoSendNeighborStatusUpdate (bool periodic)
       if (m_interfaceExclusions.find (interface) == m_interfaceExclusions.end ())
         {
           uint16_t mtu = m_ipv4->GetMtu (interface);
-          uint16_t maxNse = (mtu - Ipv4Header().GetSerializedSize () -
-                             UdpHeader ().GetSerializedSize () - DgrHeader ().GetSerializedSize ())/
-                            DgrNse ().GetSerializedSize ();
+          uint16_t maxNse = (mtu - 
+                             Ipv4Header().GetSerializedSize () -
+                             UdpHeader ().GetSerializedSize () - 
+                             DgrHeader ().GetSerializedSize ())/
+                             DgrNse ().GetSerializedSize ();
           
           Ptr<Packet> p = Create<Packet> ();
           SocketIpTtlTag ttlTag;
