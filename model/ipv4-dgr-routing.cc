@@ -43,6 +43,7 @@
 #include "dgr-tags.h"
 
 #define DGR_PORT 666
+#define DGR_BROAD_CAST "224.0.0.13"
 
 namespace ns3 {
 
@@ -913,15 +914,15 @@ Ipv4DGRRouting::DoInitialize ()
   NS_LOG_FUNCTION (this);
 
   bool addedGlobal = false;
-  m_intitialized = true;
+  m_initialized = true;
 
   Time delay = m_unsolicitedUpdate + 
                Seconds (m_rand->GetValue (0, 0.5*m_unsolicitedUpdate.GetSeconds ()));
-  m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedRouteUpdate, this);
+  m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedUpdate, this);
 
   for (uint32_t i = 0; i < m_ipv4->GetNInterfaces (); i ++)
     {
-      Ptr<LoopbackNetDevice> check = DynamicCast<LoopbackNetDevice>(m_ipv4->GetNetDevice ());
+      Ptr<LoopbackNetDevice> check = DynamicCast<LoopbackNetDevice>(m_ipv4->GetNetDevice (i));
       if (check)
         {
           continue;
@@ -937,6 +938,7 @@ Ipv4DGRRouting::DoInitialize ()
       for (uint32_t j = 0; j < m_ipv4->GetNAddresses (i); j ++)
         {
           Ipv4InterfaceAddress address = m_ipv4->GetAddress (i, j);
+          NS_LOG_LOGIC ("For interface: " << i << "the " << j << "st Address is " << address);
           if (address.GetScope () != Ipv4InterfaceAddress::HOST && activeInterface == true)
             {
               NS_LOG_LOGIC ("DGR: add socket to " << address.GetLocal ());
@@ -948,10 +950,43 @@ Ipv4DGRRouting::DoInitialize ()
               int ret = socket->Bind (local);
               NS_ASSERT_MSG (ret == 0, "Bind unsuccessful");
 
-              socket->SetRecvCallback ()
+              socket->SetRecvCallback (MakeCallback (&Ipv4DGRRouting::Receive, this));
+              socket->SetIpRecvTtl (true);
+              socket->SetRecvPktInfo (true);
+
+              m_unicastSocketList[socket] = i;
+            }
+          else if (m_ipv4->GetAddress (i, j).GetScope () == Ipv4InterfaceAddress::GLOBAL)
+            {
+              addedGlobal = true;
             }
         }
     }
+
+    if (!m_multicastRecvSocket)
+      {
+        NS_LOG_LOGIC ("DGR: adding receiving socket");
+        TypeId tid = TypeId::LookupByName ("ns3::UdpSocketFactory");
+        Ptr<Node> theNode = GetObject<Node> ();
+        m_multicastRecvSocket = Socket::CreateSocket (theNode, tid);
+        InetSocketAddress local = InetSocketAddress (DGR_BROAD_CAST, DGR_PORT);
+        m_multicastRecvSocket->Bind (local);
+        m_multicastRecvSocket->SetRecvCallback (MakeCallback (&Ipv4DGRRouting::Receive, this));
+        m_multicastRecvSocket->SetIpRecvTtl (true);
+        m_multicastRecvSocket->SetRecvPktInfo (true);
+      }
+
+    if (addedGlobal)
+      {
+        Time delay = Seconds (m_rand->GetValue (m_minTriggeredUpdateDelay.GetSeconds (),
+                                                m_maxTriggeredUpdateDelay.GetSeconds ()));
+        m_nextTriggeredUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::DoSendNeighborStatusUpdate, this, false);
+      }
+
+    delay = Seconds (m_rand->GetValue (0.01, m_startupDelay.GetSeconds ()));
+    m_nextTriggeredUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendNeighborStatusRequest, this);
+
+    Ipv4RoutingProtocol::DoInitialize ();
 }
 
 // Formatted like output of "route -n" command
@@ -1026,7 +1061,10 @@ Ipv4DGRRouting::PrintRoutingTable (Ptr<OutputStreamWrapper> stream, Time::Unit u
 
 
 Ptr<Ipv4Route>
-Ipv4DGRRouting::RouteOutput (Ptr<Packet> p, const Ipv4Header &header, Ptr<NetDevice> oif, Socket::SocketErrno &sockerr)
+Ipv4DGRRouting::RouteOutput (Ptr<Packet> p,
+                             const Ipv4Header &header,
+                             Ptr<NetDevice> oif,
+                             Socket::SocketErrno &sockerr)
 {
   // std::cout << "at Node: " << m_ipv4->GetNetDevice (0)->GetNode ()->GetId () << "RouteOutput" << std::endl;
   NS_LOG_FUNCTION (this << p << &header << oif << &sockerr);
@@ -1354,7 +1392,7 @@ Ipv4DGRRouting::SendTriggeredNeighborStatusUpdate ()
 }
 
 void
-Ipv4DGRRouting::SendUnsolicitedRouteUpdate ()
+Ipv4DGRRouting::SendUnsolicitedUpdate ()
 {
   NS_LOG_FUNCTION (this);
   if (m_nextTriggeredUpdate.IsRunning ())
@@ -1364,7 +1402,7 @@ Ipv4DGRRouting::SendUnsolicitedRouteUpdate ()
   
   DoSendNeighborStatusUpdate (true);
   Time delay = m_unsolicitedUpdate + Seconds (m_rand->GetValue (0, 0.5 * m_unsolicitedUpdate.GetSeconds ()));
-  m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedRouteUpdate, this);
+  m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedUpdate, this);
 }
 
 void
@@ -1412,7 +1450,7 @@ Ipv4DGRRouting::DoSendNeighborStatusUpdate (bool periodic)
                 {
                   p->AddHeader (hdr);
                   NS_LOG_DEBUG ("SendTo: " << *p);
-                  iter->first->SendTo (p, 0, InetSocketAddress (senderAddress, port)); // Todo : defind the port for DGR routing
+                  iter->first->SendTo (p, 0, InetSocketAddress (DGR_BROAD_CAST, DGR_PORT)); // Todo : defind the port for DGR routing
                   p->RemoveHeader (hdr);
                   hdr.ClearNses ();
                 }

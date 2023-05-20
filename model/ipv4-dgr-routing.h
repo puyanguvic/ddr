@@ -332,9 +332,12 @@ private:
   EventId m_nextUnsolicitedUpdate; //!< Next Unsolicited Update event
   EventId m_nextTriggeredUpdate; //!< Next Triggered Update event
 
+  Time m_startupDelay;            //!< Random delay before protocol startup
   Time m_minTriggeredUpdateDelay; //!< Min cooldown delay after a Triggered Update.
   Time m_maxTriggeredUpdateDelay; //!< Max cooldown delay after a Triggered Update.  
-  Time m_unsolicitedUpdate;       //!< time between two Unsolicited Routing Updates.  
+  Time m_unsolicitedUpdate;       //!< time between two Unsolicited Routing Updates.
+  Time m_timeoutDelay;            //!< Delay before invalidating a status
+
 
   std::set<uint32_t> m_interfaceExclusions; //!<Set of excluded interfaces
   
@@ -362,9 +365,9 @@ private:
   void SendTriggeredNeighborStatusUpdate ();
 
   /**
-   * \brief Send Unsolicited Routing Updates on all interfaces.
+   * \brief Send Unsolicited neighbor status information Updates on all interfaces.
   */
-  void SendUnsolicitedRouteUpdate ();
+  void SendUnsolicitedUpdate ();
 
   /**
    * \brief Handle DGR requests.
@@ -393,7 +396,10 @@ private:
                        Ipv4Address senderAddress,
                        uint32_t incomingInterface,
                        uint8_t hopLimit);
+
+  bool m_initialized; //!< flag to allow socket's late-creation.
 };
+
 
 } // Namespace ns3
 
