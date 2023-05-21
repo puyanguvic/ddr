@@ -30,6 +30,7 @@ class DGRv2QueueDisc : public QueueDisc {
 
     // Get current queue state
     DgrNse GetQueueStatus ();
+    
   private:
     uint32_t m_fastWeight;
     uint32_t m_normalWeight;

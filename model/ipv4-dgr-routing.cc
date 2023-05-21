@@ -1459,7 +1459,7 @@ Ipv4DGRRouting::DoSendNeighborStatusUpdate (bool periodic)
               {
                 p->AddHeader (hdr);
                 NS_LOG_DEBUG ("SendTo: " << *p);
-                iter->first->SendTo(p, 0, InetSocketAddress (senderAddress, Port)); // Todo: Defined the RIP port
+                iter->first->SendTo(p, 0, InetSocketAddress (DGR_BROAD_CAST, DGR_PORT)); // Todo: Defined the DGR port
               }
         }
     }
@@ -1480,8 +1480,8 @@ Ipv4DGRRouting::SendNeighborStatusRequest ()
   hdr.SetCommand (DgrHeader::REQUEST);
 
   DgrNse nse;
-  nse.SetInterface ();
-  nse.SetQueueSize ();
+  nse.SetInterface (0);
+  nse.SetQueueSize (0);
 
   hdr.AddNse (nse);
   p->AddHeader (hdr);
@@ -1492,7 +1492,7 @@ Ipv4DGRRouting::SendNeighborStatusRequest ()
       if (m_interfaceExclusions.find (interface) == m_interfaceExclusions.end ())
         {
           NS_LOG_DEBUG ("SendTo: " << *p);
-          iter->first->SendTo (p, 0, InetSocketAddress ( ipadd, port));
+          iter->first->SendTo (p, 0, InetSocketAddress ( ipadd, DGR_PORT));
         }
     }
 
@@ -1543,8 +1543,8 @@ Ipv4DGRRouting::HandleRequests (DgrHeader hdr,
               // and the local address might be used on different interfaces.
               Ptr<Socket> sendingSocket;
               for (SocketListI iter = m_unicastSocketList.begin ();
-                  iter != m_unicastSocketList.end ();
-                  iter ++)
+                   iter != m_unicastSocketList.end ();
+                   iter ++)
                 {
                   if (iter->second == incomingInterface)
                     {
@@ -1576,15 +1576,14 @@ Ipv4DGRRouting::HandleRequests (DgrHeader hdr,
                   Ptr<QueueDisc> disc = m_ipv4->GetObject<Node> ()->
                                         GetObject<TrafficControlLayer> ()->
                                         GetRootQueueDiscOnDevice (dev);
-                  Ptr<QueueDisc> disc = DynamicCast <DGRv2QueueDisc> (disc);
-                  disc->GetCurrentStatus ();
-                  DgrNse nse; // TODO: Load neighbor status information
+                  Ptr<DGRv2QueueDisc> dgr_disc = DynamicCast <DGRv2QueueDisc> (disc);
+                  DgrNse nse = dgr_disc->GetQueueStatus ();
                   hdr.AddNse (nse);
                   if (hdr.GetNseNumber () == maxNse)
                     {
                       p->AddHeader (hdr);
                       NS_LOG_DEBUG ("SendTo: " << *p);
-                      sendingSocket->SendTo (p, 0, InetSocketAddress (senderAddress, port)); // Todo : defind the port for DGR routing
+                      sendingSocket->SendTo (p, 0, InetSocketAddress (senderAddress, DGR_PORT)); // Todo : defind the port for DGR routing
                       p->RemoveHeader (hdr);
                       hdr.ClearNses ();
                     }
@@ -1593,7 +1592,7 @@ Ipv4DGRRouting::HandleRequests (DgrHeader hdr,
                   {
                     p->AddHeader (hdr);
                     NS_LOG_DEBUG ("SendTo: " << *p);
-                    sendingSocket->SendTo(p, 0, InetSocketAddress (senderAddress, Port)); // Todo: Defined the RIP port
+                    sendingSocket->SendTo(p, 0, InetSocketAddress (senderAddress, DGR_PORT)); // Todo: Defined the RIP port
                   }
             }
           
