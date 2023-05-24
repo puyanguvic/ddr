@@ -68,6 +68,17 @@ Ipv4DGRRouting::GetTypeId (void)
                    BooleanValue (false),
                    MakeBooleanAccessor (&Ipv4DGRRouting::m_respondToInterfaceEvents),
                    MakeBooleanChecker ())
+
+    .AddAttribute ("UnsolicitedRoutingUpdate",
+                   "The time between two Unsolicited Routing Updates.",
+                   TimeValue(Seconds (30)),
+                   MakeTimeAccessor (&Ipv4DGRRouting::m_unsolicitedUpdate),
+                   MakeTimeChecker ())
+    .AddAttribute ("StartupDelay",
+                   "Maximum random delay for protocol startup (send route requests).",
+                   TimeValue(Seconds(1)),
+                   MakeTimeAccessor(&Ipv4DGRRouting::m_startupDelay),
+                   MakeTimeChecker ())
   ;
   return tid;
 }
@@ -77,7 +88,6 @@ Ipv4DGRRouting::Ipv4DGRRouting ()
     m_respondToInterfaceEvents (false)
 {
   NS_LOG_FUNCTION (this);
-
   m_rand = CreateObject<UniformRandomVariable> ();
 }
 
@@ -912,14 +922,13 @@ void
 Ipv4DGRRouting::DoInitialize ()
 {
   NS_LOG_FUNCTION (this);
-
   bool addedGlobal = false;
   m_initialized = true;
 
   Time delay = m_unsolicitedUpdate + 
                Seconds (m_rand->GetValue (0, 0.5*m_unsolicitedUpdate.GetSeconds ()));
   m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedUpdate, this);
-
+  
   for (uint32_t i = 0; i < m_ipv4->GetNInterfaces (); i ++)
     {
       Ptr<LoopbackNetDevice> check = DynamicCast<LoopbackNetDevice>(m_ipv4->GetNetDevice (i));
@@ -939,12 +948,15 @@ Ipv4DGRRouting::DoInitialize ()
         {
           Ipv4InterfaceAddress address = m_ipv4->GetAddress (i, j);
           NS_LOG_LOGIC ("For interface: " << i << "the " << j << "st Address is " << address);
+          // std::cout << "For interface: " << i << " the " << j << "st Address is ";
+          // address.GetAddress ().Print (std::cout);
           if (address.GetScope () != Ipv4InterfaceAddress::HOST && activeInterface == true)
             {
               NS_LOG_LOGIC ("DGR: add socket to " << address.GetLocal ());
               TypeId tid = TypeId::LookupByName ("ns3::UdpSocketFactory");
-              Ptr<Node> theNode = GetObject<Node> ();
+              Ptr<Node> theNode = m_ipv4->GetObject<Node> ();
               Ptr<Socket> socket = Socket::CreateSocket (theNode, tid);
+
               InetSocketAddress local = InetSocketAddress (address.GetLocal (), DGR_PORT);
               socket->BindToNetDevice (m_ipv4->GetNetDevice (i));
               int ret = socket->Bind (local);
@@ -967,7 +979,7 @@ Ipv4DGRRouting::DoInitialize ()
       {
         NS_LOG_LOGIC ("DGR: adding receiving socket");
         TypeId tid = TypeId::LookupByName ("ns3::UdpSocketFactory");
-        Ptr<Node> theNode = GetObject<Node> ();
+        Ptr<Node> theNode = m_ipv4->GetObject<Node> ();
         m_multicastRecvSocket = Socket::CreateSocket (theNode, tid);
         InetSocketAddress local = InetSocketAddress (DGR_BROAD_CAST, DGR_PORT);
         m_multicastRecvSocket->Bind (local);
@@ -1310,6 +1322,9 @@ Ipv4DGRRouting::SetIpv4 (Ptr<Ipv4> ipv4)
 void
 Ipv4DGRRouting::Receive (Ptr<Socket> socket)
 {
+  std::cout << ">> At Node: ";
+  std::cout << m_ipv4->GetObject<Node> ()->GetId ();
+  std::cout << " Receive packet.\n";
   NS_LOG_FUNCTION (this << socket);
 
   Address sender;
@@ -1317,12 +1332,17 @@ Ipv4DGRRouting::Receive (Ptr<Socket> socket)
   InetSocketAddress senderAddr = InetSocketAddress::ConvertFrom (sender);
   NS_LOG_INFO ("Received " << *packet << " from " << senderAddr.GetIpv4 () << ":"
                            << senderAddr.GetPort ());
-  
+  packet->Print (std::cout);
+  std::cout << std::endl;
   Ipv4Address senderAddress = senderAddr.GetIpv4 ();
   uint32_t senderPort = senderAddr.GetPort ();
+  std::cout << "Sender Address: ";
+  senderAddress.Print (std::cout);
+  std::cout << ", Sender Port: " << senderPort << std::endl;
 
   if (socket == m_multicastRecvSocket)
     {
+      std::cout << "From group cast \n";
       NS_LOG_LOGIC ("Received a packet from the multicast socket");
     }
   else
@@ -1335,8 +1355,9 @@ Ipv4DGRRouting::Receive (Ptr<Socket> socket)
     {
       NS_ABORT_MSG ("No incoming interface on This message, aborting,");
     }
+  
   uint32_t incomingIf = interfaceInfo.GetRecvIf ();
-  Ptr<Node> node = this->GetObject<Node> ();
+  Ptr<Node> node = m_ipv4->GetObject<Node> ();
   Ptr<NetDevice> dev = node->GetDevice (incomingIf);
   uint32_t ipInterfaceIndex = m_ipv4->GetInterfaceForDevice (dev);
 
@@ -1394,6 +1415,7 @@ Ipv4DGRRouting::SendTriggeredNeighborStatusUpdate ()
 void
 Ipv4DGRRouting::SendUnsolicitedUpdate ()
 {
+  std::cout << "Send UnsolicitedUpdate!\n";
   NS_LOG_FUNCTION (this);
   if (m_nextTriggeredUpdate.IsRunning ())
     {
@@ -1469,7 +1491,6 @@ void
 Ipv4DGRRouting::SendNeighborStatusRequest ()
 {
   NS_LOG_FUNCTION (this);
-
   Ptr<Packet> p = Create<Packet> ();
   SocketIpTtlTag ttlTag;
   p->RemovePacketTag (ttlTag);
@@ -1485,17 +1506,21 @@ Ipv4DGRRouting::SendNeighborStatusRequest ()
 
   hdr.AddNse (nse);
   p->AddHeader (hdr);
-
+  std::cout << ">> At Node: ";
+  std::cout << m_ipv4->GetObject<Node> ()->GetId ();
+  std::cout << " Send request packet.\n";
+  p->Print (std::cout);
+  std::cout << std::endl;
   for (SocketListI iter = m_unicastSocketList.begin (); iter != m_unicastSocketList.end (); iter ++)
     {
       uint32_t interface = iter->second;
       if (m_interfaceExclusions.find (interface) == m_interfaceExclusions.end ())
         {
           NS_LOG_DEBUG ("SendTo: " << *p);
-          iter->first->SendTo (p, 0, InetSocketAddress ( ipadd, DGR_PORT));
+          std::cout << "Send to: " << interface << std::endl;
+          iter->first->SendTo (p, 0, InetSocketAddress (DGR_BROAD_CAST, DGR_PORT));
         }
     }
-
 }
 
 void
@@ -1526,6 +1551,9 @@ Ipv4DGRRouting::HandleRequests (DgrHeader hdr,
 {
   NS_LOG_FUNCTION (this << senderAddress << senderPort 
                         << incomingInterface << hopLimit << hdr);
+  std::cout << ">> Handle requests of Address: ";
+  senderAddress.Print (std::cout);
+  std::cout << " hopLimit: " << hopLimit << std::endl;
   std::list<DgrNse> nses = hdr.GetNseList ();
   if (nses.empty ())
     {

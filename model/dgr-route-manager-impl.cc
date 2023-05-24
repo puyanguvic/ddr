@@ -706,6 +706,7 @@ DGRRouteManagerImpl::InitializeRoutes ()
   for (NodeList::Iterator i = NodeList::Begin (); i != listEnd; i++)
     {
       Ptr<Node> node = *i;
+
       //
       // Look for the DGRRouter interface that indicates that the node is
       // participating in routing.
@@ -720,6 +721,11 @@ DGRRouteManagerImpl::InitializeRoutes ()
           continue;
         }
 
+      // ---------- Initialize Neighbor Information exchange ----
+      Ptr<Ipv4DGRRouting> dgr = rtr->GetRoutingProtocol ();
+      dgr->DoInitialize ();
+
+      // -------- Initialize routing table --------------
       //
       // if the node has a DGR router interface, then run the DGR routing
       // algorithms.

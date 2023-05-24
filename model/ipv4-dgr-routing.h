@@ -34,6 +34,7 @@
 #include "ns3/random-variable-stream.h"
 #include "ns3/nstime.h"
 #include "dgr-route-manager-impl.h"
+#include "dgr-header.h"
 #include "ipv4-dgr-routing-table-entry.h"
 #include "neighbor-status-database.h"
 
@@ -267,17 +268,15 @@ public:
    */
   Ptr<Ipv4Route> LookupUniRoute (Ipv4Address dest, Ptr<NetDevice> oif = 0);
   Ptr<Ipv4Route> LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDevice> idev = 0); // budget in microsecond
-  
+  /**
+   * Start protocol operation
+  */
+  void DoInitialize () override;
 protected:
   /**
    * \brief Dispose this object
   */
   void DoDispose (void) override;
-
-  /**
-   * Start protocol operation
-  */
-  void DoInitialize () override;
 
 
 private:
