@@ -139,7 +139,6 @@ Ipv4DGRRouting::AddHostRouteTo (Ipv4Address dest,
 {
   NS_LOG_FUNCTION (this << dest << nextHop << interface << nextInterface << distance);
   Ipv4DGRRoutingTableEntry *route = new Ipv4DGRRoutingTableEntry ();
-  // std::cout << "add host route with the distance = " << distance;
   *route = Ipv4DGRRoutingTableEntry::CreateHostRouteTo(dest, nextHop, interface, nextInterface, distance);
   m_hostRoutes.push_back (route);
 }
@@ -198,8 +197,6 @@ Ipv4DGRRouting::LookupUniRoute (Ipv4Address dest, Ptr<NetDevice> oif)
   */
   NS_LOG_FUNCTION (this << dest << oif);
   NS_LOG_LOGIC ("Looking for route for destination " << dest);
-  // dest.Print (std::cout);
-  // std::cout << "\n";
 
   Ptr<Ipv4Route> rtentry = 0;
   // store all available routes that bring packets to their destination
@@ -296,7 +293,6 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
       NS_ASSERT ((*i)->IsHost ());
       if ((*i)->GetDest () == dest)
         {
-          // std::cout << "find routes continue" << std::endl;
           if (idev)
             {
               if (idev == m_ipv4->GetNetDevice ((*i)->GetInterface ()))
@@ -318,7 +314,6 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
           uint32_t dvq_max = dvq->GetInternalQueue (1)->GetMaxSize ().GetValue ();
           if (dvq_length >= dvq_max * 0.75)
             {
-              // std::cout << "congestion happend at node: " << dev->GetNode ()->GetId () << std::endl;
               NS_LOG_LOGIC ("Congestion happened, skipping");
               continue;
             }
@@ -342,12 +337,9 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
               uint32_t dvq_slow_next = dvq_next->GetInternalQueue (1)->GetCurrentSize ().GetValue ();
               uint32_t dvq_slow_max_next = dvq_next->GetInternalQueue (1)->GetMaxSize ().GetValue ();
               uint32_t dvq_normal_next = dvq_next->GetInternalQueue (2)->GetCurrentSize ().GetValue ();
-              uint32_t dvq_normal_max_next = 155;  // next_dvq->GetInternalQueue (2)-> GetMaxSize ().GetValue ();
-              // if (next_dvq_slow_length != 0) std::cout << "slow lane current: " << next_dvq_slow_length  << "slow_max: " << next_dvq_slow_max << std::endl;
-              // std::cout <<"next node " << d_node->GetId () << " next dvq_length: " << next_dvq_length  << "    " << next_dvq_max << std::endl;
+              uint32_t dvq_normal_max_next = 155;
               if (dvq_slow_next >= dvq_slow_max_next * 0.75 || dvq_normal_next >= dvq_normal_max_next * 0.75)
                 {
-                  // std::cout << "congestion happend at next node: " << d_node->GetId () << std::endl;
                   NS_LOG_LOGIC ("Congestion happend in next hop, skipping");
                   continue;
                 }
@@ -359,15 +351,10 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
 
           if ((*i)->GetDistance () > bgt || (*i)->GetDistance () > dist)
             {
-              // std::cout << "at node: " << dev->GetNode ()->GetId ();
-              // std::cout << "budget continue" << std::endl;
-              // std::cout << (*i)->GetDistance () << ", " << bgt << std::endl;
-              // std::cout << "budget: " << bgt << " distance: " << (*i)->GetDistance () << " dist: " << dist << std::endl;
               NS_LOG_LOGIC ("Too far to the destination, skipping");
               continue;
             }
           allRoutes.push_back (*i);
-          // std::cout << allRoutes.size () << "Found DGR host route" << *i << " with Cost: " << (*i)->GetDistance ();
           NS_LOG_LOGIC (allRoutes.size () << "Found DGR host route" << *i << " with Cost: " << (*i)->GetDistance ()); 
         }
     }
@@ -1322,9 +1309,6 @@ Ipv4DGRRouting::SetIpv4 (Ptr<Ipv4> ipv4)
 void
 Ipv4DGRRouting::Receive (Ptr<Socket> socket)
 {
-  std::cout << ">> At Node: ";
-  std::cout << m_ipv4->GetObject<Node> ()->GetId ();
-  std::cout << " Receive packet.\n";
   NS_LOG_FUNCTION (this << socket);
 
   Address sender;
@@ -1332,17 +1316,10 @@ Ipv4DGRRouting::Receive (Ptr<Socket> socket)
   InetSocketAddress senderAddr = InetSocketAddress::ConvertFrom (sender);
   NS_LOG_INFO ("Received " << *packet << " from " << senderAddr.GetIpv4 () << ":"
                            << senderAddr.GetPort ());
-  packet->Print (std::cout);
-  std::cout << std::endl;
   Ipv4Address senderAddress = senderAddr.GetIpv4 ();
   uint32_t senderPort = senderAddr.GetPort ();
-  std::cout << "Sender Address: ";
-  senderAddress.Print (std::cout);
-  std::cout << ", Sender Port: " << senderPort << std::endl;
-
   if (socket == m_multicastRecvSocket)
     {
-      std::cout << "From group cast \n";
       NS_LOG_LOGIC ("Received a packet from the multicast socket");
     }
   else
@@ -1360,7 +1337,6 @@ Ipv4DGRRouting::Receive (Ptr<Socket> socket)
   Ptr<Node> node = m_ipv4->GetObject<Node> ();
   Ptr<NetDevice> dev = node->GetDevice (incomingIf);
   uint32_t ipInterfaceIndex = m_ipv4->GetInterfaceForDevice (dev);
-
   SocketIpTtlTag hoplimitTag;
   if (!packet->RemovePacketTag (hoplimitTag))
   {
@@ -1374,15 +1350,15 @@ Ipv4DGRRouting::Receive (Ptr<Socket> socket)
       NS_LOG_LOGIC ("Ignoring a packet sent by myself.");
       return ;
     }
-
   DgrHeader hdr;
   packet->RemoveHeader (hdr);
+  
   if (hdr.GetCommand () == DgrHeader::RESPONSE)
     {
       NS_LOG_LOGIC ("The message is a Response from " << senderAddr.GetIpv4 () << ":"
                                                       << senderAddr.GetPort ());
       HandleResponses (hdr, senderAddress, ipInterfaceIndex, hopLimit);
-
+      
     }
   else if (hdr.GetCommand () == DgrHeader::REQUEST)
     {
@@ -1413,9 +1389,8 @@ Ipv4DGRRouting::SendTriggeredNeighborStatusUpdate ()
 }
 
 void
-Ipv4DGRRouting::SendUnsolicitedUpdate ()
+Ipv4DGRRouting:: SendUnsolicitedUpdate ()
 {
-  std::cout << "Send UnsolicitedUpdate!\n";
   NS_LOG_FUNCTION (this);
   if (m_nextTriggeredUpdate.IsRunning ())
     {
@@ -1499,25 +1474,13 @@ Ipv4DGRRouting::SendNeighborStatusRequest ()
 
   DgrHeader hdr;
   hdr.SetCommand (DgrHeader::REQUEST);
-
-  DgrNse nse;
-  nse.SetInterface (0);
-  nse.SetQueueSize (0);
-
-  hdr.AddNse (nse);
   p->AddHeader (hdr);
-  std::cout << ">> At Node: ";
-  std::cout << m_ipv4->GetObject<Node> ()->GetId ();
-  std::cout << " Send request packet.\n";
-  p->Print (std::cout);
-  std::cout << std::endl;
   for (SocketListI iter = m_unicastSocketList.begin (); iter != m_unicastSocketList.end (); iter ++)
     {
       uint32_t interface = iter->second;
       if (m_interfaceExclusions.find (interface) == m_interfaceExclusions.end ())
         {
           NS_LOG_DEBUG ("SendTo: " << *p);
-          std::cout << "Send to: " << interface << std::endl;
           iter->first->SendTo (p, 0, InetSocketAddress (DGR_BROAD_CAST, DGR_PORT));
         }
     }
@@ -1535,8 +1498,30 @@ Ipv4DGRRouting::HandleResponses (DgrHeader hdr,
       NS_LOG_LOGIC ("Ignoring an update message from an excluded interface: " << incomingInterface);
       return;
     }
+  std::cout << ">> handle responses from: ";
+  senderAddress.Print (std::cout);
+  std::cout << std::endl;
+  // Update Neighbor state database
   std::list<DgrNse> nses = hdr.GetNseList ();
+  NeighborStatusEntry *entry = m_nsdb->GetNeighborStatusEntry (incomingInterface);
+  if (entry == nullptr)
+    {
+      entry = new NeighborStatusEntry ();
+    }
+  
+  for (std::list<DgrNse>::iterator iter = nses.begin (); iter != nses.end (); iter ++)
+    {
+      uint32_t n_iface = (*iter).GetInterface ();
+      StatusUnit su = entry->GetNumStatusUnit ();
+      entry->Insert (n_iface,)
+      DgrNse temp = *iter;
+      
+      su.
+      entry.Insert ()
+      uint32_t iface = temp.GetInterface ();
+      uint32_t qSize = temp.GetQueueSize ();
 
+    }
   // process NSEs store the to the NSDB
   
 
@@ -1554,78 +1539,80 @@ Ipv4DGRRouting::HandleRequests (DgrHeader hdr,
   std::cout << ">> Handle requests of Address: ";
   senderAddress.Print (std::cout);
   std::cout << " hopLimit: " << hopLimit << std::endl;
-  std::list<DgrNse> nses = hdr.GetNseList ();
-  if (nses.empty ())
+
+  if (m_interfaceExclusions.find (incomingInterface) == m_interfaceExclusions.end ())
     {
-      return;
-    }
-  // check if it's a request for a neighbor status info from a neighbor
-  if (nses.size () == 1)
-    {
-      if (nses.begin ()->GetInterface () == 0 &&
-          nses.begin ()->GetQueueSize () == 0)
+      // We use one of the sending sockets, as they're bound to the right interface
+      // and the local address might be used on different interfaces.
+      Ptr<Socket> sendingSocket;
+      for (SocketListI iter = m_unicastSocketList.begin ();
+            iter != m_unicastSocketList.end ();
+            iter ++)
         {
-          if (m_interfaceExclusions.find (incomingInterface) == m_interfaceExclusions.end ())
+          if (iter->second == incomingInterface)
             {
-              // We use one of the sending sockets, as they're bound to the right interface
-              // and the local address might be used on different interfaces.
-              Ptr<Socket> sendingSocket;
-              for (SocketListI iter = m_unicastSocketList.begin ();
-                   iter != m_unicastSocketList.end ();
-                   iter ++)
-                {
-                  if (iter->second == incomingInterface)
-                    {
-                      sendingSocket = iter->first;
-                    }
-                }
-              NS_ASSERT_MSG (sendingSocket,
-                             "HandleRequest - Impossible to find a socket to send the reply");
-              
-              uint16_t mtu = m_ipv4->GetMtu (incomingInterface);
-              uint16_t maxNse = (mtu - Ipv4Header().GetSerializedSize () -
-                                 UdpHeader ().GetSerializedSize () - DgrHeader ().GetSerializedSize ())/DgrNse ().GetSerializedSize ();
-              
-              Ptr<Packet> p = Create<Packet> ();
-              SocketIpTtlTag ttlTag;
-              p->RemovePacketTag (ttlTag);
-              p->AddPacketTag (ttlTag);
+              sendingSocket = iter->first;
+            }
+        }
+      NS_ASSERT_MSG (sendingSocket,
+                      "HandleRequest - Impossible to find a socket to send the reply");
+      
+      uint16_t mtu = m_ipv4->GetMtu (incomingInterface);
+      uint16_t maxNse = (mtu - Ipv4Header().GetSerializedSize () -
+                          UdpHeader ().GetSerializedSize () - DgrHeader ().GetSerializedSize ())/DgrNse ().GetSerializedSize ();
+      
+      Ptr<Packet> p = Create<Packet> ();
+      SocketIpTtlTag ttlTag;
+      ttlTag.SetTtl (1);
+      p->AddPacketTag (ttlTag);
 
-              // Serialize the current Device Status
-              DgrHeader hdr;
-              hdr.SetCommand (DgrHeader::RESPONSE);
-              for (uint32_t i = 0; i < m_ipv4->GetNInterfaces (); i ++)
-                {
-                  if (!m_ipv4->IsUp (i)) continue;
+      // Serialize the current Device Status
+      DgrHeader hdr;
+      hdr.SetCommand (DgrHeader::RESPONSE);
 
-                  // get the device
-                  Ptr<NetDevice> dev = m_ipv4->GetNetDevice (i);
-                  // get the queue disc on devic
-                  Ptr<QueueDisc> disc = m_ipv4->GetObject<Node> ()->
-                                        GetObject<TrafficControlLayer> ()->
-                                        GetRootQueueDiscOnDevice (dev);
-                  Ptr<DGRv2QueueDisc> dgr_disc = DynamicCast <DGRv2QueueDisc> (disc);
-                  DgrNse nse = dgr_disc->GetQueueStatus ();
-                  hdr.AddNse (nse);
-                  if (hdr.GetNseNumber () == maxNse)
-                    {
-                      p->AddHeader (hdr);
-                      NS_LOG_DEBUG ("SendTo: " << *p);
-                      sendingSocket->SendTo (p, 0, InetSocketAddress (senderAddress, DGR_PORT)); // Todo : defind the port for DGR routing
-                      p->RemoveHeader (hdr);
-                      hdr.ClearNses ();
-                    }
-                }
-                if (hdr.GetNseNumber () > 0)
-                  {
-                    p->AddHeader (hdr);
-                    NS_LOG_DEBUG ("SendTo: " << *p);
-                    sendingSocket->SendTo(p, 0, InetSocketAddress (senderAddress, DGR_PORT)); // Todo: Defined the RIP port
-                  }
+      for (uint32_t i = 0; i < m_ipv4->GetNInterfaces (); i ++)
+        {
+          if (!m_ipv4->IsUp (i)) continue;
+
+          // get the device
+          Ptr<NetDevice> dev = m_ipv4->GetNetDevice (i);
+
+          // get the queue disc on devic
+          Ptr<QueueDisc> disc = m_ipv4->GetObject<Node> ()->
+                                GetObject<TrafficControlLayer> ()->
+                                GetRootQueueDiscOnDevice (dev);
+          if (disc == nullptr)
+            {
+              NS_LOG_LOGIC ("loopback devices don't have queue disc!");
+              continue;
+            }
+
+          Ptr<DGRv2QueueDisc> dgr_disc = DynamicCast <DGRv2QueueDisc> (disc);
+          
+          if (dgr_disc == nullptr)
+            {
+              NS_LOG_LOGIC ("No DGRv2QueueDisc find!");
+              continue;
             }
           
+          DgrNse nse = dgr_disc->GetQueueStatus ();
+          nse.SetInterface (i);
+          hdr.AddNse (nse);
+          if (hdr.GetNseNumber () == maxNse)
+            {
+              p->AddHeader (hdr);
+              NS_LOG_DEBUG ("SendTo: " << *p);
+              sendingSocket->SendTo (p, 0, InetSocketAddress (senderAddress, DGR_PORT)); // to neighbor
+              p->RemoveHeader (hdr);
+              hdr.ClearNses ();
+            }
         }
-
+        if (hdr.GetNseNumber () > 0)
+          {
+            p->AddHeader (hdr);
+            NS_LOG_DEBUG ("SendTo: " << *p);
+            sendingSocket->SendTo(p, 0, InetSocketAddress (senderAddress, DGR_PORT)); // Todo: Defined the RIP port
+          }
     }
 }
 

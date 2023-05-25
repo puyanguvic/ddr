@@ -33,13 +33,14 @@ public:
   ~NeighborStatusEntry ();
 
   void Insert (uint32_t n_iface , StatusUnit su);
+  StatusUnit* GetStatusUnit (uint32_t n_iface) const;
   uint32_t GetNumStatusUnit () const;
   void Print (std::ostream &os) const;
   
 private:
-  typedef std::map<uint32_t, StatusUnit>
+  typedef std::map<uint32_t, StatusUnit*>
       NSMap_t; /** status, statistic*/
-  typedef std::pair<uint32_t, StatusUnit> 
+  typedef std::pair<uint32_t, StatusUnit*> 
       NSPair_t; //!< pair of <interface, StatusUnit>
   NSMap_t m_database;
 };  
