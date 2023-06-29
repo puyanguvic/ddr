@@ -61,11 +61,11 @@ DGRv2QueueDisc::DoEnqueue (Ptr<QueueDiscItem> item)
   uint32_t itemSize = item->GetSize ();
   uint32_t currentQueueSize = GetInternalQueue (band)->GetCurrentSize ().GetValue ();
   uint32_t maxQueueSize = GetInternalQueue (band)->GetMaxSize ().GetValue ();
-  if (currentQueueSize + itemSize > maxQueueSize)
-    {
-      NS_LOG_LOGIC ("Queue disc limit exceeded -- drop packet");
-      DropBeforeEnqueue (item, LIMIT_EXCEEDED_DROP);
-    }
+  // if (currentQueueSize + itemSize > maxQueueSize)
+  //   {
+  //     NS_LOG_LOGIC ("Queue disc limit exceeded -- drop packet");
+  //     DropBeforeEnqueue (item, LIMIT_EXCEEDED_DROP);
+  //   }
   bool retval = GetInternalQueue (band)->Enqueue (item);
   if (!retval)
     {
