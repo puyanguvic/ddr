@@ -9,6 +9,13 @@
 
 #include <list>
 
+// ---Delay Guaranteed Routing Packet Header---
+//   | 8 bite  | 8 bite  | 8 bite  | 8 bite  |
+//   | version | commond |       Empty       |
+//   | Interface ID      |      States       |
+//                      ...
+//                      ...
+
 namespace ns3 {
 
 /**
@@ -65,11 +72,11 @@ class DgrNse : public Header
     */
     uint32_t GetInterface () const;
 
-    void SetQueueSize (uint32_t qSize);
-    uint32_t GetQueueSize () const;
+    void SetState (uint32_t state);
+    uint32_t GetState () const;
   private:
     uint32_t m_iface;
-    uint32_t m_qSize;
+    uint32_t m_state;
 };
 
 /**

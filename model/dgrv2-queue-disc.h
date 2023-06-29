@@ -17,19 +17,21 @@ class DGRv2QueueDisc : public QueueDisc {
      */
     static TypeId GetTypeId (void);
     /**
-     * \brief PfifoFastQueueDisc constructor
-     *
-     * Creates a queue with a depth of 1000 packets per band by default
+     * \brief DGRv2QueueDisc constructor
      */
     DGRv2QueueDisc ();
-
+    /**
+     * \brief DGRv2QueueDisc Destructor
+    */
     ~DGRv2QueueDisc();
 
     // Reasons for dropping packets
     static constexpr const char* LIMIT_EXCEEDED_DROP = "Queue disc limit exceeded";  //!< Packet dropped due to queue disc limit exceeded
 
     // Get current queue state
-    DgrNse GetQueueStatus ();
+    uint32_t GetQueueStatus ();
+    bool CheckConfig (void) override;
+
     
   private:
     uint32_t m_fastWeight;
@@ -42,7 +44,7 @@ class DGRv2QueueDisc : public QueueDisc {
     bool DoEnqueue (Ptr<QueueDiscItem> item) override;
     Ptr<QueueDiscItem> DoDequeue (void) override;
     Ptr<const QueueDiscItem> DoPeek (void) override;
-    bool CheckConfig (void) override;
+    // bool CheckConfig (void) override;
     void InitializeParams (void) override;
 
     uint32_t EnqueueClassify (Ptr<QueueDiscItem> item);

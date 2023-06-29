@@ -15,7 +15,7 @@ NS_OBJECT_ENSURE_REGISTERED (DgrNse);
 
 DgrNse::DgrNse ()
     : m_iface (0),
-      m_qSize (0)
+      m_state (0)
 {
 }
 
@@ -38,7 +38,7 @@ DgrNse::GetInstanceTypeId () const
 void
 DgrNse::Print (std::ostream& os) const
 {
-  os << "Iface: " << m_iface << ", QueueSize: " << m_qSize;
+  os << "Iface: " << m_iface << ", State: " << m_state;
 }
 
 uint32_t
@@ -52,7 +52,7 @@ DgrNse::Serialize (Buffer::Iterator start) const
 {
   Buffer::Iterator i = start;
   i.WriteHtonU32 (m_iface);
-  i.WriteHtonU32 (m_qSize);
+  i.WriteHtonU32 (m_state);
 }
 
 uint32_t
@@ -60,7 +60,7 @@ DgrNse::Deserialize (Buffer::Iterator start)
 {
   Buffer::Iterator i = start;
   m_iface = i.ReadNtohU32 ();
-  m_qSize = i.ReadNtohU32 ();
+  m_state = i.ReadNtohU32 ();
   return GetSerializedSize ();
 }
 
@@ -77,15 +77,15 @@ DgrNse::GetInterface () const
 }
 
 void
-DgrNse::SetQueueSize (uint32_t qSize)
+DgrNse::SetState (uint32_t state)
 {
-  m_qSize = qSize;
+  m_state = state;
 }
 
 uint32_t
-DgrNse::GetQueueSize () const
+DgrNse::GetState () const
 {
-  return m_qSize;
+  return m_state;
 }
 
 std::ostream&

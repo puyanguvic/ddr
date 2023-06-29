@@ -1441,7 +1441,8 @@ Ipv4DGRRouting::DoSendNeighborStatusUpdate (bool periodic)
                                     GetObject<TrafficControlLayer> ()->
                                     GetRootQueueDiscOnDevice (dev);
               Ptr<DGRv2QueueDisc> qdisc = DynamicCast <DGRv2QueueDisc> (disc);
-              DgrNse nse = qdisc->GetQueueStatus ();
+              DgrNse nse;
+              nse.SetState (qdisc->GetQueueStatus ());
               hdr.AddNse (nse);
               if (hdr.GetNseNumber () == maxNse)
                 {
@@ -1507,24 +1508,21 @@ Ipv4DGRRouting::HandleResponses (DgrHeader hdr,
   if (entry == nullptr)
     {
       entry = new NeighborStatusEntry ();
+      m_nsdb->Insert (incomingInterface, entry);
     }
   
   for (std::list<DgrNse>::iterator iter = nses.begin (); iter != nses.end (); iter ++)
     {
       uint32_t n_iface = (*iter).GetInterface ();
-      StatusUnit su = entry->GetNumStatusUnit ();
-      entry->Insert (n_iface,)
-      DgrNse temp = *iter;
-      
-      su.
-      entry.Insert ()
-      uint32_t iface = temp.GetInterface ();
-      uint32_t qSize = temp.GetQueueSize ();
-
+      uint32_t n_state = (*iter).GetState ();
+      StatusUnit* su = entry->GetStatusUnit (n_iface);
+      if (su == nullptr)
+        {
+          su = new StatusUnit ();
+          entry->Insert (n_iface, su);
+        }
+      su->Update (n_state);
     }
-  // process NSEs store the to the NSDB
-  
-
 }
 
 void
@@ -1595,7 +1593,7 @@ Ipv4DGRRouting::HandleRequests (DgrHeader hdr,
               continue;
             }
           
-          DgrNse nse = dgr_disc->GetQueueStatus ();
+          DgrNse nse;
           nse.SetInterface (i);
           hdr.AddNse (nse);
           if (hdr.GetNseNumber () == maxNse)

@@ -2,6 +2,7 @@
 #ifndef NEIGHBOR_STATUS_Database_H
 #define NEIGHBOR_STATUS_Database_H
 
+#define STATESIZE 10
 #include "ns3/core-module.h"
 #include <map>
 #include <utility>
@@ -13,17 +14,12 @@ class StatusUnit
   public:
     StatusUnit ();
     ~StatusUnit ();
-    double_t GetVariance (void) const;
-    void SetVariance (double_t sigma);
-    double_t GetAverage (void) const;
-    void SetAverage (double_t mean);
-    uint32_t GetNSample (void) const;
-    void SetNSample (uint32_t total);
+    uint32_t GetCurrentState ();
+    void Update (uint32_t state);
     void Print (std::ostream &os) const;
   private:
-    double_t m_sigma; /** variance */
-    double_t m_mean; /** average */
-    uint32_t m_total; /** sample number */
+    uint32_t m_matrix[STATESIZE][STATESIZE];
+    uint32_t m_state; /** current state */
 };
 
 class NeighborStatusEntry
@@ -32,7 +28,7 @@ public:
   NeighborStatusEntry ();
   ~NeighborStatusEntry ();
 
-  void Insert (uint32_t n_iface , StatusUnit su);
+  void Insert (uint32_t n_iface , StatusUnit* su);
   StatusUnit* GetStatusUnit (uint32_t n_iface) const;
   uint32_t GetNumStatusUnit () const;
   void Print (std::ostream &os) const;
@@ -43,7 +39,7 @@ private:
   typedef std::pair<uint32_t, StatusUnit*> 
       NSPair_t; //!< pair of <interface, StatusUnit>
   NSMap_t m_database;
-};  
+};
 
 
 /**
@@ -87,14 +83,15 @@ class DgrNSDB : public Object
     NeighborStatusEntry* GetNeighborStatusEntry (uint32_t iface) const;
 
     /**
-     * \brief Update an <interface / Neighbor Status Entry> into the NSDB
-     * 
+     * \brief Insert an <interface, Neighbor Status Entry> into the NSDB
+     *  
      * The interface and NeighborStatusEntry given as parameters are converted
      * to an STL pair and insert into the database map.
-     * \param 
+     * \param iface interface number
+     * \param nse the neighbor status entry 
     */
-    void Update (uint32_t iface, NeighborStatusEntry* nse);
-
+    void Insert (uint32_t iface, NeighborStatusEntry* nse);
+    
     /**
      * \brief Print the database
      * 

@@ -24,7 +24,7 @@ TypeId DGRv2QueueDisc::GetTypeId (void)
     .SetGroupName ("DGRv2")
     .AddConstructor<DGRv2QueueDisc> ()
     .AddAttribute ("MaxSize",
-                   "The maximum number of packets accepted by this queue disc.",
+                   "The maximum size accepted by this queue disc.",
                    QueueSizeValue (QueueSize ("125KiB")),
                    MakeQueueSizeAccessor (&QueueDisc::SetMaxSize,
                                           &QueueDisc::GetMaxSize),
@@ -42,6 +42,14 @@ DGRv2QueueDisc::DGRv2QueueDisc ()
 DGRv2QueueDisc::~DGRv2QueueDisc ()
 {
   NS_LOG_FUNCTION (this);
+}
+
+uint32_t
+DGRv2QueueDisc::GetQueueStatus ()
+{
+  uint32_t currentSize = GetInternalQueue (0)->GetCurrentSize ().GetValue ();
+  uint32_t maxSize = GetInternalQueue (0)->GetMaxSize ().GetValue ();
+  return currentSize * 20 / maxSize;
 }
 
 
@@ -152,6 +160,7 @@ DGRv2QueueDisc::CheckConfig (void)
   if (GetNInternalQueues () == 0)
     {
       // create 2 DropTail queues with GetLimit() packets each
+      std::cout << "Create 2 DropTail Queue" << std::endl;
       ObjectFactory factory;
       factory.SetTypeId ("ns3::DropTailQueue<QueueDiscItem>");
       factory.Set ("MaxSize", QueueSizeValue (QueueSize ("125KiB")));
@@ -259,14 +268,6 @@ DGRv2QueueDisc::Classify ()
         }
     }
   return 88;
-}
-
-DgrNse
-DGRv2QueueDisc::GetQueueStatus ()
-{
-  DgrNse nse;
-  nse.SetQueueSize (GetInternalQueue (0)->GetCurrentSize ().GetValue ());
-  return nse;
 }
 
 // ------------------------------ QueuePacketFilter --------------------------------

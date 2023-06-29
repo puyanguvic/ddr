@@ -8,9 +8,8 @@ namespace ns3 {
 NS_LOG_COMPONENT_DEFINE ("NeighborStatusDatabase");
 
 StatusUnit::StatusUnit ()
-  : m_sigma (0),
-    m_mean (0),
-    m_total (0)
+  : m_matrix {0},
+    m_state (0)
 {
 }
 
@@ -18,49 +17,35 @@ StatusUnit::~StatusUnit ()
 {
 }
 
-double_t
-StatusUnit::GetVariance (void) const
-{
-  return m_sigma;
-}
-
-void
-StatusUnit::SetVariance (double_t sigma)
-{
-  m_sigma = sigma;
-}
-
-double_t
-StatusUnit::GetAverage (void) const
-{
-  return m_mean;
-}
-
-void
-StatusUnit::SetAverage (double_t mean)
-{
-  m_mean = mean;
-}
-
 uint32_t
-StatusUnit::GetNSample (void) const
+StatusUnit::GetCurrentState ()
 {
-  return m_total;
+  return m_state;
 }
 
 void
-StatusUnit::SetNSample (uint32_t total)
+StatusUnit::Update (uint32_t state)
 {
-  m_total = total;
+  m_matrix[state][m_state] ++;
+  m_state = state;
 }
 
 void
 StatusUnit::Print (std::ostream &os) const
 {
-  os << "variance = " << m_sigma
-     << ", average = " << m_mean
-     << ", sample number = " << m_total
+  os << "current state = " << m_state
      << std::endl;
+  os << "current Markov Transition Probability Matrix: "
+     << std::endl;
+  for (int i = 0; i < 10; i ++)
+    {
+      for (int j = 0; j < 10; j ++)
+        {
+          os << m_matrix[i][j];
+          os << " ";
+        }
+      os << std::endl;
+    }
 }
 
 //----------------------------------------------------------------------
@@ -77,7 +62,7 @@ NeighborStatusEntry::~NeighborStatusEntry ()
 }
 
 void
-NeighborStatusEntry::Insert (uint32_t n_iface, StatusUnit su)
+NeighborStatusEntry::Insert (uint32_t n_iface, StatusUnit* su)
 {
   NSMap_t::iterator it = m_database.find (n_iface);
   if (it != m_database.end ())
@@ -89,6 +74,22 @@ NeighborStatusEntry::Insert (uint32_t n_iface, StatusUnit su)
       m_database.insert (NSPair_t (n_iface, su));
     }
 }
+
+StatusUnit*
+NeighborStatusEntry::GetStatusUnit (uint32_t n_iface) const
+{
+  NS_LOG_FUNCTION (this << n_iface);
+  //
+  // Look up a SU by it's interface.
+  //
+  NSMap_t::const_iterator ci = m_database.find (n_iface);
+  if (ci != m_database.end ())
+    {
+      return ci->second;
+    }
+  return nullptr;
+}
+
 
 uint32_t
 NeighborStatusEntry::GetNumStatusUnit () const
@@ -104,7 +105,7 @@ NeighborStatusEntry::Print (std::ostream &os) const
   for (ci = m_database.begin (); ci != m_database.end (); ci ++)
     {
       os << ci->first << "    ";
-      ci->second.Print (os);
+      ci->second->Print (os);
     }
 }
 
@@ -156,7 +157,7 @@ DgrNSDB::GetNeighborStatusEntry (uint32_t iface) const
 }
 
 void
-DgrNSDB::Update (uint32_t iface, NeighborStatusEntry* nse)
+DgrNSDB::Insert (uint32_t iface, NeighborStatusEntry* nse)
 {
   NS_LOG_FUNCTION (this << iface << nse);
   NSDBMap_t::iterator it = m_database.find (iface);
