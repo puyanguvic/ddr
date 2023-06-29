@@ -76,46 +76,24 @@ DGRv2QueueDisc::DoEnqueue (Ptr<QueueDiscItem> item)
   return retval;
 }
 
-// Ptr<QueueDiscItem>
-// DGRv2QueueDisc::DoDequeue (void)
-// {
-//   NS_LOG_FUNCTION (this);
-
-//   Ptr<QueueDiscItem> item;
-
-//   for (uint32_t i = 0; i < GetNInternalQueues (); i ++)
-//     {
-//       if (item = GetInternalQueue (i)->Dequeue ())
-//         {
-//           NS_LOG_LOGIC ("Popped from band " << i << ": " << item);
-//           NS_LOG_LOGIC ("Number packets band " << i << ": " << GetInternalQueue (i)->GetNPackets ());
-//           // std::cout << item->GetSize () << std::endl;
-//           return item;
-//         }
-//     }
-
-//   NS_LOG_LOGIC ("Queue empty");
-//   return item;
-// }
-
 Ptr<QueueDiscItem>
 DGRv2QueueDisc::DoDequeue (void)
 {
   NS_LOG_FUNCTION (this);
 
   Ptr<QueueDiscItem> item;
-  uint32_t prio = Classify ();
-  if (prio == 88)
-  {
-    NS_LOG_LOGIC ("Queue empty");
-    return item;
-  }
-  if (item = GetInternalQueue (prio)->Dequeue ())
+
+  for (uint32_t i = 0; i < GetNInternalQueues (); i ++)
     {
-      NS_LOG_LOGIC ("Popped from band " << prio << ": " << item);
-      NS_LOG_LOGIC ("Number packets band " << prio << ": " << GetInternalQueue (prio)->GetNPackets ());
-      return item;
+      if (item = GetInternalQueue (i)->Dequeue ())
+        {
+          NS_LOG_LOGIC ("Popped from band " << i << ": " << item);
+          NS_LOG_LOGIC ("Number packets band " << i << ": " << GetInternalQueue (i)->GetNPackets ());
+          // std::cout << item->GetSize () << std::endl;
+          return item;
+        }
     }
+
   NS_LOG_LOGIC ("Queue empty");
   return item;
 }
