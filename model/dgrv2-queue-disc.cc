@@ -58,9 +58,9 @@ DGRv2QueueDisc::DoEnqueue (Ptr<QueueDiscItem> item)
 {
   NS_LOG_FUNCTION (this << item);
   uint32_t band = EnqueueClassify (item);
-  uint32_t itemSize = item->GetSize ();
-  uint32_t currentQueueSize = GetInternalQueue (band)->GetCurrentSize ().GetValue ();
-  uint32_t maxQueueSize = GetInternalQueue (band)->GetMaxSize ().GetValue ();
+  // uint32_t itemSize = item->GetSize ();
+  // uint32_t currentQueueSize = GetInternalQueue (band)->GetCurrentSize ().GetValue ();
+  // uint32_t maxQueueSize = GetInternalQueue (band)->GetMaxSize ().GetValue ();
   // if (currentQueueSize + itemSize > maxQueueSize)
   //   {
   //     NS_LOG_LOGIC ("Queue disc limit exceeded -- drop packet");
@@ -89,7 +89,6 @@ DGRv2QueueDisc::DoDequeue (void)
         {
           NS_LOG_LOGIC ("Popped from band " << i << ": " << item);
           NS_LOG_LOGIC ("Number packets band " << i << ": " << GetInternalQueue (i)->GetNPackets ());
-          // std::cout << item->GetSize () << std::endl;
           return item;
         }
     }
@@ -138,7 +137,7 @@ DGRv2QueueDisc::CheckConfig (void)
   if (GetNInternalQueues () == 0)
     {
       // create 2 DropTail queues with GetLimit() packets each
-      std::cout << "Create 2 DropTail Queue" << std::endl;
+      // std::cout << "Create 2 DropTail Queue" << std::endl;
       ObjectFactory factory;
       factory.SetTypeId ("ns3::DropTailQueue<QueueDiscItem>");
       factory.Set ("MaxSize", QueueSizeValue (QueueSize ("125KiB")));
@@ -187,65 +186,6 @@ DGRv2QueueDisc::EnqueueClassify (Ptr<QueueDiscItem> item)
     {
       return BEST_EFFORT;
     }
-
-}
-
-
-uint32_t
-DGRv2QueueDisc::Classify ()
-{
-  if (m_currentFastWeight > 0)
-    {
-      if (!GetInternalQueue (0)->IsEmpty ())
-        {
-          m_currentFastWeight--;
-          return 0;
-        }
-      else
-        {
-          m_currentFastWeight = 0;
-        }
-    }
-  if (m_currentNormalWeight > 0)
-    {
-      if (!GetInternalQueue (1)->IsEmpty ())
-        {
-          m_currentNormalWeight--;
-          return 1;
-        }
-      else
-        {
-          m_currentNormalWeight = 0;
-        }
-    }
-  m_currentFastWeight = m_fastWeight;
-  m_currentNormalWeight = m_normalWeight;
-  
-   if (m_currentFastWeight > 0)
-    {
-      if (!GetInternalQueue (0)->IsEmpty ())
-        {
-          m_currentFastWeight--;
-          return 0;
-        }
-      else
-        {
-          m_currentFastWeight = 0;
-        }
-    }
-  if (m_currentNormalWeight > 0)
-    {
-      if (!GetInternalQueue (1)->IsEmpty ())
-        {
-          m_currentNormalWeight--;
-          return 2;
-        }
-      else
-        {
-          m_currentNormalWeight = 0;
-        }
-    }
-  return 88;
 }
 
 // ------------------------------ QueuePacketFilter --------------------------------

@@ -68,16 +68,10 @@ Ipv4DGRRouting::GetTypeId (void)
                    BooleanValue (false),
                    MakeBooleanAccessor (&Ipv4DGRRouting::m_respondToInterfaceEvents),
                    MakeBooleanChecker ())
-
-    .AddAttribute ("UnsolicitedRoutingUpdate",
-                   "The time between two Unsolicited Routing Updates.",
-                   TimeValue(Seconds (30)),
-                   MakeTimeAccessor (&Ipv4DGRRouting::m_unsolicitedUpdate),
-                   MakeTimeChecker ())
-    .AddAttribute ("StartupDelay",
-                   "Maximum random delay for protocol startup (send route requests).",
-                   TimeValue(Seconds(1)),
-                   MakeTimeAccessor(&Ipv4DGRRouting::m_startupDelay),
+    .AddAttribute ("SamplePeriod",
+                   "The Period Neighbor Queue State Sampling.",
+                   TimeValue(MilliSeconds (10)),
+                   MakeTimeAccessor (&Ipv4DGRRouting::m_samplingPeriod),
                    MakeTimeChecker ())
   ;
   return tid;
@@ -256,16 +250,19 @@ Ipv4DGRRouting::LookupUniRoute (Ipv4Address dest, Ptr<NetDevice> oif)
 Ptr<Ipv4Route>
 Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDevice> idev)
 {
-  PriorityTag prioTag;
   BudgetTag bgtTag;
   TimestampTag timeTag;
-  p->PeekPacketTag (prioTag);
   p->PeekPacketTag (bgtTag);
   p->PeekPacketTag (timeTag);
+  // avoid loop
   DistTag distTag;
   uint32_t dist = UINT32_MAX;
   dist -= 1;
-  if (p->PeekPacketTag (distTag)) dist = distTag.GetDistance ();
+  if (p->PeekPacketTag (distTag))
+    {
+      dist = distTag.GetDistance ();
+    }
+  
   // budget in microseconds
   uint32_t bgt;
   if (bgtTag.GetBudget ()*1000 + timeTag.GetTimestamp ().GetMicroSeconds () < Simulator::Now ().GetMicroSeconds ())
@@ -274,9 +271,7 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
     }
   else
     bgt = (bgtTag.GetBudget ()*1000 + timeTag.GetTimestamp ().GetMicroSeconds () - Simulator::Now ().GetMicroSeconds ());
-  /**
-   * Lookup a Route to forward the DGR packets.
-  */
+
   NS_LOG_FUNCTION (this << dest << idev);
   NS_LOG_LOGIC ("Looking for route for destination " << dest);
   Ptr<Ipv4Route> rtentry = 0;
@@ -310,50 +305,32 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
           //get the queue disc on the device
           Ptr<QueueDisc> disc = m_ipv4->GetObject<Node> ()->GetObject<TrafficControlLayer> ()->GetRootQueueDiscOnDevice (dev_local);
           Ptr<DGRv2QueueDisc> dvq = DynamicCast <DGRv2QueueDisc> (disc);
-          uint32_t dvq_length = dvq->GetInternalQueue (1) ->GetCurrentSize ().GetValue ();
-          uint32_t dvq_max = dvq->GetInternalQueue (1)->GetMaxSize ().GetValue ();
-          if (dvq_length >= dvq_max * 0.75)
-            {
-              NS_LOG_LOGIC ("Congestion happened, skipping");
-              continue;
-            }
-        
-          //
-          // Get queue info on the other side
-          //
+          uint32_t status_local = dvq->GetQueueStatus ();
+
+          // Get the next hop queue status of this route
+          uint32_t status_1_hop = 0;
           if ((*i)->GetNextInterface () != 0xffffffff)
             {
-              // get the nexthop queue infomation
-              Ptr<Channel> ch = dev_local->GetChannel ();
-              //
-              // Get the net device on the other side of point-to-point
-              //
-              Ptr<NetDevice> dev_remote = ch->GetDevice (0) == dev_local ? ch->GetDevice (1) : ch->GetDevice (0);
-              Ptr<Node> node_remote = dev_remote->GetNode ();
-              Ptr<NetDevice> dev_next = node_remote->GetDevice ((*i)->GetNextInterface ());
-
-              Ptr<QueueDisc> queue_next = dev_next->GetObject <TrafficControlLayer> ()->GetRootQueueDiscOnDevice (dev_next);
-              Ptr<DGRv2QueueDisc> dvq_next = DynamicCast <DGRv2QueueDisc> (queue_next);
-              uint32_t dvq_slow_next = dvq_next->GetInternalQueue (1)->GetCurrentSize ().GetValue ();
-              uint32_t dvq_slow_max_next = dvq_next->GetInternalQueue (1)->GetMaxSize ().GetValue ();
-              uint32_t dvq_normal_next = dvq_next->GetInternalQueue (2)->GetCurrentSize ().GetValue ();
-              uint32_t dvq_normal_max_next = 155;
-              if (dvq_slow_next >= dvq_slow_max_next * 0.75 || dvq_normal_next >= dvq_normal_max_next * 0.75)
-                {
-                  NS_LOG_LOGIC ("Congestion happend in next hop, skipping");
-                  continue;
-                }
-              if (dev_remote == dev_next)
-                {
-                  continue;
-                }
+              uint32_t iface = (*i)->GetInterface ();
+              uint32_t niface = (*i)->GetNextInterface ();
+              NeighborStatusEntry *entry = m_nsdb->GetNeighborStatusEntry (iface);
+              StatusUnit *su = entry->GetStatusUnit (niface);
+              status_1_hop = su->GetCurrentState ();
             }
-
-          if ((*i)->GetDistance () > bgt || (*i)->GetDistance () > dist)
+          // in millisecond
+          uint32_t estimate_delay = (*i)->GetDistance () + (status_local + status_1_hop)*2;
+          if (estimate_delay > bgt)
             {
               NS_LOG_LOGIC ("Too far to the destination, skipping");
               continue;
             }
+          
+          if ((*i)->GetDistance () > dist)
+            {
+              NS_LOG_LOGIC ("Loop avoidance, skipping");
+              continue;
+            }
+          
           allRoutes.push_back (*i);
           NS_LOG_LOGIC (allRoutes.size () << "Found DGR host route" << *i << " with Cost: " << (*i)->GetDistance ()); 
         }
@@ -472,25 +449,16 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
       //   }
 
       Ipv4DGRRoutingTableEntry* route = allRoutes.at (selectIndex);
+      uint32_t interfaceIdx = route->GetInterface ();
+
       rtentry = Create<Ipv4Route> ();
       rtentry->SetDestination (route->GetDest ());
       /// \todo handle multi-address case
-      rtentry->SetSource (m_ipv4->GetAddress (route->GetInterface (), 0).GetLocal ());
+      rtentry->SetSource (m_ipv4->GetAddress (interfaceIdx, 0).GetLocal ());
       rtentry->SetGateway (route->GetGateway ());
-      uint32_t interfaceIdx = route->GetInterface ();
       rtentry->SetOutputDevice (m_ipv4->GetNetDevice (interfaceIdx));
-      // if (route->GetDistance () > 30000) std::cout << "budget: " << bgt << " distance: " << route->GetDistance () << std::endl;
-      if (bgt - route->GetDistance () <= 20)
-        {
-          prioTag.SetPriority (0);
-        }
-      else
-        {
-          prioTag.SetPriority (1);
-        }
-      distTag.SetDistance (route->GetDistance ());
-      p->ReplacePacketTag (prioTag);
-      
+
+      distTag.SetDistance (route->GetDistance ());      
       p->ReplacePacketTag (distTag);
       return rtentry;
     }
@@ -909,13 +877,16 @@ void
 Ipv4DGRRouting::DoInitialize ()
 {
   NS_LOG_FUNCTION (this);
-  bool addedGlobal = false;
+  // bool addedGlobal = false;
   m_initialized = true;
 
-  Time delay = m_unsolicitedUpdate + 
-               Seconds (m_rand->GetValue (0, 0.5*m_unsolicitedUpdate.GetSeconds ()));
-  m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedUpdate, this);
+  // To Check: An random value is needed to initialize the protocol?
+  Time delay = m_samplingPeriod;
+  m_nextSampling = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedUpdate, this);
+
+  // m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedUpdate, this);
   
+  // Initialize the sockets for every netdevice
   for (uint32_t i = 0; i < m_ipv4->GetNInterfaces (); i ++)
     {
       Ptr<LoopbackNetDevice> check = DynamicCast<LoopbackNetDevice>(m_ipv4->GetNetDevice (i));
@@ -955,10 +926,10 @@ Ipv4DGRRouting::DoInitialize ()
 
               m_unicastSocketList[socket] = i;
             }
-          else if (m_ipv4->GetAddress (i, j).GetScope () == Ipv4InterfaceAddress::GLOBAL)
-            {
-              addedGlobal = true;
-            }
+          // else if (m_ipv4->GetAddress (i, j).GetScope () == Ipv4InterfaceAddress::GLOBAL)
+          //   {
+          //     addedGlobal = true;
+          //   }
         }
     }
 
@@ -975,15 +946,15 @@ Ipv4DGRRouting::DoInitialize ()
         m_multicastRecvSocket->SetRecvPktInfo (true);
       }
 
-    if (addedGlobal)
-      {
-        Time delay = Seconds (m_rand->GetValue (m_minTriggeredUpdateDelay.GetSeconds (),
-                                                m_maxTriggeredUpdateDelay.GetSeconds ()));
-        m_nextTriggeredUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::DoSendNeighborStatusUpdate, this, false);
-      }
+    // if (addedGlobal)
+    //   {
+    //     Time delay = Seconds (m_rand->GetValue (m_minTriggeredUpdateDelay.GetSeconds (),
+    //                                             m_maxTriggeredUpdateDelay.GetSeconds ()));
+    //     m_nextTriggeredUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::DoSendNeighborStatusUpdate, this, false);
+    //   }
 
-    delay = Seconds (m_rand->GetValue (0.01, m_startupDelay.GetSeconds ()));
-    m_nextTriggeredUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendNeighborStatusRequest, this);
+    // delay = Seconds (m_rand->GetValue (0.01, m_startupDelay.GetSeconds ()));
+    // m_nextTriggeredUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendNeighborStatusRequest, this);
 
     Ipv4RoutingProtocol::DoInitialize ();
 }
@@ -1318,6 +1289,7 @@ Ipv4DGRRouting::Receive (Ptr<Socket> socket)
                            << senderAddr.GetPort ());
   Ipv4Address senderAddress = senderAddr.GetIpv4 ();
   uint32_t senderPort = senderAddr.GetPort ();
+
   if (socket == m_multicastRecvSocket)
     {
       NS_LOG_LOGIC ("Received a packet from the multicast socket");
@@ -1337,6 +1309,7 @@ Ipv4DGRRouting::Receive (Ptr<Socket> socket)
   Ptr<Node> node = m_ipv4->GetObject<Node> ();
   Ptr<NetDevice> dev = node->GetDevice (incomingIf);
   uint32_t ipInterfaceIndex = m_ipv4->GetInterfaceForDevice (dev);
+  
   SocketIpTtlTag hoplimitTag;
   if (!packet->RemovePacketTag (hoplimitTag))
   {
@@ -1406,7 +1379,6 @@ void
 Ipv4DGRRouting::DoSendNeighborStatusUpdate (bool periodic)
 {
   NS_LOG_FUNCTION (this << (periodic ? " periodic" : " triggered"));
-
   for (SocketListI iter = m_unicastSocketList.begin (); iter != m_unicastSocketList.end (); iter ++)
     {
       uint32_t interface = iter->second;
@@ -1419,7 +1391,7 @@ Ipv4DGRRouting::DoSendNeighborStatusUpdate (bool periodic)
                              UdpHeader ().GetSerializedSize () - 
                              DgrHeader ().GetSerializedSize ())/
                              DgrNse ().GetSerializedSize ();
-          
+          std::cout << "The size of DGR Header is : " << DgrHeader ().GetSerializedSize () << std::endl;
           Ptr<Packet> p = Create<Packet> ();
           SocketIpTtlTag ttlTag;
           ttlTag.SetTtl (1);
@@ -1442,12 +1414,15 @@ Ipv4DGRRouting::DoSendNeighborStatusUpdate (bool periodic)
                                     GetRootQueueDiscOnDevice (dev);
               Ptr<DGRv2QueueDisc> qdisc = DynamicCast <DGRv2QueueDisc> (disc);
               DgrNse nse;
+              nse.SetInterface (i);
               nse.SetState (qdisc->GetQueueStatus ());
               hdr.AddNse (nse);
               if (hdr.GetNseNumber () == maxNse)
                 {
                   p->AddHeader (hdr);
                   NS_LOG_DEBUG ("SendTo: " << *p);
+                  std::cout << "DGR header print: " << std::endl;
+                  p->Print (std::cout);
                   iter->first->SendTo (p, 0, InetSocketAddress (DGR_BROAD_CAST, DGR_PORT)); // Todo : defind the port for DGR routing
                   p->RemoveHeader (hdr);
                   hdr.ClearNses ();

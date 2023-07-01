@@ -328,14 +328,18 @@ private:
   SocketList  m_unicastSocketList; //!< list of sockets for unicast messages (socket, interface index)
   Ptr<Socket> m_multicastRecvSocket; //!< multicast receive socket
 
-  EventId m_nextUnsolicitedUpdate; //!< Next Unsolicited Update event
-  EventId m_nextTriggeredUpdate; //!< Next Triggered Update event
+  // EventId m_nextUnsolicitedUpdate; //!< Next Unsolicited Update event
+  // EventId m_nextTriggeredUpdate; //!< Next Triggered Update event
 
-  Time m_startupDelay;            //!< Random delay before protocol startup
-  Time m_minTriggeredUpdateDelay; //!< Min cooldown delay after a Triggered Update.
-  Time m_maxTriggeredUpdateDelay; //!< Max cooldown delay after a Triggered Update.  
-  Time m_unsolicitedUpdate;       //!< time between two Unsolicited Routing Updates.
-  Time m_timeoutDelay;            //!< Delay before invalidating a status
+  EventId m_nextSampling;           //!< Next sampling event
+
+  Time m_samplingPeriod;             //!< The sampling period
+
+  // Time m_startupDelay;            //!< Random delay before protocol startup
+  // Time m_minTriggeredUpdateDelay; //!< Min cooldown delay after a Triggered Update.
+  // Time m_maxTriggeredUpdateDelay; //!< Max cooldown delay after a Triggered Update.  
+  // Time m_unsolicitedUpdate;       //!< time between two Unsolicited Routing Updates.
+  // Time m_timeoutDelay;            //!< Delay before invalidating a status
 
 
   std::set<uint32_t> m_interfaceExclusions; //!<Set of excluded interfaces

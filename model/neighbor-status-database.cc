@@ -20,13 +20,29 @@ StatusUnit::~StatusUnit ()
 uint32_t
 StatusUnit::GetCurrentState ()
 {
+  uint32_t counter = m_matrix[m_state][m_state];
+  uint32_t ret = m_state;
+  for (uint32_t i = 0; i < 10; i ++)
+    {
+      if (m_matrix[m_state][i] > counter)
+        {
+          counter = m_matrix[m_state][i];
+          ret = i;
+        }
+    }
+  return ret;
+}
+
+uint32_t
+StatusUnit::GetLastState ()
+{
   return m_state;
 }
 
 void
 StatusUnit::Update (uint32_t state)
 {
-  m_matrix[state][m_state] ++;
+  m_matrix[m_state][state] ++;
   m_state = state;
 }
 

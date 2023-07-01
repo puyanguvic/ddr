@@ -48,7 +48,6 @@ class DGRv2QueueDisc : public QueueDisc {
     void InitializeParams (void) override;
 
     uint32_t EnqueueClassify (Ptr<QueueDiscItem> item);
-    uint32_t Classify ();
 };
 
 class DGRv2PacketFilter : public PacketFilter
