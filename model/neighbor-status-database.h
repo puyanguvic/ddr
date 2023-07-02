@@ -14,8 +14,8 @@ class StatusUnit
   public:
     StatusUnit ();
     ~StatusUnit ();
-    uint32_t GetLastState ();
-    uint32_t GetCurrentState ();
+    uint32_t GetLastState () const;
+    uint32_t GetCurrentState () const;
     void Update (uint32_t state);
     void Print (std::ostream &os) const;
   private:
@@ -84,6 +84,14 @@ class DgrNSDB : public Object
     NeighborStatusEntry* GetNeighborStatusEntry (uint32_t iface) const;
 
     /**
+     * \brief Handle the NeighborStatusEntry of a Interface
+     * 
+     * \param iface The interface number
+     * \return NeighborStatusEntry*
+    */
+    NeighborStatusEntry* HandleNeighborStatusEntry (uint32_t iface);
+
+    /**
      * \brief Insert an <interface, Neighbor Status Entry> into the NSDB
      *  
      * The interface and NeighborStatusEntry given as parameters are converted
@@ -98,11 +106,16 @@ class DgrNSDB : public Object
      * 
     */
     void Print (std::ostream &os) const;
+
   private:
     typedef std::map<uint32_t, NeighborStatusEntry*> 
         NSDBMap_t;  //!< container of <interface, NeighborStatusEntry>
     typedef std::pair<uint32_t, NeighborStatusEntry*> 
         NSDBPair_t; //!< pair of <interface, NeighborStatusEntry>
+    typedef std::map<uint32_t, NeighborStatusEntry*>::iterator
+        NeighborStatusMapI; //!< NSE type iterator
+    typedef std::map<uint32_t, NeighborStatusEntry*>::const_iterator
+        NeighborStatusMapCI; //!< NSE type const iterator
     NSDBMap_t m_database; //!< database of <interface, NeighborStatusEntry>
 };
 

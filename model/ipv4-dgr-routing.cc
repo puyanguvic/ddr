@@ -69,9 +69,9 @@ Ipv4DGRRouting::GetTypeId (void)
                    MakeBooleanAccessor (&Ipv4DGRRouting::m_respondToInterfaceEvents),
                    MakeBooleanChecker ())
     .AddAttribute ("SamplePeriod",
-                   "The Period Neighbor Queue State Sampling.",
+                   "Time between two Unsolicited Neighbor State Updates.",
                    TimeValue(MilliSeconds (10)),
-                   MakeTimeAccessor (&Ipv4DGRRouting::m_samplingPeriod),
+                   MakeTimeAccessor (&Ipv4DGRRouting::m_unsolicitedUpdate),
                    MakeTimeChecker ())
   ;
   return tid;
@@ -79,7 +79,8 @@ Ipv4DGRRouting::GetTypeId (void)
 
 Ipv4DGRRouting::Ipv4DGRRouting () 
   : m_randomEcmpRouting (false),
-    m_respondToInterfaceEvents (false)
+    m_respondToInterfaceEvents (false),
+    m_nsdb ()
 {
   NS_LOG_FUNCTION (this);
   m_rand = CreateObject<UniformRandomVariable> ();
@@ -313,7 +314,7 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
             {
               uint32_t iface = (*i)->GetInterface ();
               uint32_t niface = (*i)->GetNextInterface ();
-              NeighborStatusEntry *entry = m_nsdb->GetNeighborStatusEntry (iface);
+              NeighborStatusEntry *entry = m_nsdb.GetNeighborStatusEntry (iface);
               StatusUnit *su = entry->GetStatusUnit (niface);
               status_1_hop = su->GetCurrentState ();
             }
@@ -881,8 +882,8 @@ Ipv4DGRRouting::DoInitialize ()
   m_initialized = true;
 
   // To Check: An random value is needed to initialize the protocol?
-  Time delay = m_samplingPeriod;
-  m_nextSampling = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedUpdate, this);
+  Time delay = m_unsolicitedUpdate;
+  m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedUpdate, this);
 
   // m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedUpdate, this);
   
@@ -907,7 +908,7 @@ Ipv4DGRRouting::DoInitialize ()
           Ipv4InterfaceAddress address = m_ipv4->GetAddress (i, j);
           NS_LOG_LOGIC ("For interface: " << i << "the " << j << "st Address is " << address);
           // std::cout << "For interface: " << i << " the " << j << "st Address is ";
-          // address.GetAddress ().Print (std::cout);
+          
           if (address.GetScope () != Ipv4InterfaceAddress::HOST && activeInterface == true)
             {
               NS_LOG_LOGIC ("DGR: add socket to " << address.GetLocal ());
@@ -926,10 +927,6 @@ Ipv4DGRRouting::DoInitialize ()
 
               m_unicastSocketList[socket] = i;
             }
-          // else if (m_ipv4->GetAddress (i, j).GetScope () == Ipv4InterfaceAddress::GLOBAL)
-          //   {
-          //     addedGlobal = true;
-          //   }
         }
     }
 
@@ -1288,7 +1285,7 @@ Ipv4DGRRouting::Receive (Ptr<Socket> socket)
   NS_LOG_INFO ("Received " << *packet << " from " << senderAddr.GetIpv4 () << ":"
                            << senderAddr.GetPort ());
   Ipv4Address senderAddress = senderAddr.GetIpv4 ();
-  uint32_t senderPort = senderAddr.GetPort ();
+  // uint32_t senderPort = senderAddr.GetPort ();
 
   if (socket == m_multicastRecvSocket)
     {
@@ -1304,7 +1301,6 @@ Ipv4DGRRouting::Receive (Ptr<Socket> socket)
     {
       NS_ABORT_MSG ("No incoming interface on This message, aborting,");
     }
-  
   uint32_t incomingIf = interfaceInfo.GetRecvIf ();
   Ptr<Node> node = m_ipv4->GetObject<Node> ();
   Ptr<NetDevice> dev = node->GetDevice (incomingIf);
@@ -1323,6 +1319,7 @@ Ipv4DGRRouting::Receive (Ptr<Socket> socket)
       NS_LOG_LOGIC ("Ignoring a packet sent by myself.");
       return ;
     }
+  
   DgrHeader hdr;
   packet->RemoveHeader (hdr);
   
@@ -1333,32 +1330,17 @@ Ipv4DGRRouting::Receive (Ptr<Socket> socket)
       HandleResponses (hdr, senderAddress, ipInterfaceIndex, hopLimit);
       
     }
-  else if (hdr.GetCommand () == DgrHeader::REQUEST)
-    {
-      NS_LOG_LOGIC ("This message is a Request from " << senderAddr.GetIpv4 () << ":"
-                                                      << senderAddr.GetPort ());
-      HandleRequests (hdr, senderAddress, senderPort, ipInterfaceIndex, hopLimit);
-    }
+  // else if (hdr.GetCommand () == DgrHeader::REQUEST)
+  //   {
+  //     Todo: Handle request in the future  
+  //     NS_LOG_LOGIC ("This message is a Request from " << senderAddr.GetIpv4 () << ":"
+  //                                                     << senderAddr.GetPort ());
+  //     HandleRequests (hdr, senderAddress, senderPort, ipInterfaceIndex, hopLimit);
+  //   }
   else
     {
       NS_LOG_LOGIC ("Ignoring message with unknown command: " << int(hdr.GetCommand ()));
     }
-}
-
-void
-Ipv4DGRRouting::SendTriggeredNeighborStatusUpdate ()
-{
-  NS_LOG_FUNCTION (this);
-
-  if (m_nextTriggeredUpdate.IsRunning ())
-    {
-      NS_LOG_LOGIC ("Skipping Triggered Update due to cooldown.");
-      return;
-    }
-
-  Time delay = Seconds (m_rand->GetValue (m_minTriggeredUpdateDelay.GetSeconds (),
-                                         m_maxTriggeredUpdateDelay.GetSeconds ()));
-  m_nextTriggeredUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::DoSendNeighborStatusUpdate, this, false);
 }
 
 void
@@ -1369,8 +1351,8 @@ Ipv4DGRRouting:: SendUnsolicitedUpdate ()
     {
       m_nextTriggeredUpdate.Cancel ();
     }
-  
   DoSendNeighborStatusUpdate (true);
+  // todo : update the delay
   Time delay = m_unsolicitedUpdate + Seconds (m_rand->GetValue (0, 0.5 * m_unsolicitedUpdate.GetSeconds ()));
   m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedUpdate, this);
 }
@@ -1382,7 +1364,6 @@ Ipv4DGRRouting::DoSendNeighborStatusUpdate (bool periodic)
   for (SocketListI iter = m_unicastSocketList.begin (); iter != m_unicastSocketList.end (); iter ++)
     {
       uint32_t interface = iter->second;
-
       if (m_interfaceExclusions.find (interface) == m_interfaceExclusions.end ())
         {
           uint16_t mtu = m_ipv4->GetMtu (interface);
@@ -1391,7 +1372,6 @@ Ipv4DGRRouting::DoSendNeighborStatusUpdate (bool periodic)
                              UdpHeader ().GetSerializedSize () - 
                              DgrHeader ().GetSerializedSize ())/
                              DgrNse ().GetSerializedSize ();
-          std::cout << "The size of DGR Header is : " << DgrHeader ().GetSerializedSize () << std::endl;
           Ptr<Packet> p = Create<Packet> ();
           SocketIpTtlTag ttlTag;
           ttlTag.SetTtl (1);
@@ -1399,13 +1379,16 @@ Ipv4DGRRouting::DoSendNeighborStatusUpdate (bool periodic)
 
           DgrHeader hdr;
           hdr.SetCommand (DgrHeader::RESPONSE);
-          
           // Find the Status of every netdevice and put it in
           // TODO: Finish this function when finish the NSE definiation
           for (uint32_t i = 0; i < m_ipv4->GetNInterfaces (); i ++)
             {
               if (!m_ipv4->IsUp (i)) continue;
-
+              Ptr<LoopbackNetDevice> check = DynamicCast<LoopbackNetDevice> (m_ipv4->GetNetDevice (i));
+              if (check)
+              {
+                continue;
+              }
               // get the device
               Ptr<NetDevice> dev = m_ipv4->GetNetDevice (i);
               // get the queue disc on devic
@@ -1421,8 +1404,6 @@ Ipv4DGRRouting::DoSendNeighborStatusUpdate (bool periodic)
                 {
                   p->AddHeader (hdr);
                   NS_LOG_DEBUG ("SendTo: " << *p);
-                  std::cout << "DGR header print: " << std::endl;
-                  p->Print (std::cout);
                   iter->first->SendTo (p, 0, InetSocketAddress (DGR_BROAD_CAST, DGR_PORT)); // Todo : defind the port for DGR routing
                   p->RemoveHeader (hdr);
                   hdr.ClearNses ();
@@ -1439,30 +1420,6 @@ Ipv4DGRRouting::DoSendNeighborStatusUpdate (bool periodic)
 }
 
 void
-Ipv4DGRRouting::SendNeighborStatusRequest ()
-{
-  NS_LOG_FUNCTION (this);
-  Ptr<Packet> p = Create<Packet> ();
-  SocketIpTtlTag ttlTag;
-  p->RemovePacketTag (ttlTag);
-  ttlTag.SetTtl (1);
-  p->AddPacketTag (ttlTag);
-
-  DgrHeader hdr;
-  hdr.SetCommand (DgrHeader::REQUEST);
-  p->AddHeader (hdr);
-  for (SocketListI iter = m_unicastSocketList.begin (); iter != m_unicastSocketList.end (); iter ++)
-    {
-      uint32_t interface = iter->second;
-      if (m_interfaceExclusions.find (interface) == m_interfaceExclusions.end ())
-        {
-          NS_LOG_DEBUG ("SendTo: " << *p);
-          iter->first->SendTo (p, 0, InetSocketAddress (DGR_BROAD_CAST, DGR_PORT));
-        }
-    }
-}
-
-void
 Ipv4DGRRouting::HandleResponses (DgrHeader hdr,
                                 Ipv4Address senderAddress,
                                 uint32_t incomingInterface,
@@ -1474,18 +1431,19 @@ Ipv4DGRRouting::HandleResponses (DgrHeader hdr,
       NS_LOG_LOGIC ("Ignoring an update message from an excluded interface: " << incomingInterface);
       return;
     }
-  std::cout << ">> handle responses from: ";
-  senderAddress.Print (std::cout);
-  std::cout << std::endl;
-  // Update Neighbor state database
-  std::list<DgrNse> nses = hdr.GetNseList ();
-  NeighborStatusEntry *entry = m_nsdb->GetNeighborStatusEntry (incomingInterface);
+  if (hdr.GetSerializedSize () == 4)
+    {
+      NS_LOG_LOGIC ("Ignoring an update message without neighbor state entries!");
+    }
+
+  NeighborStatusEntry *entry = m_nsdb.HandleNeighborStatusEntry (incomingInterface);
   if (entry == nullptr)
     {
       entry = new NeighborStatusEntry ();
-      m_nsdb->Insert (incomingInterface, entry);
+      m_nsdb.Insert (incomingInterface, entry);
     }
   
+  std::list<DgrNse> nses = hdr.GetNseList ();
   for (std::list<DgrNse>::iterator iter = nses.begin (); iter != nses.end (); iter ++)
     {
       uint32_t n_iface = (*iter).GetInterface ();
@@ -1497,96 +1455,97 @@ Ipv4DGRRouting::HandleResponses (DgrHeader hdr,
           entry->Insert (n_iface, su);
         }
       su->Update (n_state);
+      su->Print (std::cout);     
     }
 }
 
-void
-Ipv4DGRRouting::HandleRequests (DgrHeader hdr,
-                                Ipv4Address senderAddress,
-                                uint16_t senderPort,
-                                uint32_t incomingInterface,
-                                uint8_t hopLimit)
-{
-  NS_LOG_FUNCTION (this << senderAddress << senderPort 
-                        << incomingInterface << hopLimit << hdr);
-  std::cout << ">> Handle requests of Address: ";
-  senderAddress.Print (std::cout);
-  std::cout << " hopLimit: " << hopLimit << std::endl;
+// void
+// Ipv4DGRRouting::HandleRequests (DgrHeader hdr,
+//                                 Ipv4Address senderAddress,
+//                                 uint16_t senderPort,
+//                                 uint32_t incomingInterface,
+//                                 uint8_t hopLimit)
+// {
+//   NS_LOG_FUNCTION (this << senderAddress << senderPort 
+//                         << incomingInterface << hopLimit << hdr);
+//   std::cout << ">> Handle requests of Address: ";
+//   senderAddress.Print (std::cout);
+//   std::cout << " hopLimit: " << hopLimit << std::endl;
 
-  if (m_interfaceExclusions.find (incomingInterface) == m_interfaceExclusions.end ())
-    {
-      // We use one of the sending sockets, as they're bound to the right interface
-      // and the local address might be used on different interfaces.
-      Ptr<Socket> sendingSocket;
-      for (SocketListI iter = m_unicastSocketList.begin ();
-            iter != m_unicastSocketList.end ();
-            iter ++)
-        {
-          if (iter->second == incomingInterface)
-            {
-              sendingSocket = iter->first;
-            }
-        }
-      NS_ASSERT_MSG (sendingSocket,
-                      "HandleRequest - Impossible to find a socket to send the reply");
+//   if (m_interfaceExclusions.find (incomingInterface) == m_interfaceExclusions.end ())
+//     {
+//       // We use one of the sending sockets, as they're bound to the right interface
+//       // and the local address might be used on different interfaces.
+//       Ptr<Socket> sendingSocket;
+//       for (SocketListI iter = m_unicastSocketList.begin ();
+//             iter != m_unicastSocketList.end ();
+//             iter ++)
+//         {
+//           if (iter->second == incomingInterface)
+//             {
+//               sendingSocket = iter->first;
+//             }
+//         }
+//       NS_ASSERT_MSG (sendingSocket,
+//                       "HandleRequest - Impossible to find a socket to send the reply");
       
-      uint16_t mtu = m_ipv4->GetMtu (incomingInterface);
-      uint16_t maxNse = (mtu - Ipv4Header().GetSerializedSize () -
-                          UdpHeader ().GetSerializedSize () - DgrHeader ().GetSerializedSize ())/DgrNse ().GetSerializedSize ();
+//       uint16_t mtu = m_ipv4->GetMtu (incomingInterface);
+//       uint16_t maxNse = (mtu - Ipv4Header().GetSerializedSize () -
+//                           UdpHeader ().GetSerializedSize () - DgrHeader ().GetSerializedSize ())/DgrNse ().GetSerializedSize ();
       
-      Ptr<Packet> p = Create<Packet> ();
-      SocketIpTtlTag ttlTag;
-      ttlTag.SetTtl (1);
-      p->AddPacketTag (ttlTag);
+//       Ptr<Packet> p = Create<Packet> ();
+//       SocketIpTtlTag ttlTag;
+//       ttlTag.SetTtl (1);
+//       p->AddPacketTag (ttlTag);
 
-      // Serialize the current Device Status
-      DgrHeader hdr;
-      hdr.SetCommand (DgrHeader::RESPONSE);
+//       // Serialize the current Device Status
+//       DgrHeader hdr;
+//       hdr.SetCommand (DgrHeader::RESPONSE);
 
-      for (uint32_t i = 0; i < m_ipv4->GetNInterfaces (); i ++)
-        {
-          if (!m_ipv4->IsUp (i)) continue;
+//       for (uint32_t i = 0; i < m_ipv4->GetNInterfaces (); i ++)
+//         {
+//           if (!m_ipv4->IsUp (i)) continue;
 
-          // get the device
-          Ptr<NetDevice> dev = m_ipv4->GetNetDevice (i);
+//           // get the device
+//           Ptr<NetDevice> dev = m_ipv4->GetNetDevice (i);
 
-          // get the queue disc on devic
-          Ptr<QueueDisc> disc = m_ipv4->GetObject<Node> ()->
-                                GetObject<TrafficControlLayer> ()->
-                                GetRootQueueDiscOnDevice (dev);
-          if (disc == nullptr)
-            {
-              NS_LOG_LOGIC ("loopback devices don't have queue disc!");
-              continue;
-            }
+//           // get the queue disc on devic
+//           Ptr<QueueDisc> disc = m_ipv4->GetObject<Node> ()->
+//                                 GetObject<TrafficControlLayer> ()->
+//                                 GetRootQueueDiscOnDevice (dev);
+//           if (disc == nullptr)
+//             {
+//               NS_LOG_LOGIC ("loopback devices don't have queue disc!");
+//               continue;
+//             }
 
-          Ptr<DGRv2QueueDisc> dgr_disc = DynamicCast <DGRv2QueueDisc> (disc);
+//           Ptr<DGRv2QueueDisc> dgr_disc = DynamicCast <DGRv2QueueDisc> (disc);
           
-          if (dgr_disc == nullptr)
-            {
-              NS_LOG_LOGIC ("No DGRv2QueueDisc find!");
-              continue;
-            }
+//           if (dgr_disc == nullptr)
+//             {
+//               NS_LOG_LOGIC ("No DGRv2QueueDisc find!");
+//               continue;
+//             }
           
-          DgrNse nse;
-          nse.SetInterface (i);
-          hdr.AddNse (nse);
-          if (hdr.GetNseNumber () == maxNse)
-            {
-              p->AddHeader (hdr);
-              NS_LOG_DEBUG ("SendTo: " << *p);
-              sendingSocket->SendTo (p, 0, InetSocketAddress (senderAddress, DGR_PORT)); // to neighbor
-              p->RemoveHeader (hdr);
-              hdr.ClearNses ();
-            }
-        }
-        if (hdr.GetNseNumber () > 0)
-          {
-            p->AddHeader (hdr);
-            NS_LOG_DEBUG ("SendTo: " << *p);
-            sendingSocket->SendTo(p, 0, InetSocketAddress (senderAddress, DGR_PORT)); // Todo: Defined the RIP port
-          }
-    }
-}
+//           DgrNse nse;
+//           nse.SetInterface (i);
+//           hdr.AddNse (nse);
+//           if (hdr.GetNseNumber () == maxNse)
+//             {
+//               p->AddHeader (hdr);
+//               NS_LOG_DEBUG ("SendTo: " << *p);
+//               sendingSocket->SendTo (p, 0, InetSocketAddress (senderAddress, DGR_PORT)); // to neighbor
+//               p->RemoveHeader (hdr);
+//               hdr.ClearNses ();
+//             }
+//         }
+//         if (hdr.GetNseNumber () > 0)
+//           {
+//             p->AddHeader (hdr);
+//             NS_LOG_DEBUG ("SendTo: " << *p);
+//             sendingSocket->SendTo(p, 0, InetSocketAddress (senderAddress, DGR_PORT)); // Todo: Defined the RIP port
+//           }
+//     }
+// }
 
 } // namespace ns3

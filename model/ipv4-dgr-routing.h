@@ -313,7 +313,7 @@ private:
   ASExternalRoutes m_ASexternalRoutes; //!< External routes imported
   Ptr<Ipv4> m_ipv4; //!< associated IPv4 instance
   
-  DgrNSDB* m_nsdb; //!< the Neighbor State DataBase (NSDB) of the DGR Rout
+  DgrNSDB m_nsdb; //!< the Neighbor State DataBase (NSDB) of the DGR Rout
 
   // use a socket list neighbors
   /// One socket per interface, each bound to that interface's address
@@ -328,12 +328,10 @@ private:
   SocketList  m_unicastSocketList; //!< list of sockets for unicast messages (socket, interface index)
   Ptr<Socket> m_multicastRecvSocket; //!< multicast receive socket
 
-  // EventId m_nextUnsolicitedUpdate; //!< Next Unsolicited Update event
-  // EventId m_nextTriggeredUpdate; //!< Next Triggered Update event
+  EventId m_nextUnsolicitedUpdate; //!< Next Unsolicited Update event
+  EventId m_nextTriggeredUpdate; //!< Next Triggered Update event
 
-  EventId m_nextSampling;           //!< Next sampling event
-
-  Time m_samplingPeriod;             //!< The sampling period
+  Time m_unsolicitedUpdate;             //!< Time between two Unsolicited Neighbor State Updates.
 
   // Time m_startupDelay;            //!< Random delay before protocol startup
   // Time m_minTriggeredUpdateDelay; //!< Min cooldown delay after a Triggered Update.
@@ -357,10 +355,10 @@ private:
   */
   void DoSendNeighborStatusUpdate (bool periodic);
 
-  /**
-   * \brief Send Neighbor Status Request on all interfaces
-  */
-  void SendNeighborStatusRequest ();
+  // /**
+  //  * \brief Send Neighbor Status Request on all interfaces
+  // */
+  // void SendNeighborStatusRequest ();
 
   /**
    * \brief Send Triggered Routing Updates on all interfaces.
@@ -372,20 +370,20 @@ private:
   */
   void SendUnsolicitedUpdate ();
 
-  /**
-   * \brief Handle DGR requests.
-   * 
-   * \param hdr message header (Including NSEs)
-   * \param senderAddress sender address
-   * \param senderPort sender port
-   * \param incomingInterface incoming interface
-   * \param hopLimit packet's hop limit
-  */
-  void HandleRequests (DgrHeader hdr,
-                      Ipv4Address senderAddress,
-                      uint16_t senderPort,
-                      uint32_t incomingInterface,
-                      uint8_t hopLimit);
+  // /**
+  //  * \brief Handle DGR requests.
+  //  * 
+  //  * \param hdr message header (Including NSEs)
+  //  * \param senderAddress sender address
+  //  * \param senderPort sender port
+  //  * \param incomingInterface incoming interface
+  //  * \param hopLimit packet's hop limit
+  // */
+  // void HandleRequests (DgrHeader hdr,
+  //                     Ipv4Address senderAddress,
+  //                     uint16_t senderPort,
+  //                     uint32_t incomingInterface,
+  //                     uint8_t hopLimit);
 
   /**
    * \brief Handle DGR responses.

@@ -18,7 +18,7 @@ StatusUnit::~StatusUnit ()
 }
 
 uint32_t
-StatusUnit::GetCurrentState ()
+StatusUnit::GetCurrentState () const
 {
   uint32_t counter = m_matrix[m_state][m_state];
   uint32_t ret = m_state;
@@ -34,7 +34,7 @@ StatusUnit::GetCurrentState ()
 }
 
 uint32_t
-StatusUnit::GetLastState ()
+StatusUnit::GetLastState () const
 {
   return m_state;
 }
@@ -49,7 +49,8 @@ StatusUnit::Update (uint32_t state)
 void
 StatusUnit::Print (std::ostream &os) const
 {
-  os << "current state = " << m_state
+  os << "Last state = " << GetLastState ()
+     << ", Current State = " << GetCurrentState ()
      << std::endl;
   os << "current Markov Transition Probability Matrix: "
      << std::endl;
@@ -172,6 +173,22 @@ DgrNSDB::GetNeighborStatusEntry (uint32_t iface) const
   return nullptr;
 }
 
+NeighborStatusEntry*
+DgrNSDB::HandleNeighborStatusEntry (uint32_t iface)
+{
+  NS_LOG_FUNCTION (this << iface);
+  //
+  // Look up a NSE by it's interface.
+  //
+  NSDBMap_t::iterator iter = m_database.find (iface);
+  if (iter != m_database.end ())
+    {
+      return iter->second;
+    }
+  return nullptr;
+}
+
+
 void
 DgrNSDB::Insert (uint32_t iface, NeighborStatusEntry* nse)
 {
@@ -179,10 +196,12 @@ DgrNSDB::Insert (uint32_t iface, NeighborStatusEntry* nse)
   NSDBMap_t::iterator it = m_database.find (iface);
   if (it != m_database.end ())
     {
+      std::cout << "Find a current nse" << std::endl;
       it->second = nse;
     }
   else
     {
+      std::cout << "not find, insert a new one";
       m_database.insert (NSDBPair_t (iface, nse));
     }
 }
@@ -190,8 +209,9 @@ DgrNSDB::Insert (uint32_t iface, NeighborStatusEntry* nse)
 void
 DgrNSDB::Print (std::ostream &os) const
 {
-  os << "At node: " << std::endl;
+  os << "At node: ???" << std::endl;
   NSDBMap_t::const_iterator ci;
+  std::cout << "const iterator";
   for (ci = m_database.begin (); ci != m_database.end (); ci ++)
     {
       os << "Interface = " << ci->first << std::endl;
