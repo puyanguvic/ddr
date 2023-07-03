@@ -140,9 +140,9 @@ DGRv2QueueDisc::CheckConfig (void)
       // std::cout << "Create 2 DropTail Queue" << std::endl;
       ObjectFactory factory;
       factory.SetTypeId ("ns3::DropTailQueue<QueueDiscItem>");
-      factory.Set ("MaxSize", QueueSizeValue (QueueSize ("125KiB")));
+      factory.Set ("MaxSize", QueueSizeValue (QueueSize ("250KB")));
       AddInternalQueue (factory.Create<InternalQueue> ());
-      factory.Set ("MaxSize", QueueSizeValue (QueueSize ("2500KiB")));
+      factory.Set ("MaxSize", QueueSizeValue (QueueSize ("2500KB")));
       AddInternalQueue (factory.Create<InternalQueue> ());
       
       // GetInternalQueue (0)->GetMaxSize ();

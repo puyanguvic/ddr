@@ -1352,8 +1352,8 @@ Ipv4DGRRouting:: SendUnsolicitedUpdate ()
       m_nextTriggeredUpdate.Cancel ();
     }
   DoSendNeighborStatusUpdate (true);
-  // todo : update the delay
-  Time delay = m_unsolicitedUpdate + Seconds (m_rand->GetValue (0, 0.5 * m_unsolicitedUpdate.GetSeconds ()));
+  // todo : update the delay, do we need some random in the delay
+  Time delay = m_unsolicitedUpdate;
   m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedUpdate, this);
 }
 
@@ -1455,7 +1455,7 @@ Ipv4DGRRouting::HandleResponses (DgrHeader hdr,
           entry->Insert (n_iface, su);
         }
       su->Update (n_state);
-      su->Print (std::cout);     
+      // su->Print (std::cout);     
     }
 }
 

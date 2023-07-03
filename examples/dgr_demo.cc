@@ -7,10 +7,10 @@
 #include "ns3/point-to-point-module.h"
 #include "ns3/applications-module.h"
 #include "ns3/netanim-module.h"
-#include "ns3/dgrv2-module.h"
 #include "ns3/topology-read-module.h"
 #include "ns3/traffic-control-module.h"
 #include "ns3/node-list.h"
+#include "ns3/dgrv2-module.h"
 #include <stdlib.h> 
 
 #include <list>
@@ -26,7 +26,8 @@ NS_LOG_COMPONENT_DEFINE (expName);
 
 int main (int argc, char *argv[])
 {
-  std::string topo ("2by2");
+  Packet::EnablePrinting ();
+  std::string topo ("2_node");
   std::string format ("Inet");
 
   // Set up command line parameters used to control the experiment.
@@ -35,7 +36,7 @@ int main (int argc, char *argv[])
                 format);
   cmd.AddValue ("topo", "topology", topo);
   cmd.Parse (argc, argv);
-  std::string input ("contrib/dgrv2/infocomm2023/topo/Inet_" + topo + "_topo.txt");
+  std::string input ("contrib/dgrv2/topo/Inet_" + topo + "_topo.txt");
   // ------------------------------------------------------------
   // -- Read topology data.
   // --------------------------------------------
@@ -84,7 +85,7 @@ int main (int argc, char *argv[])
   NetDeviceContainer* ndc = new NetDeviceContainer[totlinks];
   PointToPointHelper p2p;
   TrafficControlHelper tch;
-  tch.SetRootQueueDisc ("ns3::DGRVirtualQueueDisc");
+  tch.SetRootQueueDisc ("ns3::DGRv2QueueDisc");
   NS_LOG_INFO ("creating ipv4 interfaces");
   Ipv4InterfaceContainer* ipic = new Ipv4InterfaceContainer[totlinks];
   std::cout << "totlinks number: " << totlinks << std::endl;
@@ -96,15 +97,19 @@ int main (int argc, char *argv[])
       std::string delay = iter->GetAttribute ("Weight");
       std::stringstream ss;
       ss << delay;
-      uint16_t metric;
+      uint16_t metric;  //!< metric in milliseconds
       ss >> metric;
       p2p.SetChannelAttribute ("Delay", StringValue (delay + "ms"));
-      p2p.SetDeviceAttribute ("DataRate", StringValue ("5Mbps"));
+      p2p.SetDeviceAttribute ("DataRate", StringValue ("100Mbps"));
       ndc[i] = p2p.Install (nc[i]);
+      // QueueDiscContainer container = 
       tch.Install (ndc[i]);
+      // std::cout << "the container size: " << container.GetN () << std::endl;
+      // container.Get (0)->GetInternalQueue (0)->SetMaxSize (QueueSize ("250KB"));
+      // container.Get (1)->GetInternalQueue (0)->SetMaxSize (QueueSize ("250KB"));
       ipic[i] = address.Assign (ndc[i]);
-      ipic[i].SetMetric (0, metric + 1);
-      ipic[i].SetMetric (1, metric + 1);
+      ipic[i].SetMetric (0, metric);
+      ipic[i].SetMetric (1, metric);
       address.NewNetwork ();
     }
 
@@ -115,7 +120,7 @@ int main (int argc, char *argv[])
   // ---------------------------------------------
   Ipv4DGRRoutingHelper d;
   Ptr<OutputStreamWrapper> routingStream = Create<OutputStreamWrapper>
-  (topo + expName + ".routes", std::ios::out);
+  (topo + "_" + expName + ".routes", std::ios::out);
   d.PrintRoutingTableAllAt (Seconds (0), routingStream);
 
   // // -------------- Udp traffic 0-->2 ------------------
@@ -141,29 +146,29 @@ int main (int argc, char *argv[])
   // app->SetStartTime (Seconds (1.0));
   // app->SetStopTime (Seconds (20.0));
   
-  // -------------- TCP Back ground traffic 0-->2 ------------------
-  uint16_t tcpPort = 8080;
-  uint32_t tcpSink = 3;
-  uint32_t tcpSender = 0;
-  Ptr<Node> tcpSinkNode = nodes.Get (tcpSink);
-  Ptr<Ipv4> ipv4TcpSink = tcpSinkNode->GetObject<Ipv4> ();
-  Ipv4InterfaceAddress iaddrTcpSink = ipv4TcpSink->GetAddress (1,0);
-  Ipv4Address ipv4AddrTcpSink = iaddrTcpSink.GetLocal ();
+  // // -------------- TCP Back ground traffic 0-->2 ------------------
+  // uint16_t tcpPort = 8080;
+  // uint32_t tcpSink = 3;
+  // uint32_t tcpSender = 0;
+  // Ptr<Node> tcpSinkNode = nodes.Get (tcpSink);
+  // Ptr<Ipv4> ipv4TcpSink = tcpSinkNode->GetObject<Ipv4> ();
+  // Ipv4InterfaceAddress iaddrTcpSink = ipv4TcpSink->GetAddress (1,0);
+  // Ipv4Address ipv4AddrTcpSink = iaddrTcpSink.GetLocal ();
 
-  DGRSinkHelper sinkHelper ("ns3::TcpSocketFactory",
-                         InetSocketAddress (Ipv4Address::GetAny (), tcpPort));
-  ApplicationContainer sinkApp = sinkHelper.Install (nodes.Get (tcpSink));
-  sinkApp.Start (Seconds (0.0));
-  sinkApp.Stop (Seconds (20.0));
+  // DGRSinkHelper sinkHelper ("ns3::TcpSocketFactory",
+  //                        InetSocketAddress (Ipv4Address::GetAny (), tcpPort));
+  // ApplicationContainer sinkApp = sinkHelper.Install (nodes.Get (tcpSink));
+  // sinkApp.Start (Seconds (0.0));
+  // sinkApp.Stop (Seconds (20.0));
   
-  // tcp send
-  DGRTcpAppHelper sourceHelper ("ns3::TcpSocketFactory",
-                               InetSocketAddress (ipv4AddrTcpSink, tcpPort));
-  sourceHelper.SetAttribute ("MaxBytes", UintegerValue (7500000));
-  sourceHelper.SetAttribute ("Budget", UintegerValue (1000));
-  ApplicationContainer sourceApp = sourceHelper.Install (nodes.Get (tcpSender));
-  sourceApp.Start (Seconds (1.0));
-  sourceApp.Stop (Seconds (20.0));
+  // // tcp send
+  // DGRTcpAppHelper sourceHelper ("ns3::TcpSocketFactory",
+  //                              InetSocketAddress (ipv4AddrTcpSink, tcpPort));
+  // sourceHelper.SetAttribute ("MaxBytes", UintegerValue (7500000));
+  // sourceHelper.SetAttribute ("Budget", UintegerValue (1000));
+  // ApplicationContainer sourceApp = sourceHelper.Install (nodes.Get (tcpSender));
+  // sourceApp.Start (Seconds (1.0));
+  // sourceApp.Stop (Seconds (20.0));
 
   // ------------------------------------------------------------
   // -- Net anim
