@@ -1,0 +1,86 @@
+\doxysubsection{dgr-\/application-\/helper.cc}
+\hypertarget{dgr-application-helper_8cc_source}{}\label{dgr-application-helper_8cc_source}\index{helper/dgr-\/application-\/helper.cc@{helper/dgr-\/application-\/helper.cc}}
+\mbox{\hyperlink{dgr-application-helper_8cc}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00001}00001\ \textcolor{comment}{/*\ -\/*-\/\ Mode:C++;\ c-\/file-\/style:"{}gnu"{};\ indent-\/tabs-\/mode:nil;\ -\/*-\/\ */}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00002}00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00003}00003\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2008\ INRIA}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00005}00005\ \textcolor{comment}{\ *\ This\ program\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00006}00006\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ version\ 2\ as}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00007}00007\ \textcolor{comment}{\ *\ published\ by\ the\ Free\ Software\ Foundation;}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00008}00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00009}00009\ \textcolor{comment}{\ *\ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00010}00010\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00011}00011\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00012}00012\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00013}00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00014}00014\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00015}00015\ \textcolor{comment}{\ *\ along\ with\ this\ program;\ if\ not,\ write\ to\ the\ Free\ Software}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00016}00016\ \textcolor{comment}{\ *\ Foundation,\ Inc.,\ 59\ Temple\ Place,\ Suite\ 330,\ Boston,\ MA\ \ 02111-\/1307\ \ USA}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00018}00018\ \textcolor{comment}{\ *\ Author:\ Mathieu\ Lacage\ <mathieu.lacage@sophia.inria.fr>}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00019}00019\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}dgr-\/application-\/helper.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}ns3/string.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}ns3/inet-\/socket-\/address.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}ns3/names.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00025}00025\ \textcolor{preprocessor}{\#include\ "{}ns3/dgrv2-\/module.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00027}\mbox{\hyperlink{namespacens3}{00027}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacens3}{ns3}}\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00029}00029\ DGRApplicationHelper::DGRApplicationHelper\ (std::string\ protocol,\ Address\ address)}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00030}00030\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00031}00031\ \ \ m\_factory.SetTypeId\ (\textcolor{stringliteral}{"{}ns3::DGRPacketSink"{}});}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00032}00032\ \ \ m\_factory.Set\ (\textcolor{stringliteral}{"{}Protocol"{}},\ StringValue\ (protocol));}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00033}00033\ \ \ m\_factory.Set\ (\textcolor{stringliteral}{"{}Local"{}},\ AddressValue\ (address));}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00034}00034\ \}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00036}00036\ DGRApplicationHelper::\string~DGRApplicationHelper()}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00037}00037\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00040}00040\ \textcolor{keywordtype}{void}\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00041}00041\ DGRApplicationHelper::SetAttribute\ (std::string\ name,\ \textcolor{keyword}{const}\ AttributeValue\ \&value)}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00042}00042\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00043}00043\ \ \ m\_factory.Set\ (name,\ value);}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00046}00046\ ApplicationContainer}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00047}00047\ DGRApplicationHelper::Install\ (Ptr<Node>\ node)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00048}00048\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00049}00049\ \ \ \textcolor{keywordflow}{return}\ ApplicationContainer\ (InstallPriv\ (node));}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00052}00052\ ApplicationContainer}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00053}00053\ DGRApplicationHelper::Install\ (std::string\ nodeName)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00054}00054\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00055}00055\ \ \ Ptr<Node>\ node\ =\ Names::Find<Node>\ (nodeName);}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00056}00056\ \ \ \textcolor{keywordflow}{return}\ ApplicationContainer\ (InstallPriv\ (node));}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00059}00059\ ApplicationContainer}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00060}00060\ DGRApplicationHelper::Install\ (NodeContainer\ c)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00061}00061\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00062}00062\ \ \ ApplicationContainer\ apps;}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00063}00063\ \ \ \textcolor{keywordflow}{for}\ (NodeContainer::Iterator\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}\ =\ c.Begin\ ();\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}\ !=\ c.End\ ();\ ++\mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}})}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00064}00064\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00065}00065\ \ \ \ \ \ \ apps.Add\ (InstallPriv\ (*\mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}));}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00068}00068\ \ \ \textcolor{keywordflow}{return}\ apps;}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00069}00069\ \}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00071}00071\ Ptr<Application>}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00072}00072\ DGRApplicationHelper::InstallPriv\ (Ptr<Node>\ node)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00073}00073\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00074}00074\ \ \ Ptr<Application>\ app\ =\ m\_factory.Create<Application>\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00075}00075\ \ \ node-\/>AddApplication\ (app);}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00077}00077\ \ \ \textcolor{keywordflow}{return}\ app;}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00078}00078\ \}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8cc_source_l00080}00080\ \}\ \textcolor{comment}{//\ namespace\ ns3}}
+
+\end{DoxyCode}

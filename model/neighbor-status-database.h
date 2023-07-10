@@ -14,13 +14,13 @@ class StatusUnit
   public:
     StatusUnit ();
     ~StatusUnit ();
-    uint32_t GetLastState () const;
-    uint32_t GetCurrentState () const;
-    void Update (uint32_t state);
+    int GetLastState () const;
+    int GetCurrentState () const;
+    void Update (int state);
     void Print (std::ostream &os) const;
   private:
-    uint32_t m_matrix[STATESIZE][STATESIZE];
-    uint32_t m_state; /** last state */
+    int m_matrix[STATESIZE][STATESIZE];
+    int m_state; /** last state */
 };
 
 class NeighborStatusEntry

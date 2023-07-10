@@ -58,6 +58,10 @@ DGRv2QueueDisc::DoEnqueue (Ptr<QueueDiscItem> item)
 {
   NS_LOG_FUNCTION (this << item);
   uint32_t band = EnqueueClassify (item);
+  // if (band == 1)
+  //   {
+  //     std::cout << "slow lane" << std::endl;
+  //   }
   // uint32_t itemSize = item->GetSize ();
   // uint32_t currentQueueSize = GetInternalQueue (band)->GetCurrentSize ().GetValue ();
   // uint32_t maxQueueSize = GetInternalQueue (band)->GetMaxSize ().GetValue ();

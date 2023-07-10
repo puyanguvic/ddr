@@ -1,0 +1,7 @@
+<map id="model/neighbor&#45;status&#45;database.cc" name="model/neighbor&#45;status&#45;database.cc">
+<area shape="rect" id="Node000001" title=" " alt="" coords="104,5,273,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,207,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,47,130,86,126,82,167,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="231,93,312,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="211,44,251,82,247,86,207,47"/>
+</map>

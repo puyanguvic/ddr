@@ -1,0 +1,17 @@
+<map id="model/dgrv2&#45;queue&#45;disc.cc" name="model/dgrv2&#45;queue&#45;disc.cc">
+<area shape="rect" id="Node000001" title=" " alt="" coords="364,5,563,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,87,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="386,33,101,81,100,76,385,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="111,79,261,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="419,33,245,78,244,73,418,28"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="286,79,387,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="444,33,371,74,368,69,442,28"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="412,79,515,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="466,31,466,65,461,65,461,31"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="539,79,662,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="487,28,567,70,565,75,484,33"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="686,79,833,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="512,28,699,73,698,78,510,33"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="857,79,945,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="544,28,843,76,842,81,543,33"/>
+</map>

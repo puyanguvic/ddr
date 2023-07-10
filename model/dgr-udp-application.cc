@@ -1,17 +1,15 @@
 /* -*- Mode:C++; c-file-style:"gnu"; indent-tabs-mode:nil; -*- */
 
-#include <iostream>
-#include "ns3/core-module.h"
-#include "ns3/network-module.h"
-#include "ns3/point-to-point-module.h"
-#include "ns3/applications-module.h"
-#include "ns3/internet-module.h"
-#include "ns3/flow-monitor-module.h"
+// #include <iostream>
+// #include "ns3/core-module.h"
+// #include "ns3/network-module.h"
+// #include "ns3/point-to-point-module.h"
+// #include "ns3/applications-module.h"
+// #include "ns3/internet-module.h"
+// #include "ns3/flow-monitor-module.h"
+
 #include "dgr-udp-application.h"
-// #include "budget-tag.h"
-// #include "priority-tag.h"
-// #include "flag-tag.h"
-// #include "timestamp-tag.h"
+#include "ns3/timestamp-tag.h"
 #include "dgr-tags.h"
 
 #define MAX_UINT_32 0xffffffff
@@ -23,24 +21,8 @@ NS_LOG_COMPONENT_DEFINE ("DGRUdpApplication");
 
 NS_OBJECT_ENSURE_REGISTERED (DGRUdpApplication);
 
-TypeId
-DGRUdpApplication::GetTypeId (void)
-{
-  static TypeId tid = TypeId ("ns3::DGRUdpApplication")
-    .SetParent<Application> ()
-    .SetGroupName("DGR") 
-    .AddConstructor<DGRUdpApplication> ()
-    .AddAttribute ("Variable_bitrate",
-                   "Enable the VBR",
-                   BooleanValue (false),
-                   MakeBooleanAccessor (&DGRUdpApplication::m_vbr),
-                   MakeBooleanChecker ())
-  ;
-  return tid;
-}
-
 DGRUdpApplication::DGRUdpApplication ()
-  : m_socket (0),
+  : m_socket (nullptr),
     m_peer (),
     m_packetSize (0),
     m_nPackets (0),
@@ -56,12 +38,33 @@ DGRUdpApplication::DGRUdpApplication ()
 
 DGRUdpApplication::~DGRUdpApplication ()
 {
-    m_socket = 0;
+    m_socket = nullptr;
 }
 
+TypeId
+DGRUdpApplication::GetTypeId ()
+{
+  static TypeId tid = TypeId ("ns3::DGRUdpApplication")
+    .SetParent<Application> ()
+    .SetGroupName("DGRv2") 
+    .AddConstructor<DGRUdpApplication> ()
+    // .AddAttribute ("Variable_bitrate",
+    //                "Enable the VBR",
+    //                BooleanValue (false),
+    //                MakeBooleanAccessor (&DGRUdpApplication::m_vbr),
+    //                MakeBooleanChecker ())
+  ;
+  return tid;
+}
 
 void
-DGRUdpApplication::Setup (Ptr<Socket> socket, Address sinkAddress, uint32_t packetSize, uint32_t nPackets, DataRate dataRate, uint32_t budget, bool flag)
+DGRUdpApplication::Setup (Ptr<Socket> socket,
+                          Address sinkAddress,
+                          uint32_t packetSize,
+                          uint32_t nPackets,
+                          DataRate dataRate,
+                          uint32_t budget,
+                          bool flag)
 {
     m_socket = socket;
     m_peer = sinkAddress;
@@ -73,7 +76,12 @@ DGRUdpApplication::Setup (Ptr<Socket> socket, Address sinkAddress, uint32_t pack
  }
 
  void
- DGRUdpApplication::Setup (Ptr<Socket> socket, Address sinkAddress, uint32_t packetSize, uint32_t nPackets, DataRate dataRate, bool flag)
+ DGRUdpApplication::Setup (Ptr<Socket> socket,
+                           Address sinkAddress,
+                           uint32_t packetSize,
+                           uint32_t nPackets,
+                           DataRate dataRate,
+                           bool flag)
  {
     m_socket = socket;
     m_peer = sinkAddress;
@@ -85,8 +93,9 @@ DGRUdpApplication::Setup (Ptr<Socket> socket, Address sinkAddress, uint32_t pack
  
 
 void
-DGRUdpApplication::StartApplication ()
+DGRUdpApplication::StartApplication (void)
 {
+    std::cout << "?????????????";
     m_running = true;
     m_packetSent = 0;
     m_socket->Bind ();
@@ -95,7 +104,7 @@ DGRUdpApplication::StartApplication ()
 }
 
 void
-DGRUdpApplication::StopApplication ()
+DGRUdpApplication::StopApplication (void)
 {
     m_running = false;
     if (m_sendEvent.IsRunning ())

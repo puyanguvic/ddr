@@ -1,0 +1,9 @@
+<map id="model/dgr&#45;udp&#45;application.cc" name="model/dgr&#45;udp&#45;application.cc">
+<area shape="rect" id="Node000001" title=" " alt="" coords="164,5,376,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,167,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="241,33,130,76,128,71,239,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="191,79,349,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="273,31,273,65,267,65,267,31"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="374,79,462,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="295,28,383,70,380,75,293,33"/>
+</map>

@@ -18,6 +18,7 @@
 
 #include <vector>
 #include <iomanip>
+#include <string> 
 #include "ns3/names.h"
 #include "ns3/log.h"
 #include "ns3/simulator.h"
@@ -351,7 +352,7 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
       //     min = allRoutes.at (i)->GetDistance ();
       //     selectIndex = i;
       //   }
-      //  }
+      // }
 
       // // worst
       // uint32_t selectIndex = 0;
@@ -884,6 +885,14 @@ Ipv4DGRRouting::DoInitialize ()
   // To Check: An random value is needed to initialize the protocol?
   Time delay = m_unsolicitedUpdate;
   m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedUpdate, this);
+
+  uint32_t nodeId = m_ipv4->GetNetDevice (1)->GetNode ()->GetId ();
+  std::stringstream ss;
+  ss << nodeId;
+  std::string strNodeId = ss.str();
+  // std::string node = "Node " + (std::string)nodeId;
+  m_outStream = Create<OutputStreamWrapper> ("Node" + strNodeId + "queueStatusErr.txt", std::ios::out);
+
 
   // m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedUpdate, this);
   
@@ -1447,7 +1456,7 @@ Ipv4DGRRouting::HandleResponses (DgrHeader hdr,
   for (std::list<DgrNse>::iterator iter = nses.begin (); iter != nses.end (); iter ++)
     {
       uint32_t n_iface = (*iter).GetInterface ();
-      uint32_t n_state = (*iter).GetState ();
+      int n_state = (*iter).GetState ();
       StatusUnit* su = entry->GetStatusUnit (n_iface);
       if (su == nullptr)
         {
@@ -1455,6 +1464,9 @@ Ipv4DGRRouting::HandleResponses (DgrHeader hdr,
           entry->Insert (n_iface, su);
         }
       su->Update (n_state);
+      std::ostream* os = m_outStream->GetStream ();
+      *os << "Iface: " << n_iface << " Predict Err: " << abs(n_state - su->GetCurrentState ()) << std::endl;
+      // Print the su
       // su->Print (std::cout);     
     }
 }

@@ -18,6 +18,7 @@ class Socket;
 /**
  * \ingroup DGR-routing
  * This moduel comes from bulk Send Application
+ * TCP application need to enable packet tags in TcpRxBuffer
  */
 class DGRTcpApplication : public Application
 {
@@ -37,6 +38,12 @@ public:
    * \param maxBytes the upper bound of bytes to send
    */
   void SetMaxBytes (uint64_t maxBytes);
+
+  /**
+   * \brief Set the flag of packet used in the sink to help monitor the packet delay
+   * \param flag the flag
+  */
+  void SetFlag (bool flag);
 
   /**
    * \brief Get the socket this application is attached to.
@@ -96,4 +103,4 @@ private:
 
 } // namespace ns3
 
-#endif /* BULK_SEND_APPLICATION_H */
+#endif /* DGR_TCP_SEND_APPLICATION_H */

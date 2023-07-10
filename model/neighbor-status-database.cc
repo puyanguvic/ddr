@@ -17,12 +17,12 @@ StatusUnit::~StatusUnit ()
 {
 }
 
-uint32_t
+int
 StatusUnit::GetCurrentState () const
 {
-  uint32_t counter = m_matrix[m_state][m_state];
-  uint32_t ret = m_state;
-  for (uint32_t i = 0; i < 10; i ++)
+  int counter = m_matrix[m_state][m_state];
+  int ret = m_state;
+  for (int i = 0; i < 10; i ++)
     {
       if (m_matrix[m_state][i] > counter)
         {
@@ -33,14 +33,14 @@ StatusUnit::GetCurrentState () const
   return ret;
 }
 
-uint32_t
+int
 StatusUnit::GetLastState () const
 {
   return m_state;
 }
 
 void
-StatusUnit::Update (uint32_t state)
+StatusUnit::Update (int state)
 {
   m_matrix[m_state][state] ++;
   m_state = state;
@@ -201,7 +201,7 @@ DgrNSDB::Insert (uint32_t iface, NeighborStatusEntry* nse)
     }
   else
     {
-      std::cout << "not find, insert a new one";
+      // std::cout << "not find, insert a new one";
       m_database.insert (NSDBPair_t (iface, nse));
     }
 }

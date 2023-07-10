@@ -1,0 +1,15 @@
+<map id="helper/ipv4&#45;dgr&#45;routing&#45;helper.cc" name="helper/ipv4&#45;dgr&#45;routing&#45;helper.cc">
+<area shape="rect" id="Node000001" title=" " alt="" coords="519,5,691,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,101,189,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="519,43,202,96,174,101,173,96,201,91,519,38"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="213,101,403,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="541,48,362,99,360,94,539,43"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="427,101,594,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="586,48,536,93,532,89,583,44"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="619,101,784,126"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="628,44,679,89,676,93,625,48"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="809,93,946,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="666,43,805,87,804,92,664,48"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="970,101,1051,126"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="692,36,819,59,959,91,969,94,968,99,958,96,818,64,691,42"/>
+</map>

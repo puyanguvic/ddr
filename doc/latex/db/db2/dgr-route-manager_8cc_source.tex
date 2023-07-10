@@ -1,0 +1,76 @@
+\doxysubsection{dgr-\/route-\/manager.cc}
+\hypertarget{dgr-route-manager_8cc_source}{}\label{dgr-route-manager_8cc_source}\index{model/dgr-\/route-\/manager.cc@{model/dgr-\/route-\/manager.cc}}
+\mbox{\hyperlink{dgr-route-manager_8cc}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00001}00001\ \textcolor{comment}{/*\ -\/*-\/\ Mode:C++;\ c-\/file-\/style:"{}gnu"{};\ indent-\/tabs-\/mode:nil;\ -\/*-\/\ */}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00002}00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00003}00003\ \textcolor{comment}{\ *\ Copyright\ 2007\ University\ of\ Washington}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00004}00004\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00005}00005\ \textcolor{comment}{\ *\ This\ program\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00006}00006\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ version\ 2\ as}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00007}00007\ \textcolor{comment}{\ *\ published\ by\ the\ Free\ Software\ Foundation;}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00008}00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00009}00009\ \textcolor{comment}{\ *\ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00010}00010\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00011}00011\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00012}00012\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00013}00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00014}00014\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00015}00015\ \textcolor{comment}{\ *\ along\ with\ this\ program;\ if\ not,\ write\ to\ the\ Free\ Software}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00016}00016\ \textcolor{comment}{\ *\ Foundation,\ Inc.,\ 59\ Temple\ Place,\ Suite\ 330,\ Boston,\ MA\ \ 02111-\/1307\ \ USA}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00018}00018\ \textcolor{comment}{\ *\ Author:\ Tom\ Henderson\ (tomhend@u.washington.edu)}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00019}00019\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}ns3/assert.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}ns3/log.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}ns3/simulation-\/singleton.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}dgr-\/route-\/manager.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00025}00025\ \textcolor{preprocessor}{\#include\ "{}dgr-\/route-\/manager-\/impl.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00027}00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacens3}{ns3}}\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00029}\mbox{\hyperlink{namespacens3_acf0e0da78722f323b40406b2c2b5d039}{00029}}\ \mbox{\hyperlink{namespacens3_adde9ed23eff577cdfec10d85035e32eb}{NS\_LOG\_COMPONENT\_DEFINE}}\ (\textcolor{stringliteral}{"{}DGRRouteManager"{}});}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00031}00031\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00032}00032\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00033}00033\ \textcolor{comment}{//\ DGRRoutingManager\ Implementation}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00034}00034\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00035}00035\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00037}00037\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00038}00038\ DGRRouteManager::DeleteDGRRoutes\ ()}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00039}00039\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00040}00040\ \ \ NS\_LOG\_FUNCTION\_NOARGS\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00041}00041\ \ \ SimulationSingleton<DGRRouteManagerImpl>::Get\ ()-\/>}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00042}00042\ \ \ DeleteDGRRoutes\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00045}00045\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00046}00046\ DGRRouteManager::BuildDGRRoutingDatabase\ (\textcolor{keywordtype}{void})\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00047}00047\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00048}00048\ \ \ NS\_LOG\_FUNCTION\_NOARGS\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00049}00049\ \ \ SimulationSingleton<DGRRouteManagerImpl>::Get\ ()-\/>}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00050}00050\ \ \ BuildDGRRoutingDatabase\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00051}00051\ \}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00053}00053\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00054}00054\ DGRRouteManager::InitializeRoutes\ (\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00055}00055\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00056}00056\ \ \ NS\_LOG\_FUNCTION\_NOARGS\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00057}00057\ \ \ SimulationSingleton<DGRRouteManagerImpl>::Get\ ()-\/>}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00058}00058\ \ \ InitializeRoutes\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00061}00061\ uint32\_t}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00062}00062\ DGRRouteManager::AllocateRouterId\ (\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00063}00063\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00064}00064\ \ \ NS\_LOG\_FUNCTION\_NOARGS\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00065}00065\ \ \ \textcolor{keyword}{static}\ uint32\_t\ routerId\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00066}00066\ \ \ \textcolor{keywordflow}{return}\ routerId++;}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00067}00067\ \}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager_8cc_source_l00070}00070\ \}\ \textcolor{comment}{//\ namespace\ ns3}}
+
+\end{DoxyCode}

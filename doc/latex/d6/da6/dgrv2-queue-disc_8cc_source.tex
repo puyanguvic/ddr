@@ -1,0 +1,246 @@
+\doxysubsection{dgrv2-\/queue-\/disc.cc}
+\hypertarget{dgrv2-queue-disc_8cc_source}{}\label{dgrv2-queue-disc_8cc_source}\index{model/dgrv2-\/queue-\/disc.cc@{model/dgrv2-\/queue-\/disc.cc}}
+\mbox{\hyperlink{dgrv2-queue-disc_8cc}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00001}00001\ \textcolor{comment}{/*\ -\/*-\/\ Mode:C++;\ c-\/file-\/style:"{}gnu"{};\ indent-\/tabs-\/mode:nil;\ -\/*-\/\ */}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}ns3/log.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}ns3/object-\/factory.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}ns3/queue.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}ns3/socket.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}ns3/simulator.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}dgrv2-\/queue-\/disc.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}dgr-\/tags.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00011}\mbox{\hyperlink{dgrv2-queue-disc_8cc_ae9ae2413ba1276820410daead5b06066}{00011}}\ \textcolor{preprocessor}{\#define\ DELAY\_SENSITIVE\ 0}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00012}\mbox{\hyperlink{dgrv2-queue-disc_8cc_a7e50b31f4954e8f57d1d5f3bf7587a5e}{00012}}\ \textcolor{preprocessor}{\#define\ BEST\_EFFORT\ 1}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00014}00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacens3}{ns3}}\ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00016}\mbox{\hyperlink{namespacens3_abf62a7fe5acf8b44f87cab410d6febda}{00016}}\ \mbox{\hyperlink{namespacens3_adde9ed23eff577cdfec10d85035e32eb}{NS\_LOG\_COMPONENT\_DEFINE}}\ (\textcolor{stringliteral}{"{}DGRv2QueueDisc"{}});}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00018}\mbox{\hyperlink{namespacens3_aa3ed00f7822cdaef583f16cbee42d95b}{00018}}\ \mbox{\hyperlink{namespacens3_aef8bf32b4f2f98d854532bfb36d47a7c}{NS\_OBJECT\_ENSURE\_REGISTERED}}\ (DGRv2QueueDisc);}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00020}00020\ TypeId\ DGRv2QueueDisc::GetTypeId\ (\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00021}00021\ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00022}00022\ \ \ \textcolor{keyword}{static}\ TypeId\ tid\ =\ TypeId\ (\textcolor{stringliteral}{"{}ns3::DGRv2QueueDisc"{}})}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00023}00023\ \ \ \ \ .SetParent<QueueDisc>\ ()}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00024}00024\ \ \ \ \ .SetGroupName\ (\textcolor{stringliteral}{"{}DGRv2"{}})}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00025}00025\ \ \ \ \ .AddConstructor<DGRv2QueueDisc>\ ()}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00026}00026\ \ \ \ \ .AddAttribute\ (\textcolor{stringliteral}{"{}MaxSize"{}},}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}The\ maximum\ size\ accepted\ by\ this\ queue\ disc."{}},}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QueueSizeValue\ (QueueSize\ (\textcolor{stringliteral}{"{}125KiB"{}})),}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeQueueSizeAccessor\ (\&QueueDisc::SetMaxSize,}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&QueueDisc::GetMaxSize),}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeQueueSizeChecker\ ())}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00032}00032\ \ \ ;}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00033}00033\ \ \ \textcolor{keywordflow}{return}\ tid;}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00034}00034\ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00036}00036\ DGRv2QueueDisc::DGRv2QueueDisc\ ()}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00037}00037\ \ \ :\ QueueDisc\ (QueueDiscSizePolicy::MULTIPLE\_QUEUES,\ QueueSizeUnit::BYTES)}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00038}00038\ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00039}00039\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00040}00040\ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00042}00042\ DGRv2QueueDisc::\string~DGRv2QueueDisc\ ()}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00043}00043\ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00044}00044\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00045}00045\ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00047}00047\ uint32\_t}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00048}00048\ DGRv2QueueDisc::GetQueueStatus\ ()}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00049}00049\ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00050}00050\ \ \ uint32\_t\ currentSize\ =\ GetInternalQueue\ (0)-\/>GetCurrentSize\ ().GetValue\ ();}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00051}00051\ \ \ uint32\_t\ maxSize\ =\ GetInternalQueue\ (0)-\/>GetMaxSize\ ().GetValue\ ();}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00052}00052\ \ \ \textcolor{keywordflow}{return}\ currentSize\ *\ 10\ /\ maxSize;}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00053}00053\ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00056}00056\ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00057}00057\ DGRv2QueueDisc::DoEnqueue\ (Ptr<QueueDiscItem>\ item)}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00058}00058\ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00059}00059\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this}\ <<\ item);}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00060}00060\ \ \ uint32\_t\ band\ =\ EnqueueClassify\ (item);}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00061}00061\ \ \ \textcolor{comment}{//\ if\ (band\ ==\ 1)}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00062}00062\ \ \ \textcolor{comment}{//\ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00063}00063\ \ \ \textcolor{comment}{//\ \ \ \ \ std::cout\ <<\ "{}slow\ lane"{}\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00064}00064\ \ \ \textcolor{comment}{//\ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00065}00065\ \ \ \textcolor{comment}{//\ uint32\_t\ itemSize\ =\ item-\/>GetSize\ ();}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00066}00066\ \ \ \textcolor{comment}{//\ uint32\_t\ currentQueueSize\ =\ GetInternalQueue\ (band)-\/>GetCurrentSize\ ().GetValue\ ();}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00067}00067\ \ \ \textcolor{comment}{//\ uint32\_t\ maxQueueSize\ =\ GetInternalQueue\ (band)-\/>GetMaxSize\ ().GetValue\ ();}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00068}00068\ \ \ \textcolor{comment}{//\ if\ (currentQueueSize\ +\ itemSize\ >\ maxQueueSize)}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00069}00069\ \ \ \textcolor{comment}{//\ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00070}00070\ \ \ \textcolor{comment}{//\ \ \ \ \ NS\_LOG\_LOGIC\ ("{}Queue\ disc\ limit\ exceeded\ -\/-\/\ drop\ packet"{});}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00071}00071\ \ \ \textcolor{comment}{//\ \ \ \ \ DropBeforeEnqueue\ (item,\ LIMIT\_EXCEEDED\_DROP);}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00072}00072\ \ \ \textcolor{comment}{//\ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00073}00073\ \ \ \textcolor{keywordtype}{bool}\ retval\ =\ GetInternalQueue\ (band)-\/>Enqueue\ (item);}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00074}00074\ \ \ \textcolor{keywordflow}{if}\ (!retval)}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00075}00075\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00076}00076\ \ \ \ \ \ \ NS\_LOG\_WARN\ (\textcolor{stringliteral}{"{}Packet\ enqueue\ failed.\ Check\ the\ size\ of\ the\ internal\ queues"{}});}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00077}00077\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00079}00079\ \ \ NS\_LOG\_LOGIC\ (\textcolor{stringliteral}{"{}Band\ current\ size\ "{}}\ <<\ band\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ GetInternalQueue\ (band)-\/>GetCurrentSize\ ());}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00080}00080\ \ \ \textcolor{keywordflow}{return}\ retval;}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00081}00081\ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00083}00083\ Ptr<QueueDiscItem>}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00084}00084\ DGRv2QueueDisc::DoDequeue\ (\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00085}00085\ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00086}00086\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00088}00088\ \ \ Ptr<QueueDiscItem>\ item;}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00090}00090\ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ i\ =\ 0;\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}\ <\ GetNInternalQueues\ ();\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}\ ++)}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00091}00091\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00092}00092\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (item\ =\ GetInternalQueue\ (i)-\/>Dequeue\ ())}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00093}00093\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ NS\_LOG\_LOGIC\ (\textcolor{stringliteral}{"{}Popped\ from\ band\ "{}}\ <<\ i\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ item);}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ NS\_LOG\_LOGIC\ (\textcolor{stringliteral}{"{}Number\ packets\ band\ "{}}\ <<\ i\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ GetInternalQueue\ (i)-\/>GetNPackets\ ());}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ item;}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00097}00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00100}00100\ \ \ NS\_LOG\_LOGIC\ (\textcolor{stringliteral}{"{}Queue\ empty"{}});}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00101}00101\ \ \ \textcolor{keywordflow}{return}\ item;}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00102}00102\ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00104}00104\ Ptr<const\ QueueDiscItem>}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00105}00105\ DGRv2QueueDisc::DoPeek\ (\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00106}00106\ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00107}00107\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00109}00109\ \ \ Ptr<const\ QueueDiscItem>\ item;}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00111}00111\ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ i\ =\ 0;\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}\ <\ GetNInternalQueues\ ();\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}++)}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00112}00112\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00113}00113\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (item\ =\ GetInternalQueue\ (i)-\/>Peek\ ())}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00114}00114\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ NS\_LOG\_LOGIC\ (\textcolor{stringliteral}{"{}Peeked\ from\ band\ "{}}\ <<\ i\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ item);}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ NS\_LOG\_LOGIC\ (\textcolor{stringliteral}{"{}Number\ packets\ band\ "{}}\ <<\ i\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ GetInternalQueue\ (i)-\/>GetNPackets\ ());}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ item;}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00118}00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00119}00119\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00121}00121\ \ \ NS\_LOG\_LOGIC\ (\textcolor{stringliteral}{"{}Queue\ empty"{}});}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00122}00122\ \ \ \textcolor{keywordflow}{return}\ item;}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00123}00123\ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00125}00125\ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00126}00126\ DGRv2QueueDisc::CheckConfig\ (\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00127}00127\ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00128}00128\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00129}00129\ \ \ \textcolor{keywordflow}{if}\ (GetNQueueDiscClasses\ ()\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00130}00130\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00131}00131\ \ \ \ \ \ \ NS\_LOG\_ERROR\ (\textcolor{stringliteral}{"{}DGRv2QueueDisc\ cannot\ have\ classes"{}});}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00132}00132\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00133}00133\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00135}00135\ \ \ \textcolor{keywordflow}{if}\ (GetNPacketFilters\ ()\ !=\ 0)}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00136}00136\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00137}00137\ \ \ \ \ \ \ NS\_LOG\_ERROR\ (\textcolor{stringliteral}{"{}DGRv2QueueDisc\ needs\ no\ packet\ filter"{}});}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00138}00138\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00139}00139\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00140}00140\ \ \ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00141}00141\ \ \ \textcolor{keywordflow}{if}\ (GetNInternalQueues\ ()\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00142}00142\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00143}00143\ \ \ \ \ \ \ \textcolor{comment}{//\ create\ 2\ DropTail\ queues\ with\ GetLimit()\ packets\ each}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00144}00144\ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}Create\ 2\ DropTail\ Queue"{}\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00145}00145\ \ \ \ \ \ \ ObjectFactory\ factory;}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00146}00146\ \ \ \ \ \ \ factory.SetTypeId\ (\textcolor{stringliteral}{"{}ns3::DropTailQueue<QueueDiscItem>"{}});}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00147}00147\ \ \ \ \ \ \ factory.Set\ (\textcolor{stringliteral}{"{}MaxSize"{}},\ QueueSizeValue\ (QueueSize\ (\textcolor{stringliteral}{"{}250KB"{}})));}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00148}00148\ \ \ \ \ \ \ AddInternalQueue\ (factory.Create<InternalQueue>\ ());}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00149}00149\ \ \ \ \ \ \ factory.Set\ (\textcolor{stringliteral}{"{}MaxSize"{}},\ QueueSizeValue\ (QueueSize\ (\textcolor{stringliteral}{"{}2500KB"{}})));}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00150}00150\ \ \ \ \ \ \ AddInternalQueue\ (factory.Create<InternalQueue>\ ());}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00151}00151\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00152}00152\ \ \ \ \ \ \ \textcolor{comment}{//\ GetInternalQueue\ (0)-\/>GetMaxSize\ ();}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00153}00153\ \ \ \ \ \ \ \textcolor{comment}{//\ GetInternalQueue\ (0)-\/>GetMaxSize\ ();}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00154}00154\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00156}00156\ \ \ \textcolor{keywordflow}{if}\ (GetNInternalQueues\ ()\ !=\ 2)}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00157}00157\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00158}00158\ \ \ \ \ \ \ NS\_LOG\_ERROR\ (\textcolor{stringliteral}{"{}DGRVirtualQueueDisc\ needs\ 2\ internal\ queues"{}});}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00159}00159\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00160}00160\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00162}00162\ \ \ \textcolor{keywordflow}{if}\ (GetInternalQueue\ (0)-\/>\ GetMaxSize\ ().GetUnit\ ()\ !=\ QueueSizeUnit::BYTES\ ||}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00163}00163\ \ \ \ \ \ \ GetInternalQueue\ (1)-\/>\ GetMaxSize\ ().GetUnit\ ()\ !=\ QueueSizeUnit::BYTES)}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00164}00164\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00165}00165\ \ \ \ \ \ \ NS\_LOG\_ERROR\ (\textcolor{stringliteral}{"{}DGRv2QueueDisc\ needs\ 2\ internal\ queues\ operating\ in\ BYTES\ mode"{}});}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00166}00166\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00167}00167\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00168}00168\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00169}00169\ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00171}00171\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00172}00172\ DGRv2QueueDisc::InitializeParams\ (\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00173}00173\ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00174}00174\ \ \ m\_fastWeight\ =\ 10;}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00175}00175\ \ \ m\_normalWeight\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00176}00176\ \ \ m\_currentFastWeight\ =\ m\_fastWeight;}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00177}00177\ \ \ m\_currentNormalWeight\ =\ m\_normalWeight;}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00178}00178\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00179}00179\ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00181}00181\ uint32\_t}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00182}00182\ DGRv2QueueDisc::EnqueueClassify\ (Ptr<QueueDiscItem>\ item)}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00183}00183\ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00184}00184\ \ \ BudgetTag\ budgetTag;}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00185}00185\ \ \ \textcolor{keywordflow}{if}\ (item-\/>GetPacket\ ()-\/>PeekPacketTag\ (budgetTag))}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00186}00186\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00187}00187\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{dgrv2-queue-disc_8cc_ae9ae2413ba1276820410daead5b06066}{DELAY\_SENSITIVE}};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00188}00188\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00189}00189\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00190}00190\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00191}00191\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{dgrv2-queue-disc_8cc_a7e50b31f4954e8f57d1d5f3bf7587a5e}{BEST\_EFFORT}};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00192}00192\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00193}00193\ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00195}00195\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ QueuePacketFilter\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00197}00197\ TypeId}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00198}00198\ DGRv2PacketFilter::GetTypeId()}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00199}00199\ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00200}00200\ \ \ \ \ \textcolor{keyword}{static}\ TypeId\ tid\ =}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00201}00201\ \ \ \ \ \ \ \ \ TypeId(\textcolor{stringliteral}{"{}ns3::DGRv2PacketFilter"{}})}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ .SetParent<PacketFilter>()}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ .SetGroupName(\textcolor{stringliteral}{"{}DGRv2"{}})}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ ;}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00205}00205\ \ \ \ \ \textcolor{keywordflow}{return}\ tid;}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00206}00206\ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00208}00208\ DGRv2PacketFilter::DGRv2PacketFilter()}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00209}00209\ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00210}00210\ \ \ \ \ NS\_LOG\_FUNCTION(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00211}00211\ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00213}00213\ DGRv2PacketFilter::\string~DGRv2PacketFilter()}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00214}00214\ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00215}00215\ \ \ \ \ NS\_LOG\_FUNCTION(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00216}00216\ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00218}00218\ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00219}00219\ DGRv2PacketFilter::CheckProtocol(Ptr<QueueDiscItem>\ item)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00220}00220\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00221}00221\ \ \ \ \ NS\_LOG\_FUNCTION(\textcolor{keyword}{this}\ <<\ item);}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00222}00222\ \ \ \ \ \textcolor{comment}{//\ Here\ we\ don't\ need\ check\ protocol}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00223}00223\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00224}00224\ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00226}00226\ int32\_t}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00227}00227\ DGRv2PacketFilter::DoClassify(Ptr<QueueDiscItem>\ item)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00228}00228\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00229}00229\ \ \ \ \ PriorityTag\ priorityTag;}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00230}00230\ \ \ \ \ \textcolor{keywordflow}{if}\ (item-\/>GetPacket\ ()-\/>PeekPacketTag\ (priorityTag))}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00231}00231\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{dgrv2-queue-disc_8cc_ae9ae2413ba1276820410daead5b06066}{DELAY\_SENSITIVE}};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00233}00233\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00234}00234\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00235}00235\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{dgrv2-queue-disc_8cc_a7e50b31f4954e8f57d1d5f3bf7587a5e}{BEST\_EFFORT}};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00237}00237\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00238}00238\ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8cc_source_l00240}00240\ \}\ \textcolor{comment}{//\ namespace\ ns3}}
+
+\end{DoxyCode}

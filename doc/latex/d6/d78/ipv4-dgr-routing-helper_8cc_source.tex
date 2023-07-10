@@ -1,0 +1,124 @@
+\doxysubsection{ipv4-\/dgr-\/routing-\/helper.cc}
+\hypertarget{ipv4-dgr-routing-helper_8cc_source}{}\label{ipv4-dgr-routing-helper_8cc_source}\index{helper/ipv4-\/dgr-\/routing-\/helper.cc@{helper/ipv4-\/dgr-\/routing-\/helper.cc}}
+\mbox{\hyperlink{ipv4-dgr-routing-helper_8cc}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00001}00001\ \textcolor{comment}{/*\ -\/*-\/\ Mode:C++;\ c-\/file-\/style:"{}gnu"{};\ indent-\/tabs-\/mode:nil;\ -\/*-\/\ */}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00002}00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00003}00003\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2008\ INRIA}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00005}00005\ \textcolor{comment}{\ *\ This\ program\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00006}00006\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ version\ 2\ as}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00007}00007\ \textcolor{comment}{\ *\ published\ by\ the\ Free\ Software\ Foundation;}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00008}00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00009}00009\ \textcolor{comment}{\ *\ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00010}00010\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00011}00011\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00012}00012\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00013}00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00014}00014\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00015}00015\ \textcolor{comment}{\ *\ along\ with\ this\ program;\ if\ not,\ write\ to\ the\ Free\ Software}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00016}00016\ \textcolor{comment}{\ *\ Foundation,\ Inc.,\ 59\ Temple\ Place,\ Suite\ 330,\ Boston,\ MA\ \ 02111-\/1307\ \ USA}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00018}00018\ \textcolor{comment}{\ *\ Author:\ Mathieu\ Lacage\ <mathieu.lacage@sophia.inria.fr>}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00019}00019\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}ipv4-\/dgr-\/routing-\/helper.h"{}}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}ns3/dgr-\/router-\/interface.h"{}}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}ns3/ipv4-\/dgr-\/routing.h"{}}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}ns3/ipv4-\/list-\/routing.h"{}}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}ns3/traffic-\/control-\/layer.h"{}}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00025}00025\ \textcolor{preprocessor}{\#include\ "{}ns3/log.h"{}}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00027}00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacens3}{ns3}}\ \{}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00029}\mbox{\hyperlink{namespacens3_adde9ed23eff577cdfec10d85035e32eb}{00029}}\ \mbox{\hyperlink{namespacens3_adde9ed23eff577cdfec10d85035e32eb}{NS\_LOG\_COMPONENT\_DEFINE}}\ (\textcolor{stringliteral}{"{}DGRRoutingHelper"{}});}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00031}00031\ Ipv4DGRRoutingHelper::Ipv4DGRRoutingHelper\ ()}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00032}00032\ \{}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00033}00033\ \}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00035}00035\ Ipv4DGRRoutingHelper::Ipv4DGRRoutingHelper\ (\textcolor{keyword}{const}\ Ipv4DGRRoutingHelper\ \&o)}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00036}00036\ \{}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00039}00039\ Ipv4DGRRoutingHelper*}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00040}00040\ Ipv4DGRRoutingHelper::Copy\ (\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00041}00041\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00042}00042\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Ipv4DGRRoutingHelper\ (*\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00045}00045\ Ptr<Ipv4RoutingProtocol>}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00046}00046\ Ipv4DGRRoutingHelper::Create\ (Ptr<Node>\ node)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00047}00047\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00048}00048\ \ \ NS\_LOG\_LOGIC\ (\textcolor{stringliteral}{"{}Adding\ DGRRouter\ interface\ to\ node\ "{}}\ <<}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>GetId\ ());}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00050}00050\ \ \ \textcolor{comment}{//\ install\ DGRv2\ Queue\ to\ netdevices}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00052}00052\ \ \ \textcolor{comment}{//\ install\ DGR\ router\ to\ node.}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00053}00053\ \ \ Ptr<DGRRouter>\ dgrRouter\ =\ CreateObject<DGRRouter>\ ();}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00054}00054\ \ \ node-\/>AggregateObject\ (dgrRouter);}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00056}00056\ \ \ NS\_LOG\_LOGIC\ (\textcolor{stringliteral}{"{}Adding\ DGRRouting\ Protocol\ to\ node\ "{}}\ <<\ node-\/>GetId\ ());}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00057}00057\ \ \ Ptr<Ipv4DGRRouting>\ dgrRouting\ =\ CreateObject<Ipv4DGRRouting>\ ();}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00058}00058\ \ \ dgrRouter-\/>SetRoutingProtocol\ (dgrRouting);}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00060}00060\ \ \ \textcolor{keywordflow}{return}\ dgrRouting;}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00061}00061\ \}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00063}00063\ \textcolor{keywordtype}{void}\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00064}00064\ Ipv4DGRRoutingHelper::PopulateRoutingTables\ (\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00065}00065\ \{}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00066}00066\ \ \ DGRRouteManager::BuildDGRRoutingDatabase\ ();}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00067}00067\ \ \ DGRRouteManager::InitializeRoutes\ ();}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00068}00068\ \}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00069}00069\ \textcolor{keywordtype}{void}\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00070}00070\ Ipv4DGRRoutingHelper::RecomputeRoutingTables\ (\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00071}00071\ \{}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00072}00072\ \ \ DGRRouteManager::DeleteDGRRoutes\ ();}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00073}00073\ \ \ DGRRouteManager::BuildDGRRoutingDatabase\ ();}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00074}00074\ \ \ DGRRouteManager::InitializeRoutes\ ();}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00075}00075\ \}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00078}00078\ QueueDiscContainer}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00079}00079\ Ipv4DGRRoutingHelper::Install\ (Ptr<Node>\ node)}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00080}00080\ \{}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00081}00081\ \ \ NetDeviceContainer\ container;}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00082}00082\ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}\ =\ 0;\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}\ <\ node-\/>GetNDevices\ ();\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}\ ++)}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00083}00083\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00084}00084\ \ \ \ \ \ \ container.Add\ (node-\/>GetDevice\ (\mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}));}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00085}00085\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00086}00086\ \ \ \textcolor{keywordflow}{return}\ Install\ (container);}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00087}00087\ \}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00089}00089\ QueueDiscContainer\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00090}00090\ Ipv4DGRRoutingHelper::Install(NetDeviceContainer\ c)}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00091}00091\ \{}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00092}00092\ \ \ QueueDiscContainer\ container;}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00093}00093\ \ \ \textcolor{keywordflow}{for}\ (NetDeviceContainer::Iterator\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}\ =\ c.Begin\ ();\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}\ !=\ c.End\ ();\ ++\mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}})}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00094}00094\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00095}00095\ \ \ \ \ \ \ container.Add\ (Install\ (*\mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}));}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00096}00096\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00097}00097\ \ \ \textcolor{keywordflow}{return}\ container;}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00098}00098\ \}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00100}00100\ QueueDiscContainer}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00101}00101\ Ipv4DGRRoutingHelper::Install\ (Ptr<NetDevice>\ d)}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00102}00102\ \{}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00103}00103\ \ \ QueueDiscContainer\ container;}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00104}00104\ \ \ \textcolor{comment}{//\ A\ TrafficControlLayer\ object\ is\ aggregated\ by\ the\ InternetStackHelper,\ but\ check}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00105}00105\ \ \ \textcolor{comment}{//\ anyway\ because\ a\ queue\ disc\ has\ no\ effect\ without\ a\ TrafficControlLayer\ object}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00106}00106\ \ \ Ptr<TrafficControlLayer>\ tc\ =\ d-\/>GetNode\ ()-\/>GetObject<TrafficControlLayer>\ ();}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00107}00107\ \ \ NS\_ASSERT\ (tc);}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00109}00109\ \ \ \textcolor{comment}{//\ Generate\ the\ DGRv2Qeueu\ Object}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00110}00110\ \ \ ObjectFactory\ queueFactory;}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00111}00111\ \ \ queueFactory.SetTypeId\ (\textcolor{stringliteral}{"{}ns3::DGRv2QueueDisc"{}});}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00112}00112\ \ \ Ptr<DGRv2QueueDisc>\ qdisc\ =\ queueFactory.Create<DGRv2QueueDisc>\ ();}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00113}00113\ \ \ tc-\/>SetRootQueueDiscOnDevice\ (d,\ qdisc);}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00114}00114\ \ \ container.Add\ (qdisc);}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00115}00115\ \ \ \textcolor{keywordflow}{return}\ container;}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00116}00116\ \}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-helper_8cc_source_l00118}00118\ \}\ \textcolor{comment}{//\ namespace\ ns3}}
+
+\end{DoxyCode}

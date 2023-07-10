@@ -184,6 +184,8 @@ void DGRPacketSink::HandleRead (Ptr<Socket> socket)
         i++;
         // std::cout<<i<<"packet"<< std::endl;
       // std::cout << "packet received" << std::endl;
+      // packet->PrintPacketTags (std::cout);
+      // std::cout << std::endl;
         // get packet
       FlagTag flagTag;
       if (packet->PeekPacketTag (flagTag) && flagTag.GetFlag () == true)

@@ -1,0 +1,17 @@
+<map id="model/dgr&#45;tags.cc" name="model/dgr&#45;tags.cc">
+<area shape="rect" id="Node000001" title=" " alt="" coords="484,5,623,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,85,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="484,29,313,49,99,81,99,76,313,44,484,24"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="110,79,253,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="494,33,256,79,255,73,493,28"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="277,79,445,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="523,33,407,76,405,71,522,28"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="470,79,637,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="556,31,556,65,551,65,551,31"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="661,79,808,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="583,28,693,71,691,76,581,33"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="832,79,920,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="606,28,819,75,818,80,605,33"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="945,79,1026,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="623,26,932,76,931,81,623,32"/>
+</map>

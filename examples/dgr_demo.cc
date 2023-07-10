@@ -146,29 +146,29 @@ int main (int argc, char *argv[])
   // app->SetStartTime (Seconds (1.0));
   // app->SetStopTime (Seconds (20.0));
   
-  // // -------------- TCP Back ground traffic 0-->2 ------------------
-  // uint16_t tcpPort = 8080;
-  // uint32_t tcpSink = 3;
-  // uint32_t tcpSender = 0;
-  // Ptr<Node> tcpSinkNode = nodes.Get (tcpSink);
-  // Ptr<Ipv4> ipv4TcpSink = tcpSinkNode->GetObject<Ipv4> ();
-  // Ipv4InterfaceAddress iaddrTcpSink = ipv4TcpSink->GetAddress (1,0);
-  // Ipv4Address ipv4AddrTcpSink = iaddrTcpSink.GetLocal ();
+  // -------------- TCP Back ground traffic 0-->2 ------------------
+  uint16_t tcpPort = 8080;
+  uint32_t tcpSink = 3;
+  uint32_t tcpSender = 0;
+  Ptr<Node> tcpSinkNode = nodes.Get (tcpSink);
+  Ptr<Ipv4> ipv4TcpSink = tcpSinkNode->GetObject<Ipv4> ();
+  Ipv4InterfaceAddress iaddrTcpSink = ipv4TcpSink->GetAddress (1,0);
+  Ipv4Address ipv4AddrTcpSink = iaddrTcpSink.GetLocal ();
 
-  // DGRSinkHelper sinkHelper ("ns3::TcpSocketFactory",
-  //                        InetSocketAddress (Ipv4Address::GetAny (), tcpPort));
-  // ApplicationContainer sinkApp = sinkHelper.Install (nodes.Get (tcpSink));
-  // sinkApp.Start (Seconds (0.0));
-  // sinkApp.Stop (Seconds (20.0));
+  DGRSinkHelper sinkHelper ("ns3::TcpSocketFactory",
+                         InetSocketAddress (Ipv4Address::GetAny (), tcpPort));
+  ApplicationContainer sinkApp = sinkHelper.Install (nodes.Get (tcpSink));
+  sinkApp.Start (Seconds (0.0));
+  sinkApp.Stop (Seconds (20.0));
   
-  // // tcp send
-  // DGRTcpAppHelper sourceHelper ("ns3::TcpSocketFactory",
-  //                              InetSocketAddress (ipv4AddrTcpSink, tcpPort));
-  // sourceHelper.SetAttribute ("MaxBytes", UintegerValue (7500000));
-  // sourceHelper.SetAttribute ("Budget", UintegerValue (1000));
-  // ApplicationContainer sourceApp = sourceHelper.Install (nodes.Get (tcpSender));
-  // sourceApp.Start (Seconds (1.0));
-  // sourceApp.Stop (Seconds (20.0));
+  // tcp send
+  DGRTcpAppHelper sourceHelper ("ns3::TcpSocketFactory",
+                               InetSocketAddress (ipv4AddrTcpSink, tcpPort));
+  sourceHelper.SetAttribute ("MaxBytes", UintegerValue (7500000));
+  sourceHelper.SetAttribute ("Budget", UintegerValue (100));
+  ApplicationContainer sourceApp = sourceHelper.Install (nodes.Get (tcpSender));
+  sourceApp.Start (Seconds (1.0));
+  sourceApp.Stop (Seconds (20.0));
 
   // ------------------------------------------------------------
   // -- Net anim

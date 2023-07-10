@@ -96,6 +96,12 @@ DGRTcpApplication::SetMaxBytes (uint64_t maxBytes)
   m_maxBytes = maxBytes;
 }
 
+void 
+DGRTcpApplication::SetFlag (bool flag)
+{
+  m_flag = flag;
+}
+
 void
 DGRTcpApplication::Setup (Ptr<Socket> socket, Address sinkAddress, uint64_t maxBytes, uint32_t budget, bool flag)
 {
@@ -233,10 +239,9 @@ void DGRTcpApplication::SendData (const Address &from, const Address &to)
       TimestampTag txTimeTag;
       FlagTag flagTag;
       BudgetTag budgetTag;
-      PriorityTag priorityTag;
-
       txTimeTag.SetTimestamp (Simulator::Now ());
       flagTag.SetFlag (m_flag);
+      // flagTag.Print (std::cout);
 
       if (m_unsentPacket)
         {
@@ -251,9 +256,7 @@ void DGRTcpApplication::SendData (const Address &from, const Address &to)
           if (m_budget != MAX_UINT_32)
             {
               budgetTag.SetBudget (m_budget);
-              priorityTag.SetPriority (1);
               packet->AddPacketTag (budgetTag);
-              packet->AddPacketTag (priorityTag);
             }
         }
       int actual = m_socket->Send (packet);

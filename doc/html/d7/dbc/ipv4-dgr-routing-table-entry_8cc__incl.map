@@ -1,0 +1,9 @@
+<map id="model/ipv4&#45;dgr&#45;routing&#45;table&#45;entry.cc" name="model/ipv4&#45;dgr&#45;routing&#45;table&#45;entry.cc">
+<area shape="rect" id="Node000001" title=" " alt="" coords="159,5,331,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,171,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,48,136,89,133,85,210,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="195,101,296,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="248,46,248,87,243,87,243,46"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="321,101,402,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="273,43,336,90,333,95,269,48"/>
+</map>
