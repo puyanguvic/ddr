@@ -1,0 +1,24 @@
+<map id="ns3::DgrNse::GetSerializedSize" name="ns3::DgrNse::GetSerializedSize">
+<area shape="rect" id="Node000001" title="Get the serialized size of the packet." alt="" coords="1012,81,1235,107"/>
+<area shape="rect" id="Node000002" href="$de/d1d/classns3_1_1_dgr_nse.html#ac07423ad134e176d78257b014d307e78" title="Deserialize the packet." alt="" coords="750,5,933,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1063,80,963,53,891,33,892,28,965,47,1065,75"/>
+<area shape="rect" id="Node000003" href="$d1/de8/classns3_1_1_dgr_header.html#a972cb695337832c59fe1f8475c33d902" title="Deserialize the packet." alt="" coords="455,45,659,71"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="998,89,660,67,660,62,998,83"/>
+<area shape="rect" id="Node000004" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#aff694e326df155e5a99a85d805b7d172" title="Sending Neighbor Status Updates on all interfaces." alt="" coords="444,159,671,199"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="1078,114,1024,132,965,147,889,160,812,169,671,179,671,174,811,164,888,155,963,142,1022,127,1076,109"/>
+<area shape="rect" id="Node000007" href="$d1/de8/classns3_1_1_dgr_header.html#a2fcef3eb0f76c33b6d7c151dc4b939e3" title="Get the serialized size of the packet." alt="" coords="719,107,964,132"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="998,108,964,111,964,106,998,103"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="738,35,648,48,647,43,737,30"/>
+<area shape="rect" id="Node000005" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#a238052760f17cb9a493e98ef38b6de8f" title="Send Unsolicited neighbor status information Updates on all interfaces." alt="" coords="213,171,396,211"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="430,188,396,190,396,184,430,183"/>
+<area shape="poly" id="edge7_Node000005_Node000005" title=" " alt="" coords="342,160,329,153,305,150,284,152,271,157,266,163,269,170,264,172,261,162,268,152,282,147,305,145,330,148,344,155"/>
+<area shape="rect" id="Node000006" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#a0bb01e6d6468d3c42a989434c193b372" title="Start protocol operation." alt="" coords="5,127,165,167"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="200,173,165,166,166,161,201,168"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="768,106,616,73,617,68,769,101"/>
+<area shape="poly" id="edge10_Node000007_Node000004" title=" " alt="" coords="767,138,653,162,652,157,766,132"/>
+<area shape="rect" id="Node000008" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#aa29a1573985386ddcc0c9616ab524836" title="Handle DGR responses." alt="" coords="477,95,637,135"/>
+<area shape="poly" id="edge11_Node000007_Node000008" title=" " alt="" coords="705,120,637,119,637,114,705,115"/>
+<area shape="rect" id="Node000009" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#a2eb8a683180ce3d3726767f5b986e3d8" title="Receive an DGR message." alt="" coords="225,83,385,123"/>
+<area shape="poly" id="edge12_Node000008_Node000009" title=" " alt="" coords="464,114,385,110,385,104,464,108"/>
+<area shape="poly" id="edge13_Node000009_Node000006" title=" " alt="" coords="212,125,166,134,165,129,211,119"/>
+</map>

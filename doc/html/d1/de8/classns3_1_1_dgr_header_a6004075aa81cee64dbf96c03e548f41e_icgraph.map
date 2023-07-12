@@ -1,0 +1,10 @@
+<map id="ns3::DgrHeader::AddNse" name="ns3::DgrHeader::AddNse">
+<area shape="rect" id="Node000001" title="Add a DGR Neighbor Status Entry (NSE) to the message." alt="" coords="719,37,900,62"/>
+<area shape="rect" id="Node000002" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#aff694e326df155e5a99a85d805b7d172" title="Sending Neighbor Status Updates on all interfaces." alt="" coords="444,29,671,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="705,52,671,52,671,47,705,47"/>
+<area shape="rect" id="Node000003" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#a238052760f17cb9a493e98ef38b6de8f" title="Send Unsolicited neighbor status information Updates on all interfaces." alt="" coords="213,29,396,69"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="430,52,396,52,396,47,430,47"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="342,18,329,11,305,8,284,10,271,15,266,21,269,28,264,30,261,20,268,10,282,5,305,3,330,6,344,13"/>
+<area shape="rect" id="Node000004" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#a0bb01e6d6468d3c42a989434c193b372" title="Start protocol operation." alt="" coords="5,29,165,69"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="200,52,165,52,165,47,200,47"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="ns3::DGRTcpAppHelper::InstallPriv" name="ns3::DGRTcpAppHelper::InstallPriv">
+<area shape="rect" id="Node000001" title="Install an ns3::BulkSendApplication on the node configured with all the attributes set with SetAttrib..." alt="" coords="224,69,395,109"/>
+<area shape="rect" id="Node000002" href="$d2/d74/classns3_1_1_d_g_r_tcp_app_helper.html#a91b669aff39a474e9c269dcf5a9818bd" title="Install an ns3::BulkSendApplication on each node of the input container configured with all the attri..." alt="" coords="5,5,176,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="227,68,159,48,160,43,228,63"/>
+<area shape="rect" id="Node000003" href="$d2/d74/classns3_1_1_d_g_r_tcp_app_helper.html#abae05b9b0d562e6674b924431f9231ec" title="Install an ns3::BulkSendApplication on the node configured with all the attributes set with SetAttrib..." alt="" coords="5,69,176,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="210,92,176,92,176,87,210,87"/>
+<area shape="rect" id="Node000004" href="$d2/d74/classns3_1_1_d_g_r_tcp_app_helper.html#a6406ac7cf428b0b70a0098b1a01f420b" title="Install an ns3::BulkSendApplication on the node configured with all the attributes set with SetAttrib..." alt="" coords="5,133,176,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="228,116,160,136,159,131,227,111"/>
+</map>

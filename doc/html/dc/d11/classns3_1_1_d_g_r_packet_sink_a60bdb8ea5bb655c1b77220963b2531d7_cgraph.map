@@ -1,0 +1,11 @@
+<map id="ns3::DGRPacketSink::HandleAccept" name="ns3::DGRPacketSink::HandleAccept">
+<area shape="rect" id="Node000001" title="Handle an incoming connection." alt="" coords="5,63,157,103"/>
+<area shape="rect" id="Node000002" href="$dc/d11/classns3_1_1_d_g_r_packet_sink.html#a5bc1c04b2b572ae2197853efeceb650e" title="Handle a packet received by the application." alt="" coords="205,63,357,103"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,80,191,80,191,85,158,85"/>
+<area shape="rect" id="Node000003" href="$dc/d11/classns3_1_1_d_g_r_packet_sink.html#a01e725bd9c630ab59e304d7ed5acf8d4" title=" " alt="" coords="411,5,563,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="353,60,401,47,402,52,354,65"/>
+<area shape="rect" id="Node000004" href="$d5/d77/classns3_1_1_flag_tag.html#a1af1deae4da34eb465dd0d18acad52a6" title="Get the tag&#39;s flag." alt="" coords="405,70,568,95"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="358,80,392,80,392,85,358,85"/>
+<area shape="rect" id="Node000005" href="$dc/d11/classns3_1_1_d_g_r_packet_sink.html#ac45b59904bfc3ab8c3beeafa3b66abfb" title="Packet received: assemble byte stream to extract SeqTsSizeHeader." alt="" coords="411,120,563,160"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="354,100,402,114,401,119,353,105"/>
+</map>

@@ -1,0 +1,277 @@
+\doxysubsection{ns3\+::Budget\+Tag Class Reference}
+\hypertarget{classns3_1_1_budget_tag}{}\label{classns3_1_1_budget_tag}\index{ns3::BudgetTag@{ns3::BudgetTag}}
+
+
+This class implements a tag that carries the budget time of a packet to the IP layer.  
+
+
+
+
+{\ttfamily \#include $<$dgr-\/tags.\+h$>$}
+
+
+
+Inheritance diagram for ns3\+::Budget\+Tag\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{d2/da7/classns3_1_1_budget_tag__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns3\+::Budget\+Tag\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{df/d71/classns3_1_1_budget_tag__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_budget_tag_a426c86d1b91b52427496480fe9811bb9}{Budget\+Tag}} ()
+\item 
+void \mbox{\hyperlink{classns3_1_1_budget_tag_a3f5f59a6ce7c2f85f704590b33e501f8}{Deserialize}} (Tag\+Buffer \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}) override
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_budget_tag_ac6b06a85217e94b7b12bb66a000d500b}{Get\+Budget}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the tag\textquotesingle{}s budget. \end{DoxyCompactList}\item 
+Type\+Id \mbox{\hyperlink{classns3_1_1_budget_tag_a2b1b22a8364cacd992bc0efc352eac3c}{Get\+Instance\+Type\+Id}} (void) const override
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_budget_tag_afcda90baa83ae04da0226dec7e77cb75}{Get\+Serialized\+Size}} (void) const override
+\item 
+void \mbox{\hyperlink{classns3_1_1_budget_tag_a515951edc1516e9ef77342d131a7f21c}{Print}} (std\+::ostream \&os) const override
+\item 
+void \mbox{\hyperlink{classns3_1_1_budget_tag_a8120852e30e8090baa41834fcb604079}{Serialize}} (Tag\+Buffer \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}) const override
+\item 
+void \mbox{\hyperlink{classns3_1_1_budget_tag_a42dfab1331f4f1bb1953c1ec972ab0bb}{Set\+Budget}} (uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_budget_tag_ac227e7913dd74f3b2206f24629c85912}{m\+\_\+budget}})
+\begin{DoxyCompactList}\small\item\em Set the tag\textquotesingle{}s budget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Type\+Id \mbox{\hyperlink{classns3_1_1_budget_tag_a7558a61f1292bf614d9016377c8f7162}{Get\+Type\+Id}} (void)
+\begin{DoxyCompactList}\small\item\em Get the type ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_budget_tag_ac227e7913dd74f3b2206f24629c85912}{m\+\_\+budget}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+This class implements a tag that carries the budget time of a packet to the IP layer. 
+
+Definition at line \mbox{\hyperlink{dgr-tags_8h_source_l00017}{17}} of file \mbox{\hyperlink{dgr-tags_8h_source}{dgr-\/tags.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_budget_tag_a426c86d1b91b52427496480fe9811bb9}\label{classns3_1_1_budget_tag_a426c86d1b91b52427496480fe9811bb9} 
+\index{ns3::BudgetTag@{ns3::BudgetTag}!BudgetTag@{BudgetTag}}
+\index{BudgetTag@{BudgetTag}!ns3::BudgetTag@{ns3::BudgetTag}}
+\doxyparagraph{\texorpdfstring{BudgetTag()}{BudgetTag()}}
+{\footnotesize\ttfamily ns3\+::\+Budget\+Tag\+::\+Budget\+Tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00022}{22}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_budget_tag_a3f5f59a6ce7c2f85f704590b33e501f8}\label{classns3_1_1_budget_tag_a3f5f59a6ce7c2f85f704590b33e501f8} 
+\index{ns3::BudgetTag@{ns3::BudgetTag}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!ns3::BudgetTag@{ns3::BudgetTag}}
+\doxyparagraph{\texorpdfstring{Deserialize()}{Deserialize()}}
+{\footnotesize\ttfamily void ns3\+::\+Budget\+Tag\+::\+Deserialize (\begin{DoxyParamCaption}\item[{Tag\+Buffer}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00073}{73}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-tags_8h_source_l00056}{m\+\_\+budget}}.
+
+\Hypertarget{classns3_1_1_budget_tag_ac6b06a85217e94b7b12bb66a000d500b}\label{classns3_1_1_budget_tag_ac6b06a85217e94b7b12bb66a000d500b} 
+\index{ns3::BudgetTag@{ns3::BudgetTag}!GetBudget@{GetBudget}}
+\index{GetBudget@{GetBudget}!ns3::BudgetTag@{ns3::BudgetTag}}
+\doxyparagraph{\texorpdfstring{GetBudget()}{GetBudget()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+Budget\+Tag\+::\+Get\+Budget (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the tag\textquotesingle{}s budget. 
+
+\begin{DoxyReturn}{Returns}
+the budget in millisecond 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00035}{35}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tags_8h_source_l00056}{m\+\_\+budget}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00253}{ns3\+::\+Ipv4\+DGRRouting\+::\+Lookup\+DGRRoute()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/db3/classns3_1_1_budget_tag_ac6b06a85217e94b7b12bb66a000d500b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_budget_tag_a2b1b22a8364cacd992bc0efc352eac3c}\label{classns3_1_1_budget_tag_a2b1b22a8364cacd992bc0efc352eac3c} 
+\index{ns3::BudgetTag@{ns3::BudgetTag}!GetInstanceTypeId@{GetInstanceTypeId}}
+\index{GetInstanceTypeId@{GetInstanceTypeId}!ns3::BudgetTag@{ns3::BudgetTag}}
+\doxyparagraph{\texorpdfstring{GetInstanceTypeId()}{GetInstanceTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+Budget\+Tag\+::\+Get\+Instance\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00052}{52}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tags_8cc_source_l00042}{Get\+Type\+Id()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/db3/classns3_1_1_budget_tag_a2b1b22a8364cacd992bc0efc352eac3c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_budget_tag_afcda90baa83ae04da0226dec7e77cb75}\label{classns3_1_1_budget_tag_afcda90baa83ae04da0226dec7e77cb75} 
+\index{ns3::BudgetTag@{ns3::BudgetTag}!GetSerializedSize@{GetSerializedSize}}
+\index{GetSerializedSize@{GetSerializedSize}!ns3::BudgetTag@{ns3::BudgetTag}}
+\doxyparagraph{\texorpdfstring{GetSerializedSize()}{GetSerializedSize()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+Budget\+Tag\+::\+Get\+Serialized\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00058}{58}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+\Hypertarget{classns3_1_1_budget_tag_a7558a61f1292bf614d9016377c8f7162}\label{classns3_1_1_budget_tag_a7558a61f1292bf614d9016377c8f7162} 
+\index{ns3::BudgetTag@{ns3::BudgetTag}!GetTypeId@{GetTypeId}}
+\index{GetTypeId@{GetTypeId}!ns3::BudgetTag@{ns3::BudgetTag}}
+\doxyparagraph{\texorpdfstring{GetTypeId()}{GetTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+Budget\+Tag\+::\+Get\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the type ID. 
+
+\begin{DoxyReturn}{Returns}
+the object Type\+Id 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00042}{42}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tags_8cc_source_l00052}{Get\+Instance\+Type\+Id()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/db3/classns3_1_1_budget_tag_a7558a61f1292bf614d9016377c8f7162_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_budget_tag_a515951edc1516e9ef77342d131a7f21c}\label{classns3_1_1_budget_tag_a515951edc1516e9ef77342d131a7f21c} 
+\index{ns3::BudgetTag@{ns3::BudgetTag}!Print@{Print}}
+\index{Print@{Print}!ns3::BudgetTag@{ns3::BudgetTag}}
+\doxyparagraph{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void ns3\+::\+Budget\+Tag\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00082}{82}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tags_8h_source_l00056}{m\+\_\+budget}}.
+
+\Hypertarget{classns3_1_1_budget_tag_a8120852e30e8090baa41834fcb604079}\label{classns3_1_1_budget_tag_a8120852e30e8090baa41834fcb604079} 
+\index{ns3::BudgetTag@{ns3::BudgetTag}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!ns3::BudgetTag@{ns3::BudgetTag}}
+\doxyparagraph{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily void ns3\+::\+Budget\+Tag\+::\+Serialize (\begin{DoxyParamCaption}\item[{Tag\+Buffer}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00065}{65}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-tags_8h_source_l00056}{m\+\_\+budget}}.
+
+\Hypertarget{classns3_1_1_budget_tag_a42dfab1331f4f1bb1953c1ec972ab0bb}\label{classns3_1_1_budget_tag_a42dfab1331f4f1bb1953c1ec972ab0bb} 
+\index{ns3::BudgetTag@{ns3::BudgetTag}!SetBudget@{SetBudget}}
+\index{SetBudget@{SetBudget}!ns3::BudgetTag@{ns3::BudgetTag}}
+\doxyparagraph{\texorpdfstring{SetBudget()}{SetBudget()}}
+{\footnotesize\ttfamily void ns3\+::\+Budget\+Tag\+::\+Set\+Budget (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{m\+\_\+budget }\end{DoxyParamCaption})}
+
+
+
+Set the tag\textquotesingle{}s budget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em budget} & the delay budget in millisecond \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00028}{28}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tags_8h_source_l00056}{m\+\_\+budget}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00219}{ns3\+::\+DGRTcp\+Application\+::\+Send\+Data()}}, and \mbox{\hyperlink{dgr-udp-application_8cc_source_l00121}{ns3\+::\+DGRUdp\+Application\+::\+Send\+Packet()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/db3/classns3_1_1_budget_tag_a42dfab1331f4f1bb1953c1ec972ab0bb_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{classns3_1_1_budget_tag_ac227e7913dd74f3b2206f24629c85912}\label{classns3_1_1_budget_tag_ac227e7913dd74f3b2206f24629c85912} 
+\index{ns3::BudgetTag@{ns3::BudgetTag}!m\_budget@{m\_budget}}
+\index{m\_budget@{m\_budget}!ns3::BudgetTag@{ns3::BudgetTag}}
+\doxyparagraph{\texorpdfstring{m\_budget}{m\_budget}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+Budget\+Tag\+::m\+\_\+budget\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8h_source_l00056}{56}} of file \mbox{\hyperlink{dgr-tags_8h_source}{dgr-\/tags.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tags_8cc_source_l00073}{Deserialize()}}, \mbox{\hyperlink{dgr-tags_8cc_source_l00035}{Get\+Budget()}}, \mbox{\hyperlink{dgr-tags_8cc_source_l00082}{Print()}}, \mbox{\hyperlink{dgr-tags_8cc_source_l00065}{Serialize()}}, and \mbox{\hyperlink{dgr-tags_8cc_source_l00028}{Set\+Budget()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{dgr-tags_8h}{dgr-\/tags.\+h}}\item 
+model/\mbox{\hyperlink{dgr-tags_8cc}{dgr-\/tags.\+cc}}\end{DoxyCompactItemize}

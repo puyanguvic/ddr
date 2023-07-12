@@ -1,0 +1,5 @@
+<map id="ns3::DGRRouteManagerImpl::DeleteDGRRoutes" name="ns3::DGRRouteManagerImpl::DeleteDGRRoutes">
+<area shape="rect" id="Node000001" title="Delete all static routes on all nodes that have a DGRRouterInterface." alt="" coords="5,5,212,45"/>
+<area shape="rect" id="Node000002" href="$d0/d56/classns3_1_1_d_g_r_router.html#a87f63cac54a25accafa7c849a9aa0dbc" title="Get the specific Global Routing Protocol used." alt="" coords="260,5,467,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,23,246,23,246,28,212,28"/>
+</map>

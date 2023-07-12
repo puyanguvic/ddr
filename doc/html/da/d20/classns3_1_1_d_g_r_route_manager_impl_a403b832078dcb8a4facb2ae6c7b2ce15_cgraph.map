@@ -1,0 +1,17 @@
+<map id="ns3::DGRRouteManagerImpl::SPFIntraAddStub" name="ns3::DGRRouteManagerImpl::SPFIntraAddStub">
+<area shape="rect" id="Node000001" title="Add a stub to the routing tables." alt="" coords="5,184,212,224"/>
+<area shape="rect" id="Node000002" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#a97080a8409f77898f4485230be0be5e4" title="Get the Link Data field of the Global Routing Link Record." alt="" coords="263,5,467,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,182,178,120,216,85,259,55,271,49,273,53,261,60,220,89,182,123,127,186"/>
+<area shape="rect" id="Node000003" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#a9fe6e135674ef321bc11b48f90071857" title="Get the Link ID field of the Global Routing Link Record." alt="" coords="263,69,467,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,182,195,150,259,119,278,111,280,116,261,124,197,155,143,186"/>
+<area shape="rect" id="Node000004" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a5f9422d4f1f9df2f301cbd578e29ae7b" title="Get the Global Router Link State Advertisement returned by the Global Router represented by this DGRV..." alt="" coords="275,134,455,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="198,181,294,160,295,165,199,187"/>
+<area shape="rect" id="Node000005" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a691c41409919639a4aaea1443fa26ed5" title="Get the number of exit directions from root for reaching &#39;this&#39; vertex." alt="" coords="268,184,463,224"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="212,201,254,201,254,207,212,207"/>
+<area shape="rect" id="Node000006" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a9e66f0b2ee7432156046e75672968138" title="Obtain a pair indicating the exit direction from the root." alt="" coords="260,248,471,288"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="190,221,272,242,271,247,189,227"/>
+<area shape="rect" id="Node000007" href="$d0/d56/classns3_1_1_d_g_r_router.html#a87f63cac54a25accafa7c849a9aa0dbc" title="Get the specific Global Routing Protocol used." alt="" coords="262,312,469,352"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="138,222,193,260,261,298,278,305,276,310,259,302,190,264,135,226"/>
+<area shape="rect" id="Node000008" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a83acd923d19102c507faadb2f4e68f56" title="Get the Vertex ID field of a DGRVertex object." alt="" coords="261,377,470,402"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="125,223,179,292,218,330,261,362,277,369,275,374,259,366,214,334,175,295,121,226"/>
+</map>

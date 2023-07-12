@@ -1,0 +1,15 @@
+<map id="ns3::DGRRouter::ClearBridgesVisited" name="ns3::DGRRouter::ClearBridgesVisited">
+<area shape="rect" id="Node000001" title="Clear the list of bridges visited on the link." alt="" coords="880,51,1096,91"/>
+<area shape="rect" id="Node000002" href="$d0/d56/classns3_1_1_d_g_r_router.html#a045a362fddd31a11a9c777bb64c889f7" title="Build one NetworkLSA for each net device talking to a network that we are the designated router for." alt="" coords="287,5,540,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="888,51,832,42,681,28,540,22,540,17,681,23,832,37,889,46"/>
+<area shape="rect" id="Node000004" href="$d0/d56/classns3_1_1_d_g_r_router.html#ac1075dd7ea9735e489838a39e29f6597" title="Process a bridged broadcast link." alt="" coords="599,51,832,91"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="866,74,832,74,832,69,866,69"/>
+<area shape="rect" id="Node000006" href="$d0/d56/classns3_1_1_d_g_r_router.html#a920b7e48d18135f51a66b010b6d730cc" title="Process a single broadcast link." alt="" coords="604,115,827,155"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="890,97,802,118,800,113,888,92"/>
+<area shape="rect" id="Node000003" href="$d0/d56/classns3_1_1_d_g_r_router.html#ac119cda89d816da90186bb617c710c25" title="Walk the connected channels, discover the adjacent routers and build the associated number of Global ..." alt="" coords="5,35,228,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="273,35,229,39,228,34,273,29"/>
+<area shape="rect" id="Node000005" href="$d0/d56/classns3_1_1_d_g_r_router.html#aa562c84d9a117e26103ac8338ec8094f" title="Process a generic broadcast link." alt="" coords="276,59,551,84"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="585,74,551,74,551,69,585,69"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="262,62,228,59,228,54,263,56"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="607,115,474,87,475,81,608,110"/>
+</map>

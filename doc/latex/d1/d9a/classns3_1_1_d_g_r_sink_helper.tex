@@ -1,0 +1,286 @@
+\doxysubsection{ns3\+::DGRSink\+Helper Class Reference}
+\hypertarget{classns3_1_1_d_g_r_sink_helper}{}\label{classns3_1_1_d_g_r_sink_helper}\index{ns3::DGRSinkHelper@{ns3::DGRSinkHelper}}
+
+
+A helper to make it easier to instantiate an ns3\+::\+Packet\+Sink\+Application on a set of nodes.  
+
+
+
+
+{\ttfamily \#include $<$dgr-\/sink-\/helper.\+h$>$}
+
+
+
+Collaboration diagram for ns3\+::DGRSink\+Helper\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{da/d39/classns3_1_1_d_g_r_sink_helper__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_sink_helper_af6f2de776acc290b0c801fa67c6d81b3}{DGRSink\+Helper}} (std\+::string protocol, Address address)
+\begin{DoxyCompactList}\small\item\em Create a Packet\+Sink\+Helper to make it easier to work with Packet\+Sink\+Applications. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_sink_helper_aad52d11728485cf9b080b6abfc7beb25}{\texorpdfstring{$\sim$}{\string~}\+DGRSink\+Helper}} ()
+\item 
+Application\+Container \mbox{\hyperlink{classns3_1_1_d_g_r_sink_helper_ad072948983d462767723929fa1dd6149}{Install}} (Node\+Container c) const
+\begin{DoxyCompactList}\small\item\em Install an ns3\+::\+Packet\+Sink\+Application on each node of the input container configured with all the attributes set with Set\+Attribute. \end{DoxyCompactList}\item 
+Application\+Container \mbox{\hyperlink{classns3_1_1_d_g_r_sink_helper_ab4edbcbc87305dffd1b406b952ad4dd3}{Install}} (Ptr$<$ Node $>$ node) const
+\begin{DoxyCompactList}\small\item\em Install an ns3\+::\+Packet\+Sink\+Application on each node of the input container configured with all the attributes set with Set\+Attribute. \end{DoxyCompactList}\item 
+Application\+Container \mbox{\hyperlink{classns3_1_1_d_g_r_sink_helper_a6388ada6dcf740e7d96b98122c0b9cde}{Install}} (std\+::string node\+Name) const
+\begin{DoxyCompactList}\small\item\em Install an ns3\+::\+Packet\+Sink\+Application on each node of the input container configured with all the attributes set with Set\+Attribute. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_sink_helper_a7552fa4da8c85d4725abd57afdeee49d}{Set\+Attribute}} (std\+::string name, const Attribute\+Value \&value)
+\begin{DoxyCompactList}\small\item\em Helper function used to set the underlying application attributes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Ptr$<$ \mbox{\hyperlink{class_application}{Application}} $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_sink_helper_aa6283f4ef52325361ad04b282368050f}{Install\+Priv}} (Ptr$<$ Node $>$ node) const
+\begin{DoxyCompactList}\small\item\em Install an ns3\+::\+Packet\+Sink on the node configured with all the attributes set with Set\+Attribute. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Object\+Factory \mbox{\hyperlink{classns3_1_1_d_g_r_sink_helper_ac03aec90679af81c1cd94a9105ab7b45}{m\+\_\+factory}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_object}{Object} factory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+A helper to make it easier to instantiate an ns3\+::\+Packet\+Sink\+Application on a set of nodes. 
+
+Definition at line \mbox{\hyperlink{dgr-sink-helper_8h_source_l00018}{18}} of file \mbox{\hyperlink{dgr-sink-helper_8h_source}{dgr-\/sink-\/helper.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_d_g_r_sink_helper_af6f2de776acc290b0c801fa67c6d81b3}\label{classns3_1_1_d_g_r_sink_helper_af6f2de776acc290b0c801fa67c6d81b3} 
+\index{ns3::DGRSinkHelper@{ns3::DGRSinkHelper}!DGRSinkHelper@{DGRSinkHelper}}
+\index{DGRSinkHelper@{DGRSinkHelper}!ns3::DGRSinkHelper@{ns3::DGRSinkHelper}}
+\doxyparagraph{\texorpdfstring{DGRSinkHelper()}{DGRSinkHelper()}}
+{\footnotesize\ttfamily ns3\+::\+DGRSink\+Helper\+::\+DGRSink\+Helper (\begin{DoxyParamCaption}\item[{std\+::string}]{protocol,  }\item[{Address}]{address }\end{DoxyParamCaption})}
+
+
+
+Create a Packet\+Sink\+Helper to make it easier to work with Packet\+Sink\+Applications. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em protocol} & the name of the protocol to use to receive traffic This string identifies the socket factory type used to create sockets for the applications. A typical value would be ns3\+::\+Tcp\+Socket\+Factory. \\
+\hline
+{\em address} & the address of the sink, \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-sink-helper_8cc_source_l00029}{29}} of file \mbox{\hyperlink{dgr-sink-helper_8cc_source}{dgr-\/sink-\/helper.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink-helper_8h_source_l00080}{m\+\_\+factory}}.
+
+\Hypertarget{classns3_1_1_d_g_r_sink_helper_aad52d11728485cf9b080b6abfc7beb25}\label{classns3_1_1_d_g_r_sink_helper_aad52d11728485cf9b080b6abfc7beb25} 
+\index{ns3::DGRSinkHelper@{ns3::DGRSinkHelper}!````~DGRSinkHelper@{\texorpdfstring{$\sim$}{\string~}DGRSinkHelper}}
+\index{````~DGRSinkHelper@{\texorpdfstring{$\sim$}{\string~}DGRSinkHelper}!ns3::DGRSinkHelper@{ns3::DGRSinkHelper}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DGRSinkHelper()}{\string~DGRSinkHelper()}}
+{\footnotesize\ttfamily ns3\+::\+DGRSink\+Helper\+::\texorpdfstring{$\sim$}{\string~}\+DGRSink\+Helper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-sink-helper_8cc_source_l00036}{36}} of file \mbox{\hyperlink{dgr-sink-helper_8cc_source}{dgr-\/sink-\/helper.\+cc}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_d_g_r_sink_helper_ad072948983d462767723929fa1dd6149}\label{classns3_1_1_d_g_r_sink_helper_ad072948983d462767723929fa1dd6149} 
+\index{ns3::DGRSinkHelper@{ns3::DGRSinkHelper}!Install@{Install}}
+\index{Install@{Install}!ns3::DGRSinkHelper@{ns3::DGRSinkHelper}}
+\doxyparagraph{\texorpdfstring{Install()}{Install()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Application\+Container ns3\+::\+DGRSink\+Helper\+::\+Install (\begin{DoxyParamCaption}\item[{Node\+Container}]{c }\end{DoxyParamCaption}) const}
+
+
+
+Install an ns3\+::\+Packet\+Sink\+Application on each node of the input container configured with all the attributes set with Set\+Attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Node\+Container of the set of nodes on which a Packet\+Sink\+Application will be installed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Container of Ptr to the applications installed. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-sink-helper_8cc_source_l00060}{60}} of file \mbox{\hyperlink{dgr-sink-helper_8cc_source}{dgr-\/sink-\/helper.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-sink-helper_8cc_source_l00072}{Install\+Priv()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d1/d9a/classns3_1_1_d_g_r_sink_helper_ad072948983d462767723929fa1dd6149_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_sink_helper_ab4edbcbc87305dffd1b406b952ad4dd3}\label{classns3_1_1_d_g_r_sink_helper_ab4edbcbc87305dffd1b406b952ad4dd3} 
+\index{ns3::DGRSinkHelper@{ns3::DGRSinkHelper}!Install@{Install}}
+\index{Install@{Install}!ns3::DGRSinkHelper@{ns3::DGRSinkHelper}}
+\doxyparagraph{\texorpdfstring{Install()}{Install()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Application\+Container ns3\+::\+DGRSink\+Helper\+::\+Install (\begin{DoxyParamCaption}\item[{Ptr$<$ Node $>$}]{node }\end{DoxyParamCaption}) const}
+
+
+
+Install an ns3\+::\+Packet\+Sink\+Application on each node of the input container configured with all the attributes set with Set\+Attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node on which a Packet\+Sink\+Application will be installed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Container of Ptr to the applications installed. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-sink-helper_8cc_source_l00047}{47}} of file \mbox{\hyperlink{dgr-sink-helper_8cc_source}{dgr-\/sink-\/helper.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink-helper_8cc_source_l00072}{Install\+Priv()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d1/d9a/classns3_1_1_d_g_r_sink_helper_ab4edbcbc87305dffd1b406b952ad4dd3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_sink_helper_a6388ada6dcf740e7d96b98122c0b9cde}\label{classns3_1_1_d_g_r_sink_helper_a6388ada6dcf740e7d96b98122c0b9cde} 
+\index{ns3::DGRSinkHelper@{ns3::DGRSinkHelper}!Install@{Install}}
+\index{Install@{Install}!ns3::DGRSinkHelper@{ns3::DGRSinkHelper}}
+\doxyparagraph{\texorpdfstring{Install()}{Install()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Application\+Container ns3\+::\+DGRSink\+Helper\+::\+Install (\begin{DoxyParamCaption}\item[{std\+::string}]{node\+Name }\end{DoxyParamCaption}) const}
+
+
+
+Install an ns3\+::\+Packet\+Sink\+Application on each node of the input container configured with all the attributes set with Set\+Attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node\+Name} & The name of the node on which a Packet\+Sink\+Application will be installed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Container of Ptr to the applications installed. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-sink-helper_8cc_source_l00053}{53}} of file \mbox{\hyperlink{dgr-sink-helper_8cc_source}{dgr-\/sink-\/helper.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink-helper_8cc_source_l00072}{Install\+Priv()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d1/d9a/classns3_1_1_d_g_r_sink_helper_a6388ada6dcf740e7d96b98122c0b9cde_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_sink_helper_aa6283f4ef52325361ad04b282368050f}\label{classns3_1_1_d_g_r_sink_helper_aa6283f4ef52325361ad04b282368050f} 
+\index{ns3::DGRSinkHelper@{ns3::DGRSinkHelper}!InstallPriv@{InstallPriv}}
+\index{InstallPriv@{InstallPriv}!ns3::DGRSinkHelper@{ns3::DGRSinkHelper}}
+\doxyparagraph{\texorpdfstring{InstallPriv()}{InstallPriv()}}
+{\footnotesize\ttfamily Ptr$<$ \mbox{\hyperlink{class_application}{Application}} $>$ ns3\+::\+DGRSink\+Helper\+::\+Install\+Priv (\begin{DoxyParamCaption}\item[{Ptr$<$ Node $>$}]{node }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Install an ns3\+::\+Packet\+Sink on the node configured with all the attributes set with Set\+Attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node on which an Packet\+Sink will be installed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ptr to the application installed. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-sink-helper_8cc_source_l00072}{72}} of file \mbox{\hyperlink{dgr-sink-helper_8cc_source}{dgr-\/sink-\/helper.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink-helper_8h_source_l00080}{m\+\_\+factory}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-sink-helper_8cc_source_l00060}{Install()}}, \mbox{\hyperlink{dgr-sink-helper_8cc_source_l00047}{Install()}}, and \mbox{\hyperlink{dgr-sink-helper_8cc_source_l00053}{Install()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d1/d9a/classns3_1_1_d_g_r_sink_helper_aa6283f4ef52325361ad04b282368050f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_sink_helper_a7552fa4da8c85d4725abd57afdeee49d}\label{classns3_1_1_d_g_r_sink_helper_a7552fa4da8c85d4725abd57afdeee49d} 
+\index{ns3::DGRSinkHelper@{ns3::DGRSinkHelper}!SetAttribute@{SetAttribute}}
+\index{SetAttribute@{SetAttribute}!ns3::DGRSinkHelper@{ns3::DGRSinkHelper}}
+\doxyparagraph{\texorpdfstring{SetAttribute()}{SetAttribute()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRSink\+Helper\+::\+Set\+Attribute (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{const Attribute\+Value \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Helper function used to set the underlying application attributes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name of the application attribute to set \\
+\hline
+{\em value} & the value of the application attribute to set \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-sink-helper_8cc_source_l00041}{41}} of file \mbox{\hyperlink{dgr-sink-helper_8cc_source}{dgr-\/sink-\/helper.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink-helper_8h_source_l00080}{m\+\_\+factory}}.
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{classns3_1_1_d_g_r_sink_helper_ac03aec90679af81c1cd94a9105ab7b45}\label{classns3_1_1_d_g_r_sink_helper_ac03aec90679af81c1cd94a9105ab7b45} 
+\index{ns3::DGRSinkHelper@{ns3::DGRSinkHelper}!m\_factory@{m\_factory}}
+\index{m\_factory@{m\_factory}!ns3::DGRSinkHelper@{ns3::DGRSinkHelper}}
+\doxyparagraph{\texorpdfstring{m\_factory}{m\_factory}}
+{\footnotesize\ttfamily Object\+Factory ns3\+::\+DGRSink\+Helper\+::m\+\_\+factory\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_object}{Object} factory. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-sink-helper_8h_source_l00080}{80}} of file \mbox{\hyperlink{dgr-sink-helper_8h_source}{dgr-\/sink-\/helper.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-sink-helper_8cc_source_l00029}{DGRSink\+Helper()}}, \mbox{\hyperlink{dgr-sink-helper_8cc_source_l00072}{Install\+Priv()}}, and \mbox{\hyperlink{dgr-sink-helper_8cc_source_l00041}{Set\+Attribute()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+helper/\mbox{\hyperlink{dgr-sink-helper_8h}{dgr-\/sink-\/helper.\+h}}\item 
+helper/\mbox{\hyperlink{dgr-sink-helper_8cc}{dgr-\/sink-\/helper.\+cc}}\end{DoxyCompactItemize}

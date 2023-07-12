@@ -1,0 +1,274 @@
+\doxysubsection{ns3\+::DGRTcp\+App\+Helper Class Reference}
+\hypertarget{classns3_1_1_d_g_r_tcp_app_helper}{}\label{classns3_1_1_d_g_r_tcp_app_helper}\index{ns3::DGRTcpAppHelper@{ns3::DGRTcpAppHelper}}
+
+
+A helper to make it easier to instantiate an ns3\+::\+Bulk\+Send\+Application on a set of nodes.  
+
+
+
+
+{\ttfamily \#include $<$dgr-\/tcp-\/application-\/helper.\+h$>$}
+
+
+
+Collaboration diagram for ns3\+::DGRTcp\+App\+Helper\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{d7/d4c/classns3_1_1_d_g_r_tcp_app_helper__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_aad85c16ff200bdde6abd8c14ee787c72}{DGRTcp\+App\+Helper}} (std\+::string protocol, Address address)
+\begin{DoxyCompactList}\small\item\em Create an \doxylink{classns3_1_1_d_g_r_tcp_app_helper}{DGRTcp\+App\+Helper} to make it easier to work with Bulk\+Send\+Applications. \end{DoxyCompactList}\item 
+Application\+Container \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_a91b669aff39a474e9c269dcf5a9818bd}{Install}} (Node\+Container c) const
+\begin{DoxyCompactList}\small\item\em Install an ns3\+::\+Bulk\+Send\+Application on each node of the input container configured with all the attributes set with Set\+Attribute. \end{DoxyCompactList}\item 
+Application\+Container \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_abae05b9b0d562e6674b924431f9231ec}{Install}} (Ptr$<$ Node $>$ node) const
+\begin{DoxyCompactList}\small\item\em Install an ns3\+::\+Bulk\+Send\+Application on the node configured with all the attributes set with Set\+Attribute. \end{DoxyCompactList}\item 
+Application\+Container \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_a6406ac7cf428b0b70a0098b1a01f420b}{Install}} (std\+::string node\+Name) const
+\begin{DoxyCompactList}\small\item\em Install an ns3\+::\+Bulk\+Send\+Application on the node configured with all the attributes set with Set\+Attribute. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_a539f8b98bfc4abea9cf3ad81eefe9808}{Set\+Attribute}} (std\+::string name, const Attribute\+Value \&value)
+\begin{DoxyCompactList}\small\item\em Helper function used to set the underlying application attributes, {\itshape not} the socket attributes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Ptr$<$ \mbox{\hyperlink{class_application}{Application}} $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_a63d0f9d738361206fb091e66795142e9}{Install\+Priv}} (Ptr$<$ Node $>$ node) const
+\begin{DoxyCompactList}\small\item\em Install an ns3\+::\+Bulk\+Send\+Application on the node configured with all the attributes set with Set\+Attribute. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Object\+Factory \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_af2ed4227d123d8957f3aa6b6e3710dfd}{m\+\_\+factory}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_object}{Object} factory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+A helper to make it easier to instantiate an ns3\+::\+Bulk\+Send\+Application on a set of nodes. 
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application-helper_8h_source_l00022}{22}} of file \mbox{\hyperlink{dgr-tcp-application-helper_8h_source}{dgr-\/tcp-\/application-\/helper.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_d_g_r_tcp_app_helper_aad85c16ff200bdde6abd8c14ee787c72}\label{classns3_1_1_d_g_r_tcp_app_helper_aad85c16ff200bdde6abd8c14ee787c72} 
+\index{ns3::DGRTcpAppHelper@{ns3::DGRTcpAppHelper}!DGRTcpAppHelper@{DGRTcpAppHelper}}
+\index{DGRTcpAppHelper@{DGRTcpAppHelper}!ns3::DGRTcpAppHelper@{ns3::DGRTcpAppHelper}}
+\doxyparagraph{\texorpdfstring{DGRTcpAppHelper()}{DGRTcpAppHelper()}}
+{\footnotesize\ttfamily ns3\+::\+DGRTcp\+App\+Helper\+::\+DGRTcp\+App\+Helper (\begin{DoxyParamCaption}\item[{std\+::string}]{protocol,  }\item[{Address}]{address }\end{DoxyParamCaption})}
+
+
+
+Create an \doxylink{classns3_1_1_d_g_r_tcp_app_helper}{DGRTcp\+App\+Helper} to make it easier to work with Bulk\+Send\+Applications. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em protocol} & the name of the protocol to use to send traffic by the applications. This string identifies the socket factory type used to create sockets for the applications. A typical value would be ns3\+::\+Udp\+Socket\+Factory. \\
+\hline
+{\em address} & the address of the remote node to send traffic to. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application-helper_8cc_source_l00011}{11}} of file \mbox{\hyperlink{dgr-tcp-application-helper_8cc_source}{dgr-\/tcp-\/application-\/helper.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tcp-application-helper_8h_source_l00084}{m\+\_\+factory}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_d_g_r_tcp_app_helper_a91b669aff39a474e9c269dcf5a9818bd}\label{classns3_1_1_d_g_r_tcp_app_helper_a91b669aff39a474e9c269dcf5a9818bd} 
+\index{ns3::DGRTcpAppHelper@{ns3::DGRTcpAppHelper}!Install@{Install}}
+\index{Install@{Install}!ns3::DGRTcpAppHelper@{ns3::DGRTcpAppHelper}}
+\doxyparagraph{\texorpdfstring{Install()}{Install()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Application\+Container ns3\+::\+DGRTcp\+App\+Helper\+::\+Install (\begin{DoxyParamCaption}\item[{Node\+Container}]{c }\end{DoxyParamCaption}) const}
+
+
+
+Install an ns3\+::\+Bulk\+Send\+Application on each node of the input container configured with all the attributes set with Set\+Attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Node\+Container of the set of nodes on which an Bulk\+Send\+Application will be installed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Container of Ptr to the applications installed. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application-helper_8cc_source_l00038}{38}} of file \mbox{\hyperlink{dgr-tcp-application-helper_8cc_source}{dgr-\/tcp-\/application-\/helper.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-tcp-application-helper_8cc_source_l00050}{Install\+Priv()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d74/classns3_1_1_d_g_r_tcp_app_helper_a91b669aff39a474e9c269dcf5a9818bd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_tcp_app_helper_abae05b9b0d562e6674b924431f9231ec}\label{classns3_1_1_d_g_r_tcp_app_helper_abae05b9b0d562e6674b924431f9231ec} 
+\index{ns3::DGRTcpAppHelper@{ns3::DGRTcpAppHelper}!Install@{Install}}
+\index{Install@{Install}!ns3::DGRTcpAppHelper@{ns3::DGRTcpAppHelper}}
+\doxyparagraph{\texorpdfstring{Install()}{Install()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Application\+Container ns3\+::\+DGRTcp\+App\+Helper\+::\+Install (\begin{DoxyParamCaption}\item[{Ptr$<$ Node $>$}]{node }\end{DoxyParamCaption}) const}
+
+
+
+Install an ns3\+::\+Bulk\+Send\+Application on the node configured with all the attributes set with Set\+Attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node on which an Bulk\+Send\+Application will be installed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Container of Ptr to the applications installed. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application-helper_8cc_source_l00025}{25}} of file \mbox{\hyperlink{dgr-tcp-application-helper_8cc_source}{dgr-\/tcp-\/application-\/helper.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tcp-application-helper_8cc_source_l00050}{Install\+Priv()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d74/classns3_1_1_d_g_r_tcp_app_helper_abae05b9b0d562e6674b924431f9231ec_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_tcp_app_helper_a6406ac7cf428b0b70a0098b1a01f420b}\label{classns3_1_1_d_g_r_tcp_app_helper_a6406ac7cf428b0b70a0098b1a01f420b} 
+\index{ns3::DGRTcpAppHelper@{ns3::DGRTcpAppHelper}!Install@{Install}}
+\index{Install@{Install}!ns3::DGRTcpAppHelper@{ns3::DGRTcpAppHelper}}
+\doxyparagraph{\texorpdfstring{Install()}{Install()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Application\+Container ns3\+::\+DGRTcp\+App\+Helper\+::\+Install (\begin{DoxyParamCaption}\item[{std\+::string}]{node\+Name }\end{DoxyParamCaption}) const}
+
+
+
+Install an ns3\+::\+Bulk\+Send\+Application on the node configured with all the attributes set with Set\+Attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node\+Name} & The node on which an Bulk\+Send\+Application will be installed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Container of Ptr to the applications installed. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application-helper_8cc_source_l00031}{31}} of file \mbox{\hyperlink{dgr-tcp-application-helper_8cc_source}{dgr-\/tcp-\/application-\/helper.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tcp-application-helper_8cc_source_l00050}{Install\+Priv()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d74/classns3_1_1_d_g_r_tcp_app_helper_a6406ac7cf428b0b70a0098b1a01f420b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_tcp_app_helper_a63d0f9d738361206fb091e66795142e9}\label{classns3_1_1_d_g_r_tcp_app_helper_a63d0f9d738361206fb091e66795142e9} 
+\index{ns3::DGRTcpAppHelper@{ns3::DGRTcpAppHelper}!InstallPriv@{InstallPriv}}
+\index{InstallPriv@{InstallPriv}!ns3::DGRTcpAppHelper@{ns3::DGRTcpAppHelper}}
+\doxyparagraph{\texorpdfstring{InstallPriv()}{InstallPriv()}}
+{\footnotesize\ttfamily Ptr$<$ \mbox{\hyperlink{class_application}{Application}} $>$ ns3\+::\+DGRTcp\+App\+Helper\+::\+Install\+Priv (\begin{DoxyParamCaption}\item[{Ptr$<$ Node $>$}]{node }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Install an ns3\+::\+Bulk\+Send\+Application on the node configured with all the attributes set with Set\+Attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node on which an Bulk\+Send\+Application will be installed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ptr to the application installed. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application-helper_8cc_source_l00050}{50}} of file \mbox{\hyperlink{dgr-tcp-application-helper_8cc_source}{dgr-\/tcp-\/application-\/helper.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tcp-application-helper_8h_source_l00084}{m\+\_\+factory}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tcp-application-helper_8cc_source_l00038}{Install()}}, \mbox{\hyperlink{dgr-tcp-application-helper_8cc_source_l00025}{Install()}}, and \mbox{\hyperlink{dgr-tcp-application-helper_8cc_source_l00031}{Install()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d74/classns3_1_1_d_g_r_tcp_app_helper_a63d0f9d738361206fb091e66795142e9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_tcp_app_helper_a539f8b98bfc4abea9cf3ad81eefe9808}\label{classns3_1_1_d_g_r_tcp_app_helper_a539f8b98bfc4abea9cf3ad81eefe9808} 
+\index{ns3::DGRTcpAppHelper@{ns3::DGRTcpAppHelper}!SetAttribute@{SetAttribute}}
+\index{SetAttribute@{SetAttribute}!ns3::DGRTcpAppHelper@{ns3::DGRTcpAppHelper}}
+\doxyparagraph{\texorpdfstring{SetAttribute()}{SetAttribute()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRTcp\+App\+Helper\+::\+Set\+Attribute (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{const Attribute\+Value \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Helper function used to set the underlying application attributes, {\itshape not} the socket attributes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name of the application attribute to set \\
+\hline
+{\em value} & the value of the application attribute to set \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application-helper_8cc_source_l00019}{19}} of file \mbox{\hyperlink{dgr-tcp-application-helper_8cc_source}{dgr-\/tcp-\/application-\/helper.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tcp-application-helper_8h_source_l00084}{m\+\_\+factory}}.
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{classns3_1_1_d_g_r_tcp_app_helper_af2ed4227d123d8957f3aa6b6e3710dfd}\label{classns3_1_1_d_g_r_tcp_app_helper_af2ed4227d123d8957f3aa6b6e3710dfd} 
+\index{ns3::DGRTcpAppHelper@{ns3::DGRTcpAppHelper}!m\_factory@{m\_factory}}
+\index{m\_factory@{m\_factory}!ns3::DGRTcpAppHelper@{ns3::DGRTcpAppHelper}}
+\doxyparagraph{\texorpdfstring{m\_factory}{m\_factory}}
+{\footnotesize\ttfamily Object\+Factory ns3\+::\+DGRTcp\+App\+Helper\+::m\+\_\+factory\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_object}{Object} factory. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application-helper_8h_source_l00084}{84}} of file \mbox{\hyperlink{dgr-tcp-application-helper_8h_source}{dgr-\/tcp-\/application-\/helper.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tcp-application-helper_8cc_source_l00011}{DGRTcp\+App\+Helper()}}, \mbox{\hyperlink{dgr-tcp-application-helper_8cc_source_l00050}{Install\+Priv()}}, and \mbox{\hyperlink{dgr-tcp-application-helper_8cc_source_l00019}{Set\+Attribute()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+helper/\mbox{\hyperlink{dgr-tcp-application-helper_8h}{dgr-\/tcp-\/application-\/helper.\+h}}\item 
+helper/\mbox{\hyperlink{dgr-tcp-application-helper_8cc}{dgr-\/tcp-\/application-\/helper.\+cc}}\end{DoxyCompactItemize}

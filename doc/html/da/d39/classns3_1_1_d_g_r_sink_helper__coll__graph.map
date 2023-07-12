@@ -1,0 +1,5 @@
+<map id="ns3::DGRSinkHelper" name="ns3::DGRSinkHelper">
+<area shape="rect" id="Node000001" title="A helper to make it easier to instantiate an ns3::PacketSinkApplication on a set of nodes." alt="" coords="5,93,159,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="27,5,137,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,45,85,93,79,93,79,45"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="ns3::DGRRouteManagerLSDB::Insert" name="ns3::DGRRouteManagerLSDB::Insert">
+<area shape="rect" id="Node000001" title="Insert an IP address / Link State Advertisement pair into the Link State Database." alt="" coords="5,5,216,45"/>
+<area shape="rect" id="Node000002" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#aa00b07a4d8639539e94817f98905ef19" title="Return the LSType field of the LSA." alt="" coords="264,5,421,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,23,250,23,250,28,216,28"/>
+</map>

@@ -1,0 +1,697 @@
+\doxysubsection{ns3\+::DGRTcp\+Application Class Reference}
+\hypertarget{classns3_1_1_d_g_r_tcp_application}{}\label{classns3_1_1_d_g_r_tcp_application}\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+
+
+This moduel comes from bulk Send \doxylink{class_application}{Application} TCP application need to enable packet tags in Tcp\+Rx\+Buffer.  
+
+
+
+
+{\ttfamily \#include $<$dgr-\/tcp-\/application.\+h$>$}
+
+
+
+Inheritance diagram for ns3\+::DGRTcp\+Application\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{d3/d7e/classns3_1_1_d_g_r_tcp_application__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns3\+::DGRTcp\+Application\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/de6/classns3_1_1_d_g_r_tcp_application__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_afbb5a3b78bd1e3ef24d5d16b7ec787f8}{DGRTcp\+Application}} ()
+\item 
+virtual \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ac219762c67ff6b442ba12801a80b85ec}{\texorpdfstring{$\sim$}{\string~}\+DGRTcp\+Application}} ()
+\item 
+Ptr$<$ Socket $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a100d0d42cd494d29080f9b5c7b7f2d90}{Get\+Socket}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the socket this application is attached to. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a38da0549e1824f6df93438967f401590}{Set\+Flag}} (bool flag)
+\begin{DoxyCompactList}\small\item\em Set the flag of packet used in the sink to help monitor the packet delay. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a53de82871f6985b8f9134be7fe44132b}{Set\+Max\+Bytes}} (uint64\+\_\+t max\+Bytes)
+\begin{DoxyCompactList}\small\item\em Set the upper bound for the total number of bytes to send. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a00e523f844693760a1f767266e516dad}{Setup}} (Ptr$<$ Socket $>$ socket, Address sink\+Address, uint64\+\_\+t max\+Bytes, bool flag)
+\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ac70dce4689a9be6573b6e0ec78684cf2}{Setup}} (Ptr$<$ Socket $>$ socket, Address sink\+Address, uint64\+\_\+t max\+Bytes, uint32\+\_\+t budget, bool flag)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Type\+Id \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a88ded51d43467ff95d97c02b8cfe16bb}{Get\+Type\+Id}} (void)
+\begin{DoxyCompactList}\small\item\em Get the type ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a312417a478c3b5a00ef3c316bb5e7f44}{Do\+Dispose}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a9a1ef27f22bee68f71fbd609695a4037}{Connection\+Failed}} (Ptr$<$ Socket $>$ socket)
+\begin{DoxyCompactList}\small\item\em Connection Failed (called by Socket through a callback) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a240d181619fe26fa934e3e152c153696}{Connection\+Succeeded}} (Ptr$<$ Socket $>$ socket)
+\begin{DoxyCompactList}\small\item\em Connection Succeeded (called by Socket through a callback) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ad6e628629f8e191964b873fed001a902}{Data\+Send}} (Ptr$<$ Socket $>$, uint32\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Send more data as soon as some has been transmitted. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a5d97018a7a55030432c7bd4941439224}{Send\+Data}} (const Address \&from, const Address \&to)
+\begin{DoxyCompactList}\small\item\em Send data until the L4 transmission buffer is full. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ad3f18ec72baf186800e72eed654eac2c}{Start\+Application}} (void)
+\item 
+virtual void \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a50b822663c8dfd33f8d1001a499d2412}{Stop\+Application}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a56acd6cac80df3f97b8eeaae6fd3a01c}{m\+\_\+budget}}
+\begin{DoxyCompactList}\small\item\em Budget time in ms. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ac69ff120417cd0a01d75479b292084c3}{m\+\_\+connected}}
+\begin{DoxyCompactList}\small\item\em True if connected. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a15de77be23dd9fac37c72dbee6e64049}{m\+\_\+flag}} \{false\}
+\begin{DoxyCompactList}\small\item\em flag for test \end{DoxyCompactList}\item 
+Address \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a8ec3f328863fe6fb94692268ba859359}{m\+\_\+local}}
+\begin{DoxyCompactList}\small\item\em Local address to bind to. \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a1b7cdb5af21ab280cb0851a088a996ef}{m\+\_\+max\+Bytes}}
+\begin{DoxyCompactList}\small\item\em Limit total number of bytes sent. \end{DoxyCompactList}\item 
+Address \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a2bb9a7886237a94c209af01fd2835176}{m\+\_\+peer}}
+\begin{DoxyCompactList}\small\item\em Peer address. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ac9d6793547c0b63e06c57c60a98950f5}{m\+\_\+send\+Size}}
+\begin{DoxyCompactList}\small\item\em Size of data to send each time. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a00358215749864240a2839e7ee189958}{m\+\_\+seq}} \{0\}
+\begin{DoxyCompactList}\small\item\em Sequence. \end{DoxyCompactList}\item 
+Ptr$<$ Socket $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a}{m\+\_\+socket}}
+\begin{DoxyCompactList}\small\item\em Associated socket. \end{DoxyCompactList}\item 
+Type\+Id \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a62988e671dfa974811f37d898b8be226}{m\+\_\+tid}}
+\begin{DoxyCompactList}\small\item\em The type of protocol to use. \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a7ed974b02f36e99bb1b49eb54876b4f7}{m\+\_\+tot\+Bytes}}
+\begin{DoxyCompactList}\small\item\em Total bytes sent so far. \end{DoxyCompactList}\item 
+Traced\+Callback$<$ Ptr$<$ const Packet $>$ $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ad414778df2751fc0d7574a50cb7cafb2}{m\+\_\+tx\+Trace}}
+\begin{DoxyCompactList}\small\item\em Traced Callback\+: sent packets. \end{DoxyCompactList}\item 
+Ptr$<$ Packet $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_aa0cd91f1b931e1c5f3a94d5a785a1dff}{m\+\_\+unsent\+Packet}}
+\begin{DoxyCompactList}\small\item\em Variable to cache unsent packet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+This moduel comes from bulk Send \doxylink{class_application}{Application} TCP application need to enable packet tags in Tcp\+Rx\+Buffer. 
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8h_source_l00023}{23}} of file \mbox{\hyperlink{dgr-tcp-application_8h_source}{dgr-\/tcp-\/application.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_afbb5a3b78bd1e3ef24d5d16b7ec787f8}\label{classns3_1_1_d_g_r_tcp_application_afbb5a3b78bd1e3ef24d5d16b7ec787f8} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!DGRTcpApplication@{DGRTcpApplication}}
+\index{DGRTcpApplication@{DGRTcpApplication}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{DGRTcpApplication()}{DGRTcpApplication()}}
+{\footnotesize\ttfamily ns3\+::\+DGRTcp\+Application\+::\+DGRTcp\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00076}{76}} of file \mbox{\hyperlink{dgr-tcp-application_8cc_source}{dgr-\/tcp-\/application.\+cc}}.
+
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_ac219762c67ff6b442ba12801a80b85ec}\label{classns3_1_1_d_g_r_tcp_application_ac219762c67ff6b442ba12801a80b85ec} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!````~DGRTcpApplication@{\texorpdfstring{$\sim$}{\string~}DGRTcpApplication}}
+\index{````~DGRTcpApplication@{\texorpdfstring{$\sim$}{\string~}DGRTcpApplication}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DGRTcpApplication()}{\string~DGRTcpApplication()}}
+{\footnotesize\ttfamily ns3\+::\+DGRTcp\+Application\+::\texorpdfstring{$\sim$}{\string~}\+DGRTcp\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00087}{87}} of file \mbox{\hyperlink{dgr-tcp-application_8cc_source}{dgr-\/tcp-\/application.\+cc}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_a9a1ef27f22bee68f71fbd609695a4037}\label{classns3_1_1_d_g_r_tcp_application_a9a1ef27f22bee68f71fbd609695a4037} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!ConnectionFailed@{ConnectionFailed}}
+\index{ConnectionFailed@{ConnectionFailed}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{ConnectionFailed()}{ConnectionFailed()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRTcp\+Application\+::\+Connection\+Failed (\begin{DoxyParamCaption}\item[{Ptr$<$ Socket $>$}]{socket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Connection Failed (called by Socket through a callback) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & the connected socket \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00315}{315}} of file \mbox{\hyperlink{dgr-tcp-application_8cc_source}{dgr-\/tcp-\/application.\+cc}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00143}{Start\+Application()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d1b/classns3_1_1_d_g_r_tcp_application_a9a1ef27f22bee68f71fbd609695a4037_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_a240d181619fe26fa934e3e152c153696}\label{classns3_1_1_d_g_r_tcp_application_a240d181619fe26fa934e3e152c153696} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!ConnectionSucceeded@{ConnectionSucceeded}}
+\index{ConnectionSucceeded@{ConnectionSucceeded}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{ConnectionSucceeded()}{ConnectionSucceeded()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRTcp\+Application\+::\+Connection\+Succeeded (\begin{DoxyParamCaption}\item[{Ptr$<$ Socket $>$}]{socket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Connection Succeeded (called by Socket through a callback) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & the connected socket \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00304}{304}} of file \mbox{\hyperlink{dgr-tcp-application_8cc_source}{dgr-\/tcp-\/application.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tcp-application_8h_source_l00073}{m\+\_\+connected}}, and \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00219}{Send\+Data()}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00143}{Start\+Application()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d1b/classns3_1_1_d_g_r_tcp_application_a240d181619fe26fa934e3e152c153696_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d1b/classns3_1_1_d_g_r_tcp_application_a240d181619fe26fa934e3e152c153696_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_ad6e628629f8e191964b873fed001a902}\label{classns3_1_1_d_g_r_tcp_application_ad6e628629f8e191964b873fed001a902} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!DataSend@{DataSend}}
+\index{DataSend@{DataSend}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{DataSend()}{DataSend()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRTcp\+Application\+::\+Data\+Send (\begin{DoxyParamCaption}\item[{Ptr$<$ Socket $>$}]{socket,  }\item[{uint32\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Send more data as soon as some has been transmitted. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00321}{321}} of file \mbox{\hyperlink{dgr-tcp-application_8cc_source}{dgr-\/tcp-\/application.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tcp-application_8h_source_l00073}{m\+\_\+connected}}, and \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00219}{Send\+Data()}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00143}{Start\+Application()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d1b/classns3_1_1_d_g_r_tcp_application_ad6e628629f8e191964b873fed001a902_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d1b/classns3_1_1_d_g_r_tcp_application_ad6e628629f8e191964b873fed001a902_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_a312417a478c3b5a00ef3c316bb5e7f44}\label{classns3_1_1_d_g_r_tcp_application_a312417a478c3b5a00ef3c316bb5e7f44} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!DoDispose@{DoDispose}}
+\index{DoDispose@{DoDispose}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{DoDispose()}{DoDispose()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRTcp\+Application\+::\+Do\+Dispose (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00132}{132}} of file \mbox{\hyperlink{dgr-tcp-application_8cc_source}{dgr-\/tcp-\/application.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tcp-application_8h_source_l00070}{m\+\_\+socket}}, and \mbox{\hyperlink{dgr-tcp-application_8h_source_l00079}{m\+\_\+unsent\+Packet}}.
+
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_a100d0d42cd494d29080f9b5c7b7f2d90}\label{classns3_1_1_d_g_r_tcp_application_a100d0d42cd494d29080f9b5c7b7f2d90} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!GetSocket@{GetSocket}}
+\index{GetSocket@{GetSocket}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{GetSocket()}{GetSocket()}}
+{\footnotesize\ttfamily Ptr$<$ Socket $>$ ns3\+::\+DGRTcp\+Application\+::\+Get\+Socket (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the socket this application is attached to. 
+
+\begin{DoxyReturn}{Returns}
+pointer to associated socket 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00125}{125}} of file \mbox{\hyperlink{dgr-tcp-application_8cc_source}{dgr-\/tcp-\/application.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tcp-application_8h_source_l00070}{m\+\_\+socket}}.
+
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_a88ded51d43467ff95d97c02b8cfe16bb}\label{classns3_1_1_d_g_r_tcp_application_a88ded51d43467ff95d97c02b8cfe16bb} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!GetTypeId@{GetTypeId}}
+\index{GetTypeId@{GetTypeId}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{GetTypeId()}{GetTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+DGRTcp\+Application\+::\+Get\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the type ID. 
+
+\begin{DoxyReturn}{Returns}
+the object Type\+Id 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00028}{28}} of file \mbox{\hyperlink{dgr-tcp-application_8cc_source}{dgr-\/tcp-\/application.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tcp-application_8h_source_l00080}{m\+\_\+budget}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00081}{m\+\_\+flag}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00072}{m\+\_\+local}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00075}{m\+\_\+max\+Bytes}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00071}{m\+\_\+peer}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00074}{m\+\_\+send\+Size}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00077}{m\+\_\+tid}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00085}{m\+\_\+tx\+Trace}}, and \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00019}{MAX\+\_\+\+UINT\+\_\+32}}.
+
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_a5d97018a7a55030432c7bd4941439224}\label{classns3_1_1_d_g_r_tcp_application_a5d97018a7a55030432c7bd4941439224} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!SendData@{SendData}}
+\index{SendData@{SendData}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{SendData()}{SendData()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRTcp\+Application\+::\+Send\+Data (\begin{DoxyParamCaption}\item[{const Address \&}]{from,  }\item[{const Address \&}]{to }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Send data until the L4 transmission buffer is full. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & From address \\
+\hline
+{\em to} & To address \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00219}{219}} of file \mbox{\hyperlink{dgr-tcp-application_8cc_source}{dgr-\/tcp-\/application.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tcp-application_8h_source_l00080}{m\+\_\+budget}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00073}{m\+\_\+connected}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00081}{m\+\_\+flag}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00075}{m\+\_\+max\+Bytes}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00074}{m\+\_\+send\+Size}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00070}{m\+\_\+socket}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00076}{m\+\_\+tot\+Bytes}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00085}{m\+\_\+tx\+Trace}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00079}{m\+\_\+unsent\+Packet}}, \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00019}{MAX\+\_\+\+UINT\+\_\+32}}, \mbox{\hyperlink{dgr-tags_8cc_source_l00028}{ns3\+::\+Budget\+Tag\+::\+Set\+Budget()}}, and \mbox{\hyperlink{dgr-tags_8cc_source_l00170}{ns3\+::\+Flag\+Tag\+::\+Set\+Flag()}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00304}{Connection\+Succeeded()}}, \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00321}{Data\+Send()}}, and \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00143}{Start\+Application()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d1b/classns3_1_1_d_g_r_tcp_application_a5d97018a7a55030432c7bd4941439224_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d1b/classns3_1_1_d_g_r_tcp_application_a5d97018a7a55030432c7bd4941439224_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_a38da0549e1824f6df93438967f401590}\label{classns3_1_1_d_g_r_tcp_application_a38da0549e1824f6df93438967f401590} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!SetFlag@{SetFlag}}
+\index{SetFlag@{SetFlag}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{SetFlag()}{SetFlag()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRTcp\+Application\+::\+Set\+Flag (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+
+
+Set the flag of packet used in the sink to help monitor the packet delay. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & the flag \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00100}{100}} of file \mbox{\hyperlink{dgr-tcp-application_8cc_source}{dgr-\/tcp-\/application.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tcp-application_8h_source_l00081}{m\+\_\+flag}}.
+
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_a53de82871f6985b8f9134be7fe44132b}\label{classns3_1_1_d_g_r_tcp_application_a53de82871f6985b8f9134be7fe44132b} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!SetMaxBytes@{SetMaxBytes}}
+\index{SetMaxBytes@{SetMaxBytes}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{SetMaxBytes()}{SetMaxBytes()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRTcp\+Application\+::\+Set\+Max\+Bytes (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{max\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Set the upper bound for the total number of bytes to send. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Bytes} & the upper bound of bytes to send \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00093}{93}} of file \mbox{\hyperlink{dgr-tcp-application_8cc_source}{dgr-\/tcp-\/application.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tcp-application_8h_source_l00075}{m\+\_\+max\+Bytes}}.
+
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_a00e523f844693760a1f767266e516dad}\label{classns3_1_1_d_g_r_tcp_application_a00e523f844693760a1f767266e516dad} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!Setup@{Setup}}
+\index{Setup@{Setup}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{Setup()}{Setup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ns3\+::\+DGRTcp\+Application\+::\+Setup (\begin{DoxyParamCaption}\item[{Ptr$<$ Socket $>$}]{socket,  }\item[{Address}]{sink\+Address,  }\item[{uint64\+\_\+t}]{max\+Bytes,  }\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00116}{116}} of file \mbox{\hyperlink{dgr-tcp-application_8cc_source}{dgr-\/tcp-\/application.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tcp-application_8h_source_l00081}{m\+\_\+flag}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00075}{m\+\_\+max\+Bytes}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00071}{m\+\_\+peer}}, and \mbox{\hyperlink{dgr-tcp-application_8h_source_l00070}{m\+\_\+socket}}.
+
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_ac70dce4689a9be6573b6e0ec78684cf2}\label{classns3_1_1_d_g_r_tcp_application_ac70dce4689a9be6573b6e0ec78684cf2} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!Setup@{Setup}}
+\index{Setup@{Setup}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{Setup()}{Setup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ns3\+::\+DGRTcp\+Application\+::\+Setup (\begin{DoxyParamCaption}\item[{Ptr$<$ Socket $>$}]{socket,  }\item[{Address}]{sink\+Address,  }\item[{uint64\+\_\+t}]{max\+Bytes,  }\item[{uint32\+\_\+t}]{budget,  }\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00106}{106}} of file \mbox{\hyperlink{dgr-tcp-application_8cc_source}{dgr-\/tcp-\/application.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tcp-application_8h_source_l00080}{m\+\_\+budget}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00081}{m\+\_\+flag}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00075}{m\+\_\+max\+Bytes}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00071}{m\+\_\+peer}}, and \mbox{\hyperlink{dgr-tcp-application_8h_source_l00070}{m\+\_\+socket}}.
+
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_ad3f18ec72baf186800e72eed654eac2c}\label{classns3_1_1_d_g_r_tcp_application_ad3f18ec72baf186800e72eed654eac2c} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!StartApplication@{StartApplication}}
+\index{StartApplication@{StartApplication}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{StartApplication()}{StartApplication()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRTcp\+Application\+::\+Start\+Application (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00143}{143}} of file \mbox{\hyperlink{dgr-tcp-application_8cc_source}{dgr-\/tcp-\/application.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00315}{Connection\+Failed()}}, \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00304}{Connection\+Succeeded()}}, \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00321}{Data\+Send()}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00073}{m\+\_\+connected}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00072}{m\+\_\+local}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00071}{m\+\_\+peer}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00070}{m\+\_\+socket}}, \mbox{\hyperlink{dgr-tcp-application_8h_source_l00077}{m\+\_\+tid}}, and \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00219}{Send\+Data()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d1b/classns3_1_1_d_g_r_tcp_application_ad3f18ec72baf186800e72eed654eac2c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_a50b822663c8dfd33f8d1001a499d2412}\label{classns3_1_1_d_g_r_tcp_application_a50b822663c8dfd33f8d1001a499d2412} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!StopApplication@{StopApplication}}
+\index{StopApplication@{StopApplication}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{StopApplication()}{StopApplication()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRTcp\+Application\+::\+Stop\+Application (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00201}{201}} of file \mbox{\hyperlink{dgr-tcp-application_8cc_source}{dgr-\/tcp-\/application.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tcp-application_8h_source_l00073}{m\+\_\+connected}}, and \mbox{\hyperlink{dgr-tcp-application_8h_source_l00070}{m\+\_\+socket}}.
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_a56acd6cac80df3f97b8eeaae6fd3a01c}\label{classns3_1_1_d_g_r_tcp_application_a56acd6cac80df3f97b8eeaae6fd3a01c} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!m\_budget@{m\_budget}}
+\index{m\_budget@{m\_budget}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{m\_budget}{m\_budget}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRTcp\+Application\+::m\+\_\+budget\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Budget time in ms. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8h_source_l00080}{80}} of file \mbox{\hyperlink{dgr-tcp-application_8h_source}{dgr-\/tcp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00028}{Get\+Type\+Id()}}, \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00219}{Send\+Data()}}, and \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00106}{Setup()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_ac69ff120417cd0a01d75479b292084c3}\label{classns3_1_1_d_g_r_tcp_application_ac69ff120417cd0a01d75479b292084c3} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!m\_connected@{m\_connected}}
+\index{m\_connected@{m\_connected}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{m\_connected}{m\_connected}}
+{\footnotesize\ttfamily bool ns3\+::\+DGRTcp\+Application\+::m\+\_\+connected\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+True if connected. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8h_source_l00073}{73}} of file \mbox{\hyperlink{dgr-tcp-application_8h_source}{dgr-\/tcp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00304}{Connection\+Succeeded()}}, \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00321}{Data\+Send()}}, \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00219}{Send\+Data()}}, \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00143}{Start\+Application()}}, and \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00201}{Stop\+Application()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_a15de77be23dd9fac37c72dbee6e64049}\label{classns3_1_1_d_g_r_tcp_application_a15de77be23dd9fac37c72dbee6e64049} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!m\_flag@{m\_flag}}
+\index{m\_flag@{m\_flag}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{m\_flag}{m\_flag}}
+{\footnotesize\ttfamily bool ns3\+::\+DGRTcp\+Application\+::m\+\_\+flag \{false\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+flag for test 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8h_source_l00081}{81}} of file \mbox{\hyperlink{dgr-tcp-application_8h_source}{dgr-\/tcp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00028}{Get\+Type\+Id()}}, \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00219}{Send\+Data()}}, \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00100}{Set\+Flag()}}, \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00116}{Setup()}}, and \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00106}{Setup()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_a8ec3f328863fe6fb94692268ba859359}\label{classns3_1_1_d_g_r_tcp_application_a8ec3f328863fe6fb94692268ba859359} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!m\_local@{m\_local}}
+\index{m\_local@{m\_local}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{m\_local}{m\_local}}
+{\footnotesize\ttfamily Address ns3\+::\+DGRTcp\+Application\+::m\+\_\+local\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Local address to bind to. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8h_source_l00072}{72}} of file \mbox{\hyperlink{dgr-tcp-application_8h_source}{dgr-\/tcp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00028}{Get\+Type\+Id()}}, and \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00143}{Start\+Application()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_a1b7cdb5af21ab280cb0851a088a996ef}\label{classns3_1_1_d_g_r_tcp_application_a1b7cdb5af21ab280cb0851a088a996ef} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!m\_maxBytes@{m\_maxBytes}}
+\index{m\_maxBytes@{m\_maxBytes}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{m\_maxBytes}{m\_maxBytes}}
+{\footnotesize\ttfamily uint64\+\_\+t ns3\+::\+DGRTcp\+Application\+::m\+\_\+max\+Bytes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Limit total number of bytes sent. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8h_source_l00075}{75}} of file \mbox{\hyperlink{dgr-tcp-application_8h_source}{dgr-\/tcp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00028}{Get\+Type\+Id()}}, \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00219}{Send\+Data()}}, \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00093}{Set\+Max\+Bytes()}}, \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00116}{Setup()}}, and \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00106}{Setup()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_a2bb9a7886237a94c209af01fd2835176}\label{classns3_1_1_d_g_r_tcp_application_a2bb9a7886237a94c209af01fd2835176} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!m\_peer@{m\_peer}}
+\index{m\_peer@{m\_peer}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{m\_peer}{m\_peer}}
+{\footnotesize\ttfamily Address ns3\+::\+DGRTcp\+Application\+::m\+\_\+peer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Peer address. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8h_source_l00071}{71}} of file \mbox{\hyperlink{dgr-tcp-application_8h_source}{dgr-\/tcp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00028}{Get\+Type\+Id()}}, \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00116}{Setup()}}, \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00106}{Setup()}}, and \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00143}{Start\+Application()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_ac9d6793547c0b63e06c57c60a98950f5}\label{classns3_1_1_d_g_r_tcp_application_ac9d6793547c0b63e06c57c60a98950f5} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!m\_sendSize@{m\_sendSize}}
+\index{m\_sendSize@{m\_sendSize}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{m\_sendSize}{m\_sendSize}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRTcp\+Application\+::m\+\_\+send\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Size of data to send each time. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8h_source_l00074}{74}} of file \mbox{\hyperlink{dgr-tcp-application_8h_source}{dgr-\/tcp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00028}{Get\+Type\+Id()}}, and \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00219}{Send\+Data()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_a00358215749864240a2839e7ee189958}\label{classns3_1_1_d_g_r_tcp_application_a00358215749864240a2839e7ee189958} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!m\_seq@{m\_seq}}
+\index{m\_seq@{m\_seq}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{m\_seq}{m\_seq}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRTcp\+Application\+::m\+\_\+seq \{0\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sequence. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8h_source_l00078}{78}} of file \mbox{\hyperlink{dgr-tcp-application_8h_source}{dgr-\/tcp-\/application.\+h}}.
+
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a}\label{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!m\_socket@{m\_socket}}
+\index{m\_socket@{m\_socket}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{m\_socket}{m\_socket}}
+{\footnotesize\ttfamily Ptr$<$Socket$>$ ns3\+::\+DGRTcp\+Application\+::m\+\_\+socket\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Associated socket. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8h_source_l00070}{70}} of file \mbox{\hyperlink{dgr-tcp-application_8h_source}{dgr-\/tcp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00132}{Do\+Dispose()}}, \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00125}{Get\+Socket()}}, \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00219}{Send\+Data()}}, \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00116}{Setup()}}, \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00106}{Setup()}}, \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00143}{Start\+Application()}}, and \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00201}{Stop\+Application()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_a62988e671dfa974811f37d898b8be226}\label{classns3_1_1_d_g_r_tcp_application_a62988e671dfa974811f37d898b8be226} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!m\_tid@{m\_tid}}
+\index{m\_tid@{m\_tid}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{m\_tid}{m\_tid}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+DGRTcp\+Application\+::m\+\_\+tid\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The type of protocol to use. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8h_source_l00077}{77}} of file \mbox{\hyperlink{dgr-tcp-application_8h_source}{dgr-\/tcp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00028}{Get\+Type\+Id()}}, and \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00143}{Start\+Application()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_a7ed974b02f36e99bb1b49eb54876b4f7}\label{classns3_1_1_d_g_r_tcp_application_a7ed974b02f36e99bb1b49eb54876b4f7} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!m\_totBytes@{m\_totBytes}}
+\index{m\_totBytes@{m\_totBytes}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{m\_totBytes}{m\_totBytes}}
+{\footnotesize\ttfamily uint64\+\_\+t ns3\+::\+DGRTcp\+Application\+::m\+\_\+tot\+Bytes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Total bytes sent so far. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8h_source_l00076}{76}} of file \mbox{\hyperlink{dgr-tcp-application_8h_source}{dgr-\/tcp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00219}{Send\+Data()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_ad414778df2751fc0d7574a50cb7cafb2}\label{classns3_1_1_d_g_r_tcp_application_ad414778df2751fc0d7574a50cb7cafb2} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!m\_txTrace@{m\_txTrace}}
+\index{m\_txTrace@{m\_txTrace}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{m\_txTrace}{m\_txTrace}}
+{\footnotesize\ttfamily Traced\+Callback$<$Ptr$<$const Packet$>$ $>$ ns3\+::\+DGRTcp\+Application\+::m\+\_\+tx\+Trace\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Traced Callback\+: sent packets. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8h_source_l00085}{85}} of file \mbox{\hyperlink{dgr-tcp-application_8h_source}{dgr-\/tcp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00028}{Get\+Type\+Id()}}, and \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00219}{Send\+Data()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_tcp_application_aa0cd91f1b931e1c5f3a94d5a785a1dff}\label{classns3_1_1_d_g_r_tcp_application_aa0cd91f1b931e1c5f3a94d5a785a1dff} 
+\index{ns3::DGRTcpApplication@{ns3::DGRTcpApplication}!m\_unsentPacket@{m\_unsentPacket}}
+\index{m\_unsentPacket@{m\_unsentPacket}!ns3::DGRTcpApplication@{ns3::DGRTcpApplication}}
+\doxyparagraph{\texorpdfstring{m\_unsentPacket}{m\_unsentPacket}}
+{\footnotesize\ttfamily Ptr$<$Packet$>$ ns3\+::\+DGRTcp\+Application\+::m\+\_\+unsent\+Packet\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Variable to cache unsent packet. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tcp-application_8h_source_l00079}{79}} of file \mbox{\hyperlink{dgr-tcp-application_8h_source}{dgr-\/tcp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00132}{Do\+Dispose()}}, and \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00219}{Send\+Data()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{dgr-tcp-application_8h}{dgr-\/tcp-\/application.\+h}}\item 
+model/\mbox{\hyperlink{dgr-tcp-application_8cc}{dgr-\/tcp-\/application.\+cc}}\end{DoxyCompactItemize}

@@ -1,0 +1,232 @@
+\doxysubsection{ns3\+::DGRRoute\+Manager Class Reference}
+\hypertarget{classns3_1_1_d_g_r_route_manager}{}\label{classns3_1_1_d_g_r_route_manager}\index{ns3::DGRRouteManager@{ns3::DGRRouteManager}}
+
+
+A global global router.  
+
+
+
+
+{\ttfamily \#include $<$dgr-\/route-\/manager.\+h$>$}
+
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_a87bf2995a6dcd48692147452fea88d40}{Allocate\+Router\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Allocate a 32-\/bit router ID from monotonically increasing counter. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_a62b76ca8cab68a61efd72c5fe5d092dc}{Build\+DGRRouting\+Database}} ()
+\begin{DoxyCompactList}\small\item\em Build the routing database by gathering Link State Advertisements from each node exporting a \doxylink{classns3_1_1_d_g_r_router}{DGRRouter} interface. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_acea317a83af55525aa4453f33839db3a}{Delete\+DGRRoutes}} ()
+\begin{DoxyCompactList}\small\item\em Delete all static routes on all nodes that have a DGRRouter\+Interface. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_ad637a566676faf22176f66f1afdb8c3c}{Initialize\+Routes}} ()
+\begin{DoxyCompactList}\small\item\em Compute routes using a Dijkstra SPF computation and populate per-\/node forwarding tables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_ab0c2ea34c378e91e6dce16c51fc005f1}{DGRRoute\+Manager}} (\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager}{DGRRoute\+Manager}} \&srm)
+\begin{DoxyCompactList}\small\item\em Global Route Manager copy construction is disallowed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager}{DGRRoute\+Manager}} \& \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_a11c434011ef28a8a8cfb504fda0a50a3}{operator=}} (\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager}{DGRRoute\+Manager}} \&srm)
+\begin{DoxyCompactList}\small\item\em Global Router copy assignment operator is disallowed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+A global global router. 
+
+This singleton object can query interface each node in the system for a \doxylink{classns3_1_1_d_g_r_router}{DGRRouter} interface. For those nodes, it fetches one or more Link State Advertisements and stores them in a local database. Then, it can compute shortest paths on a per-\/node basis to all routers, and finally configure each of the node\textquotesingle{}s forwarding tables.
+
+The design is guided by OSPFv2 \textbackslash{}\+RFC\{2328\} section 16.\+1.\+1 and quagga ospfd. 
+
+Definition at line \mbox{\hyperlink{dgr-route-manager_8h_source_l00040}{40}} of file \mbox{\hyperlink{dgr-route-manager_8h_source}{dgr-\/route-\/manager.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_d_g_r_route_manager_ab0c2ea34c378e91e6dce16c51fc005f1}\label{classns3_1_1_d_g_r_route_manager_ab0c2ea34c378e91e6dce16c51fc005f1} 
+\index{ns3::DGRRouteManager@{ns3::DGRRouteManager}!DGRRouteManager@{DGRRouteManager}}
+\index{DGRRouteManager@{DGRRouteManager}!ns3::DGRRouteManager@{ns3::DGRRouteManager}}
+\doxyparagraph{\texorpdfstring{DGRRouteManager()}{DGRRouteManager()}}
+{\footnotesize\ttfamily ns3\+::\+DGRRoute\+Manager\+::\+DGRRoute\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager}{DGRRoute\+Manager}} \&}]{srm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Global Route Manager copy construction is disallowed. 
+
+There\textquotesingle{}s no need for it and a compiler provided shallow copy would be wrong.
+
+
+\begin{DoxyParams}{Parameters}
+{\em srm} & object to copy from \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_d_g_r_route_manager_a87bf2995a6dcd48692147452fea88d40}\label{classns3_1_1_d_g_r_route_manager_a87bf2995a6dcd48692147452fea88d40} 
+\index{ns3::DGRRouteManager@{ns3::DGRRouteManager}!AllocateRouterId@{AllocateRouterId}}
+\index{AllocateRouterId@{AllocateRouterId}!ns3::DGRRouteManager@{ns3::DGRRouteManager}}
+\doxyparagraph{\texorpdfstring{AllocateRouterId()}{AllocateRouterId()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRRoute\+Manager\+::\+Allocate\+Router\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Allocate a 32-\/bit router ID from monotonically increasing counter. 
+
+\begin{DoxyReturn}{Returns}
+A new new Router\+Id. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager_8cc_source_l00062}{62}} of file \mbox{\hyperlink{dgr-route-manager_8cc_source}{dgr-\/route-\/manager.\+cc}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00519}{ns3\+::\+DGRRouter\+::\+DGRRouter()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da9/classns3_1_1_d_g_r_route_manager_a87bf2995a6dcd48692147452fea88d40_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_route_manager_a62b76ca8cab68a61efd72c5fe5d092dc}\label{classns3_1_1_d_g_r_route_manager_a62b76ca8cab68a61efd72c5fe5d092dc} 
+\index{ns3::DGRRouteManager@{ns3::DGRRouteManager}!BuildDGRRoutingDatabase@{BuildDGRRoutingDatabase}}
+\index{BuildDGRRoutingDatabase@{BuildDGRRoutingDatabase}!ns3::DGRRouteManager@{ns3::DGRRouteManager}}
+\doxyparagraph{\texorpdfstring{BuildDGRRoutingDatabase()}{BuildDGRRoutingDatabase()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRoute\+Manager\+::\+Build\+DGRRouting\+Database (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Build the routing database by gathering Link State Advertisements from each node exporting a \doxylink{classns3_1_1_d_g_r_router}{DGRRouter} interface. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager_8cc_source_l00046}{46}} of file \mbox{\hyperlink{dgr-route-manager_8cc_source}{dgr-\/route-\/manager.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager_8cc_source_l00046}{Build\+DGRRouting\+Database()}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager_8cc_source_l00046}{Build\+DGRRouting\+Database()}}, \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l01255}{ns3\+::\+Ipv4\+DGRRouting\+::\+Notify\+Add\+Address()}}, \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l01243}{ns3\+::\+Ipv4\+DGRRouting\+::\+Notify\+Interface\+Down()}}, \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l01231}{ns3\+::\+Ipv4\+DGRRouting\+::\+Notify\+Interface\+Up()}}, \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l01267}{ns3\+::\+Ipv4\+DGRRouting\+::\+Notify\+Remove\+Address()}}, \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source_l00064}{ns3\+::\+Ipv4\+DGRRouting\+Helper\+::\+Populate\+Routing\+Tables()}}, and \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source_l00070}{ns3\+::\+Ipv4\+DGRRouting\+Helper\+::\+Recompute\+Routing\+Tables()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{d1/da9/classns3_1_1_d_g_r_route_manager_a62b76ca8cab68a61efd72c5fe5d092dc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da9/classns3_1_1_d_g_r_route_manager_a62b76ca8cab68a61efd72c5fe5d092dc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_route_manager_acea317a83af55525aa4453f33839db3a}\label{classns3_1_1_d_g_r_route_manager_acea317a83af55525aa4453f33839db3a} 
+\index{ns3::DGRRouteManager@{ns3::DGRRouteManager}!DeleteDGRRoutes@{DeleteDGRRoutes}}
+\index{DeleteDGRRoutes@{DeleteDGRRoutes}!ns3::DGRRouteManager@{ns3::DGRRouteManager}}
+\doxyparagraph{\texorpdfstring{DeleteDGRRoutes()}{DeleteDGRRoutes()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRoute\+Manager\+::\+Delete\+DGRRoutes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Delete all static routes on all nodes that have a DGRRouter\+Interface. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager_8cc_source_l00038}{38}} of file \mbox{\hyperlink{dgr-route-manager_8cc_source}{dgr-\/route-\/manager.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager_8cc_source_l00038}{Delete\+DGRRoutes()}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager_8cc_source_l00038}{Delete\+DGRRoutes()}}, \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l01255}{ns3\+::\+Ipv4\+DGRRouting\+::\+Notify\+Add\+Address()}}, \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l01243}{ns3\+::\+Ipv4\+DGRRouting\+::\+Notify\+Interface\+Down()}}, \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l01231}{ns3\+::\+Ipv4\+DGRRouting\+::\+Notify\+Interface\+Up()}}, \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l01267}{ns3\+::\+Ipv4\+DGRRouting\+::\+Notify\+Remove\+Address()}}, and \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source_l00070}{ns3\+::\+Ipv4\+DGRRouting\+Helper\+::\+Recompute\+Routing\+Tables()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{d1/da9/classns3_1_1_d_g_r_route_manager_acea317a83af55525aa4453f33839db3a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da9/classns3_1_1_d_g_r_route_manager_acea317a83af55525aa4453f33839db3a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_route_manager_ad637a566676faf22176f66f1afdb8c3c}\label{classns3_1_1_d_g_r_route_manager_ad637a566676faf22176f66f1afdb8c3c} 
+\index{ns3::DGRRouteManager@{ns3::DGRRouteManager}!InitializeRoutes@{InitializeRoutes}}
+\index{InitializeRoutes@{InitializeRoutes}!ns3::DGRRouteManager@{ns3::DGRRouteManager}}
+\doxyparagraph{\texorpdfstring{InitializeRoutes()}{InitializeRoutes()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRoute\+Manager\+::\+Initialize\+Routes (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compute routes using a Dijkstra SPF computation and populate per-\/node forwarding tables. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager_8cc_source_l00054}{54}} of file \mbox{\hyperlink{dgr-route-manager_8cc_source}{dgr-\/route-\/manager.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager_8cc_source_l00054}{Initialize\+Routes()}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager_8cc_source_l00054}{Initialize\+Routes()}}, \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l01255}{ns3\+::\+Ipv4\+DGRRouting\+::\+Notify\+Add\+Address()}}, \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l01243}{ns3\+::\+Ipv4\+DGRRouting\+::\+Notify\+Interface\+Down()}}, \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l01231}{ns3\+::\+Ipv4\+DGRRouting\+::\+Notify\+Interface\+Up()}}, \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l01267}{ns3\+::\+Ipv4\+DGRRouting\+::\+Notify\+Remove\+Address()}}, \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source_l00064}{ns3\+::\+Ipv4\+DGRRouting\+Helper\+::\+Populate\+Routing\+Tables()}}, and \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source_l00070}{ns3\+::\+Ipv4\+DGRRouting\+Helper\+::\+Recompute\+Routing\+Tables()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{d1/da9/classns3_1_1_d_g_r_route_manager_ad637a566676faf22176f66f1afdb8c3c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da9/classns3_1_1_d_g_r_route_manager_ad637a566676faf22176f66f1afdb8c3c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_route_manager_a11c434011ef28a8a8cfb504fda0a50a3}\label{classns3_1_1_d_g_r_route_manager_a11c434011ef28a8a8cfb504fda0a50a3} 
+\index{ns3::DGRRouteManager@{ns3::DGRRouteManager}!operator=@{operator=}}
+\index{operator=@{operator=}!ns3::DGRRouteManager@{ns3::DGRRouteManager}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager}{DGRRoute\+Manager}} \& ns3\+::\+DGRRoute\+Manager\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager}{DGRRoute\+Manager}} \&}]{srm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Global Router copy assignment operator is disallowed. 
+
+There\textquotesingle{}s no need for it and a compiler provided shallow copy would be wrong.
+
+
+\begin{DoxyParams}{Parameters}
+{\em srm} & object to copy from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the copied object 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{dgr-route-manager_8h}{dgr-\/route-\/manager.\+h}}\item 
+model/\mbox{\hyperlink{dgr-route-manager_8cc}{dgr-\/route-\/manager.\+cc}}\end{DoxyCompactItemize}

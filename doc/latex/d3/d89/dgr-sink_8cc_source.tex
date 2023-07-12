@@ -18,85 +18,85 @@
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}ns3/trace-\/source-\/accessor.h"{}}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}ns3/udp-\/socket-\/factory.h"{}}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}ns3/boolean.h"{}}}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}dgr-\/sink.h"{}}}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}dgr-\/tags.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dgr-sink_8h}{dgr-\/sink.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dgr-tags_8h}{dgr-\/tags.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00019}00019\ }
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00020}00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacens3}{ns3}}\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00021}00021\ }
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00022}\mbox{\hyperlink{namespacens3_ac421339233bccbe265fc1da41d6c6350}{00022}}\ \mbox{\hyperlink{namespacens3_adde9ed23eff577cdfec10d85035e32eb}{NS\_LOG\_COMPONENT\_DEFINE}}\ (\textcolor{stringliteral}{"{}DGRPacketSink"{}});}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00023}00023\ }
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00024}\mbox{\hyperlink{namespacens3_a95e6077e86dcfe6f92a14f44dc7fb85f}{00024}}\ \mbox{\hyperlink{namespacens3_aef8bf32b4f2f98d854532bfb36d47a7c}{NS\_OBJECT\_ENSURE\_REGISTERED}}\ (DGRPacketSink);}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00024}\mbox{\hyperlink{namespacens3_a95e6077e86dcfe6f92a14f44dc7fb85f}{00024}}\ \mbox{\hyperlink{namespacens3_aef8bf32b4f2f98d854532bfb36d47a7c}{NS\_OBJECT\_ENSURE\_REGISTERED}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink}{DGRPacketSink}});}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00025}00025\ }
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00026}00026\ TypeId\ }
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00027}00027\ DGRPacketSink::GetTypeId\ (\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00027}\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a558f3df30ebf65ef9ce9d22106fbd8bc}{00027}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a558f3df30ebf65ef9ce9d22106fbd8bc}{DGRPacketSink::GetTypeId}}\ (\textcolor{keywordtype}{void})}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00028}00028\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00029}00029\ \ \ \textcolor{keyword}{static}\ TypeId\ tid\ =\ TypeId\ (\textcolor{stringliteral}{"{}ns3::DGRPacketSink"{}})}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00030}00030\ \ \ \ \ .SetParent<Application>\ ()}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00030}00030\ \ \ \ \ .SetParent<\mbox{\hyperlink{class_application}{Application}}>\ ()}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00031}00031\ \ \ \ \ .SetGroupName(\textcolor{stringliteral}{"{}Applications"{}})}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00032}00032\ \ \ \ \ .AddConstructor<DGRPacketSink>\ ()}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00032}00032\ \ \ \ \ .AddConstructor<\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink}{DGRPacketSink}}>\ ()}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00033}00033\ \ \ \ \ .AddAttribute\ (\textcolor{stringliteral}{"{}Local"{}},}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}The\ Address\ on\ which\ to\ Bind\ the\ rx\ socket."{}},}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AddressValue\ (),}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeAddressAccessor\ (\&DGRPacketSink::m\_local),}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeAddressAccessor\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a7f9d4d540e2faa7004c3047913a29f09}{DGRPacketSink::m\_local}}),}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeAddressChecker\ ())}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00038}00038\ \ \ \ \ .AddAttribute\ (\textcolor{stringliteral}{"{}Protocol"{}},}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}The\ type\ id\ of\ the\ protocol\ to\ use\ for\ the\ rx\ socket."{}},}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TypeIdValue\ (UdpSocketFactory::GetTypeId\ ()),}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeTypeIdAccessor\ (\&DGRPacketSink::m\_tid),}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeTypeIdAccessor\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a5df24d6eacd919ec2f0f944d520cb535}{DGRPacketSink::m\_tid}}),}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeTypeIdChecker\ ())}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00043}00043\ \ \ \ \ .AddAttribute\ (\textcolor{stringliteral}{"{}EnableSeqTsSizeHeader"{}},}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Enable\ optional\ header\ tracing\ of\ SeqTsSizeHeader"{}},}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BooleanValue\ (\textcolor{keyword}{false}),}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeBooleanAccessor\ (\&DGRPacketSink::m\_enableSeqTsSizeHeader),}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeBooleanAccessor\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_ac803f6a1d59503d2a5914f3c9a7f33ec}{DGRPacketSink::m\_enableSeqTsSizeHeader}}),}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeBooleanChecker\ ())}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00048}00048\ \ \ \ \ .AddTraceSource\ (\textcolor{stringliteral}{"{}Rx"{}},}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}A\ packet\ has\ been\ received"{}},}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeTraceSourceAccessor\ (\&DGRPacketSink::m\_rxTrace),}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeTraceSourceAccessor\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_aca03544d5c0deea1c5f900d89037e8ed}{DGRPacketSink::m\_rxTrace}}),}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ns3::Packet::AddressTracedCallback"{}})}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00052}00052\ \ \ \ \ .AddTraceSource\ (\textcolor{stringliteral}{"{}RxWithAddresses"{}},\ \textcolor{stringliteral}{"{}A\ packet\ has\ been\ received"{}},}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeTraceSourceAccessor\ (\&DGRPacketSink::m\_rxTraceWithAddresses),}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeTraceSourceAccessor\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a79fa3105c5e8709d6d2619a7665ce751}{DGRPacketSink::m\_rxTraceWithAddresses}}),}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ns3::Packet::TwoAddressTracedCallback"{}})}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00055}00055\ \ \ \ \ .AddTraceSource\ (\textcolor{stringliteral}{"{}RxWithSeqTsSize"{}},}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}A\ packet\ with\ SeqTsSize\ header\ has\ been\ received"{}},}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeTraceSourceAccessor\ (\&DGRPacketSink::m\_rxTraceWithSeqTsSize),}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeTraceSourceAccessor\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a2d3c05d2d32ce064ce1ad0b46564bcfb}{DGRPacketSink::m\_rxTraceWithSeqTsSize}}),}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ns3::PacketSink::SeqTsSizeCallback"{}})}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00059}00059\ \ \ ;}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00060}00060\ \ \ \textcolor{keywordflow}{return}\ tid;}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00061}00061\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00062}00062\ }
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00063}00063\ DGRPacketSink::DGRPacketSink\ ()}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00063}\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a3aecd00e57b3a656096239773f304c9f}{00063}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a3aecd00e57b3a656096239773f304c9f}{DGRPacketSink::DGRPacketSink}}\ ()}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00064}00064\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00065}00065\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00066}00066\ \ \ m\_socket\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00067}00067\ \ \ m\_totalRx\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00066}00066\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a253617e51eb9048d70dca28e2cb2806b}{m\_socket}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00067}00067\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_aa1eed0d34ee99dbaea2af47a795b70ca}{m\_totalRx}}\ =\ 0;}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00068}00068\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00069}00069\ }
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00070}00070\ DGRPacketSink::\string~DGRPacketSink()}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00070}\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a605c00d50c8640e3dfbbdc517771aec6}{00070}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a605c00d50c8640e3dfbbdc517771aec6}{DGRPacketSink::\string~DGRPacketSink}}()}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00071}00071\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00072}00072\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00073}00073\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00074}00074\ }
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00075}00075\ uint64\_t\ DGRPacketSink::GetTotalRx\ ()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00075}\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a69231f2139fbdd7948cff8c9edccdca4}{00075}}\ uint64\_t\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a69231f2139fbdd7948cff8c9edccdca4}{DGRPacketSink::GetTotalRx}}\ ()\textcolor{keyword}{\ const}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00076}00076\ \textcolor{keyword}{}\{}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00077}00077\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00078}00078\ \ \ \textcolor{keywordflow}{return}\ m\_totalRx;}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00078}00078\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_aa1eed0d34ee99dbaea2af47a795b70ca}{m\_totalRx}};}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00079}00079\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00080}00080\ }
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00081}00081\ Ptr<Socket>}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00082}00082\ DGRPacketSink::GetListeningSocket\ (\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00082}\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_ac98581dc7987443224fd7237a12eb006}{00082}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_ac98581dc7987443224fd7237a12eb006}{DGRPacketSink::GetListeningSocket}}\ (\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00083}00083\ \textcolor{keyword}{}\{}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00084}00084\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00085}00085\ \ \ \textcolor{keywordflow}{return}\ m\_socket;}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00085}00085\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a253617e51eb9048d70dca28e2cb2806b}{m\_socket}};}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00086}00086\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00087}00087\ }
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00088}00088\ std::list<Ptr<Socket>\ >}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00089}00089\ DGRPacketSink::GetAcceptedSockets\ (\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00089}\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a2a9115096ef93e8b69846aaca86973f6}{00089}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a2a9115096ef93e8b69846aaca86973f6}{DGRPacketSink::GetAcceptedSockets}}\ (\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00090}00090\ \textcolor{keyword}{}\{}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00091}00091\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00092}00092\ \ \ \textcolor{keywordflow}{return}\ m\_socketList;}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00092}00092\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a1d21d3eae077fdf088eda04bf2652d97}{m\_socketList}};}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00093}00093\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00094}00094\ }
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00095}00095\ Time\ DGRPacketSink::GetDelay(\textcolor{keyword}{const}\ Ptr<Packet>\ \&p)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00095}\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a01e725bd9c630ab59e304d7ed5acf8d4}{00095}}\ Time\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a01e725bd9c630ab59e304d7ed5acf8d4}{DGRPacketSink::GetDelay}}(\textcolor{keyword}{const}\ Ptr<Packet>\ \&p)\textcolor{keyword}{\ const}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00096}00096\ \textcolor{keyword}{}\{}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00097}00097\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00098}00098\ \ \ TimestampTag\ txTimeTag;}
@@ -106,37 +106,37 @@
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00102}00102\ \ \ \textcolor{keywordflow}{return}\ delay;}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00103}00103\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00104}00104\ }
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00105}00105\ \textcolor{keywordtype}{void}\ DGRPacketSink::DoDispose\ (\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00105}\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_adf51db7e24937d3c73a6669de841d61f}{00105}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_adf51db7e24937d3c73a6669de841d61f}{DGRPacketSink::DoDispose}}\ (\textcolor{keywordtype}{void})}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00106}00106\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00107}00107\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00108}00108\ \ \ m\_socket\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00109}00109\ \ \ m\_socketList.clear\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00108}00108\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a253617e51eb9048d70dca28e2cb2806b}{m\_socket}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00109}00109\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a1d21d3eae077fdf088eda04bf2652d97}{m\_socketList}}.clear\ ();}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00110}00110\ }
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00111}00111\ \ \ \textcolor{comment}{//\ chain\ up}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00112}00112\ \ \ Application::DoDispose\ ();}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00113}00113\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00114}00114\ }
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00115}00115\ \textcolor{comment}{//\ Application\ Methods}}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00116}00116\ \textcolor{keywordtype}{void}\ DGRPacketSink::StartApplication\ ()\ \ \ \ \textcolor{comment}{//\ Called\ at\ time\ specified\ by\ Start}}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00116}\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_abe7e96a9e41ed5e769ffc06a20cc775f}{00116}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_abe7e96a9e41ed5e769ffc06a20cc775f}{DGRPacketSink::StartApplication}}\ ()\ \ \ \ \textcolor{comment}{//\ Called\ at\ time\ specified\ by\ Start}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00117}00117\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00118}00118\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00119}00119\ \ \ \textcolor{comment}{//\ Create\ the\ socket\ if\ not\ already}}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00120}00120\ \ \ \textcolor{keywordflow}{if}\ (!m\_socket)}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00120}00120\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a253617e51eb9048d70dca28e2cb2806b}{m\_socket}})}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00121}00121\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00122}00122\ \ \ \ \ \ \ m\_socket\ =\ Socket::CreateSocket\ (GetNode\ (),\ m\_tid);}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00123}00123\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_socket-\/>Bind\ (m\_local)\ ==\ -\/1)}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00122}00122\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a253617e51eb9048d70dca28e2cb2806b}{m\_socket}}\ =\ Socket::CreateSocket\ (GetNode\ (),\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a5df24d6eacd919ec2f0f944d520cb535}{m\_tid}});}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00123}00123\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a253617e51eb9048d70dca28e2cb2806b}{m\_socket}}-\/>Bind\ (\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a7f9d4d540e2faa7004c3047913a29f09}{m\_local}})\ ==\ -\/1)}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00124}00124\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ NS\_FATAL\_ERROR\ (\textcolor{stringliteral}{"{}Failed\ to\ bind\ socket"{}});}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00126}00126\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00127}00127\ \ \ \ \ \ \ m\_socket-\/>Listen\ ();}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00128}00128\ \ \ \ \ \ \ m\_socket-\/>ShutdownSend\ ();}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00129}00129\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (addressUtils::IsMulticast\ (m\_local))}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00127}00127\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a253617e51eb9048d70dca28e2cb2806b}{m\_socket}}-\/>Listen\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00128}00128\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a253617e51eb9048d70dca28e2cb2806b}{m\_socket}}-\/>ShutdownSend\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00129}00129\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (addressUtils::IsMulticast\ (\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a7f9d4d540e2faa7004c3047913a29f09}{m\_local}}))}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00130}00130\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ Ptr<UdpSocket>\ udpSocket\ =\ DynamicCast<UdpSocket>\ (m\_socket);}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ Ptr<UdpSocket>\ udpSocket\ =\ DynamicCast<UdpSocket>\ (\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a253617e51eb9048d70dca28e2cb2806b}{m\_socket}});}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (udpSocket)}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ equivalent\ to\ setsockopt\ (MCAST\_JOIN\_GROUP)}}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ udpSocket-\/>MulticastJoinGroup\ (0,\ m\_local);}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ udpSocket-\/>MulticastJoinGroup\ (0,\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a7f9d4d540e2faa7004c3047913a29f09}{m\_local}});}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
@@ -145,33 +145,33 @@
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00141}00141\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00142}00142\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00143}00143\ }
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00144}00144\ \ \ m\_socket-\/>SetRecvCallback\ (MakeCallback\ (\&DGRPacketSink::HandleRead,\ \textcolor{keyword}{this}));}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00145}00145\ \ \ m\_socket-\/>SetAcceptCallback\ (}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00144}00144\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a253617e51eb9048d70dca28e2cb2806b}{m\_socket}}-\/>SetRecvCallback\ (MakeCallback\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a5bc1c04b2b572ae2197853efeceb650e}{DGRPacketSink::HandleRead}},\ \textcolor{keyword}{this}));}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00145}00145\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a253617e51eb9048d70dca28e2cb2806b}{m\_socket}}-\/>SetAcceptCallback\ (}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00146}00146\ \ \ \ \ MakeNullCallback<\textcolor{keywordtype}{bool},\ Ptr<Socket>,\ \textcolor{keyword}{const}\ Address\ \&>\ (),}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00147}00147\ \ \ \ \ MakeCallback\ (\&DGRPacketSink::HandleAccept,\ \textcolor{keyword}{this}));}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00148}00148\ \ \ m\_socket-\/>SetCloseCallbacks\ (}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00149}00149\ \ \ \ \ MakeCallback\ (\&DGRPacketSink::HandlePeerClose,\ \textcolor{keyword}{this}),}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00150}00150\ \ \ \ \ MakeCallback\ (\&DGRPacketSink::HandlePeerError,\ \textcolor{keyword}{this}));}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00147}00147\ \ \ \ \ MakeCallback\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a60bdb8ea5bb655c1b77220963b2531d7}{DGRPacketSink::HandleAccept}},\ \textcolor{keyword}{this}));}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00148}00148\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a253617e51eb9048d70dca28e2cb2806b}{m\_socket}}-\/>SetCloseCallbacks\ (}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00149}00149\ \ \ \ \ MakeCallback\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a4cdd5cf57dd8475e5d6656bf877dc220}{DGRPacketSink::HandlePeerClose}},\ \textcolor{keyword}{this}),}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00150}00150\ \ \ \ \ MakeCallback\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_ae1f5b327422a264e50a57a45010c5b95}{DGRPacketSink::HandlePeerError}},\ \textcolor{keyword}{this}));}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00151}00151\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00152}00152\ }
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00153}00153\ \textcolor{keywordtype}{void}\ DGRPacketSink::StopApplication\ ()\ \ \ \ \ \textcolor{comment}{//\ Called\ at\ time\ specified\ by\ Stop}}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00153}\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_aeb7f67c80886d5d2f24c23878f632508}{00153}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_aeb7f67c80886d5d2f24c23878f632508}{DGRPacketSink::StopApplication}}\ ()\ \ \ \ \ \textcolor{comment}{//\ Called\ at\ time\ specified\ by\ Stop}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00154}00154\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00155}00155\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00156}00156\ \ \ \textcolor{keywordflow}{while}(!m\_socketList.empty\ ())\ \textcolor{comment}{//these\ are\ accepted\ sockets,\ close\ them}}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00156}00156\ \ \ \textcolor{keywordflow}{while}(!\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a1d21d3eae077fdf088eda04bf2652d97}{m\_socketList}}.empty\ ())\ \textcolor{comment}{//these\ are\ accepted\ sockets,\ close\ them}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00157}00157\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00158}00158\ \ \ \ \ \ \ Ptr<Socket>\ acceptedSocket\ =\ m\_socketList.front\ ();}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00159}00159\ \ \ \ \ \ \ m\_socketList.pop\_front\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00158}00158\ \ \ \ \ \ \ Ptr<Socket>\ acceptedSocket\ =\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a1d21d3eae077fdf088eda04bf2652d97}{m\_socketList}}.front\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00159}00159\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a1d21d3eae077fdf088eda04bf2652d97}{m\_socketList}}.pop\_front\ ();}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00160}00160\ \ \ \ \ \ \ acceptedSocket-\/>Close\ ();}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00161}00161\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00162}00162\ \ \ \textcolor{keywordflow}{if}\ (m\_socket)\ }
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00162}00162\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a253617e51eb9048d70dca28e2cb2806b}{m\_socket}})\ }
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00163}00163\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00164}00164\ \ \ \ \ \ \ m\_socket-\/>Close\ ();}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00165}00165\ \ \ \ \ \ \ m\_socket-\/>SetRecvCallback\ (MakeNullCallback<\textcolor{keywordtype}{void},\ Ptr<Socket>\ >\ ());}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00164}00164\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a253617e51eb9048d70dca28e2cb2806b}{m\_socket}}-\/>Close\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00165}00165\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a253617e51eb9048d70dca28e2cb2806b}{m\_socket}}-\/>SetRecvCallback\ (MakeNullCallback<\textcolor{keywordtype}{void},\ Ptr<Socket>\ >\ ());}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00166}00166\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00167}00167\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00168}00168\ }
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00169}\mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{00169}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}\ =\ 0;\ \textcolor{comment}{//count\ packets}}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00170}00170\ \textcolor{keywordtype}{void}\ DGRPacketSink::HandleRead\ (Ptr<Socket>\ socket)}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00170}\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a5bc1c04b2b572ae2197853efeceb650e}{00170}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a5bc1c04b2b572ae2197853efeceb650e}{DGRPacketSink::HandleRead}}\ (Ptr<Socket>\ socket)}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00171}00171\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00172}00172\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this}\ <<\ socket);}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00173}00173\ \ \ Ptr<Packet>\ packet;}
@@ -191,14 +191,14 @@
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00187}00187\ \ \ \ \ \ \ \textcolor{comment}{//\ packet-\/>PrintPacketTags\ (std::cout);}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00188}00188\ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ std::endl;}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00189}00189\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ get\ packet}}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00190}00190\ \ \ \ \ \ \ FlagTag\ flagTag;}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00191}00191\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (packet-\/>PeekPacketTag\ (flagTag)\ \&\&\ flagTag.GetFlag\ ()\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00190}00190\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_flag_tag}{FlagTag}}\ flagTag;}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00191}00191\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (packet-\/>PeekPacketTag\ (flagTag)\ \&\&\ flagTag.\mbox{\hyperlink{classns3_1_1_flag_tag_a1af1deae4da34eb465dd0d18acad52a6}{GetFlag}}\ ()\ ==\ \textcolor{keyword}{true})}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00192}00192\ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00193}00193\ \ \ \ \ \ \ \ \ TimestampTag\ timeTag;}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00194}00194\ \ \ \ \ \ \ \ \ packet-\/>PeekPacketTag\ (timeTag);}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00195}00195\ \ \ \ \ \ \ \ \ std::ostream*\ os\ =\ m\_delayStream-\/>GetStream\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00195}00195\ \ \ \ \ \ \ \ \ std::ostream*\ os\ =\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a2c42e5892ce165db37a2bd47436e4fb8}{m\_delayStream}}-\/>GetStream\ ();}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00196}00196\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ timeTag.GetSeconds\ ()\ <<\ "{}\ "{}\ }}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00197}00197\ \ \ \ \ \ \ \ \ BudgetTag\ bgtTag;}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00197}00197\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_budget_tag}{BudgetTag}}\ bgtTag;}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00198}00198\ \ \ \ \ \ \ \ \ packet-\/>PeekPacketTag\ (bgtTag);\ \ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00199}00199\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ (GetDelay\ (packet).GetMicroSeconds\ ()\ <\ bgtTag.GetBudget\ ())}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00200}00200\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \{}}
@@ -208,10 +208,10 @@
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00204}00204\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \{}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00205}00205\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ *os\ <<\ "{}False"{}\ <<\ std::endl;}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00206}00206\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \}}}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00207}00207\ \ \ \ \ \ \ \ \ *os\ <<\ GetDelay\ (packet).GetMicroSeconds\ ()/1000.0\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00207}00207\ \ \ \ \ \ \ \ \ *os\ <<\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a01e725bd9c630ab59e304d7ed5acf8d4}{GetDelay}}\ (packet).GetMicroSeconds\ ()/1000.0\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00208}00208\ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00209}00209\ \ \ \ \ \ \ \textcolor{comment}{//\ get\ delay}}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00210}00210\ \ \ \ \ \ \ m\_totalRx\ +=\ packet-\/>GetSize\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00210}00210\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_aa1eed0d34ee99dbaea2af47a795b70ca}{m\_totalRx}}\ +=\ packet-\/>GetSize\ ();}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00211}00211\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (InetSocketAddress::IsMatchingType\ (from))}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00212}00212\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ NS\_LOG\_INFO\ (\textcolor{stringliteral}{"{}At\ time\ "{}}\ <<\ Simulator::Now\ ().As\ (Time::S)}
@@ -219,7 +219,7 @@
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \ packet-\/>GetSize\ ()\ <<\ \textcolor{stringliteral}{"{}\ bytes\ from\ "{}}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ InetSocketAddress::ConvertFrom(from).GetIpv4\ ()}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ port\ "{}}\ <<\ InetSocketAddress::ConvertFrom\ (from).GetPort\ ()}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ total\ Rx\ "{}}\ <<\ m\_totalRx\ <<\ \textcolor{stringliteral}{"{}\ bytes"{}});}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ total\ Rx\ "{}}\ <<\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_aa1eed0d34ee99dbaea2af47a795b70ca}{m\_totalRx}}\ <<\ \textcolor{stringliteral}{"{}\ bytes"{}});}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00219}00219\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00220}00220\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Inet6SocketAddress::IsMatchingType\ (from))}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00221}00221\ \ \ \ \ \ \ \ \ \{}
@@ -228,15 +228,15 @@
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \ packet-\/>GetSize\ ()\ <<\ \textcolor{stringliteral}{"{}\ bytes\ from\ "{}}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ Inet6SocketAddress::ConvertFrom(from).GetIpv6\ ()}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ port\ "{}}\ <<\ Inet6SocketAddress::ConvertFrom\ (from).GetPort\ ()}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ total\ Rx\ "{}}\ <<\ m\_totalRx\ <<\ \textcolor{stringliteral}{"{}\ bytes"{}});}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ total\ Rx\ "{}}\ <<\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_aa1eed0d34ee99dbaea2af47a795b70ca}{m\_totalRx}}\ <<\ \textcolor{stringliteral}{"{}\ bytes"{}});}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00228}00228\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00229}00229\ \ \ \ \ \ \ socket-\/>GetSockName\ (localAddress);}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00230}00230\ \ \ \ \ \ \ m\_rxTrace\ (packet,\ from);}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00231}00231\ \ \ \ \ \ \ m\_rxTraceWithAddresses\ (packet,\ from,\ localAddress);}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00230}00230\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_aca03544d5c0deea1c5f900d89037e8ed}{m\_rxTrace}}\ (packet,\ from);}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00231}00231\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a79fa3105c5e8709d6d2619a7665ce751}{m\_rxTraceWithAddresses}}\ (packet,\ from,\ localAddress);}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00232}00232\ }
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00233}00233\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_enableSeqTsSizeHeader)}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00233}00233\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_ac803f6a1d59503d2a5914f3c9a7f33ec}{m\_enableSeqTsSizeHeader}})}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00234}00234\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ PacketReceived\ (packet,\ from,\ localAddress);}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_ac45b59904bfc3ab8c3beeafa3b66abfb}{PacketReceived}}\ (packet,\ from,\ localAddress);}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00236}00236\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00237}00237\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00238}00238\ }
@@ -245,16 +245,16 @@
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00241}00241\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00242}00242\ }
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00243}00243\ \textcolor{keywordtype}{void}}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00244}00244\ DGRPacketSink::PacketReceived\ (\textcolor{keyword}{const}\ Ptr<Packet>\ \&p,\ \textcolor{keyword}{const}\ Address\ \&from,}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00244}\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_ac45b59904bfc3ab8c3beeafa3b66abfb}{00244}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_ac45b59904bfc3ab8c3beeafa3b66abfb}{DGRPacketSink::PacketReceived}}\ (\textcolor{keyword}{const}\ Ptr<Packet>\ \&p,\ \textcolor{keyword}{const}\ Address\ \&from,}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Address\ \&localAddress)}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00246}00246\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00247}00247\ \ \ SeqTsSizeHeader\ header;}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00248}00248\ \ \ Ptr<Packet>\ buffer;}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00249}00249\ }
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00250}00250\ \ \ \textcolor{keyword}{auto}\ itBuffer\ =\ m\_buffer.find\ (from);}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00251}00251\ \ \ \textcolor{keywordflow}{if}\ (itBuffer\ ==\ m\_buffer.end\ ())}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00250}00250\ \ \ \textcolor{keyword}{auto}\ itBuffer\ =\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a50309ac35d6ee3c3bf8ed1aac032b18c}{m\_buffer}}.find\ (from);}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00251}00251\ \ \ \textcolor{keywordflow}{if}\ (itBuffer\ ==\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a50309ac35d6ee3c3bf8ed1aac032b18c}{m\_buffer}}.end\ ())}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00252}00252\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00253}00253\ \ \ \ \ \ \ itBuffer\ =\ m\_buffer.insert\ (std::make\_pair\ (from,\ Create<Packet>\ (0))).first;}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00253}00253\ \ \ \ \ \ \ itBuffer\ =\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a50309ac35d6ee3c3bf8ed1aac032b18c}{m\_buffer}}.insert\ (std::make\_pair\ (from,\ Create<Packet>\ (0))).first;}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00254}00254\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00255}00255\ }
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00256}00256\ \ \ buffer\ =\ itBuffer-\/>second;}
@@ -271,7 +271,7 @@
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00267}00267\ }
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00268}00268\ \ \ \ \ \ \ complete-\/>RemoveHeader\ (header);}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00269}00269\ }
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00270}00270\ \ \ \ \ \ \ m\_rxTraceWithSeqTsSize\ (complete,\ from,\ localAddress,\ header);}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00270}00270\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a2d3c05d2d32ce064ce1ad0b46564bcfb}{m\_rxTraceWithSeqTsSize}}\ (complete,\ from,\ localAddress,\ header);}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00271}00271\ }
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00272}00272\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (buffer-\/>GetSize\ ()\ >\ header.GetSerializedSize\ ())}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00273}00273\ \ \ \ \ \ \ \ \ \{}
@@ -284,21 +284,21 @@
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00280}00280\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00281}00281\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00282}00282\ }
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00283}00283\ \textcolor{keywordtype}{void}\ DGRPacketSink::HandlePeerClose\ (Ptr<Socket>\ socket)}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00283}\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a4cdd5cf57dd8475e5d6656bf877dc220}{00283}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a4cdd5cf57dd8475e5d6656bf877dc220}{DGRPacketSink::HandlePeerClose}}\ (Ptr<Socket>\ socket)}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00284}00284\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00285}00285\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this}\ <<\ socket);}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00286}00286\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00287}00287\ \ }
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00288}00288\ \textcolor{keywordtype}{void}\ DGRPacketSink::HandlePeerError\ (Ptr<Socket>\ socket)}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00288}\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_ae1f5b327422a264e50a57a45010c5b95}{00288}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_ae1f5b327422a264e50a57a45010c5b95}{DGRPacketSink::HandlePeerError}}\ (Ptr<Socket>\ socket)}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00289}00289\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00290}00290\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this}\ <<\ socket);}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00291}00291\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00292}00292\ }
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00293}00293\ \textcolor{keywordtype}{void}\ DGRPacketSink::HandleAccept\ (Ptr<Socket>\ s,\ \textcolor{keyword}{const}\ Address\&\ from)}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00293}\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a60bdb8ea5bb655c1b77220963b2531d7}{00293}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a60bdb8ea5bb655c1b77220963b2531d7}{DGRPacketSink::HandleAccept}}\ (Ptr<Socket>\ s,\ \textcolor{keyword}{const}\ Address\&\ from)}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00294}00294\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00295}00295\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this}\ <<\ s\ <<\ from);}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00296}00296\ \ \ s-\/>SetRecvCallback\ (MakeCallback\ (\&DGRPacketSink::HandleRead,\ \textcolor{keyword}{this}));}
-\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00297}00297\ \ \ m\_socketList.push\_back\ (s);}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00296}00296\ \ \ s-\/>SetRecvCallback\ (MakeCallback\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a5bc1c04b2b572ae2197853efeceb650e}{DGRPacketSink::HandleRead}},\ \textcolor{keyword}{this}));}
+\DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00297}00297\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a1d21d3eae077fdf088eda04bf2652d97}{m\_socketList}}.push\_back\ (s);}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00298}00298\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00299}00299\ }
 \DoxyCodeLine{\Hypertarget{dgr-sink_8cc_source_l00300}00300\ \}\ \textcolor{comment}{//\ Namespace\ ns3}}

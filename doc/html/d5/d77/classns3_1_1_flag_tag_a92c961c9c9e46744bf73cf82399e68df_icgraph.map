@@ -1,0 +1,20 @@
+<map id="ns3::FlagTag::SetFlag" name="ns3::FlagTag::SetFlag">
+<area shape="rect" id="Node000001" title="Set the tag&#39;s flag." alt="" coords="687,159,847,185"/>
+<area shape="rect" id="Node000002" href="$d1/d1b/classns3_1_1_d_g_r_tcp_application.html#a5d97018a7a55030432c7bd4941439224" title="Send data until the L4 transmission buffer is full." alt="" coords="461,92,635,132"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="706,158,621,135,622,129,707,153"/>
+<area shape="rect" id="Node000006" href="$d5/dbe/classns3_1_1_d_g_r_udp_application.html#a844392732fe5f6e197992c862c4151db" title="Send a packet" alt="" coords="457,184,639,224"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="673,188,639,193,638,188,672,183"/>
+<area shape="rect" id="Node000003" href="$d1/d1b/classns3_1_1_d_g_r_tcp_application.html#a240d181619fe26fa934e3e152c153696" title="Connection Succeeded (called by Socket through a callback)" alt="" coords="231,5,406,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="480,89,372,48,374,43,482,85"/>
+<area shape="rect" id="Node000004" href="$d1/d1b/classns3_1_1_d_g_r_tcp_application.html#ad3f18ec72baf186800e72eed654eac2c" title=" " alt="" coords="5,63,180,103"/>
+<area shape="poly" id="edge6_Node000002_Node000004" title=" " alt="" coords="447,108,180,91,180,86,447,103"/>
+<area shape="rect" id="Node000005" href="$d1/d1b/classns3_1_1_d_g_r_tcp_application.html#ad6e628629f8e191964b873fed001a902" title="Send more data as soon as some has been transmitted." alt="" coords="231,120,406,160"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="447,127,406,132,406,127,447,122"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="227,51,173,65,171,60,226,46"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="226,119,171,105,173,100,227,114"/>
+<area shape="rect" id="Node000007" href="$d5/dbe/classns3_1_1_d_g_r_udp_application.html#a217460003efed056634b84d512c0f47b" title="Schedule a new transmission." alt="" coords="228,184,409,224"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="443,216,410,215,410,210,443,210"/>
+<area shape="rect" id="Node000008" href="$d5/dbe/classns3_1_1_d_g_r_udp_application.html#ada9c016c08e91a65da084c790acd4618" title=" " alt="" coords="228,248,409,288"/>
+<area shape="poly" id="edge10_Node000006_Node000008" title=" " alt="" coords="463,230,392,251,390,245,462,225"/>
+<area shape="poly" id="edge9_Node000007_Node000006" title=" " alt="" coords="423,192,457,193,457,198,423,198"/>
+</map>

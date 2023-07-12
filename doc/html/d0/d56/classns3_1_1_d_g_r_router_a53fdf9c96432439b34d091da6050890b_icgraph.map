@@ -1,0 +1,27 @@
+<map id="ns3::DGRRouter::NetDeviceIsBridged" name="ns3::DGRRouter::NetDeviceIsBridged">
+<area shape="rect" id="Node000001" title="Decide whether or not a given net device is being bridged by a BridgeNetDevice." alt="" coords="1163,126,1364,166"/>
+<area shape="rect" id="Node000002" href="$d0/d56/classns3_1_1_d_g_r_router.html#ad1f4d3739e9972e6126b4f3c61b48cc3" title="Checks for the presence of another router on the NetDevice." alt="" coords="884,82,1111,122"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1149,130,1110,123,1111,118,1150,124"/>
+<area shape="rect" id="Node000005" href="$d0/d56/classns3_1_1_d_g_r_router.html#ac119cda89d816da90186bb617c710c25" title="Walk the connected channels, discover the adjacent routers and build the associated number of Global ..." alt="" coords="5,133,228,158"/>
+<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="1229,119,1178,79,1147,62,1114,48,1045,30,974,18,901,11,829,8,684,15,545,33,417,58,306,87,152,136,151,131,304,82,416,53,544,27,684,9,829,3,902,6,974,13,1046,25,1116,43,1149,57,1181,75,1233,114"/>
+<area shape="rect" id="Node000007" href="$d0/d56/classns3_1_1_d_g_r_router.html#a82bb020047d97bca36f66ab9c8eeb20a" title="Return a container of all non&#45;bridged NetDevices on a link." alt="" coords="896,258,1099,298"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="1213,175,1116,224,1042,260,1040,255,1113,219,1210,170"/>
+<area shape="rect" id="Node000009" href="$d0/d56/classns3_1_1_d_g_r_router.html#a4878eacca3b0a943b4e7e49d25dd8e1b" title="Finds a designated router." alt="" coords="880,170,1115,210"/>
+<area shape="poly" id="edge13_Node000001_Node000009" title=" " alt="" coords="1150,167,1115,173,1114,168,1149,162"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="1042,70,1027,63,997,60,972,62,956,67,951,73,953,81,948,82,945,72,953,63,971,57,997,55,1028,58,1045,65"/>
+<area shape="rect" id="Node000003" href="$d0/d56/classns3_1_1_d_g_r_router.html#ac1075dd7ea9735e489838a39e29f6597" title="Process a bridged broadcast link." alt="" coords="599,94,832,134"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="870,110,832,111,832,106,870,105"/>
+<area shape="rect" id="Node000006" href="$d0/d56/classns3_1_1_d_g_r_router.html#a920b7e48d18135f51a66b010b6d730cc" title="Process a single broadcast link." alt="" coords="604,158,827,198"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="910,128,791,160,790,155,908,123"/>
+<area shape="rect" id="Node000004" href="$d0/d56/classns3_1_1_d_g_r_router.html#aa562c84d9a117e26103ac8338ec8094f" title="Process a generic broadcast link." alt="" coords="276,133,551,158"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="585,130,534,136,533,130,584,125"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="262,148,228,148,228,143,262,143"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="590,167,533,161,533,156,590,162"/>
+<area shape="poly" id="edge12_Node000007_Node000007" title=" " alt="" coords="1042,246,1027,239,997,236,972,238,956,243,951,249,953,257,948,258,945,248,953,239,971,233,997,231,1028,234,1045,241"/>
+<area shape="rect" id="Node000008" href="$d0/d56/classns3_1_1_d_g_r_router.html#a045a362fddd31a11a9c777bb64c889f7" title="Build one NetworkLSA for each net device talking to a network that we are the designated router for." alt="" coords="287,186,540,212"/>
+<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="882,265,508,214,509,209,882,260"/>
+<area shape="poly" id="edge11_Node000008_Node000005" title=" " alt="" coords="328,187,188,161,188,156,329,181"/>
+<area shape="poly" id="edge15_Node000009_Node000003" title=" " alt="" coords="908,169,790,136,791,131,910,164"/>
+<area shape="poly" id="edge16_Node000009_Node000006" title=" " alt="" coords="866,187,827,185,827,180,866,182"/>
+<area shape="poly" id="edge14_Node000009_Node000009" title=" " alt="" coords="1042,158,1027,151,997,148,972,150,956,155,951,161,953,169,948,170,945,160,953,151,971,145,997,143,1028,146,1045,153"/>
+</map>

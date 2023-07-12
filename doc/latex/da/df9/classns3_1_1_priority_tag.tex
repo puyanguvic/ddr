@@ -1,0 +1,260 @@
+\doxysubsection{ns3\+::Priority\+Tag Class Reference}
+\hypertarget{classns3_1_1_priority_tag}{}\label{classns3_1_1_priority_tag}\index{ns3::PriorityTag@{ns3::PriorityTag}}
+
+
+{\ttfamily \#include $<$dgr-\/tags.\+h$>$}
+
+
+
+Inheritance diagram for ns3\+::Priority\+Tag\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{d0/d21/classns3_1_1_priority_tag__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns3\+::Priority\+Tag\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{d7/d5c/classns3_1_1_priority_tag__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_priority_tag_a69612f2d6c8c4c6bbb50e544f9a0f350}{Priority\+Tag}} ()
+\item 
+void \mbox{\hyperlink{classns3_1_1_priority_tag_a1656669c46345a1a88cbdb823f2da80b}{Deserialize}} (Tag\+Buffer \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}) override
+\item 
+Type\+Id \mbox{\hyperlink{classns3_1_1_priority_tag_a5ecae66db7e25e97b11ed2087cc90f6c}{Get\+Instance\+Type\+Id}} (void) const override
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_priority_tag_ac9b0dbcebebad476d6dcba66831300e1}{Get\+Priority}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the tag\textquotesingle{}s priority. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_priority_tag_aae6fb79e7a0107147a7b768eb2581980}{Get\+Serialized\+Size}} (void) const override
+\item 
+void \mbox{\hyperlink{classns3_1_1_priority_tag_a1cc86bc95d88df7cf881337ee1e59f8a}{Print}} (std\+::ostream \&os) const override
+\item 
+void \mbox{\hyperlink{classns3_1_1_priority_tag_a1726564061d62b73aade280a4b6a7ad8}{Serialize}} (Tag\+Buffer \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}) const override
+\item 
+void \mbox{\hyperlink{classns3_1_1_priority_tag_a2c4ada4770b0f4c6049edb3463da82a4}{Set\+Priority}} (uint32\+\_\+t priority)
+\begin{DoxyCompactList}\small\item\em Set the tag\textquotesingle{}s priority. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Type\+Id \mbox{\hyperlink{classns3_1_1_priority_tag_a72e97cfa0bb648b1d60bfaf7ee583d1f}{Get\+Type\+Id}} (void)
+\begin{DoxyCompactList}\small\item\em Get the Type ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_priority_tag_a47abca1201aa81236504353e2ddd9c34}{m\+\_\+priority}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8h_source_l00150}{150}} of file \mbox{\hyperlink{dgr-tags_8h_source}{dgr-\/tags.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_priority_tag_a69612f2d6c8c4c6bbb50e544f9a0f350}\label{classns3_1_1_priority_tag_a69612f2d6c8c4c6bbb50e544f9a0f350} 
+\index{ns3::PriorityTag@{ns3::PriorityTag}!PriorityTag@{PriorityTag}}
+\index{PriorityTag@{PriorityTag}!ns3::PriorityTag@{ns3::PriorityTag}}
+\doxyparagraph{\texorpdfstring{PriorityTag()}{PriorityTag()}}
+{\footnotesize\ttfamily ns3\+::\+Priority\+Tag\+::\+Priority\+Tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00235}{235}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_priority_tag_a1656669c46345a1a88cbdb823f2da80b}\label{classns3_1_1_priority_tag_a1656669c46345a1a88cbdb823f2da80b} 
+\index{ns3::PriorityTag@{ns3::PriorityTag}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!ns3::PriorityTag@{ns3::PriorityTag}}
+\doxyparagraph{\texorpdfstring{Deserialize()}{Deserialize()}}
+{\footnotesize\ttfamily void ns3\+::\+Priority\+Tag\+::\+Deserialize (\begin{DoxyParamCaption}\item[{Tag\+Buffer}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00286}{286}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-tags_8h_source_l00189}{m\+\_\+priority}}.
+
+\Hypertarget{classns3_1_1_priority_tag_a5ecae66db7e25e97b11ed2087cc90f6c}\label{classns3_1_1_priority_tag_a5ecae66db7e25e97b11ed2087cc90f6c} 
+\index{ns3::PriorityTag@{ns3::PriorityTag}!GetInstanceTypeId@{GetInstanceTypeId}}
+\index{GetInstanceTypeId@{GetInstanceTypeId}!ns3::PriorityTag@{ns3::PriorityTag}}
+\doxyparagraph{\texorpdfstring{GetInstanceTypeId()}{GetInstanceTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+Priority\+Tag\+::\+Get\+Instance\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00265}{265}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tags_8cc_source_l00255}{Get\+Type\+Id()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/df9/classns3_1_1_priority_tag_a5ecae66db7e25e97b11ed2087cc90f6c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_priority_tag_ac9b0dbcebebad476d6dcba66831300e1}\label{classns3_1_1_priority_tag_ac9b0dbcebebad476d6dcba66831300e1} 
+\index{ns3::PriorityTag@{ns3::PriorityTag}!GetPriority@{GetPriority}}
+\index{GetPriority@{GetPriority}!ns3::PriorityTag@{ns3::PriorityTag}}
+\doxyparagraph{\texorpdfstring{GetPriority()}{GetPriority()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+Priority\+Tag\+::\+Get\+Priority (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the tag\textquotesingle{}s priority. 
+
+\begin{DoxyReturn}{Returns}
+the priority 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00248}{248}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tags_8h_source_l00189}{m\+\_\+priority}}.
+
+\Hypertarget{classns3_1_1_priority_tag_aae6fb79e7a0107147a7b768eb2581980}\label{classns3_1_1_priority_tag_aae6fb79e7a0107147a7b768eb2581980} 
+\index{ns3::PriorityTag@{ns3::PriorityTag}!GetSerializedSize@{GetSerializedSize}}
+\index{GetSerializedSize@{GetSerializedSize}!ns3::PriorityTag@{ns3::PriorityTag}}
+\doxyparagraph{\texorpdfstring{GetSerializedSize()}{GetSerializedSize()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+Priority\+Tag\+::\+Get\+Serialized\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00271}{271}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+\Hypertarget{classns3_1_1_priority_tag_a72e97cfa0bb648b1d60bfaf7ee583d1f}\label{classns3_1_1_priority_tag_a72e97cfa0bb648b1d60bfaf7ee583d1f} 
+\index{ns3::PriorityTag@{ns3::PriorityTag}!GetTypeId@{GetTypeId}}
+\index{GetTypeId@{GetTypeId}!ns3::PriorityTag@{ns3::PriorityTag}}
+\doxyparagraph{\texorpdfstring{GetTypeId()}{GetTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+Priority\+Tag\+::\+Get\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the Type ID. 
+
+\begin{DoxyReturn}{Returns}
+the object Type\+Id 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00255}{255}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tags_8cc_source_l00265}{Get\+Instance\+Type\+Id()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/df9/classns3_1_1_priority_tag_a72e97cfa0bb648b1d60bfaf7ee583d1f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_priority_tag_a1cc86bc95d88df7cf881337ee1e59f8a}\label{classns3_1_1_priority_tag_a1cc86bc95d88df7cf881337ee1e59f8a} 
+\index{ns3::PriorityTag@{ns3::PriorityTag}!Print@{Print}}
+\index{Print@{Print}!ns3::PriorityTag@{ns3::PriorityTag}}
+\doxyparagraph{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void ns3\+::\+Priority\+Tag\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00295}{295}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tags_8h_source_l00189}{m\+\_\+priority}}.
+
+\Hypertarget{classns3_1_1_priority_tag_a1726564061d62b73aade280a4b6a7ad8}\label{classns3_1_1_priority_tag_a1726564061d62b73aade280a4b6a7ad8} 
+\index{ns3::PriorityTag@{ns3::PriorityTag}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!ns3::PriorityTag@{ns3::PriorityTag}}
+\doxyparagraph{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily void ns3\+::\+Priority\+Tag\+::\+Serialize (\begin{DoxyParamCaption}\item[{Tag\+Buffer}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00278}{278}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-tags_8h_source_l00189}{m\+\_\+priority}}.
+
+\Hypertarget{classns3_1_1_priority_tag_a2c4ada4770b0f4c6049edb3463da82a4}\label{classns3_1_1_priority_tag_a2c4ada4770b0f4c6049edb3463da82a4} 
+\index{ns3::PriorityTag@{ns3::PriorityTag}!SetPriority@{SetPriority}}
+\index{SetPriority@{SetPriority}!ns3::PriorityTag@{ns3::PriorityTag}}
+\doxyparagraph{\texorpdfstring{SetPriority()}{SetPriority()}}
+{\footnotesize\ttfamily void ns3\+::\+Priority\+Tag\+::\+Set\+Priority (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{priority }\end{DoxyParamCaption})}
+
+
+
+Set the tag\textquotesingle{}s priority. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em priority} & the priority \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00241}{241}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tags_8h_source_l00189}{m\+\_\+priority}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-udp-application_8cc_source_l00121}{ns3\+::\+DGRUdp\+Application\+::\+Send\+Packet()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/df9/classns3_1_1_priority_tag_a2c4ada4770b0f4c6049edb3463da82a4_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{classns3_1_1_priority_tag_a47abca1201aa81236504353e2ddd9c34}\label{classns3_1_1_priority_tag_a47abca1201aa81236504353e2ddd9c34} 
+\index{ns3::PriorityTag@{ns3::PriorityTag}!m\_priority@{m\_priority}}
+\index{m\_priority@{m\_priority}!ns3::PriorityTag@{ns3::PriorityTag}}
+\doxyparagraph{\texorpdfstring{m\_priority}{m\_priority}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+Priority\+Tag\+::m\+\_\+priority\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8h_source_l00189}{189}} of file \mbox{\hyperlink{dgr-tags_8h_source}{dgr-\/tags.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tags_8cc_source_l00286}{Deserialize()}}, \mbox{\hyperlink{dgr-tags_8cc_source_l00248}{Get\+Priority()}}, \mbox{\hyperlink{dgr-tags_8cc_source_l00295}{Print()}}, \mbox{\hyperlink{dgr-tags_8cc_source_l00278}{Serialize()}}, and \mbox{\hyperlink{dgr-tags_8cc_source_l00241}{Set\+Priority()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{dgr-tags_8h}{dgr-\/tags.\+h}}\item 
+model/\mbox{\hyperlink{dgr-tags_8cc}{dgr-\/tags.\+cc}}\end{DoxyCompactItemize}

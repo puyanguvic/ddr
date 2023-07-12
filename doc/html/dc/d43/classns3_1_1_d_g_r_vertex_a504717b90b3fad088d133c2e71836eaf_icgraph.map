@@ -1,0 +1,18 @@
+<map id="ns3::DGRVertex::GetNChildren" name="ns3::DGRVertex::GetNChildren">
+<area shape="rect" id="Node000001" title="Get the number of children of &quot;this&quot; DGRVertex." alt="" coords="771,125,989,150"/>
+<area shape="rect" id="Node000002" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#adedcbcf4b3fd8a7db8a086d5beefc1d2" title="Clear the value of the VertexProcessed flag." alt="" coords="515,29,723,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="831,122,722,84,685,72,687,67,724,79,832,117"/>
+<area shape="rect" id="Node000005" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#ad51d5dbbd85120ad79227351fc16c9f4" title="Process Autonomous Systems (AS) External LSA." alt="" coords="515,117,722,157"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="757,140,722,140,722,135,757,135"/>
+<area shape="rect" id="Node000006" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a71dd2f4c78a96ecb7d86dd75fd6f78bd" title="Process Stub nodes." alt="" coords="515,205,722,245"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="829,157,680,208,678,203,827,152"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="662,18,647,11,619,8,594,10,579,15,574,21,577,28,572,30,569,20,576,10,593,5,619,3,648,6,664,13"/>
+<area shape="rect" id="Node000003" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a910c2efcc40a79d4c062eb08ceb11522" title="Calculate the shortest path first (SPF) tree." alt="" coords="260,117,467,157"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="539,76,516,84,417,120,415,115,514,79,537,71"/>
+<area shape="rect" id="Node000004" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a3b798959aeda8a76373705151497692e" title="Compute routes using a Dijkstra SPF computation and populate per&#45;node forwarding tables." alt="" coords="5,117,212,157"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="247,140,212,140,212,135,247,135"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="502,140,467,140,467,135,502,135"/>
+<area shape="poly" id="edge6_Node000005_Node000005" title=" " alt="" coords="662,106,647,99,619,96,594,98,579,103,574,109,577,116,572,118,569,108,576,98,593,93,619,91,648,94,664,101"/>
+<area shape="poly" id="edge9_Node000006_Node000003" title=" " alt="" coords="546,203,421,160,423,155,547,198"/>
+<area shape="poly" id="edge10_Node000006_Node000006" title=" " alt="" coords="662,194,647,187,619,184,594,186,579,191,574,197,577,204,572,206,569,196,576,186,593,181,619,179,648,182,664,189"/>
+</map>

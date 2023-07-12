@@ -1,0 +1,14 @@
+<map id="ns3::DGRVertex::IsVertexProcessed" name="ns3::DGRVertex::IsVertexProcessed">
+<area shape="rect" id="Node000001" title="Check the value of the VertexProcessed flag." alt="" coords="769,73,955,113"/>
+<area shape="rect" id="Node000002" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#ad51d5dbbd85120ad79227351fc16c9f4" title="Process Autonomous Systems (AS) External LSA." alt="" coords="515,29,721,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="755,77,721,71,722,65,756,72"/>
+<area shape="rect" id="Node000005" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a71dd2f4c78a96ecb7d86dd75fd6f78bd" title="Process Stub nodes." alt="" coords="515,117,721,157"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="756,115,722,121,721,116,755,110"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="659,18,645,11,618,8,595,10,580,15,575,21,578,28,573,30,570,20,577,10,593,5,618,3,646,6,662,13"/>
+<area shape="rect" id="Node000003" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a910c2efcc40a79d4c062eb08ceb11522" title="Calculate the shortest path first (SPF) tree." alt="" coords="260,73,467,113"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="502,72,467,78,466,73,501,67"/>
+<area shape="rect" id="Node000004" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a3b798959aeda8a76373705151497692e" title="Compute routes using a Dijkstra SPF computation and populate per&#45;node forwarding tables." alt="" coords="5,73,212,113"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="247,96,212,96,212,91,247,91"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="501,120,466,114,467,109,502,115"/>
+<area shape="poly" id="edge7_Node000005_Node000005" title=" " alt="" coords="659,106,645,99,618,96,595,98,580,103,575,109,578,116,573,118,570,108,577,98,593,93,618,91,646,94,662,101"/>
+</map>

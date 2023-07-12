@@ -1,0 +1,21 @@
+<map id="ns3::DGRRoutingLinkRecord::SetLinkType" name="ns3::DGRRoutingLinkRecord::SetLinkType">
+<area shape="rect" id="Node000001" title="Set the Link Type field of the Global Routing Link Record." alt="" coords="880,133,1084,173"/>
+<area shape="rect" id="Node000002" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a206ff392d0561c4b244a8c6fe8d824ab" title="Copy any Global Routing Link Records in a given Global Routing Link State Advertisement to the curren..." alt="" coords="637,37,794,77"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="925,130,831,92,793,80,795,75,833,87,927,125"/>
+<area shape="rect" id="Node000005" href="$d0/d56/classns3_1_1_d_g_r_router.html#ac1075dd7ea9735e489838a39e29f6597" title="Process a bridged broadcast link." alt="" coords="599,101,832,141"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="866,142,832,138,832,133,867,137"/>
+<area shape="rect" id="Node000008" href="$d0/d56/classns3_1_1_d_g_r_router.html#aac014913150c42a93cecbc6a9daf7552" title="Process a point to point link." alt="" coords="305,223,521,263"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="933,182,885,203,833,220,752,235,670,244,522,249,522,244,670,239,751,230,831,215,883,198,931,177"/>
+<area shape="rect" id="Node000009" href="$d0/d56/classns3_1_1_d_g_r_router.html#a920b7e48d18135f51a66b010b6d730cc" title="Process a single broadcast link." alt="" coords="604,165,827,205"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="867,170,827,175,826,169,866,165"/>
+<area shape="rect" id="Node000003" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a042cca1bebf1189a3e40f0c3abcd5937" title="Copy constructor for a Global Routing Link State Advertisement." alt="" coords="335,5,492,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="623,50,492,36,493,31,624,45"/>
+<area shape="rect" id="Node000004" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#af09c521adba74e1538773cebf14b3929" title="Assignment operator for a Global Routing Link State Advertisement." alt="" coords="335,69,492,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="624,70,493,84,492,78,623,64"/>
+<area shape="rect" id="Node000006" href="$d0/d56/classns3_1_1_d_g_r_router.html#aa562c84d9a117e26103ac8338ec8094f" title="Process a generic broadcast link." alt="" coords="276,173,551,198"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="608,147,475,175,474,170,607,142"/>
+<area shape="rect" id="Node000007" href="$d0/d56/classns3_1_1_d_g_r_router.html#ac119cda89d816da90186bb617c710c25" title="Walk the connected channels, discover the adjacent routers and build the associated number of Global ..." alt="" coords="5,202,228,227"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="271,202,229,206,228,201,271,197"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="291,234,228,228,229,223,292,229"/>
+<area shape="poly" id="edge10_Node000009_Node000006" title=" " alt="" coords="590,188,551,188,551,183,590,183"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="ns3::DGRUdpApplication::ScheduleTx" name="ns3::DGRUdpApplication::ScheduleTx">
+<area shape="rect" id="Node000001" title="Schedule a new transmission." alt="" coords="5,47,187,87"/>
+<area shape="rect" id="Node000002" href="$d5/dbe/classns3_1_1_d_g_r_udp_application.html#a844392732fe5f6e197992c862c4151db" title="Send a packet" alt="" coords="235,47,416,87"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,73,221,74,221,79,187,79"/>
+<area shape="poly" id="edge2_Node000002_Node000001" title=" " alt="" coords="234,61,201,61,201,56,234,56"/>
+<area shape="rect" id="Node000003" href="$d0/db3/classns3_1_1_budget_tag.html#a42dfab1331f4f1bb1953c1ec972ab0bb" title="Set the tag&#39;s budget." alt="" coords="465,5,661,31"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="416,46,488,31,489,36,417,51"/>
+<area shape="rect" id="Node000004" href="$d5/d77/classns3_1_1_flag_tag.html#a92c961c9c9e46744bf73cf82399e68df" title="Set the tag&#39;s flag." alt="" coords="483,55,643,80"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="416,65,469,65,469,70,416,70"/>
+<area shape="rect" id="Node000005" href="$da/df9/classns3_1_1_priority_tag.html#a2c4ada4770b0f4c6049edb3463da82a4" title="Set the tag&#39;s priority." alt="" coords="464,104,663,129"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="417,84,489,99,488,104,416,89"/>
+</map>

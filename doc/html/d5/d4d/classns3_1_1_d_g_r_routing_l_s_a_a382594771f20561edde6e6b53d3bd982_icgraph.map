@@ -1,0 +1,8 @@
+<map id="ns3::DGRRoutingLSA::SetLinkStateId" name="ns3::DGRRoutingLSA::SetLinkStateId">
+<area shape="rect" id="Node000001" title="Set the Link State ID is defined by the OSPF spec." alt="" coords="577,23,735,63"/>
+<area shape="rect" id="Node000002" href="$d0/d56/classns3_1_1_d_g_r_router.html#a045a362fddd31a11a9c777bb64c889f7" title="Build one NetworkLSA for each net device talking to a network that we are the designated router for." alt="" coords="276,5,529,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="563,37,529,33,530,28,564,31"/>
+<area shape="rect" id="Node000003" href="$d0/d56/classns3_1_1_d_g_r_router.html#ac119cda89d816da90186bb617c710c25" title="Walk the connected channels, discover the adjacent routers and build the associated number of Global ..." alt="" coords="5,31,228,56"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="563,46,228,46,228,41,563,41"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="263,33,229,36,228,31,262,28"/>
+</map>

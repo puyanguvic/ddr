@@ -116,8 +116,8 @@ $(document).ready(function(){initNavTree('db/db2/dgr-route-manager_8cc_source.ht
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;ns3/assert.h&quot;</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;ns3/log.h&quot;</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;ns3/simulation-singleton.h&quot;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;dgr-route-manager.h&quot;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;dgr-route-manager-impl.h&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;<a class="code" href="../../dc/dd8/dgr-route-manager_8h.html">dgr-route-manager.h</a>&quot;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;<a class="code" href="../../d5/d9c/dgr-route-manager-impl_8h.html">dgr-route-manager-impl.h</a>&quot;</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d7/d2e/namespacens3.html">ns3</a> {</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
@@ -130,31 +130,31 @@ $(document).ready(function(){initNavTree('db/db2/dgr-route-manager_8cc_source.ht
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">// ---------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keywordtype">void</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>DGRRouteManager::DeleteDGRRoutes ()</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../d1/da9/classns3_1_1_d_g_r_route_manager.html#acea317a83af55525aa4453f33839db3a">   38</a></span><a class="code hl_function" href="../../d1/da9/classns3_1_1_d_g_r_route_manager.html#acea317a83af55525aa4453f33839db3a">DGRRouteManager::DeleteDGRRoutes</a> ()</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  NS_LOG_FUNCTION_NOARGS ();</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  SimulationSingleton&lt;DGRRouteManagerImpl&gt;::Get ()-&gt;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  DeleteDGRRoutes ();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <a class="code hl_function" href="../../d1/da9/classns3_1_1_d_g_r_route_manager.html#acea317a83af55525aa4453f33839db3a">DeleteDGRRoutes</a> ();</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keywordtype">void</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>DGRRouteManager::BuildDGRRoutingDatabase (<span class="keywordtype">void</span>) </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="../../d1/da9/classns3_1_1_d_g_r_route_manager.html#a62b76ca8cab68a61efd72c5fe5d092dc">   46</a></span><a class="code hl_function" href="../../d1/da9/classns3_1_1_d_g_r_route_manager.html#a62b76ca8cab68a61efd72c5fe5d092dc">DGRRouteManager::BuildDGRRoutingDatabase</a> (<span class="keywordtype">void</span>) </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>{</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  NS_LOG_FUNCTION_NOARGS ();</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  SimulationSingleton&lt;DGRRouteManagerImpl&gt;::Get ()-&gt;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  BuildDGRRoutingDatabase ();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <a class="code hl_function" href="../../d1/da9/classns3_1_1_d_g_r_route_manager.html#a62b76ca8cab68a61efd72c5fe5d092dc">BuildDGRRoutingDatabase</a> ();</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keywordtype">void</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>DGRRouteManager::InitializeRoutes (<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../d1/da9/classns3_1_1_d_g_r_route_manager.html#ad637a566676faf22176f66f1afdb8c3c">   54</a></span><a class="code hl_function" href="../../d1/da9/classns3_1_1_d_g_r_route_manager.html#ad637a566676faf22176f66f1afdb8c3c">DGRRouteManager::InitializeRoutes</a> (<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>{</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  NS_LOG_FUNCTION_NOARGS ();</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  SimulationSingleton&lt;DGRRouteManagerImpl&gt;::Get ()-&gt;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  InitializeRoutes ();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <a class="code hl_function" href="../../d1/da9/classns3_1_1_d_g_r_route_manager.html#ad637a566676faf22176f66f1afdb8c3c">InitializeRoutes</a> ();</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>uint32_t</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>DGRRouteManager::AllocateRouterId (<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../d1/da9/classns3_1_1_d_g_r_route_manager.html#a87bf2995a6dcd48692147452fea88d40">   62</a></span><a class="code hl_function" href="../../d1/da9/classns3_1_1_d_g_r_route_manager.html#a87bf2995a6dcd48692147452fea88d40">DGRRouteManager::AllocateRouterId</a> (<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>{</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  NS_LOG_FUNCTION_NOARGS ();</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keyword">static</span> uint32_t routerId = 0;</div>
@@ -163,6 +163,12 @@ $(document).ready(function(){initNavTree('db/db2/dgr-route-manager_8cc_source.ht
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>} <span class="comment">// namespace ns3</span></div>
+<div class="ttc" id="aclassns3_1_1_d_g_r_route_manager_html_a62b76ca8cab68a61efd72c5fe5d092dc"><div class="ttname"><a href="../../d1/da9/classns3_1_1_d_g_r_route_manager.html#a62b76ca8cab68a61efd72c5fe5d092dc">ns3::DGRRouteManager::BuildDGRRoutingDatabase</a></div><div class="ttdeci">static void BuildDGRRoutingDatabase()</div><div class="ttdoc">Build the routing database by gathering Link State Advertisements from each node exporting a DGRRoute...</div><div class="ttdef"><b>Definition</b> <a href="../../db/db2/dgr-route-manager_8cc_source.html#l00046">dgr-route-manager.cc:46</a></div></div>
+<div class="ttc" id="aclassns3_1_1_d_g_r_route_manager_html_a87bf2995a6dcd48692147452fea88d40"><div class="ttname"><a href="../../d1/da9/classns3_1_1_d_g_r_route_manager.html#a87bf2995a6dcd48692147452fea88d40">ns3::DGRRouteManager::AllocateRouterId</a></div><div class="ttdeci">static uint32_t AllocateRouterId()</div><div class="ttdoc">Allocate a 32-bit router ID from monotonically increasing counter.</div><div class="ttdef"><b>Definition</b> <a href="../../db/db2/dgr-route-manager_8cc_source.html#l00062">dgr-route-manager.cc:62</a></div></div>
+<div class="ttc" id="aclassns3_1_1_d_g_r_route_manager_html_acea317a83af55525aa4453f33839db3a"><div class="ttname"><a href="../../d1/da9/classns3_1_1_d_g_r_route_manager.html#acea317a83af55525aa4453f33839db3a">ns3::DGRRouteManager::DeleteDGRRoutes</a></div><div class="ttdeci">static void DeleteDGRRoutes()</div><div class="ttdoc">Delete all static routes on all nodes that have a DGRRouterInterface.</div><div class="ttdef"><b>Definition</b> <a href="../../db/db2/dgr-route-manager_8cc_source.html#l00038">dgr-route-manager.cc:38</a></div></div>
+<div class="ttc" id="aclassns3_1_1_d_g_r_route_manager_html_ad637a566676faf22176f66f1afdb8c3c"><div class="ttname"><a href="../../d1/da9/classns3_1_1_d_g_r_route_manager.html#ad637a566676faf22176f66f1afdb8c3c">ns3::DGRRouteManager::InitializeRoutes</a></div><div class="ttdeci">static void InitializeRoutes()</div><div class="ttdoc">Compute routes using a Dijkstra SPF computation and populate per-node forwarding tables.</div><div class="ttdef"><b>Definition</b> <a href="../../db/db2/dgr-route-manager_8cc_source.html#l00054">dgr-route-manager.cc:54</a></div></div>
+<div class="ttc" id="adgr-route-manager-impl_8h_html"><div class="ttname"><a href="../../d5/d9c/dgr-route-manager-impl_8h.html">dgr-route-manager-impl.h</a></div></div>
+<div class="ttc" id="adgr-route-manager_8h_html"><div class="ttname"><a href="../../dc/dd8/dgr-route-manager_8h.html">dgr-route-manager.h</a></div></div>
 <div class="ttc" id="anamespacens3_html"><div class="ttname"><a href="../../d7/d2e/namespacens3.html">ns3</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/d65/dgr-application-helper_8cc_source.html#l00027">dgr-application-helper.cc:27</a></div></div>
 <div class="ttc" id="anamespacens3_html_adde9ed23eff577cdfec10d85035e32eb"><div class="ttname"><a href="../../d7/d2e/namespacens3.html#adde9ed23eff577cdfec10d85035e32eb">ns3::NS_LOG_COMPONENT_DEFINE</a></div><div class="ttdeci">NS_LOG_COMPONENT_DEFINE(&quot;DGRRoutingHelper&quot;)</div></div>
 </div><!-- fragment --></div><!-- contents -->

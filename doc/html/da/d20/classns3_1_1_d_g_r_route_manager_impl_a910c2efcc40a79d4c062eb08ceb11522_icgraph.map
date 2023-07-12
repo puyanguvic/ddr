@@ -1,0 +1,5 @@
+<map id="ns3::DGRRouteManagerImpl::SPFCalculate" name="ns3::DGRRouteManagerImpl::SPFCalculate">
+<area shape="rect" id="Node000001" title="Calculate the shortest path first (SPF) tree." alt="" coords="260,5,467,45"/>
+<area shape="rect" id="Node000002" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a3b798959aeda8a76373705151497692e" title="Compute routes using a Dijkstra SPF computation and populate per&#45;node forwarding tables." alt="" coords="5,5,212,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,28,212,28,212,23,247,23"/>
+</map>

@@ -1,0 +1,546 @@
+\doxysubsection{ns3\+::DGRUdp\+Application Class Reference}
+\hypertarget{classns3_1_1_d_g_r_udp_application}{}\label{classns3_1_1_d_g_r_udp_application}\index{ns3::DGRUdpApplication@{ns3::DGRUdpApplication}}
+
+
+{\ttfamily \#include $<$dgr-\/udp-\/application.\+h$>$}
+
+
+
+Inheritance diagram for ns3\+::DGRUdp\+Application\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{db/d93/classns3_1_1_d_g_r_udp_application__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns3\+::DGRUdp\+Application\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d4a/classns3_1_1_d_g_r_udp_application__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_udp_application_a789f5dd5d50db1e9d60f7f7618098f0d}{DGRUdp\+Application}} ()
+\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_udp_application_ad7423806aaf0be2db0e87be4d30dae7f}{\texorpdfstring{$\sim$}{\string~}\+DGRUdp\+Application}} () override
+\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_udp_application_ae7820a661567dee9c180baebda7a4429}{Change\+Rate}} (Data\+Rate new\+Data\+Rate)
+\begin{DoxyCompactList}\small\item\em Update the sending rate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_udp_application_adb264cf9c38a6270a7f56faf5a4ff4a3}{Setup}} (Ptr$<$ Socket $>$ socket, Address sink\+Address, uint32\+\_\+t packet\+Size, uint32\+\_\+t n\+Packets, Data\+Rate data\+Rate, bool flag=false)
+\begin{DoxyCompactList}\small\item\em Setup the socket. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_udp_application_a2e5af196e076be85b8442c5375bc3e7e}{Setup}} (Ptr$<$ Socket $>$ socket, Address sink\+Address, uint32\+\_\+t packet\+Size, uint32\+\_\+t n\+Packets, Data\+Rate data\+Rate, uint32\+\_\+t budget, bool flag=false)
+\begin{DoxyCompactList}\small\item\em Setup the socket. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Type\+Id \mbox{\hyperlink{classns3_1_1_d_g_r_udp_application_adf5ede44035ee65db58c501d67f01d07}{Get\+Type\+Id}} (void)
+\begin{DoxyCompactList}\small\item\em Register this type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_udp_application_a217460003efed056634b84d512c0f47b}{Schedule\+Tx}} ()
+\begin{DoxyCompactList}\small\item\em Schedule a new transmission. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_udp_application_a844392732fe5f6e197992c862c4151db}{Send\+Packet}} ()
+\begin{DoxyCompactList}\small\item\em Send a packet ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_udp_application_ada9c016c08e91a65da084c790acd4618}{Start\+Application}} (void) override
+\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_udp_application_aab68d0f087fac0f3d02e3c8717b8cc21}{Stop\+Application}} (void) override
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_udp_application_abd5375f6282c6727baa7fb565cff8a3e}{m\+\_\+budget}}
+\begin{DoxyCompactList}\small\item\em The budget time in millisecond. \end{DoxyCompactList}\item 
+Data\+Rate \mbox{\hyperlink{classns3_1_1_d_g_r_udp_application_a0c89a7a5f07d90b347e46045b03e7c7a}{m\+\_\+data\+Rate}}
+\begin{DoxyCompactList}\small\item\em The data rate to use. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classns3_1_1_d_g_r_udp_application_a3cb6df6b08f1d2e547e56bee6581a5fc}{m\+\_\+flag}}
+\begin{DoxyCompactList}\small\item\em The packet flag. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_udp_application_a96e0bf33b34279f8ac18d854702da5e5}{m\+\_\+n\+Packets}}
+\begin{DoxyCompactList}\small\item\em The number of packet to send. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_udp_application_abca558ff6138a432a1ed7413b2fe2fd7}{m\+\_\+packet\+Sent}}
+\begin{DoxyCompactList}\small\item\em The number of packets sent. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_udp_application_ae51a9c8759e37e18a79e058ef519bcce}{m\+\_\+packet\+Size}}
+\begin{DoxyCompactList}\small\item\em The packet size. \end{DoxyCompactList}\item 
+Address \mbox{\hyperlink{classns3_1_1_d_g_r_udp_application_a054ebc8dca3d709e0ef224465ec2d9bc}{m\+\_\+peer}}
+\begin{DoxyCompactList}\small\item\em The destination address. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classns3_1_1_d_g_r_udp_application_a592e26fa24bf64e140f33f6853b7c2f9}{m\+\_\+running}}
+\begin{DoxyCompactList}\small\item\em True if the application is running. \end{DoxyCompactList}\item 
+Event\+Id \mbox{\hyperlink{classns3_1_1_d_g_r_udp_application_aec2ba587631beecd7da9f53b39909706}{m\+\_\+send\+Event}}
+\begin{DoxyCompactList}\small\item\em Send event. \end{DoxyCompactList}\item 
+Ptr$<$ Socket $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_udp_application_aab22ae4139e567c50bacd3e231407147}{m\+\_\+socket}}
+\begin{DoxyCompactList}\small\item\em The transmission socket. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classns3_1_1_d_g_r_udp_application_a1df7eb2d3df2b8170a9fc452e0b2a49b}{m\+\_\+vbr}}
+\begin{DoxyCompactList}\small\item\em true meanse VBR \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{dgr-udp-application_8h_source_l00016}{16}} of file \mbox{\hyperlink{dgr-udp-application_8h_source}{dgr-\/udp-\/application.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_d_g_r_udp_application_a789f5dd5d50db1e9d60f7f7618098f0d}\label{classns3_1_1_d_g_r_udp_application_a789f5dd5d50db1e9d60f7f7618098f0d} 
+\index{ns3::DGRUdpApplication@{ns3::DGRUdpApplication}!DGRUdpApplication@{DGRUdpApplication}}
+\index{DGRUdpApplication@{DGRUdpApplication}!ns3::DGRUdpApplication@{ns3::DGRUdpApplication}}
+\doxyparagraph{\texorpdfstring{DGRUdpApplication()}{DGRUdpApplication()}}
+{\footnotesize\ttfamily ns3\+::\+DGRUdp\+Application\+::\+DGRUdp\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-udp-application_8cc_source_l00024}{24}} of file \mbox{\hyperlink{dgr-udp-application_8cc_source}{dgr-\/udp-\/application.\+cc}}.
+
+\Hypertarget{classns3_1_1_d_g_r_udp_application_ad7423806aaf0be2db0e87be4d30dae7f}\label{classns3_1_1_d_g_r_udp_application_ad7423806aaf0be2db0e87be4d30dae7f} 
+\index{ns3::DGRUdpApplication@{ns3::DGRUdpApplication}!````~DGRUdpApplication@{\texorpdfstring{$\sim$}{\string~}DGRUdpApplication}}
+\index{````~DGRUdpApplication@{\texorpdfstring{$\sim$}{\string~}DGRUdpApplication}!ns3::DGRUdpApplication@{ns3::DGRUdpApplication}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DGRUdpApplication()}{\string~DGRUdpApplication()}}
+{\footnotesize\ttfamily ns3\+::\+DGRUdp\+Application\+::\texorpdfstring{$\sim$}{\string~}\+DGRUdp\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-udp-application_8cc_source_l00039}{39}} of file \mbox{\hyperlink{dgr-udp-application_8cc_source}{dgr-\/udp-\/application.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-udp-application_8h_source_l00079}{m\+\_\+socket}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_d_g_r_udp_application_ae7820a661567dee9c180baebda7a4429}\label{classns3_1_1_d_g_r_udp_application_ae7820a661567dee9c180baebda7a4429} 
+\index{ns3::DGRUdpApplication@{ns3::DGRUdpApplication}!ChangeRate@{ChangeRate}}
+\index{ChangeRate@{ChangeRate}!ns3::DGRUdpApplication@{ns3::DGRUdpApplication}}
+\doxyparagraph{\texorpdfstring{ChangeRate()}{ChangeRate()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRUdp\+Application\+::\+Change\+Rate (\begin{DoxyParamCaption}\item[{Data\+Rate}]{new\+Data\+Rate }\end{DoxyParamCaption})}
+
+
+
+Update the sending rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Data\+Rate} & The new Data\+Rate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-udp-application_8cc_source_l00169}{169}} of file \mbox{\hyperlink{dgr-udp-application_8cc_source}{dgr-\/udp-\/application.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-udp-application_8h_source_l00083}{m\+\_\+data\+Rate}}.
+
+\Hypertarget{classns3_1_1_d_g_r_udp_application_adf5ede44035ee65db58c501d67f01d07}\label{classns3_1_1_d_g_r_udp_application_adf5ede44035ee65db58c501d67f01d07} 
+\index{ns3::DGRUdpApplication@{ns3::DGRUdpApplication}!GetTypeId@{GetTypeId}}
+\index{GetTypeId@{GetTypeId}!ns3::DGRUdpApplication@{ns3::DGRUdpApplication}}
+\doxyparagraph{\texorpdfstring{GetTypeId()}{GetTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+DGRUdp\+Application\+::\+Get\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Register this type. 
+
+\begin{DoxyReturn}{Returns}
+The Type\+Id. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-udp-application_8cc_source_l00045}{45}} of file \mbox{\hyperlink{dgr-udp-application_8cc_source}{dgr-\/udp-\/application.\+cc}}.
+
+\Hypertarget{classns3_1_1_d_g_r_udp_application_a217460003efed056634b84d512c0f47b}\label{classns3_1_1_d_g_r_udp_application_a217460003efed056634b84d512c0f47b} 
+\index{ns3::DGRUdpApplication@{ns3::DGRUdpApplication}!ScheduleTx@{ScheduleTx}}
+\index{ScheduleTx@{ScheduleTx}!ns3::DGRUdpApplication@{ns3::DGRUdpApplication}}
+\doxyparagraph{\texorpdfstring{ScheduleTx()}{ScheduleTx()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRUdp\+Application\+::\+Schedule\+Tx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Schedule a new transmission. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-udp-application_8cc_source_l00149}{149}} of file \mbox{\hyperlink{dgr-udp-application_8cc_source}{dgr-\/udp-\/application.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-udp-application_8h_source_l00083}{m\+\_\+data\+Rate}}, \mbox{\hyperlink{dgr-udp-application_8h_source_l00081}{m\+\_\+packet\+Size}}, \mbox{\hyperlink{dgr-udp-application_8h_source_l00085}{m\+\_\+running}}, \mbox{\hyperlink{dgr-udp-application_8h_source_l00084}{m\+\_\+send\+Event}}, \mbox{\hyperlink{dgr-udp-application_8h_source_l00089}{m\+\_\+vbr}}, and \mbox{\hyperlink{dgr-udp-application_8cc_source_l00121}{Send\+Packet()}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-udp-application_8cc_source_l00121}{Send\+Packet()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dbe/classns3_1_1_d_g_r_udp_application_a217460003efed056634b84d512c0f47b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dbe/classns3_1_1_d_g_r_udp_application_a217460003efed056634b84d512c0f47b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_udp_application_a844392732fe5f6e197992c862c4151db}\label{classns3_1_1_d_g_r_udp_application_a844392732fe5f6e197992c862c4151db} 
+\index{ns3::DGRUdpApplication@{ns3::DGRUdpApplication}!SendPacket@{SendPacket}}
+\index{SendPacket@{SendPacket}!ns3::DGRUdpApplication@{ns3::DGRUdpApplication}}
+\doxyparagraph{\texorpdfstring{SendPacket()}{SendPacket()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRUdp\+Application\+::\+Send\+Packet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Send a packet ~\newline
+ 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-udp-application_8cc_source_l00121}{121}} of file \mbox{\hyperlink{dgr-udp-application_8cc_source}{dgr-\/udp-\/application.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-udp-application_8h_source_l00087}{m\+\_\+budget}}, \mbox{\hyperlink{dgr-udp-application_8h_source_l00088}{m\+\_\+flag}}, \mbox{\hyperlink{dgr-udp-application_8h_source_l00082}{m\+\_\+n\+Packets}}, \mbox{\hyperlink{dgr-udp-application_8h_source_l00086}{m\+\_\+packet\+Sent}}, \mbox{\hyperlink{dgr-udp-application_8h_source_l00081}{m\+\_\+packet\+Size}}, \mbox{\hyperlink{dgr-udp-application_8h_source_l00079}{m\+\_\+socket}}, \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00019}{MAX\+\_\+\+UINT\+\_\+32}}, \mbox{\hyperlink{dgr-udp-application_8cc_source_l00149}{Schedule\+Tx()}}, \mbox{\hyperlink{dgr-tags_8cc_source_l00028}{ns3\+::\+Budget\+Tag\+::\+Set\+Budget()}}, \mbox{\hyperlink{dgr-tags_8cc_source_l00170}{ns3\+::\+Flag\+Tag\+::\+Set\+Flag()}}, and \mbox{\hyperlink{dgr-tags_8cc_source_l00241}{ns3\+::\+Priority\+Tag\+::\+Set\+Priority()}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-udp-application_8cc_source_l00149}{Schedule\+Tx()}}, and \mbox{\hyperlink{dgr-udp-application_8cc_source_l00096}{Start\+Application()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dbe/classns3_1_1_d_g_r_udp_application_a844392732fe5f6e197992c862c4151db_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dbe/classns3_1_1_d_g_r_udp_application_a844392732fe5f6e197992c862c4151db_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_udp_application_adb264cf9c38a6270a7f56faf5a4ff4a3}\label{classns3_1_1_d_g_r_udp_application_adb264cf9c38a6270a7f56faf5a4ff4a3} 
+\index{ns3::DGRUdpApplication@{ns3::DGRUdpApplication}!Setup@{Setup}}
+\index{Setup@{Setup}!ns3::DGRUdpApplication@{ns3::DGRUdpApplication}}
+\doxyparagraph{\texorpdfstring{Setup()}{Setup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ns3\+::\+DGRUdp\+Application\+::\+Setup (\begin{DoxyParamCaption}\item[{Ptr$<$ Socket $>$}]{socket,  }\item[{Address}]{sink\+Address,  }\item[{uint32\+\_\+t}]{packet\+Size,  }\item[{uint32\+\_\+t}]{n\+Packets,  }\item[{Data\+Rate}]{data\+Rate,  }\item[{bool}]{flag = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Setup the socket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & The socket \\
+\hline
+{\em sink\+Address} & The destination address. \\
+\hline
+{\em packet\+Size} & The packet size to transmit. \\
+\hline
+{\em n\+Packets} & The number of packets to transmit \\
+\hline
+{\em data\+Rate} & The data rate to use. \\
+\hline
+{\em flag} & The packet flag \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-udp-application_8cc_source_l00079}{79}} of file \mbox{\hyperlink{dgr-udp-application_8cc_source}{dgr-\/udp-\/application.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-udp-application_8h_source_l00083}{m\+\_\+data\+Rate}}, \mbox{\hyperlink{dgr-udp-application_8h_source_l00088}{m\+\_\+flag}}, \mbox{\hyperlink{dgr-udp-application_8h_source_l00082}{m\+\_\+n\+Packets}}, \mbox{\hyperlink{dgr-udp-application_8h_source_l00081}{m\+\_\+packet\+Size}}, \mbox{\hyperlink{dgr-udp-application_8h_source_l00080}{m\+\_\+peer}}, and \mbox{\hyperlink{dgr-udp-application_8h_source_l00079}{m\+\_\+socket}}.
+
+\Hypertarget{classns3_1_1_d_g_r_udp_application_a2e5af196e076be85b8442c5375bc3e7e}\label{classns3_1_1_d_g_r_udp_application_a2e5af196e076be85b8442c5375bc3e7e} 
+\index{ns3::DGRUdpApplication@{ns3::DGRUdpApplication}!Setup@{Setup}}
+\index{Setup@{Setup}!ns3::DGRUdpApplication@{ns3::DGRUdpApplication}}
+\doxyparagraph{\texorpdfstring{Setup()}{Setup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ns3\+::\+DGRUdp\+Application\+::\+Setup (\begin{DoxyParamCaption}\item[{Ptr$<$ Socket $>$}]{socket,  }\item[{Address}]{sink\+Address,  }\item[{uint32\+\_\+t}]{packet\+Size,  }\item[{uint32\+\_\+t}]{n\+Packets,  }\item[{Data\+Rate}]{data\+Rate,  }\item[{uint32\+\_\+t}]{budget,  }\item[{bool}]{flag = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Setup the socket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & The socket \\
+\hline
+{\em sink\+Address} & The destination address. \\
+\hline
+{\em packet\+Size} & The packet size to transmit. \\
+\hline
+{\em n\+Packets} & The number of packets to transmit \\
+\hline
+{\em data\+Rate} & The data rate to use. \\
+\hline
+{\em budget} & The packet budget time in millisecond \\
+\hline
+{\em flag} & The packet flag \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-udp-application_8cc_source_l00061}{61}} of file \mbox{\hyperlink{dgr-udp-application_8cc_source}{dgr-\/udp-\/application.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-udp-application_8h_source_l00087}{m\+\_\+budget}}, \mbox{\hyperlink{dgr-udp-application_8h_source_l00083}{m\+\_\+data\+Rate}}, \mbox{\hyperlink{dgr-udp-application_8h_source_l00088}{m\+\_\+flag}}, \mbox{\hyperlink{dgr-udp-application_8h_source_l00082}{m\+\_\+n\+Packets}}, \mbox{\hyperlink{dgr-udp-application_8h_source_l00081}{m\+\_\+packet\+Size}}, \mbox{\hyperlink{dgr-udp-application_8h_source_l00080}{m\+\_\+peer}}, and \mbox{\hyperlink{dgr-udp-application_8h_source_l00079}{m\+\_\+socket}}.
+
+\Hypertarget{classns3_1_1_d_g_r_udp_application_ada9c016c08e91a65da084c790acd4618}\label{classns3_1_1_d_g_r_udp_application_ada9c016c08e91a65da084c790acd4618} 
+\index{ns3::DGRUdpApplication@{ns3::DGRUdpApplication}!StartApplication@{StartApplication}}
+\index{StartApplication@{StartApplication}!ns3::DGRUdpApplication@{ns3::DGRUdpApplication}}
+\doxyparagraph{\texorpdfstring{StartApplication()}{StartApplication()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRUdp\+Application\+::\+Start\+Application (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-udp-application_8cc_source_l00096}{96}} of file \mbox{\hyperlink{dgr-udp-application_8cc_source}{dgr-\/udp-\/application.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-udp-application_8h_source_l00086}{m\+\_\+packet\+Sent}}, \mbox{\hyperlink{dgr-udp-application_8h_source_l00080}{m\+\_\+peer}}, \mbox{\hyperlink{dgr-udp-application_8h_source_l00085}{m\+\_\+running}}, \mbox{\hyperlink{dgr-udp-application_8h_source_l00079}{m\+\_\+socket}}, and \mbox{\hyperlink{dgr-udp-application_8cc_source_l00121}{Send\+Packet()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dbe/classns3_1_1_d_g_r_udp_application_ada9c016c08e91a65da084c790acd4618_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_udp_application_aab68d0f087fac0f3d02e3c8717b8cc21}\label{classns3_1_1_d_g_r_udp_application_aab68d0f087fac0f3d02e3c8717b8cc21} 
+\index{ns3::DGRUdpApplication@{ns3::DGRUdpApplication}!StopApplication@{StopApplication}}
+\index{StopApplication@{StopApplication}!ns3::DGRUdpApplication@{ns3::DGRUdpApplication}}
+\doxyparagraph{\texorpdfstring{StopApplication()}{StopApplication()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRUdp\+Application\+::\+Stop\+Application (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-udp-application_8cc_source_l00107}{107}} of file \mbox{\hyperlink{dgr-udp-application_8cc_source}{dgr-\/udp-\/application.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-udp-application_8h_source_l00085}{m\+\_\+running}}, \mbox{\hyperlink{dgr-udp-application_8h_source_l00084}{m\+\_\+send\+Event}}, and \mbox{\hyperlink{dgr-udp-application_8h_source_l00079}{m\+\_\+socket}}.
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{classns3_1_1_d_g_r_udp_application_abd5375f6282c6727baa7fb565cff8a3e}\label{classns3_1_1_d_g_r_udp_application_abd5375f6282c6727baa7fb565cff8a3e} 
+\index{ns3::DGRUdpApplication@{ns3::DGRUdpApplication}!m\_budget@{m\_budget}}
+\index{m\_budget@{m\_budget}!ns3::DGRUdpApplication@{ns3::DGRUdpApplication}}
+\doxyparagraph{\texorpdfstring{m\_budget}{m\_budget}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRUdp\+Application\+::m\+\_\+budget\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The budget time in millisecond. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-udp-application_8h_source_l00087}{87}} of file \mbox{\hyperlink{dgr-udp-application_8h_source}{dgr-\/udp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-udp-application_8cc_source_l00121}{Send\+Packet()}}, and \mbox{\hyperlink{dgr-udp-application_8cc_source_l00061}{Setup()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_udp_application_a0c89a7a5f07d90b347e46045b03e7c7a}\label{classns3_1_1_d_g_r_udp_application_a0c89a7a5f07d90b347e46045b03e7c7a} 
+\index{ns3::DGRUdpApplication@{ns3::DGRUdpApplication}!m\_dataRate@{m\_dataRate}}
+\index{m\_dataRate@{m\_dataRate}!ns3::DGRUdpApplication@{ns3::DGRUdpApplication}}
+\doxyparagraph{\texorpdfstring{m\_dataRate}{m\_dataRate}}
+{\footnotesize\ttfamily Data\+Rate ns3\+::\+DGRUdp\+Application\+::m\+\_\+data\+Rate\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The data rate to use. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-udp-application_8h_source_l00083}{83}} of file \mbox{\hyperlink{dgr-udp-application_8h_source}{dgr-\/udp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-udp-application_8cc_source_l00169}{Change\+Rate()}}, \mbox{\hyperlink{dgr-udp-application_8cc_source_l00149}{Schedule\+Tx()}}, \mbox{\hyperlink{dgr-udp-application_8cc_source_l00079}{Setup()}}, and \mbox{\hyperlink{dgr-udp-application_8cc_source_l00061}{Setup()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_udp_application_a3cb6df6b08f1d2e547e56bee6581a5fc}\label{classns3_1_1_d_g_r_udp_application_a3cb6df6b08f1d2e547e56bee6581a5fc} 
+\index{ns3::DGRUdpApplication@{ns3::DGRUdpApplication}!m\_flag@{m\_flag}}
+\index{m\_flag@{m\_flag}!ns3::DGRUdpApplication@{ns3::DGRUdpApplication}}
+\doxyparagraph{\texorpdfstring{m\_flag}{m\_flag}}
+{\footnotesize\ttfamily bool ns3\+::\+DGRUdp\+Application\+::m\+\_\+flag\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The packet flag. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-udp-application_8h_source_l00088}{88}} of file \mbox{\hyperlink{dgr-udp-application_8h_source}{dgr-\/udp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-udp-application_8cc_source_l00121}{Send\+Packet()}}, \mbox{\hyperlink{dgr-udp-application_8cc_source_l00079}{Setup()}}, and \mbox{\hyperlink{dgr-udp-application_8cc_source_l00061}{Setup()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_udp_application_a96e0bf33b34279f8ac18d854702da5e5}\label{classns3_1_1_d_g_r_udp_application_a96e0bf33b34279f8ac18d854702da5e5} 
+\index{ns3::DGRUdpApplication@{ns3::DGRUdpApplication}!m\_nPackets@{m\_nPackets}}
+\index{m\_nPackets@{m\_nPackets}!ns3::DGRUdpApplication@{ns3::DGRUdpApplication}}
+\doxyparagraph{\texorpdfstring{m\_nPackets}{m\_nPackets}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRUdp\+Application\+::m\+\_\+n\+Packets\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The number of packet to send. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-udp-application_8h_source_l00082}{82}} of file \mbox{\hyperlink{dgr-udp-application_8h_source}{dgr-\/udp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-udp-application_8cc_source_l00121}{Send\+Packet()}}, \mbox{\hyperlink{dgr-udp-application_8cc_source_l00079}{Setup()}}, and \mbox{\hyperlink{dgr-udp-application_8cc_source_l00061}{Setup()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_udp_application_abca558ff6138a432a1ed7413b2fe2fd7}\label{classns3_1_1_d_g_r_udp_application_abca558ff6138a432a1ed7413b2fe2fd7} 
+\index{ns3::DGRUdpApplication@{ns3::DGRUdpApplication}!m\_packetSent@{m\_packetSent}}
+\index{m\_packetSent@{m\_packetSent}!ns3::DGRUdpApplication@{ns3::DGRUdpApplication}}
+\doxyparagraph{\texorpdfstring{m\_packetSent}{m\_packetSent}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRUdp\+Application\+::m\+\_\+packet\+Sent\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The number of packets sent. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-udp-application_8h_source_l00086}{86}} of file \mbox{\hyperlink{dgr-udp-application_8h_source}{dgr-\/udp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-udp-application_8cc_source_l00121}{Send\+Packet()}}, and \mbox{\hyperlink{dgr-udp-application_8cc_source_l00096}{Start\+Application()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_udp_application_ae51a9c8759e37e18a79e058ef519bcce}\label{classns3_1_1_d_g_r_udp_application_ae51a9c8759e37e18a79e058ef519bcce} 
+\index{ns3::DGRUdpApplication@{ns3::DGRUdpApplication}!m\_packetSize@{m\_packetSize}}
+\index{m\_packetSize@{m\_packetSize}!ns3::DGRUdpApplication@{ns3::DGRUdpApplication}}
+\doxyparagraph{\texorpdfstring{m\_packetSize}{m\_packetSize}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRUdp\+Application\+::m\+\_\+packet\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The packet size. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-udp-application_8h_source_l00081}{81}} of file \mbox{\hyperlink{dgr-udp-application_8h_source}{dgr-\/udp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-udp-application_8cc_source_l00149}{Schedule\+Tx()}}, \mbox{\hyperlink{dgr-udp-application_8cc_source_l00121}{Send\+Packet()}}, \mbox{\hyperlink{dgr-udp-application_8cc_source_l00079}{Setup()}}, and \mbox{\hyperlink{dgr-udp-application_8cc_source_l00061}{Setup()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_udp_application_a054ebc8dca3d709e0ef224465ec2d9bc}\label{classns3_1_1_d_g_r_udp_application_a054ebc8dca3d709e0ef224465ec2d9bc} 
+\index{ns3::DGRUdpApplication@{ns3::DGRUdpApplication}!m\_peer@{m\_peer}}
+\index{m\_peer@{m\_peer}!ns3::DGRUdpApplication@{ns3::DGRUdpApplication}}
+\doxyparagraph{\texorpdfstring{m\_peer}{m\_peer}}
+{\footnotesize\ttfamily Address ns3\+::\+DGRUdp\+Application\+::m\+\_\+peer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The destination address. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-udp-application_8h_source_l00080}{80}} of file \mbox{\hyperlink{dgr-udp-application_8h_source}{dgr-\/udp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-udp-application_8cc_source_l00079}{Setup()}}, \mbox{\hyperlink{dgr-udp-application_8cc_source_l00061}{Setup()}}, and \mbox{\hyperlink{dgr-udp-application_8cc_source_l00096}{Start\+Application()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_udp_application_a592e26fa24bf64e140f33f6853b7c2f9}\label{classns3_1_1_d_g_r_udp_application_a592e26fa24bf64e140f33f6853b7c2f9} 
+\index{ns3::DGRUdpApplication@{ns3::DGRUdpApplication}!m\_running@{m\_running}}
+\index{m\_running@{m\_running}!ns3::DGRUdpApplication@{ns3::DGRUdpApplication}}
+\doxyparagraph{\texorpdfstring{m\_running}{m\_running}}
+{\footnotesize\ttfamily bool ns3\+::\+DGRUdp\+Application\+::m\+\_\+running\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+True if the application is running. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-udp-application_8h_source_l00085}{85}} of file \mbox{\hyperlink{dgr-udp-application_8h_source}{dgr-\/udp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-udp-application_8cc_source_l00149}{Schedule\+Tx()}}, \mbox{\hyperlink{dgr-udp-application_8cc_source_l00096}{Start\+Application()}}, and \mbox{\hyperlink{dgr-udp-application_8cc_source_l00107}{Stop\+Application()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_udp_application_aec2ba587631beecd7da9f53b39909706}\label{classns3_1_1_d_g_r_udp_application_aec2ba587631beecd7da9f53b39909706} 
+\index{ns3::DGRUdpApplication@{ns3::DGRUdpApplication}!m\_sendEvent@{m\_sendEvent}}
+\index{m\_sendEvent@{m\_sendEvent}!ns3::DGRUdpApplication@{ns3::DGRUdpApplication}}
+\doxyparagraph{\texorpdfstring{m\_sendEvent}{m\_sendEvent}}
+{\footnotesize\ttfamily Event\+Id ns3\+::\+DGRUdp\+Application\+::m\+\_\+send\+Event\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Send event. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-udp-application_8h_source_l00084}{84}} of file \mbox{\hyperlink{dgr-udp-application_8h_source}{dgr-\/udp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-udp-application_8cc_source_l00149}{Schedule\+Tx()}}, and \mbox{\hyperlink{dgr-udp-application_8cc_source_l00107}{Stop\+Application()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_udp_application_aab22ae4139e567c50bacd3e231407147}\label{classns3_1_1_d_g_r_udp_application_aab22ae4139e567c50bacd3e231407147} 
+\index{ns3::DGRUdpApplication@{ns3::DGRUdpApplication}!m\_socket@{m\_socket}}
+\index{m\_socket@{m\_socket}!ns3::DGRUdpApplication@{ns3::DGRUdpApplication}}
+\doxyparagraph{\texorpdfstring{m\_socket}{m\_socket}}
+{\footnotesize\ttfamily Ptr$<$Socket$>$ ns3\+::\+DGRUdp\+Application\+::m\+\_\+socket\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The transmission socket. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-udp-application_8h_source_l00079}{79}} of file \mbox{\hyperlink{dgr-udp-application_8h_source}{dgr-\/udp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-udp-application_8cc_source_l00039}{\texorpdfstring{$\sim$}{\string~}\+DGRUdp\+Application()}}, \mbox{\hyperlink{dgr-udp-application_8cc_source_l00121}{Send\+Packet()}}, \mbox{\hyperlink{dgr-udp-application_8cc_source_l00079}{Setup()}}, \mbox{\hyperlink{dgr-udp-application_8cc_source_l00061}{Setup()}}, \mbox{\hyperlink{dgr-udp-application_8cc_source_l00096}{Start\+Application()}}, and \mbox{\hyperlink{dgr-udp-application_8cc_source_l00107}{Stop\+Application()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_udp_application_a1df7eb2d3df2b8170a9fc452e0b2a49b}\label{classns3_1_1_d_g_r_udp_application_a1df7eb2d3df2b8170a9fc452e0b2a49b} 
+\index{ns3::DGRUdpApplication@{ns3::DGRUdpApplication}!m\_vbr@{m\_vbr}}
+\index{m\_vbr@{m\_vbr}!ns3::DGRUdpApplication@{ns3::DGRUdpApplication}}
+\doxyparagraph{\texorpdfstring{m\_vbr}{m\_vbr}}
+{\footnotesize\ttfamily bool ns3\+::\+DGRUdp\+Application\+::m\+\_\+vbr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+true meanse VBR 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-udp-application_8h_source_l00089}{89}} of file \mbox{\hyperlink{dgr-udp-application_8h_source}{dgr-\/udp-\/application.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-udp-application_8cc_source_l00149}{Schedule\+Tx()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{dgr-udp-application_8h}{dgr-\/udp-\/application.\+h}}\item 
+model/\mbox{\hyperlink{dgr-udp-application_8cc}{dgr-\/udp-\/application.\+cc}}\end{DoxyCompactItemize}

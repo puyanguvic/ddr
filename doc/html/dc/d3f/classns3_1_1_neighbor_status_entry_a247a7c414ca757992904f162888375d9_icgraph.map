@@ -1,0 +1,15 @@
+<map id="ns3::NeighborStatusEntry::GetStatusUnit" name="ns3::NeighborStatusEntry::GetStatusUnit">
+<area shape="rect" id="Node000001" title=" " alt="" coords="629,37,816,77"/>
+<area shape="rect" id="Node000002" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#aa29a1573985386ddcc0c9616ab524836" title="Handle DGR responses." alt="" coords="421,5,581,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="615,45,581,40,582,34,616,39"/>
+<area shape="rect" id="Node000005" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#a552819000c07190404d6bd5db6d1ce84" title=" " alt="" coords="421,69,581,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="616,75,582,80,581,75,615,70"/>
+<area shape="rect" id="Node000003" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#a2eb8a683180ce3d3726767f5b986e3d8" title="Receive an DGR message." alt="" coords="213,5,373,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="408,28,374,28,374,23,408,23"/>
+<area shape="rect" id="Node000004" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#a0bb01e6d6468d3c42a989434c193b372" title="Start protocol operation." alt="" coords="5,5,165,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="200,28,166,28,166,23,200,23"/>
+<area shape="rect" id="Node000006" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#a7e7c34d7e0a922980bf3fdf62f9bbe1b" title=" " alt="" coords="213,69,373,109"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="408,92,374,92,374,87,408,87"/>
+<area shape="rect" id="Node000007" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#aa949f02ca52008f8201ee9915fdd0191" title=" " alt="" coords="213,133,373,173"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="424,116,360,136,358,131,422,111"/>
+</map>

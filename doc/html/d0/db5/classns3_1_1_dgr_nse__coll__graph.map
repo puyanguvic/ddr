@@ -1,0 +1,7 @@
+<map id="ns3::DgrNse" name="ns3::DgrNse">
+<area shape="rect" id="Node000001" title="dgr v2 Neighbor Status Entry (NSE)" alt="" coords="37,108,139,133"/>
+<area shape="rect" id="Node000002" href="$d8/dc9/class_header.html" title=" " alt="" coords="5,5,75,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="54,42,85,107,80,109,49,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="99,5,173,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="127,44,96,109,91,107,122,42"/>
+</map>

@@ -162,12 +162,12 @@ $(document).ready(function(){initNavTree('d9/d39/dgr__demo_8cc_source.html','../
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  InternetStackHelper stack;</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="comment">// Setup Routing algorithm</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  Ipv4DGRRoutingHelper dgr;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <a class="code hl_class" href="../../d8/d5a/classns3_1_1_ipv4_d_g_r_routing_helper.html">Ipv4DGRRoutingHelper</a> dgr;</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  Ipv4ListRoutingHelper list;</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  list.Add (dgr, 10);</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  InternetStackHelper internet;</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  internet.SetRoutingHelper (list);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  internet.Install (nodes);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  internet.<a class="code hl_function" href="../../d8/d5a/classns3_1_1_ipv4_d_g_r_routing_helper.html#ad05361fcc3a278d151e9c98fa815552d">Install</a> (nodes);</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  NS_LOG_INFO (<span class="stringliteral">&quot;creating ipv4 addresses&quot;</span>);</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  Ipv4AddressHelper address;</div>
@@ -208,12 +208,12 @@ $(document).ready(function(){initNavTree('d9/d39/dgr__demo_8cc_source.html','../
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      address.NewNetwork ();</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  Ipv4DGRRoutingHelper::PopulateRoutingTables ();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <a class="code hl_function" href="../../d8/d5a/classns3_1_1_ipv4_d_g_r_routing_helper.html#a67901bf47957ab420b596cdb38a38882">Ipv4DGRRoutingHelper::PopulateRoutingTables</a> ();</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="comment">// ------------------------------------------------------------</span></div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="comment">// -- Print routing table</span></div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="comment">// ---------------------------------------------</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  Ipv4DGRRoutingHelper d;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  <a class="code hl_class" href="../../d8/d5a/classns3_1_1_ipv4_d_g_r_routing_helper.html">Ipv4DGRRoutingHelper</a> d;</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  Ptr&lt;OutputStreamWrapper&gt; routingStream = Create&lt;OutputStreamWrapper&gt;</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  (topo + <span class="stringliteral">&quot;_&quot;</span> + <a class="code hl_variable" href="../../d9/d39/dgr__demo_8cc.html#adf12170ede4e9e3a5cc1339bfd5809e0">expName</a> + <span class="stringliteral">&quot;.routes&quot;</span>, std::ios::out);</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  d.PrintRoutingTableAllAt (Seconds (0), routingStream);</div>
@@ -250,14 +250,14 @@ $(document).ready(function(){initNavTree('d9/d39/dgr__demo_8cc_source.html','../
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  Ipv4InterfaceAddress iaddrTcpSink = ipv4TcpSink-&gt;GetAddress (1,0);</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  Ipv4Address ipv4AddrTcpSink = iaddrTcpSink.GetLocal ();</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  DGRSinkHelper sinkHelper (<span class="stringliteral">&quot;ns3::TcpSocketFactory&quot;</span>,</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  <a class="code hl_class" href="../../d1/d9a/classns3_1_1_d_g_r_sink_helper.html">DGRSinkHelper</a> sinkHelper (<span class="stringliteral">&quot;ns3::TcpSocketFactory&quot;</span>,</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                         InetSocketAddress (Ipv4Address::GetAny (), tcpPort));</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  ApplicationContainer sinkApp = sinkHelper.Install (nodes.Get (tcpSink));</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  sinkApp.Start (Seconds (0.0));</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  sinkApp.Stop (Seconds (20.0));</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  </div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  <span class="comment">// tcp send</span></div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  DGRTcpAppHelper sourceHelper (<span class="stringliteral">&quot;ns3::TcpSocketFactory&quot;</span>,</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  <a class="code hl_class" href="../../d2/d74/classns3_1_1_d_g_r_tcp_app_helper.html">DGRTcpAppHelper</a> sourceHelper (<span class="stringliteral">&quot;ns3::TcpSocketFactory&quot;</span>,</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                               InetSocketAddress (ipv4AddrTcpSink, tcpPort));</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  sourceHelper.SetAttribute (<span class="stringliteral">&quot;MaxBytes&quot;</span>, UintegerValue (7500000));</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  sourceHelper.SetAttribute (<span class="stringliteral">&quot;Budget&quot;</span>, UintegerValue (100));</div>
@@ -301,6 +301,11 @@ $(document).ready(function(){initNavTree('d9/d39/dgr__demo_8cc_source.html','../
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>}</div>
+<div class="ttc" id="aclassns3_1_1_d_g_r_sink_helper_html"><div class="ttname"><a href="../../d1/d9a/classns3_1_1_d_g_r_sink_helper.html">ns3::DGRSinkHelper</a></div><div class="ttdoc">A helper to make it easier to instantiate an ns3::PacketSinkApplication on a set of nodes.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d6e/dgr-sink-helper_8h_source.html#l00018">dgr-sink-helper.h:19</a></div></div>
+<div class="ttc" id="aclassns3_1_1_d_g_r_tcp_app_helper_html"><div class="ttname"><a href="../../d2/d74/classns3_1_1_d_g_r_tcp_app_helper.html">ns3::DGRTcpAppHelper</a></div><div class="ttdoc">A helper to make it easier to instantiate an ns3::BulkSendApplication on a set of nodes.</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d34/dgr-tcp-application-helper_8h_source.html#l00022">dgr-tcp-application-helper.h:23</a></div></div>
+<div class="ttc" id="aclassns3_1_1_ipv4_d_g_r_routing_helper_html"><div class="ttname"><a href="../../d8/d5a/classns3_1_1_ipv4_d_g_r_routing_helper.html">ns3::Ipv4DGRRoutingHelper</a></div><div class="ttdoc">Helper class that adds ns3::Ipv4GlobalRouting objects.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d69/ipv4-dgr-routing-helper_8h_source.html#l00038">ipv4-dgr-routing-helper.h:39</a></div></div>
+<div class="ttc" id="aclassns3_1_1_ipv4_d_g_r_routing_helper_html_a67901bf47957ab420b596cdb38a38882"><div class="ttname"><a href="../../d8/d5a/classns3_1_1_ipv4_d_g_r_routing_helper.html#a67901bf47957ab420b596cdb38a38882">ns3::Ipv4DGRRoutingHelper::PopulateRoutingTables</a></div><div class="ttdeci">static void PopulateRoutingTables(void)</div><div class="ttdoc">Build a routing database and initialize the routing tables of the nodes in the simulation.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d78/ipv4-dgr-routing-helper_8cc_source.html#l00064">ipv4-dgr-routing-helper.cc:64</a></div></div>
+<div class="ttc" id="aclassns3_1_1_ipv4_d_g_r_routing_helper_html_ad05361fcc3a278d151e9c98fa815552d"><div class="ttname"><a href="../../d8/d5a/classns3_1_1_ipv4_d_g_r_routing_helper.html#ad05361fcc3a278d151e9c98fa815552d">ns3::Ipv4DGRRoutingHelper::Install</a></div><div class="ttdeci">QueueDiscContainer Install(Ptr&lt; Node &gt; node)</div><div class="ttdoc">This method create the DGRv2 QueueDisc (along with it's internal queues, classes) configured with the...</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d78/ipv4-dgr-routing-helper_8cc_source.html#l00079">ipv4-dgr-routing-helper.cc:79</a></div></div>
 <div class="ttc" id="adgr__demo_8cc_html_a74e095ce7015b761478d9cddb8f25c44"><div class="ttname"><a href="../../d9/d39/dgr__demo_8cc.html#a74e095ce7015b761478d9cddb8f25c44">NS_LOG_COMPONENT_DEFINE</a></div><div class="ttdeci">NS_LOG_COMPONENT_DEFINE(expName)</div></div>
 <div class="ttc" id="adgr__demo_8cc_html_adf12170ede4e9e3a5cc1339bfd5809e0"><div class="ttname"><a href="../../d9/d39/dgr__demo_8cc.html#adf12170ede4e9e3a5cc1339bfd5809e0">expName</a></div><div class="ttdeci">std::string expName</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d39/dgr__demo_8cc_source.html#l00023">dgr_demo.cc:23</a></div></div>
 <div class="ttc" id="anamespacens3_html"><div class="ttname"><a href="../../d7/d2e/namespacens3.html">ns3</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/d65/dgr-application-helper_8cc_source.html#l00027">dgr-application-helper.cc:27</a></div></div>

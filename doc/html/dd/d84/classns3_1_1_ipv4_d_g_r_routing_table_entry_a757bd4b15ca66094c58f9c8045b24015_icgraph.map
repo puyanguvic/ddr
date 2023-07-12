@@ -1,0 +1,9 @@
+<map id="ns3::Ipv4DGRRoutingTableEntry::CreateHostRouteTo" name="ns3::Ipv4DGRRoutingTableEntry::CreateHostRouteTo">
+<area shape="rect" id="Node000001" title=" " alt="" coords="213,69,408,109"/>
+<area shape="rect" id="Node000002" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#aff852295cbcf0faf17da98100b6d04ab" title="Add a host route to the global routing table." alt="" coords="5,5,165,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="225,68,156,48,157,43,227,63"/>
+<area shape="rect" id="Node000003" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#aad885ac0c786c4534adf30cfe4e252dd" title="Add a host route to the global routing table with the distance between root and destination." alt="" coords="5,69,165,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="200,92,165,92,165,87,200,87"/>
+<area shape="rect" id="Node000004" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#ae1c0d5ec9bcd3ef52d811baac3c178e0" title="Add a host route to the global routing table." alt="" coords="5,133,165,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="227,116,157,136,156,131,225,111"/>
+</map>

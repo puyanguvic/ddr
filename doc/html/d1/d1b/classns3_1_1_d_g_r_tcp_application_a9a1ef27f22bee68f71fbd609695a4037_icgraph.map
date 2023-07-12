@@ -1,0 +1,5 @@
+<map id="ns3::DGRTcpApplication::ConnectionFailed" name="ns3::DGRTcpApplication::ConnectionFailed">
+<area shape="rect" id="Node000001" title="Connection Failed (called by Socket through a callback)" alt="" coords="228,5,403,45"/>
+<area shape="rect" id="Node000002" href="$d1/d1b/classns3_1_1_d_g_r_tcp_application.html#ad3f18ec72baf186800e72eed654eac2c" title=" " alt="" coords="5,5,180,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,28,180,28,180,23,214,23"/>
+</map>

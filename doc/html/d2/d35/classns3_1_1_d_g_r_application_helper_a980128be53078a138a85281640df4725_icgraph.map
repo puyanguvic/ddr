@@ -1,0 +1,9 @@
+<map id="ns3::DGRApplicationHelper::InstallPriv" name="ns3::DGRApplicationHelper::InstallPriv">
+<area shape="rect" id="Node000001" title="Install an ns3::PacketSink on the node configured with all the attributes set with SetAttribute." alt="" coords="252,69,451,109"/>
+<area shape="rect" id="Node000002" href="$d2/d35/classns3_1_1_d_g_r_application_helper.html#a27f1ac918f96c2c698210f84a34d4462" title="Install an ns3::PacketSinkApplication on each node of the input container configured with all the att..." alt="" coords="5,5,204,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="260,68,182,48,183,43,261,63"/>
+<area shape="rect" id="Node000003" href="$d2/d35/classns3_1_1_d_g_r_application_helper.html#aac28f72bbb38cd8af32eb1e347d17240" title="Install an ns3::PacketSinkApplication on each node of the input container configured with all the att..." alt="" coords="5,69,204,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="238,92,204,92,204,87,238,87"/>
+<area shape="rect" id="Node000004" href="$d2/d35/classns3_1_1_d_g_r_application_helper.html#a945b44da15a192e4e55a6c24da4c83c2" title="Install an ns3::PacketSinkApplication on each node of the input container configured with all the att..." alt="" coords="5,133,204,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="261,115,183,136,182,131,260,110"/>
+</map>

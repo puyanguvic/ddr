@@ -1,0 +1,23 @@
+<map id="ns3::DGRRouteManagerImpl::CheckForStubNode" name="ns3::DGRRouteManagerImpl::CheckForStubNode">
+<area shape="rect" id="Node000001" title="Test if a node is a stub, from an OSPF sense." alt="" coords="5,261,212,301"/>
+<area shape="rect" id="Node000002" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a017c230a5a38bc81243ebf39e94bd36b" title="Return the interface number corresponding to a given IP address and mask." alt="" coords="262,5,469,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,260,135,218,165,162,207,105,231,78,258,55,267,49,270,54,262,59,235,82,211,108,170,165,140,220,120,262"/>
+<area shape="rect" id="Node000004" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#a97080a8409f77898f4485230be0be5e4" title="Get the Link Data field of the Global Routing Link Record." alt="" coords="263,69,467,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="122,259,176,191,215,152,259,119,270,113,272,118,261,124,218,156,180,194,126,263"/>
+<area shape="rect" id="Node000005" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#a9fe6e135674ef321bc11b48f90071857" title="Get the Link ID field of the Global Routing Link Record." alt="" coords="263,133,467,173"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="135,259,190,221,259,183,276,176,278,181,261,188,193,226,138,264"/>
+<area shape="rect" id="Node000006" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#acb5df9fec863df510911aa3e64d4aa04" title="Return a pointer to the specified Global Routing Link Record." alt="" coords="287,197,444,237"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="189,259,273,238,274,243,190,264"/>
+<area shape="rect" id="Node000007" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a0ec746b926044a548e4f3a09309322ce" title="Get the Link State ID as defined by the OSPF spec." alt="" coords="287,261,444,301"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="212,279,273,279,273,284,212,284"/>
+<area shape="rect" id="Node000008" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#ab9148eaf7a9d088a397e66164c1f30b9" title="Get the Link Type field of the Global Routing Link Record." alt="" coords="263,325,467,365"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="190,299,272,319,271,325,189,304"/>
+<area shape="rect" id="Node000009" href="$d0/d2b/classns3_1_1_d_g_r_route_manager_l_s_d_b.html#a232013c41890eb75496e0201fd0689d2" title="Look up the Link State Advertisement associated with the given link state ID (address)." alt="" coords="260,389,471,429"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="138,299,193,337,261,375,278,382,276,387,259,380,190,342,135,304"/>
+<area shape="rect" id="Node000010" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a882a042d18bcbdea3bc1a3eb55dcfe58" title="Return the number of Global Routing Link Records in the LSA." alt="" coords="287,453,444,493"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="126,300,180,368,218,406,261,439,275,447,273,451,259,444,215,410,176,372,122,303"/>
+<area shape="rect" id="Node000011" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a5000c59488a04e9b809574c93624d3ce" title="Get the Node pointer of the node that originated this LSA." alt="" coords="287,517,444,557"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="120,300,140,343,170,398,211,454,235,480,262,503,275,512,272,516,258,507,231,484,207,458,165,400,135,345,115,303"/>
+<area shape="rect" id="Node000003" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a83acd923d19102c507faadb2f4e68f56" title="Get the Vertex ID field of a DGRVertex object." alt="" coords="519,13,728,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="469,23,505,23,505,28,469,28"/>
+</map>

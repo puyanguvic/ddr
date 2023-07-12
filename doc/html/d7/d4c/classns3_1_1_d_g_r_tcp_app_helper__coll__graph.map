@@ -1,0 +1,5 @@
+<map id="ns3::DGRTcpAppHelper" name="ns3::DGRTcpAppHelper">
+<area shape="rect" id="Node000001" title="A helper to make it easier to instantiate an ns3::BulkSendApplication on a set of nodes." alt="" coords="5,93,176,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="35,5,146,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,45,93,93,88,93,88,45"/>
+</map>

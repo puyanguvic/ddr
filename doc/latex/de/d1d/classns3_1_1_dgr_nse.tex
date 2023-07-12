@@ -1,0 +1,404 @@
+\doxysubsection{ns3\+::Dgr\+Nse Class Reference}
+\hypertarget{classns3_1_1_dgr_nse}{}\label{classns3_1_1_dgr_nse}\index{ns3::DgrNse@{ns3::DgrNse}}
+
+
+dgr v2 Neighbor Status Entry (NSE)  
+
+
+
+
+{\ttfamily \#include $<$dgr-\/header.\+h$>$}
+
+
+
+Inheritance diagram for ns3\+::Dgr\+Nse\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{d3/ddb/classns3_1_1_dgr_nse__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns3\+::Dgr\+Nse\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{d0/db5/classns3_1_1_dgr_nse__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_dgr_nse_a26065a66a4af1b5b6a0962976a0fd9bb}{Dgr\+Nse}} ()
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_dgr_nse_ac07423ad134e176d78257b014d307e78}{Deserialize}} (Buffer\+::\+Iterator start) override
+\begin{DoxyCompactList}\small\item\em Deserialize the packet. \end{DoxyCompactList}\item 
+Type\+Id \mbox{\hyperlink{classns3_1_1_dgr_nse_a4fe0f2b082a77e690de20f8e51f4f03c}{Get\+Instance\+Type\+Id}} () const override
+\begin{DoxyCompactList}\small\item\em Return the instance type identifier. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_dgr_nse_a8bec3d3ec3349e0396c141a0a0d0fb48}{Get\+Interface}} () const
+\begin{DoxyCompactList}\small\item\em Get the iface. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_dgr_nse_a2b24a215ee38cb8ec0e5a8c6f5247e01}{Get\+Serialized\+Size}} () const override
+\begin{DoxyCompactList}\small\item\em Get the serialized size of the packet. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_dgr_nse_a438c105a750d6d764be284388ba56c3a}{Get\+State}} () const
+\item 
+void \mbox{\hyperlink{classns3_1_1_dgr_nse_af663ace163675839ec0b9a7944a0d514}{Print}} (std\+::ostream \&os) const override
+\item 
+void \mbox{\hyperlink{classns3_1_1_dgr_nse_abf6e89d3cc954ee666bafc8c65433161}{Serialize}} (Buffer\+::\+Iterator start) const override
+\begin{DoxyCompactList}\small\item\em Serialize the packet. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_dgr_nse_a2e993c84f83ec1bddf787351c5c41401}{Set\+Interface}} (uint32\+\_\+t iface)
+\begin{DoxyCompactList}\small\item\em Set the interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_dgr_nse_afed23298399afb86ba0bdf1f6ea19b7d}{Set\+State}} (uint32\+\_\+t state)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Type\+Id \mbox{\hyperlink{classns3_1_1_dgr_nse_ac4b6f6d618c616b20f336b4838de4f16}{Get\+Type\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Get the type ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_dgr_nse_ad5d302e27f2b5ee40ed20500790ad3ea}{m\+\_\+iface}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_dgr_nse_a7d2879fac256bf8d75a48075381434b6}{m\+\_\+state}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+dgr v2 Neighbor Status Entry (NSE) 
+
+Definition at line \mbox{\hyperlink{dgr-header_8h_source_l00025}{25}} of file \mbox{\hyperlink{dgr-header_8h_source}{dgr-\/header.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_dgr_nse_a26065a66a4af1b5b6a0962976a0fd9bb}\label{classns3_1_1_dgr_nse_a26065a66a4af1b5b6a0962976a0fd9bb} 
+\index{ns3::DgrNse@{ns3::DgrNse}!DgrNse@{DgrNse}}
+\index{DgrNse@{DgrNse}!ns3::DgrNse@{ns3::DgrNse}}
+\doxyparagraph{\texorpdfstring{DgrNse()}{DgrNse()}}
+{\footnotesize\ttfamily ns3\+::\+Dgr\+Nse\+::\+Dgr\+Nse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-header_8cc_source_l00016}{16}} of file \mbox{\hyperlink{dgr-header_8cc_source}{dgr-\/header.\+cc}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_dgr_nse_ac07423ad134e176d78257b014d307e78}\label{classns3_1_1_dgr_nse_ac07423ad134e176d78257b014d307e78} 
+\index{ns3::DgrNse@{ns3::DgrNse}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!ns3::DgrNse@{ns3::DgrNse}}
+\doxyparagraph{\texorpdfstring{Deserialize()}{Deserialize()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+Dgr\+Nse\+::\+Deserialize (\begin{DoxyParamCaption}\item[{Buffer\+::\+Iterator}]{start }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Deserialize the packet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Buffer iterator \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size of the packet 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-header_8cc_source_l00059}{59}} of file \mbox{\hyperlink{dgr-header_8cc_source}{dgr-\/header.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-header_8cc_source_l00045}{Get\+Serialized\+Size()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, \mbox{\hyperlink{dgr-header_8h_source_l00078}{m\+\_\+iface}}, and \mbox{\hyperlink{dgr-header_8h_source_l00079}{m\+\_\+state}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-header_8cc_source_l00162}{ns3\+::\+Dgr\+Header\+::\+Deserialize()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d1d/classns3_1_1_dgr_nse_ac07423ad134e176d78257b014d307e78_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d1d/classns3_1_1_dgr_nse_ac07423ad134e176d78257b014d307e78_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_dgr_nse_a4fe0f2b082a77e690de20f8e51f4f03c}\label{classns3_1_1_dgr_nse_a4fe0f2b082a77e690de20f8e51f4f03c} 
+\index{ns3::DgrNse@{ns3::DgrNse}!GetInstanceTypeId@{GetInstanceTypeId}}
+\index{GetInstanceTypeId@{GetInstanceTypeId}!ns3::DgrNse@{ns3::DgrNse}}
+\doxyparagraph{\texorpdfstring{GetInstanceTypeId()}{GetInstanceTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+Dgr\+Nse\+::\+Get\+Instance\+Type\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Return the instance type identifier. 
+
+\begin{DoxyReturn}{Returns}
+Instance type ID. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-header_8cc_source_l00033}{33}} of file \mbox{\hyperlink{dgr-header_8cc_source}{dgr-\/header.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-header_8cc_source_l00023}{Get\+Type\+Id()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d1d/classns3_1_1_dgr_nse_a4fe0f2b082a77e690de20f8e51f4f03c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_dgr_nse_a8bec3d3ec3349e0396c141a0a0d0fb48}\label{classns3_1_1_dgr_nse_a8bec3d3ec3349e0396c141a0a0d0fb48} 
+\index{ns3::DgrNse@{ns3::DgrNse}!GetInterface@{GetInterface}}
+\index{GetInterface@{GetInterface}!ns3::DgrNse@{ns3::DgrNse}}
+\doxyparagraph{\texorpdfstring{GetInterface()}{GetInterface()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+Dgr\+Nse\+::\+Get\+Interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the iface. 
+
+\begin{DoxyReturn}{Returns}
+the iface 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-header_8cc_source_l00074}{74}} of file \mbox{\hyperlink{dgr-header_8cc_source}{dgr-\/header.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-header_8h_source_l00078}{m\+\_\+iface}}.
+
+\Hypertarget{classns3_1_1_dgr_nse_a2b24a215ee38cb8ec0e5a8c6f5247e01}\label{classns3_1_1_dgr_nse_a2b24a215ee38cb8ec0e5a8c6f5247e01} 
+\index{ns3::DgrNse@{ns3::DgrNse}!GetSerializedSize@{GetSerializedSize}}
+\index{GetSerializedSize@{GetSerializedSize}!ns3::DgrNse@{ns3::DgrNse}}
+\doxyparagraph{\texorpdfstring{GetSerializedSize()}{GetSerializedSize()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+Dgr\+Nse\+::\+Get\+Serialized\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Get the serialized size of the packet. 
+
+\begin{DoxyReturn}{Returns}
+size 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-header_8cc_source_l00045}{45}} of file \mbox{\hyperlink{dgr-header_8cc_source}{dgr-\/header.\+cc}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-header_8cc_source_l00059}{Deserialize()}}, \mbox{\hyperlink{dgr-header_8cc_source_l00162}{ns3\+::\+Dgr\+Header\+::\+Deserialize()}}, \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l01370}{ns3\+::\+Ipv4\+DGRRouting\+::\+Do\+Send\+Neighbor\+Status\+Update()}}, and \mbox{\hyperlink{dgr-header_8cc_source_l00138}{ns3\+::\+Dgr\+Header\+::\+Get\+Serialized\+Size()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d1d/classns3_1_1_dgr_nse_a2b24a215ee38cb8ec0e5a8c6f5247e01_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_dgr_nse_a438c105a750d6d764be284388ba56c3a}\label{classns3_1_1_dgr_nse_a438c105a750d6d764be284388ba56c3a} 
+\index{ns3::DgrNse@{ns3::DgrNse}!GetState@{GetState}}
+\index{GetState@{GetState}!ns3::DgrNse@{ns3::DgrNse}}
+\doxyparagraph{\texorpdfstring{GetState()}{GetState()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+Dgr\+Nse\+::\+Get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-header_8cc_source_l00086}{86}} of file \mbox{\hyperlink{dgr-header_8cc_source}{dgr-\/header.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-header_8h_source_l00079}{m\+\_\+state}}.
+
+\Hypertarget{classns3_1_1_dgr_nse_ac4b6f6d618c616b20f336b4838de4f16}\label{classns3_1_1_dgr_nse_ac4b6f6d618c616b20f336b4838de4f16} 
+\index{ns3::DgrNse@{ns3::DgrNse}!GetTypeId@{GetTypeId}}
+\index{GetTypeId@{GetTypeId}!ns3::DgrNse@{ns3::DgrNse}}
+\doxyparagraph{\texorpdfstring{GetTypeId()}{GetTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+Dgr\+Nse\+::\+Get\+Type\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the type ID. 
+
+\begin{DoxyReturn}{Returns}
+The object Type\+Id 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-header_8cc_source_l00023}{23}} of file \mbox{\hyperlink{dgr-header_8cc_source}{dgr-\/header.\+cc}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-header_8cc_source_l00033}{Get\+Instance\+Type\+Id()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d1d/classns3_1_1_dgr_nse_ac4b6f6d618c616b20f336b4838de4f16_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_dgr_nse_af663ace163675839ec0b9a7944a0d514}\label{classns3_1_1_dgr_nse_af663ace163675839ec0b9a7944a0d514} 
+\index{ns3::DgrNse@{ns3::DgrNse}!Print@{Print}}
+\index{Print@{Print}!ns3::DgrNse@{ns3::DgrNse}}
+\doxyparagraph{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void ns3\+::\+Dgr\+Nse\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-header_8cc_source_l00039}{39}} of file \mbox{\hyperlink{dgr-header_8cc_source}{dgr-\/header.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-header_8h_source_l00078}{m\+\_\+iface}}, and \mbox{\hyperlink{dgr-header_8h_source_l00079}{m\+\_\+state}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-header_8cc_source_l00092}{ns3\+::operator$<$$<$()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{de/d1d/classns3_1_1_dgr_nse_af663ace163675839ec0b9a7944a0d514_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_dgr_nse_abf6e89d3cc954ee666bafc8c65433161}\label{classns3_1_1_dgr_nse_abf6e89d3cc954ee666bafc8c65433161} 
+\index{ns3::DgrNse@{ns3::DgrNse}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!ns3::DgrNse@{ns3::DgrNse}}
+\doxyparagraph{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily void ns3\+::\+Dgr\+Nse\+::\+Serialize (\begin{DoxyParamCaption}\item[{Buffer\+::\+Iterator}]{start }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Serialize the packet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Buffer iterator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-header_8cc_source_l00051}{51}} of file \mbox{\hyperlink{dgr-header_8cc_source}{dgr-\/header.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, \mbox{\hyperlink{dgr-header_8h_source_l00078}{m\+\_\+iface}}, and \mbox{\hyperlink{dgr-header_8h_source_l00079}{m\+\_\+state}}.
+
+\Hypertarget{classns3_1_1_dgr_nse_a2e993c84f83ec1bddf787351c5c41401}\label{classns3_1_1_dgr_nse_a2e993c84f83ec1bddf787351c5c41401} 
+\index{ns3::DgrNse@{ns3::DgrNse}!SetInterface@{SetInterface}}
+\index{SetInterface@{SetInterface}!ns3::DgrNse@{ns3::DgrNse}}
+\doxyparagraph{\texorpdfstring{SetInterface()}{SetInterface()}}
+{\footnotesize\ttfamily void ns3\+::\+Dgr\+Nse\+::\+Set\+Interface (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{iface }\end{DoxyParamCaption})}
+
+
+
+Set the interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & the interface \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-header_8cc_source_l00068}{68}} of file \mbox{\hyperlink{dgr-header_8cc_source}{dgr-\/header.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-header_8h_source_l00078}{m\+\_\+iface}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l01370}{ns3\+::\+Ipv4\+DGRRouting\+::\+Do\+Send\+Neighbor\+Status\+Update()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d1d/classns3_1_1_dgr_nse_a2e993c84f83ec1bddf787351c5c41401_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_dgr_nse_afed23298399afb86ba0bdf1f6ea19b7d}\label{classns3_1_1_dgr_nse_afed23298399afb86ba0bdf1f6ea19b7d} 
+\index{ns3::DgrNse@{ns3::DgrNse}!SetState@{SetState}}
+\index{SetState@{SetState}!ns3::DgrNse@{ns3::DgrNse}}
+\doxyparagraph{\texorpdfstring{SetState()}{SetState()}}
+{\footnotesize\ttfamily void ns3\+::\+Dgr\+Nse\+::\+Set\+State (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{state }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-header_8cc_source_l00080}{80}} of file \mbox{\hyperlink{dgr-header_8cc_source}{dgr-\/header.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-header_8h_source_l00079}{m\+\_\+state}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l01370}{ns3\+::\+Ipv4\+DGRRouting\+::\+Do\+Send\+Neighbor\+Status\+Update()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d1d/classns3_1_1_dgr_nse_afed23298399afb86ba0bdf1f6ea19b7d_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{classns3_1_1_dgr_nse_ad5d302e27f2b5ee40ed20500790ad3ea}\label{classns3_1_1_dgr_nse_ad5d302e27f2b5ee40ed20500790ad3ea} 
+\index{ns3::DgrNse@{ns3::DgrNse}!m\_iface@{m\_iface}}
+\index{m\_iface@{m\_iface}!ns3::DgrNse@{ns3::DgrNse}}
+\doxyparagraph{\texorpdfstring{m\_iface}{m\_iface}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+Dgr\+Nse\+::m\+\_\+iface\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-header_8h_source_l00078}{78}} of file \mbox{\hyperlink{dgr-header_8h_source}{dgr-\/header.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-header_8cc_source_l00059}{Deserialize()}}, \mbox{\hyperlink{dgr-header_8cc_source_l00074}{Get\+Interface()}}, \mbox{\hyperlink{dgr-header_8cc_source_l00039}{Print()}}, \mbox{\hyperlink{dgr-header_8cc_source_l00051}{Serialize()}}, and \mbox{\hyperlink{dgr-header_8cc_source_l00068}{Set\+Interface()}}.
+
+\Hypertarget{classns3_1_1_dgr_nse_a7d2879fac256bf8d75a48075381434b6}\label{classns3_1_1_dgr_nse_a7d2879fac256bf8d75a48075381434b6} 
+\index{ns3::DgrNse@{ns3::DgrNse}!m\_state@{m\_state}}
+\index{m\_state@{m\_state}!ns3::DgrNse@{ns3::DgrNse}}
+\doxyparagraph{\texorpdfstring{m\_state}{m\_state}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+Dgr\+Nse\+::m\+\_\+state\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-header_8h_source_l00079}{79}} of file \mbox{\hyperlink{dgr-header_8h_source}{dgr-\/header.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-header_8cc_source_l00059}{Deserialize()}}, \mbox{\hyperlink{dgr-header_8cc_source_l00086}{Get\+State()}}, \mbox{\hyperlink{dgr-header_8cc_source_l00039}{Print()}}, \mbox{\hyperlink{dgr-header_8cc_source_l00051}{Serialize()}}, and \mbox{\hyperlink{dgr-header_8cc_source_l00080}{Set\+State()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{dgr-header_8h}{dgr-\/header.\+h}}\item 
+model/\mbox{\hyperlink{dgr-header_8cc}{dgr-\/header.\+cc}}\end{DoxyCompactItemize}

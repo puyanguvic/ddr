@@ -1,0 +1,5 @@
+<map id="ns3::DGRRoutingLSA::~DGRRoutingLSA" name="ns3::DGRRoutingLSA::~DGRRoutingLSA">
+<area shape="rect" id="Node000001" title="Destroy an existing Global Routing Link State Advertisement." alt="" coords="5,5,163,45"/>
+<area shape="rect" id="Node000002" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#add7dc495e6a10547b0045aab19ea9bcc" title="Release all of the Global Routing Link Records present in the Global Routing Link State Advertisement..." alt="" coords="211,5,368,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,23,197,23,197,28,163,28"/>
+</map>

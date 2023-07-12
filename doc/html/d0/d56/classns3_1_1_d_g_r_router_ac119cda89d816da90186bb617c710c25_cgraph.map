@@ -1,0 +1,94 @@
+<map id="ns3::DGRRouter::DiscoverLSAs" name="ns3::DGRRouter::DiscoverLSAs">
+<area shape="rect" id="Node000001" title="Walk the connected channels, discover the adjacent routers and build the associated number of Global ..." alt="" coords="5,964,228,989"/>
+<area shape="rect" id="Node000002" href="$d0/d56/classns3_1_1_d_g_r_router.html#a045a362fddd31a11a9c777bb64c889f7" title="Build one NetworkLSA for each net device talking to a network that we are the designated router for." alt="" coords="287,938,540,964"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="228,964,272,960,273,966,229,969"/>
+<area shape="rect" id="Node000008" href="$d0/d56/classns3_1_1_d_g_r_router.html#a53fdf9c96432439b34d091da6050890b" title="Decide whether or not a given net device is being bridged by a BridgeNetDevice." alt="" coords="1171,842,1373,882"/>
+<area shape="poly" id="edge18_Node000001_Node000008" title=" " alt="" coords="131,961,192,914,232,886,275,861,361,816,431,786,503,764,598,744,666,728,723,714,749,712,776,715,804,726,834,745,853,767,862,791,862,817,859,843,855,868,856,892,863,915,882,936,923,958,968,968,1016,968,1064,959,1111,944,1155,925,1228,887,1230,891,1158,930,1113,949,1065,964,1016,973,967,974,921,963,878,940,859,918,850,893,850,868,853,842,857,817,856,792,849,770,830,749,801,730,775,720,749,717,723,719,667,733,599,750,505,769,433,791,363,821,277,865,235,890,195,918,134,966"/>
+<area shape="rect" id="Node000009" href="$d0/d56/classns3_1_1_d_g_r_router.html#a817add200a30892091534c2d42fa43e5" title="Given a node and a net device, find an IPV4 interface index that corresponds to that net device." alt="" coords="1163,119,1381,159"/>
+<area shape="poly" id="edge17_Node000001_Node000009" title=" " alt="" coords="116,963,124,877,147,735,167,653,195,570,230,488,274,412,339,323,401,251,463,193,528,147,599,110,679,79,772,52,879,24,945,10,998,3,1051,7,1116,24,1153,40,1187,62,1243,107,1240,111,1184,66,1150,45,1114,29,1050,13,998,8,946,15,881,30,773,57,681,84,601,115,531,152,466,197,405,255,343,326,278,415,234,490,200,572,173,655,153,736,129,878,121,964"/>
+<area shape="rect" id="Node000010" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a5f36eb9409d5d6532b9bd267e8d90f61" title="Set the Advertising Router as defined by the OSPF spec." alt="" coords="631,759,799,799"/>
+<area shape="poly" id="edge58_Node000001_Node000010" title=" " alt="" coords="156,961,640,801,641,806,157,966"/>
+<area shape="rect" id="Node000011" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a382594771f20561edde6e6b53d3bd982" title="Set the Link State ID is defined by the OSPF spec." alt="" coords="637,988,794,1028"/>
+<area shape="poly" id="edge59_Node000001_Node000011" title=" " alt="" coords="228,980,623,1001,622,1006,228,985"/>
+<area shape="rect" id="Node000012" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a898720f0e7c926c4ecd2ca89d09363dd" title="Set the LS type field of the LSA." alt="" coords="637,1052,794,1092"/>
+<area shape="poly" id="edge60_Node000001_Node000012" title=" " alt="" coords="188,986,276,1002,624,1056,623,1061,276,1007,187,992"/>
+<area shape="rect" id="Node000013" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a1d60ee05ffc0dd4d434fb12917f6c83e" title="For a Network LSA, set the Network Mask field that precedes the list of attached routers." alt="" coords="605,1116,826,1156"/>
+<area shape="poly" id="edge61_Node000001_Node000013" title=" " alt="" coords="140,987,201,1019,277,1051,357,1074,439,1093,591,1119,591,1125,438,1099,356,1080,275,1056,198,1024,138,991"/>
+<area shape="rect" id="Node000014" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a5fb6e248545fbd3d50b34429e4780746" title="Set the Node pointer of the node that originated this LSA." alt="" coords="637,1180,794,1220"/>
+<area shape="poly" id="edge62_Node000001_Node000014" title=" " alt="" coords="130,988,187,1052,229,1089,277,1119,341,1140,431,1159,623,1187,622,1193,430,1164,339,1145,275,1124,226,1093,183,1056,126,991"/>
+<area shape="rect" id="Node000015" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a497453d1271c0020968487ec8ead99c5" title="Set the SPF status of the advertisement." alt="" coords="637,1244,794,1284"/>
+<area shape="poly" id="edge63_Node000001_Node000015" title=" " alt="" coords="126,988,145,1028,178,1082,222,1138,248,1162,277,1183,314,1203,347,1214,378,1220,407,1221,471,1221,509,1223,551,1228,623,1242,622,1248,550,1234,508,1228,471,1226,407,1227,377,1225,346,1219,312,1207,275,1188,245,1167,218,1141,173,1085,141,1030,121,991"/>
+<area shape="rect" id="Node000016" href="$d0/d56/classns3_1_1_d_g_r_router.html#a2b22b001dff03d6d86ba7003104d8a26" title="Clear list of LSAs." alt="" coords="314,1242,513,1268"/>
+<area shape="poly" id="edge16_Node000001_Node000016" title=" " alt="" coords="125,989,143,1034,174,1097,219,1164,246,1195,277,1221,304,1235,301,1240,275,1225,243,1199,215,1168,169,1100,138,1036,120,990"/>
+<area shape="rect" id="Node000017" href="$d0/d56/classns3_1_1_d_g_r_router.html#aa562c84d9a117e26103ac8338ec8094f" title="Process a generic broadcast link." alt="" coords="276,514,551,540"/>
+<area shape="poly" id="edge19_Node000001_Node000017" title=" " alt="" coords="122,962,182,853,274,701,336,616,390,548,395,552,340,619,278,704,186,856,127,965"/>
+<area shape="rect" id="Node000027" href="$d0/d56/classns3_1_1_d_g_r_router.html#aac014913150c42a93cecbc6a9daf7552" title="Process a point to point link." alt="" coords="607,315,823,355"/>
+<area shape="poly" id="edge49_Node000001_Node000027" title=" " alt="" coords="116,963,123,885,131,827,145,762,165,693,192,624,228,558,274,500,308,469,346,442,386,419,428,399,513,369,593,349,594,354,515,374,430,404,389,423,349,446,311,473,278,503,233,561,197,626,170,695,150,763,136,828,128,886,121,964"/>
+<area shape="rect" id="Node000003" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a945e5e3081dc4463d6335cf40d81b192" title="Add an attached router to the list in the NetworkLSA." alt="" coords="637,924,794,964"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="540,945,623,944,623,949,540,951"/>
+<area shape="rect" id="Node000004" href="$d0/d56/classns3_1_1_d_g_r_router.html#a9c480fca2799ed5e445820561087500e" title="Clear the list of bridges visited on the link." alt="" coords="889,798,1105,838"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="447,936,516,911,598,886,741,854,875,831,876,837,742,859,599,891,517,916,448,941"/>
+<area shape="rect" id="Node000005" href="$d0/d56/classns3_1_1_d_g_r_router.html#a82bb020047d97bca36f66ab9c8eeb20a" title="Return a container of all non&#45;bridged NetDevices on a link." alt="" coords="896,886,1099,926"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="462,936,526,921,598,910,746,900,882,899,882,904,746,905,599,915,527,926,463,941"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="417,937,475,783,513,669,548,550,560,480,562,423,569,367,579,336,596,302,653,210,681,175,710,146,743,120,781,97,879,54,943,35,996,30,1050,38,1115,54,1148,64,1179,78,1233,109,1230,114,1177,83,1146,69,1114,59,1049,43,996,36,944,40,881,59,783,102,746,124,714,149,685,179,658,213,601,304,584,338,574,368,567,423,565,480,553,552,518,671,480,785,422,939"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="435,936,488,903,549,860,572,836,597,815,625,802,627,807,600,820,576,840,552,864,491,907,438,940"/>
+<area shape="poly" id="edge11_Node000002_Node000011" title=" " alt="" coords="482,961,624,988,623,994,481,966"/>
+<area shape="poly" id="edge12_Node000002_Node000012" title=" " alt="" coords="439,962,510,998,600,1038,624,1046,622,1051,598,1043,508,1003,437,966"/>
+<area shape="poly" id="edge13_Node000002_Node000013" title=" " alt="" coords="428,962,497,1028,546,1068,600,1102,615,1109,612,1114,597,1107,543,1072,493,1032,424,966"/>
+<area shape="poly" id="edge14_Node000002_Node000014" title=" " alt="" coords="424,963,449,1003,488,1058,539,1116,569,1143,600,1166,625,1178,622,1183,597,1171,565,1147,535,1120,483,1061,444,1006,420,965"/>
+<area shape="poly" id="edge15_Node000002_Node000015" title=" " alt="" coords="424,963,503,1101,555,1180,579,1210,600,1230,625,1244,623,1249,597,1234,575,1214,551,1183,498,1104,419,965"/>
+<area shape="poly" id="edge6_Node000005_Node000005" title=" " alt="" coords="947,886,943,876,952,867,970,861,997,859,1029,862,1046,869,1044,874,1028,867,997,864,971,866,954,871,949,877,952,884"/>
+<area shape="rect" id="Node000006" href="$d0/d56/classns3_1_1_d_g_r_router.html#a12f7423d137d6716fc597ee947173c41" title="When recursively checking for devices on the link, check whether a given device has already been visi..." alt="" coords="1172,766,1372,806"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1039,883,1162,827,1206,808,1208,813,1164,832,1042,888"/>
+<area shape="rect" id="Node000007" href="$d0/d56/classns3_1_1_d_g_r_router.html#ac62c957b71fbe4ce12586c380dbfceeb" title="When recursively checking for devices on the link, mark a given device as having been visited." alt="" coords="1168,702,1376,742"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="1058,883,1087,868,1113,848,1129,824,1135,800,1142,776,1161,752,1167,747,1171,751,1165,756,1147,778,1140,801,1134,826,1117,851,1090,872,1060,888"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="1098,887,1157,877,1158,883,1099,892"/>
+<area shape="rect" id="Node000018" href="$d0/d56/classns3_1_1_d_g_r_router.html#ac1075dd7ea9735e489838a39e29f6597" title="Process a bridged broadcast link." alt="" coords="599,507,832,547"/>
+<area shape="poly" id="edge20_Node000017_Node000018" title=" " alt="" coords="551,524,585,524,585,530,551,530"/>
+<area shape="rect" id="Node000026" href="$d0/d56/classns3_1_1_d_g_r_router.html#a920b7e48d18135f51a66b010b6d730cc" title="Process a single broadcast link." alt="" coords="604,443,827,483"/>
+<area shape="poly" id="edge39_Node000017_Node000026" title=" " alt="" coords="474,512,607,483,608,488,475,517"/>
+<area shape="poly" id="edge27_Node000018_Node000004" title=" " alt="" coords="733,546,834,702,847,726,854,747,864,765,882,784,889,789,886,793,878,788,859,768,849,749,842,729,830,704,728,549"/>
+<area shape="poly" id="edge34_Node000018_Node000009" title=" " alt="" coords="761,544,834,571,879,582,927,591,976,594,1024,591,1071,579,1113,557,1157,518,1191,471,1218,418,1237,362,1251,307,1260,255,1267,172,1273,173,1265,255,1256,308,1243,363,1223,420,1196,473,1161,521,1116,561,1072,584,1025,596,976,600,926,596,878,588,833,576,759,549"/>
+<area shape="rect" id="Node000019" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a4b21b880eb8b7b733039d0dfaa8b48a4" title="Add a given Global Routing Link Record to the LSA." alt="" coords="919,315,1076,355"/>
+<area shape="poly" id="edge21_Node000018_Node000019" title=" " alt="" coords="814,505,830,493,843,478,850,463,853,431,857,398,865,381,878,365,904,348,907,353,882,369,869,384,862,399,859,431,855,464,847,481,834,497,817,509"/>
+<area shape="rect" id="Node000020" href="$d0/d56/classns3_1_1_d_g_r_router.html#ad1f4d3739e9972e6126b4f3c61b48cc3" title="Checks for the presence of another router on the NetDevice." alt="" coords="884,734,1111,774"/>
+<area shape="poly" id="edge22_Node000018_Node000020" title=" " alt="" coords="734,545,795,616,836,658,882,695,933,725,931,730,878,700,833,662,791,620,730,549"/>
+<area shape="rect" id="Node000021" href="$d0/d56/classns3_1_1_d_g_r_router.html#a4878eacca3b0a943b4e7e49d25dd8e1b" title="Finds a designated router." alt="" coords="880,646,1115,686"/>
+<area shape="poly" id="edge28_Node000018_Node000021" title=" " alt="" coords="758,545,944,637,942,642,756,550"/>
+<area shape="rect" id="Node000022" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#a06083e776955f21fe1fd4e4927cf0b24" title="Set the Link Data field of the Global Routing Link Record." alt="" coords="895,379,1099,419"/>
+<area shape="poly" id="edge35_Node000018_Node000022" title=" " alt="" coords="809,504,830,493,846,478,854,462,862,445,878,429,888,423,891,427,882,433,866,448,858,464,850,481,834,497,812,509"/>
+<area shape="rect" id="Node000023" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#a203541f10ca13f9cfb1987fbbff4416b" title="Set the Link ID field of the Global Routing Link Record." alt="" coords="895,443,1099,483"/>
+<area shape="poly" id="edge36_Node000018_Node000023" title=" " alt="" coords="804,504,895,483,896,489,805,509"/>
+<area shape="rect" id="Node000024" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#aacc16a8566cd389fd974cbeb8dde6ddd" title="Set the Link Type field of the Global Routing Link Record." alt="" coords="895,507,1099,547"/>
+<area shape="poly" id="edge37_Node000018_Node000024" title=" " alt="" coords="832,524,882,524,882,530,832,530"/>
+<area shape="rect" id="Node000025" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#ac6b9632b024b3799a25209f1392c1ab8" title="Set the Metric Data field of the Global Routing Link Record." alt="" coords="895,251,1099,291"/>
+<area shape="poly" id="edge38_Node000018_Node000025" title=" " alt="" coords="815,505,830,493,847,470,854,447,855,423,853,399,851,375,853,350,860,325,878,301,883,297,886,301,882,305,865,328,858,351,857,375,859,399,861,423,859,448,852,472,834,497,819,509"/>
+<area shape="poly" id="edge24_Node000020_Node000006" title=" " alt="" coords="1111,764,1158,770,1158,775,1111,769"/>
+<area shape="poly" id="edge25_Node000020_Node000007" title=" " alt="" coords="1111,738,1154,733,1155,738,1111,743"/>
+<area shape="poly" id="edge26_Node000020_Node000008" title=" " alt="" coords="1085,771,1116,783,1140,799,1164,815,1204,834,1201,839,1161,820,1137,803,1113,788,1083,776"/>
+<area shape="poly" id="edge23_Node000020_Node000020" title=" " alt="" coords="947,734,943,724,952,715,970,709,997,707,1029,710,1046,717,1044,722,1028,715,997,712,971,714,954,719,949,725,952,732"/>
+<area shape="poly" id="edge29_Node000021_Node000006" title=" " alt="" coords="1093,683,1116,695,1132,710,1141,724,1150,738,1164,751,1175,758,1172,762,1161,756,1145,742,1136,727,1128,713,1113,700,1090,688"/>
+<area shape="poly" id="edge32_Node000021_Node000007" title=" " alt="" coords="1097,683,1161,696,1160,702,1096,688"/>
+<area shape="poly" id="edge33_Node000021_Node000008" title=" " alt="" coords="1099,684,1116,696,1130,711,1137,726,1142,756,1147,786,1153,801,1165,816,1188,833,1185,837,1161,820,1148,804,1142,788,1137,757,1132,728,1125,714,1113,700,1096,688"/>
+<area shape="poly" id="edge31_Node000021_Node000009" title=" " alt="" coords="1054,643,1086,625,1113,601,1151,548,1182,490,1207,429,1227,368,1253,255,1265,172,1270,173,1258,256,1232,370,1212,431,1187,493,1155,551,1117,605,1089,630,1057,648"/>
+<area shape="poly" id="edge30_Node000021_Node000021" title=" " alt="" coords="947,646,943,636,952,627,970,621,997,619,1029,622,1046,629,1044,634,1028,627,997,624,971,626,954,631,949,637,952,644"/>
+<area shape="poly" id="edge42_Node000026_Node000004" title=" " alt="" coords="820,481,834,493,858,530,867,568,865,604,859,641,852,677,851,713,859,748,882,784,885,787,881,791,878,787,854,750,845,713,847,676,853,640,860,604,861,568,853,532,830,497,817,485"/>
+<area shape="poly" id="edge44_Node000026_Node000009" title=" " alt="" coords="747,441,790,408,830,365,840,348,845,331,849,299,856,268,864,252,878,237,908,215,935,203,962,196,989,194,1046,194,1078,192,1114,184,1196,160,1197,166,1115,190,1079,197,1046,199,989,200,963,202,937,208,910,220,882,241,868,255,861,270,855,300,850,332,845,350,834,369,794,412,751,445"/>
+<area shape="poly" id="edge40_Node000026_Node000019" title=" " alt="" coords="744,441,805,402,879,365,905,355,906,360,881,369,807,407,747,445"/>
+<area shape="poly" id="edge41_Node000026_Node000020" title=" " alt="" coords="819,481,834,493,852,519,861,544,863,569,861,594,860,645,866,670,882,696,899,712,919,725,916,730,895,716,878,699,861,672,854,645,856,594,857,569,856,545,848,521,830,497,816,485"/>
+<area shape="poly" id="edge43_Node000026_Node000021" title=" " alt="" coords="812,481,834,493,851,508,860,523,869,539,882,557,923,599,963,635,960,639,919,603,878,561,864,542,856,526,847,511,830,497,809,485"/>
+<area shape="poly" id="edge45_Node000026_Node000022" title=" " alt="" coords="804,440,895,419,896,425,805,445"/>
+<area shape="poly" id="edge46_Node000026_Node000023" title=" " alt="" coords="827,460,881,460,881,466,827,466"/>
+<area shape="poly" id="edge47_Node000026_Node000024" title=" " alt="" coords="805,480,896,501,895,507,804,486"/>
+<area shape="poly" id="edge48_Node000026_Node000025" title=" " alt="" coords="743,441,785,407,830,365,843,347,852,331,862,316,878,301,888,295,891,299,882,305,866,319,856,334,848,350,834,369,789,411,746,445"/>
+<area shape="poly" id="edge51_Node000027_Node000009" title=" " alt="" coords="720,314,739,264,770,200,792,167,817,136,846,108,879,86,922,69,967,60,1014,59,1061,63,1148,84,1219,111,1217,116,1146,89,1060,69,1014,64,968,65,923,74,881,91,849,112,821,139,796,170,775,203,744,266,725,316"/>
+<area shape="poly" id="edge50_Node000027_Node000019" title=" " alt="" coords="823,332,905,332,905,338,823,338"/>
+<area shape="poly" id="edge54_Node000027_Node000022" title=" " alt="" coords="805,352,896,373,895,379,804,358"/>
+<area shape="poly" id="edge55_Node000027_Node000023" title=" " alt="" coords="747,353,807,391,881,429,901,436,899,441,879,433,805,395,744,357"/>
+<area shape="poly" id="edge56_Node000027_Node000024" title=" " alt="" coords="746,353,789,387,834,429,848,448,856,464,866,478,882,493,891,499,888,503,878,497,862,482,852,466,843,450,830,433,785,391,743,357"/>
+<area shape="poly" id="edge57_Node000027_Node000025" title=" " alt="" coords="804,312,895,291,896,297,805,317"/>
+<area shape="rect" id="Node000028" href="$d0/d56/classns3_1_1_d_g_r_router.html#adc8946ca6068b51f7de5935696047a94" title="Link through the given channel and find the net device that&#39;s on the other end." alt="" coords="891,101,1104,126"/>
+<area shape="poly" id="edge52_Node000027_Node000028" title=" " alt="" coords="725,314,748,275,782,226,826,177,851,154,879,135,891,129,893,134,881,140,855,159,830,180,786,230,752,278,729,316"/>
+<area shape="rect" id="Node000029" href="$d0/d56/classns3_1_1_d_g_r_router.html#ad8375eec1264922d460ba8a5978f4ace" title="Get the Router ID associated with this Global Router." alt="" coords="892,150,1103,176"/>
+<area shape="poly" id="edge53_Node000027_Node000029" title=" " alt="" coords="733,313,794,253,834,221,879,193,916,177,918,182,881,197,837,225,797,257,737,317"/>
+</map>

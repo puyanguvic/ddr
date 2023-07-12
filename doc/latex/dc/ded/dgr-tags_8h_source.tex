@@ -1,0 +1,213 @@
+\doxysubsection{dgr-\/tags.h}
+\hypertarget{dgr-tags_8h_source}{}\label{dgr-tags_8h_source}\index{model/dgr-\/tags.h@{model/dgr-\/tags.h}}
+\mbox{\hyperlink{dgr-tags_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00001}00001\ \textcolor{comment}{/*\ -\/*-\/\ Mode:C++;\ c-\/file-\/style:"{}gnu"{};\ indent-\/tabs-\/mode:nil;\ -\/*-\/\ */}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00002}00002\ \textcolor{preprocessor}{\#ifndef\ DGRTAGS\_H}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00003}00003\ \textcolor{preprocessor}{\#define\ DGRTAGS\_H}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}ns3/core-\/module.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}ns3/tag.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}ns3/packet.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}ns3/nstime.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00011}00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacens3}{ns3}}\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00017}\mbox{\hyperlink{classns3_1_1_budget_tag}{00017}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_budget_tag}{BudgetTag}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_tag}{Tag}}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00019}00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00020}00020\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_budget_tag_a426c86d1b91b52427496480fe9811bb9}{BudgetTag}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_budget_tag_a42dfab1331f4f1bb1953c1ec972ab0bb}{SetBudget}}\ (uint32\_t\ \mbox{\hyperlink{classns3_1_1_budget_tag_ac227e7913dd74f3b2206f24629c85912}{m\_budget}});}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00032}00032\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_budget_tag_ac6b06a85217e94b7b12bb66a000d500b}{GetBudget}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00033}00033\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{static}\ TypeId\ \mbox{\hyperlink{classns3_1_1_budget_tag_a7558a61f1292bf614d9016377c8f7162}{GetTypeId}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00041}00041\ \ \ \ \ TypeId\ \mbox{\hyperlink{classns3_1_1_budget_tag_a2b1b22a8364cacd992bc0efc352eac3c}{GetInstanceTypeId}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00042}00042\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00044}00044\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_budget_tag_afcda90baa83ae04da0226dec7e77cb75}{GetSerializedSize}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00046}00046\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_budget_tag_a8120852e30e8090baa41834fcb604079}{Serialize}}\ (TagBuffer\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}})\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00049}00049\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_budget_tag_a3f5f59a6ce7c2f85f704590b33e501f8}{Deserialize}}\ (TagBuffer\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00052}00052\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_budget_tag_a515951edc1516e9ef77342d131a7f21c}{Print}}\ (std::ostream\ \&os)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00055}00055\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00056}\mbox{\hyperlink{classns3_1_1_budget_tag_ac227e7913dd74f3b2206f24629c85912}{00056}}\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_budget_tag_ac227e7913dd74f3b2206f24629c85912}{m\_budget}};\ \textcolor{comment}{//\ in\ millisecond\ \ }}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00057}00057\ \};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00063}\mbox{\hyperlink{classns3_1_1_dist_tag}{00063}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_dist_tag}{DistTag}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_tag}{Tag}}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00064}00064\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00065}00065\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00066}00066\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_dist_tag_abe9bfd761ed8e09ac072c4f14424e55c}{DistTag}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00071}00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_dist_tag_afc8616b9abd64dd7a0ebf3d876f1dcb2}{SetDistance}}\ (uint32\_t\ distance);}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00077}00077\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_dist_tag_abdba4f115af1156fa9971edb1f9dfa13}{GetDistance}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00078}00078\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00083}00083\ \ \ \ \ \textcolor{keyword}{static}\ TypeId\ \mbox{\hyperlink{classns3_1_1_dist_tag_af743f1a0ee10806fdafec9dcf4219245}{GetTypeId}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00085}00085\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00086}00086\ \ \ \ \ TypeId\ \mbox{\hyperlink{classns3_1_1_dist_tag_ab5025141d800cc5ac8063ec48f1f7e7a}{GetInstanceTypeId}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00087}00087\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00088}00088\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00089}00089\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_dist_tag_a20991b909c3d2519cd3d5a9ee657cbcb}{GetSerializedSize}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00091}00091\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00092}00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_dist_tag_a853b0c1b77e9b530509d11890526c4d2}{Serialize}}\ (TagBuffer\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}})\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00094}00094\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00095}00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_dist_tag_a6b25d2447d470067386025456e03b154}{Deserialize}}\ (TagBuffer\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00097}00097\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00098}00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_dist_tag_aca5f873c15bc55082d47b77320a1d32d}{Print}}\ (std::ostream\ \&os)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00100}00100\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00101}\mbox{\hyperlink{classns3_1_1_dist_tag_aad9b2f0de6c7e0f7a1f382a34ec15a45}{00101}}\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_dist_tag_aad9b2f0de6c7e0f7a1f382a34ec15a45}{m\_distance}};\ \textcolor{comment}{//\ in\ millisecond\ \ }}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00102}00102\ \};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00108}\mbox{\hyperlink{classns3_1_1_flag_tag}{00108}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_flag_tag}{FlagTag}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_tag}{Tag}}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00109}00109\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00110}00110\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00111}00111\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_flag_tag_a5ab5aac189eb7786f73a1e4d9356db88}{FlagTag}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00117}00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_flag_tag_a92c961c9c9e46744bf73cf82399e68df}{SetFlag}}\ (\textcolor{keywordtype}{bool}\ flag);}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00123}00123\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classns3_1_1_flag_tag_a1af1deae4da34eb465dd0d18acad52a6}{GetFlag}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00129}00129\ \ \ \ \ \textcolor{keyword}{static}\ TypeId\ \mbox{\hyperlink{classns3_1_1_flag_tag_a24c18b7b220e710f507bf4aa537ee653}{GetTypeId}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00131}00131\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00132}00132\ \ \ \ \ TypeId\ \mbox{\hyperlink{classns3_1_1_flag_tag_a4dc1f450efbd7a4bfabe02314a96ba40}{GetInstanceTypeId}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00133}00133\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00134}00134\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00135}00135\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_flag_tag_a26f8c3fb4074289dd309456fb2b45ef0}{GetSerializedSize}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00137}00137\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00138}00138\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_flag_tag_a0891649d6ff04fc214a7e7bc65b79765}{Serialize}}\ (TagBuffer\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}})\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00140}00140\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00141}00141\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_flag_tag_a11e898ed3ab9f24bf6eed35ec5e46ed7}{Deserialize}}\ (TagBuffer\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00143}00143\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00144}00144\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_flag_tag_a03888da6210e8342f231b99942e29747}{Print}}\ (std::ostream\ \&os)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00146}00146\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00147}\mbox{\hyperlink{classns3_1_1_flag_tag_af7137d5a0b5e197f3be0a4033a987c17}{00147}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classns3_1_1_flag_tag_af7137d5a0b5e197f3be0a4033a987c17}{m\_flag}};\ \ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00148}00148\ \};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00150}\mbox{\hyperlink{classns3_1_1_priority_tag}{00150}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_priority_tag}{PriorityTag}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_tag}{Tag}}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00151}00151\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00152}00152\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00153}00153\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_priority_tag_a69612f2d6c8c4c6bbb50e544f9a0f350}{PriorityTag}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00159}00159\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_priority_tag_a2c4ada4770b0f4c6049edb3463da82a4}{SetPriority}}\ (uint32\_t\ priority);}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00160}00160\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00165}00165\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_priority_tag_ac9b0dbcebebad476d6dcba66831300e1}{GetPriority}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00171}00171\ \ \ \ \ \textcolor{keyword}{static}\ TypeId\ \mbox{\hyperlink{classns3_1_1_priority_tag_a72e97cfa0bb648b1d60bfaf7ee583d1f}{GetTypeId}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00173}00173\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00174}00174\ \ \ \ \ TypeId\ \mbox{\hyperlink{classns3_1_1_priority_tag_a5ecae66db7e25e97b11ed2087cc90f6c}{GetInstanceTypeId}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00175}00175\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00176}00176\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00177}00177\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_priority_tag_aae6fb79e7a0107147a7b768eb2581980}{GetSerializedSize}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00179}00179\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00180}00180\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_priority_tag_a1726564061d62b73aade280a4b6a7ad8}{Serialize}}\ (TagBuffer\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}})\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00182}00182\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00183}00183\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_priority_tag_a1656669c46345a1a88cbdb823f2da80b}{Deserialize}}\ (TagBuffer\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00185}00185\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00186}00186\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_priority_tag_a1cc86bc95d88df7cf881337ee1e59f8a}{Print}}\ (std::ostream\ \&os)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00188}00188\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00189}\mbox{\hyperlink{classns3_1_1_priority_tag_a47abca1201aa81236504353e2ddd9c34}{00189}}\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_priority_tag_a47abca1201aa81236504353e2ddd9c34}{m\_priority}};\ \textcolor{comment}{//\ 0-\/fast,\ 1-\/slow,\ 2-\/best\ effort}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00190}00190\ \};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00193}00193\ \textcolor{comment}{//\ class\ TimestampTag\ :\ public\ Tag}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00194}00194\ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00195}00195\ \textcolor{comment}{//\ public:}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00196}00196\ \textcolor{comment}{//\ \ \ \ \ TimestampTag\ ();}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00197}00197\ \textcolor{comment}{//\ \ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00198}00198\ \textcolor{comment}{//\ \ \ \ \ \ *\ \(\backslash\)brief\ Set\ the\ timestamp}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00199}00199\ \textcolor{comment}{//\ \ \ \ \ \ *\ \(\backslash\)param\ timestamp\ the\ timestamp}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00200}00200\ \textcolor{comment}{//\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00201}00201\ \textcolor{comment}{//\ \ \ \ \ void\ SetTimestamp\ (Time\ timestamp);}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00203}00203\ \textcolor{comment}{//\ \ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00204}00204\ \textcolor{comment}{//\ \ \ \ \ \ *\ \(\backslash\)brief\ Get\ the\ tag's\ timestamp}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00205}00205\ \textcolor{comment}{//\ \ \ \ \ \ *\ \(\backslash\)return\ the\ timestamp}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00206}00206\ \textcolor{comment}{//\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00207}00207\ \textcolor{comment}{//\ \ \ \ \ Time\ GetTimestamp\ (void)\ const;}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00209}00209\ \textcolor{comment}{//\ \ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00210}00210\ \textcolor{comment}{//\ \ \ \ \ \ *\ \(\backslash\)brief\ Get\ the\ Type\ ID}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00211}00211\ \textcolor{comment}{//\ \ \ \ \ \ *\ \(\backslash\)return\ the\ object\ TypeId}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00212}00212\ \textcolor{comment}{//\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00213}00213\ \textcolor{comment}{//\ \ \ \ \ static\ TypeId\ GetTypeId\ (void);}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00215}00215\ \textcolor{comment}{//\ \ \ \ \ //\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00216}00216\ \textcolor{comment}{//\ \ \ \ \ TypeId\ GetInstanceTypeId\ (void)\ const\ override;}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00217}00217\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00218}00218\ \textcolor{comment}{//\ \ \ \ \ //\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00219}00219\ \textcolor{comment}{//\ \ \ \ \ uint32\_t\ GetSerializedSize\ (void)\ const\ override;}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00220}00220\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00221}00221\ \textcolor{comment}{//\ \ \ \ \ //\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00222}00222\ \textcolor{comment}{//\ \ \ \ \ void\ Serialize\ (TagBuffer\ i)\ const\ override;}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00224}00224\ \textcolor{comment}{//\ \ \ \ \ //\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00225}00225\ \textcolor{comment}{//\ \ \ \ \ void\ Deserialize\ (TagBuffer\ i)\ override;}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00227}00227\ \textcolor{comment}{//\ \ \ \ \ //\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00228}00228\ \textcolor{comment}{//\ \ \ \ \ void\ Print\ (std::ostream\ \&os)\ const\ override;}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00229}00229\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00230}00230\ \textcolor{comment}{//\ private:}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00231}00231\ \textcolor{comment}{//\ \ \ \ \ Time\ m\_timestamp;\ \ }}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00232}00232\ \textcolor{comment}{//\ \};}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00239}\mbox{\hyperlink{classns3_1_1_n_s_tag}{00239}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_n_s_tag}{NSTag}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_tag}{Tag}}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00240}00240\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00241}00241\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00242}00242\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_n_s_tag_a0bb942e1a3b0ecfe173adbc3180375d1}{NSTag}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00243}00243\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00248}00248\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_n_s_tag_ae99cc0c85fbf90d8a0ba93b2bb19c802}{SetNS}}\ (\textcolor{keywordtype}{bool}\ ns);}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00254}00254\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classns3_1_1_n_s_tag_aa4608b402f76d8a6160746ddd3dd224d}{GetNS}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00255}00255\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00260}00260\ \ \ \ \ \textcolor{keyword}{static}\ TypeId\ \mbox{\hyperlink{classns3_1_1_n_s_tag_ac57cd9a3ed472c1425c826444f9bead1}{GetTypeId}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00261}00261\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00262}00262\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00263}00263\ \ \ \ \ TypeId\ \mbox{\hyperlink{classns3_1_1_n_s_tag_ab97edaa9e7a09acee52dbd27555e2ab6}{GetInstanceTypeId}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00264}00264\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00265}00265\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00266}00266\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_n_s_tag_a5a8eb8b992deb0f88e6e7dae908930a2}{GetSerializedSize}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00267}00267\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00268}00268\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00269}00269\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_n_s_tag_a1fa93e07a7d42ce7ada37791a31d821c}{Serialize}}\ (TagBuffer\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}})\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00270}00270\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00271}00271\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00272}00272\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_n_s_tag_acee08c1d78032e9e3dbd44c11ed765cc}{Deserialize}}\ (TagBuffer\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00273}00273\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00274}00274\ \ \ \ \ \textcolor{comment}{//\ inherited\ function,\ no\ need\ to\ doc.}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00275}00275\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_n_s_tag_afe0845db0848aecbcd31539e3fc74e5e}{Print}}\ (std::ostream\ \&os)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00276}00276\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00277}00277\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00278}\mbox{\hyperlink{classns3_1_1_n_s_tag_a3e918772ca2a30b9b9238e362202b6a5}{00278}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classns3_1_1_n_s_tag_a3e918772ca2a30b9b9238e362202b6a5}{m\_ns}};\ \ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00279}00279\ \};}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00281}00281\ \}\ \textcolor{comment}{//\ namespace\ ns3}}
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00282}00282\ }
+\DoxyCodeLine{\Hypertarget{dgr-tags_8h_source_l00283}00283\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ DGRTAGS\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

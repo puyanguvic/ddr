@@ -1,0 +1,5 @@
+<map id="ns3::BudgetTag" name="ns3::BudgetTag">
+<area shape="rect" id="Node000001" title="This class implements a tag that carries the budget time of a packet to the IP layer." alt="" coords="5,79,127,104"/>
+<area shape="rect" id="Node000002" href="$d0/d57/class_tag.html" title=" " alt="" coords="44,5,88,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,44,69,79,63,79,63,44"/>
+</map>

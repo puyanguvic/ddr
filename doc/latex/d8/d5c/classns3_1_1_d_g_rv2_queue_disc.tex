@@ -1,0 +1,342 @@
+\doxysubsection{ns3\+::DGRv2\+Queue\+Disc Class Reference}
+\hypertarget{classns3_1_1_d_g_rv2_queue_disc}{}\label{classns3_1_1_d_g_rv2_queue_disc}\index{ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}}
+
+
+{\ttfamily \#include $<$dgrv2-\/queue-\/disc.\+h$>$}
+
+
+
+Inheritance diagram for ns3\+::DGRv2\+Queue\+Disc\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{d4/d4f/classns3_1_1_d_g_rv2_queue_disc__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns3\+::DGRv2\+Queue\+Disc\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/df2/classns3_1_1_d_g_rv2_queue_disc__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a577832ddbed27a0e6e732064dc550ae6}{DGRv2\+Queue\+Disc}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{classns3_1_1_d_g_rv2_queue_disc}{DGRv2\+Queue\+Disc} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a684b376fae1037a8f355d1dc66a7fdcd}{\texorpdfstring{$\sim$}{\string~}\+DGRv2\+Queue\+Disc}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{classns3_1_1_d_g_rv2_queue_disc}{DGRv2\+Queue\+Disc} Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_af24edcb8e345da5aa062f462329c006d}{Check\+Config}} (void) override
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a0776911f2905bb3beb1c661ef4dffae6}{Get\+Queue\+Status}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Type\+Id \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a72756e5a2ef0aa214ff90813cb7a9d0a}{Get\+Type\+Id}} (void)
+\begin{DoxyCompactList}\small\item\em Get the type ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a3c5f6b8b3b3262ba736e1e5f01f4fbd0}{LIMIT\+\_\+\+EXCEEDED\+\_\+\+DROP}} = \"{}Queue disc limit exceeded\"{}
+\begin{DoxyCompactList}\small\item\em Packet dropped due to queue disc limit exceeded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Ptr$<$ Queue\+Disc\+Item $>$ \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a11b483d3b91143d0bbf8ac85071d29e1}{Do\+Dequeue}} (void) override
+\item 
+bool \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_ab0e7d910d34bed359c34f03bbf3de5e2}{Do\+Enqueue}} (Ptr$<$ Queue\+Disc\+Item $>$ item) override
+\item 
+Ptr$<$ const Queue\+Disc\+Item $>$ \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_ac88b22362bd8121ae94c0897f74686c9}{Do\+Peek}} (void) override
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a292613ff9d5c2be9fb20e6d9b1c3c472}{Enqueue\+Classify}} (Ptr$<$ Queue\+Disc\+Item $>$ item)
+\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a44ed011e5ef9846e8275daf601e212d7}{Initialize\+Params}} (void) override
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a78d8252d17d17673cf61e84e5dda263b}{m\+\_\+current\+Fast\+Weight}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_ae4c72dc910b3b43b761e6d06f411cc5f}{m\+\_\+current\+Normal\+Weight}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a74aa4b447126656e2f3b413396f428fb}{m\+\_\+current\+Slow\+Weight}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a8c4ebeeeb845bcf635db7bb929cf2035}{m\+\_\+fast\+Weight}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a4cc480a47b078a6618069471ec6c62bb}{m\+\_\+normal\+Weight}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a6da48e3757bac9a55a2f20cc2672c0d0}{m\+\_\+slow\+Weight}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{dgrv2-queue-disc_8h_source_l00012}{12}} of file \mbox{\hyperlink{dgrv2-queue-disc_8h_source}{dgrv2-\/queue-\/disc.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_d_g_rv2_queue_disc_a577832ddbed27a0e6e732064dc550ae6}\label{classns3_1_1_d_g_rv2_queue_disc_a577832ddbed27a0e6e732064dc550ae6} 
+\index{ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}!DGRv2QueueDisc@{DGRv2QueueDisc}}
+\index{DGRv2QueueDisc@{DGRv2QueueDisc}!ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}}
+\doxyparagraph{\texorpdfstring{DGRv2QueueDisc()}{DGRv2QueueDisc()}}
+{\footnotesize\ttfamily ns3\+::\+DGRv2\+Queue\+Disc\+::\+DGRv2\+Queue\+Disc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{classns3_1_1_d_g_rv2_queue_disc}{DGRv2\+Queue\+Disc} constructor. 
+
+
+
+Definition at line \mbox{\hyperlink{dgrv2-queue-disc_8cc_source_l00036}{36}} of file \mbox{\hyperlink{dgrv2-queue-disc_8cc_source}{dgrv2-\/queue-\/disc.\+cc}}.
+
+\Hypertarget{classns3_1_1_d_g_rv2_queue_disc_a684b376fae1037a8f355d1dc66a7fdcd}\label{classns3_1_1_d_g_rv2_queue_disc_a684b376fae1037a8f355d1dc66a7fdcd} 
+\index{ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}!````~DGRv2QueueDisc@{\texorpdfstring{$\sim$}{\string~}DGRv2QueueDisc}}
+\index{````~DGRv2QueueDisc@{\texorpdfstring{$\sim$}{\string~}DGRv2QueueDisc}!ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DGRv2QueueDisc()}{\string~DGRv2QueueDisc()}}
+{\footnotesize\ttfamily ns3\+::\+DGRv2\+Queue\+Disc\+::\texorpdfstring{$\sim$}{\string~}\+DGRv2\+Queue\+Disc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{classns3_1_1_d_g_rv2_queue_disc}{DGRv2\+Queue\+Disc} Destructor. 
+
+
+
+Definition at line \mbox{\hyperlink{dgrv2-queue-disc_8cc_source_l00042}{42}} of file \mbox{\hyperlink{dgrv2-queue-disc_8cc_source}{dgrv2-\/queue-\/disc.\+cc}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_d_g_rv2_queue_disc_af24edcb8e345da5aa062f462329c006d}\label{classns3_1_1_d_g_rv2_queue_disc_af24edcb8e345da5aa062f462329c006d} 
+\index{ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}!CheckConfig@{CheckConfig}}
+\index{CheckConfig@{CheckConfig}!ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}}
+\doxyparagraph{\texorpdfstring{CheckConfig()}{CheckConfig()}}
+{\footnotesize\ttfamily bool ns3\+::\+DGRv2\+Queue\+Disc\+::\+Check\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgrv2-queue-disc_8cc_source_l00126}{126}} of file \mbox{\hyperlink{dgrv2-queue-disc_8cc_source}{dgrv2-\/queue-\/disc.\+cc}}.
+
+\Hypertarget{classns3_1_1_d_g_rv2_queue_disc_a11b483d3b91143d0bbf8ac85071d29e1}\label{classns3_1_1_d_g_rv2_queue_disc_a11b483d3b91143d0bbf8ac85071d29e1} 
+\index{ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}!DoDequeue@{DoDequeue}}
+\index{DoDequeue@{DoDequeue}!ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}}
+\doxyparagraph{\texorpdfstring{DoDequeue()}{DoDequeue()}}
+{\footnotesize\ttfamily Ptr$<$ Queue\+Disc\+Item $>$ ns3\+::\+DGRv2\+Queue\+Disc\+::\+Do\+Dequeue (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgrv2-queue-disc_8cc_source_l00084}{84}} of file \mbox{\hyperlink{dgrv2-queue-disc_8cc_source}{dgrv2-\/queue-\/disc.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}.
+
+\Hypertarget{classns3_1_1_d_g_rv2_queue_disc_ab0e7d910d34bed359c34f03bbf3de5e2}\label{classns3_1_1_d_g_rv2_queue_disc_ab0e7d910d34bed359c34f03bbf3de5e2} 
+\index{ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}!DoEnqueue@{DoEnqueue}}
+\index{DoEnqueue@{DoEnqueue}!ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}}
+\doxyparagraph{\texorpdfstring{DoEnqueue()}{DoEnqueue()}}
+{\footnotesize\ttfamily bool ns3\+::\+DGRv2\+Queue\+Disc\+::\+Do\+Enqueue (\begin{DoxyParamCaption}\item[{Ptr$<$ Queue\+Disc\+Item $>$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgrv2-queue-disc_8cc_source_l00057}{57}} of file \mbox{\hyperlink{dgrv2-queue-disc_8cc_source}{dgrv2-\/queue-\/disc.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgrv2-queue-disc_8cc_source_l00182}{Enqueue\+Classify()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d5c/classns3_1_1_d_g_rv2_queue_disc_ab0e7d910d34bed359c34f03bbf3de5e2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_rv2_queue_disc_ac88b22362bd8121ae94c0897f74686c9}\label{classns3_1_1_d_g_rv2_queue_disc_ac88b22362bd8121ae94c0897f74686c9} 
+\index{ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}!DoPeek@{DoPeek}}
+\index{DoPeek@{DoPeek}!ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}}
+\doxyparagraph{\texorpdfstring{DoPeek()}{DoPeek()}}
+{\footnotesize\ttfamily Ptr$<$ const Queue\+Disc\+Item $>$ ns3\+::\+DGRv2\+Queue\+Disc\+::\+Do\+Peek (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgrv2-queue-disc_8cc_source_l00105}{105}} of file \mbox{\hyperlink{dgrv2-queue-disc_8cc_source}{dgrv2-\/queue-\/disc.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}.
+
+\Hypertarget{classns3_1_1_d_g_rv2_queue_disc_a292613ff9d5c2be9fb20e6d9b1c3c472}\label{classns3_1_1_d_g_rv2_queue_disc_a292613ff9d5c2be9fb20e6d9b1c3c472} 
+\index{ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}!EnqueueClassify@{EnqueueClassify}}
+\index{EnqueueClassify@{EnqueueClassify}!ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}}
+\doxyparagraph{\texorpdfstring{EnqueueClassify()}{EnqueueClassify()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRv2\+Queue\+Disc\+::\+Enqueue\+Classify (\begin{DoxyParamCaption}\item[{Ptr$<$ Queue\+Disc\+Item $>$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgrv2-queue-disc_8cc_source_l00182}{182}} of file \mbox{\hyperlink{dgrv2-queue-disc_8cc_source}{dgrv2-\/queue-\/disc.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgrv2-queue-disc_8cc_source_l00012}{BEST\+\_\+\+EFFORT}}, and \mbox{\hyperlink{dgrv2-queue-disc_8cc_source_l00011}{DELAY\+\_\+\+SENSITIVE}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgrv2-queue-disc_8cc_source_l00057}{Do\+Enqueue()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d5c/classns3_1_1_d_g_rv2_queue_disc_a292613ff9d5c2be9fb20e6d9b1c3c472_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_rv2_queue_disc_a0776911f2905bb3beb1c661ef4dffae6}\label{classns3_1_1_d_g_rv2_queue_disc_a0776911f2905bb3beb1c661ef4dffae6} 
+\index{ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}!GetQueueStatus@{GetQueueStatus}}
+\index{GetQueueStatus@{GetQueueStatus}!ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}}
+\doxyparagraph{\texorpdfstring{GetQueueStatus()}{GetQueueStatus()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRv2\+Queue\+Disc\+::\+Get\+Queue\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dgrv2-queue-disc_8cc_source_l00048}{48}} of file \mbox{\hyperlink{dgrv2-queue-disc_8cc_source}{dgrv2-\/queue-\/disc.\+cc}}.
+
+\Hypertarget{classns3_1_1_d_g_rv2_queue_disc_a72756e5a2ef0aa214ff90813cb7a9d0a}\label{classns3_1_1_d_g_rv2_queue_disc_a72756e5a2ef0aa214ff90813cb7a9d0a} 
+\index{ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}!GetTypeId@{GetTypeId}}
+\index{GetTypeId@{GetTypeId}!ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}}
+\doxyparagraph{\texorpdfstring{GetTypeId()}{GetTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+DGRv2\+Queue\+Disc\+::\+Get\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the type ID. 
+
+\begin{DoxyReturn}{Returns}
+the object Type\+Id 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgrv2-queue-disc_8cc_source_l00020}{20}} of file \mbox{\hyperlink{dgrv2-queue-disc_8cc_source}{dgrv2-\/queue-\/disc.\+cc}}.
+
+\Hypertarget{classns3_1_1_d_g_rv2_queue_disc_a44ed011e5ef9846e8275daf601e212d7}\label{classns3_1_1_d_g_rv2_queue_disc_a44ed011e5ef9846e8275daf601e212d7} 
+\index{ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}!InitializeParams@{InitializeParams}}
+\index{InitializeParams@{InitializeParams}!ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}}
+\doxyparagraph{\texorpdfstring{InitializeParams()}{InitializeParams()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRv2\+Queue\+Disc\+::\+Initialize\+Params (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgrv2-queue-disc_8cc_source_l00172}{172}} of file \mbox{\hyperlink{dgrv2-queue-disc_8cc_source}{dgrv2-\/queue-\/disc.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgrv2-queue-disc_8h_source_l00040}{m\+\_\+current\+Fast\+Weight}}, \mbox{\hyperlink{dgrv2-queue-disc_8h_source_l00041}{m\+\_\+current\+Normal\+Weight}}, \mbox{\hyperlink{dgrv2-queue-disc_8h_source_l00037}{m\+\_\+fast\+Weight}}, and \mbox{\hyperlink{dgrv2-queue-disc_8h_source_l00038}{m\+\_\+normal\+Weight}}.
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{classns3_1_1_d_g_rv2_queue_disc_a3c5f6b8b3b3262ba736e1e5f01f4fbd0}\label{classns3_1_1_d_g_rv2_queue_disc_a3c5f6b8b3b3262ba736e1e5f01f4fbd0} 
+\index{ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}!LIMIT\_EXCEEDED\_DROP@{LIMIT\_EXCEEDED\_DROP}}
+\index{LIMIT\_EXCEEDED\_DROP@{LIMIT\_EXCEEDED\_DROP}!ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}}
+\doxyparagraph{\texorpdfstring{LIMIT\_EXCEEDED\_DROP}{LIMIT\_EXCEEDED\_DROP}}
+{\footnotesize\ttfamily constexpr const char\texorpdfstring{$\ast$}{*} ns3\+::\+DGRv2\+Queue\+Disc\+::\+LIMIT\+\_\+\+EXCEEDED\+\_\+\+DROP = \"{}Queue disc limit exceeded\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Packet dropped due to queue disc limit exceeded. 
+
+
+
+Definition at line \mbox{\hyperlink{dgrv2-queue-disc_8h_source_l00029}{29}} of file \mbox{\hyperlink{dgrv2-queue-disc_8h_source}{dgrv2-\/queue-\/disc.\+h}}.
+
+\Hypertarget{classns3_1_1_d_g_rv2_queue_disc_a78d8252d17d17673cf61e84e5dda263b}\label{classns3_1_1_d_g_rv2_queue_disc_a78d8252d17d17673cf61e84e5dda263b} 
+\index{ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}!m\_currentFastWeight@{m\_currentFastWeight}}
+\index{m\_currentFastWeight@{m\_currentFastWeight}!ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}}
+\doxyparagraph{\texorpdfstring{m\_currentFastWeight}{m\_currentFastWeight}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRv2\+Queue\+Disc\+::m\+\_\+current\+Fast\+Weight\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgrv2-queue-disc_8h_source_l00040}{40}} of file \mbox{\hyperlink{dgrv2-queue-disc_8h_source}{dgrv2-\/queue-\/disc.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgrv2-queue-disc_8cc_source_l00172}{Initialize\+Params()}}.
+
+\Hypertarget{classns3_1_1_d_g_rv2_queue_disc_ae4c72dc910b3b43b761e6d06f411cc5f}\label{classns3_1_1_d_g_rv2_queue_disc_ae4c72dc910b3b43b761e6d06f411cc5f} 
+\index{ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}!m\_currentNormalWeight@{m\_currentNormalWeight}}
+\index{m\_currentNormalWeight@{m\_currentNormalWeight}!ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}}
+\doxyparagraph{\texorpdfstring{m\_currentNormalWeight}{m\_currentNormalWeight}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRv2\+Queue\+Disc\+::m\+\_\+current\+Normal\+Weight\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgrv2-queue-disc_8h_source_l00041}{41}} of file \mbox{\hyperlink{dgrv2-queue-disc_8h_source}{dgrv2-\/queue-\/disc.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgrv2-queue-disc_8cc_source_l00172}{Initialize\+Params()}}.
+
+\Hypertarget{classns3_1_1_d_g_rv2_queue_disc_a74aa4b447126656e2f3b413396f428fb}\label{classns3_1_1_d_g_rv2_queue_disc_a74aa4b447126656e2f3b413396f428fb} 
+\index{ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}!m\_currentSlowWeight@{m\_currentSlowWeight}}
+\index{m\_currentSlowWeight@{m\_currentSlowWeight}!ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}}
+\doxyparagraph{\texorpdfstring{m\_currentSlowWeight}{m\_currentSlowWeight}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRv2\+Queue\+Disc\+::m\+\_\+current\+Slow\+Weight\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgrv2-queue-disc_8h_source_l00042}{42}} of file \mbox{\hyperlink{dgrv2-queue-disc_8h_source}{dgrv2-\/queue-\/disc.\+h}}.
+
+\Hypertarget{classns3_1_1_d_g_rv2_queue_disc_a8c4ebeeeb845bcf635db7bb929cf2035}\label{classns3_1_1_d_g_rv2_queue_disc_a8c4ebeeeb845bcf635db7bb929cf2035} 
+\index{ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}!m\_fastWeight@{m\_fastWeight}}
+\index{m\_fastWeight@{m\_fastWeight}!ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}}
+\doxyparagraph{\texorpdfstring{m\_fastWeight}{m\_fastWeight}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRv2\+Queue\+Disc\+::m\+\_\+fast\+Weight\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgrv2-queue-disc_8h_source_l00037}{37}} of file \mbox{\hyperlink{dgrv2-queue-disc_8h_source}{dgrv2-\/queue-\/disc.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgrv2-queue-disc_8cc_source_l00172}{Initialize\+Params()}}.
+
+\Hypertarget{classns3_1_1_d_g_rv2_queue_disc_a4cc480a47b078a6618069471ec6c62bb}\label{classns3_1_1_d_g_rv2_queue_disc_a4cc480a47b078a6618069471ec6c62bb} 
+\index{ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}!m\_normalWeight@{m\_normalWeight}}
+\index{m\_normalWeight@{m\_normalWeight}!ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}}
+\doxyparagraph{\texorpdfstring{m\_normalWeight}{m\_normalWeight}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRv2\+Queue\+Disc\+::m\+\_\+normal\+Weight\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgrv2-queue-disc_8h_source_l00038}{38}} of file \mbox{\hyperlink{dgrv2-queue-disc_8h_source}{dgrv2-\/queue-\/disc.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgrv2-queue-disc_8cc_source_l00172}{Initialize\+Params()}}.
+
+\Hypertarget{classns3_1_1_d_g_rv2_queue_disc_a6da48e3757bac9a55a2f20cc2672c0d0}\label{classns3_1_1_d_g_rv2_queue_disc_a6da48e3757bac9a55a2f20cc2672c0d0} 
+\index{ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}!m\_slowWeight@{m\_slowWeight}}
+\index{m\_slowWeight@{m\_slowWeight}!ns3::DGRv2QueueDisc@{ns3::DGRv2QueueDisc}}
+\doxyparagraph{\texorpdfstring{m\_slowWeight}{m\_slowWeight}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRv2\+Queue\+Disc\+::m\+\_\+slow\+Weight\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgrv2-queue-disc_8h_source_l00039}{39}} of file \mbox{\hyperlink{dgrv2-queue-disc_8h_source}{dgrv2-\/queue-\/disc.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{dgrv2-queue-disc_8h}{dgrv2-\/queue-\/disc.\+h}}\item 
+model/\mbox{\hyperlink{dgrv2-queue-disc_8cc}{dgrv2-\/queue-\/disc.\+cc}}\end{DoxyCompactItemize}

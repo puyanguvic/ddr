@@ -1,0 +1,11 @@
+<map id="ns3::DgrHeader::Deserialize" name="ns3::DgrHeader::Deserialize">
+<area shape="rect" id="Node000001" title="Deserialize the packet." alt="" coords="5,56,209,81"/>
+<area shape="rect" id="Node000002" href="$de/d1d/classns3_1_1_dgr_nse.html#ac07423ad134e176d78257b014d307e78" title="Deserialize the packet." alt="" coords="289,5,471,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,53,297,31,298,36,177,59"/>
+<area shape="rect" id="Node000003" href="$de/d1d/classns3_1_1_dgr_nse.html#a2b24a215ee38cb8ec0e5a8c6f5247e01" title="Get the serialized size of the packet." alt="" coords="551,56,773,81"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="210,66,537,66,537,71,210,71"/>
+<area shape="rect" id="Node000004" href="$d1/de8/classns3_1_1_dgr_header.html#a2fcef3eb0f76c33b6d7c151dc4b939e3" title="Get the serialized size of the packet." alt="" coords="257,107,503,132"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="177,79,298,101,297,107,176,84"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="452,28,578,51,577,56,451,33"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="451,104,577,81,578,86,452,109"/>
+</map>

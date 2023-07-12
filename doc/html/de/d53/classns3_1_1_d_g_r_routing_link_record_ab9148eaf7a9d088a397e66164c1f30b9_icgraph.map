@@ -1,0 +1,29 @@
+<map id="ns3::DGRRoutingLinkRecord::GetLinkType" name="ns3::DGRRoutingLinkRecord::GetLinkType">
+<area shape="rect" id="Node000001" title="Get the Link Type field of the Global Routing Link Record." alt="" coords="1028,166,1232,206"/>
+<area shape="rect" id="Node000002" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a1f608c8ac5a62f915208141c2d7bea22" title="Test if a node is a stub, from an OSPF sense." alt="" coords="515,291,721,331"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1096,217,1044,253,1013,271,981,284,915,302,847,312,781,317,722,318,721,313,781,312,847,307,914,296,979,279,1011,266,1041,249,1093,212"/>
+<area shape="rect" id="Node000004" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a3b798959aeda8a76373705151497692e" title="Compute routes using a Dijkstra SPF computation and populate per&#45;node forwarding tables." alt="" coords="5,112,212,152"/>
+<area shape="poly" id="edge10_Node000001_Node000004" title=" " alt="" coords="1102,157,1049,105,1016,80,979,60,924,40,867,26,808,16,749,10,630,11,514,23,405,43,307,67,161,115,160,110,305,62,403,38,513,17,629,5,749,5,809,10,868,20,925,35,981,55,1018,75,1053,101,1106,153"/>
+<area shape="rect" id="Node000005" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a206ff392d0561c4b244a8c6fe8d824ab" title="Copy any Global Routing Link Records in a given Global Routing Link State Advertisement to the curren..." alt="" coords="796,166,953,206"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1014,188,953,188,953,183,1014,183"/>
+<area shape="rect" id="Node000008" href="$d0/d2b/classns3_1_1_d_g_r_route_manager_l_s_d_b.html#ac6f9ca728688bae5adc4172dee708553" title="Look up the Link State Advertisement associated with the given link state ID (address)." alt="" coords="769,102,980,142"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1035,165,954,144,956,139,1037,160"/>
+<area shape="rect" id="Node000009" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#ab573904f9f357e2b802b1bbdcdc3247d" title="Examine the links in v&#39;s LSA and update the list of candidates with any vertices not already on the l..." alt="" coords="515,48,721,88"/>
+<area shape="poly" id="edge13_Node000001_Node000009" title=" " alt="" coords="1094,159,1042,122,1011,105,979,92,914,76,847,67,781,63,721,63,721,58,781,58,847,61,915,71,981,87,1014,101,1045,118,1097,155"/>
+<area shape="rect" id="Node000010" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a58756bc6216f5ebe1941a2102ae4cdf9" title="Add a host route to the routing tables." alt="" coords="771,230,978,270"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="1037,212,956,232,954,227,1035,206"/>
+<area shape="rect" id="Node000011" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a71dd2f4c78a96ecb7d86dd75fd6f78bd" title="Process Stub nodes." alt="" coords="771,368,978,408"/>
+<area shape="poly" id="edge14_Node000001_Node000011" title=" " alt="" coords="1102,218,1048,271,982,328,915,370,912,366,978,323,1044,267,1098,214"/>
+<area shape="rect" id="Node000003" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a910c2efcc40a79d4c062eb08ceb11522" title="Calculate the shortest path first (SPF) tree." alt="" coords="260,234,467,274"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="515,290,452,276,453,271,516,285"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="307,230,151,155,153,150,310,225"/>
+<area shape="rect" id="Node000006" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a042cca1bebf1189a3e40f0c3abcd5937" title="Copy constructor for a Global Routing Link State Advertisement." alt="" coords="539,176,697,216"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="782,192,697,196,697,190,782,187"/>
+<area shape="rect" id="Node000007" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#af09c521adba74e1538773cebf14b3929" title="Assignment operator for a Global Routing Link State Advertisement." alt="" coords="539,112,697,152"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="782,169,696,151,697,146,783,164"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="764,101,714,91,715,86,765,96"/>
+<area shape="poly" id="edge9_Node000009_Node000003" title=" " alt="" coords="528,96,516,103,474,134,436,170,381,235,377,232,432,166,470,130,513,98,525,92"/>
+<area shape="poly" id="edge12_Node000010_Node000003" title=" " alt="" coords="757,253,467,255,467,250,757,248"/>
+<area shape="poly" id="edge15_Node000011_Node000003" title=" " alt="" coords="757,388,638,375,575,363,514,345,478,331,444,312,389,276,392,271,447,308,481,326,516,340,576,358,639,370,758,383"/>
+<area shape="poly" id="edge16_Node000011_Node000011" title=" " alt="" coords="918,357,903,350,875,347,850,349,835,354,830,360,833,367,828,369,825,359,832,349,849,344,875,342,904,344,920,352"/>
+</map>

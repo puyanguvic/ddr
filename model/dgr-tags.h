@@ -38,7 +38,7 @@ public:
     static TypeId GetTypeId (void);
 
     // inherited function, no need to doc.
-    TypeId GetInstanceTypeId (void) const override;
+    TypeId GetInstanceTypeId (void) const;
     
     // inherited function, no need to doc.
     uint32_t GetSerializedSize (void) const override;

@@ -1,0 +1,36 @@
+<map id="ns3::DGRRouteManagerImpl::ProcessASExternals" name="ns3::DGRRouteManagerImpl::ProcessASExternals">
+<area shape="rect" id="Node000001" title="Process Autonomous Systems (AS) External LSA." alt="" coords="5,267,212,307"/>
+<area shape="poly" id="edge9_Node000001_Node000001" title=" " alt="" coords="60,267,57,257,65,248,82,242,109,240,139,243,156,250,154,255,138,248,109,245,83,247,68,252,62,258,65,265"/>
+<area shape="rect" id="Node000002" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#aa16092b325a84e50b90fcc5dd4e5bab2" title="Get the Advertising Router as defined by the OSPF spec." alt="" coords="561,5,731,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,265,137,227,168,179,209,131,233,109,259,91,293,73,329,58,405,37,480,26,547,21,547,26,480,31,406,42,331,63,295,78,261,96,236,113,213,135,173,182,142,230,122,268"/>
+<area shape="rect" id="Node000003" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#aea98bf4a660837344a4c802546249a21" title="Get a borrowed DGRVertex pointer to the specified child of &quot;this&quot; DGRVertex." alt="" coords="279,299,467,325"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="212,294,266,299,266,304,212,299"/>
+<area shape="rect" id="Node000004" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a0ec746b926044a548e4f3a09309322ce" title="Get the Link State ID as defined by the OSPF spec." alt="" coords="567,69,725,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="121,265,144,234,175,198,214,162,259,134,333,106,411,90,486,83,553,81,554,87,487,88,412,95,334,111,261,138,217,167,179,202,148,238,125,268"/>
+<area shape="rect" id="Node000005" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a5f9422d4f1f9df2f301cbd578e29ae7b" title="Get the Global Router Link State Advertisement returned by the Global Router represented by this DGRV..." alt="" coords="556,134,736,159"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="127,264,182,215,219,189,259,170,331,149,405,138,477,134,542,135,542,140,477,139,406,143,332,154,261,174,222,194,185,219,130,268"/>
+<area shape="rect" id="Node000006" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a504717b90b3fad088d133c2e71836eaf" title="Get the number of children of &quot;this&quot; DGRVertex." alt="" coords="264,349,483,374"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="167,304,261,333,298,343,297,348,259,339,166,309"/>
+<area shape="rect" id="Node000007" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a83acd923d19102c507faadb2f4e68f56" title="Get the Vertex ID field of a DGRVertex object." alt="" coords="541,441,751,466"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="171,264,241,248,324,241,368,243,410,250,451,263,488,285,504,300,513,318,515,355,517,392,523,409,537,426,544,432,540,436,533,430,518,412,511,393,510,355,507,319,500,304,485,289,449,268,409,255,367,248,324,246,242,254,172,269"/>
+<area shape="rect" id="Node000008" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a5999846daefbeb25a5265e80e3f3a078" title="Get the Vertex Type field of a DGRVertex object." alt="" coords="260,398,487,423"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="135,305,191,345,225,366,261,384,282,392,280,397,259,389,223,371,188,350,132,309"/>
+<area shape="rect" id="Node000009" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a6afcdedc8616fc035f8c9736d5679cd4" title="Check the value of the VertexProcessed flag." alt="" coords="281,448,466,488"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="127,305,181,369,219,404,261,434,273,440,271,445,259,438,216,408,178,372,123,309"/>
+<area shape="rect" id="Node000010" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#aa1718a99ec16d3ebf25949e3edac9168" title="Set the value of the VertexProcessed flag." alt="" coords="276,512,471,552"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="121,306,141,347,171,399,212,452,236,477,262,498,270,503,267,508,258,502,232,481,208,456,167,402,136,349,116,308"/>
+<area shape="rect" id="Node000011" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a4169b90db3aa5437191ecf42e484f567" title="Add an external route to the routing tables." alt="" coords="270,184,477,224"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="173,264,295,226,296,231,174,269"/>
+<area shape="poly" id="edge12_Node000011_Node000002" title=" " alt="" coords="389,182,448,120,489,85,533,55,546,48,549,53,536,60,492,89,452,123,393,186"/>
+<area shape="poly" id="edge13_Node000011_Node000004" title=" " alt="" coords="407,182,466,150,534,119,555,111,556,116,536,124,468,155,410,186"/>
+<area shape="poly" id="edge14_Node000011_Node000005" title=" " alt="" coords="469,181,571,160,572,165,470,187"/>
+<area shape="poly" id="edge19_Node000011_Node000007" title=" " alt="" coords="464,222,489,241,505,265,513,289,512,337,511,360,512,382,520,404,537,426,543,431,539,435,533,430,515,407,507,383,505,360,507,336,507,290,500,267,485,245,460,226"/>
+<area shape="rect" id="Node000012" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a3e3b9552f26b930f47dd069eaf0f3950" title="For a Network LSA, get the Network Mask field that precedes the list of attached routers." alt="" coords="535,184,757,224"/>
+<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="477,201,521,201,521,207,477,207"/>
+<area shape="rect" id="Node000013" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a691c41409919639a4aaea1443fa26ed5" title="Get the number of exit directions from root for reaching &#39;this&#39; vertex." alt="" coords="549,248,743,288"/>
+<area shape="poly" id="edge16_Node000011_Node000013" title=" " alt="" coords="460,221,548,242,547,248,459,227"/>
+<area shape="rect" id="Node000014" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a9e66f0b2ee7432156046e75672968138" title="Obtain a pair indicating the exit direction from the root." alt="" coords="541,312,751,352"/>
+<area shape="poly" id="edge17_Node000011_Node000014" title=" " alt="" coords="452,222,488,240,504,255,513,270,521,284,536,298,546,304,544,308,533,302,517,288,508,273,500,259,485,245,450,226"/>
+<area shape="rect" id="Node000015" href="$d0/d56/classns3_1_1_d_g_r_router.html#a87f63cac54a25accafa7c849a9aa0dbc" title="Get the specific Global Routing Protocol used." alt="" coords="543,376,749,416"/>
+<area shape="poly" id="edge18_Node000011_Node000015" title=" " alt="" coords="461,222,488,241,501,256,508,272,513,303,518,333,524,348,537,362,542,366,538,371,533,366,520,351,512,335,508,304,503,274,497,259,485,245,458,226"/>
+</map>

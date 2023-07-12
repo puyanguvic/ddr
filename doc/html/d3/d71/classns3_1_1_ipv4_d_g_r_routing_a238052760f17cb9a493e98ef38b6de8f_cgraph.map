@@ -1,0 +1,23 @@
+<map id="ns3::Ipv4DGRRouting::SendUnsolicitedUpdate" name="ns3::Ipv4DGRRouting::SendUnsolicitedUpdate">
+<area shape="rect" id="Node000001" title="Send Unsolicited neighbor status information Updates on all interfaces." alt="" coords="5,173,188,213"/>
+<area shape="poly" id="edge11_Node000001_Node000001" title=" " alt="" coords="50,173,47,163,55,154,71,148,97,146,126,149,142,156,139,161,124,154,97,151,72,153,58,158,52,164,55,172"/>
+<area shape="rect" id="Node000002" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#aff694e326df155e5a99a85d805b7d172" title="Sending Neighbor Status Updates on all interfaces." alt="" coords="236,173,463,213"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,190,222,190,222,195,188,195"/>
+<area shape="rect" id="Node000003" href="$d1/de8/classns3_1_1_dgr_header.html#a6004075aa81cee64dbf96c03e548f41e" title="Add a DGR Neighbor Status Entry (NSE) to the message." alt="" coords="543,5,724,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="364,171,422,105,463,69,509,40,529,31,531,36,512,44,467,74,426,109,368,174"/>
+<area shape="rect" id="Node000004" href="$d1/de8/classns3_1_1_dgr_header.html#a930203fc0319f7d6f2119079096168dc" title="Clear all the NSEs from the header." alt="" coords="535,55,732,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="374,170,434,129,471,107,510,89,533,81,534,86,512,94,473,112,437,133,377,175"/>
+<area shape="rect" id="Node000005" href="$d1/de8/classns3_1_1_dgr_header.html#ae7b3e6830add872de26fc78b1af52372" title="Get the number of NSEs includes in the message." alt="" coords="518,104,749,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="422,170,510,146,569,130,570,136,511,151,424,175"/>
+<area shape="rect" id="Node000006" href="$de/d1d/classns3_1_1_dgr_nse.html#a2b24a215ee38cb8ec0e5a8c6f5247e01" title="Get the serialized size of the packet." alt="" coords="804,180,1027,205"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="463,190,790,190,790,195,463,195"/>
+<area shape="rect" id="Node000007" href="$d1/de8/classns3_1_1_dgr_header.html#a2fcef3eb0f76c33b6d7c151dc4b939e3" title="Get the serialized size of the packet." alt="" coords="511,205,756,231"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="463,200,497,203,497,209,463,205"/>
+<area shape="rect" id="Node000008" href="$d1/de8/classns3_1_1_dgr_header.html#ae6c91c53e2bf12faf7f315e55a103412" title="Set the command." alt="" coords="524,255,743,280"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="412,210,511,239,553,249,552,254,510,245,410,215"/>
+<area shape="rect" id="Node000009" href="$de/d1d/classns3_1_1_dgr_nse.html#a2e993c84f83ec1bddf787351c5c41401" title="Set the interface." alt="" coords="539,304,727,329"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="378,211,438,251,512,289,539,298,537,303,510,294,435,255,375,215"/>
+<area shape="rect" id="Node000010" href="$de/d1d/classns3_1_1_dgr_nse.html#afed23298399afb86ba0bdf1f6ea19b7d" title=" " alt="" coords="551,353,715,379"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="368,211,427,275,467,310,512,338,539,349,537,354,509,343,464,314,423,279,364,215"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="756,204,790,201,790,207,757,210"/>
+</map>

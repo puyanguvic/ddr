@@ -1,0 +1,491 @@
+\doxysubsection{ns3\+::DGRRoute\+Manager\+LSDB Class Reference}
+\hypertarget{classns3_1_1_d_g_r_route_manager_l_s_d_b}{}\label{classns3_1_1_d_g_r_route_manager_l_s_d_b}\index{ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}}
+
+
+The Link State Data\+Base (LSDB) of the DGR Route Manager.  
+
+
+
+
+{\ttfamily \#include $<$dgr-\/route-\/manager-\/impl.\+h$>$}
+
+
+
+Collaboration diagram for ns3\+::DGRRoute\+Manager\+LSDB\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/db3/classns3_1_1_d_g_r_route_manager_l_s_d_b__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a44ed1e3d6976c509795b69ef3c5e1109}{DGRRoute\+Manager\+LSDB}} ()
+\begin{DoxyCompactList}\small\item\em Construct an empty Global Router Manager Link State Database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a5e87f265311abd433c6816ffd5799b05}{\texorpdfstring{$\sim$}{\string~}\+DGRRoute\+Manager\+LSDB}} ()
+\begin{DoxyCompactList}\small\item\em Destroy an empty Global Router Manager Link State Database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a4eccf46bb836fc866adeb57b38d6a493}{Get\+Ext\+LSA}} (uint32\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Look up the External Link State Advertisement associated with the given index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a232013c41890eb75496e0201fd0689d2}{Get\+LSA}} (Ipv4\+Address addr) const
+\begin{DoxyCompactList}\small\item\em Look up the Link State Advertisement associated with the given link state ID (address). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_ac6f9ca728688bae5adc4172dee708553}{Get\+LSABy\+Link\+Data}} (Ipv4\+Address addr) const
+\begin{DoxyCompactList}\small\item\em Look up the Link State Advertisement associated with the given link state ID (address). \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a5ceebeea8595e2788e490c2e56cc3405}{Get\+Num\+Ext\+LSAs}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of External Link State Advertisements. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a4cc94fab7e7699bd3b73e3e1bd874875}{Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Set all LSA flags to an initialized state, for SPF computation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_aef58a243bb62466470166e11cb165b97}{Insert}} (Ipv4\+Address addr, \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*}lsa)
+\begin{DoxyCompactList}\small\item\em Insert an IP address / Link State Advertisement pair into the Link State Database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ Ipv4\+Address, \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_aa73b59efc39f26442ff7f28fb1a9bb1b}{LSDBMap\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em container of IPv4 addresses / Link State Advertisements \end{DoxyCompactList}\item 
+typedef std\+::pair$<$ Ipv4\+Address, \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a549df0eab868504027879ddf77bda6dc}{LSDBPair\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em pair of IPv4 addresses / Link State Advertisements \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_ab7a2ab96f46da49e7e847551a5f284b7}{DGRRoute\+Manager\+LSDB}} (\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b}{DGRRoute\+Manager\+LSDB}} \&lsdb)
+\begin{DoxyCompactList}\small\item\em \doxylink{classns3_1_1_d_g_r_route_manager_l_s_d_b}{DGRRoute\+Manager\+LSDB} copy construction is disallowed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b}{DGRRoute\+Manager\+LSDB}} \& \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a0e78f7dc350622ace72700dfa71dec54}{operator=}} (\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b}{DGRRoute\+Manager\+LSDB}} \&lsdb)
+\begin{DoxyCompactList}\small\item\em The \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} copy assignment operator is disallowed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_aa73b59efc39f26442ff7f28fb1a9bb1b}{LSDBMap\+\_\+t}} \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a93d1000c04198cf2a7df2b93b54d0ff5}{m\+\_\+database}}
+\begin{DoxyCompactList}\small\item\em database of IPv4 addresses / Link State Advertisements \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a9620420bf4e991b6cbbaeca0c71098e0}{m\+\_\+extdatabase}}
+\begin{DoxyCompactList}\small\item\em database of External Link State Advertisements \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+The Link State Data\+Base (LSDB) of the DGR Route Manager. 
+
+Each node in the simulation participating in global routing has a \doxylink{classns3_1_1_d_g_r_router}{DGRRouter} interface. The primary job of this interface is to export Global Router Link State Advertisements (LSAs). These advertisements in turn contain a number of Global Router Link Records that describe the point to point links from the underlying node to other nodes (that will also export their own LSAs.
+
+This class implements a searchable database of LSAs gathered from every router in the simulation. 
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00581}{581}} of file \mbox{\hyperlink{dgr-route-manager-impl_8h_source}{dgr-\/route-\/manager-\/impl.\+h}}.
+
+
+
+\doxysubsubsection{Member Typedef Documentation}
+\Hypertarget{classns3_1_1_d_g_r_route_manager_l_s_d_b_aa73b59efc39f26442ff7f28fb1a9bb1b}\label{classns3_1_1_d_g_r_route_manager_l_s_d_b_aa73b59efc39f26442ff7f28fb1a9bb1b} 
+\index{ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}!LSDBMap\_t@{LSDBMap\_t}}
+\index{LSDBMap\_t@{LSDBMap\_t}!ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}}
+\doxyparagraph{\texorpdfstring{LSDBMap\_t}{LSDBMap\_t}}
+{\footnotesize\ttfamily typedef std\+::map$<$Ipv4\+Address, \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}}\texorpdfstring{$\ast$}{*}$>$ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_aa73b59efc39f26442ff7f28fb1a9bb1b}{ns3\+::\+DGRRoute\+Manager\+LSDB\+::\+LSDBMap\+\_\+t}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+container of IPv4 addresses / Link State Advertisements 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00680}{680}} of file \mbox{\hyperlink{dgr-route-manager-impl_8h_source}{dgr-\/route-\/manager-\/impl.\+h}}.
+
+\Hypertarget{classns3_1_1_d_g_r_route_manager_l_s_d_b_a549df0eab868504027879ddf77bda6dc}\label{classns3_1_1_d_g_r_route_manager_l_s_d_b_a549df0eab868504027879ddf77bda6dc} 
+\index{ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}!LSDBPair\_t@{LSDBPair\_t}}
+\index{LSDBPair\_t@{LSDBPair\_t}!ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}}
+\doxyparagraph{\texorpdfstring{LSDBPair\_t}{LSDBPair\_t}}
+{\footnotesize\ttfamily typedef std\+::pair$<$Ipv4\+Address, \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}}\texorpdfstring{$\ast$}{*}$>$ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a549df0eab868504027879ddf77bda6dc}{ns3\+::\+DGRRoute\+Manager\+LSDB\+::\+LSDBPair\+\_\+t}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+pair of IPv4 addresses / Link State Advertisements 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00681}{681}} of file \mbox{\hyperlink{dgr-route-manager-impl_8h_source}{dgr-\/route-\/manager-\/impl.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_d_g_r_route_manager_l_s_d_b_a44ed1e3d6976c509795b69ef3c5e1109}\label{classns3_1_1_d_g_r_route_manager_l_s_d_b_a44ed1e3d6976c509795b69ef3c5e1109} 
+\index{ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}!DGRRouteManagerLSDB@{DGRRouteManagerLSDB}}
+\index{DGRRouteManagerLSDB@{DGRRouteManagerLSDB}!ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}}
+\doxyparagraph{\texorpdfstring{DGRRouteManagerLSDB()}{DGRRouteManagerLSDB()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ns3\+::\+DGRRoute\+Manager\+LSDB\+::\+DGRRoute\+Manager\+LSDB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct an empty Global Router Manager Link State Database. 
+
+The database map composing the Link State Database is initialized in this constructor. 
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00424}{424}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+\Hypertarget{classns3_1_1_d_g_r_route_manager_l_s_d_b_a5e87f265311abd433c6816ffd5799b05}\label{classns3_1_1_d_g_r_route_manager_l_s_d_b_a5e87f265311abd433c6816ffd5799b05} 
+\index{ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}!````~DGRRouteManagerLSDB@{\texorpdfstring{$\sim$}{\string~}DGRRouteManagerLSDB}}
+\index{````~DGRRouteManagerLSDB@{\texorpdfstring{$\sim$}{\string~}DGRRouteManagerLSDB}!ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DGRRouteManagerLSDB()}{\string~DGRRouteManagerLSDB()}}
+{\footnotesize\ttfamily ns3\+::\+DGRRoute\+Manager\+LSDB\+::\texorpdfstring{$\sim$}{\string~}\+DGRRoute\+Manager\+LSDB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy an empty Global Router Manager Link State Database. 
+
+The database map is walked and all of the Link State Advertisements stored in the database are freed; then the database map itself is clear ()ed to release any remaining resources. 
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00432}{432}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00683}{m\+\_\+database}}, and \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00684}{m\+\_\+extdatabase}}.
+
+\Hypertarget{classns3_1_1_d_g_r_route_manager_l_s_d_b_ab7a2ab96f46da49e7e847551a5f284b7}\label{classns3_1_1_d_g_r_route_manager_l_s_d_b_ab7a2ab96f46da49e7e847551a5f284b7} 
+\index{ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}!DGRRouteManagerLSDB@{DGRRouteManagerLSDB}}
+\index{DGRRouteManagerLSDB@{DGRRouteManagerLSDB}!ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}}
+\doxyparagraph{\texorpdfstring{DGRRouteManagerLSDB()}{DGRRouteManagerLSDB()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ns3\+::\+DGRRoute\+Manager\+LSDB\+::\+DGRRoute\+Manager\+LSDB (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b}{DGRRoute\+Manager\+LSDB}} \&}]{lsdb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{classns3_1_1_d_g_r_route_manager_l_s_d_b}{DGRRoute\+Manager\+LSDB} copy construction is disallowed. 
+
+There\textquotesingle{}s no need for it and a compiler provided shallow copy would be wrong. 
+\begin{DoxyParams}{Parameters}
+{\em lsdb} & object to copy from \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_d_g_r_route_manager_l_s_d_b_a4eccf46bb836fc866adeb57b38d6a493}\label{classns3_1_1_d_g_r_route_manager_l_s_d_b_a4eccf46bb836fc866adeb57b38d6a493} 
+\index{ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}!GetExtLSA@{GetExtLSA}}
+\index{GetExtLSA@{GetExtLSA}!ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}}
+\doxyparagraph{\texorpdfstring{GetExtLSA()}{GetExtLSA()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*} ns3\+::\+DGRRoute\+Manager\+LSDB\+::\+Get\+Ext\+LSA (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Look up the External Link State Advertisement associated with the given index. 
+
+The external database map is searched for the given index and corresponding \doxylink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA} is returned.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the index associated with the LSA. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the Link State Advertisement. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00479}{479}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00684}{m\+\_\+extdatabase}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01456}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFCalculate()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d2b/classns3_1_1_d_g_r_route_manager_l_s_d_b_a4eccf46bb836fc866adeb57b38d6a493_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_route_manager_l_s_d_b_a232013c41890eb75496e0201fd0689d2}\label{classns3_1_1_d_g_r_route_manager_l_s_d_b_a232013c41890eb75496e0201fd0689d2} 
+\index{ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}!GetLSA@{GetLSA}}
+\index{GetLSA@{GetLSA}!ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}}
+\doxyparagraph{\texorpdfstring{GetLSA()}{GetLSA()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*} ns3\+::\+DGRRoute\+Manager\+LSDB\+::\+Get\+LSA (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{addr }\end{DoxyParamCaption}) const}
+
+
+
+Look up the Link State Advertisement associated with the given link state ID (address). 
+
+The database map is searched for the given IPV4 address and corresponding \doxylink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA} is returned.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA} 
+
+Ipv4\+Address 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & The IP address associated with the LSA. Typically the Router ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the Link State Advertisement for the router specified by the IP address addr. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00493}{493}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00683}{m\+\_\+database}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01374}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Check\+For\+Stub\+Node()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00696}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Initialize\+Routes()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01456}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFCalculate()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00861}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNext()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d2b/classns3_1_1_d_g_r_route_manager_l_s_d_b_a232013c41890eb75496e0201fd0689d2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_route_manager_l_s_d_b_ac6f9ca728688bae5adc4172dee708553}\label{classns3_1_1_d_g_r_route_manager_l_s_d_b_ac6f9ca728688bae5adc4172dee708553} 
+\index{ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}!GetLSAByLinkData@{GetLSAByLinkData}}
+\index{GetLSAByLinkData@{GetLSAByLinkData}!ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}}
+\doxyparagraph{\texorpdfstring{GetLSAByLinkData()}{GetLSAByLinkData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*} ns3\+::\+DGRRoute\+Manager\+LSDB\+::\+Get\+LSABy\+Link\+Data (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{addr }\end{DoxyParamCaption}) const}
+
+
+
+Look up the Link State Advertisement associated with the given link state ID (address). 
+
+This is a variation of the Get\+LSA call to allow the LSA to be found by matching addr with the Link\+Data field of the Transit\+Network link record.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a232013c41890eb75496e0201fd0689d2}{Get\+LSA} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & The IP address associated with the LSA. Typically the Router \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the Link State Advertisement for the router specified by the IP address addr. ID. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00511}{511}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8cc_source_l00089}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Get\+Link\+Data()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00262}{ns3\+::\+DGRRouting\+LSA\+::\+Get\+Link\+Record()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00103}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Get\+Link\+Type()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00255}{ns3\+::\+DGRRouting\+LSA\+::\+Get\+NLink\+Records()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00683}{m\+\_\+database}}, and \mbox{\hyperlink{dgr-router-interface_8h_source_l00065}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Transit\+Network}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00861}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNext()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d2b/classns3_1_1_d_g_r_route_manager_l_s_d_b_ac6f9ca728688bae5adc4172dee708553_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d2b/classns3_1_1_d_g_r_route_manager_l_s_d_b_ac6f9ca728688bae5adc4172dee708553_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_route_manager_l_s_d_b_a5ceebeea8595e2788e490c2e56cc3405}\label{classns3_1_1_d_g_r_route_manager_l_s_d_b_a5ceebeea8595e2788e490c2e56cc3405} 
+\index{ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}!GetNumExtLSAs@{GetNumExtLSAs}}
+\index{GetNumExtLSAs@{GetNumExtLSAs}!ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}}
+\doxyparagraph{\texorpdfstring{GetNumExtLSAs()}{GetNumExtLSAs()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRRoute\+Manager\+LSDB\+::\+Get\+Num\+Ext\+LSAs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of External Link State Advertisements. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+the number of External Link State Advertisements. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00486}{486}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00684}{m\+\_\+extdatabase}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01456}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFCalculate()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d2b/classns3_1_1_d_g_r_route_manager_l_s_d_b_a5ceebeea8595e2788e490c2e56cc3405_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_route_manager_l_s_d_b_a4cc94fab7e7699bd3b73e3e1bd874875}\label{classns3_1_1_d_g_r_route_manager_l_s_d_b_a4cc94fab7e7699bd3b73e3e1bd874875} 
+\index{ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}}
+\doxyparagraph{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRoute\+Manager\+LSDB\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set all LSA flags to an initialized state, for SPF computation. 
+
+This function walks the database and resets the status flags of all of the contained Link State Advertisements to LSA\+\_\+\+SPF\+\_\+\+NOT\+\_\+\+EXPLORED. This is done prior to each SPF calculation to reset the state of the \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} structures that will reference the LSAs during the calculation.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA} 
+
+\doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00453}{453}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00274}{ns3\+::\+DGRRouting\+LSA\+::\+LSA\+\_\+\+SPF\+\_\+\+NOT\+\_\+\+EXPLORED}}, \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00683}{m\+\_\+database}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00383}{ns3\+::\+DGRRouting\+LSA\+::\+Set\+Status()}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01456}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFCalculate()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d2b/classns3_1_1_d_g_r_route_manager_l_s_d_b_a4cc94fab7e7699bd3b73e3e1bd874875_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d2b/classns3_1_1_d_g_r_route_manager_l_s_d_b_a4cc94fab7e7699bd3b73e3e1bd874875_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_route_manager_l_s_d_b_aef58a243bb62466470166e11cb165b97}\label{classns3_1_1_d_g_r_route_manager_l_s_d_b_aef58a243bb62466470166e11cb165b97} 
+\index{ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}!Insert@{Insert}}
+\index{Insert@{Insert}!ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}}
+\doxyparagraph{\texorpdfstring{Insert()}{Insert()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRoute\+Manager\+LSDB\+::\+Insert (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{addr,  }\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*}}]{lsa }\end{DoxyParamCaption})}
+
+
+
+Insert an IP address / Link State Advertisement pair into the Link State Database. 
+
+The IPV4 address and the \doxylink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA} given as parameters are converted to an STL pair and are inserted into the database map.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA} 
+
+Ipv4\+Address 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & The IP address associated with the LSA. Typically the Router ID. \\
+\hline
+{\em lsa} & A pointer to the Link State Advertisement for the router. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00465}{465}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00266}{ns3\+::\+DGRRouting\+LSA\+::\+ASExternal\+LSAs}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00287}{ns3\+::\+DGRRouting\+LSA\+::\+Get\+LSType()}}, \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00683}{m\+\_\+database}}, and \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00684}{m\+\_\+extdatabase}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00614}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Build\+DGRRouting\+Database()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d2b/classns3_1_1_d_g_r_route_manager_l_s_d_b_aef58a243bb62466470166e11cb165b97_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d2b/classns3_1_1_d_g_r_route_manager_l_s_d_b_aef58a243bb62466470166e11cb165b97_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_route_manager_l_s_d_b_a0e78f7dc350622ace72700dfa71dec54}\label{classns3_1_1_d_g_r_route_manager_l_s_d_b_a0e78f7dc350622ace72700dfa71dec54} 
+\index{ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}!operator=@{operator=}}
+\index{operator=@{operator=}!ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b}{DGRRoute\+Manager\+LSDB}} \& ns3\+::\+DGRRoute\+Manager\+LSDB\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b}{DGRRoute\+Manager\+LSDB}} \&}]{lsdb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} copy assignment operator is disallowed. 
+
+There\textquotesingle{}s no need for it and a compiler provided shallow copy would be wrong. 
+\begin{DoxyParams}{Parameters}
+{\em lsdb} & object to copy from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the copied object 
+\end{DoxyReturn}
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{classns3_1_1_d_g_r_route_manager_l_s_d_b_a93d1000c04198cf2a7df2b93b54d0ff5}\label{classns3_1_1_d_g_r_route_manager_l_s_d_b_a93d1000c04198cf2a7df2b93b54d0ff5} 
+\index{ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}!m\_database@{m\_database}}
+\index{m\_database@{m\_database}!ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}}
+\doxyparagraph{\texorpdfstring{m\_database}{m\_database}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_aa73b59efc39f26442ff7f28fb1a9bb1b}{LSDBMap\+\_\+t}} ns3\+::\+DGRRoute\+Manager\+LSDB\+::m\+\_\+database\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+database of IPv4 addresses / Link State Advertisements 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00683}{683}} of file \mbox{\hyperlink{dgr-route-manager-impl_8h_source}{dgr-\/route-\/manager-\/impl.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00432}{\texorpdfstring{$\sim$}{\string~}\+DGRRoute\+Manager\+LSDB()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00493}{Get\+LSA()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00511}{Get\+LSABy\+Link\+Data()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00453}{Initialize()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00465}{Insert()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_route_manager_l_s_d_b_a9620420bf4e991b6cbbaeca0c71098e0}\label{classns3_1_1_d_g_r_route_manager_l_s_d_b_a9620420bf4e991b6cbbaeca0c71098e0} 
+\index{ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}!m\_extdatabase@{m\_extdatabase}}
+\index{m\_extdatabase@{m\_extdatabase}!ns3::DGRRouteManagerLSDB@{ns3::DGRRouteManagerLSDB}}
+\doxyparagraph{\texorpdfstring{m\_extdatabase}{m\_extdatabase}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}}\texorpdfstring{$\ast$}{*}$>$ ns3\+::\+DGRRoute\+Manager\+LSDB\+::m\+\_\+extdatabase\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+database of External Link State Advertisements 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00684}{684}} of file \mbox{\hyperlink{dgr-route-manager-impl_8h_source}{dgr-\/route-\/manager-\/impl.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00432}{\texorpdfstring{$\sim$}{\string~}\+DGRRoute\+Manager\+LSDB()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00479}{Get\+Ext\+LSA()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00486}{Get\+Num\+Ext\+LSAs()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00465}{Insert()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{dgr-route-manager-impl_8h}{dgr-\/route-\/manager-\/impl.\+h}}\item 
+model/\mbox{\hyperlink{dgr-route-manager-impl_8cc}{dgr-\/route-\/manager-\/impl.\+cc}}\end{DoxyCompactItemize}

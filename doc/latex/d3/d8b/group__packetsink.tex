@@ -1,0 +1,22 @@
+\doxysubsection{Packet\+Sink}
+\hypertarget{group__packetsink}{}\label{group__packetsink}\index{PacketSink@{PacketSink}}
+
+
+This application was written to complement On\+Off\+Application, but it is more general so a Packet\+Sink name was selected.  
+
+
+\doxysubsubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classns3_1_1_d_g_r_application_helper}{ns3\+::\+DGRApplication\+Helper}}
+\begin{DoxyCompactList}\small\item\em A helper to make it easier to instantiate an ns3\+::\+Packet\+Sink\+Application on a set of nodes. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink}{ns3\+::\+DGRPacket\+Sink}}
+\begin{DoxyCompactList}\small\item\em Receive and consume traffic generated to an IP address and port. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classns3_1_1_d_g_r_sink_helper}{ns3\+::\+DGRSink\+Helper}}
+\begin{DoxyCompactList}\small\item\em A helper to make it easier to instantiate an ns3\+::\+Packet\+Sink\+Application on a set of nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+This application was written to complement On\+Off\+Application, but it is more general so a Packet\+Sink name was selected. 
+
+Functionally it is important to use in multicast situations, so that reception of the layer-\/2 multicast frames of interest are enabled, but it is also useful for unicast as an example of how you can write something simple to receive packets at the application layer. Also, if an IP stack generates ICMP Port Unreachable errors, receiving applications will be needed. 

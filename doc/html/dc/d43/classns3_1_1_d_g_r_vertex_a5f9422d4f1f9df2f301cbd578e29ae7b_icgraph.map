@@ -1,0 +1,38 @@
+<map id="ns3::DGRVertex::GetLSA" name="ns3::DGRVertex::GetLSA">
+<area shape="rect" id="Node000001" title="Get the Global Router Link State Advertisement returned by the Global Router represented by this DGRV..." alt="" coords="1279,280,1459,305"/>
+<area shape="rect" id="Node000002" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a3b798959aeda8a76373705151497692e" title="Compute routes using a Dijkstra SPF computation and populate per&#45;node forwarding tables." alt="" coords="5,57,212,97"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1359,267,1344,219,1318,160,1281,100,1257,75,1229,54,1182,28,1140,14,1101,9,1062,9,978,21,930,26,874,29,617,29,509,32,400,40,212,63,212,58,400,35,508,27,617,23,874,23,929,21,978,15,1061,4,1101,3,1141,9,1184,23,1232,49,1260,71,1285,97,1323,157,1349,217,1364,266"/>
+<area shape="rect" id="Node000003" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#ad51d5dbbd85120ad79227351fc16c9f4" title="Process Autonomous Systems (AS) External LSA." alt="" coords="769,519,976,559"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1365,320,1351,372,1326,436,1309,469,1287,500,1262,527,1232,550,1196,567,1157,578,1118,583,1077,584,1000,576,935,562,936,557,1001,571,1078,579,1117,578,1156,572,1194,562,1229,545,1258,523,1283,496,1304,466,1321,434,1346,370,1360,319"/>
+<area shape="rect" id="Node000004" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a910c2efcc40a79d4c062eb08ceb11522" title="Calculate the shortest path first (SPF) tree." alt="" coords="260,293,467,333"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="1317,278,1177,239,1083,218,977,200,863,189,746,186,629,195,571,205,515,219,478,234,444,253,389,295,385,290,441,249,476,229,514,214,570,200,628,190,746,181,864,183,977,195,1084,213,1178,234,1319,273"/>
+<area shape="rect" id="Node000005" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a4169b90db3aa5437191ecf42e484f567" title="Add an external route to the routing tables." alt="" coords="1024,495,1231,535"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="1357,319,1309,397,1274,441,1232,479,1199,498,1197,493,1229,474,1270,437,1305,394,1352,317"/>
+<area shape="rect" id="Node000006" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a1ac857e005409b302b1bd2fb1180af0a" title="Search for a link between two vertices." alt="" coords="1024,63,1231,103"/>
+<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="1351,269,1302,198,1268,158,1229,124,1196,106,1198,101,1232,120,1272,155,1307,194,1355,266"/>
+<area shape="rect" id="Node000007" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#aa10b6b58af69a3da1d8478d50e78bef8" title="Calculate nexthop from root through V (parent) to vertex W (destination) with given distance from roo..." alt="" coords="769,114,976,154"/>
+<area shape="poly" id="edge23_Node000001_Node000007" title=" " alt="" coords="1347,271,1297,220,1265,195,1230,175,1167,153,1100,140,1036,134,976,132,976,126,1036,128,1101,135,1168,148,1232,170,1268,191,1301,216,1351,267"/>
+<area shape="rect" id="Node000008" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#ab573904f9f357e2b802b1bbdcdc3247d" title="Examine the links in v&#39;s LSA and update the list of candidates with any vertices not already on the l..." alt="" coords="515,229,721,269"/>
+<area shape="poly" id="edge22_Node000001_Node000008" title=" " alt="" coords="1265,286,1230,283,954,267,721,256,722,250,955,261,1231,278,1265,281"/>
+<area shape="rect" id="Node000009" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a58756bc6216f5ebe1941a2102ae4cdf9" title="Add a host route to the routing tables." alt="" coords="515,293,721,333"/>
+<area shape="poly" id="edge14_Node000001_Node000009" title=" " alt="" coords="1265,298,722,313,722,307,1265,293"/>
+<area shape="rect" id="Node000010" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a403b832078dcb8a4facb2ae6c7b2ce15" title="Add a stub to the routing tables." alt="" coords="1024,330,1231,370"/>
+<area shape="poly" id="edge16_Node000001_Node000010" title=" " alt="" coords="1302,311,1213,333,1211,327,1301,306"/>
+<area shape="rect" id="Node000011" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a71dd2f4c78a96ecb7d86dd75fd6f78bd" title="Process Stub nodes." alt="" coords="769,354,976,394"/>
+<area shape="poly" id="edge24_Node000001_Node000011" title=" " alt="" coords="1345,316,1296,354,1265,371,1231,385,1166,398,1100,403,1035,401,976,395,976,390,1035,396,1099,397,1166,393,1230,379,1262,367,1293,349,1342,312"/>
+<area shape="rect" id="Node000012" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a80ce56eb81842ac31afccfdd698d1d73" title="Add a transit to the routing tables." alt="" coords="515,422,721,462"/>
+<area shape="poly" id="edge20_Node000001_Node000012" title=" " alt="" coords="1350,318,1300,366,1268,390,1232,408,1166,430,1098,446,1029,456,960,462,830,464,721,457,722,452,830,459,959,457,1028,451,1097,441,1165,425,1230,404,1265,385,1297,362,1346,314"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="916,508,901,501,873,498,848,500,833,505,828,511,831,518,826,520,823,510,830,500,847,495,873,493,902,495,918,503"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="755,539,697,533,635,521,572,502,513,476,468,444,429,405,397,366,375,334,379,331,401,363,433,402,471,440,516,472,574,497,636,516,698,527,756,534"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="328,285,130,99,133,95,332,281"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="1011,529,977,532,976,527,1010,524"/>
+<area shape="poly" id="edge10_Node000006_Node000002" title=" " alt="" coords="1010,85,212,80,212,75,1010,80"/>
+<area shape="poly" id="edge11_Node000006_Node000007" title=" " alt="" coords="1014,109,974,117,973,111,1013,103"/>
+<area shape="poly" id="edge12_Node000007_Node000008" title=" " alt="" coords="816,162,664,231,662,226,813,157"/>
+<area shape="poly" id="edge13_Node000008_Node000004" title=" " alt="" coords="525,275,444,295,443,290,524,269"/>
+<area shape="poly" id="edge15_Node000009_Node000004" title=" " alt="" coords="501,315,467,315,467,310,501,310"/>
+<area shape="poly" id="edge17_Node000010_Node000011" title=" " alt="" coords="1011,364,977,367,976,362,1010,358"/>
+<area shape="poly" id="edge18_Node000011_Node000004" title=" " alt="" coords="755,371,639,362,514,347,449,335,450,330,515,342,639,357,756,366"/>
+<area shape="poly" id="edge19_Node000011_Node000011" title=" " alt="" coords="916,342,901,335,873,333,848,335,833,339,828,345,831,353,826,354,823,344,830,335,847,329,873,327,902,330,918,337"/>
+<area shape="poly" id="edge21_Node000012_Node000004" title=" " alt="" coords="564,418,513,392,402,335,405,330,516,388,566,413"/>
+</map>

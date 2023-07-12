@@ -1,0 +1,10 @@
+<map id="ns3::DGRVertex::ClearVertexProcessed" name="ns3::DGRVertex::ClearVertexProcessed">
+<area shape="rect" id="Node000001" title="Clear the value of the VertexProcessed flag." alt="" coords="5,47,213,87"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="61,48,58,38,66,28,83,23,109,21,140,24,156,31,154,36,138,29,109,26,84,28,69,33,63,39,66,46"/>
+<area shape="rect" id="Node000002" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#aea98bf4a660837344a4c802546249a21" title="Get a borrowed DGRVertex pointer to the specified child of &quot;this&quot; DGRVertex." alt="" coords="277,5,465,31"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="213,45,289,31,290,36,214,50"/>
+<area shape="rect" id="Node000003" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a504717b90b3fad088d133c2e71836eaf" title="Get the number of children of &quot;this&quot; DGRVertex." alt="" coords="261,55,480,80"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="214,65,248,65,248,70,214,70"/>
+<area shape="rect" id="Node000004" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#aa1718a99ec16d3ebf25949e3edac9168" title="Set the value of the VertexProcessed flag." alt="" coords="273,105,468,145"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="202,85,266,99,265,104,201,90"/>
+</map>

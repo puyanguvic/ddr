@@ -1,0 +1,17 @@
+<map id="ns3::DGRTcpApplication::StartApplication" name="ns3::DGRTcpApplication::StartApplication">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,99,180,139"/>
+<area shape="rect" id="Node000002" href="$d1/d1b/classns3_1_1_d_g_r_tcp_application.html#a9a1ef27f22bee68f71fbd609695a4037" title="Connection Failed (called by Socket through a callback)" alt="" coords="228,5,403,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,96,227,55,244,48,246,53,229,60,137,101"/>
+<area shape="rect" id="Node000003" href="$d1/d1b/classns3_1_1_d_g_r_tcp_application.html#a240d181619fe26fa934e3e152c153696" title="Connection Succeeded (called by Socket through a callback)" alt="" coords="228,69,403,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="180,105,214,100,215,105,181,110"/>
+<area shape="rect" id="Node000004" href="$d1/d1b/classns3_1_1_d_g_r_tcp_application.html#a5d97018a7a55030432c7bd4941439224" title="Send data until the L4 transmission buffer is full." alt="" coords="451,127,625,167"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="181,121,437,138,437,143,180,127"/>
+<area shape="rect" id="Node000007" href="$d1/d1b/classns3_1_1_d_g_r_tcp_application.html#ad6e628629f8e191964b873fed001a902" title="Send more data as soon as some has been transmitted." alt="" coords="228,184,403,224"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="147,136,251,177,249,181,145,141"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="394,107,447,121,446,126,393,112"/>
+<area shape="rect" id="Node000005" href="$d0/db3/classns3_1_1_budget_tag.html#a42dfab1331f4f1bb1953c1ec972ab0bb" title="Set the tag&#39;s budget." alt="" coords="673,109,869,134"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="626,135,660,131,660,136,626,140"/>
+<area shape="rect" id="Node000006" href="$d5/d77/classns3_1_1_flag_tag.html#a92c961c9c9e46744bf73cf82399e68df" title="Set the tag&#39;s flag." alt="" coords="691,158,851,183"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="626,153,678,158,678,164,626,158"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="393,181,446,168,447,173,394,187"/>
+</map>

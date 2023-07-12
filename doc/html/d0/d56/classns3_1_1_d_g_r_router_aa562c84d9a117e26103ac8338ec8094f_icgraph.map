@@ -1,0 +1,5 @@
+<map id="ns3::DGRRouter::ProcessBroadcastLink" name="ns3::DGRRouter::ProcessBroadcastLink">
+<area shape="rect" id="Node000001" title="Process a generic broadcast link." alt="" coords="276,5,551,31"/>
+<area shape="rect" id="Node000002" href="$d0/d56/classns3_1_1_d_g_r_router.html#ac119cda89d816da90186bb617c710c25" title="Walk the connected channels, discover the adjacent routers and build the associated number of Global ..." alt="" coords="5,5,228,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="262,21,228,21,228,15,262,15"/>
+</map>

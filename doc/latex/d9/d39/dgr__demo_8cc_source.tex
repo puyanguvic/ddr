@@ -71,12 +71,12 @@
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00067}00067\ \ \ InternetStackHelper\ stack;}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00068}00068\ }
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00069}00069\ \ \ \textcolor{comment}{//\ Setup\ Routing\ algorithm}}
-\DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00070}00070\ \ \ Ipv4DGRRoutingHelper\ dgr;}
+\DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00070}00070\ \ \ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_helper}{Ipv4DGRRoutingHelper}}\ dgr;}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00071}00071\ \ \ Ipv4ListRoutingHelper\ list;}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00072}00072\ \ \ list.Add\ (dgr,\ 10);}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00073}00073\ \ \ InternetStackHelper\ internet;}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00074}00074\ \ \ internet.SetRoutingHelper\ (list);}
-\DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00075}00075\ \ \ internet.Install\ (nodes);}
+\DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00075}00075\ \ \ internet.\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_helper_ad05361fcc3a278d151e9c98fa815552d}{Install}}\ (nodes);}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00076}00076\ }
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00077}00077\ \ \ NS\_LOG\_INFO\ (\textcolor{stringliteral}{"{}creating\ ipv4\ addresses"{}});}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00078}00078\ \ \ Ipv4AddressHelper\ address;}
@@ -117,12 +117,12 @@
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00113}00113\ \ \ \ \ \ \ address.NewNetwork\ ();}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00114}00114\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00115}00115\ }
-\DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00116}00116\ \ \ Ipv4DGRRoutingHelper::PopulateRoutingTables\ ();}
+\DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00116}00116\ \ \ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_helper_a67901bf47957ab420b596cdb38a38882}{Ipv4DGRRoutingHelper::PopulateRoutingTables}}\ ();}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00117}00117\ }
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00118}00118\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00119}00119\ \ \ \textcolor{comment}{//\ -\/-\/\ Print\ routing\ table}}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00120}00120\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00121}00121\ \ \ Ipv4DGRRoutingHelper\ d;}
+\DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00121}00121\ \ \ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_helper}{Ipv4DGRRoutingHelper}}\ d;}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00122}00122\ \ \ Ptr<OutputStreamWrapper>\ routingStream\ =\ Create<OutputStreamWrapper>}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00123}00123\ \ \ (topo\ +\ \textcolor{stringliteral}{"{}\_"{}}\ +\ \mbox{\hyperlink{dgr__demo_8cc_adf12170ede4e9e3a5cc1339bfd5809e0}{expName}}\ +\ \textcolor{stringliteral}{"{}.routes"{}},\ std::ios::out);}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00124}00124\ \ \ d.PrintRoutingTableAllAt\ (Seconds\ (0),\ routingStream);}
@@ -159,14 +159,14 @@
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00155}00155\ \ \ Ipv4InterfaceAddress\ iaddrTcpSink\ =\ ipv4TcpSink-\/>GetAddress\ (1,0);}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00156}00156\ \ \ Ipv4Address\ ipv4AddrTcpSink\ =\ iaddrTcpSink.GetLocal\ ();}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00157}00157\ }
-\DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00158}00158\ \ \ DGRSinkHelper\ sinkHelper\ (\textcolor{stringliteral}{"{}ns3::TcpSocketFactory"{}},}
+\DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00158}00158\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_sink_helper}{DGRSinkHelper}}\ sinkHelper\ (\textcolor{stringliteral}{"{}ns3::TcpSocketFactory"{}},}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InetSocketAddress\ (Ipv4Address::GetAny\ (),\ tcpPort));}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00160}00160\ \ \ ApplicationContainer\ sinkApp\ =\ sinkHelper.Install\ (nodes.Get\ (tcpSink));}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00161}00161\ \ \ sinkApp.Start\ (Seconds\ (0.0));}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00162}00162\ \ \ sinkApp.Stop\ (Seconds\ (20.0));}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00163}00163\ \ \ }
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00164}00164\ \ \ \textcolor{comment}{//\ tcp\ send}}
-\DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00165}00165\ \ \ DGRTcpAppHelper\ sourceHelper\ (\textcolor{stringliteral}{"{}ns3::TcpSocketFactory"{}},}
+\DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00165}00165\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper}{DGRTcpAppHelper}}\ sourceHelper\ (\textcolor{stringliteral}{"{}ns3::TcpSocketFactory"{}},}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InetSocketAddress\ (ipv4AddrTcpSink,\ tcpPort));}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00167}00167\ \ \ sourceHelper.SetAttribute\ (\textcolor{stringliteral}{"{}MaxBytes"{}},\ UintegerValue\ (7500000));}
 \DoxyCodeLine{\Hypertarget{dgr__demo_8cc_source_l00168}00168\ \ \ sourceHelper.SetAttribute\ (\textcolor{stringliteral}{"{}Budget"{}},\ UintegerValue\ (100));}

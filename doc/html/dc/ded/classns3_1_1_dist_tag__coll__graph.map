@@ -1,0 +1,7 @@
+<map id="ns3::DistTag" name="ns3::DistTag">
+<area shape="rect" id="Node000001" title="This class implements a tag that carries the distance to destination node of a packet to the IP layer..." alt="" coords="18,93,119,119"/>
+<area shape="rect" id="Node000002" href="$d0/d57/class_tag.html" title=" " alt="" coords="5,5,49,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="41,42,65,92,61,94,36,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="74,5,149,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="102,44,77,94,72,92,97,42"/>
+</map>

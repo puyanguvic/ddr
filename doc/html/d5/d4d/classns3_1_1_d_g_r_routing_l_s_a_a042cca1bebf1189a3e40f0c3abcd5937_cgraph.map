@@ -1,0 +1,23 @@
+<map id="ns3::DGRRoutingLSA::DGRRoutingLSA" name="ns3::DGRRoutingLSA::DGRRoutingLSA">
+<area shape="rect" id="Node000001" title="Copy constructor for a Global Routing Link State Advertisement." alt="" coords="5,261,163,301"/>
+<area shape="rect" id="Node000002" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a206ff392d0561c4b244a8c6fe8d824ab" title="Copy any Global Routing Link Records in a given Global Routing Link State Advertisement to the curren..." alt="" coords="211,229,368,269"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,266,197,261,198,266,164,272"/>
+<area shape="rect" id="Node000011" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a658f443f5c9022b0e979b70076dd3b16" title="Check to see if the list of Global Routing Link Records present in the Global Routing Link State Adve..." alt="" coords="211,293,368,333"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="164,291,198,296,197,302,163,296"/>
+<area shape="rect" id="Node000003" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#a97080a8409f77898f4485230be0be5e4" title="Get the Link Data field of the Global Routing Link Record." alt="" coords="416,5,620,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="296,228,312,191,338,145,372,97,414,55,422,50,425,54,418,59,376,100,342,148,317,194,301,230"/>
+<area shape="rect" id="Node000004" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#a9fe6e135674ef321bc11b48f90071857" title="Get the Link ID field of the Global Routing Link Record." alt="" coords="416,69,620,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="303,227,349,174,380,144,415,119,426,113,429,117,417,124,384,148,353,177,307,231"/>
+<area shape="rect" id="Node000005" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#ab9148eaf7a9d088a397e66164c1f30b9" title="Get the Link Type field of the Global Routing Link Record." alt="" coords="416,133,620,173"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="325,227,415,183,435,175,437,180,417,188,327,232"/>
+<area shape="rect" id="Node000006" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#af96cb9a05b3d95d14b6af29e058e3712" title="Get the Metric Data field of the Global Routing Link Record." alt="" coords="416,197,620,237"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="368,236,402,231,403,236,369,241"/>
+<area shape="rect" id="Node000007" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#a06083e776955f21fe1fd4e4927cf0b24" title="Set the Link Data field of the Global Routing Link Record." alt="" coords="416,261,620,301"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="369,258,403,263,402,268,368,263"/>
+<area shape="rect" id="Node000008" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#a203541f10ca13f9cfb1987fbbff4416b" title="Set the Link ID field of the Global Routing Link Record." alt="" coords="416,325,620,365"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="344,267,369,279,393,295,417,311,433,318,431,323,415,316,390,300,367,284,342,272"/>
+<area shape="rect" id="Node000009" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#aacc16a8566cd389fd974cbeb8dde6ddd" title="Set the Link Type field of the Global Routing Link Record." alt="" coords="416,389,620,429"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="353,267,370,279,388,305,394,329,401,353,418,375,423,380,420,384,414,379,396,355,389,331,383,307,366,283,350,272"/>
+<area shape="rect" id="Node000010" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#ac6b9632b024b3799a25209f1392c1ab8" title="Set the Metric Data field of the Global Routing Link Record." alt="" coords="416,453,620,493"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="356,267,370,280,385,301,392,322,394,362,396,401,403,420,418,440,422,443,418,447,414,443,399,423,391,402,388,362,387,323,380,303,366,283,352,272"/>
+</map>

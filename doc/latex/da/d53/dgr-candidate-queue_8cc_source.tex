@@ -24,31 +24,31 @@
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <iostream>}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}ns3/log.h"{}}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}ns3/assert.h"{}}}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}dgr-\/candidate-\/queue.h"{}}}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}dgr-\/route-\/manager-\/impl.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dgr-candidate-queue_8h}{dgr-\/candidate-\/queue.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dgr-route-manager-impl_8h}{dgr-\/route-\/manager-\/impl.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00025}00025\ }
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00026}00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacens3}{ns3}}\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00027}00027\ }
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00028}\mbox{\hyperlink{namespacens3_a9aa5ea1b8d98d2751ca06a411e0f1b08}{00028}}\ \mbox{\hyperlink{namespacens3_adde9ed23eff577cdfec10d85035e32eb}{NS\_LOG\_COMPONENT\_DEFINE}}\ (\textcolor{stringliteral}{"{}DGRCandidateQueue"{}});}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00029}00029\ }
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00037}\mbox{\hyperlink{namespacens3_a7c0f3fcc4f4363c5458911cded1af4b6}{00037}}\ std::ostream\&}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00038}00038\ \mbox{\hyperlink{namespacens3_a7c0f3fcc4f4363c5458911cded1af4b6}{operator<<\ }}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ DGRVertex::VertexType\&\ t)}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00038}00038\ \mbox{\hyperlink{namespacens3_a7c0f3fcc4f4363c5458911cded1af4b6}{operator<<\ }}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96cce}{DGRVertex::VertexType}}\&\ t)}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00039}00039\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00040}00040\ \ \ \textcolor{keywordflow}{switch}\ (t)}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00041}00041\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{case}\ DGRVertex::VertexRouter:\ \ os\ <<\ \textcolor{stringliteral}{"{}router"{}};\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{case}\ DGRVertex::VertexNetwork:\ os\ <<\ \textcolor{stringliteral}{"{}network"{}};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96ccea0d137433dfa77b24862a5f2c116da286}{DGRVertex::VertexRouter}}:\ \ os\ <<\ \textcolor{stringliteral}{"{}router"{}};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96ccea4cb6ddc9d2395166b87840984bc01880}{DGRVertex::VertexNetwork}}:\ os\ <<\ \textcolor{stringliteral}{"{}network"{}};\ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{default}:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}unknown"{}};\ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00045}00045\ \ \ \ \ \};}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00046}00046\ \ \ \textcolor{keywordflow}{return}\ os;}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00047}00047\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00049}\mbox{\hyperlink{namespacens3_a7e46b7781873ac26626119a714c730b4}{00049}}\ std::ostream\&\ }
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00050}00050\ \mbox{\hyperlink{namespacens3_a7c0f3fcc4f4363c5458911cded1af4b6}{operator<<\ }}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ DGRCandidateQueue\&\ q)}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00049}\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a428325dcf2c8e3cf0886db75647b7795}{00049}}\ std::ostream\&\ }
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00050}00050\ \mbox{\hyperlink{namespacens3_a7c0f3fcc4f4363c5458911cded1af4b6}{operator<<\ }}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue}{DGRCandidateQueue}}\&\ q)}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00051}00051\ \{}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00052}00052\ \ \ \textcolor{keyword}{typedef}\ DGRCandidateQueue::DGRCandidateList\_t\ List\_t;}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00052}00052\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a8e75c8bcd203b33ac721416e2640c59f}{DGRCandidateQueue::DGRCandidateList\_t}}\ List\_t;}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00053}00053\ \ \ \textcolor{keyword}{typedef}\ List\_t::const\_iterator\ CIter\_t;}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00054}00054\ \ \ \textcolor{keyword}{const}\ DGRCandidateQueue::DGRCandidateList\_t\&\ list\ =\ q.m\_candidates;}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00054}00054\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a8e75c8bcd203b33ac721416e2640c59f}{DGRCandidateQueue::DGRCandidateList\_t}}\&\ list\ =\ q.\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a2d91aa78fea568afa265cdbed2f214c4}{m\_candidates}};}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00055}00055\ }
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00056}00056\ \ \ os\ <<\ \textcolor{stringliteral}{"{}***\ CandidateQueue\ Begin\ (<id,\ distance,\ LSA-\/type>)\ ***"{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00057}00057\ \ \ \textcolor{keywordflow}{for}\ (CIter\_t\ iter\ =\ list.begin\ ();\ iter\ !=\ list.end\ ();\ iter++)}
@@ -62,92 +62,92 @@
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00065}00065\ \ \ \textcolor{keywordflow}{return}\ os;}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00066}00066\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00067}00067\ }
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00068}00068\ DGRCandidateQueue::DGRCandidateQueue()}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00068}\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a8ce369fec28b2ef22fe68c3dca929476}{00068}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a8ce369fec28b2ef22fe68c3dca929476}{DGRCandidateQueue::DGRCandidateQueue}}()}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00069}00069\ \ \ :\ m\_candidates\ ()}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00070}00070\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00071}00071\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00072}00072\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00073}00073\ }
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00074}00074\ DGRCandidateQueue::\string~DGRCandidateQueue()}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00074}\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a781c132e67fec6534adb3e588e938034}{00074}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a781c132e67fec6534adb3e588e938034}{DGRCandidateQueue::\string~DGRCandidateQueue}}()}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00075}00075\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00076}00076\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00077}00077\ \ \ Clear\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00077}00077\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_adeeaf9c5c6e52bf6532da18cad7a1a13}{Clear}}\ ();}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00078}00078\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00079}00079\ }
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00080}00080\ \textcolor{keywordtype}{void}}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00081}00081\ DGRCandidateQueue::Clear\ (\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00081}\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_adeeaf9c5c6e52bf6532da18cad7a1a13}{00081}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_adeeaf9c5c6e52bf6532da18cad7a1a13}{DGRCandidateQueue::Clear}}\ (\textcolor{keywordtype}{void})}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00082}00082\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00083}00083\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00084}00084\ \ \ \textcolor{keywordflow}{while}\ (!m\_candidates.empty\ ())}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00084}00084\ \ \ \textcolor{keywordflow}{while}\ (!\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a2d91aa78fea568afa265cdbed2f214c4}{m\_candidates}}.empty\ ())}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00085}00085\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00086}00086\ \ \ \ \ \ \ DGRVertex\ *p\ =\ Pop\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00086}00086\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}\ *p\ =\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a278c16f4c6de3e85aa9268215a6e95db}{Pop}}\ ();}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00087}00087\ \ \ \ \ \ \ \textcolor{keyword}{delete}\ p;}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00088}00088\ \ \ \ \ \ \ p\ =\ 0;}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00089}00089\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00090}00090\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00091}00091\ }
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00092}00092\ \textcolor{keywordtype}{void}}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00093}00093\ DGRCandidateQueue::Push\ (DGRVertex\ *vNew)}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00093}\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_ae02f69062ca21f025cba41d535491b87}{00093}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_ae02f69062ca21f025cba41d535491b87}{DGRCandidateQueue::Push}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}\ *vNew)}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00094}00094\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00095}00095\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this}\ <<\ vNew);}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00096}00096\ }
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00097}00097\ \ \ DGRCandidateList\_t::iterator\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}\ =\ std::upper\_bound\ (}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00098}00098\ \ \ \ \ \ \ m\_candidates.begin\ (),\ m\_candidates.end\ (),\ vNew,}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00099}00099\ \ \ \ \ \ \ \&DGRCandidateQueue::CompareDGRVertex}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00098}00098\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a2d91aa78fea568afa265cdbed2f214c4}{m\_candidates}}.begin\ (),\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a2d91aa78fea568afa265cdbed2f214c4}{m\_candidates}}.end\ (),\ vNew,}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00099}00099\ \ \ \ \ \ \ \&\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_aff4da36dc33f48b29a1ac3cedaaca635}{DGRCandidateQueue::CompareDGRVertex}}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00100}00100\ \ \ \ \ \ \ );}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00101}00101\ \ \ m\_candidates.insert\ (i,\ vNew);}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00101}00101\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a2d91aa78fea568afa265cdbed2f214c4}{m\_candidates}}.insert\ (\mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}},\ vNew);}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00102}00102\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00103}00103\ }
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00104}00104\ DGRVertex\ *}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00105}00105\ DGRCandidateQueue::Pop\ (\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00104}00104\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}\ *}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00105}\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a278c16f4c6de3e85aa9268215a6e95db}{00105}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a278c16f4c6de3e85aa9268215a6e95db}{DGRCandidateQueue::Pop}}\ (\textcolor{keywordtype}{void})}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00106}00106\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00107}00107\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00108}00108\ \ \ \textcolor{keywordflow}{if}\ (m\_candidates.empty\ ())}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00108}00108\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a2d91aa78fea568afa265cdbed2f214c4}{m\_candidates}}.empty\ ())}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00109}00109\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00110}00110\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00111}00111\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00112}00112\ }
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00113}00113\ \ \ DGRVertex\ *v\ =\ m\_candidates.front\ ();}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00114}00114\ \ \ m\_candidates.pop\_front\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00113}00113\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}\ *v\ =\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a2d91aa78fea568afa265cdbed2f214c4}{m\_candidates}}.front\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00114}00114\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a2d91aa78fea568afa265cdbed2f214c4}{m\_candidates}}.pop\_front\ ();}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00115}00115\ \ \ \textcolor{keywordflow}{return}\ v;}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00116}00116\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00117}00117\ }
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00118}00118\ DGRVertex\ *}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00119}00119\ DGRCandidateQueue::Top\ (\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00118}00118\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}\ *}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00119}\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a977476bb6142c7c0cb75af8c7fbc28cc}{00119}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a977476bb6142c7c0cb75af8c7fbc28cc}{DGRCandidateQueue::Top}}\ (\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00120}00120\ \textcolor{keyword}{}\{}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00121}00121\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00122}00122\ \ \ \textcolor{keywordflow}{if}\ (m\_candidates.empty\ ())}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00122}00122\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a2d91aa78fea568afa265cdbed2f214c4}{m\_candidates}}.empty\ ())}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00123}00123\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00124}00124\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00125}00125\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00126}00126\ }
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00127}00127\ \ \ \textcolor{keywordflow}{return}\ m\_candidates.front\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00127}00127\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a2d91aa78fea568afa265cdbed2f214c4}{m\_candidates}}.front\ ();}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00128}00128\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00129}00129\ }
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00130}00130\ \textcolor{keywordtype}{bool}}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00131}00131\ DGRCandidateQueue::Empty\ (\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00131}\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a8fafbd85e0ef421b1660ad089997a8e1}{00131}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a8fafbd85e0ef421b1660ad089997a8e1}{DGRCandidateQueue::Empty}}\ (\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00132}00132\ \textcolor{keyword}{}\{}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00133}00133\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00134}00134\ \ \ \textcolor{keywordflow}{return}\ m\_candidates.empty\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00134}00134\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a2d91aa78fea568afa265cdbed2f214c4}{m\_candidates}}.empty\ ();}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00135}00135\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00136}00136\ }
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00137}00137\ uint32\_t}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00138}00138\ DGRCandidateQueue::Size\ (\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00138}\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_abdb46ac92a797d66c0a08f646f6637f5}{00138}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_abdb46ac92a797d66c0a08f646f6637f5}{DGRCandidateQueue::Size}}\ (\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00139}00139\ \textcolor{keyword}{}\{}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00140}00140\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00141}00141\ \ \ \textcolor{keywordflow}{return}\ m\_candidates.size\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00141}00141\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a2d91aa78fea568afa265cdbed2f214c4}{m\_candidates}}.size\ ();}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00142}00142\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00143}00143\ }
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00144}00144\ DGRVertex\ *}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00145}00145\ DGRCandidateQueue::Find\ (\textcolor{keyword}{const}\ Ipv4Address\ addr)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00144}00144\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}\ *}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00145}\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a0059b97ee38bc933def96f22719e90c8}{00145}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a0059b97ee38bc933def96f22719e90c8}{DGRCandidateQueue::Find}}\ (\textcolor{keyword}{const}\ Ipv4Address\ addr)\textcolor{keyword}{\ const}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00146}00146\ \textcolor{keyword}{}\{}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00147}00147\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00148}00148\ \ \ DGRCandidateList\_t::const\_iterator\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}\ =\ m\_candidates.begin\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00148}00148\ \ \ DGRCandidateList\_t::const\_iterator\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}\ =\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a2d91aa78fea568afa265cdbed2f214c4}{m\_candidates}}.begin\ ();}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00149}00149\ }
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00150}00150\ \ \ \textcolor{keywordflow}{for}\ (;\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}\ !=\ m\_candidates.end\ ();\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}++)}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00150}00150\ \ \ \textcolor{keywordflow}{for}\ (;\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}\ !=\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a2d91aa78fea568afa265cdbed2f214c4}{m\_candidates}}.end\ ();\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}++)}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00151}00151\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00152}00152\ \ \ \ \ \ \ DGRVertex\ *v\ =\ *\mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}};}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00153}00153\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v-\/>GetVertexId\ ()\ ==\ addr)}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00152}00152\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}\ *v\ =\ *\mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}};}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00153}00153\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v-\/>\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a83acd923d19102c507faadb2f4e68f56}{GetVertexId}}\ ()\ ==\ addr)}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00154}00154\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00156}00156\ \ \ \ \ \ \ \ \ \}}
@@ -157,11 +157,11 @@
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00160}00160\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00161}00161\ }
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00162}00162\ \textcolor{keywordtype}{void}}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00163}00163\ DGRCandidateQueue::Reorder\ (\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00163}\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a8745d6ce64bdbdc57e731025c7e78935}{00163}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a8745d6ce64bdbdc57e731025c7e78935}{DGRCandidateQueue::Reorder}}\ (\textcolor{keywordtype}{void})}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00164}00164\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00165}00165\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00166}00166\ }
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00167}00167\ \ \ m\_candidates.sort\ (\&DGRCandidateQueue::CompareDGRVertex);}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00167}00167\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a2d91aa78fea568afa265cdbed2f214c4}{m\_candidates}}.sort\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_aff4da36dc33f48b29a1ac3cedaaca635}{DGRCandidateQueue::CompareDGRVertex}});}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00168}00168\ \ \ NS\_LOG\_LOGIC\ (\textcolor{stringliteral}{"{}After\ reordering\ the\ CandidateQueue"{}});}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00169}00169\ \ \ NS\_LOG\_LOGIC\ (*\textcolor{keyword}{this});}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00170}00170\ \}}
@@ -174,19 +174,19 @@
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00177}00177\ \textcolor{comment}{\ *\ This\ ordering\ is\ necessary\ for\ implementing\ ECMP}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00178}00178\ \textcolor{comment}{\ */}}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00179}00179\ \textcolor{keywordtype}{bool}\ }
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00180}00180\ DGRCandidateQueue::CompareDGRVertex\ (\textcolor{keyword}{const}\ DGRVertex*\ v1,\ \textcolor{keyword}{const}\ DGRVertex*\ v2)}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00180}\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_aff4da36dc33f48b29a1ac3cedaaca635}{00180}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_aff4da36dc33f48b29a1ac3cedaaca635}{DGRCandidateQueue::CompareDGRVertex}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}*\ v1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}*\ v2)}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00181}00181\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00182}00182\ \ \ NS\_LOG\_FUNCTION\ (\&v1\ <<\ \&v2);}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00183}00183\ }
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00184}00184\ \ \ \textcolor{keywordtype}{bool}\ result\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00185}00185\ \ \ \textcolor{keywordflow}{if}\ (v1-\/>GetDistanceFromRoot\ ()\ <\ v2-\/>GetDistanceFromRoot\ ())}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00185}00185\ \ \ \textcolor{keywordflow}{if}\ (v1-\/>\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a307ee8139d815f7f26b8cf01e6885b53}{GetDistanceFromRoot}}\ ()\ <\ v2-\/>\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a307ee8139d815f7f26b8cf01e6885b53}{GetDistanceFromRoot}}\ ())}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00186}00186\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00187}00187\ \ \ \ \ \ \ result\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00188}00188\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00189}00189\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (v1-\/>GetDistanceFromRoot\ ()\ ==\ v2-\/>GetDistanceFromRoot\ ())}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00189}00189\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (v1-\/>\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a307ee8139d815f7f26b8cf01e6885b53}{GetDistanceFromRoot}}\ ()\ ==\ v2-\/>\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a307ee8139d815f7f26b8cf01e6885b53}{GetDistanceFromRoot}}\ ())}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00190}00190\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00191}00191\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v1-\/>GetVertexType\ ()\ ==\ DGRVertex::VertexNetwork\ }
-\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \&\&\ v2-\/>GetVertexType\ ()\ ==\ DGRVertex::VertexRouter)}
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00191}00191\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v1-\/>\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a5999846daefbeb25a5265e80e3f3a078}{GetVertexType}}\ ()\ ==\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96ccea4cb6ddc9d2395166b87840984bc01880}{DGRVertex::VertexNetwork}}\ }
+\DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \&\&\ v2-\/>\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a5999846daefbeb25a5265e80e3f3a078}{GetVertexType}}\ ()\ ==\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96ccea0d137433dfa77b24862a5f2c116da286}{DGRVertex::VertexRouter}})}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00193}00193\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ result\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{dgr-candidate-queue_8cc_source_l00195}00195\ \ \ \ \ \ \ \ \ \}}

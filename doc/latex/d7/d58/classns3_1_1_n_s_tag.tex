@@ -1,0 +1,253 @@
+\doxysubsection{ns3\+::NSTag Class Reference}
+\hypertarget{classns3_1_1_n_s_tag}{}\label{classns3_1_1_n_s_tag}\index{ns3::NSTag@{ns3::NSTag}}
+
+
+This class implements a tag used to mark the neighbor state broadcast packet.  
+
+
+
+
+{\ttfamily \#include $<$dgr-\/tags.\+h$>$}
+
+
+
+Inheritance diagram for ns3\+::NSTag\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{d5/ddc/classns3_1_1_n_s_tag__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns3\+::NSTag\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{db/d50/classns3_1_1_n_s_tag__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_n_s_tag_a0bb942e1a3b0ecfe173adbc3180375d1}{NSTag}} ()
+\item 
+void \mbox{\hyperlink{classns3_1_1_n_s_tag_acee08c1d78032e9e3dbd44c11ed765cc}{Deserialize}} (Tag\+Buffer \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}) override
+\item 
+Type\+Id \mbox{\hyperlink{classns3_1_1_n_s_tag_ab97edaa9e7a09acee52dbd27555e2ab6}{Get\+Instance\+Type\+Id}} (void) const override
+\item 
+bool \mbox{\hyperlink{classns3_1_1_n_s_tag_aa4608b402f76d8a6160746ddd3dd224d}{Get\+NS}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the tag\textquotesingle{}s flag. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_n_s_tag_a5a8eb8b992deb0f88e6e7dae908930a2}{Get\+Serialized\+Size}} (void) const override
+\item 
+void \mbox{\hyperlink{classns3_1_1_n_s_tag_afe0845db0848aecbcd31539e3fc74e5e}{Print}} (std\+::ostream \&os) const override
+\item 
+void \mbox{\hyperlink{classns3_1_1_n_s_tag_a1fa93e07a7d42ce7ada37791a31d821c}{Serialize}} (Tag\+Buffer \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}) const override
+\item 
+void \mbox{\hyperlink{classns3_1_1_n_s_tag_ae99cc0c85fbf90d8a0ba93b2bb19c802}{Set\+NS}} (bool ns)
+\begin{DoxyCompactList}\small\item\em Set the tag\textquotesingle{}s n\+Tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Type\+Id \mbox{\hyperlink{classns3_1_1_n_s_tag_ac57cd9a3ed472c1425c826444f9bead1}{Get\+Type\+Id}} (void)
+\begin{DoxyCompactList}\small\item\em Get the Type ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classns3_1_1_n_s_tag_a3e918772ca2a30b9b9238e362202b6a5}{m\+\_\+ns}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+This class implements a tag used to mark the neighbor state broadcast packet. 
+
+Definition at line \mbox{\hyperlink{dgr-tags_8h_source_l00239}{239}} of file \mbox{\hyperlink{dgr-tags_8h_source}{dgr-\/tags.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_n_s_tag_a0bb942e1a3b0ecfe173adbc3180375d1}\label{classns3_1_1_n_s_tag_a0bb942e1a3b0ecfe173adbc3180375d1} 
+\index{ns3::NSTag@{ns3::NSTag}!NSTag@{NSTag}}
+\index{NSTag@{NSTag}!ns3::NSTag@{ns3::NSTag}}
+\doxyparagraph{\texorpdfstring{NSTag()}{NSTag()}}
+{\footnotesize\ttfamily ns3\+::\+NSTag\+::\+NSTag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00375}{375}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_n_s_tag_acee08c1d78032e9e3dbd44c11ed765cc}\label{classns3_1_1_n_s_tag_acee08c1d78032e9e3dbd44c11ed765cc} 
+\index{ns3::NSTag@{ns3::NSTag}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!ns3::NSTag@{ns3::NSTag}}
+\doxyparagraph{\texorpdfstring{Deserialize()}{Deserialize()}}
+{\footnotesize\ttfamily void ns3\+::\+NSTag\+::\+Deserialize (\begin{DoxyParamCaption}\item[{Tag\+Buffer}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00426}{426}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-tags_8h_source_l00278}{m\+\_\+ns}}.
+
+\Hypertarget{classns3_1_1_n_s_tag_ab97edaa9e7a09acee52dbd27555e2ab6}\label{classns3_1_1_n_s_tag_ab97edaa9e7a09acee52dbd27555e2ab6} 
+\index{ns3::NSTag@{ns3::NSTag}!GetInstanceTypeId@{GetInstanceTypeId}}
+\index{GetInstanceTypeId@{GetInstanceTypeId}!ns3::NSTag@{ns3::NSTag}}
+\doxyparagraph{\texorpdfstring{GetInstanceTypeId()}{GetInstanceTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+NSTag\+::\+Get\+Instance\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00405}{405}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tags_8cc_source_l00395}{Get\+Type\+Id()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d58/classns3_1_1_n_s_tag_ab97edaa9e7a09acee52dbd27555e2ab6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_n_s_tag_aa4608b402f76d8a6160746ddd3dd224d}\label{classns3_1_1_n_s_tag_aa4608b402f76d8a6160746ddd3dd224d} 
+\index{ns3::NSTag@{ns3::NSTag}!GetNS@{GetNS}}
+\index{GetNS@{GetNS}!ns3::NSTag@{ns3::NSTag}}
+\doxyparagraph{\texorpdfstring{GetNS()}{GetNS()}}
+{\footnotesize\ttfamily bool ns3\+::\+NSTag\+::\+Get\+NS (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the tag\textquotesingle{}s flag. 
+
+\begin{DoxyReturn}{Returns}
+the flag 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00388}{388}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tags_8h_source_l00278}{m\+\_\+ns}}.
+
+\Hypertarget{classns3_1_1_n_s_tag_a5a8eb8b992deb0f88e6e7dae908930a2}\label{classns3_1_1_n_s_tag_a5a8eb8b992deb0f88e6e7dae908930a2} 
+\index{ns3::NSTag@{ns3::NSTag}!GetSerializedSize@{GetSerializedSize}}
+\index{GetSerializedSize@{GetSerializedSize}!ns3::NSTag@{ns3::NSTag}}
+\doxyparagraph{\texorpdfstring{GetSerializedSize()}{GetSerializedSize()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+NSTag\+::\+Get\+Serialized\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00411}{411}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+\Hypertarget{classns3_1_1_n_s_tag_ac57cd9a3ed472c1425c826444f9bead1}\label{classns3_1_1_n_s_tag_ac57cd9a3ed472c1425c826444f9bead1} 
+\index{ns3::NSTag@{ns3::NSTag}!GetTypeId@{GetTypeId}}
+\index{GetTypeId@{GetTypeId}!ns3::NSTag@{ns3::NSTag}}
+\doxyparagraph{\texorpdfstring{GetTypeId()}{GetTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+NSTag\+::\+Get\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the Type ID. 
+
+\begin{DoxyReturn}{Returns}
+the object Type\+Id 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00395}{395}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tags_8cc_source_l00405}{Get\+Instance\+Type\+Id()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d58/classns3_1_1_n_s_tag_ac57cd9a3ed472c1425c826444f9bead1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_n_s_tag_afe0845db0848aecbcd31539e3fc74e5e}\label{classns3_1_1_n_s_tag_afe0845db0848aecbcd31539e3fc74e5e} 
+\index{ns3::NSTag@{ns3::NSTag}!Print@{Print}}
+\index{Print@{Print}!ns3::NSTag@{ns3::NSTag}}
+\doxyparagraph{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void ns3\+::\+NSTag\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00435}{435}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tags_8h_source_l00278}{m\+\_\+ns}}.
+
+\Hypertarget{classns3_1_1_n_s_tag_a1fa93e07a7d42ce7ada37791a31d821c}\label{classns3_1_1_n_s_tag_a1fa93e07a7d42ce7ada37791a31d821c} 
+\index{ns3::NSTag@{ns3::NSTag}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!ns3::NSTag@{ns3::NSTag}}
+\doxyparagraph{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily void ns3\+::\+NSTag\+::\+Serialize (\begin{DoxyParamCaption}\item[{Tag\+Buffer}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00418}{418}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-tags_8h_source_l00278}{m\+\_\+ns}}.
+
+\Hypertarget{classns3_1_1_n_s_tag_ae99cc0c85fbf90d8a0ba93b2bb19c802}\label{classns3_1_1_n_s_tag_ae99cc0c85fbf90d8a0ba93b2bb19c802} 
+\index{ns3::NSTag@{ns3::NSTag}!SetNS@{SetNS}}
+\index{SetNS@{SetNS}!ns3::NSTag@{ns3::NSTag}}
+\doxyparagraph{\texorpdfstring{SetNS()}{SetNS()}}
+{\footnotesize\ttfamily void ns3\+::\+NSTag\+::\+Set\+NS (\begin{DoxyParamCaption}\item[{bool}]{ns }\end{DoxyParamCaption})}
+
+
+
+Set the tag\textquotesingle{}s n\+Tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+Tag} & the flag \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00381}{381}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tags_8h_source_l00278}{m\+\_\+ns}}.
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{classns3_1_1_n_s_tag_a3e918772ca2a30b9b9238e362202b6a5}\label{classns3_1_1_n_s_tag_a3e918772ca2a30b9b9238e362202b6a5} 
+\index{ns3::NSTag@{ns3::NSTag}!m\_ns@{m\_ns}}
+\index{m\_ns@{m\_ns}!ns3::NSTag@{ns3::NSTag}}
+\doxyparagraph{\texorpdfstring{m\_ns}{m\_ns}}
+{\footnotesize\ttfamily bool ns3\+::\+NSTag\+::m\+\_\+ns\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8h_source_l00278}{278}} of file \mbox{\hyperlink{dgr-tags_8h_source}{dgr-\/tags.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tags_8cc_source_l00426}{Deserialize()}}, \mbox{\hyperlink{dgr-tags_8cc_source_l00388}{Get\+NS()}}, \mbox{\hyperlink{dgr-tags_8cc_source_l00435}{Print()}}, \mbox{\hyperlink{dgr-tags_8cc_source_l00418}{Serialize()}}, and \mbox{\hyperlink{dgr-tags_8cc_source_l00381}{Set\+NS()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{dgr-tags_8h}{dgr-\/tags.\+h}}\item 
+model/\mbox{\hyperlink{dgr-tags_8cc}{dgr-\/tags.\+cc}}\end{DoxyCompactItemize}

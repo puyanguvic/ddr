@@ -1,0 +1,208 @@
+\doxysubsection{ns3\+::Status\+Unit Class Reference}
+\hypertarget{classns3_1_1_status_unit}{}\label{classns3_1_1_status_unit}\index{ns3::StatusUnit@{ns3::StatusUnit}}
+
+
+{\ttfamily \#include $<$neighbor-\/status-\/database.\+h$>$}
+
+
+
+Collaboration diagram for ns3\+::Status\+Unit\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{d1/dcf/classns3_1_1_status_unit__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_status_unit_ab9812d6e963d9377a66a216c5722ec2b}{Status\+Unit}} ()
+\item 
+\mbox{\hyperlink{classns3_1_1_status_unit_af5fd4f5475ba8cb20c33e697b46d3535}{\texorpdfstring{$\sim$}{\string~}\+Status\+Unit}} ()
+\item 
+int \mbox{\hyperlink{classns3_1_1_status_unit_a165815e13c7cda840f5e77961f412b8d}{Get\+Current\+State}} () const
+\item 
+int \mbox{\hyperlink{classns3_1_1_status_unit_a2f05390790b4028ef5bc30cd5bc516a6}{Get\+Last\+State}} () const
+\item 
+void \mbox{\hyperlink{classns3_1_1_status_unit_ac70e9364c15e57c369ddc3d69897fcd0}{Print}} (std\+::ostream \&os) const
+\item 
+void \mbox{\hyperlink{classns3_1_1_status_unit_a6e3953db49c443f23281dec449661d39}{Update}} (int state)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classns3_1_1_status_unit_abca5bb0aa0263c3d82614501929b0ee7}{m\+\_\+matrix}} \mbox{[}\mbox{\hyperlink{neighbor-status-database_8h_ab7f9358e56e6cbbb79a56e7ba13da5b0}{STATESIZE}}\mbox{]}\mbox{[}\mbox{\hyperlink{neighbor-status-database_8h_ab7f9358e56e6cbbb79a56e7ba13da5b0}{STATESIZE}}\mbox{]}
+\item 
+int \mbox{\hyperlink{classns3_1_1_status_unit_aaa12be25a51a0a0c343fe4e795da9a73}{m\+\_\+state}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{neighbor-status-database_8h_source_l00012}{12}} of file \mbox{\hyperlink{neighbor-status-database_8h_source}{neighbor-\/status-\/database.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_status_unit_ab9812d6e963d9377a66a216c5722ec2b}\label{classns3_1_1_status_unit_ab9812d6e963d9377a66a216c5722ec2b} 
+\index{ns3::StatusUnit@{ns3::StatusUnit}!StatusUnit@{StatusUnit}}
+\index{StatusUnit@{StatusUnit}!ns3::StatusUnit@{ns3::StatusUnit}}
+\doxyparagraph{\texorpdfstring{StatusUnit()}{StatusUnit()}}
+{\footnotesize\ttfamily ns3\+::\+Status\+Unit\+::\+Status\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{neighbor-status-database_8cc_source_l00010}{10}} of file \mbox{\hyperlink{neighbor-status-database_8cc_source}{neighbor-\/status-\/database.\+cc}}.
+
+\Hypertarget{classns3_1_1_status_unit_af5fd4f5475ba8cb20c33e697b46d3535}\label{classns3_1_1_status_unit_af5fd4f5475ba8cb20c33e697b46d3535} 
+\index{ns3::StatusUnit@{ns3::StatusUnit}!````~StatusUnit@{\texorpdfstring{$\sim$}{\string~}StatusUnit}}
+\index{````~StatusUnit@{\texorpdfstring{$\sim$}{\string~}StatusUnit}!ns3::StatusUnit@{ns3::StatusUnit}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}StatusUnit()}{\string~StatusUnit()}}
+{\footnotesize\ttfamily ns3\+::\+Status\+Unit\+::\texorpdfstring{$\sim$}{\string~}\+Status\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{neighbor-status-database_8cc_source_l00016}{16}} of file \mbox{\hyperlink{neighbor-status-database_8cc_source}{neighbor-\/status-\/database.\+cc}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_status_unit_a165815e13c7cda840f5e77961f412b8d}\label{classns3_1_1_status_unit_a165815e13c7cda840f5e77961f412b8d} 
+\index{ns3::StatusUnit@{ns3::StatusUnit}!GetCurrentState@{GetCurrentState}}
+\index{GetCurrentState@{GetCurrentState}!ns3::StatusUnit@{ns3::StatusUnit}}
+\doxyparagraph{\texorpdfstring{GetCurrentState()}{GetCurrentState()}}
+{\footnotesize\ttfamily int ns3\+::\+Status\+Unit\+::\+Get\+Current\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{neighbor-status-database_8cc_source_l00021}{21}} of file \mbox{\hyperlink{neighbor-status-database_8cc_source}{neighbor-\/status-\/database.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, \mbox{\hyperlink{neighbor-status-database_8h_source_l00022}{m\+\_\+matrix}}, and \mbox{\hyperlink{neighbor-status-database_8h_source_l00023}{m\+\_\+state}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l01432}{ns3\+::\+Ipv4\+DGRRouting\+::\+Handle\+Responses()}}, \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00253}{ns3\+::\+Ipv4\+DGRRouting\+::\+Lookup\+DGRRoute()}}, and \mbox{\hyperlink{neighbor-status-database_8cc_source_l00050}{Print()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dba/classns3_1_1_status_unit_a165815e13c7cda840f5e77961f412b8d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_status_unit_a2f05390790b4028ef5bc30cd5bc516a6}\label{classns3_1_1_status_unit_a2f05390790b4028ef5bc30cd5bc516a6} 
+\index{ns3::StatusUnit@{ns3::StatusUnit}!GetLastState@{GetLastState}}
+\index{GetLastState@{GetLastState}!ns3::StatusUnit@{ns3::StatusUnit}}
+\doxyparagraph{\texorpdfstring{GetLastState()}{GetLastState()}}
+{\footnotesize\ttfamily int ns3\+::\+Status\+Unit\+::\+Get\+Last\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{neighbor-status-database_8cc_source_l00037}{37}} of file \mbox{\hyperlink{neighbor-status-database_8cc_source}{neighbor-\/status-\/database.\+cc}}.
+
+
+
+References \mbox{\hyperlink{neighbor-status-database_8h_source_l00023}{m\+\_\+state}}.
+
+
+
+Referenced by \mbox{\hyperlink{neighbor-status-database_8cc_source_l00050}{Print()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dba/classns3_1_1_status_unit_a2f05390790b4028ef5bc30cd5bc516a6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_status_unit_ac70e9364c15e57c369ddc3d69897fcd0}\label{classns3_1_1_status_unit_ac70e9364c15e57c369ddc3d69897fcd0} 
+\index{ns3::StatusUnit@{ns3::StatusUnit}!Print@{Print}}
+\index{Print@{Print}!ns3::StatusUnit@{ns3::StatusUnit}}
+\doxyparagraph{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void ns3\+::\+Status\+Unit\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{neighbor-status-database_8cc_source_l00050}{50}} of file \mbox{\hyperlink{neighbor-status-database_8cc_source}{neighbor-\/status-\/database.\+cc}}.
+
+
+
+References \mbox{\hyperlink{neighbor-status-database_8cc_source_l00021}{Get\+Current\+State()}}, \mbox{\hyperlink{neighbor-status-database_8cc_source_l00037}{Get\+Last\+State()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{neighbor-status-database_8h_source_l00022}{m\+\_\+matrix}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dba/classns3_1_1_status_unit_ac70e9364c15e57c369ddc3d69897fcd0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_status_unit_a6e3953db49c443f23281dec449661d39}\label{classns3_1_1_status_unit_a6e3953db49c443f23281dec449661d39} 
+\index{ns3::StatusUnit@{ns3::StatusUnit}!Update@{Update}}
+\index{Update@{Update}!ns3::StatusUnit@{ns3::StatusUnit}}
+\doxyparagraph{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void ns3\+::\+Status\+Unit\+::\+Update (\begin{DoxyParamCaption}\item[{int}]{state }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{neighbor-status-database_8cc_source_l00043}{43}} of file \mbox{\hyperlink{neighbor-status-database_8cc_source}{neighbor-\/status-\/database.\+cc}}.
+
+
+
+References \mbox{\hyperlink{neighbor-status-database_8h_source_l00022}{m\+\_\+matrix}}, and \mbox{\hyperlink{neighbor-status-database_8h_source_l00023}{m\+\_\+state}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l01432}{ns3\+::\+Ipv4\+DGRRouting\+::\+Handle\+Responses()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dba/classns3_1_1_status_unit_a6e3953db49c443f23281dec449661d39_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{classns3_1_1_status_unit_abca5bb0aa0263c3d82614501929b0ee7}\label{classns3_1_1_status_unit_abca5bb0aa0263c3d82614501929b0ee7} 
+\index{ns3::StatusUnit@{ns3::StatusUnit}!m\_matrix@{m\_matrix}}
+\index{m\_matrix@{m\_matrix}!ns3::StatusUnit@{ns3::StatusUnit}}
+\doxyparagraph{\texorpdfstring{m\_matrix}{m\_matrix}}
+{\footnotesize\ttfamily int ns3\+::\+Status\+Unit\+::m\+\_\+matrix\mbox{[}\mbox{\hyperlink{neighbor-status-database_8h_ab7f9358e56e6cbbb79a56e7ba13da5b0}{STATESIZE}}\mbox{]}\mbox{[}\mbox{\hyperlink{neighbor-status-database_8h_ab7f9358e56e6cbbb79a56e7ba13da5b0}{STATESIZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{neighbor-status-database_8h_source_l00022}{22}} of file \mbox{\hyperlink{neighbor-status-database_8h_source}{neighbor-\/status-\/database.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{neighbor-status-database_8cc_source_l00021}{Get\+Current\+State()}}, \mbox{\hyperlink{neighbor-status-database_8cc_source_l00050}{Print()}}, and \mbox{\hyperlink{neighbor-status-database_8cc_source_l00043}{Update()}}.
+
+\Hypertarget{classns3_1_1_status_unit_aaa12be25a51a0a0c343fe4e795da9a73}\label{classns3_1_1_status_unit_aaa12be25a51a0a0c343fe4e795da9a73} 
+\index{ns3::StatusUnit@{ns3::StatusUnit}!m\_state@{m\_state}}
+\index{m\_state@{m\_state}!ns3::StatusUnit@{ns3::StatusUnit}}
+\doxyparagraph{\texorpdfstring{m\_state}{m\_state}}
+{\footnotesize\ttfamily int ns3\+::\+Status\+Unit\+::m\+\_\+state\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{neighbor-status-database_8h_source_l00023}{23}} of file \mbox{\hyperlink{neighbor-status-database_8h_source}{neighbor-\/status-\/database.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{neighbor-status-database_8cc_source_l00021}{Get\+Current\+State()}}, \mbox{\hyperlink{neighbor-status-database_8cc_source_l00037}{Get\+Last\+State()}}, and \mbox{\hyperlink{neighbor-status-database_8cc_source_l00043}{Update()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{neighbor-status-database_8h}{neighbor-\/status-\/database.\+h}}\item 
+model/\mbox{\hyperlink{neighbor-status-database_8cc}{neighbor-\/status-\/database.\+cc}}\end{DoxyCompactItemize}

@@ -1,0 +1,23 @@
+<map id="ns3::Ipv4DGRRouting::LookupDGRRoute" name="ns3::Ipv4DGRRouting::LookupDGRRoute">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,266,165,306"/>
+<area shape="rect" id="Node000002" href="$d0/db3/classns3_1_1_budget_tag.html#ac6b06a85217e94b7b12bb66a000d500b" title="Get the tag&#39;s budget." alt="" coords="215,5,414,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,265,102,219,126,158,162,95,185,66,212,41,221,35,224,39,215,45,189,70,166,98,131,160,107,220,94,267"/>
+<area shape="rect" id="Node000003" href="$d4/dba/classns3_1_1_status_unit.html#a165815e13c7cda840f5e77961f412b8d" title=" " alt="" coords="215,55,415,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="93,264,111,230,137,187,171,143,212,105,220,100,223,104,215,109,175,147,141,190,115,233,98,267"/>
+<area shape="rect" id="Node000004" href="$dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry.html#a69ebd01d00df5465ad4d720baf20aac5" title=" " alt="" coords="217,119,412,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="102,264,149,217,179,191,212,169,225,162,227,167,215,174,182,195,152,221,106,268"/>
+<area shape="rect" id="Node000005" href="$d1/def/classns3_1_1_dist_tag.html#abdba4f115af1156fa9971edb1f9dfa13" title="Get the tag&#39;s distance." alt="" coords="220,184,409,209"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="120,264,163,241,212,220,240,211,241,216,214,224,166,246,122,268"/>
+<area shape="rect" id="Node000006" href="$dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry.html#ad6b6cd8c1a98ab084553075f284de1b4" title=" " alt="" coords="217,234,412,274"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="166,272,203,267,204,272,166,277"/>
+<area shape="rect" id="Node000007" href="$dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry.html#a19708a359b875e0b8986ff99f80c159c" title=" " alt="" coords="217,298,412,338"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="166,295,204,300,203,305,166,300"/>
+<area shape="rect" id="Node000008" href="$dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry.html#a2b9549ad4a8d225b40c3f7dcd2c29c25" title=" " alt="" coords="217,362,412,402"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="124,304,214,348,234,355,232,360,212,352,121,308"/>
+<area shape="rect" id="Node000009" href="$dd/d41/classns3_1_1_dgr_n_s_d_b.html#a0d9ea8c82a764230832d72825bce2fce" title="Get the NeighborStatusEntry of a Interface." alt="" coords="213,426,416,466"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="104,305,150,358,181,387,215,412,226,418,223,422,212,416,177,391,146,362,100,308"/>
+<area shape="rect" id="Node000010" href="$dc/d3f/classns3_1_1_neighbor_status_entry.html#a247a7c414ca757992904f162888375d9" title=" " alt="" coords="221,490,408,530"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="97,305,114,342,139,388,173,435,215,476,223,481,220,486,212,480,169,439,135,391,109,344,92,307"/>
+<area shape="rect" id="Node000011" href="$d1/def/classns3_1_1_dist_tag.html#afc8616b9abd64dd7a0ebf3d876f1dcb2" title="Set the tag&#39;s distance." alt="" coords="221,555,408,580"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="93,306,106,354,129,418,165,484,188,514,215,540,224,546,221,551,212,544,184,517,160,487,124,420,101,355,88,307"/>
+</map>

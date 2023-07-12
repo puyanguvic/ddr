@@ -1,0 +1,13 @@
+<map id="ns3::DGRRouteManagerImpl::SPFGetNextLink" name="ns3::DGRRouteManagerImpl::SPFGetNextLink">
+<area shape="rect" id="Node000001" title="Search for a link between two vertices." alt="" coords="5,133,212,173"/>
+<area shape="rect" id="Node000002" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#a97080a8409f77898f4485230be0be5e4" title="Get the Link Data field of the Global Routing Link Record." alt="" coords="263,5,467,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,131,190,93,259,55,276,48,278,53,261,60,193,98,138,136"/>
+<area shape="rect" id="Node000003" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#a9fe6e135674ef321bc11b48f90071857" title="Get the Link ID field of the Global Routing Link Record." alt="" coords="263,69,467,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,131,271,110,272,115,190,136"/>
+<area shape="rect" id="Node000004" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#acb5df9fec863df510911aa3e64d4aa04" title="Return a pointer to the specified Global Routing Link Record." alt="" coords="286,133,443,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="212,151,272,151,272,156,212,156"/>
+<area shape="rect" id="Node000005" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a5f9422d4f1f9df2f301cbd578e29ae7b" title="Get the Global Router Link State Advertisement returned by the Global Router represented by this DGRV..." alt="" coords="275,198,455,223"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="199,171,295,192,294,198,198,176"/>
+<area shape="rect" id="Node000006" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a83acd923d19102c507faadb2f4e68f56" title="Get the Vertex ID field of a DGRVertex object." alt="" coords="260,247,469,273"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="143,171,197,202,261,232,288,241,286,246,259,237,195,207,140,176"/>
+</map>

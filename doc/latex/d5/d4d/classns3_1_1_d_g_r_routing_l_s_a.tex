@@ -1,0 +1,1358 @@
+\doxysubsection{ns3\+::DGRRouting\+LSA Class Reference}
+\hypertarget{classns3_1_1_d_g_r_routing_l_s_a}{}\label{classns3_1_1_d_g_r_routing_l_s_a}\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+
+
+a Link State Advertisement (LSA) for a router, used in global routing.  
+
+
+
+
+{\ttfamily \#include $<$dgr-\/router-\/interface.\+h$>$}
+
+
+
+Collaboration diagram for ns3\+::DGRRouting\+LSA\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d9b/classns3_1_1_d_g_r_routing_l_s_a__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694}{LSType}} \{ \newline
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694ae9b9b7d77d4f86bc2b56fd908ab29069}{Unknown}} = 0
+, \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694a0322ce07c2b94cdb14163bbe04cb9674}{Router\+LSA}}
+, \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694a5d51f5653b9ddf1d8bf640932068cb85}{Network\+LSA}}
+, \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694a4c90feb1f4a656a0eb5043c8866eebc0}{Summary\+LSA}}
+, \newline
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694ad978391efe3a9c2e66f450bbb1642d4a}{Summary\+LSA\+\_\+\+ASBR}}
+, \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694aca69c3cdc30b0ddcb8dd1dd95f79065a}{ASExternal\+LSAs}}
+ \}
+\begin{DoxyCompactList}\small\item\em corresponds to LS type field of \textbackslash{}\+RFC\{2328\} OSPF LSA header \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7}{SPFStatus}} \{ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7ac563232b34162339268c7804c93765ad}{LSA\+\_\+\+SPF\+\_\+\+NOT\+\_\+\+EXPLORED}} = 0
+, \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7a196d95882ef494ff03d1549a998ba12c}{LSA\+\_\+\+SPF\+\_\+\+CANDIDATE}}
+, \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7a0f88fe6c9e38275dc638a9ebb26018a2}{LSA\+\_\+\+SPF\+\_\+\+IN\+\_\+\+SPFTREE}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the possible values of the status flag in the Routing Link State Advertisements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a42a5782aad1a9ced94e817f8139bec4e}{DGRRouting\+LSA}} ()
+\begin{DoxyCompactList}\small\item\em Create a blank Global Routing Link State Advertisement. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a042cca1bebf1189a3e40f0c3abcd5937}{DGRRouting\+LSA}} (\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \&lsa)
+\begin{DoxyCompactList}\small\item\em Copy constructor for a Global Routing Link State Advertisement. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2bae2bd5dc6e1fde3c31d39028307fa0}{DGRRouting\+LSA}} (\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7}{SPFStatus}} status, Ipv4\+Address link\+State\+Id, Ipv4\+Address advertising\+Rtr)
+\begin{DoxyCompactList}\small\item\em Create an initialized Global Routing Link State Advertisement. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a20b74180087d2bace3c3196dd112bb9f}{\texorpdfstring{$\sim$}{\string~}\+DGRRouting\+LSA}} ()
+\begin{DoxyCompactList}\small\item\em Destroy an existing Global Routing Link State Advertisement. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a945e5e3081dc4463d6335cf40d81b192}{Add\+Attached\+Router}} (Ipv4\+Address addr)
+\begin{DoxyCompactList}\small\item\em Add an attached router to the list in the Network\+LSA. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a4b21b880eb8b7b733039d0dfaa8b48a4}{Add\+Link\+Record}} (\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record}{DGRRouting\+Link\+Record}} \texorpdfstring{$\ast$}{*}lr)
+\begin{DoxyCompactList}\small\item\em Add a given Global Routing Link Record to the LSA. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_add7dc495e6a10547b0045aab19ea9bcc}{Clear\+Link\+Records}} (void)
+\begin{DoxyCompactList}\small\item\em Release all of the Global Routing Link Records present in the Global Routing Link State Advertisement and make the list of link records empty. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a206ff392d0561c4b244a8c6fe8d824ab}{Copy\+Link\+Records}} (const \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \&lsa)
+\begin{DoxyCompactList}\small\item\em Copy any Global Routing Link Records in a given Global Routing Link State Advertisement to the current LSA. \end{DoxyCompactList}\item 
+Ipv4\+Address \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_aa16092b325a84e50b90fcc5dd4e5bab2}{Get\+Advertising\+Router}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the Advertising Router as defined by the OSPF spec. \end{DoxyCompactList}\item 
+Ipv4\+Address \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a1b5e5fa81d0506983a0755787a8d2d62}{Get\+Attached\+Router}} (uint32\+\_\+t n) const
+\begin{DoxyCompactList}\small\item\em Return an Ipv4\+Address corresponding to the specified attached router. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record}{DGRRouting\+Link\+Record}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_acb5df9fec863df510911aa3e64d4aa04}{Get\+Link\+Record}} (uint32\+\_\+t n) const
+\begin{DoxyCompactList}\small\item\em Return a pointer to the specified Global Routing Link Record. \end{DoxyCompactList}\item 
+Ipv4\+Address \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a0ec746b926044a548e4f3a09309322ce}{Get\+Link\+State\+Id}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the Link State ID as defined by the OSPF spec. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694}{LSType}} \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_aa00b07a4d8639539e94817f98905ef19}{Get\+LSType}} (void) const
+\begin{DoxyCompactList}\small\item\em Return the LSType field of the LSA. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_ae7e796f5d4860d2236bef31d74364c91}{Get\+NAttached\+Routers}} (void) const
+\begin{DoxyCompactList}\small\item\em Return the number of attached routers listed in the Network\+LSA. \end{DoxyCompactList}\item 
+Ipv4\+Mask \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a3e3b9552f26b930f47dd069eaf0f3950}{Get\+Network\+LSANetwork\+Mask}} (void) const
+\begin{DoxyCompactList}\small\item\em For a Network LSA, get the Network Mask field that precedes the list of attached routers. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a882a042d18bcbdea3bc1a3eb55dcfe58}{Get\+NLink\+Records}} (void) const
+\begin{DoxyCompactList}\small\item\em Return the number of Global Routing Link Records in the LSA. \end{DoxyCompactList}\item 
+Ptr$<$ Node $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a5000c59488a04e9b809574c93624d3ce}{Get\+Node}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the Node pointer of the node that originated this LSA. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7}{SPFStatus}} \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_afd80a2583858e08b8b3877a5401bf072}{Get\+Status}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the SPF status of the advertisement. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a658f443f5c9022b0e979b70076dd3b16}{Is\+Empty}} (void) const
+\begin{DoxyCompactList}\small\item\em Check to see if the list of Global Routing Link Records present in the Global Routing Link State Advertisement is empty. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \& \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_af09c521adba74e1538773cebf14b3929}{operator=}} (const \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \&lsa)
+\begin{DoxyCompactList}\small\item\em Assignment operator for a Global Routing Link State Advertisement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a46f99ef0058670ce83157f4ab482aaee}{Print}} (std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em Print the contents of the Global Routing Link State Advertisement and any Global Routing Link Records present in the list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a5f36eb9409d5d6532b9bd267e8d90f61}{Set\+Advertising\+Router}} (Ipv4\+Address rtr)
+\begin{DoxyCompactList}\small\item\em Set the Advertising Router as defined by the OSPF spec. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a382594771f20561edde6e6b53d3bd982}{Set\+Link\+State\+Id}} (Ipv4\+Address addr)
+\begin{DoxyCompactList}\small\item\em Set the Link State ID is defined by the OSPF spec. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a898720f0e7c926c4ecd2ca89d09363dd}{Set\+LSType}} (\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694}{LSType}} typ)
+\begin{DoxyCompactList}\small\item\em Set the LS type field of the LSA. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a1d60ee05ffc0dd4d434fb12917f6c83e}{Set\+Network\+LSANetwork\+Mask}} (Ipv4\+Mask mask)
+\begin{DoxyCompactList}\small\item\em For a Network LSA, set the Network Mask field that precedes the list of attached routers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a5fb6e248545fbd3d50b34429e4780746}{Set\+Node}} (Ptr$<$ Node $>$ node)
+\begin{DoxyCompactList}\small\item\em Set the Node pointer of the node that originated this LSA. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a497453d1271c0020968487ec8ead99c5}{Set\+Status}} (\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7}{SPFStatus}} status)
+\begin{DoxyCompactList}\small\item\em Set the SPF status of the advertisement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::list$<$ Ipv4\+Address $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_ad79473dcd06399d8065d1810c74ab6f3}{List\+Of\+Attached\+Routers\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em A convenience typedef to avoid too much writers cramp. \end{DoxyCompactList}\item 
+typedef std\+::list$<$ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record}{DGRRouting\+Link\+Record}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_aef9fd2089bc114e9b2ff86acff4482f5}{List\+Of\+Link\+Records\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em A convenience typedef to avoid too much writers cramp. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ipv4\+Address \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_ae081e96bb7f72467f7bc7d3b6cab2548}{m\+\_\+advertising\+Rtr}}
+\begin{DoxyCompactList}\small\item\em The Advertising Router is defined by the OSPF spec. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_ad79473dcd06399d8065d1810c74ab6f3}{List\+Of\+Attached\+Routers\+\_\+t}} \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a41531661fa28a374064823c36171ae0b}{m\+\_\+attached\+Routers}}
+\begin{DoxyCompactList}\small\item\em Each Network LSA contains a list of attached routers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_aef9fd2089bc114e9b2ff86acff4482f5}{List\+Of\+Link\+Records\+\_\+t}} \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a05d8ade21d0728b6a2de9e3d3bd4f154}{m\+\_\+link\+Records}}
+\begin{DoxyCompactList}\small\item\em Each Link State Advertisement contains a number of Link Records that describe the kinds of links that are attached to a given node. \end{DoxyCompactList}\item 
+Ipv4\+Address \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a7934180d82eeada95c7c0918438f8f54}{m\+\_\+link\+State\+Id}}
+\begin{DoxyCompactList}\small\item\em The Link State ID is defined by the OSPF spec. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694}{LSType}} \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_ae6c045e56d285913bdc92870f0e0ce45}{m\+\_\+ls\+Type}}
+\begin{DoxyCompactList}\small\item\em The type of the LSA. \end{DoxyCompactList}\item 
+Ipv4\+Mask \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a96b6a315aabd6e6067d627a47f755d39}{m\+\_\+network\+LSANetwork\+Mask}}
+\begin{DoxyCompactList}\small\item\em Each Network LSA contains the network mask of the attached network. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_afbc01e04115a275765d9336f3e388fc8}{m\+\_\+node\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em node ID \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7}{SPFStatus}} \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a81565148817b697f3aa67ee29aec1c34}{m\+\_\+status}}
+\begin{DoxyCompactList}\small\item\em This is a tristate flag used internally in the SPF computation to mark if an SPFVertex (a data structure representing a vertex in the SPF tree -- a router) is new, is a candidate for a shortest path, or is in its proper position in the tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+a Link State Advertisement (LSA) for a router, used in global routing. 
+
+Roughly equivalent to a global incarnation of the OSPF link state header combined with a list of Link Records. Since it\textquotesingle{}s global, there\textquotesingle{}s no need for age or sequence number. See \textbackslash{}\+RFC\{2328\}, Appendix A. 
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00253}{253}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+\doxysubsubsection{Member Typedef Documentation}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_ad79473dcd06399d8065d1810c74ab6f3}\label{classns3_1_1_d_g_r_routing_l_s_a_ad79473dcd06399d8065d1810c74ab6f3} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!ListOfAttachedRouters\_t@{ListOfAttachedRouters\_t}}
+\index{ListOfAttachedRouters\_t@{ListOfAttachedRouters\_t}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{ListOfAttachedRouters\_t}{ListOfAttachedRouters\_t}}
+{\footnotesize\ttfamily typedef std\+::list$<$Ipv4\+Address$>$ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_ad79473dcd06399d8065d1810c74ab6f3}{ns3\+::\+DGRRouting\+LSA\+::\+List\+Of\+Attached\+Routers\+\_\+t}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A convenience typedef to avoid too much writers cramp. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00549}{549}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_aef9fd2089bc114e9b2ff86acff4482f5}\label{classns3_1_1_d_g_r_routing_l_s_a_aef9fd2089bc114e9b2ff86acff4482f5} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!ListOfLinkRecords\_t@{ListOfLinkRecords\_t}}
+\index{ListOfLinkRecords\_t@{ListOfLinkRecords\_t}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{ListOfLinkRecords\_t}{ListOfLinkRecords\_t}}
+{\footnotesize\ttfamily typedef std\+::list$<$\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record}{DGRRouting\+Link\+Record}}\texorpdfstring{$\ast$}{*}$>$ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_aef9fd2089bc114e9b2ff86acff4482f5}{ns3\+::\+DGRRouting\+LSA\+::\+List\+Of\+Link\+Records\+\_\+t}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A convenience typedef to avoid too much writers cramp. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00527}{527}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+\doxysubsubsection{Member Enumeration Documentation}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694}\label{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!LSType@{LSType}}
+\index{LSType@{LSType}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{LSType}{LSType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694}{ns3\+::\+DGRRouting\+LSA\+::\+LSType}}}
+
+
+
+corresponds to LS type field of \textbackslash{}\+RFC\{2328\} OSPF LSA header 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unknown@{Unknown}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!Unknown@{Unknown}}}\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694ae9b9b7d77d4f86bc2b56fd908ab29069}\label{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694ae9b9b7d77d4f86bc2b56fd908ab29069} 
+Unknown&Uninitialized Type. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RouterLSA@{RouterLSA}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!RouterLSA@{RouterLSA}}}\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694a0322ce07c2b94cdb14163bbe04cb9674}\label{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694a0322ce07c2b94cdb14163bbe04cb9674} 
+Router\+LSA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NetworkLSA@{NetworkLSA}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!NetworkLSA@{NetworkLSA}}}\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694a5d51f5653b9ddf1d8bf640932068cb85}\label{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694a5d51f5653b9ddf1d8bf640932068cb85} 
+Network\+LSA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SummaryLSA@{SummaryLSA}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!SummaryLSA@{SummaryLSA}}}\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694a4c90feb1f4a656a0eb5043c8866eebc0}\label{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694a4c90feb1f4a656a0eb5043c8866eebc0} 
+Summary\+LSA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SummaryLSA\_ASBR@{SummaryLSA\_ASBR}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!SummaryLSA\_ASBR@{SummaryLSA\_ASBR}}}\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694ad978391efe3a9c2e66f450bbb1642d4a}\label{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694ad978391efe3a9c2e66f450bbb1642d4a} 
+Summary\+LSA\+\_\+\+ASBR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASExternalLSAs@{ASExternalLSAs}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!ASExternalLSAs@{ASExternalLSAs}}}\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694aca69c3cdc30b0ddcb8dd1dd95f79065a}\label{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694aca69c3cdc30b0ddcb8dd1dd95f79065a} 
+ASExternal\+LSAs&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00260}{260}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7}\label{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!SPFStatus@{SPFStatus}}
+\index{SPFStatus@{SPFStatus}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{SPFStatus}{SPFStatus}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7}{ns3\+::\+DGRRouting\+LSA\+::\+SPFStatus}}}
+
+
+
+Enumeration of the possible values of the status flag in the Routing Link State Advertisements. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LSA\_SPF\_NOT\_EXPLORED@{LSA\_SPF\_NOT\_EXPLORED}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!LSA\_SPF\_NOT\_EXPLORED@{LSA\_SPF\_NOT\_EXPLORED}}}\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7ac563232b34162339268c7804c93765ad}\label{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7ac563232b34162339268c7804c93765ad} 
+LSA\+\_\+\+SPF\+\_\+\+NOT\+\_\+\+EXPLORED&New vertex not yet considered. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LSA\_SPF\_CANDIDATE@{LSA\_SPF\_CANDIDATE}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!LSA\_SPF\_CANDIDATE@{LSA\_SPF\_CANDIDATE}}}\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7a196d95882ef494ff03d1549a998ba12c}\label{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7a196d95882ef494ff03d1549a998ba12c} 
+LSA\+\_\+\+SPF\+\_\+\+CANDIDATE&Vertex is in the SPF candidate queue. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LSA\_SPF\_IN\_SPFTREE@{LSA\_SPF\_IN\_SPFTREE}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!LSA\_SPF\_IN\_SPFTREE@{LSA\_SPF\_IN\_SPFTREE}}}\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7a0f88fe6c9e38275dc638a9ebb26018a2}\label{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7a0f88fe6c9e38275dc638a9ebb26018a2} 
+LSA\+\_\+\+SPF\+\_\+\+IN\+\_\+\+SPFTREE&Vertex is in the SPF tree. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00273}{273}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a42a5782aad1a9ced94e817f8139bec4e}\label{classns3_1_1_d_g_r_routing_l_s_a_a42a5782aad1a9ced94e817f8139bec4e} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!DGRRoutingLSA@{DGRRoutingLSA}}
+\index{DGRRoutingLSA@{DGRRoutingLSA}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{DGRRoutingLSA()}{DGRRoutingLSA()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily ns3\+::\+DGRRouting\+LSA\+::\+DGRRouting\+LSA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Create a blank Global Routing Link State Advertisement. 
+
+On completion Ipv4\+Address variables initialized to 0.\+0.\+0.\+0 and the list of Link State Records is empty. 
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00137}{137}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a2bae2bd5dc6e1fde3c31d39028307fa0}\label{classns3_1_1_d_g_r_routing_l_s_a_a2bae2bd5dc6e1fde3c31d39028307fa0} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!DGRRoutingLSA@{DGRRoutingLSA}}
+\index{DGRRoutingLSA@{DGRRoutingLSA}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{DGRRoutingLSA()}{DGRRoutingLSA()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily ns3\+::\+DGRRouting\+LSA\+::\+DGRRouting\+LSA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7}{DGRRouting\+LSA\+::\+SPFStatus}}}]{status,  }\item[{Ipv4\+Address}]{link\+State\+Id,  }\item[{Ipv4\+Address}]{advertising\+Rtr }\end{DoxyParamCaption})}
+
+
+
+Create an initialized Global Routing Link State Advertisement. 
+
+On completion the list of Link State Records is empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & The status to of the new LSA. \\
+\hline
+{\em link\+State\+Id} & The Ipv4\+Address for the link state ID field. \\
+\hline
+{\em advertising\+Rtr} & The Ipv4\+Address for the advertising router field. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00151}{151}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a042cca1bebf1189a3e40f0c3abcd5937}\label{classns3_1_1_d_g_r_routing_l_s_a_a042cca1bebf1189a3e40f0c3abcd5937} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!DGRRoutingLSA@{DGRRoutingLSA}}
+\index{DGRRoutingLSA@{DGRRoutingLSA}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{DGRRoutingLSA()}{DGRRoutingLSA()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily ns3\+::\+DGRRouting\+LSA\+::\+DGRRouting\+LSA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \&}]{lsa }\end{DoxyParamCaption})}
+
+
+
+Copy constructor for a Global Routing Link State Advertisement. 
+
+Takes a piece of memory and constructs a semantically identical copy of the given LSA.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lsa} & The existing LSA to be used as the source. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00168}{168}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8cc_source_l00198}{Copy\+Link\+Records()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00280}{Is\+Empty()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_a042cca1bebf1189a3e40f0c3abcd5937_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a20b74180087d2bace3c3196dd112bb9f}\label{classns3_1_1_d_g_r_routing_l_s_a_a20b74180087d2bace3c3196dd112bb9f} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!````~DGRRoutingLSA@{\texorpdfstring{$\sim$}{\string~}DGRRoutingLSA}}
+\index{````~DGRRoutingLSA@{\texorpdfstring{$\sim$}{\string~}DGRRoutingLSA}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DGRRoutingLSA()}{\string~DGRRoutingLSA()}}
+{\footnotesize\ttfamily ns3\+::\+DGRRouting\+LSA\+::\texorpdfstring{$\sim$}{\string~}\+DGRRouting\+LSA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy an existing Global Routing Link State Advertisement. 
+
+Any Global Routing Link Records present in the list are freed. 
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00220}{220}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8cc_source_l00227}{Clear\+Link\+Records()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_a20b74180087d2bace3c3196dd112bb9f_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a945e5e3081dc4463d6335cf40d81b192}\label{classns3_1_1_d_g_r_routing_l_s_a_a945e5e3081dc4463d6335cf40d81b192} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!AddAttachedRouter@{AddAttachedRouter}}
+\index{AddAttachedRouter@{AddAttachedRouter}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{AddAttachedRouter()}{AddAttachedRouter()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRRouting\+LSA\+::\+Add\+Attached\+Router (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{addr }\end{DoxyParamCaption})}
+
+
+
+Add an attached router to the list in the Network\+LSA. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & The Ipv4\+Address of the interface on the network link \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of addresses in the list. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00350}{350}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00559}{m\+\_\+attached\+Routers}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l01161}{ns3\+::\+DGRRouter\+::\+Build\+Network\+LSAs()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_a945e5e3081dc4463d6335cf40d81b192_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a4b21b880eb8b7b733039d0dfaa8b48a4}\label{classns3_1_1_d_g_r_routing_l_s_a_a4b21b880eb8b7b733039d0dfaa8b48a4} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!AddLinkRecord@{AddLinkRecord}}
+\index{AddLinkRecord@{AddLinkRecord}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{AddLinkRecord()}{AddLinkRecord()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRRouting\+LSA\+::\+Add\+Link\+Record (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record}{DGRRouting\+Link\+Record}} \texorpdfstring{$\ast$}{*}}]{lr }\end{DoxyParamCaption})}
+
+
+
+Add a given Global Routing Link Record to the LSA. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lr} & The Global Routing Link Record to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of link records in the list. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00247}{247}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00539}{m\+\_\+link\+Records}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00875}{ns3\+::\+DGRRouter\+::\+Process\+Bridged\+Broadcast\+Link()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01040}{ns3\+::\+DGRRouter\+::\+Process\+Point\+To\+Point\+Link()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00761}{ns3\+::\+DGRRouter\+::\+Process\+Single\+Broadcast\+Link()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_a4b21b880eb8b7b733039d0dfaa8b48a4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_add7dc495e6a10547b0045aab19ea9bcc}\label{classns3_1_1_d_g_r_routing_l_s_a_add7dc495e6a10547b0045aab19ea9bcc} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!ClearLinkRecords@{ClearLinkRecords}}
+\index{ClearLinkRecords@{ClearLinkRecords}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{ClearLinkRecords()}{ClearLinkRecords()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouting\+LSA\+::\+Clear\+Link\+Records (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Release all of the Global Routing Link Records present in the Global Routing Link State Advertisement and make the list of link records empty. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00227}{227}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-router-interface_8h_source_l00539}{m\+\_\+link\+Records}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00220}{\texorpdfstring{$\sim$}{\string~}\+DGRRouting\+LSA()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00182}{operator=()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_add7dc495e6a10547b0045aab19ea9bcc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a206ff392d0561c4b244a8c6fe8d824ab}\label{classns3_1_1_d_g_r_routing_l_s_a_a206ff392d0561c4b244a8c6fe8d824ab} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!CopyLinkRecords@{CopyLinkRecords}}
+\index{CopyLinkRecords@{CopyLinkRecords}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{CopyLinkRecords()}{CopyLinkRecords()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouting\+LSA\+::\+Copy\+Link\+Records (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \&}]{lsa }\end{DoxyParamCaption})}
+
+
+
+Copy any Global Routing Link Records in a given Global Routing Link State Advertisement to the current LSA. 
+
+Existing Link Records are not deleted -- this is a concatenation of Link Records.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_routing_l_s_a_add7dc495e6a10547b0045aab19ea9bcc}{Clear\+Link\+Records} () 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em lsa} & The LSA to copy the Link Records from. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00198}{198}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8cc_source_l00089}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Get\+Link\+Data()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00075}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Get\+Link\+Id()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00103}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Get\+Link\+Type()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00118}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Get\+Metric()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00559}{m\+\_\+attached\+Routers}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00539}{m\+\_\+link\+Records}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00096}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Set\+Link\+Data()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00082}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Set\+Link\+Id()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00110}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Set\+Link\+Type()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00125}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Set\+Metric()}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00168}{DGRRouting\+LSA()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00182}{operator=()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_a206ff392d0561c4b244a8c6fe8d824ab_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_a206ff392d0561c4b244a8c6fe8d824ab_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_aa16092b325a84e50b90fcc5dd4e5bab2}\label{classns3_1_1_d_g_r_routing_l_s_a_aa16092b325a84e50b90fcc5dd4e5bab2} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!GetAdvertisingRouter@{GetAdvertisingRouter}}
+\index{GetAdvertisingRouter@{GetAdvertisingRouter}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{GetAdvertisingRouter()}{GetAdvertisingRouter()}}
+{\footnotesize\ttfamily Ipv4\+Address ns3\+::\+DGRRouting\+LSA\+::\+Get\+Advertising\+Router (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Advertising Router as defined by the OSPF spec. 
+
+We always set it to the router ID of the router making the advertisement.
+
+\begin{DoxySeeAlso}{See also}
+Routing\+Environment\+::\+Allocate\+Router\+Id () 
+
+Global\+Routing\+::\+Get\+Router\+Id () 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The Ipv4\+Address stored as the advertising router. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00315}{315}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00522}{m\+\_\+advertising\+Rtr}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01630}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Process\+ASExternals()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01664}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFAdd\+ASExternal()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_aa16092b325a84e50b90fcc5dd4e5bab2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a1b5e5fa81d0506983a0755787a8d2d62}\label{classns3_1_1_d_g_r_routing_l_s_a_a1b5e5fa81d0506983a0755787a8d2d62} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!GetAttachedRouter@{GetAttachedRouter}}
+\index{GetAttachedRouter@{GetAttachedRouter}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{GetAttachedRouter()}{GetAttachedRouter()}}
+{\footnotesize\ttfamily Ipv4\+Address ns3\+::\+DGRRouting\+LSA\+::\+Get\+Attached\+Router (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{n }\end{DoxyParamCaption}) const}
+
+
+
+Return an Ipv4\+Address corresponding to the specified attached router. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The attached router number desired (number in the list). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Ipv4\+Address of the requested router 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00365}{365}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-router-interface_8h_source_l00559}{m\+\_\+attached\+Routers}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00861}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNext()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_a1b5e5fa81d0506983a0755787a8d2d62_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_acb5df9fec863df510911aa3e64d4aa04}\label{classns3_1_1_d_g_r_routing_l_s_a_acb5df9fec863df510911aa3e64d4aa04} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!GetLinkRecord@{GetLinkRecord}}
+\index{GetLinkRecord@{GetLinkRecord}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{GetLinkRecord()}{GetLinkRecord()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record}{DGRRouting\+Link\+Record}} \texorpdfstring{$\ast$}{*} ns3\+::\+DGRRouting\+LSA\+::\+Get\+Link\+Record (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{n }\end{DoxyParamCaption}) const}
+
+
+
+Return a pointer to the specified Global Routing Link Record. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The LSA number desired. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of link records in the list. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00262}{262}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-router-interface_8h_source_l00539}{m\+\_\+link\+Records}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01374}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Check\+For\+Stub\+Node()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00511}{ns3\+::\+DGRRoute\+Manager\+LSDB\+::\+Get\+LSABy\+Link\+Data()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00696}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Initialize\+Routes()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01283}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFGet\+Next\+Link()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l02059}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Router()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00861}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNext()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01798}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFProcess\+Stubs()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_acb5df9fec863df510911aa3e64d4aa04_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a0ec746b926044a548e4f3a09309322ce}\label{classns3_1_1_d_g_r_routing_l_s_a_a0ec746b926044a548e4f3a09309322ce} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!GetLinkStateId@{GetLinkStateId}}
+\index{GetLinkStateId@{GetLinkStateId}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{GetLinkStateId()}{GetLinkStateId()}}
+{\footnotesize\ttfamily Ipv4\+Address ns3\+::\+DGRRouting\+LSA\+::\+Get\+Link\+State\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Link State ID as defined by the OSPF spec. 
+
+We always set it to the router ID of the router making the advertisement.
+
+\begin{DoxySeeAlso}{See also}
+Routing\+Environment\+::\+Allocate\+Router\+Id () 
+
+Global\+Routing\+::\+Get\+Router\+Id () 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The Ipv4\+Address stored as the link state ID. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00301}{301}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00513}{m\+\_\+link\+State\+Id}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00614}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Build\+DGRRouting\+Database()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01374}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Check\+For\+Stub\+Node()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00696}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Initialize\+Routes()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01630}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Process\+ASExternals()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01664}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFAdd\+ASExternal()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01456}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFCalculate()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l02059}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Router()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l02181}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Transit()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00861}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNext()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01095}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNexthop\+Calculation()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01798}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFProcess\+Stubs()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_a0ec746b926044a548e4f3a09309322ce_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_aa00b07a4d8639539e94817f98905ef19}\label{classns3_1_1_d_g_r_routing_l_s_a_aa00b07a4d8639539e94817f98905ef19} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!GetLSType@{GetLSType}}
+\index{GetLSType@{GetLSType}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{GetLSType()}{GetLSType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694}{DGRRouting\+LSA\+::\+LSType}} ns3\+::\+DGRRouting\+LSA\+::\+Get\+LSType (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the LSType field of the LSA. 
+
+\begin{DoxyReturn}{Returns}
+The LS Type. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00287}{287}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00505}{m\+\_\+ls\+Type}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00103}{ns3\+::\+DGRVertex\+::\+DGRVertex()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00465}{ns3\+::\+DGRRoute\+Manager\+LSDB\+::\+Insert()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00861}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNext()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01095}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNexthop\+Calculation()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_aa00b07a4d8639539e94817f98905ef19_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_ae7e796f5d4860d2236bef31d74364c91}\label{classns3_1_1_d_g_r_routing_l_s_a_ae7e796f5d4860d2236bef31d74364c91} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!GetNAttachedRouters@{GetNAttachedRouters}}
+\index{GetNAttachedRouters@{GetNAttachedRouters}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{GetNAttachedRouters()}{GetNAttachedRouters()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRRouting\+LSA\+::\+Get\+NAttached\+Routers (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the number of attached routers listed in the Network\+LSA. 
+
+\begin{DoxyReturn}{Returns}
+The number of attached routers. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00358}{358}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00559}{m\+\_\+attached\+Routers}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00696}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Initialize\+Routes()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00861}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNext()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_ae7e796f5d4860d2236bef31d74364c91_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a3e3b9552f26b930f47dd069eaf0f3950}\label{classns3_1_1_d_g_r_routing_l_s_a_a3e3b9552f26b930f47dd069eaf0f3950} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!GetNetworkLSANetworkMask@{GetNetworkLSANetworkMask}}
+\index{GetNetworkLSANetworkMask@{GetNetworkLSANetworkMask}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{GetNetworkLSANetworkMask()}{GetNetworkLSANetworkMask()}}
+{\footnotesize\ttfamily Ipv4\+Mask ns3\+::\+DGRRouting\+LSA\+::\+Get\+Network\+LSANetwork\+Mask (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+For a Network LSA, get the Network Mask field that precedes the list of attached routers. 
+
+\begin{DoxyReturn}{Returns}
+the Network\+LSANetwork\+Mask 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00336}{336}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00544}{m\+\_\+network\+LSANetwork\+Mask}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01664}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFAdd\+ASExternal()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l02181}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Transit()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01095}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNexthop\+Calculation()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_a3e3b9552f26b930f47dd069eaf0f3950_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a882a042d18bcbdea3bc1a3eb55dcfe58}\label{classns3_1_1_d_g_r_routing_l_s_a_a882a042d18bcbdea3bc1a3eb55dcfe58} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!GetNLinkRecords@{GetNLinkRecords}}
+\index{GetNLinkRecords@{GetNLinkRecords}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{GetNLinkRecords()}{GetNLinkRecords()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRRouting\+LSA\+::\+Get\+NLink\+Records (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the number of Global Routing Link Records in the LSA. 
+
+\begin{DoxyReturn}{Returns}
+The number of link records in the list. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00255}{255}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00539}{m\+\_\+link\+Records}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01374}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Check\+For\+Stub\+Node()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00511}{ns3\+::\+DGRRoute\+Manager\+LSDB\+::\+Get\+LSABy\+Link\+Data()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00696}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Initialize\+Routes()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l02059}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Router()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00861}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNext()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01798}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFProcess\+Stubs()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_a882a042d18bcbdea3bc1a3eb55dcfe58_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a5000c59488a04e9b809574c93624d3ce}\label{classns3_1_1_d_g_r_routing_l_s_a_a5000c59488a04e9b809574c93624d3ce} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!GetNode@{GetNode}}
+\index{GetNode@{GetNode}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{GetNode()}{GetNode()}}
+{\footnotesize\ttfamily Ptr$<$ Node $>$ ns3\+::\+DGRRouting\+LSA\+::\+Get\+Node (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Node pointer of the node that originated this LSA. 
+
+\begin{DoxyReturn}{Returns}
+Node pointer 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00390}{390}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00568}{m\+\_\+node\+\_\+id}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01374}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Check\+For\+Stub\+Node()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_a5000c59488a04e9b809574c93624d3ce_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_afd80a2583858e08b8b3877a5401bf072}\label{classns3_1_1_d_g_r_routing_l_s_a_afd80a2583858e08b8b3877a5401bf072} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!GetStatus@{GetStatus}}
+\index{GetStatus@{GetStatus}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{GetStatus()}{GetStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7}{DGRRouting\+LSA\+::\+SPFStatus}} ns3\+::\+DGRRouting\+LSA\+::\+Get\+Status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the SPF status of the advertisement. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7}{SPFStatus} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The SPFStatus of the LSA. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00343}{343}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00567}{m\+\_\+status}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00861}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNext()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_afd80a2583858e08b8b3877a5401bf072_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a658f443f5c9022b0e979b70076dd3b16}\label{classns3_1_1_d_g_r_routing_l_s_a_a658f443f5c9022b0e979b70076dd3b16} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!IsEmpty@{IsEmpty}}
+\index{IsEmpty@{IsEmpty}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{IsEmpty()}{IsEmpty()}}
+{\footnotesize\ttfamily bool ns3\+::\+DGRRouting\+LSA\+::\+Is\+Empty (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Check to see if the list of Global Routing Link Records present in the Global Routing Link State Advertisement is empty. 
+
+\begin{DoxyReturn}{Returns}
+True if the list is empty, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00280}{280}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00539}{m\+\_\+link\+Records}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00168}{DGRRouting\+LSA()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l01585}{ns3\+::\+DGRRouter\+::\+Get\+LSA()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_a658f443f5c9022b0e979b70076dd3b16_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_af09c521adba74e1538773cebf14b3929}\label{classns3_1_1_d_g_r_routing_l_s_a_af09c521adba74e1538773cebf14b3929} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!operator=@{operator=}}
+\index{operator=@{operator=}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \& ns3\+::\+DGRRouting\+LSA\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \&}]{lsa }\end{DoxyParamCaption})}
+
+
+
+Assignment operator for a Global Routing Link State Advertisement. 
+
+Takes an existing Global Routing Link State Advertisement and overwrites it to make a semantically identical copy of a given prototype LSA.
+
+If there are any Global Routing Link Records present in the existing LSA, they are freed before the assignment happens.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lsa} & The existing LSA to be used as the source. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the overwritten LSA. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00182}{182}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8cc_source_l00227}{Clear\+Link\+Records()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00198}{Copy\+Link\+Records()}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00522}{m\+\_\+advertising\+Rtr}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00513}{m\+\_\+link\+State\+Id}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00505}{m\+\_\+ls\+Type}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00544}{m\+\_\+network\+LSANetwork\+Mask}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00568}{m\+\_\+node\+\_\+id}}, and \mbox{\hyperlink{dgr-router-interface_8h_source_l00567}{m\+\_\+status}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_af09c521adba74e1538773cebf14b3929_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a46f99ef0058670ce83157f4ab482aaee}\label{classns3_1_1_d_g_r_routing_l_s_a_a46f99ef0058670ce83157f4ab482aaee} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!Print@{Print}}
+\index{Print@{Print}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouting\+LSA\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const}
+
+
+
+Print the contents of the Global Routing Link State Advertisement and any Global Routing Link Records present in the list. 
+
+Quite verbose. 
+\begin{DoxyParams}{Parameters}
+{\em os} & the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00404}{404}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00266}{ASExternal\+LSAs}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00522}{m\+\_\+advertising\+Rtr}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00559}{m\+\_\+attached\+Routers}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00225}{ns3\+::\+DGRRouting\+Link\+Record\+::m\+\_\+link\+Data}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00214}{ns3\+::\+DGRRouting\+Link\+Record\+::m\+\_\+link\+Id}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00539}{m\+\_\+link\+Records}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00513}{m\+\_\+link\+State\+Id}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00231}{ns3\+::\+DGRRouting\+Link\+Record\+::m\+\_\+link\+Type}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00505}{m\+\_\+ls\+Type}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00242}{ns3\+::\+DGRRouting\+Link\+Record\+::m\+\_\+metric}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00544}{m\+\_\+network\+LSANetwork\+Mask}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00263}{Network\+LSA}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00064}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Point\+To\+Point}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00262}{Router\+LSA}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00066}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Stub\+Network}}, and \mbox{\hyperlink{dgr-router-interface_8h_source_l00065}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Transit\+Network}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00496}{ns3\+::operator$<$$<$()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_a46f99ef0058670ce83157f4ab482aaee_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a5f36eb9409d5d6532b9bd267e8d90f61}\label{classns3_1_1_d_g_r_routing_l_s_a_a5f36eb9409d5d6532b9bd267e8d90f61} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!SetAdvertisingRouter@{SetAdvertisingRouter}}
+\index{SetAdvertisingRouter@{SetAdvertisingRouter}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{SetAdvertisingRouter()}{SetAdvertisingRouter()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouting\+LSA\+::\+Set\+Advertising\+Router (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{rtr }\end{DoxyParamCaption})}
+
+
+
+Set the Advertising Router as defined by the OSPF spec. 
+
+We always set it to the router ID of the router making the advertisement.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rtr} & ID of the router making advertisement \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Routing\+Environment\+::\+Allocate\+Router\+Id () 
+
+Global\+Routing\+::\+Get\+Router\+Id () 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00322}{322}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00522}{m\+\_\+advertising\+Rtr}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l01161}{ns3\+::\+DGRRouter\+::\+Build\+Network\+LSAs()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00593}{ns3\+::\+DGRRouter\+::\+Discover\+LSAs()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_a5f36eb9409d5d6532b9bd267e8d90f61_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a382594771f20561edde6e6b53d3bd982}\label{classns3_1_1_d_g_r_routing_l_s_a_a382594771f20561edde6e6b53d3bd982} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!SetLinkStateId@{SetLinkStateId}}
+\index{SetLinkStateId@{SetLinkStateId}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{SetLinkStateId()}{SetLinkStateId()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouting\+LSA\+::\+Set\+Link\+State\+Id (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{addr }\end{DoxyParamCaption})}
+
+
+
+Set the Link State ID is defined by the OSPF spec. 
+
+We always set it to the router ID of the router making the advertisement. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & IPv4 address which will act as ID \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Routing\+Environment\+::\+Allocate\+Router\+Id () 
+
+Global\+Routing\+::\+Get\+Router\+Id () 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00308}{308}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00513}{m\+\_\+link\+State\+Id}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l01161}{ns3\+::\+DGRRouter\+::\+Build\+Network\+LSAs()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00593}{ns3\+::\+DGRRouter\+::\+Discover\+LSAs()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_a382594771f20561edde6e6b53d3bd982_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a898720f0e7c926c4ecd2ca89d09363dd}\label{classns3_1_1_d_g_r_routing_l_s_a_a898720f0e7c926c4ecd2ca89d09363dd} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!SetLSType@{SetLSType}}
+\index{SetLSType@{SetLSType}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{SetLSType()}{SetLSType()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouting\+LSA\+::\+Set\+LSType (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694}{DGRRouting\+LSA\+::\+LSType}}}]{typ }\end{DoxyParamCaption})}
+
+
+
+Set the LS type field of the LSA. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em typ} & the LS Type. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00294}{294}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00505}{m\+\_\+ls\+Type}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l01161}{ns3\+::\+DGRRouter\+::\+Build\+Network\+LSAs()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00593}{ns3\+::\+DGRRouter\+::\+Discover\+LSAs()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_a898720f0e7c926c4ecd2ca89d09363dd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a1d60ee05ffc0dd4d434fb12917f6c83e}\label{classns3_1_1_d_g_r_routing_l_s_a_a1d60ee05ffc0dd4d434fb12917f6c83e} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!SetNetworkLSANetworkMask@{SetNetworkLSANetworkMask}}
+\index{SetNetworkLSANetworkMask@{SetNetworkLSANetworkMask}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{SetNetworkLSANetworkMask()}{SetNetworkLSANetworkMask()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouting\+LSA\+::\+Set\+Network\+LSANetwork\+Mask (\begin{DoxyParamCaption}\item[{Ipv4\+Mask}]{mask }\end{DoxyParamCaption})}
+
+
+
+For a Network LSA, set the Network Mask field that precedes the list of attached routers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mask} & the Network Mask field. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00329}{329}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00544}{m\+\_\+network\+LSANetwork\+Mask}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l01161}{ns3\+::\+DGRRouter\+::\+Build\+Network\+LSAs()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00593}{ns3\+::\+DGRRouter\+::\+Discover\+LSAs()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_a1d60ee05ffc0dd4d434fb12917f6c83e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a5fb6e248545fbd3d50b34429e4780746}\label{classns3_1_1_d_g_r_routing_l_s_a_a5fb6e248545fbd3d50b34429e4780746} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!SetNode@{SetNode}}
+\index{SetNode@{SetNode}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{SetNode()}{SetNode()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouting\+LSA\+::\+Set\+Node (\begin{DoxyParamCaption}\item[{Ptr$<$ Node $>$}]{node }\end{DoxyParamCaption})}
+
+
+
+Set the Node pointer of the node that originated this LSA. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Node pointer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00397}{397}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00568}{m\+\_\+node\+\_\+id}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l01161}{ns3\+::\+DGRRouter\+::\+Build\+Network\+LSAs()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00593}{ns3\+::\+DGRRouter\+::\+Discover\+LSAs()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_a5fb6e248545fbd3d50b34429e4780746_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a497453d1271c0020968487ec8ead99c5}\label{classns3_1_1_d_g_r_routing_l_s_a_a497453d1271c0020968487ec8ead99c5} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!SetStatus@{SetStatus}}
+\index{SetStatus@{SetStatus}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{SetStatus()}{SetStatus()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouting\+LSA\+::\+Set\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7}{DGRRouting\+LSA\+::\+SPFStatus}}}]{status }\end{DoxyParamCaption})}
+
+
+
+Set the SPF status of the advertisement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & SPF status to set \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7}{SPFStatus} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00383}{383}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00567}{m\+\_\+status}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l01161}{ns3\+::\+DGRRouter\+::\+Build\+Network\+LSAs()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00593}{ns3\+::\+DGRRouter\+::\+Discover\+LSAs()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00453}{ns3\+::\+DGRRoute\+Manager\+LSDB\+::\+Initialize()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01456}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFCalculate()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00861}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNext()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d4d/classns3_1_1_d_g_r_routing_l_s_a_a497453d1271c0020968487ec8ead99c5_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_ae081e96bb7f72467f7bc7d3b6cab2548}\label{classns3_1_1_d_g_r_routing_l_s_a_ae081e96bb7f72467f7bc7d3b6cab2548} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!m\_advertisingRtr@{m\_advertisingRtr}}
+\index{m\_advertisingRtr@{m\_advertisingRtr}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{m\_advertisingRtr}{m\_advertisingRtr}}
+{\footnotesize\ttfamily Ipv4\+Address ns3\+::\+DGRRouting\+LSA\+::m\+\_\+advertising\+Rtr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The Advertising Router is defined by the OSPF spec. 
+
+We always set it to the router ID of the router making the advertisement.
+
+\begin{DoxySeeAlso}{See also}
+Routing\+Environment\+::\+Allocate\+Router\+Id () 
+
+Global\+Routing\+::\+Get\+Router\+Id () 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00522}{522}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00315}{Get\+Advertising\+Router()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00182}{operator=()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00404}{Print()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00322}{Set\+Advertising\+Router()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a41531661fa28a374064823c36171ae0b}\label{classns3_1_1_d_g_r_routing_l_s_a_a41531661fa28a374064823c36171ae0b} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!m\_attachedRouters@{m\_attachedRouters}}
+\index{m\_attachedRouters@{m\_attachedRouters}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{m\_attachedRouters}{m\_attachedRouters}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_ad79473dcd06399d8065d1810c74ab6f3}{List\+Of\+Attached\+Routers\+\_\+t}} ns3\+::\+DGRRouting\+LSA\+::m\+\_\+attached\+Routers\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Each Network LSA contains a list of attached routers. 
+
+m\+\_\+attached\+Routers is an STL list container to hold the addresses that have been discovered and prepared for the advertisement.
+
+\begin{DoxySeeAlso}{See also}
+Global\+Routing\+::\+Discover\+LSAs () 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00559}{559}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00350}{Add\+Attached\+Router()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00198}{Copy\+Link\+Records()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00365}{Get\+Attached\+Router()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00358}{Get\+NAttached\+Routers()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00404}{Print()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a05d8ade21d0728b6a2de9e3d3bd4f154}\label{classns3_1_1_d_g_r_routing_l_s_a_a05d8ade21d0728b6a2de9e3d3bd4f154} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!m\_linkRecords@{m\_linkRecords}}
+\index{m\_linkRecords@{m\_linkRecords}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{m\_linkRecords}{m\_linkRecords}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_aef9fd2089bc114e9b2ff86acff4482f5}{List\+Of\+Link\+Records\+\_\+t}} ns3\+::\+DGRRouting\+LSA\+::m\+\_\+link\+Records\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Each Link State Advertisement contains a number of Link Records that describe the kinds of links that are attached to a given node. 
+
+We consider Point\+To\+Point and Stub\+Network links.
+
+m\+\_\+link\+Records is an STL list container to hold the Link Records that have been discovered and prepared for the advertisement.
+
+\begin{DoxySeeAlso}{See also}
+Global\+Routing\+::\+Discover\+LSAs () 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00539}{539}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00247}{Add\+Link\+Record()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00227}{Clear\+Link\+Records()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00198}{Copy\+Link\+Records()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00262}{Get\+Link\+Record()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00255}{Get\+NLink\+Records()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00280}{Is\+Empty()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00404}{Print()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a7934180d82eeada95c7c0918438f8f54}\label{classns3_1_1_d_g_r_routing_l_s_a_a7934180d82eeada95c7c0918438f8f54} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!m\_linkStateId@{m\_linkStateId}}
+\index{m\_linkStateId@{m\_linkStateId}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{m\_linkStateId}{m\_linkStateId}}
+{\footnotesize\ttfamily Ipv4\+Address ns3\+::\+DGRRouting\+LSA\+::m\+\_\+link\+State\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The Link State ID is defined by the OSPF spec. 
+
+We always set it to the router ID of the router making the advertisement.
+
+\begin{DoxySeeAlso}{See also}
+Routing\+Environment\+::\+Allocate\+Router\+Id () 
+
+Global\+Routing\+::\+Get\+Router\+Id () 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00513}{513}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00301}{Get\+Link\+State\+Id()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00182}{operator=()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00404}{Print()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00308}{Set\+Link\+State\+Id()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_ae6c045e56d285913bdc92870f0e0ce45}\label{classns3_1_1_d_g_r_routing_l_s_a_ae6c045e56d285913bdc92870f0e0ce45} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!m\_lsType@{m\_lsType}}
+\index{m\_lsType@{m\_lsType}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{m\_lsType}{m\_lsType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694}{LSType}} ns3\+::\+DGRRouting\+LSA\+::m\+\_\+ls\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The type of the LSA. 
+
+Each LSA type has a separate advertisement format. 
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00505}{505}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00287}{Get\+LSType()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00182}{operator=()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00404}{Print()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00294}{Set\+LSType()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a96b6a315aabd6e6067d627a47f755d39}\label{classns3_1_1_d_g_r_routing_l_s_a_a96b6a315aabd6e6067d627a47f755d39} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!m\_networkLSANetworkMask@{m\_networkLSANetworkMask}}
+\index{m\_networkLSANetworkMask@{m\_networkLSANetworkMask}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{m\_networkLSANetworkMask}{m\_networkLSANetworkMask}}
+{\footnotesize\ttfamily Ipv4\+Mask ns3\+::\+DGRRouting\+LSA\+::m\+\_\+network\+LSANetwork\+Mask\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Each Network LSA contains the network mask of the attached network. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00544}{544}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00336}{Get\+Network\+LSANetwork\+Mask()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00182}{operator=()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00404}{Print()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00329}{Set\+Network\+LSANetwork\+Mask()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_afbc01e04115a275765d9336f3e388fc8}\label{classns3_1_1_d_g_r_routing_l_s_a_afbc01e04115a275765d9336f3e388fc8} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!m\_node\_id@{m\_node\_id}}
+\index{m\_node\_id@{m\_node\_id}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{m\_node\_id}{m\_node\_id}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRRouting\+LSA\+::m\+\_\+node\+\_\+id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+node ID 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00568}{568}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00390}{Get\+Node()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00182}{operator=()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00397}{Set\+Node()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_routing_l_s_a_a81565148817b697f3aa67ee29aec1c34}\label{classns3_1_1_d_g_r_routing_l_s_a_a81565148817b697f3aa67ee29aec1c34} 
+\index{ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}!m\_status@{m\_status}}
+\index{m\_status@{m\_status}!ns3::DGRRoutingLSA@{ns3::DGRRoutingLSA}}
+\doxyparagraph{\texorpdfstring{m\_status}{m\_status}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7}{SPFStatus}} ns3\+::\+DGRRouting\+LSA\+::m\+\_\+status\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This is a tristate flag used internally in the SPF computation to mark if an SPFVertex (a data structure representing a vertex in the SPF tree -- a router) is new, is a candidate for a shortest path, or is in its proper position in the tree. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00567}{567}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00343}{Get\+Status()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00182}{operator=()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00383}{Set\+Status()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{dgr-router-interface_8h}{dgr-\/router-\/interface.\+h}}\item 
+model/\mbox{\hyperlink{dgr-router-interface_8cc}{dgr-\/router-\/interface.\+cc}}\end{DoxyCompactItemize}

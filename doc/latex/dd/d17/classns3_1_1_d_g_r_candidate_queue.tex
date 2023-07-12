@@ -1,0 +1,598 @@
+\doxysubsection{ns3\+::DGRCandidate\+Queue Class Reference}
+\hypertarget{classns3_1_1_d_g_r_candidate_queue}{}\label{classns3_1_1_d_g_r_candidate_queue}\index{ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}}
+
+
+A Candidate Queue used in routing calculations.  
+
+
+
+
+{\ttfamily \#include $<$dgr-\/candidate-\/queue.\+h$>$}
+
+
+
+Collaboration diagram for ns3\+::DGRCandidate\+Queue\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d6a/classns3_1_1_d_g_r_candidate_queue__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a8ce369fec28b2ef22fe68c3dca929476}{DGRCandidate\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em Create an empty SPF Candidate Queue. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a781c132e67fec6534adb3e588e938034}{\texorpdfstring{$\sim$}{\string~}\+DGRCandidate\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em Destroy an SPF Candidate Queue and release any resources held by the contents. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_adeeaf9c5c6e52bf6532da18cad7a1a13}{Clear}} (void)
+\begin{DoxyCompactList}\small\item\em Empty the Candidate Queue and release all of the resources associated with the Shortest Path First Vertex pointers in the queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a8fafbd85e0ef421b1660ad089997a8e1}{Empty}} (void) const
+\begin{DoxyCompactList}\small\item\em Test the Candidate Queue to determine if it is empty. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a0059b97ee38bc933def96f22719e90c8}{Find}} (const Ipv4\+Address addr) const
+\begin{DoxyCompactList}\small\item\em Searches the Candidate Queue for a Shortest Path First Vertex pointer that points to a vertex having the given IP address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a278c16f4c6de3e85aa9268215a6e95db}{Pop}} (void)
+\begin{DoxyCompactList}\small\item\em Pop the Shortest Path First Vertex pointer at the top of the queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_ae02f69062ca21f025cba41d535491b87}{Push}} (\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*}v\+New)
+\begin{DoxyCompactList}\small\item\em Push a Shortest Path First Vertex pointer onto the queue according to the priority scheme. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a8745d6ce64bdbdc57e731025c7e78935}{Reorder}} (void)
+\begin{DoxyCompactList}\small\item\em Reorders the Candidate Queue according to the priority scheme. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_abdb46ac92a797d66c0a08f646f6637f5}{Size}} (void) const
+\begin{DoxyCompactList}\small\item\em Return the number of Shortest Path First Vertex pointers presently stored in the Candidate Queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a977476bb6142c7c0cb75af8c7fbc28cc}{Top}} (void) const
+\begin{DoxyCompactList}\small\item\em Return the Shortest Path First Vertex pointer at the top of the queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::list$<$ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a8e75c8bcd203b33ac721416e2640c59f}{DGRCandidate\+List\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em container of \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} pointers \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a2623d9840bbebaa9f73e9ab107c58c7c}{DGRCandidate\+Queue}} (\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue}{DGRCandidate\+Queue}} \&sr)
+\begin{DoxyCompactList}\small\item\em Candidate Queue copy construction is disallowed (not implemented) to prevent the compiler from slipping in incorrect versions that don\textquotesingle{}t properly deal with deep copies. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue}{DGRCandidate\+Queue}} \& \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_ab3406cbdd8465b4dc741d75a92eae7ff}{operator=}} (\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue}{DGRCandidate\+Queue}} \&sr)
+\begin{DoxyCompactList}\small\item\em Candidate Queue assignment operator is disallowed (not implemented) to prevent the compiler from slipping in incorrect versions that don\textquotesingle{}t properly deal with deep copies. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_aff4da36dc33f48b29a1ac3cedaaca635}{Compare\+DGRVertex}} (const \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*}v1, const \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*}v2)
+\begin{DoxyCompactList}\small\item\em return true if v1 \texorpdfstring{$<$}{<} v2 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a8e75c8bcd203b33ac721416e2640c59f}{DGRCandidate\+List\+\_\+t}} \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a2d91aa78fea568afa265cdbed2f214c4}{m\+\_\+candidates}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} candidates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a428325dcf2c8e3cf0886db75647b7795}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue}{DGRCandidate\+Queue}} \&q)
+\begin{DoxyCompactList}\small\item\em Stream insertion operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+A Candidate Queue used in routing calculations. 
+
+The Candidate\+Queue is used in the OSPF shortest path computations. It is a priority queue used to store candidates for the shortest path to a given network.
+
+The queue holds Shortest Path First Vertex pointers and orders them according to the lowest value of the field m\+\_\+distance\+From\+Root. Remaining vertices are ordered according to increasing distance. This implements a priority queue.
+
+Although a STL priority\+\_\+queue almost does what we want, the requirement for a Find () operation, the dynamic nature of the data and the derived requirement for a Reorder () operation led us to implement this simple enhanced priority queue. 
+
+Definition at line \mbox{\hyperlink{dgr-candidate-queue_8h_source_l00051}{51}} of file \mbox{\hyperlink{dgr-candidate-queue_8h_source}{dgr-\/candidate-\/queue.\+h}}.
+
+
+
+\doxysubsubsection{Member Typedef Documentation}
+\Hypertarget{classns3_1_1_d_g_r_candidate_queue_a8e75c8bcd203b33ac721416e2640c59f}\label{classns3_1_1_d_g_r_candidate_queue_a8e75c8bcd203b33ac721416e2640c59f} 
+\index{ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}!DGRCandidateList\_t@{DGRCandidateList\_t}}
+\index{DGRCandidateList\_t@{DGRCandidateList\_t}!ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}}
+\doxyparagraph{\texorpdfstring{DGRCandidateList\_t}{DGRCandidateList\_t}}
+{\footnotesize\ttfamily typedef std\+::list$<$\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}\texorpdfstring{$\ast$}{*}$>$ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a8e75c8bcd203b33ac721416e2640c59f}{ns3\+::\+DGRCandidate\+Queue\+::\+DGRCandidate\+List\+\_\+t}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+container of \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} pointers 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-candidate-queue_8h_source_l00187}{187}} of file \mbox{\hyperlink{dgr-candidate-queue_8h_source}{dgr-\/candidate-\/queue.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_d_g_r_candidate_queue_a8ce369fec28b2ef22fe68c3dca929476}\label{classns3_1_1_d_g_r_candidate_queue_a8ce369fec28b2ef22fe68c3dca929476} 
+\index{ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}!DGRCandidateQueue@{DGRCandidateQueue}}
+\index{DGRCandidateQueue@{DGRCandidateQueue}!ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}}
+\doxyparagraph{\texorpdfstring{DGRCandidateQueue()}{DGRCandidateQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ns3\+::\+DGRCandidate\+Queue\+::\+DGRCandidate\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Create an empty SPF Candidate Queue. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00068}{68}} of file \mbox{\hyperlink{dgr-candidate-queue_8cc_source}{dgr-\/candidate-\/queue.\+cc}}.
+
+\Hypertarget{classns3_1_1_d_g_r_candidate_queue_a781c132e67fec6534adb3e588e938034}\label{classns3_1_1_d_g_r_candidate_queue_a781c132e67fec6534adb3e588e938034} 
+\index{ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}!````~DGRCandidateQueue@{\texorpdfstring{$\sim$}{\string~}DGRCandidateQueue}}
+\index{````~DGRCandidateQueue@{\texorpdfstring{$\sim$}{\string~}DGRCandidateQueue}!ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DGRCandidateQueue()}{\string~DGRCandidateQueue()}}
+{\footnotesize\ttfamily ns3\+::\+DGRCandidate\+Queue\+::\texorpdfstring{$\sim$}{\string~}\+DGRCandidate\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destroy an SPF Candidate Queue and release any resources held by the contents. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00074}{74}} of file \mbox{\hyperlink{dgr-candidate-queue_8cc_source}{dgr-\/candidate-\/queue.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00081}{Clear()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d17/classns3_1_1_d_g_r_candidate_queue_a781c132e67fec6534adb3e588e938034_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_candidate_queue_a2623d9840bbebaa9f73e9ab107c58c7c}\label{classns3_1_1_d_g_r_candidate_queue_a2623d9840bbebaa9f73e9ab107c58c7c} 
+\index{ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}!DGRCandidateQueue@{DGRCandidateQueue}}
+\index{DGRCandidateQueue@{DGRCandidateQueue}!ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}}
+\doxyparagraph{\texorpdfstring{DGRCandidateQueue()}{DGRCandidateQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ns3\+::\+DGRCandidate\+Queue\+::\+DGRCandidate\+Queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue}{DGRCandidate\+Queue}} \&}]{sr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Candidate Queue copy construction is disallowed (not implemented) to prevent the compiler from slipping in incorrect versions that don\textquotesingle{}t properly deal with deep copies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sr} & object to copy \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_d_g_r_candidate_queue_adeeaf9c5c6e52bf6532da18cad7a1a13}\label{classns3_1_1_d_g_r_candidate_queue_adeeaf9c5c6e52bf6532da18cad7a1a13} 
+\index{ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}!Clear@{Clear}}
+\index{Clear@{Clear}!ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}}
+\doxyparagraph{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRCandidate\+Queue\+::\+Clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Empty the Candidate Queue and release all of the resources associated with the Shortest Path First Vertex pointers in the queue. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00081}{81}} of file \mbox{\hyperlink{dgr-candidate-queue_8cc_source}{dgr-\/candidate-\/queue.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-candidate-queue_8h_source_l00188}{m\+\_\+candidates}}, and \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00105}{Pop()}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00074}{\texorpdfstring{$\sim$}{\string~}\+DGRCandidate\+Queue()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d17/classns3_1_1_d_g_r_candidate_queue_adeeaf9c5c6e52bf6532da18cad7a1a13_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d17/classns3_1_1_d_g_r_candidate_queue_adeeaf9c5c6e52bf6532da18cad7a1a13_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_candidate_queue_aff4da36dc33f48b29a1ac3cedaaca635}\label{classns3_1_1_d_g_r_candidate_queue_aff4da36dc33f48b29a1ac3cedaaca635} 
+\index{ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}!CompareDGRVertex@{CompareDGRVertex}}
+\index{CompareDGRVertex@{CompareDGRVertex}!ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}}
+\doxyparagraph{\texorpdfstring{CompareDGRVertex()}{CompareDGRVertex()}}
+{\footnotesize\ttfamily bool ns3\+::\+DGRCandidate\+Queue\+::\+Compare\+DGRVertex (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*}}]{v1,  }\item[{const \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*}}]{v2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+return true if v1 \texorpdfstring{$<$}{<} v2 
+
+DGRVertexes are added into the queue according to the ordering defined by this method. If v1 should be popped before v2, this method return true; false otherwise
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & first operand \\
+\hline
+{\em v2} & second operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if v1 should be popped before v2; false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00180}{180}} of file \mbox{\hyperlink{dgr-candidate-queue_8cc_source}{dgr-\/candidate-\/queue.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00228}{ns3\+::\+DGRVertex\+::\+Get\+Distance\+From\+Root()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00186}{ns3\+::\+DGRVertex\+::\+Get\+Vertex\+Type()}}, \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00082}{ns3\+::\+DGRVertex\+::\+Vertex\+Network}}, and \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00081}{ns3\+::\+DGRVertex\+::\+Vertex\+Router}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00093}{Push()}}, and \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00163}{Reorder()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d17/classns3_1_1_d_g_r_candidate_queue_aff4da36dc33f48b29a1ac3cedaaca635_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d17/classns3_1_1_d_g_r_candidate_queue_aff4da36dc33f48b29a1ac3cedaaca635_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_candidate_queue_a8fafbd85e0ef421b1660ad089997a8e1}\label{classns3_1_1_d_g_r_candidate_queue_a8fafbd85e0ef421b1660ad089997a8e1} 
+\index{ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}!Empty@{Empty}}
+\index{Empty@{Empty}!ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}}
+\doxyparagraph{\texorpdfstring{Empty()}{Empty()}}
+{\footnotesize\ttfamily bool ns3\+::\+DGRCandidate\+Queue\+::\+Empty (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Test the Candidate Queue to determine if it is empty. 
+
+\begin{DoxyReturn}{Returns}
+True if the queue is empty, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00131}{131}} of file \mbox{\hyperlink{dgr-candidate-queue_8cc_source}{dgr-\/candidate-\/queue.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-candidate-queue_8h_source_l00188}{m\+\_\+candidates}}.
+
+\Hypertarget{classns3_1_1_d_g_r_candidate_queue_a0059b97ee38bc933def96f22719e90c8}\label{classns3_1_1_d_g_r_candidate_queue_a0059b97ee38bc933def96f22719e90c8} 
+\index{ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}!Find@{Find}}
+\index{Find@{Find}!ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}}
+\doxyparagraph{\texorpdfstring{Find()}{Find()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*} ns3\+::\+DGRCandidate\+Queue\+::\+Find (\begin{DoxyParamCaption}\item[{const Ipv4\+Address}]{addr }\end{DoxyParamCaption}) const}
+
+
+
+Searches the Candidate Queue for a Shortest Path First Vertex pointer that points to a vertex having the given IP address. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & The IP address to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The DGRVertex\texorpdfstring{$\ast$}{*} pointer corresponding to the given IP address. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00145}{145}} of file \mbox{\hyperlink{dgr-candidate-queue_8cc_source}{dgr-\/candidate-\/queue.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00200}{ns3\+::\+DGRVertex\+::\+Get\+Vertex\+Id()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-candidate-queue_8h_source_l00188}{m\+\_\+candidates}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00861}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNext()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d17/classns3_1_1_d_g_r_candidate_queue_a0059b97ee38bc933def96f22719e90c8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d17/classns3_1_1_d_g_r_candidate_queue_a0059b97ee38bc933def96f22719e90c8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_candidate_queue_ab3406cbdd8465b4dc741d75a92eae7ff}\label{classns3_1_1_d_g_r_candidate_queue_ab3406cbdd8465b4dc741d75a92eae7ff} 
+\index{ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}!operator=@{operator=}}
+\index{operator=@{operator=}!ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue}{DGRCandidate\+Queue}} \& ns3\+::\+DGRCandidate\+Queue\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue}{DGRCandidate\+Queue}} \&}]{sr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Candidate Queue assignment operator is disallowed (not implemented) to prevent the compiler from slipping in incorrect versions that don\textquotesingle{}t properly deal with deep copies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sr} & object to assign \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+copied object 
+\end{DoxyReturn}
+\Hypertarget{classns3_1_1_d_g_r_candidate_queue_a278c16f4c6de3e85aa9268215a6e95db}\label{classns3_1_1_d_g_r_candidate_queue_a278c16f4c6de3e85aa9268215a6e95db} 
+\index{ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}!Pop@{Pop}}
+\index{Pop@{Pop}!ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}}
+\doxyparagraph{\texorpdfstring{Pop()}{Pop()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*} ns3\+::\+DGRCandidate\+Queue\+::\+Pop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Pop the Shortest Path First Vertex pointer at the top of the queue. 
+
+The caller is given the responsibility for releasing the resources associated with the vertex.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} 
+
+\doxylink{classns3_1_1_d_g_r_candidate_queue_a977476bb6142c7c0cb75af8c7fbc28cc}{Top} () 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The Shortest Path First Vertex pointer at the top of the queue. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00105}{105}} of file \mbox{\hyperlink{dgr-candidate-queue_8cc_source}{dgr-\/candidate-\/queue.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-candidate-queue_8h_source_l00188}{m\+\_\+candidates}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00081}{Clear()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01456}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFCalculate()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d17/classns3_1_1_d_g_r_candidate_queue_a278c16f4c6de3e85aa9268215a6e95db_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_candidate_queue_ae02f69062ca21f025cba41d535491b87}\label{classns3_1_1_d_g_r_candidate_queue_ae02f69062ca21f025cba41d535491b87} 
+\index{ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}!Push@{Push}}
+\index{Push@{Push}!ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}}
+\doxyparagraph{\texorpdfstring{Push()}{Push()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRCandidate\+Queue\+::\+Push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*}}]{v\+New }\end{DoxyParamCaption})}
+
+
+
+Push a Shortest Path First Vertex pointer onto the queue according to the priority scheme. 
+
+On completion, the top of the queue will hold the Shortest Path First Vertex pointer that points to a vertex having lowest value of the field m\+\_\+distance\+From\+Root. Remaining vertices are ordered according to increasing distance.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em v\+New} & The Shortest Path First Vertex to add to the queue. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00093}{93}} of file \mbox{\hyperlink{dgr-candidate-queue_8cc_source}{dgr-\/candidate-\/queue.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00180}{Compare\+DGRVertex()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-candidate-queue_8h_source_l00188}{m\+\_\+candidates}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00861}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNext()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d17/classns3_1_1_d_g_r_candidate_queue_ae02f69062ca21f025cba41d535491b87_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d17/classns3_1_1_d_g_r_candidate_queue_ae02f69062ca21f025cba41d535491b87_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_candidate_queue_a8745d6ce64bdbdc57e731025c7e78935}\label{classns3_1_1_d_g_r_candidate_queue_a8745d6ce64bdbdc57e731025c7e78935} 
+\index{ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}!Reorder@{Reorder}}
+\index{Reorder@{Reorder}!ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}}
+\doxyparagraph{\texorpdfstring{Reorder()}{Reorder()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRCandidate\+Queue\+::\+Reorder (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Reorders the Candidate Queue according to the priority scheme. 
+
+On completion, the top of the queue will hold the Shortest Path First Vertex pointer that points to a vertex having lowest value of the field m\+\_\+distance\+From\+Root. Remaining vertices are ordered according to increasing distance.
+
+This method is provided in case the values of m\+\_\+distance\+From\+Root change during the routing calculations.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00163}{163}} of file \mbox{\hyperlink{dgr-candidate-queue_8cc_source}{dgr-\/candidate-\/queue.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00180}{Compare\+DGRVertex()}}, and \mbox{\hyperlink{dgr-candidate-queue_8h_source_l00188}{m\+\_\+candidates}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00861}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNext()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d17/classns3_1_1_d_g_r_candidate_queue_a8745d6ce64bdbdc57e731025c7e78935_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d17/classns3_1_1_d_g_r_candidate_queue_a8745d6ce64bdbdc57e731025c7e78935_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_candidate_queue_abdb46ac92a797d66c0a08f646f6637f5}\label{classns3_1_1_d_g_r_candidate_queue_abdb46ac92a797d66c0a08f646f6637f5} 
+\index{ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}!Size@{Size}}
+\index{Size@{Size}!ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}}
+\doxyparagraph{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRCandidate\+Queue\+::\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the number of Shortest Path First Vertex pointers presently stored in the Candidate Queue. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The number of DGRVertex\texorpdfstring{$\ast$}{*} pointers in the Candidate Queue. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00138}{138}} of file \mbox{\hyperlink{dgr-candidate-queue_8cc_source}{dgr-\/candidate-\/queue.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-candidate-queue_8h_source_l00188}{m\+\_\+candidates}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01456}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFCalculate()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d17/classns3_1_1_d_g_r_candidate_queue_abdb46ac92a797d66c0a08f646f6637f5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_candidate_queue_a977476bb6142c7c0cb75af8c7fbc28cc}\label{classns3_1_1_d_g_r_candidate_queue_a977476bb6142c7c0cb75af8c7fbc28cc} 
+\index{ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}!Top@{Top}}
+\index{Top@{Top}!ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}}
+\doxyparagraph{\texorpdfstring{Top()}{Top()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*} ns3\+::\+DGRCandidate\+Queue\+::\+Top (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the Shortest Path First Vertex pointer at the top of the queue. 
+
+This method does not pop the DGRVertex\texorpdfstring{$\ast$}{*} off of the queue, it simply returns the pointer.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} 
+
+\doxylink{classns3_1_1_d_g_r_candidate_queue_a278c16f4c6de3e85aa9268215a6e95db}{Pop} () 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The Shortest Path First Vertex pointer at the top of the queue. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00119}{119}} of file \mbox{\hyperlink{dgr-candidate-queue_8cc_source}{dgr-\/candidate-\/queue.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-candidate-queue_8h_source_l00188}{m\+\_\+candidates}}.
+
+
+
+\doxysubsubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classns3_1_1_d_g_r_candidate_queue_a428325dcf2c8e3cf0886db75647b7795}\label{classns3_1_1_d_g_r_candidate_queue_a428325dcf2c8e3cf0886db75647b7795} 
+\index{ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}}
+\doxyparagraph{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue}{DGRCandidate\+Queue}} \&}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Stream insertion operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & the reference to the output stream \\
+\hline
+{\em q} & the Candidate\+Queue \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the reference to the output stream 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00049}{49}} of file \mbox{\hyperlink{dgr-candidate-queue_8cc_source}{dgr-\/candidate-\/queue.\+cc}}.
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{classns3_1_1_d_g_r_candidate_queue_a2d91aa78fea568afa265cdbed2f214c4}\label{classns3_1_1_d_g_r_candidate_queue_a2d91aa78fea568afa265cdbed2f214c4} 
+\index{ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}!m\_candidates@{m\_candidates}}
+\index{m\_candidates@{m\_candidates}!ns3::DGRCandidateQueue@{ns3::DGRCandidateQueue}}
+\doxyparagraph{\texorpdfstring{m\_candidates}{m\_candidates}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue_a8e75c8bcd203b33ac721416e2640c59f}{DGRCandidate\+List\+\_\+t}} ns3\+::\+DGRCandidate\+Queue\+::m\+\_\+candidates\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} candidates. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-candidate-queue_8h_source_l00188}{188}} of file \mbox{\hyperlink{dgr-candidate-queue_8h_source}{dgr-\/candidate-\/queue.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00081}{Clear()}}, \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00131}{Empty()}}, \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00145}{Find()}}, \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00105}{Pop()}}, \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00093}{Push()}}, \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00163}{Reorder()}}, \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00138}{Size()}}, and \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00119}{Top()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{dgr-candidate-queue_8h}{dgr-\/candidate-\/queue.\+h}}\item 
+model/\mbox{\hyperlink{dgr-candidate-queue_8cc}{dgr-\/candidate-\/queue.\+cc}}\end{DoxyCompactItemize}

@@ -1,0 +1,17 @@
+<map id="ns3::NeighborStatusEntry" name="ns3::NeighborStatusEntry">
+<area shape="rect" id="Node000001" title=" " alt="" coords="72,299,259,324"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="90,196,241,236"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,250,168,298,163,298,163,250"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,108,80,133"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="70,139,142,194,139,198,67,144"/>
+<area shape="rect" id="Node000004" href="$d4/dba/classns3_1_1_status_unit.html" title=" " alt="" coords="105,108,226,133"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="168,147,168,196,163,196,163,147"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="146,5,185,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="168,45,168,108,163,108,163,45"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="250,108,385,133"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="289,143,237,174,198,198,195,194,235,170,286,138"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="271,5,310,31"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="290,44,291,64,294,83,309,107,304,109,290,85,285,64,285,45"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="337,5,375,31"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="349,44,324,109,319,107,344,42"/>
+</map>

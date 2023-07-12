@@ -1,0 +1,5 @@
+<map id="ns3::DgrHeader::GetSerializedSize" name="ns3::DgrHeader::GetSerializedSize">
+<area shape="rect" id="Node000001" title="Get the serialized size of the packet." alt="" coords="5,5,251,31"/>
+<area shape="rect" id="Node000002" href="$de/d1d/classns3_1_1_dgr_nse.html#a2b24a215ee38cb8ec0e5a8c6f5247e01" title="Get the serialized size of the packet." alt="" coords="299,5,521,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="251,15,285,15,285,21,251,21"/>
+</map>

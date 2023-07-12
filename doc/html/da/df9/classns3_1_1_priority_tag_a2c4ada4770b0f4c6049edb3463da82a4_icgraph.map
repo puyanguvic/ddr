@@ -1,0 +1,10 @@
+<map id="ns3::PriorityTag::SetPriority" name="ns3::PriorityTag::SetPriority">
+<area shape="rect" id="Node000001" title="Set the tag&#39;s priority." alt="" coords="464,13,663,38"/>
+<area shape="rect" id="Node000002" href="$d5/dbe/classns3_1_1_d_g_r_udp_application.html#a844392732fe5f6e197992c862c4151db" title="Send a packet" alt="" coords="235,5,416,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="451,28,416,28,416,23,451,23"/>
+<area shape="rect" id="Node000003" href="$d5/dbe/classns3_1_1_d_g_r_udp_application.html#a217460003efed056634b84d512c0f47b" title="Schedule a new transmission." alt="" coords="5,5,187,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="221,37,187,37,187,31,221,32"/>
+<area shape="rect" id="Node000004" href="$d5/dbe/classns3_1_1_d_g_r_udp_application.html#ada9c016c08e91a65da084c790acd4618" title=" " alt="" coords="5,69,187,109"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="241,52,169,72,167,67,239,46"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="201,14,234,14,234,19,201,19"/>
+</map>

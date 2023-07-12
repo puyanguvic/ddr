@@ -1,0 +1,11 @@
+<map id="ns3::Ipv4DGRRoutingTableEntry::CreateNetworkRouteTo" name="ns3::Ipv4DGRRoutingTableEntry::CreateNetworkRouteTo">
+<area shape="rect" id="Node000001" title=" " alt="" coords="260,101,473,141"/>
+<area shape="rect" id="Node000002" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#a94b9f168bd3285ed47b5c5f1f59f847b" title="Add an external route to the global routing table." alt="" coords="19,5,198,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="307,98,211,60,176,48,178,43,213,55,309,93"/>
+<area shape="rect" id="Node000003" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#aaf886686054aa6dfa4779ce25b4ee21a" title="Add a network route to the global routing table." alt="" coords="27,69,190,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="246,109,190,102,191,97,246,104"/>
+<area shape="rect" id="Node000004" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#abf9ab62c2bdc32fa7358ad9418442314" title="Add a network route to the global routing table." alt="" coords="27,133,190,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="246,139,191,146,190,141,246,134"/>
+<area shape="rect" id="Node000005" href="$d0/d56/classns3_1_1_d_g_r_router.html#a2ee18787000708d7c125fc228b405d43" title="Inject a route to be circulated to other routers as an external route." alt="" coords="5,198,212,223"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="310,150,213,188,168,201,167,195,211,183,308,145"/>
+</map>

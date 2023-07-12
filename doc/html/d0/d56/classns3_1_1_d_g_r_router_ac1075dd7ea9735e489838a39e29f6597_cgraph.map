@@ -1,0 +1,33 @@
+<map id="ns3::DGRRouter::ProcessBridgedBroadcastLink" name="ns3::DGRRouter::ProcessBridgedBroadcastLink">
+<area shape="rect" id="Node000001" title="Process a bridged broadcast link." alt="" coords="5,296,239,336"/>
+<area shape="rect" id="Node000002" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a4b21b880eb8b7b733039d0dfaa8b48a4" title="Add a given Global Routing Link Record to the LSA." alt="" coords="325,5,483,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,295,147,246,180,181,226,113,254,82,285,55,311,41,314,45,288,60,258,86,230,117,185,184,152,248,133,297"/>
+<area shape="rect" id="Node000003" href="$d0/d56/classns3_1_1_d_g_r_router.html#ad1f4d3739e9972e6126b4f3c61b48cc3" title="Checks for the presence of another router on the NetDevice." alt="" coords="291,93,517,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="135,294,194,220,237,179,285,143,298,136,300,141,288,148,240,183,198,224,139,297"/>
+<area shape="rect" id="Node000007" href="$d0/d56/classns3_1_1_d_g_r_router.html#a9c480fca2799ed5e445820561087500e" title="Clear the list of bridges visited on the link." alt="" coords="296,296,512,336"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="239,313,282,313,282,319,239,319"/>
+<area shape="rect" id="Node000008" href="$d0/d56/classns3_1_1_d_g_r_router.html#a4878eacca3b0a943b4e7e49d25dd8e1b" title="Finds a designated router." alt="" coords="287,181,521,221"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="162,294,286,238,324,223,326,228,288,242,164,298"/>
+<area shape="rect" id="Node000009" href="$d0/d56/classns3_1_1_d_g_r_router.html#a817add200a30892091534c2d42fa43e5" title="Given a node and a net device, find an IPV4 interface index that corresponds to that net device." alt="" coords="569,243,788,283"/>
+<area shape="poly" id="edge14_Node000001_Node000009" title=" " alt="" coords="213,293,286,281,426,269,555,262,556,268,426,274,287,287,214,299"/>
+<area shape="rect" id="Node000010" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#a06083e776955f21fe1fd4e4927cf0b24" title="Set the Link Data field of the Global Routing Link Record." alt="" coords="302,360,506,400"/>
+<area shape="poly" id="edge15_Node000001_Node000010" title=" " alt="" coords="212,333,303,354,302,360,210,339"/>
+<area shape="rect" id="Node000011" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#a203541f10ca13f9cfb1987fbbff4416b" title="Set the Link ID field of the Global Routing Link Record." alt="" coords="302,424,506,464"/>
+<area shape="poly" id="edge16_Node000001_Node000011" title=" " alt="" coords="154,334,214,372,288,410,307,417,305,422,286,414,211,377,151,338"/>
+<area shape="rect" id="Node000012" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#aacc16a8566cd389fd974cbeb8dde6ddd" title="Set the Link Type field of the Global Routing Link Record." alt="" coords="302,488,506,528"/>
+<area shape="poly" id="edge17_Node000001_Node000012" title=" " alt="" coords="141,335,200,403,242,441,288,474,301,480,298,485,285,478,238,445,196,407,137,338"/>
+<area shape="rect" id="Node000013" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#ac6b9632b024b3799a25209f1392c1ab8" title="Set the Metric Data field of the Global Routing Link Record." alt="" coords="302,552,506,592"/>
+<area shape="poly" id="edge18_Node000001_Node000013" title=" " alt="" coords="135,335,156,378,190,433,234,490,260,515,288,538,298,544,295,548,285,542,256,519,230,493,185,436,152,380,130,337"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="353,94,350,84,358,74,376,69,404,67,436,69,453,77,451,82,434,75,404,72,377,74,361,79,355,85,358,92"/>
+<area shape="rect" id="Node000004" href="$d0/d56/classns3_1_1_d_g_r_router.html#a12f7423d137d6716fc597ee947173c41" title="When recursively checking for devices on the link, check whether a given device has already been visi..." alt="" coords="579,51,779,91"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="517,93,564,86,565,91,518,98"/>
+<area shape="rect" id="Node000005" href="$d0/d56/classns3_1_1_d_g_r_router.html#ac62c957b71fbe4ce12586c380dbfceeb" title="When recursively checking for devices on the link, mark a given device as having been visited." alt="" coords="575,115,783,155"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="518,119,561,123,561,128,517,125"/>
+<area shape="rect" id="Node000006" href="$d0/d56/classns3_1_1_d_g_r_router.html#a53fdf9c96432439b34d091da6050890b" title="Decide whether or not a given net device is being bridged by a BridgeNetDevice." alt="" coords="578,179,779,219"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="485,131,522,143,570,164,593,172,591,177,568,169,520,148,484,136"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="453,179,520,143,543,121,553,111,568,100,582,93,584,98,571,105,556,115,547,125,523,147,456,184"/>
+<area shape="poly" id="edge12_Node000008_Node000005" title=" " alt="" coords="486,179,582,155,583,161,488,184"/>
+<area shape="poly" id="edge13_Node000008_Node000006" title=" " alt="" coords="521,198,564,197,564,202,522,203"/>
+<area shape="poly" id="edge10_Node000008_Node000008" title=" " alt="" coords="353,182,350,172,358,162,376,157,404,155,436,157,453,165,451,170,434,163,404,160,377,162,361,167,355,173,358,180"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="495,219,576,237,575,242,494,224"/>
+</map>

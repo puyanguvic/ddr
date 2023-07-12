@@ -1,0 +1,1384 @@
+\doxysubsection{ns3\+::DGRRouter Class Reference}
+\hypertarget{classns3_1_1_d_g_r_router}{}\label{classns3_1_1_d_g_r_router}\index{ns3::DGRRouter@{ns3::DGRRouter}}
+
+
+An interface aggregated to a node to provide global routing info.  
+
+
+
+
+{\ttfamily \#include $<$dgr-\/router-\/interface.\+h$>$}
+
+
+
+Inheritance diagram for ns3\+::DGRRouter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{df/d3e/classns3_1_1_d_g_r_router__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns3\+::DGRRouter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/db9/classns3_1_1_d_g_r_router__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_router_a0bd2dfa51885b1dc89d7dfcb88435803}{DGRRouter}} ()
+\begin{DoxyCompactList}\small\item\em Create a Global Router class. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_router_ac119cda89d816da90186bb617c710c25}{Discover\+LSAs}} (void)
+\begin{DoxyCompactList}\small\item\em Walk the connected channels, discover the adjacent routers and build the associated number of Global Routing Link State Advertisements that this router can export. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classns3_1_1_d_g_r_router_aed205a6c27d00eb8a5e3283969809829}{Get\+Injected\+Route}} (uint32\+\_\+t \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}})
+\begin{DoxyCompactList}\small\item\em Return the injected route indexed by i. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classns3_1_1_d_g_r_router_a4ade1b0b9aa88148e3fb7366a29cb01f}{Get\+LSA}} (uint32\+\_\+t n, \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \&lsa) const
+\begin{DoxyCompactList}\small\item\em Get a Global Routing Link State Advertisements that this router has said that it can export. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_router_a438d464b3b2402bf8f7cc9e383542ae7}{Get\+NInjected\+Routes}} (void)
+\begin{DoxyCompactList}\small\item\em Get the number of injected routes that have been added to the routing table. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_router_a3021e686d8c500dbecdb4685c6a8e9f1}{Get\+Num\+LSAs}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the Number of Global Routing Link State Advertisements that this router can export. \end{DoxyCompactList}\item 
+Ipv4\+Address \mbox{\hyperlink{classns3_1_1_d_g_r_router_ad8375eec1264922d460ba8a5978f4ace}{Get\+Router\+Id}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the Router ID associated with this Global Router. \end{DoxyCompactList}\item 
+Ptr$<$ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing}{Ipv4\+DGRRouting}} $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a87f63cac54a25accafa7c849a9aa0dbc}{Get\+Routing\+Protocol}} (void)
+\begin{DoxyCompactList}\small\item\em Get the specific Global Routing Protocol used. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_router_a2ee18787000708d7c125fc228b405d43}{Inject\+Route}} (Ipv4\+Address network, Ipv4\+Mask network\+Mask)
+\begin{DoxyCompactList}\small\item\em Inject a route to be circulated to other routers as an external route. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_router_a2a9290440b576b8a32c3a944409cc38f}{Remove\+Injected\+Route}} (uint32\+\_\+t \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}})
+\begin{DoxyCompactList}\small\item\em Withdraw a route from the global unicast routing table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_router_ad311356106cc37bb8b0c140e42a8102c}{Set\+Routing\+Protocol}} (Ptr$<$ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing}{Ipv4\+DGRRouting}} $>$ routing)
+\begin{DoxyCompactList}\small\item\em Set the specific Global Routing Protocol to be used. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classns3_1_1_d_g_r_router_af299a2048022a7a4f360e40d4b787eb8}{Withdraw\+Route}} (Ipv4\+Address network, Ipv4\+Mask network\+Mask)
+\begin{DoxyCompactList}\small\item\em Withdraw a route from the global unicast routing table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Type\+Id \mbox{\hyperlink{classns3_1_1_d_g_r_router_a5e4510d23ed9e20780dc25f60e8fc6e4}{Get\+Type\+Id}} (void)
+\begin{DoxyCompactList}\small\item\em Get the type ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::list$<$ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a9f0ef594d1a61e21ef32e53fd1537428}{Injected\+Routes}}
+\begin{DoxyCompactList}\small\item\em container of Ipv4\+Routing\+Table\+Entry \end{DoxyCompactList}\item 
+typedef std\+::list$<$ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}} \texorpdfstring{$\ast$}{*} $>$\+::const\+\_\+iterator \mbox{\hyperlink{classns3_1_1_d_g_r_router_a45ba88a691f800f523041ad82ce36f91}{Injected\+Routes\+CI}}
+\begin{DoxyCompactList}\small\item\em Const Iterator to container of Ipv4\+Routing\+Table\+Entry. \end{DoxyCompactList}\item 
+typedef std\+::list$<$ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}} \texorpdfstring{$\ast$}{*} $>$\+::iterator \mbox{\hyperlink{classns3_1_1_d_g_r_router_a225672861cc79568c5c6c231b45951fd}{Injected\+RoutesI}}
+\begin{DoxyCompactList}\small\item\em Iterator to container of Ipv4\+Routing\+Table\+Entry. \end{DoxyCompactList}\item 
+typedef std\+::list$<$ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_router_ac35345e38e068c7f0f3c1193d32ea80d}{List\+Of\+LSAs\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em container for the Global\+Routing\+LSAs \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_router_a8d1e4d9118fff9950f64bb55ce8e7d7c}{DGRRouter}} (\mbox{\hyperlink{classns3_1_1_d_g_r_router}{DGRRouter}} \&sr)
+\begin{DoxyCompactList}\small\item\em Global Router copy construction is disallowed. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classns3_1_1_d_g_r_router_af0515aa6e787213f0d24aeae066261e7}{\texorpdfstring{$\sim$}{\string~}\+DGRRouter}} ()
+\item 
+bool \mbox{\hyperlink{classns3_1_1_d_g_r_router_ad1f4d3739e9972e6126b4f3c61b48cc3}{Another\+Router\+On\+Link}} (Ptr$<$ Net\+Device $>$ nd) const
+\begin{DoxyCompactList}\small\item\em Checks for the presence of another router on the Net\+Device. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classns3_1_1_d_g_r_router_a12f7423d137d6716fc597ee947173c41}{Bridge\+Has\+Already\+Been\+Visited}} (Ptr$<$ Bridge\+Net\+Device $>$ device) const
+\begin{DoxyCompactList}\small\item\em When recursively checking for devices on the link, check whether a given device has already been visited. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_router_a045a362fddd31a11a9c777bb64c889f7}{Build\+Network\+LSAs}} (Net\+Device\+Container c)
+\begin{DoxyCompactList}\small\item\em Build one Network\+LSA for each net device talking to a network that we are the designated router for. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_router_a9c480fca2799ed5e445820561087500e}{Clear\+Bridges\+Visited}} (void) const
+\begin{DoxyCompactList}\small\item\em Clear the list of bridges visited on the link. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_router_a2b22b001dff03d6d86ba7003104d8a26}{Clear\+LSAs}} (void)
+\begin{DoxyCompactList}\small\item\em Clear list of LSAs. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classns3_1_1_d_g_r_router_a344e058e98819ba13be13741adaddc27}{Do\+Dispose}} (void)
+\item 
+Net\+Device\+Container \mbox{\hyperlink{classns3_1_1_d_g_r_router_a82bb020047d97bca36f66ab9c8eeb20a}{Find\+All\+Non\+Bridged\+Devices\+On\+Link}} (Ptr$<$ Channel $>$ ch) const
+\begin{DoxyCompactList}\small\item\em Return a container of all non-\/bridged Net\+Devices on a link. \end{DoxyCompactList}\item 
+Ipv4\+Address \mbox{\hyperlink{classns3_1_1_d_g_r_router_a4878eacca3b0a943b4e7e49d25dd8e1b}{Find\+Designated\+Router\+For\+Link}} (Ptr$<$ Net\+Device $>$ nd\+Local) const
+\begin{DoxyCompactList}\small\item\em Finds a designated router. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classns3_1_1_d_g_r_router_a817add200a30892091534c2d42fa43e5}{Find\+Interface\+For\+Device}} (Ptr$<$ Node $>$ node, Ptr$<$ Net\+Device $>$ nd, uint32\+\_\+t \&index) const
+\begin{DoxyCompactList}\small\item\em Given a node and a net device, find an IPV4 interface index that corresponds to that net device. \end{DoxyCompactList}\item 
+Ptr$<$ Net\+Device $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_router_adc8946ca6068b51f7de5935696047a94}{Get\+Adjacent}} (Ptr$<$ Net\+Device $>$ nd, Ptr$<$ Channel $>$ ch) const
+\begin{DoxyCompactList}\small\item\em Link through the given channel and find the net device that\textquotesingle{}s on the other end. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_router_ac62c957b71fbe4ce12586c380dbfceeb}{Mark\+Bridge\+As\+Visited}} (Ptr$<$ Bridge\+Net\+Device $>$ device) const
+\begin{DoxyCompactList}\small\item\em When recursively checking for devices on the link, mark a given device as having been visited. \end{DoxyCompactList}\item 
+Ptr$<$ Bridge\+Net\+Device $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a53fdf9c96432439b34d091da6050890b}{Net\+Device\+Is\+Bridged}} (Ptr$<$ Net\+Device $>$ nd) const
+\begin{DoxyCompactList}\small\item\em Decide whether or not a given net device is being bridged by a Bridge\+Net\+Device. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_router}{DGRRouter}} \& \mbox{\hyperlink{classns3_1_1_d_g_r_router_a7a59aa3e98d5a9cbff973b0165608eed}{operator=}} (\mbox{\hyperlink{classns3_1_1_d_g_r_router}{DGRRouter}} \&sr)
+\begin{DoxyCompactList}\small\item\em Global Router assignment operator is disallowed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_router_ac1075dd7ea9735e489838a39e29f6597}{Process\+Bridged\+Broadcast\+Link}} (Ptr$<$ Net\+Device $>$ nd, \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*}p\+LSA, Net\+Device\+Container \&c)
+\begin{DoxyCompactList}\small\item\em Process a bridged broadcast link. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_router_aa562c84d9a117e26103ac8338ec8094f}{Process\+Broadcast\+Link}} (Ptr$<$ Net\+Device $>$ nd, \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*}p\+LSA, Net\+Device\+Container \&c)
+\begin{DoxyCompactList}\small\item\em Process a generic broadcast link. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_router_aac014913150c42a93cecbc6a9daf7552}{Process\+Point\+To\+Point\+Link}} (Ptr$<$ Net\+Device $>$ nd\+Local, \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*}p\+LSA)
+\begin{DoxyCompactList}\small\item\em Process a point to point link. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_router_a920b7e48d18135f51a66b010b6d730cc}{Process\+Single\+Broadcast\+Link}} (Ptr$<$ Net\+Device $>$ nd, \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*}p\+LSA, Net\+Device\+Container \&c)
+\begin{DoxyCompactList}\small\item\em Process a single broadcast link. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ Ptr$<$ Bridge\+Net\+Device $>$ $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a3a387b1e294fec2c8ab1e3b81e1a3a47}{m\+\_\+bridges\+Visited}}
+\begin{DoxyCompactList}\small\item\em Container of bridges visited. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_router_a9f0ef594d1a61e21ef32e53fd1537428}{Injected\+Routes}} \mbox{\hyperlink{classns3_1_1_d_g_r_router_a44d220216aad103c57fbd253f80df2b2}{m\+\_\+injected\+Routes}}
+\begin{DoxyCompactList}\small\item\em Routes we are exporting. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_router_ac35345e38e068c7f0f3c1193d32ea80d}{List\+Of\+LSAs\+\_\+t}} \mbox{\hyperlink{classns3_1_1_d_g_r_router_aa839f56748d61a63ad55c0db58ddd07f}{m\+\_\+\+LSAs}}
+\begin{DoxyCompactList}\small\item\em database of Global\+Routing\+LSAs \end{DoxyCompactList}\item 
+Ipv4\+Address \mbox{\hyperlink{classns3_1_1_d_g_r_router_ad5a4a0b95c697c5121ee5096dfb1da61}{m\+\_\+router\+Id}}
+\begin{DoxyCompactList}\small\item\em router ID (its IPv4 address) \end{DoxyCompactList}\item 
+Ptr$<$ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing}{Ipv4\+DGRRouting}} $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_router_aa705acbc7504f36647b15d3771ec7a5c}{m\+\_\+routing\+Protocol}}
+\begin{DoxyCompactList}\small\item\em the Ipv4\+Global\+Routing in use \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+An interface aggregated to a node to provide global routing info. 
+
+An interface aggregated to a node that provides global routing information to a global route manager. The presence of the interface indicates that the node is a router. The interface is the mechanism by which the router advertises its connections to neighboring routers. We\textquotesingle{}re basically allowing the route manager to query for link state advertisements. 
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00589}{589}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+\doxysubsubsection{Member Typedef Documentation}
+\Hypertarget{classns3_1_1_d_g_r_router_a9f0ef594d1a61e21ef32e53fd1537428}\label{classns3_1_1_d_g_r_router_a9f0ef594d1a61e21ef32e53fd1537428} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!InjectedRoutes@{InjectedRoutes}}
+\index{InjectedRoutes@{InjectedRoutes}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{InjectedRoutes}{InjectedRoutes}}
+{\footnotesize\ttfamily typedef std\+::list$<$\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}} \texorpdfstring{$\ast$}{*}$>$ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a9f0ef594d1a61e21ef32e53fd1537428}{ns3\+::\+DGRRouter\+::\+Injected\+Routes}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+container of Ipv4\+Routing\+Table\+Entry 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00864}{864}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+\Hypertarget{classns3_1_1_d_g_r_router_a45ba88a691f800f523041ad82ce36f91}\label{classns3_1_1_d_g_r_router_a45ba88a691f800f523041ad82ce36f91} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!InjectedRoutesCI@{InjectedRoutesCI}}
+\index{InjectedRoutesCI@{InjectedRoutesCI}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{InjectedRoutesCI}{InjectedRoutesCI}}
+{\footnotesize\ttfamily typedef std\+::list$<$\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}}\texorpdfstring{$\ast$}{*}$>$\+::const\+\_\+iterator \mbox{\hyperlink{classns3_1_1_d_g_r_router_a45ba88a691f800f523041ad82ce36f91}{ns3\+::\+DGRRouter\+::\+Injected\+Routes\+CI}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Const Iterator to container of Ipv4\+Routing\+Table\+Entry. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00865}{865}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+\Hypertarget{classns3_1_1_d_g_r_router_a225672861cc79568c5c6c231b45951fd}\label{classns3_1_1_d_g_r_router_a225672861cc79568c5c6c231b45951fd} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!InjectedRoutesI@{InjectedRoutesI}}
+\index{InjectedRoutesI@{InjectedRoutesI}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{InjectedRoutesI}{InjectedRoutesI}}
+{\footnotesize\ttfamily typedef std\+::list$<$\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}}\texorpdfstring{$\ast$}{*}$>$\+::iterator \mbox{\hyperlink{classns3_1_1_d_g_r_router_a225672861cc79568c5c6c231b45951fd}{ns3\+::\+DGRRouter\+::\+Injected\+RoutesI}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Iterator to container of Ipv4\+Routing\+Table\+Entry. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00866}{866}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+\Hypertarget{classns3_1_1_d_g_r_router_ac35345e38e068c7f0f3c1193d32ea80d}\label{classns3_1_1_d_g_r_router_ac35345e38e068c7f0f3c1193d32ea80d} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!ListOfLSAs\_t@{ListOfLSAs\_t}}
+\index{ListOfLSAs\_t@{ListOfLSAs\_t}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{ListOfLSAs\_t}{ListOfLSAs\_t}}
+{\footnotesize\ttfamily typedef std\+::list$<$\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}}\texorpdfstring{$\ast$}{*}$>$ \mbox{\hyperlink{classns3_1_1_d_g_r_router_ac35345e38e068c7f0f3c1193d32ea80d}{ns3\+::\+DGRRouter\+::\+List\+Of\+LSAs\+\_\+t}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+container for the Global\+Routing\+LSAs 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00858}{858}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_d_g_r_router_a0bd2dfa51885b1dc89d7dfcb88435803}\label{classns3_1_1_d_g_r_router_a0bd2dfa51885b1dc89d7dfcb88435803} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!DGRRouter@{DGRRouter}}
+\index{DGRRouter@{DGRRouter}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{DGRRouter()}{DGRRouter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ns3\+::\+DGRRouter\+::\+DGRRouter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Create a Global Router class. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00519}{519}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager_8cc_source_l00062}{ns3\+::\+DGRRoute\+Manager\+::\+Allocate\+Router\+Id()}}, and \mbox{\hyperlink{dgr-router-interface_8h_source_l00861}{m\+\_\+router\+Id}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_a0bd2dfa51885b1dc89d7dfcb88435803_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_router_af0515aa6e787213f0d24aeae066261e7}\label{classns3_1_1_d_g_r_router_af0515aa6e787213f0d24aeae066261e7} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!````~DGRRouter@{\texorpdfstring{$\sim$}{\string~}DGRRouter}}
+\index{````~DGRRouter@{\texorpdfstring{$\sim$}{\string~}DGRRouter}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DGRRouter()}{\string~DGRRouter()}}
+{\footnotesize\ttfamily ns3\+::\+DGRRouter\+::\texorpdfstring{$\sim$}{\string~}\+DGRRouter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00526}{526}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8cc_source_l00560}{Clear\+LSAs()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_af0515aa6e787213f0d24aeae066261e7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_router_a8d1e4d9118fff9950f64bb55ce8e7d7c}\label{classns3_1_1_d_g_r_router_a8d1e4d9118fff9950f64bb55ce8e7d7c} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!DGRRouter@{DGRRouter}}
+\index{DGRRouter@{DGRRouter}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{DGRRouter()}{DGRRouter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ns3\+::\+DGRRouter\+::\+DGRRouter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_router}{DGRRouter}} \&}]{sr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Global Router copy construction is disallowed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sr} & object to copy from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_d_g_r_router_ad1f4d3739e9972e6126b4f3c61b48cc3}\label{classns3_1_1_d_g_r_router_ad1f4d3739e9972e6126b4f3c61b48cc3} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!AnotherRouterOnLink@{AnotherRouterOnLink}}
+\index{AnotherRouterOnLink@{AnotherRouterOnLink}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{AnotherRouterOnLink()}{AnotherRouterOnLink()}}
+{\footnotesize\ttfamily bool ns3\+::\+DGRRouter\+::\+Another\+Router\+On\+Link (\begin{DoxyParamCaption}\item[{Ptr$<$ Net\+Device $>$}]{nd }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks for the presence of another router on the Net\+Device. 
+
+Given a node and an attached net device, take a look off in the channel to which the net device is attached and look for a node on the other side that has a Global\+Router interface aggregated. ~\newline
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em nd} & Net\+Device to scan \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a router is found 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l01473}{1473}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8cc_source_l01473}{Another\+Router\+On\+Link()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01816}{Bridge\+Has\+Already\+Been\+Visited()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01834}{Mark\+Bridge\+As\+Visited()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l01764}{Net\+Device\+Is\+Bridged()}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l01473}{Another\+Router\+On\+Link()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00875}{Process\+Bridged\+Broadcast\+Link()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00761}{Process\+Single\+Broadcast\+Link()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_ad1f4d3739e9972e6126b4f3c61b48cc3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_ad1f4d3739e9972e6126b4f3c61b48cc3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_router_a12f7423d137d6716fc597ee947173c41}\label{classns3_1_1_d_g_r_router_a12f7423d137d6716fc597ee947173c41} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!BridgeHasAlreadyBeenVisited@{BridgeHasAlreadyBeenVisited}}
+\index{BridgeHasAlreadyBeenVisited@{BridgeHasAlreadyBeenVisited}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{BridgeHasAlreadyBeenVisited()}{BridgeHasAlreadyBeenVisited()}}
+{\footnotesize\ttfamily bool ns3\+::\+DGRRouter\+::\+Bridge\+Has\+Already\+Been\+Visited (\begin{DoxyParamCaption}\item[{Ptr$<$ Bridge\+Net\+Device $>$}]{device }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+When recursively checking for devices on the link, check whether a given device has already been visited. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & the bridge device to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if bridge has already been visited 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l01816}{1816}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00874}{m\+\_\+bridges\+Visited}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l01473}{Another\+Router\+On\+Link()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01272}{Find\+All\+Non\+Bridged\+Devices\+On\+Link()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l01317}{Find\+Designated\+Router\+For\+Link()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_a12f7423d137d6716fc597ee947173c41_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_router_a045a362fddd31a11a9c777bb64c889f7}\label{classns3_1_1_d_g_r_router_a045a362fddd31a11a9c777bb64c889f7} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!BuildNetworkLSAs@{BuildNetworkLSAs}}
+\index{BuildNetworkLSAs@{BuildNetworkLSAs}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{BuildNetworkLSAs()}{BuildNetworkLSAs()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouter\+::\+Build\+Network\+LSAs (\begin{DoxyParamCaption}\item[{Net\+Device\+Container}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Build one Network\+LSA for each net device talking to a network that we are the designated router for. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & the devices. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l01161}{1161}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8cc_source_l00350}{ns3\+::\+DGRRouting\+LSA\+::\+Add\+Attached\+Router()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01807}{Clear\+Bridges\+Visited()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01272}{Find\+All\+Non\+Bridged\+Devices\+On\+Link()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01734}{Find\+Interface\+For\+Device()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00274}{ns3\+::\+DGRRouting\+LSA\+::\+LSA\+\_\+\+SPF\+\_\+\+NOT\+\_\+\+EXPLORED}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00859}{m\+\_\+\+LSAs}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00861}{m\+\_\+router\+Id}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00263}{ns3\+::\+DGRRouting\+LSA\+::\+Network\+LSA}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00322}{ns3\+::\+DGRRouting\+LSA\+::\+Set\+Advertising\+Router()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00308}{ns3\+::\+DGRRouting\+LSA\+::\+Set\+Link\+State\+Id()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00294}{ns3\+::\+DGRRouting\+LSA\+::\+Set\+LSType()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00329}{ns3\+::\+DGRRouting\+LSA\+::\+Set\+Network\+LSANetwork\+Mask()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00397}{ns3\+::\+DGRRouting\+LSA\+::\+Set\+Node()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00383}{ns3\+::\+DGRRouting\+LSA\+::\+Set\+Status()}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00593}{Discover\+LSAs()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_a045a362fddd31a11a9c777bb64c889f7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_a045a362fddd31a11a9c777bb64c889f7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_router_a9c480fca2799ed5e445820561087500e}\label{classns3_1_1_d_g_r_router_a9c480fca2799ed5e445820561087500e} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!ClearBridgesVisited@{ClearBridgesVisited}}
+\index{ClearBridgesVisited@{ClearBridgesVisited}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{ClearBridgesVisited()}{ClearBridgesVisited()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouter\+::\+Clear\+Bridges\+Visited (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Clear the list of bridges visited on the link. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l01807}{1807}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00874}{m\+\_\+bridges\+Visited}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l01161}{Build\+Network\+LSAs()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00875}{Process\+Bridged\+Broadcast\+Link()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00761}{Process\+Single\+Broadcast\+Link()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_a9c480fca2799ed5e445820561087500e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_router_a2b22b001dff03d6d86ba7003104d8a26}\label{classns3_1_1_d_g_r_router_a2b22b001dff03d6d86ba7003104d8a26} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!ClearLSAs@{ClearLSAs}}
+\index{ClearLSAs@{ClearLSAs}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{ClearLSAs()}{ClearLSAs()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouter\+::\+Clear\+LSAs (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Clear list of LSAs. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00560}{560}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-router-interface_8h_source_l00859}{m\+\_\+\+LSAs}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00526}{\texorpdfstring{$\sim$}{\string~}\+DGRRouter()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00593}{Discover\+LSAs()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_a2b22b001dff03d6d86ba7003104d8a26_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_router_ac119cda89d816da90186bb617c710c25}\label{classns3_1_1_d_g_r_router_ac119cda89d816da90186bb617c710c25} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!DiscoverLSAs@{DiscoverLSAs}}
+\index{DiscoverLSAs@{DiscoverLSAs}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{DiscoverLSAs()}{DiscoverLSAs()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRRouter\+::\+Discover\+LSAs (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Walk the connected channels, discover the adjacent routers and build the associated number of Global Routing Link State Advertisements that this router can export. 
+
+This is a fairly expensive operation in that every time it is called the current list of LSAs is built by walking connected point-\/to-\/point channels and peeking into adjacent IPV4 stacks to get address information. This is done to allow for limited dynamics of the Global Routing environment. By that we mean that you can discover new link state advertisements after a network topology change by calling Discover\+LSAs and then by reading those advertisements.
+
+\begin{DoxySeeAlso}{See also}
+Global\+Routing\+LSA 
+
+Global\+Router\+::\+Get\+LSA () 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The number of Global Routing Link State Advertisements. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00593}{593}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00266}{ns3\+::\+DGRRouting\+LSA\+::\+ASExternal\+LSAs}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01161}{Build\+Network\+LSAs()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00560}{Clear\+LSAs()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01734}{Find\+Interface\+For\+Device()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00274}{ns3\+::\+DGRRouting\+LSA\+::\+LSA\+\_\+\+SPF\+\_\+\+NOT\+\_\+\+EXPLORED}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00867}{m\+\_\+injected\+Routes}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00859}{m\+\_\+\+LSAs}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00861}{m\+\_\+router\+Id}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01764}{Net\+Device\+Is\+Bridged()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00746}{Process\+Broadcast\+Link()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01040}{Process\+Point\+To\+Point\+Link()}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00262}{ns3\+::\+DGRRouting\+LSA\+::\+Router\+LSA}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00322}{ns3\+::\+DGRRouting\+LSA\+::\+Set\+Advertising\+Router()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00308}{ns3\+::\+DGRRouting\+LSA\+::\+Set\+Link\+State\+Id()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00294}{ns3\+::\+DGRRouting\+LSA\+::\+Set\+LSType()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00329}{ns3\+::\+DGRRouting\+LSA\+::\+Set\+Network\+LSANetwork\+Mask()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00397}{ns3\+::\+DGRRouting\+LSA\+::\+Set\+Node()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00383}{ns3\+::\+DGRRouting\+LSA\+::\+Set\+Status()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_ac119cda89d816da90186bb617c710c25_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_router_a344e058e98819ba13be13741adaddc27}\label{classns3_1_1_d_g_r_router_a344e058e98819ba13be13741adaddc27} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!DoDispose@{DoDispose}}
+\index{DoDispose@{DoDispose}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{DoDispose()}{DoDispose()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouter\+::\+Do\+Dispose (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00546}{546}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00867}{m\+\_\+injected\+Routes}}, and \mbox{\hyperlink{dgr-router-interface_8h_source_l00862}{m\+\_\+routing\+Protocol}}.
+
+\Hypertarget{classns3_1_1_d_g_r_router_a82bb020047d97bca36f66ab9c8eeb20a}\label{classns3_1_1_d_g_r_router_a82bb020047d97bca36f66ab9c8eeb20a} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!FindAllNonBridgedDevicesOnLink@{FindAllNonBridgedDevicesOnLink}}
+\index{FindAllNonBridgedDevicesOnLink@{FindAllNonBridgedDevicesOnLink}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{FindAllNonBridgedDevicesOnLink()}{FindAllNonBridgedDevicesOnLink()}}
+{\footnotesize\ttfamily Net\+Device\+Container ns3\+::\+DGRRouter\+::\+Find\+All\+Non\+Bridged\+Devices\+On\+Link (\begin{DoxyParamCaption}\item[{Ptr$<$ Channel $>$}]{ch }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Return a container of all non-\/bridged Net\+Devices on a link. 
+
+This method will recursively find all of the \textquotesingle{}edge\textquotesingle{} devices in an L2 broadcast domain. If there are no bridged devices, then the container returned is simply the set of devices on the channel passed in as an argument. If the link has bridges on it (and therefore multiple ns3\+::\+Channel objects interconnected by bridges), the method will find all of the non-\/bridged devices in the L2 broadcast domain.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ch} & a channel from the link \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Net\+Device\+Container. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l01272}{1272}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8cc_source_l01816}{Bridge\+Has\+Already\+Been\+Visited()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01272}{Find\+All\+Non\+Bridged\+Devices\+On\+Link()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01834}{Mark\+Bridge\+As\+Visited()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l01764}{Net\+Device\+Is\+Bridged()}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l01161}{Build\+Network\+LSAs()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l01272}{Find\+All\+Non\+Bridged\+Devices\+On\+Link()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_a82bb020047d97bca36f66ab9c8eeb20a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_a82bb020047d97bca36f66ab9c8eeb20a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_router_a4878eacca3b0a943b4e7e49d25dd8e1b}\label{classns3_1_1_d_g_r_router_a4878eacca3b0a943b4e7e49d25dd8e1b} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!FindDesignatedRouterForLink@{FindDesignatedRouterForLink}}
+\index{FindDesignatedRouterForLink@{FindDesignatedRouterForLink}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{FindDesignatedRouterForLink()}{FindDesignatedRouterForLink()}}
+{\footnotesize\ttfamily Ipv4\+Address ns3\+::\+DGRRouter\+::\+Find\+Designated\+Router\+For\+Link (\begin{DoxyParamCaption}\item[{Ptr$<$ Net\+Device $>$}]{nd\+Local }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Finds a designated router. 
+
+Given a local net device, we need to walk the channel to which the net device is attached and look for nodes with Global\+Router interfaces on them (one of them will be us). Of these, the router with the lowest IP address on the net device connecting to the channel becomes the designated router for the link.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nd\+Local} & local Net\+Device to scan \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the IP address of the designated router 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l01317}{1317}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8cc_source_l01816}{Bridge\+Has\+Already\+Been\+Visited()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01317}{Find\+Designated\+Router\+For\+Link()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01734}{Find\+Interface\+For\+Device()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01834}{Mark\+Bridge\+As\+Visited()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l01764}{Net\+Device\+Is\+Bridged()}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l01317}{Find\+Designated\+Router\+For\+Link()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00875}{Process\+Bridged\+Broadcast\+Link()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00761}{Process\+Single\+Broadcast\+Link()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_a4878eacca3b0a943b4e7e49d25dd8e1b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_a4878eacca3b0a943b4e7e49d25dd8e1b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_router_a817add200a30892091534c2d42fa43e5}\label{classns3_1_1_d_g_r_router_a817add200a30892091534c2d42fa43e5} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!FindInterfaceForDevice@{FindInterfaceForDevice}}
+\index{FindInterfaceForDevice@{FindInterfaceForDevice}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{FindInterfaceForDevice()}{FindInterfaceForDevice()}}
+{\footnotesize\ttfamily bool ns3\+::\+DGRRouter\+::\+Find\+Interface\+For\+Device (\begin{DoxyParamCaption}\item[{Ptr$<$ Node $>$}]{node,  }\item[{Ptr$<$ Net\+Device $>$}]{nd,  }\item[{uint32\+\_\+t \&}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Given a node and a net device, find an IPV4 interface index that corresponds to that net device. 
+
+This function may fail for various reasons. If a node does not have an internet stack (for example if it is a bridge) we won\textquotesingle{}t have an IPv4 at all. If the node does have a stack, but the net device in question is bridged, there will not be an interface associated directly with the device.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & the node \\
+\hline
+{\em nd} & outgoing Net\+Device \\
+\hline
+{\em index} & the IPV4 interface index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l01734}{1734}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l01161}{Build\+Network\+LSAs()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00593}{Discover\+LSAs()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01317}{Find\+Designated\+Router\+For\+Link()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00875}{Process\+Bridged\+Broadcast\+Link()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01040}{Process\+Point\+To\+Point\+Link()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00761}{Process\+Single\+Broadcast\+Link()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_a817add200a30892091534c2d42fa43e5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_router_adc8946ca6068b51f7de5935696047a94}\label{classns3_1_1_d_g_r_router_adc8946ca6068b51f7de5935696047a94} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!GetAdjacent@{GetAdjacent}}
+\index{GetAdjacent@{GetAdjacent}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{GetAdjacent()}{GetAdjacent()}}
+{\footnotesize\ttfamily Ptr$<$ Net\+Device $>$ ns3\+::\+DGRRouter\+::\+Get\+Adjacent (\begin{DoxyParamCaption}\item[{Ptr$<$ Net\+Device $>$}]{nd,  }\item[{Ptr$<$ Channel $>$}]{ch }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Link through the given channel and find the net device that\textquotesingle{}s on the other end. 
+
+This only makes sense with a point-\/to-\/point channel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nd} & outgoing Net\+Device \\
+\hline
+{\em ch} & channel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Net\+Device on the other end 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l01696}{1696}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l01040}{Process\+Point\+To\+Point\+Link()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_adc8946ca6068b51f7de5935696047a94_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_router_aed205a6c27d00eb8a5e3283969809829}\label{classns3_1_1_d_g_r_router_aed205a6c27d00eb8a5e3283969809829} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!GetInjectedRoute@{GetInjectedRoute}}
+\index{GetInjectedRoute@{GetInjectedRoute}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{GetInjectedRoute()}{GetInjectedRoute()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}} \texorpdfstring{$\ast$}{*} ns3\+::\+DGRRouter\+::\+Get\+Injected\+Route (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{i }\end{DoxyParamCaption})}
+
+
+
+Return the injected route indexed by i. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & the index of the route \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to that Ipv4\+Routing\+Table\+Entry is returned 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l01625}{1625}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-router-interface_8h_source_l00867}{m\+\_\+injected\+Routes}}.
+
+\Hypertarget{classns3_1_1_d_g_r_router_a4ade1b0b9aa88148e3fb7366a29cb01f}\label{classns3_1_1_d_g_r_router_a4ade1b0b9aa88148e3fb7366a29cb01f} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!GetLSA@{GetLSA}}
+\index{GetLSA@{GetLSA}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{GetLSA()}{GetLSA()}}
+{\footnotesize\ttfamily bool ns3\+::\+DGRRouter\+::\+Get\+LSA (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{n,  }\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \&}]{lsa }\end{DoxyParamCaption}) const}
+
+
+
+Get a Global Routing Link State Advertisements that this router has said that it can export. 
+
+This is a fairly inexpensive expensive operation in that the hard work was done in Get\+Num\+LSAs. We just copy the indicated Global Routing Link State Advertisement into the requested Global\+Routing\+LSA object.
+
+You must call Global\+Router\+::\+Get\+Num\+LSAs before calling this method in order to discover the adjacent routers and build the advertisements. Get\+Num\+LSAs will return the number of LSAs this router advertises. The parameter n (requested LSA number) must be in the range 0 to \doxylink{classns3_1_1_d_g_r_router_a3021e686d8c500dbecdb4685c6a8e9f1}{Get\+Num\+LSAs()} -\/ 1.
+
+\begin{DoxySeeAlso}{See also}
+Global\+Routing\+LSA 
+
+Global\+Routing\+::\+Get\+Num\+LSAs () 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The index number of the LSA you want to read. \\
+\hline
+{\em lsa} & The Global\+Routing\+LSA class to receive the LSA information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of Global Router Link State Advertisements. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l01585}{1585}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00280}{ns3\+::\+DGRRouting\+LSA\+::\+Is\+Empty()}}, and \mbox{\hyperlink{dgr-router-interface_8h_source_l00859}{m\+\_\+\+LSAs}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_a4ade1b0b9aa88148e3fb7366a29cb01f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_router_a438d464b3b2402bf8f7cc9e383542ae7}\label{classns3_1_1_d_g_r_router_a438d464b3b2402bf8f7cc9e383542ae7} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!GetNInjectedRoutes@{GetNInjectedRoutes}}
+\index{GetNInjectedRoutes@{GetNInjectedRoutes}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{GetNInjectedRoutes()}{GetNInjectedRoutes()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRRouter\+::\+Get\+NInjected\+Routes (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the number of injected routes that have been added to the routing table. 
+
+\begin{DoxyReturn}{Returns}
+number of injected routes 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l01648}{1648}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00867}{m\+\_\+injected\+Routes}}.
+
+\Hypertarget{classns3_1_1_d_g_r_router_a3021e686d8c500dbecdb4685c6a8e9f1}\label{classns3_1_1_d_g_r_router_a3021e686d8c500dbecdb4685c6a8e9f1} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!GetNumLSAs@{GetNumLSAs}}
+\index{GetNumLSAs@{GetNumLSAs}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{GetNumLSAs()}{GetNumLSAs()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRRouter\+::\+Get\+Num\+LSAs (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Number of Global Routing Link State Advertisements that this router can export. 
+
+To get meaningful information you must have previously called Discover\+LSAs. After you know how many LSAs are present in the router, you may call Get\+LSA () to retrieve the actual advertisement.
+
+\begin{DoxySeeAlso}{See also}
+Global\+Router\+LSA 
+
+Global\+Routing\+::\+Discover\+LSAs () 
+
+Global\+Routing\+::\+Get\+LSA () 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The number of Global Routing Link State Advertisements. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l01575}{1575}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00859}{m\+\_\+\+LSAs}}.
+
+\Hypertarget{classns3_1_1_d_g_r_router_ad8375eec1264922d460ba8a5978f4ace}\label{classns3_1_1_d_g_r_router_ad8375eec1264922d460ba8a5978f4ace} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!GetRouterId@{GetRouterId}}
+\index{GetRouterId@{GetRouterId}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{GetRouterId()}{GetRouterId()}}
+{\footnotesize\ttfamily Ipv4\+Address ns3\+::\+DGRRouter\+::\+Get\+Router\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Router ID associated with this Global Router. 
+
+The Router IDs are allocated in the Routing\+Environment -- one per Router, starting at 0.\+0.\+0.\+1 and incrementing with each instantiation of a router.
+
+\begin{DoxySeeAlso}{See also}
+Routing\+Environment\+::\+Allocate\+Router\+Id () 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The Router ID associated with the Global Router. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00580}{580}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00861}{m\+\_\+router\+Id}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l01040}{Process\+Point\+To\+Point\+Link()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_ad8375eec1264922d460ba8a5978f4ace_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_router_a87f63cac54a25accafa7c849a9aa0dbc}\label{classns3_1_1_d_g_r_router_a87f63cac54a25accafa7c849a9aa0dbc} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!GetRoutingProtocol@{GetRoutingProtocol}}
+\index{GetRoutingProtocol@{GetRoutingProtocol}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{GetRoutingProtocol()}{GetRoutingProtocol()}}
+{\footnotesize\ttfamily Ptr$<$ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing}{Ipv4\+DGRRouting}} $>$ ns3\+::\+DGRRouter\+::\+Get\+Routing\+Protocol (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the specific Global Routing Protocol used. 
+
+\begin{DoxyReturn}{Returns}
+the routing protocol 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00539}{539}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00862}{m\+\_\+routing\+Protocol}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00614}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Build\+DGRRouting\+Database()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00570}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Delete\+DGRRoutes()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00696}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Initialize\+Routes()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01664}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFAdd\+ASExternal()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l02059}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Router()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01832}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Stub()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l02181}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Transit()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_a87f63cac54a25accafa7c849a9aa0dbc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_router_a5e4510d23ed9e20780dc25f60e8fc6e4}\label{classns3_1_1_d_g_r_router_a5e4510d23ed9e20780dc25f60e8fc6e4} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!GetTypeId@{GetTypeId}}
+\index{GetTypeId@{GetTypeId}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{GetTypeId()}{GetTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+DGRRouter\+::\+Get\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the type ID. 
+
+\begin{DoxyReturn}{Returns}
+the object Type\+Id 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00511}{511}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+\Hypertarget{classns3_1_1_d_g_r_router_a2ee18787000708d7c125fc228b405d43}\label{classns3_1_1_d_g_r_router_a2ee18787000708d7c125fc228b405d43} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!InjectRoute@{InjectRoute}}
+\index{InjectRoute@{InjectRoute}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{InjectRoute()}{InjectRoute()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouter\+::\+Inject\+Route (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{network,  }\item[{Ipv4\+Mask}]{network\+Mask }\end{DoxyParamCaption})}
+
+
+
+Inject a route to be circulated to other routers as an external route. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em network} & The Network to inject \\
+\hline
+{\em network\+Mask} & The Network Mask to inject \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l01611}{1611}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00244}{ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Create\+Network\+Route\+To()}}, and \mbox{\hyperlink{dgr-router-interface_8h_source_l00867}{m\+\_\+injected\+Routes}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_a2ee18787000708d7c125fc228b405d43_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_router_ac62c957b71fbe4ce12586c380dbfceeb}\label{classns3_1_1_d_g_r_router_ac62c957b71fbe4ce12586c380dbfceeb} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!MarkBridgeAsVisited@{MarkBridgeAsVisited}}
+\index{MarkBridgeAsVisited@{MarkBridgeAsVisited}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{MarkBridgeAsVisited()}{MarkBridgeAsVisited()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouter\+::\+Mark\+Bridge\+As\+Visited (\begin{DoxyParamCaption}\item[{Ptr$<$ Bridge\+Net\+Device $>$}]{device }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+When recursively checking for devices on the link, mark a given device as having been visited. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & the bridge device to mark \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l01834}{1834}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00874}{m\+\_\+bridges\+Visited}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l01473}{Another\+Router\+On\+Link()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01272}{Find\+All\+Non\+Bridged\+Devices\+On\+Link()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l01317}{Find\+Designated\+Router\+For\+Link()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_ac62c957b71fbe4ce12586c380dbfceeb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_router_a53fdf9c96432439b34d091da6050890b}\label{classns3_1_1_d_g_r_router_a53fdf9c96432439b34d091da6050890b} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!NetDeviceIsBridged@{NetDeviceIsBridged}}
+\index{NetDeviceIsBridged@{NetDeviceIsBridged}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{NetDeviceIsBridged()}{NetDeviceIsBridged()}}
+{\footnotesize\ttfamily Ptr$<$ Bridge\+Net\+Device $>$ ns3\+::\+DGRRouter\+::\+Net\+Device\+Is\+Bridged (\begin{DoxyParamCaption}\item[{Ptr$<$ Net\+Device $>$}]{nd }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Decide whether or not a given net device is being bridged by a Bridge\+Net\+Device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nd} & the Net\+Device \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Bridge\+Net\+Device smart pointer or null if not found 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l01764}{1764}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l01473}{Another\+Router\+On\+Link()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00593}{Discover\+LSAs()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01272}{Find\+All\+Non\+Bridged\+Devices\+On\+Link()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l01317}{Find\+Designated\+Router\+For\+Link()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_a53fdf9c96432439b34d091da6050890b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_router_a7a59aa3e98d5a9cbff973b0165608eed}\label{classns3_1_1_d_g_r_router_a7a59aa3e98d5a9cbff973b0165608eed} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!operator=@{operator=}}
+\index{operator=@{operator=}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_router}{DGRRouter}} \& ns3\+::\+DGRRouter\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_router}{DGRRouter}} \&}]{sr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Global Router assignment operator is disallowed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sr} & object to copy from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The object copied. 
+\end{DoxyReturn}
+\Hypertarget{classns3_1_1_d_g_r_router_ac1075dd7ea9735e489838a39e29f6597}\label{classns3_1_1_d_g_r_router_ac1075dd7ea9735e489838a39e29f6597} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!ProcessBridgedBroadcastLink@{ProcessBridgedBroadcastLink}}
+\index{ProcessBridgedBroadcastLink@{ProcessBridgedBroadcastLink}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{ProcessBridgedBroadcastLink()}{ProcessBridgedBroadcastLink()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouter\+::\+Process\+Bridged\+Broadcast\+Link (\begin{DoxyParamCaption}\item[{Ptr$<$ Net\+Device $>$}]{nd,  }\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*}}]{p\+LSA,  }\item[{Net\+Device\+Container \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Process a bridged broadcast link. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nd} & the Net\+Device \\
+\hline
+{\em p\+LSA} & the Global LSA \\
+\hline
+{\em c} & the returned Net\+Device container \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00875}{875}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8cc_source_l00247}{ns3\+::\+DGRRouting\+LSA\+::\+Add\+Link\+Record()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01473}{Another\+Router\+On\+Link()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01807}{Clear\+Bridges\+Visited()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01317}{Find\+Designated\+Router\+For\+Link()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01734}{Find\+Interface\+For\+Device()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00096}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Set\+Link\+Data()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00082}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Set\+Link\+Id()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00110}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Set\+Link\+Type()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00125}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Set\+Metric()}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00066}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Stub\+Network}}, and \mbox{\hyperlink{dgr-router-interface_8h_source_l00065}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Transit\+Network}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00746}{Process\+Broadcast\+Link()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_ac1075dd7ea9735e489838a39e29f6597_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_ac1075dd7ea9735e489838a39e29f6597_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_router_aa562c84d9a117e26103ac8338ec8094f}\label{classns3_1_1_d_g_r_router_aa562c84d9a117e26103ac8338ec8094f} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!ProcessBroadcastLink@{ProcessBroadcastLink}}
+\index{ProcessBroadcastLink@{ProcessBroadcastLink}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{ProcessBroadcastLink()}{ProcessBroadcastLink()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouter\+::\+Process\+Broadcast\+Link (\begin{DoxyParamCaption}\item[{Ptr$<$ Net\+Device $>$}]{nd,  }\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*}}]{p\+LSA,  }\item[{Net\+Device\+Container \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Process a generic broadcast link. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nd} & the Net\+Device \\
+\hline
+{\em p\+LSA} & the Global LSA \\
+\hline
+{\em c} & the returned Net\+Device container \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00746}{746}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8cc_source_l00875}{Process\+Bridged\+Broadcast\+Link()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00761}{Process\+Single\+Broadcast\+Link()}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00593}{Discover\+LSAs()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_aa562c84d9a117e26103ac8338ec8094f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_aa562c84d9a117e26103ac8338ec8094f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_router_aac014913150c42a93cecbc6a9daf7552}\label{classns3_1_1_d_g_r_router_aac014913150c42a93cecbc6a9daf7552} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!ProcessPointToPointLink@{ProcessPointToPointLink}}
+\index{ProcessPointToPointLink@{ProcessPointToPointLink}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{ProcessPointToPointLink()}{ProcessPointToPointLink()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouter\+::\+Process\+Point\+To\+Point\+Link (\begin{DoxyParamCaption}\item[{Ptr$<$ Net\+Device $>$}]{nd\+Local,  }\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*}}]{p\+LSA }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Process a point to point link. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nd\+Local} & the Net\+Device \\
+\hline
+{\em p\+LSA} & the Global LSA \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l01040}{1040}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8cc_source_l00247}{ns3\+::\+DGRRouting\+LSA\+::\+Add\+Link\+Record()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01734}{Find\+Interface\+For\+Device()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01696}{Get\+Adjacent()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00580}{Get\+Router\+Id()}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00064}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Point\+To\+Point}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00096}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Set\+Link\+Data()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00082}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Set\+Link\+Id()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00110}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Set\+Link\+Type()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00125}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Set\+Metric()}}, and \mbox{\hyperlink{dgr-router-interface_8h_source_l00066}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Stub\+Network}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00593}{Discover\+LSAs()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_aac014913150c42a93cecbc6a9daf7552_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_aac014913150c42a93cecbc6a9daf7552_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_router_a920b7e48d18135f51a66b010b6d730cc}\label{classns3_1_1_d_g_r_router_a920b7e48d18135f51a66b010b6d730cc} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!ProcessSingleBroadcastLink@{ProcessSingleBroadcastLink}}
+\index{ProcessSingleBroadcastLink@{ProcessSingleBroadcastLink}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{ProcessSingleBroadcastLink()}{ProcessSingleBroadcastLink()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouter\+::\+Process\+Single\+Broadcast\+Link (\begin{DoxyParamCaption}\item[{Ptr$<$ Net\+Device $>$}]{nd,  }\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*}}]{p\+LSA,  }\item[{Net\+Device\+Container \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Process a single broadcast link. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nd} & the Net\+Device \\
+\hline
+{\em p\+LSA} & the Global LSA \\
+\hline
+{\em c} & the returned Net\+Device container \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00761}{761}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8cc_source_l00247}{ns3\+::\+DGRRouting\+LSA\+::\+Add\+Link\+Record()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01473}{Another\+Router\+On\+Link()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01807}{Clear\+Bridges\+Visited()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01317}{Find\+Designated\+Router\+For\+Link()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01734}{Find\+Interface\+For\+Device()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00096}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Set\+Link\+Data()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00082}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Set\+Link\+Id()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00110}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Set\+Link\+Type()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00125}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Set\+Metric()}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00066}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Stub\+Network}}, and \mbox{\hyperlink{dgr-router-interface_8h_source_l00065}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Transit\+Network}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00746}{Process\+Broadcast\+Link()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_a920b7e48d18135f51a66b010b6d730cc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d56/classns3_1_1_d_g_r_router_a920b7e48d18135f51a66b010b6d730cc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_router_a2a9290440b576b8a32c3a944409cc38f}\label{classns3_1_1_d_g_r_router_a2a9290440b576b8a32c3a944409cc38f} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!RemoveInjectedRoute@{RemoveInjectedRoute}}
+\index{RemoveInjectedRoute@{RemoveInjectedRoute}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{RemoveInjectedRoute()}{RemoveInjectedRoute()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouter\+::\+Remove\+Injected\+Route (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{i }\end{DoxyParamCaption})}
+
+
+
+Withdraw a route from the global unicast routing table. 
+
+Calling this function will cause all indexed routes numbered above index i to have their index decremented. For instance, it is possible to remove N injected routes by calling Remove\+Injected\+Route (0) N times.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The index (into the injected routing list) of the route to remove.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Global\+Router\+::\+Withdraw\+Route () 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l01655}{1655}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-router-interface_8h_source_l00867}{m\+\_\+injected\+Routes}}.
+
+\Hypertarget{classns3_1_1_d_g_r_router_ad311356106cc37bb8b0c140e42a8102c}\label{classns3_1_1_d_g_r_router_ad311356106cc37bb8b0c140e42a8102c} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!SetRoutingProtocol@{SetRoutingProtocol}}
+\index{SetRoutingProtocol@{SetRoutingProtocol}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{SetRoutingProtocol()}{SetRoutingProtocol()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouter\+::\+Set\+Routing\+Protocol (\begin{DoxyParamCaption}\item[{Ptr$<$ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing}{Ipv4\+DGRRouting}} $>$}]{routing }\end{DoxyParamCaption})}
+
+
+
+Set the specific Global Routing Protocol to be used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em routing} & the routing protocol \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00533}{533}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00862}{m\+\_\+routing\+Protocol}}.
+
+\Hypertarget{classns3_1_1_d_g_r_router_af299a2048022a7a4f360e40d4b787eb8}\label{classns3_1_1_d_g_r_router_af299a2048022a7a4f360e40d4b787eb8} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!WithdrawRoute@{WithdrawRoute}}
+\index{WithdrawRoute@{WithdrawRoute}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{WithdrawRoute()}{WithdrawRoute()}}
+{\footnotesize\ttfamily bool ns3\+::\+DGRRouter\+::\+Withdraw\+Route (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{network,  }\item[{Ipv4\+Mask}]{network\+Mask }\end{DoxyParamCaption})}
+
+
+
+Withdraw a route from the global unicast routing table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em network} & The Network to withdraw \\
+\hline
+{\em network\+Mask} & The Network Mask to withdraw \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the operation succeeded (will return false if no such route)
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Global\+Router\+::\+Remove\+Injected\+Route () 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l01674}{1674}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-router-interface_8h_source_l00867}{m\+\_\+injected\+Routes}}.
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{classns3_1_1_d_g_r_router_a3a387b1e294fec2c8ab1e3b81e1a3a47}\label{classns3_1_1_d_g_r_router_a3a387b1e294fec2c8ab1e3b81e1a3a47} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!m\_bridgesVisited@{m\_bridgesVisited}}
+\index{m\_bridgesVisited@{m\_bridgesVisited}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{m\_bridgesVisited}{m\_bridgesVisited}}
+{\footnotesize\ttfamily std\+::vector$<$Ptr$<$Bridge\+Net\+Device$>$ $>$ ns3\+::\+DGRRouter\+::m\+\_\+bridges\+Visited\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+Container of bridges visited. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00874}{874}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l01816}{Bridge\+Has\+Already\+Been\+Visited()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01807}{Clear\+Bridges\+Visited()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l01834}{Mark\+Bridge\+As\+Visited()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_router_a44d220216aad103c57fbd253f80df2b2}\label{classns3_1_1_d_g_r_router_a44d220216aad103c57fbd253f80df2b2} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!m\_injectedRoutes@{m\_injectedRoutes}}
+\index{m\_injectedRoutes@{m\_injectedRoutes}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{m\_injectedRoutes}{m\_injectedRoutes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_router_a9f0ef594d1a61e21ef32e53fd1537428}{Injected\+Routes}} ns3\+::\+DGRRouter\+::m\+\_\+injected\+Routes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Routes we are exporting. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00867}{867}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00593}{Discover\+LSAs()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00546}{Do\+Dispose()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01625}{Get\+Injected\+Route()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01648}{Get\+NInjected\+Routes()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01611}{Inject\+Route()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01655}{Remove\+Injected\+Route()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l01674}{Withdraw\+Route()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_router_aa839f56748d61a63ad55c0db58ddd07f}\label{classns3_1_1_d_g_r_router_aa839f56748d61a63ad55c0db58ddd07f} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!m\_LSAs@{m\_LSAs}}
+\index{m\_LSAs@{m\_LSAs}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{m\_LSAs}{m\_LSAs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_router_ac35345e38e068c7f0f3c1193d32ea80d}{List\+Of\+LSAs\+\_\+t}} ns3\+::\+DGRRouter\+::m\+\_\+\+LSAs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+database of Global\+Routing\+LSAs 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00859}{859}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l01161}{Build\+Network\+LSAs()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00560}{Clear\+LSAs()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00593}{Discover\+LSAs()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01585}{Get\+LSA()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l01575}{Get\+Num\+LSAs()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_router_ad5a4a0b95c697c5121ee5096dfb1da61}\label{classns3_1_1_d_g_r_router_ad5a4a0b95c697c5121ee5096dfb1da61} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!m\_routerId@{m\_routerId}}
+\index{m\_routerId@{m\_routerId}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{m\_routerId}{m\_routerId}}
+{\footnotesize\ttfamily Ipv4\+Address ns3\+::\+DGRRouter\+::m\+\_\+router\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+router ID (its IPv4 address) 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00861}{861}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00519}{DGRRouter()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01161}{Build\+Network\+LSAs()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00593}{Discover\+LSAs()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00580}{Get\+Router\+Id()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_router_aa705acbc7504f36647b15d3771ec7a5c}\label{classns3_1_1_d_g_r_router_aa705acbc7504f36647b15d3771ec7a5c} 
+\index{ns3::DGRRouter@{ns3::DGRRouter}!m\_routingProtocol@{m\_routingProtocol}}
+\index{m\_routingProtocol@{m\_routingProtocol}!ns3::DGRRouter@{ns3::DGRRouter}}
+\doxyparagraph{\texorpdfstring{m\_routingProtocol}{m\_routingProtocol}}
+{\footnotesize\ttfamily Ptr$<$\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing}{Ipv4\+DGRRouting}}$>$ ns3\+::\+DGRRouter\+::m\+\_\+routing\+Protocol\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the Ipv4\+Global\+Routing in use 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00862}{862}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00546}{Do\+Dispose()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00539}{Get\+Routing\+Protocol()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00533}{Set\+Routing\+Protocol()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{dgr-router-interface_8h}{dgr-\/router-\/interface.\+h}}\item 
+model/\mbox{\hyperlink{dgr-router-interface_8cc}{dgr-\/router-\/interface.\+cc}}\end{DoxyCompactItemize}

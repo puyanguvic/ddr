@@ -1,0 +1,30 @@
+<map id="ns3::DGRRouter::BuildNetworkLSAs" name="ns3::DGRRouter::BuildNetworkLSAs">
+<area shape="rect" id="Node000001" title="Build one NetworkLSA for each net device talking to a network that we are the designated router for." alt="" coords="5,325,259,350"/>
+<area shape="rect" id="Node000002" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a945e5e3081dc4463d6335cf40d81b192" title="Add an attached router to the list in the NetworkLSA." alt="" coords="339,5,496,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,323,154,273,189,201,212,162,239,123,270,87,305,55,325,43,327,48,308,59,274,90,243,126,216,164,193,204,159,276,140,325"/>
+<area shape="rect" id="Node000003" href="$d0/d56/classns3_1_1_d_g_r_router.html#a9c480fca2799ed5e445820561087500e" title="Clear the list of bridges visited on the link." alt="" coords="309,69,525,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="138,323,160,283,197,228,246,170,274,143,305,119,315,113,318,118,308,124,278,147,250,173,201,231,165,286,142,326"/>
+<area shape="rect" id="Node000004" href="$d0/d56/classns3_1_1_d_g_r_router.html#a82bb020047d97bca36f66ab9c8eeb20a" title="Return a container of all non&#45;bridged NetDevices on a link." alt="" coords="316,157,519,197"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="145,322,211,267,257,235,305,207,321,200,324,205,308,212,260,240,214,272,149,327"/>
+<area shape="rect" id="Node000008" href="$d0/d56/classns3_1_1_d_g_r_router.html#a817add200a30892091534c2d42fa43e5" title="Given a node and a net device, find an IPV4 interface index that corresponds to that net device." alt="" coords="308,221,527,261"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="165,322,306,271,331,263,332,268,308,276,167,327"/>
+<area shape="rect" id="Node000009" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a5f36eb9409d5d6532b9bd267e8d90f61" title="Set the Advertising Router as defined by the OSPF spec." alt="" coords="333,285,501,325"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="245,322,319,314,320,319,246,327"/>
+<area shape="rect" id="Node000010" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a382594771f20561edde6e6b53d3bd982" title="Set the Link State ID is defined by the OSPF spec." alt="" coords="339,349,496,389"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="246,347,325,356,325,362,245,353"/>
+<area shape="rect" id="Node000011" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a898720f0e7c926c4ecd2ca89d09363dd" title="Set the LS type field of the LSA." alt="" coords="339,413,496,453"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="167,348,308,399,332,407,331,412,306,404,165,353"/>
+<area shape="rect" id="Node000012" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a1d60ee05ffc0dd4d434fb12917f6c83e" title="For a Network LSA, set the Network Mask field that precedes the list of attached routers." alt="" coords="307,477,528,517"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="149,348,214,403,260,435,308,463,324,470,321,475,305,468,257,439,211,407,145,352"/>
+<area shape="rect" id="Node000013" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a5fb6e248545fbd3d50b34429e4780746" title="Set the Node pointer of the node that originated this LSA." alt="" coords="339,541,496,581"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="144,349,167,384,205,433,252,483,308,527,327,537,324,542,305,532,249,487,201,436,163,387,139,352"/>
+<area shape="rect" id="Node000014" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a497453d1271c0020968487ec8ead99c5" title="Set the SPF status of the advertisement." alt="" coords="339,605,496,645"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="141,349,161,395,196,461,246,531,275,563,308,591,327,602,324,607,305,596,272,567,241,534,192,464,156,398,136,351"/>
+<area shape="poly" id="edge5_Node000004_Node000004" title=" " alt="" coords="369,158,366,148,374,138,391,133,417,131,448,134,464,141,462,146,446,139,417,136,392,138,377,143,371,149,374,156"/>
+<area shape="rect" id="Node000005" href="$d0/d56/classns3_1_1_d_g_r_router.html#a12f7423d137d6716fc597ee947173c41" title="When recursively checking for devices on the link, check whether a given device has already been visi..." alt="" coords="580,93,780,133"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="500,155,583,134,585,139,501,160"/>
+<area shape="rect" id="Node000006" href="$d0/d56/classns3_1_1_d_g_r_router.html#ac62c957b71fbe4ce12586c380dbfceeb" title="When recursively checking for devices on the link, mark a given device as having been visited." alt="" coords="576,157,784,197"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="519,175,563,175,563,180,519,180"/>
+<area shape="rect" id="Node000007" href="$d0/d56/classns3_1_1_d_g_r_router.html#a53fdf9c96432439b34d091da6050890b" title="Decide whether or not a given net device is being bridged by a BridgeNetDevice." alt="" coords="579,221,781,261"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="501,195,585,215,583,221,500,200"/>
+</map>

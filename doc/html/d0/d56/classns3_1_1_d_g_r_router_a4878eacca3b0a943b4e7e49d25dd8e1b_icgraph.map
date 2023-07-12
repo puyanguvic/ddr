@@ -1,0 +1,13 @@
+<map id="ns3::DGRRouter::FindDesignatedRouterForLink" name="ns3::DGRRouter::FindDesignatedRouterForLink">
+<area shape="rect" id="Node000001" title="Finds a designated router." alt="" coords="880,37,1115,77"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="1045,26,1028,19,997,16,970,18,954,23,948,29,951,36,946,38,942,28,951,18,969,13,997,11,1030,13,1047,21"/>
+<area shape="rect" id="Node000002" href="$d0/d56/classns3_1_1_d_g_r_router.html#ac1075dd7ea9735e489838a39e29f6597" title="Process a bridged broadcast link." alt="" coords="599,5,832,45"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="866,45,832,41,833,36,867,40"/>
+<area shape="rect" id="Node000005" href="$d0/d56/classns3_1_1_d_g_r_router.html#a920b7e48d18135f51a66b010b6d730cc" title="Process a single broadcast link." alt="" coords="604,69,827,109"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="867,75,827,79,827,74,866,70"/>
+<area shape="rect" id="Node000003" href="$d0/d56/classns3_1_1_d_g_r_router.html#aa562c84d9a117e26103ac8338ec8094f" title="Process a generic broadcast link." alt="" coords="276,45,551,70"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="585,42,534,47,533,42,584,37"/>
+<area shape="rect" id="Node000004" href="$d0/d56/classns3_1_1_d_g_r_router.html#ac119cda89d816da90186bb617c710c25" title="Walk the connected channels, discover the adjacent routers and build the associated number of Global ..." alt="" coords="5,45,228,70"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="262,60,228,60,228,55,262,55"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="590,79,533,73,533,67,590,73"/>
+</map>

@@ -1,0 +1,51 @@
+\doxysubsection{ns3\+::DGRPacket\+Sink\+::Address\+Hash Struct Reference}
+\hypertarget{structns3_1_1_d_g_r_packet_sink_1_1_address_hash}{}\label{structns3_1_1_d_g_r_packet_sink_1_1_address_hash}\index{ns3::DGRPacketSink::AddressHash@{ns3::DGRPacketSink::AddressHash}}
+
+
+Hashing for the Address class.  
+
+
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{structns3_1_1_d_g_r_packet_sink_1_1_address_hash_ab49962edbc018cae757cedf91d7a87c3}{operator()}} (const Address \&x) const
+\begin{DoxyCompactList}\small\item\em operator () \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Hashing for the Address class. 
+
+Definition at line \mbox{\hyperlink{dgr-sink_8h_source_l00141}{141}} of file \mbox{\hyperlink{dgr-sink_8h_source}{dgr-\/sink.\+h}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{structns3_1_1_d_g_r_packet_sink_1_1_address_hash_ab49962edbc018cae757cedf91d7a87c3}\label{structns3_1_1_d_g_r_packet_sink_1_1_address_hash_ab49962edbc018cae757cedf91d7a87c3} 
+\index{ns3::DGRPacketSink::AddressHash@{ns3::DGRPacketSink::AddressHash}!operator()@{operator()}}
+\index{operator()@{operator()}!ns3::DGRPacketSink::AddressHash@{ns3::DGRPacketSink::AddressHash}}
+\doxyparagraph{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily size\+\_\+t ns3\+::\+DGRPacket\+Sink\+::\+Address\+Hash\+::operator() (\begin{DoxyParamCaption}\item[{const Address \&}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operator () 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the address of which calculate the hash \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the hash of x
+\end{DoxyReturn}
+Should this method go in address.\+h?
+
+It calculates the hash taking the uint32\+\_\+t hash value of the ipv4 address. It works only for Inet\+Socket\+Addresses (Ipv4 version) 
+
+Definition at line \mbox{\hyperlink{dgr-sink_8h_source_l00153}{153}} of file \mbox{\hyperlink{dgr-sink_8h_source}{dgr-\/sink.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{dgr-sink_8h}{dgr-\/sink.\+h}}\end{DoxyCompactItemize}

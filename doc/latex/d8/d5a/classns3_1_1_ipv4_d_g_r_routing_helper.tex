@@ -1,0 +1,323 @@
+\doxysubsection{ns3\+::Ipv4\+DGRRouting\+Helper Class Reference}
+\hypertarget{classns3_1_1_ipv4_d_g_r_routing_helper}{}\label{classns3_1_1_ipv4_d_g_r_routing_helper}\index{ns3::Ipv4DGRRoutingHelper@{ns3::Ipv4DGRRoutingHelper}}
+
+
+Helper class that adds ns3\+::\+Ipv4\+Global\+Routing objects.  
+
+
+
+
+{\ttfamily \#include $<$ipv4-\/dgr-\/routing-\/helper.\+h$>$}
+
+
+
+Inheritance diagram for ns3\+::Ipv4\+DGRRouting\+Helper\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{d2/d11/classns3_1_1_ipv4_d_g_r_routing_helper__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns3\+::Ipv4\+DGRRouting\+Helper\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{d6/de3/classns3_1_1_ipv4_d_g_r_routing_helper__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_helper_ac4bec0337e1c7cae286c10c78fcbef76}{Ipv4\+DGRRouting\+Helper}} ()
+\begin{DoxyCompactList}\small\item\em Construct a Global\+Routing\+Helper to make life easier for managing global routing tasks. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_helper_a749c1c4035138cb915e0a2e83c614355}{Ipv4\+DGRRouting\+Helper}} (const \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_helper}{Ipv4\+DGRRouting\+Helper}} \&)
+\begin{DoxyCompactList}\small\item\em Construct a Global\+Routing\+Helper from another previously initialized instance (Copy Constructor). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_helper}{Ipv4\+DGRRouting\+Helper}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_helper_a484ef90b1817dd761436300787ef623a}{Copy}} (void) const
+\item 
+virtual Ptr$<$ \mbox{\hyperlink{class_ipv4_routing_protocol}{Ipv4\+Routing\+Protocol}} $>$ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_helper_aa23b982cdaecf125b6087455827d22f6}{Create}} (Ptr$<$ Node $>$ node) const
+\item 
+Queue\+Disc\+Container \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_helper_a1ad5852bdf59c5b42cf3d2e8c3e7c9a4}{Install}} (Net\+Device\+Container c)
+\begin{DoxyCompactList}\small\item\em This method create the DGRv2 \doxylink{class_queue_disc}{Queue\+Disc} (along with it\textquotesingle{}s internal queues, classes) configured with the methods provided by this class and installs them on the given node. Additionally, if configured, a queue limits object is installed on each transmission queue of the device. \end{DoxyCompactList}\item 
+Queue\+Disc\+Container \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_helper_a60f42398644479f3c38efe73c35590ea}{Install}} (Ptr$<$ Net\+Device $>$ d)
+\begin{DoxyCompactList}\small\item\em This method intall DGRv2\+Queue into Net\+Device. \end{DoxyCompactList}\item 
+Queue\+Disc\+Container \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_helper_ad05361fcc3a278d151e9c98fa815552d}{Install}} (Ptr$<$ Node $>$ node)
+\begin{DoxyCompactList}\small\item\em This method create the DGRv2 \doxylink{class_queue_disc}{Queue\+Disc} (along with it\textquotesingle{}s internal queues, classes) configured with the methods provided by this class and installs them on the given node. Additionally, if configured, a queue limits object is installed on each transmission queue of the device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_helper_a67901bf47957ab420b596cdb38a38882}{Populate\+Routing\+Tables}} (void)
+\begin{DoxyCompactList}\small\item\em Build a routing database and initialize the routing tables of the nodes in the simulation. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_helper_a464e8a06ce6c45304ed596bbeecb815f}{Recompute\+Routing\+Tables}} (void)
+\begin{DoxyCompactList}\small\item\em Remove all routes that were previously installed in a prior call to either \doxylink{classns3_1_1_ipv4_d_g_r_routing_helper_a67901bf47957ab420b596cdb38a38882}{Populate\+Routing\+Tables()} or \doxylink{classns3_1_1_ipv4_d_g_r_routing_helper_a464e8a06ce6c45304ed596bbeecb815f}{Recompute\+Routing\+Tables()}, and add a new set of routes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_helper}{Ipv4\+DGRRouting\+Helper}} \& \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_helper_a87619fa9d396efb8d2abc8886fb57187}{operator=}} (const \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_helper}{Ipv4\+DGRRouting\+Helper}} \&)
+\begin{DoxyCompactList}\small\item\em Assignment operator declared private and not implemented to disallow assignment and prevent the compiler from happily inserting its own. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Helper class that adds ns3\+::\+Ipv4\+Global\+Routing objects. 
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-helper_8h_source_l00038}{38}} of file \mbox{\hyperlink{ipv4-dgr-routing-helper_8h_source}{ipv4-\/dgr-\/routing-\/helper.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_helper_ac4bec0337e1c7cae286c10c78fcbef76}\label{classns3_1_1_ipv4_d_g_r_routing_helper_ac4bec0337e1c7cae286c10c78fcbef76} 
+\index{ns3::Ipv4DGRRoutingHelper@{ns3::Ipv4DGRRoutingHelper}!Ipv4DGRRoutingHelper@{Ipv4DGRRoutingHelper}}
+\index{Ipv4DGRRoutingHelper@{Ipv4DGRRoutingHelper}!ns3::Ipv4DGRRoutingHelper@{ns3::Ipv4DGRRoutingHelper}}
+\doxyparagraph{\texorpdfstring{Ipv4DGRRoutingHelper()}{Ipv4DGRRoutingHelper()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ns3\+::\+Ipv4\+DGRRouting\+Helper\+::\+Ipv4\+DGRRouting\+Helper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a Global\+Routing\+Helper to make life easier for managing global routing tasks. 
+
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source_l00031}{31}} of file \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source}{ipv4-\/dgr-\/routing-\/helper.\+cc}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source_l00040}{Copy()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d5a/classns3_1_1_ipv4_d_g_r_routing_helper_ac4bec0337e1c7cae286c10c78fcbef76_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_helper_a749c1c4035138cb915e0a2e83c614355}\label{classns3_1_1_ipv4_d_g_r_routing_helper_a749c1c4035138cb915e0a2e83c614355} 
+\index{ns3::Ipv4DGRRoutingHelper@{ns3::Ipv4DGRRoutingHelper}!Ipv4DGRRoutingHelper@{Ipv4DGRRoutingHelper}}
+\index{Ipv4DGRRoutingHelper@{Ipv4DGRRoutingHelper}!ns3::Ipv4DGRRoutingHelper@{ns3::Ipv4DGRRoutingHelper}}
+\doxyparagraph{\texorpdfstring{Ipv4DGRRoutingHelper()}{Ipv4DGRRoutingHelper()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ns3\+::\+Ipv4\+DGRRouting\+Helper\+::\+Ipv4\+DGRRouting\+Helper (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_helper}{Ipv4\+DGRRouting\+Helper}} \&}]{o }\end{DoxyParamCaption})}
+
+
+
+Construct a Global\+Routing\+Helper from another previously initialized instance (Copy Constructor). 
+
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source_l00035}{35}} of file \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source}{ipv4-\/dgr-\/routing-\/helper.\+cc}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_helper_a484ef90b1817dd761436300787ef623a}\label{classns3_1_1_ipv4_d_g_r_routing_helper_a484ef90b1817dd761436300787ef623a} 
+\index{ns3::Ipv4DGRRoutingHelper@{ns3::Ipv4DGRRoutingHelper}!Copy@{Copy}}
+\index{Copy@{Copy}!ns3::Ipv4DGRRoutingHelper@{ns3::Ipv4DGRRoutingHelper}}
+\doxyparagraph{\texorpdfstring{Copy()}{Copy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_helper}{Ipv4\+DGRRouting\+Helper}} \texorpdfstring{$\ast$}{*} ns3\+::\+Ipv4\+DGRRouting\+Helper\+::\+Copy (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+pointer to clone of this Ipv4\+Global\+Routing\+Helper
+\end{DoxyReturn}
+This method is mainly for internal use by the other helpers; clients are expected to free the dynamic memory allocated by this method 
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source_l00040}{40}} of file \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source}{ipv4-\/dgr-\/routing-\/helper.\+cc}}.
+
+
+
+References \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source_l00031}{Ipv4\+DGRRouting\+Helper()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d5a/classns3_1_1_ipv4_d_g_r_routing_helper_a484ef90b1817dd761436300787ef623a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_helper_aa23b982cdaecf125b6087455827d22f6}\label{classns3_1_1_ipv4_d_g_r_routing_helper_aa23b982cdaecf125b6087455827d22f6} 
+\index{ns3::Ipv4DGRRoutingHelper@{ns3::Ipv4DGRRoutingHelper}!Create@{Create}}
+\index{Create@{Create}!ns3::Ipv4DGRRoutingHelper@{ns3::Ipv4DGRRoutingHelper}}
+\doxyparagraph{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily Ptr$<$ \mbox{\hyperlink{class_ipv4_routing_protocol}{Ipv4\+Routing\+Protocol}} $>$ ns3\+::\+Ipv4\+DGRRouting\+Helper\+::\+Create (\begin{DoxyParamCaption}\item[{Ptr$<$ Node $>$}]{node }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & the node on which the routing protocol will run \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a newly-\/created routing protocol
+\end{DoxyReturn}
+This method will be called by ns3\+::\+Internet\+Stack\+Helper\+::\+Install 
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source_l00046}{46}} of file \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source}{ipv4-\/dgr-\/routing-\/helper.\+cc}}.
+
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_helper_a1ad5852bdf59c5b42cf3d2e8c3e7c9a4}\label{classns3_1_1_ipv4_d_g_r_routing_helper_a1ad5852bdf59c5b42cf3d2e8c3e7c9a4} 
+\index{ns3::Ipv4DGRRoutingHelper@{ns3::Ipv4DGRRoutingHelper}!Install@{Install}}
+\index{Install@{Install}!ns3::Ipv4DGRRoutingHelper@{ns3::Ipv4DGRRoutingHelper}}
+\doxyparagraph{\texorpdfstring{Install()}{Install()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Queue\+Disc\+Container ns3\+::\+Ipv4\+DGRRouting\+Helper\+::\+Install (\begin{DoxyParamCaption}\item[{Net\+Device\+Container}]{c }\end{DoxyParamCaption})}
+
+
+
+This method create the DGRv2 \doxylink{class_queue_disc}{Queue\+Disc} (along with it\textquotesingle{}s internal queues, classes) configured with the methods provided by this class and installs them on the given node. Additionally, if configured, a queue limits object is installed on each transmission queue of the device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & netdevic container \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Qeueu\+Disc container with the root queue disc installed on the device 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source_l00090}{90}} of file \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source}{ipv4-\/dgr-\/routing-\/helper.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source_l00079}{Install()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d5a/classns3_1_1_ipv4_d_g_r_routing_helper_a1ad5852bdf59c5b42cf3d2e8c3e7c9a4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_helper_a60f42398644479f3c38efe73c35590ea}\label{classns3_1_1_ipv4_d_g_r_routing_helper_a60f42398644479f3c38efe73c35590ea} 
+\index{ns3::Ipv4DGRRoutingHelper@{ns3::Ipv4DGRRoutingHelper}!Install@{Install}}
+\index{Install@{Install}!ns3::Ipv4DGRRoutingHelper@{ns3::Ipv4DGRRoutingHelper}}
+\doxyparagraph{\texorpdfstring{Install()}{Install()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Queue\+Disc\+Container ns3\+::\+Ipv4\+DGRRouting\+Helper\+::\+Install (\begin{DoxyParamCaption}\item[{Ptr$<$ Net\+Device $>$}]{d }\end{DoxyParamCaption})}
+
+
+
+This method intall DGRv2\+Queue into Net\+Device. 
+
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source_l00101}{101}} of file \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source}{ipv4-\/dgr-\/routing-\/helper.\+cc}}.
+
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_helper_ad05361fcc3a278d151e9c98fa815552d}\label{classns3_1_1_ipv4_d_g_r_routing_helper_ad05361fcc3a278d151e9c98fa815552d} 
+\index{ns3::Ipv4DGRRoutingHelper@{ns3::Ipv4DGRRoutingHelper}!Install@{Install}}
+\index{Install@{Install}!ns3::Ipv4DGRRoutingHelper@{ns3::Ipv4DGRRoutingHelper}}
+\doxyparagraph{\texorpdfstring{Install()}{Install()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Queue\+Disc\+Container ns3\+::\+Ipv4\+DGRRouting\+Helper\+::\+Install (\begin{DoxyParamCaption}\item[{Ptr$<$ Node $>$}]{node }\end{DoxyParamCaption})}
+
+
+
+This method create the DGRv2 \doxylink{class_queue_disc}{Queue\+Disc} (along with it\textquotesingle{}s internal queues, classes) configured with the methods provided by this class and installs them on the given node. Additionally, if configured, a queue limits object is installed on each transmission queue of the device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \doxylink{class_queue_disc}{Queue\+Disc} container with the queue discs installed on the node 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source_l00079}{79}} of file \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source}{ipv4-\/dgr-\/routing-\/helper.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source_l00079}{Install()}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source_l00090}{Install()}}, and \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source_l00079}{Install()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{d8/d5a/classns3_1_1_ipv4_d_g_r_routing_helper_ad05361fcc3a278d151e9c98fa815552d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d5a/classns3_1_1_ipv4_d_g_r_routing_helper_ad05361fcc3a278d151e9c98fa815552d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_helper_a87619fa9d396efb8d2abc8886fb57187}\label{classns3_1_1_ipv4_d_g_r_routing_helper_a87619fa9d396efb8d2abc8886fb57187} 
+\index{ns3::Ipv4DGRRoutingHelper@{ns3::Ipv4DGRRoutingHelper}!operator=@{operator=}}
+\index{operator=@{operator=}!ns3::Ipv4DGRRoutingHelper@{ns3::Ipv4DGRRoutingHelper}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_helper}{Ipv4\+DGRRouting\+Helper}} \& ns3\+::\+Ipv4\+DGRRouting\+Helper\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_helper}{Ipv4\+DGRRouting\+Helper}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Assignment operator declared private and not implemented to disallow assignment and prevent the compiler from happily inserting its own. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_helper_a67901bf47957ab420b596cdb38a38882}\label{classns3_1_1_ipv4_d_g_r_routing_helper_a67901bf47957ab420b596cdb38a38882} 
+\index{ns3::Ipv4DGRRoutingHelper@{ns3::Ipv4DGRRoutingHelper}!PopulateRoutingTables@{PopulateRoutingTables}}
+\index{PopulateRoutingTables@{PopulateRoutingTables}!ns3::Ipv4DGRRoutingHelper@{ns3::Ipv4DGRRoutingHelper}}
+\doxyparagraph{\texorpdfstring{PopulateRoutingTables()}{PopulateRoutingTables()}}
+{\footnotesize\ttfamily void ns3\+::\+Ipv4\+DGRRouting\+Helper\+::\+Populate\+Routing\+Tables (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Build a routing database and initialize the routing tables of the nodes in the simulation. 
+
+Makes all nodes in the simulation into routers.
+
+All this function does is call the functions Build\+Global\+Routing\+Database () and Initialize\+Routes (). 
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source_l00064}{64}} of file \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source}{ipv4-\/dgr-\/routing-\/helper.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager_8cc_source_l00046}{ns3\+::\+DGRRoute\+Manager\+::\+Build\+DGRRouting\+Database()}}, and \mbox{\hyperlink{dgr-route-manager_8cc_source_l00054}{ns3\+::\+DGRRoute\+Manager\+::\+Initialize\+Routes()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d5a/classns3_1_1_ipv4_d_g_r_routing_helper_a67901bf47957ab420b596cdb38a38882_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_helper_a464e8a06ce6c45304ed596bbeecb815f}\label{classns3_1_1_ipv4_d_g_r_routing_helper_a464e8a06ce6c45304ed596bbeecb815f} 
+\index{ns3::Ipv4DGRRoutingHelper@{ns3::Ipv4DGRRoutingHelper}!RecomputeRoutingTables@{RecomputeRoutingTables}}
+\index{RecomputeRoutingTables@{RecomputeRoutingTables}!ns3::Ipv4DGRRoutingHelper@{ns3::Ipv4DGRRoutingHelper}}
+\doxyparagraph{\texorpdfstring{RecomputeRoutingTables()}{RecomputeRoutingTables()}}
+{\footnotesize\ttfamily void ns3\+::\+Ipv4\+DGRRouting\+Helper\+::\+Recompute\+Routing\+Tables (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Remove all routes that were previously installed in a prior call to either \doxylink{classns3_1_1_ipv4_d_g_r_routing_helper_a67901bf47957ab420b596cdb38a38882}{Populate\+Routing\+Tables()} or \doxylink{classns3_1_1_ipv4_d_g_r_routing_helper_a464e8a06ce6c45304ed596bbeecb815f}{Recompute\+Routing\+Tables()}, and add a new set of routes. 
+
+This method does not change the set of nodes over which Global\+Routing is being used, but it will dynamically update its representation of the global topology before recomputing routes. Users must first call \doxylink{classns3_1_1_ipv4_d_g_r_routing_helper_a67901bf47957ab420b596cdb38a38882}{Populate\+Routing\+Tables()} and then may subsequently call \doxylink{classns3_1_1_ipv4_d_g_r_routing_helper_a464e8a06ce6c45304ed596bbeecb815f}{Recompute\+Routing\+Tables()} at any later time in the simulation. 
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source_l00070}{70}} of file \mbox{\hyperlink{ipv4-dgr-routing-helper_8cc_source}{ipv4-\/dgr-\/routing-\/helper.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager_8cc_source_l00046}{ns3\+::\+DGRRoute\+Manager\+::\+Build\+DGRRouting\+Database()}}, \mbox{\hyperlink{dgr-route-manager_8cc_source_l00038}{ns3\+::\+DGRRoute\+Manager\+::\+Delete\+DGRRoutes()}}, and \mbox{\hyperlink{dgr-route-manager_8cc_source_l00054}{ns3\+::\+DGRRoute\+Manager\+::\+Initialize\+Routes()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d5a/classns3_1_1_ipv4_d_g_r_routing_helper_a464e8a06ce6c45304ed596bbeecb815f_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+helper/\mbox{\hyperlink{ipv4-dgr-routing-helper_8h}{ipv4-\/dgr-\/routing-\/helper.\+h}}\item 
+helper/\mbox{\hyperlink{ipv4-dgr-routing-helper_8cc}{ipv4-\/dgr-\/routing-\/helper.\+cc}}\end{DoxyCompactItemize}

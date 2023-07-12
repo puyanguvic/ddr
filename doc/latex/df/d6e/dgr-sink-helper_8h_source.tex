@@ -1,0 +1,41 @@
+\doxysubsection{dgr-\/sink-\/helper.h}
+\hypertarget{dgr-sink-helper_8h_source}{}\label{dgr-sink-helper_8h_source}\index{helper/dgr-\/sink-\/helper.h@{helper/dgr-\/sink-\/helper.h}}
+\mbox{\hyperlink{dgr-sink-helper_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00001}00001\ \textcolor{comment}{/*\ -\/*-\/\ Mode:C++;\ c-\/file-\/style:"{}gnu"{};\ indent-\/tabs-\/mode:nil;\ -\/*-\/\ */}}
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00003}00003\ \textcolor{preprocessor}{\#ifndef\ DGR\_SINK\_HELPER\_H}}
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00004}00004\ \textcolor{preprocessor}{\#define\ DGR\_SINK\_HELPER\_H}}
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}ns3/object-\/factory.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}ns3/ipv4-\/address.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}ns3/node-\/container.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}ns3/application-\/container.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00011}00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacens3}{ns3}}\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00018}\mbox{\hyperlink{classns3_1_1_d_g_r_sink_helper}{00018}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_d_g_r_sink_helper}{DGRSinkHelper}}}
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00019}00019\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00020}00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00031}00031\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_sink_helper}{DGRSinkHelper}}\ (std::string\ protocol,\ Address\ address);}
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00033}00033\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_sink_helper_aad52d11728485cf9b080b6abfc7beb25}{\string~DGRSinkHelper}}();}
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00041}00041\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_sink_helper_a7552fa4da8c85d4725abd57afdeee49d}{SetAttribute}}\ (std::string\ name,\ \textcolor{keyword}{const}\ AttributeValue\ \&value);}
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00051}00051\ \ \ ApplicationContainer\ \mbox{\hyperlink{classns3_1_1_d_g_r_sink_helper_ad072948983d462767723929fa1dd6149}{Install}}\ (NodeContainer\ c)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00060}00060\ \ \ ApplicationContainer\ \mbox{\hyperlink{classns3_1_1_d_g_r_sink_helper_ad072948983d462767723929fa1dd6149}{Install}}\ (Ptr<Node>\ node)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00069}00069\ \ \ ApplicationContainer\ \mbox{\hyperlink{classns3_1_1_d_g_r_sink_helper_ad072948983d462767723929fa1dd6149}{Install}}\ (std::string\ nodeName)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00071}00071\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00079}00079\ \ \ Ptr<Application>\ \mbox{\hyperlink{classns3_1_1_d_g_r_sink_helper_aa6283f4ef52325361ad04b282368050f}{InstallPriv}}\ (Ptr<Node>\ node)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00080}\mbox{\hyperlink{classns3_1_1_d_g_r_sink_helper_ac03aec90679af81c1cd94a9105ab7b45}{00080}}\ \ \ ObjectFactory\ \mbox{\hyperlink{classns3_1_1_d_g_r_sink_helper_ac03aec90679af81c1cd94a9105ab7b45}{m\_factory}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00081}00081\ \};}
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00083}00083\ \}\ \textcolor{comment}{//\ namespace\ ns3}}
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{dgr-sink-helper_8h_source_l00085}00085\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ DGR\_SINK\_HELPER\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

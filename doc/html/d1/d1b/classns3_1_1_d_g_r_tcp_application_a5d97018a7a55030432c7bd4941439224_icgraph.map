@@ -1,0 +1,11 @@
+<map id="ns3::DGRTcpApplication::SendData" name="ns3::DGRTcpApplication::SendData">
+<area shape="rect" id="Node000001" title="Send data until the L4 transmission buffer is full." alt="" coords="451,63,625,103"/>
+<area shape="rect" id="Node000002" href="$d1/d1b/classns3_1_1_d_g_r_tcp_application.html#a240d181619fe26fa934e3e152c153696" title="Connection Succeeded (called by Socket through a callback)" alt="" coords="228,5,403,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="446,62,393,48,394,43,447,57"/>
+<area shape="rect" id="Node000003" href="$d1/d1b/classns3_1_1_d_g_r_tcp_application.html#ad3f18ec72baf186800e72eed654eac2c" title=" " alt="" coords="5,63,180,103"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="437,85,180,85,180,80,437,80"/>
+<area shape="rect" id="Node000004" href="$d1/d1b/classns3_1_1_d_g_r_tcp_application.html#ad6e628629f8e191964b873fed001a902" title="Send more data as soon as some has been transmitted." alt="" coords="228,120,403,160"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="447,109,394,123,393,117,446,104"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="224,51,172,65,170,60,223,46"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="223,119,170,105,172,100,224,114"/>
+</map>

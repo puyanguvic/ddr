@@ -1,0 +1,18 @@
+<map id="ns3::DgrHeader" name="ns3::DgrHeader">
+<area shape="rect" id="Node000001" title="dgr header" alt="" coords="105,284,228,309"/>
+<area shape="rect" id="Node000002" href="$d8/dc9/class_header.html" title=" " alt="" coords="5,5,75,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="40,44,38,81,40,126,49,175,68,220,83,240,102,257,142,282,139,286,99,261,79,244,63,223,44,176,35,127,33,81,34,44"/>
+<area shape="rect" id="Node000005" href="$de/d1d/classns3_1_1_dgr_nse.html" title="dgr v2 Neighbor Status Entry (NSE)" alt="" coords="81,108,183,133"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="62,39,124,106,120,110,58,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="280,196,347,221"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="289,232,244,262,196,286,193,282,241,258,286,228"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="77,196,256,221"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="169,235,169,283,164,283,164,235"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="144,145,164,194,159,196,139,147"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="99,5,173,31"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="138,45,135,108,130,108,132,45"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="207,108,315,133"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="248,147,224,174,190,198,187,194,221,170,244,143"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="242,5,281,31"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="264,45,264,108,259,108,259,45"/>
+</map>

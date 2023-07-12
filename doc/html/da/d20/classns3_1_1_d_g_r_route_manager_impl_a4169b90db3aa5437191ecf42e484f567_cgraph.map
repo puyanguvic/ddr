@@ -1,0 +1,19 @@
+<map id="ns3::DGRRouteManagerImpl::SPFAddASExternal" name="ns3::DGRRouteManagerImpl::SPFAddASExternal">
+<area shape="rect" id="Node000001" title="Add an external route to the routing tables." alt="" coords="5,216,212,256"/>
+<area shape="rect" id="Node000002" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#aa16092b325a84e50b90fcc5dd4e5bab2" title="Get the Advertising Router as defined by the OSPF spec." alt="" coords="286,5,457,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,214,141,179,173,137,212,93,258,55,272,47,275,52,262,60,216,97,177,140,146,182,124,217"/>
+<area shape="rect" id="Node000003" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a0ec746b926044a548e4f3a09309322ce" title="Get the Link State ID as defined by the OSPF spec." alt="" coords="293,69,450,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,214,185,166,221,141,259,119,278,110,280,115,261,124,224,146,189,171,133,218"/>
+<area shape="rect" id="Node000004" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a5f9422d4f1f9df2f301cbd578e29ae7b" title="Get the Global Router Link State Advertisement returned by the Global Router represented by this DGRV..." alt="" coords="281,134,461,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="151,213,202,191,259,169,292,160,294,165,261,175,204,196,153,218"/>
+<area shape="rect" id="Node000005" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a3e3b9552f26b930f47dd069eaf0f3950" title="For a Network LSA, get the Network Mask field that precedes the list of attached routers." alt="" coords="260,184,483,224"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="212,221,246,217,247,222,212,226"/>
+<area shape="rect" id="Node000006" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a691c41409919639a4aaea1443fa26ed5" title="Get the number of exit directions from root for reaching &#39;this&#39; vertex." alt="" coords="274,248,469,288"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="212,246,261,252,260,257,212,251"/>
+<area shape="rect" id="Node000007" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a9e66f0b2ee7432156046e75672968138" title="Obtain a pair indicating the exit direction from the root." alt="" coords="266,312,477,352"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="154,254,261,298,284,305,282,310,259,302,152,259"/>
+<area shape="rect" id="Node000008" href="$d0/d56/classns3_1_1_d_g_r_router.html#a87f63cac54a25accafa7c849a9aa0dbc" title="Get the specific Global Routing Protocol used." alt="" coords="268,376,475,416"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="130,254,186,308,222,337,261,362,275,369,273,373,259,366,219,341,182,312,127,258"/>
+<area shape="rect" id="Node000009" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a83acd923d19102c507faadb2f4e68f56" title="Get the Vertex ID field of a DGRVertex object." alt="" coords="267,441,476,466"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="122,255,143,293,174,339,214,386,261,426,275,433,273,438,259,430,210,390,170,342,138,295,118,258"/>
+</map>

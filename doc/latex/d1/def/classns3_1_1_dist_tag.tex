@@ -1,0 +1,277 @@
+\doxysubsection{ns3\+::Dist\+Tag Class Reference}
+\hypertarget{classns3_1_1_dist_tag}{}\label{classns3_1_1_dist_tag}\index{ns3::DistTag@{ns3::DistTag}}
+
+
+This class implements a tag that carries the distance to destination node of a packet to the IP layer.  
+
+
+
+
+{\ttfamily \#include $<$dgr-\/tags.\+h$>$}
+
+
+
+Inheritance diagram for ns3\+::Dist\+Tag\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{d9/d75/classns3_1_1_dist_tag__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns3\+::Dist\+Tag\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{dc/ded/classns3_1_1_dist_tag__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_dist_tag_abe9bfd761ed8e09ac072c4f14424e55c}{Dist\+Tag}} ()
+\item 
+void \mbox{\hyperlink{classns3_1_1_dist_tag_a6b25d2447d470067386025456e03b154}{Deserialize}} (Tag\+Buffer \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}) override
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_dist_tag_abdba4f115af1156fa9971edb1f9dfa13}{Get\+Distance}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the tag\textquotesingle{}s distance. \end{DoxyCompactList}\item 
+Type\+Id \mbox{\hyperlink{classns3_1_1_dist_tag_ab5025141d800cc5ac8063ec48f1f7e7a}{Get\+Instance\+Type\+Id}} (void) const override
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_dist_tag_a20991b909c3d2519cd3d5a9ee657cbcb}{Get\+Serialized\+Size}} (void) const override
+\item 
+void \mbox{\hyperlink{classns3_1_1_dist_tag_aca5f873c15bc55082d47b77320a1d32d}{Print}} (std\+::ostream \&os) const override
+\item 
+void \mbox{\hyperlink{classns3_1_1_dist_tag_a853b0c1b77e9b530509d11890526c4d2}{Serialize}} (Tag\+Buffer \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}) const override
+\item 
+void \mbox{\hyperlink{classns3_1_1_dist_tag_afc8616b9abd64dd7a0ebf3d876f1dcb2}{Set\+Distance}} (uint32\+\_\+t distance)
+\begin{DoxyCompactList}\small\item\em Set the tag\textquotesingle{}s distance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Type\+Id \mbox{\hyperlink{classns3_1_1_dist_tag_af743f1a0ee10806fdafec9dcf4219245}{Get\+Type\+Id}} (void)
+\begin{DoxyCompactList}\small\item\em Get the Type ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_dist_tag_aad9b2f0de6c7e0f7a1f382a34ec15a45}{m\+\_\+distance}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+This class implements a tag that carries the distance to destination node of a packet to the IP layer. 
+
+Definition at line \mbox{\hyperlink{dgr-tags_8h_source_l00063}{63}} of file \mbox{\hyperlink{dgr-tags_8h_source}{dgr-\/tags.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_dist_tag_abe9bfd761ed8e09ac072c4f14424e55c}\label{classns3_1_1_dist_tag_abe9bfd761ed8e09ac072c4f14424e55c} 
+\index{ns3::DistTag@{ns3::DistTag}!DistTag@{DistTag}}
+\index{DistTag@{DistTag}!ns3::DistTag@{ns3::DistTag}}
+\doxyparagraph{\texorpdfstring{DistTag()}{DistTag()}}
+{\footnotesize\ttfamily ns3\+::\+Dist\+Tag\+::\+Dist\+Tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00093}{93}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_dist_tag_a6b25d2447d470067386025456e03b154}\label{classns3_1_1_dist_tag_a6b25d2447d470067386025456e03b154} 
+\index{ns3::DistTag@{ns3::DistTag}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!ns3::DistTag@{ns3::DistTag}}
+\doxyparagraph{\texorpdfstring{Deserialize()}{Deserialize()}}
+{\footnotesize\ttfamily void ns3\+::\+Dist\+Tag\+::\+Deserialize (\begin{DoxyParamCaption}\item[{Tag\+Buffer}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00144}{144}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-tags_8h_source_l00101}{m\+\_\+distance}}.
+
+\Hypertarget{classns3_1_1_dist_tag_abdba4f115af1156fa9971edb1f9dfa13}\label{classns3_1_1_dist_tag_abdba4f115af1156fa9971edb1f9dfa13} 
+\index{ns3::DistTag@{ns3::DistTag}!GetDistance@{GetDistance}}
+\index{GetDistance@{GetDistance}!ns3::DistTag@{ns3::DistTag}}
+\doxyparagraph{\texorpdfstring{GetDistance()}{GetDistance()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+Dist\+Tag\+::\+Get\+Distance (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the tag\textquotesingle{}s distance. 
+
+\begin{DoxyReturn}{Returns}
+the distance 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00106}{106}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tags_8h_source_l00101}{m\+\_\+distance}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00253}{ns3\+::\+Ipv4\+DGRRouting\+::\+Lookup\+DGRRoute()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/def/classns3_1_1_dist_tag_abdba4f115af1156fa9971edb1f9dfa13_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_dist_tag_ab5025141d800cc5ac8063ec48f1f7e7a}\label{classns3_1_1_dist_tag_ab5025141d800cc5ac8063ec48f1f7e7a} 
+\index{ns3::DistTag@{ns3::DistTag}!GetInstanceTypeId@{GetInstanceTypeId}}
+\index{GetInstanceTypeId@{GetInstanceTypeId}!ns3::DistTag@{ns3::DistTag}}
+\doxyparagraph{\texorpdfstring{GetInstanceTypeId()}{GetInstanceTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+Dist\+Tag\+::\+Get\+Instance\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00123}{123}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tags_8cc_source_l00113}{Get\+Type\+Id()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/def/classns3_1_1_dist_tag_ab5025141d800cc5ac8063ec48f1f7e7a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_dist_tag_a20991b909c3d2519cd3d5a9ee657cbcb}\label{classns3_1_1_dist_tag_a20991b909c3d2519cd3d5a9ee657cbcb} 
+\index{ns3::DistTag@{ns3::DistTag}!GetSerializedSize@{GetSerializedSize}}
+\index{GetSerializedSize@{GetSerializedSize}!ns3::DistTag@{ns3::DistTag}}
+\doxyparagraph{\texorpdfstring{GetSerializedSize()}{GetSerializedSize()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+Dist\+Tag\+::\+Get\+Serialized\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00129}{129}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+\Hypertarget{classns3_1_1_dist_tag_af743f1a0ee10806fdafec9dcf4219245}\label{classns3_1_1_dist_tag_af743f1a0ee10806fdafec9dcf4219245} 
+\index{ns3::DistTag@{ns3::DistTag}!GetTypeId@{GetTypeId}}
+\index{GetTypeId@{GetTypeId}!ns3::DistTag@{ns3::DistTag}}
+\doxyparagraph{\texorpdfstring{GetTypeId()}{GetTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+Dist\+Tag\+::\+Get\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the Type ID. 
+
+\begin{DoxyReturn}{Returns}
+the object Type\+Id 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00113}{113}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tags_8cc_source_l00123}{Get\+Instance\+Type\+Id()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/def/classns3_1_1_dist_tag_af743f1a0ee10806fdafec9dcf4219245_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_dist_tag_aca5f873c15bc55082d47b77320a1d32d}\label{classns3_1_1_dist_tag_aca5f873c15bc55082d47b77320a1d32d} 
+\index{ns3::DistTag@{ns3::DistTag}!Print@{Print}}
+\index{Print@{Print}!ns3::DistTag@{ns3::DistTag}}
+\doxyparagraph{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void ns3\+::\+Dist\+Tag\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00153}{153}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tags_8h_source_l00101}{m\+\_\+distance}}.
+
+\Hypertarget{classns3_1_1_dist_tag_a853b0c1b77e9b530509d11890526c4d2}\label{classns3_1_1_dist_tag_a853b0c1b77e9b530509d11890526c4d2} 
+\index{ns3::DistTag@{ns3::DistTag}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!ns3::DistTag@{ns3::DistTag}}
+\doxyparagraph{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily void ns3\+::\+Dist\+Tag\+::\+Serialize (\begin{DoxyParamCaption}\item[{Tag\+Buffer}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00136}{136}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-tags_8h_source_l00101}{m\+\_\+distance}}.
+
+\Hypertarget{classns3_1_1_dist_tag_afc8616b9abd64dd7a0ebf3d876f1dcb2}\label{classns3_1_1_dist_tag_afc8616b9abd64dd7a0ebf3d876f1dcb2} 
+\index{ns3::DistTag@{ns3::DistTag}!SetDistance@{SetDistance}}
+\index{SetDistance@{SetDistance}!ns3::DistTag@{ns3::DistTag}}
+\doxyparagraph{\texorpdfstring{SetDistance()}{SetDistance()}}
+{\footnotesize\ttfamily void ns3\+::\+Dist\+Tag\+::\+Set\+Distance (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{distance }\end{DoxyParamCaption})}
+
+
+
+Set the tag\textquotesingle{}s distance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em distance} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00099}{99}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tags_8h_source_l00101}{m\+\_\+distance}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00253}{ns3\+::\+Ipv4\+DGRRouting\+::\+Lookup\+DGRRoute()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/def/classns3_1_1_dist_tag_afc8616b9abd64dd7a0ebf3d876f1dcb2_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{classns3_1_1_dist_tag_aad9b2f0de6c7e0f7a1f382a34ec15a45}\label{classns3_1_1_dist_tag_aad9b2f0de6c7e0f7a1f382a34ec15a45} 
+\index{ns3::DistTag@{ns3::DistTag}!m\_distance@{m\_distance}}
+\index{m\_distance@{m\_distance}!ns3::DistTag@{ns3::DistTag}}
+\doxyparagraph{\texorpdfstring{m\_distance}{m\_distance}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+Dist\+Tag\+::m\+\_\+distance\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8h_source_l00101}{101}} of file \mbox{\hyperlink{dgr-tags_8h_source}{dgr-\/tags.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tags_8cc_source_l00144}{Deserialize()}}, \mbox{\hyperlink{dgr-tags_8cc_source_l00106}{Get\+Distance()}}, \mbox{\hyperlink{dgr-tags_8cc_source_l00153}{Print()}}, \mbox{\hyperlink{dgr-tags_8cc_source_l00136}{Serialize()}}, and \mbox{\hyperlink{dgr-tags_8cc_source_l00099}{Set\+Distance()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{dgr-tags_8h}{dgr-\/tags.\+h}}\item 
+model/\mbox{\hyperlink{dgr-tags_8cc}{dgr-\/tags.\+cc}}\end{DoxyCompactItemize}

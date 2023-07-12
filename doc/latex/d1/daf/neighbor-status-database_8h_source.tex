@@ -1,0 +1,87 @@
+\doxysubsection{neighbor-\/status-\/database.h}
+\hypertarget{neighbor-status-database_8h_source}{}\label{neighbor-status-database_8h_source}\index{model/neighbor-\/status-\/database.h@{model/neighbor-\/status-\/database.h}}
+\mbox{\hyperlink{neighbor-status-database_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00001}00001\ \textcolor{comment}{/*\ -\/*-\/\ Mode:C++;\ c-\/file-\/style:"{}gnu"{};\ indent-\/tabs-\/mode:nil;\ -\/*-\/\ */}}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00002}00002\ \textcolor{preprocessor}{\#ifndef\ NEIGHBOR\_STATUS\_Database\_H}}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00003}00003\ \textcolor{preprocessor}{\#define\ NEIGHBOR\_STATUS\_Database\_H}}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00005}\mbox{\hyperlink{neighbor-status-database_8h_ab7f9358e56e6cbbb79a56e7ba13da5b0}{00005}}\ \textcolor{preprocessor}{\#define\ STATESIZE\ 10}}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}ns3/core-\/module.h"{}}}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00009}00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacens3}{ns3}}\ \{}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00012}\mbox{\hyperlink{classns3_1_1_status_unit}{00012}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_status_unit}{StatusUnit}}}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00014}00014\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_status_unit_ab9812d6e963d9377a66a216c5722ec2b}{StatusUnit}}\ ();}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_status_unit_af5fd4f5475ba8cb20c33e697b46d3535}{\string~StatusUnit}}\ ();}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classns3_1_1_status_unit_a2f05390790b4028ef5bc30cd5bc516a6}{GetLastState}}\ ()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classns3_1_1_status_unit_a165815e13c7cda840f5e77961f412b8d}{GetCurrentState}}\ ()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_status_unit_a6e3953db49c443f23281dec449661d39}{Update}}\ (\textcolor{keywordtype}{int}\ state);}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_status_unit_ac70e9364c15e57c369ddc3d69897fcd0}{Print}}\ (std::ostream\ \&os)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00021}00021\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00022}\mbox{\hyperlink{classns3_1_1_status_unit_abca5bb0aa0263c3d82614501929b0ee7}{00022}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classns3_1_1_status_unit_abca5bb0aa0263c3d82614501929b0ee7}{m\_matrix}}[\mbox{\hyperlink{neighbor-status-database_8h_ab7f9358e56e6cbbb79a56e7ba13da5b0}{STATESIZE}}][\mbox{\hyperlink{neighbor-status-database_8h_ab7f9358e56e6cbbb79a56e7ba13da5b0}{STATESIZE}}];}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00023}\mbox{\hyperlink{classns3_1_1_status_unit_aaa12be25a51a0a0c343fe4e795da9a73}{00023}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classns3_1_1_status_unit_aaa12be25a51a0a0c343fe4e795da9a73}{m\_state}};\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00024}00024\ \};}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00026}\mbox{\hyperlink{classns3_1_1_neighbor_status_entry}{00026}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_neighbor_status_entry}{NeighborStatusEntry}}}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00027}00027\ \{}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00028}00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00029}00029\ \ \ \mbox{\hyperlink{classns3_1_1_neighbor_status_entry_aca12dbf78960e95aa602b55019a9f717}{NeighborStatusEntry}}\ ();}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00030}00030\ \ \ \mbox{\hyperlink{classns3_1_1_neighbor_status_entry_ab6f8e60e8803322b8e6458f4c9fc6e1f}{\string~NeighborStatusEntry}}\ ();}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00032}00032\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_neighbor_status_entry_ad12f02c2d3a0eb4ec1f838adbc93961e}{Insert}}\ (uint32\_t\ n\_iface\ ,\ \mbox{\hyperlink{classns3_1_1_status_unit}{StatusUnit}}*\ su);}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00033}00033\ \ \ \mbox{\hyperlink{classns3_1_1_status_unit}{StatusUnit}}*\ \mbox{\hyperlink{classns3_1_1_neighbor_status_entry_a247a7c414ca757992904f162888375d9}{GetStatusUnit}}\ (uint32\_t\ n\_iface)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00034}00034\ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_neighbor_status_entry_abab49de337ee4bc387b6fce102829d04}{GetNumStatusUnit}}\ ()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00035}00035\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_neighbor_status_entry_aec16cf7691fa7971ba1888f9ca64005e}{Print}}\ (std::ostream\ \&os)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00036}00036\ \ \ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00037}00037\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00038}00038\ \ \ \textcolor{keyword}{typedef}\ std::map<uint32\_t,\ StatusUnit*>}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00039}\mbox{\hyperlink{classns3_1_1_neighbor_status_entry_aeae77085f8b17c27cfa1556c218bb3ff}{00039}}\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_neighbor_status_entry_aeae77085f8b17c27cfa1556c218bb3ff}{NSMap\_t}};\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00040}00040\ \ \ \textcolor{keyword}{typedef}\ std::pair<uint32\_t,\ StatusUnit*>\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00041}\mbox{\hyperlink{classns3_1_1_neighbor_status_entry_aa91e28a25e22236dcb4c4acc432086ab}{00041}}\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_neighbor_status_entry_aa91e28a25e22236dcb4c4acc432086ab}{NSPair\_t}};\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00042}\mbox{\hyperlink{classns3_1_1_neighbor_status_entry_a80640868cda949456de7544dfeb5c4cf}{00042}}\ \ \ \mbox{\hyperlink{classns3_1_1_neighbor_status_entry_aeae77085f8b17c27cfa1556c218bb3ff}{NSMap\_t}}\ \mbox{\hyperlink{classns3_1_1_neighbor_status_entry_a80640868cda949456de7544dfeb5c4cf}{m\_database}};}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00043}00043\ \};}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00051}\mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b}{00051}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b}{DgrNSDB}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_object}{Object}}}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00052}00052\ \{}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00053}00053\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_a1067b6357fb7165760e60b83a2d8297a}{DgrNSDB}}\ ();}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00067}00067\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_abd36789bbca1b7084945c9f5feddeabe}{\string~DgrNSDB}}\ ();}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00069}00069\ \ \ \ \ \textcolor{comment}{//\ Delete\ copy\ constructor\ and\ assignment\ operator\ to\ avodi\ misuse.}}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00070}\mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_ab21f90d847d334f7aaffac8de0087a91}{00070}}\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_ab21f90d847d334f7aaffac8de0087a91}{DgrNSDB}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b}{DgrNSDB}}\&)\ =\ \textcolor{keyword}{delete};\ \textcolor{comment}{//\ Disallow\ copying}}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00071}\mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_ac951d65c2f4a7b44498c0d2f8eca1542}{00071}}\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b}{DgrNSDB}}\&\ \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_ac951d65c2f4a7b44498c0d2f8eca1542}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b}{DgrNSDB}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00076}00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_a491a9d6eaee9df761ef36423c7a92732}{Initialize}}\ ();}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00084}00084\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_neighbor_status_entry}{NeighborStatusEntry}}*\ \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_a0d9ea8c82a764230832d72825bce2fce}{GetNeighborStatusEntry}}\ (uint32\_t\ iface)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00092}00092\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_neighbor_status_entry}{NeighborStatusEntry}}*\ \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_afab689a2b1bf8ec2af909d5d05ab26a6}{HandleNeighborStatusEntry}}\ (uint32\_t\ iface);}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00102}00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_a0eabfc389423b0b694d6f30cb1b773f5}{Insert}}\ (uint32\_t\ iface,\ \mbox{\hyperlink{classns3_1_1_neighbor_status_entry}{NeighborStatusEntry}}*\ nse);}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00103}00103\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00108}00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_af2879e59ab61f81cf5c0b0b42b600e33}{Print}}\ (std::ostream\ \&os)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00110}00110\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00111}00111\ \ \ \ \ \textcolor{keyword}{typedef}\ std::map<uint32\_t,\ NeighborStatusEntry*>\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00112}\mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_ab8350d5acc594332013bc0ad920b4246}{00112}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_ab8350d5acc594332013bc0ad920b4246}{NSDBMap\_t}};\ \ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00113}00113\ \ \ \ \ \textcolor{keyword}{typedef}\ std::pair<uint32\_t,\ NeighborStatusEntry*>\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00114}\mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_ad861c4cffa334c7a3e294a35da8fa1b7}{00114}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_ad861c4cffa334c7a3e294a35da8fa1b7}{NSDBPair\_t}};\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00115}00115\ \ \ \ \ \textcolor{keyword}{typedef}\ std::map<uint32\_t,\ NeighborStatusEntry*>::iterator}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00116}\mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_a53e62331816ce1939693079d07be80a6}{00116}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_a53e62331816ce1939693079d07be80a6}{NeighborStatusMapI}};\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00117}00117\ \ \ \ \ \textcolor{keyword}{typedef}\ std::map<uint32\_t,\ NeighborStatusEntry*>::const\_iterator}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00118}\mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_a2e27030bc02bb9df806e028b73e9df2c}{00118}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_a2e27030bc02bb9df806e028b73e9df2c}{NeighborStatusMapCI}};\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00119}\mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_ad9111a256a70e9f8ca23127ec1eb7b7f}{00119}}\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_ab8350d5acc594332013bc0ad920b4246}{NSDBMap\_t}}\ \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_ad9111a256a70e9f8ca23127ec1eb7b7f}{m\_database}};\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00120}00120\ \};}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00122}00122\ \}}
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{neighbor-status-database_8h_source_l00124}00124\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ NEIGHBOR\_STATUS\_Database\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

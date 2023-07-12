@@ -1,0 +1,14 @@
+<map id="ns3::DGRRouteManagerLSDB::GetLSA" name="ns3::DGRRouteManagerLSDB::GetLSA">
+<area shape="rect" id="Node000001" title="Look up the Link State Advertisement associated with the given link state ID (address)." alt="" coords="769,92,980,132"/>
+<area shape="rect" id="Node000002" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a1f608c8ac5a62f915208141c2d7bea22" title="Test if a node is a stub, from an OSPF sense." alt="" coords="515,5,721,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="801,90,678,48,679,43,802,85"/>
+<area shape="rect" id="Node000003" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a910c2efcc40a79d4c062eb08ceb11522" title="Calculate the shortest path first (SPF) tree." alt="" coords="260,92,467,132"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="755,111,721,111,515,111,467,112,467,106,515,105,721,105,756,106"/>
+<area shape="rect" id="Node000004" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a3b798959aeda8a76373705151497692e" title="Compute routes using a Dijkstra SPF computation and populate per&#45;node forwarding tables." alt="" coords="5,149,212,189"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="823,140,775,160,722,175,654,185,585,192,446,197,318,193,212,184,212,179,319,187,446,191,584,187,653,180,721,169,773,155,821,135"/>
+<area shape="rect" id="Node000005" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#ab573904f9f357e2b802b1bbdcdc3247d" title="Examine the links in v&#39;s LSA and update the list of candidates with any vertices not already on the l..." alt="" coords="515,120,721,160"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="756,128,722,131,721,126,756,122"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="546,52,424,94,422,89,545,47"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="261,138,199,152,197,147,260,133"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="501,130,467,126,467,121,501,125"/>
+</map>

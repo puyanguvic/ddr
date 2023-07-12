@@ -1,0 +1,7 @@
+<map id="ns3::DGRRouter::InjectRoute" name="ns3::DGRRouter::InjectRoute">
+<area shape="rect" id="Node000001" title="Inject a route to be circulated to other routers as an external route." alt="" coords="5,13,212,38"/>
+<area shape="rect" id="Node000002" href="$dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry.html#ac251919954195223794f62f921d9708b" title=" " alt="" coords="260,5,473,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,23,246,23,246,28,212,28"/>
+<area shape="rect" id="Node000003" href="$dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry.html#a08c459157d5b8556f84e72cc5b1598eb" title="This constructor does nothing." alt="" coords="521,5,760,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="474,23,507,23,507,28,474,28"/>
+</map>

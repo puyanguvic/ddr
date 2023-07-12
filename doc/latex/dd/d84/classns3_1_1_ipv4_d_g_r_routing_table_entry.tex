@@ -1,0 +1,993 @@
+\doxysubsection{ns3\+::Ipv4\+DGRRouting\+Table\+Entry Class Reference}
+\hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry}{}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry}\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+
+
+A record of an IPv4 routing table entry for Ipv4\+Global\+Routing and Ipv4\+Static\+Routing.  
+
+
+
+
+{\ttfamily \#include $<$ipv4-\/dgr-\/routing-\/table-\/entry.\+h$>$}
+
+
+
+Collaboration diagram for ns3\+::Ipv4\+DGRRouting\+Table\+Entry\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d48/classns3_1_1_ipv4_d_g_r_routing_table_entry__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a08c459157d5b8556f84e72cc5b1598eb}{Ipv4\+DGRRouting\+Table\+Entry}} ()
+\begin{DoxyCompactList}\small\item\em This constructor does nothing. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_ad6b49550e393527e81748f8335949081}{Ipv4\+DGRRouting\+Table\+Entry}} (\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}} const \&route)
+\begin{DoxyCompactList}\small\item\em Copy Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a1403903afa0196694feccbe5473204a8}{Ipv4\+DGRRouting\+Table\+Entry}} (\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}} const \texorpdfstring{$\ast$}{*}route)
+\begin{DoxyCompactList}\small\item\em Copy Constructor. \end{DoxyCompactList}\item 
+Ipv4\+Address \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a69ebd01d00df5465ad4d720baf20aac5}{Get\+Dest}} (void) const
+\item 
+Ipv4\+Address \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_ab440baa28d8c334cf44b8e419c3227f4}{Get\+Dest\+Network}} (void) const
+\item 
+Ipv4\+Mask \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a94dc61bd7b6b0688689a52536382a7b4}{Get\+Dest\+Network\+Mask}} (void) const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_ad6b6cd8c1a98ab084553075f284de1b4}{Get\+Distance}} (void) const
+\item 
+Ipv4\+Address \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a19708a359b875e0b8986ff99f80c159c}{Get\+Gateway}} (void) const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a2b9549ad4a8d225b40c3f7dcd2c29c25}{Get\+Interface}} (void) const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a327e4e2e11fd01986fc128e9ee8e90bc}{Get\+Next\+Interface}} (void) const
+\item 
+bool \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a6f7e61e1bc9f78bd06f1637ba6629cf0}{Is\+Default}} (void) const
+\item 
+bool \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_ace7333037444806516277fc945e43c69}{Is\+Gateway}} (void) const
+\item 
+bool \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_aae4aa136bdffbf9f64f756fec615ecbb}{Is\+Host}} (void) const
+\item 
+bool \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a825aa473e191b77f4b1a4ca0329ce589}{Is\+Network}} (void) const
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}} \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a22ea568034b4a90eec3ed464dc829809}{Create\+Default\+Route}} (Ipv4\+Address next\+Hop, uint32\+\_\+t interface)
+\item 
+static \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}} \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a757bd4b15ca66094c58f9c8045b24015}{Create\+Host\+Route\+To}} (Ipv4\+Address dest, Ipv4\+Address next\+Hop, uint32\+\_\+t interface)
+\item 
+static \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}} \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_aef6b0aa8cfe002a97b460a8b1d664877}{Create\+Host\+Route\+To}} (Ipv4\+Address dest, Ipv4\+Address next\+Hop, uint32\+\_\+t interface, uint32\+\_\+t next\+Interface, uint32\+\_\+t distance)
+\begin{DoxyCompactList}\small\item\em Create a host route with the distance value ~\newline
+ \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}} \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a5d67819c375f3e3dce8d5ebc8ad322c7}{Create\+Host\+Route\+To}} (Ipv4\+Address dest, uint32\+\_\+t interface)
+\item 
+static \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}} \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_ac251919954195223794f62f921d9708b}{Create\+Network\+Route\+To}} (Ipv4\+Address network, Ipv4\+Mask network\+Mask, Ipv4\+Address next\+Hop, uint32\+\_\+t interface)
+\item 
+static \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}} \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a5be205f1f25fcea7f24f8e2f473046cb}{Create\+Network\+Route\+To}} (Ipv4\+Address network, Ipv4\+Mask network\+Mask, uint32\+\_\+t interface)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_aa317d152621e53c8e335e718bb599c60}{Ipv4\+DGRRouting\+Table\+Entry}} (Ipv4\+Address dest, Ipv4\+Address gateway, uint32\+\_\+t interface)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a2409f413ef002e0fc852be3c0b9b9493}{Ipv4\+DGRRouting\+Table\+Entry}} (Ipv4\+Address dest, Ipv4\+Address gateway, uint32\+\_\+t interface, uint32\+\_\+t next\+Interface, uint32\+\_\+t distance)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_ad34c592897b071c1143f40d9d98ff89e}{Ipv4\+DGRRouting\+Table\+Entry}} (Ipv4\+Address dest, Ipv4\+Mask mask, uint32\+\_\+t interface)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_aae94f7c9203af70e3ca627a2f86c1056}{Ipv4\+DGRRouting\+Table\+Entry}} (Ipv4\+Address dest, uint32\+\_\+t interface)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a36b6f730fb870d6c4cff428fd383d962}{Ipv4\+DGRRouting\+Table\+Entry}} (Ipv4\+Address network, Ipv4\+Mask mask, Ipv4\+Address gateway, uint32\+\_\+t interface)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ipv4\+Address \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a83f300dcc9098cf426a1d3578ee270a6}{m\+\_\+dest}}
+\begin{DoxyCompactList}\small\item\em destination address \end{DoxyCompactList}\item 
+Ipv4\+Mask \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a0e259e9a9de7934e536226ece9ec73d6}{m\+\_\+dest\+Network\+Mask}}
+\begin{DoxyCompactList}\small\item\em destination network mask \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a0bb39e5764002439e5d2cbb2540f6471}{m\+\_\+distance}}
+\begin{DoxyCompactList}\small\item\em the distance between root and destination \end{DoxyCompactList}\item 
+Ipv4\+Address \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a436f0a10e8074828b5dbc54b2100c7b8}{m\+\_\+gateway}}
+\begin{DoxyCompactList}\small\item\em gateway \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_af52773f5998ee60462a7a3c4815f5aa3}{m\+\_\+interface}}
+\begin{DoxyCompactList}\small\item\em output interface \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a8f17a3a13464b14f862a92702be6fbd1}{m\+\_\+next\+Interface}}
+\begin{DoxyCompactList}\small\item\em output interface in next hop \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+A record of an IPv4 routing table entry for Ipv4\+Global\+Routing and Ipv4\+Static\+Routing. 
+
+This is not a reference counted object. 
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source_l00019}{19}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_a08c459157d5b8556f84e72cc5b1598eb}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_a08c459157d5b8556f84e72cc5b1598eb} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!Ipv4DGRRoutingTableEntry@{Ipv4DGRRoutingTableEntry}}
+\index{Ipv4DGRRoutingTableEntry@{Ipv4DGRRoutingTableEntry}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{Ipv4DGRRoutingTableEntry()}{Ipv4DGRRoutingTableEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Ipv4\+DGRRouting\+Table\+Entry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This constructor does nothing. 
+
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00016}{16}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00263}{Create\+Default\+Route()}}, \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00212}{Create\+Host\+Route\+To()}}, \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00232}{Create\+Host\+Route\+To()}}, \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00220}{Create\+Host\+Route\+To()}}, \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00244}{Create\+Network\+Route\+To()}}, and \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00254}{Create\+Network\+Route\+To()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry_a08c459157d5b8556f84e72cc5b1598eb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_ad6b49550e393527e81748f8335949081}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_ad6b49550e393527e81748f8335949081} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!Ipv4DGRRoutingTableEntry@{Ipv4DGRRoutingTableEntry}}
+\index{Ipv4DGRRoutingTableEntry@{Ipv4DGRRoutingTableEntry}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{Ipv4DGRRoutingTableEntry()}{Ipv4DGRRoutingTableEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Ipv4\+DGRRouting\+Table\+Entry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}} const \&}]{route }\end{DoxyParamCaption})}
+
+
+
+Copy Constructor. 
+
+change m\+\_\+distance (MAX\+\_\+\+UINT32) to m\+\_\+distance (route.\+m\+\_\+distance)
+
+
+\begin{DoxyParams}{Parameters}
+{\em route} & The route to copy \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00024}{24}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_a1403903afa0196694feccbe5473204a8}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_a1403903afa0196694feccbe5473204a8} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!Ipv4DGRRoutingTableEntry@{Ipv4DGRRoutingTableEntry}}
+\index{Ipv4DGRRoutingTableEntry@{Ipv4DGRRoutingTableEntry}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{Ipv4DGRRoutingTableEntry()}{Ipv4DGRRoutingTableEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Ipv4\+DGRRouting\+Table\+Entry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}} const \texorpdfstring{$\ast$}{*}}]{route }\end{DoxyParamCaption})}
+
+
+
+Copy Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em route} & The route to copy \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00036}{36}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_a36b6f730fb870d6c4cff428fd383d962}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_a36b6f730fb870d6c4cff428fd383d962} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!Ipv4DGRRoutingTableEntry@{Ipv4DGRRoutingTableEntry}}
+\index{Ipv4DGRRoutingTableEntry@{Ipv4DGRRoutingTableEntry}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{Ipv4DGRRoutingTableEntry()}{Ipv4DGRRoutingTableEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Ipv4\+DGRRouting\+Table\+Entry (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{network,  }\item[{Ipv4\+Mask}]{mask,  }\item[{Ipv4\+Address}]{gateway,  }\item[{uint32\+\_\+t}]{interface }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em network} & network address \\
+\hline
+{\em mask} & network mask \\
+\hline
+{\em gateway} & the gateway \\
+\hline
+{\em interface} & the interface index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00070}{70}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_ad34c592897b071c1143f40d9d98ff89e}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_ad34c592897b071c1143f40d9d98ff89e} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!Ipv4DGRRoutingTableEntry@{Ipv4DGRRoutingTableEntry}}
+\index{Ipv4DGRRoutingTableEntry@{Ipv4DGRRoutingTableEntry}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{Ipv4DGRRoutingTableEntry()}{Ipv4DGRRoutingTableEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Ipv4\+DGRRouting\+Table\+Entry (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{dest,  }\item[{Ipv4\+Mask}]{mask,  }\item[{uint32\+\_\+t}]{interface }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & destination address \\
+\hline
+{\em mask} & network mask \\
+\hline
+{\em interface} & the interface index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00084}{84}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_aa317d152621e53c8e335e718bb599c60}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_aa317d152621e53c8e335e718bb599c60} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!Ipv4DGRRoutingTableEntry@{Ipv4DGRRoutingTableEntry}}
+\index{Ipv4DGRRoutingTableEntry@{Ipv4DGRRoutingTableEntry}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{Ipv4DGRRoutingTableEntry()}{Ipv4DGRRoutingTableEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Ipv4\+DGRRouting\+Table\+Entry (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{dest,  }\item[{Ipv4\+Address}]{gateway,  }\item[{uint32\+\_\+t}]{interface }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & destination address \\
+\hline
+{\em gateway} & the gateway \\
+\hline
+{\em interface} & the interface index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00047}{47}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_aae94f7c9203af70e3ca627a2f86c1056}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_aae94f7c9203af70e3ca627a2f86c1056} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!Ipv4DGRRoutingTableEntry@{Ipv4DGRRoutingTableEntry}}
+\index{Ipv4DGRRoutingTableEntry@{Ipv4DGRRoutingTableEntry}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{Ipv4DGRRoutingTableEntry()}{Ipv4DGRRoutingTableEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Ipv4\+DGRRouting\+Table\+Entry (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{dest,  }\item[{uint32\+\_\+t}]{interface }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & destination address \\
+\hline
+{\em interface} & the interface index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00059}{59}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_a2409f413ef002e0fc852be3c0b9b9493}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_a2409f413ef002e0fc852be3c0b9b9493} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!Ipv4DGRRoutingTableEntry@{Ipv4DGRRoutingTableEntry}}
+\index{Ipv4DGRRoutingTableEntry@{Ipv4DGRRoutingTableEntry}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{Ipv4DGRRoutingTableEntry()}{Ipv4DGRRoutingTableEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Ipv4\+DGRRouting\+Table\+Entry (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{dest,  }\item[{Ipv4\+Address}]{gateway,  }\item[{uint32\+\_\+t}]{interface,  }\item[{uint32\+\_\+t}]{next\+Interface,  }\item[{uint32\+\_\+t}]{distance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & destination address \\
+\hline
+{\em gateway} & gateway address \\
+\hline
+{\em interface} & the interface index \\
+\hline
+{\em next\+Interface} & the interface index in next hop \\
+\hline
+{\em distance} & the distance between root and destination\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Pu Yang 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & destination address \\
+\hline
+{\em interface} & the interface index \\
+\hline
+{\em distance} & the distance between root and dest \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00104}{104}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_a22ea568034b4a90eec3ed464dc829809}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_a22ea568034b4a90eec3ed464dc829809} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!CreateDefaultRoute@{CreateDefaultRoute}}
+\index{CreateDefaultRoute@{CreateDefaultRoute}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{CreateDefaultRoute()}{CreateDefaultRoute()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}} ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Create\+Default\+Route (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{next\+Hop,  }\item[{uint32\+\_\+t}]{interface }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+An Ipv4\+Routing\+Table\+Entry object corresponding to the input parameters. This route is distinguished; it will match any destination for which a more specific route does not exist. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em next\+Hop} & Ipv4\+Address of the next hop \\
+\hline
+{\em interface} & Outgoing interface \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00263}{263}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+
+
+References \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00016}{Ipv4\+DGRRouting\+Table\+Entry()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry_a22ea568034b4a90eec3ed464dc829809_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_a757bd4b15ca66094c58f9c8045b24015}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_a757bd4b15ca66094c58f9c8045b24015} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!CreateHostRouteTo@{CreateHostRouteTo}}
+\index{CreateHostRouteTo@{CreateHostRouteTo}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{CreateHostRouteTo()}{CreateHostRouteTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}} ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Create\+Host\+Route\+To (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{dest,  }\item[{Ipv4\+Address}]{next\+Hop,  }\item[{uint32\+\_\+t}]{interface }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+An Ipv4\+Routing\+Table\+Entry object corresponding to the input parameters. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & Ipv4\+Address of the destination \\
+\hline
+{\em next\+Hop} & Ipv4\+Address of the next hop \\
+\hline
+{\em interface} & Outgoing interface \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00212}{212}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+
+
+References \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00016}{Ipv4\+DGRRouting\+Table\+Entry()}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00099}{ns3\+::\+Ipv4\+DGRRouting\+::\+Add\+Host\+Route\+To()}}, \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00130}{ns3\+::\+Ipv4\+DGRRouting\+::\+Add\+Host\+Route\+To()}}, and \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00110}{ns3\+::\+Ipv4\+DGRRouting\+::\+Add\+Host\+Route\+To()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry_a757bd4b15ca66094c58f9c8045b24015_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry_a757bd4b15ca66094c58f9c8045b24015_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_aef6b0aa8cfe002a97b460a8b1d664877}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_aef6b0aa8cfe002a97b460a8b1d664877} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!CreateHostRouteTo@{CreateHostRouteTo}}
+\index{CreateHostRouteTo@{CreateHostRouteTo}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{CreateHostRouteTo()}{CreateHostRouteTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}} ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Create\+Host\+Route\+To (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{dest,  }\item[{Ipv4\+Address}]{next\+Hop,  }\item[{uint32\+\_\+t}]{interface,  }\item[{uint32\+\_\+t}]{next\+Interface,  }\item[{uint32\+\_\+t}]{distance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a host route with the distance value ~\newline
+ 
+
+\begin{DoxyAuthor}{Author}
+Pu Yang 
+\end{DoxyAuthor}
+\begin{DoxyReturn}{Returns}
+An Ipv4\+Routing\+Table\+Entry object corresponding to the input parameters. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & Ipv4\+Address of the destination \\
+\hline
+{\em next\+Hop} & the Ipv4\+Address the next\+Hop \\
+\hline
+{\em interface} & Outgoing interface \\
+\hline
+{\em next\+Interface} & Outgoing interface in next hop \\
+\hline
+{\em distance} & The distance between root and destination\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Pu Yang 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00232}{232}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+
+
+References \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00016}{Ipv4\+DGRRouting\+Table\+Entry()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry_aef6b0aa8cfe002a97b460a8b1d664877_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_a5d67819c375f3e3dce8d5ebc8ad322c7}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_a5d67819c375f3e3dce8d5ebc8ad322c7} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!CreateHostRouteTo@{CreateHostRouteTo}}
+\index{CreateHostRouteTo@{CreateHostRouteTo}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{CreateHostRouteTo()}{CreateHostRouteTo()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}} ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Create\+Host\+Route\+To (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{dest,  }\item[{uint32\+\_\+t}]{interface }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+An Ipv4\+Routing\+Table\+Entry object corresponding to the input parameters. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & Ipv4\+Address of the destination \\
+\hline
+{\em interface} & Outgoing interface \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00220}{220}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+
+
+References \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00016}{Ipv4\+DGRRouting\+Table\+Entry()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry_a5d67819c375f3e3dce8d5ebc8ad322c7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_ac251919954195223794f62f921d9708b}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_ac251919954195223794f62f921d9708b} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!CreateNetworkRouteTo@{CreateNetworkRouteTo}}
+\index{CreateNetworkRouteTo@{CreateNetworkRouteTo}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{CreateNetworkRouteTo()}{CreateNetworkRouteTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}} ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Create\+Network\+Route\+To (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{network,  }\item[{Ipv4\+Mask}]{network\+Mask,  }\item[{Ipv4\+Address}]{next\+Hop,  }\item[{uint32\+\_\+t}]{interface }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+An Ipv4\+Routing\+Table\+Entry object corresponding to the input parameters. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em network} & Ipv4\+Address of the destination network \\
+\hline
+{\em network\+Mask} & Ipv4\+Mask of the destination network mask \\
+\hline
+{\em next\+Hop} & Ipv4\+Address of the next hop \\
+\hline
+{\em interface} & Outgoing interface \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00244}{244}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+
+
+References \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00016}{Ipv4\+DGRRouting\+Table\+Entry()}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00173}{ns3\+::\+Ipv4\+DGRRouting\+::\+Add\+ASExternal\+Route\+To()}}, \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00145}{ns3\+::\+Ipv4\+DGRRouting\+::\+Add\+Network\+Route\+To()}}, \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00160}{ns3\+::\+Ipv4\+DGRRouting\+::\+Add\+Network\+Route\+To()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l01611}{ns3\+::\+DGRRouter\+::\+Inject\+Route()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry_ac251919954195223794f62f921d9708b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry_ac251919954195223794f62f921d9708b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_a5be205f1f25fcea7f24f8e2f473046cb}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_a5be205f1f25fcea7f24f8e2f473046cb} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!CreateNetworkRouteTo@{CreateNetworkRouteTo}}
+\index{CreateNetworkRouteTo@{CreateNetworkRouteTo}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{CreateNetworkRouteTo()}{CreateNetworkRouteTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4\+DGRRouting\+Table\+Entry}} ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Create\+Network\+Route\+To (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{network,  }\item[{Ipv4\+Mask}]{network\+Mask,  }\item[{uint32\+\_\+t}]{interface }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+An Ipv4\+Routing\+Table\+Entry object corresponding to the input parameters. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em network} & Ipv4\+Address of the destination network \\
+\hline
+{\em network\+Mask} & Ipv4\+Mask of the destination network mask \\
+\hline
+{\em interface} & Outgoing interface \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00254}{254}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+
+
+References \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00016}{Ipv4\+DGRRouting\+Table\+Entry()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry_a5be205f1f25fcea7f24f8e2f473046cb_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_a69ebd01d00df5465ad4d720baf20aac5}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_a69ebd01d00df5465ad4d720baf20aac5} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!GetDest@{GetDest}}
+\index{GetDest@{GetDest}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{GetDest()}{GetDest()}}
+{\footnotesize\ttfamily Ipv4\+Address ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Get\+Dest (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The IPv4 address of the destination of this route 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00134}{134}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+
+
+References \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source_l00194}{m\+\_\+dest}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00253}{ns3\+::\+Ipv4\+DGRRouting\+::\+Lookup\+DGRRoute()}}, \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00189}{ns3\+::\+Ipv4\+DGRRouting\+::\+Lookup\+Uni\+Route()}}, \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00271}{ns3\+::operator$<$$<$()}}, \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00315}{ns3\+::operator==()}}, and \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00970}{ns3\+::\+Ipv4\+DGRRouting\+::\+Print\+Routing\+Table()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry_a69ebd01d00df5465ad4d720baf20aac5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_ab440baa28d8c334cf44b8e419c3227f4}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_ab440baa28d8c334cf44b8e419c3227f4} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!GetDestNetwork@{GetDestNetwork}}
+\index{GetDestNetwork@{GetDestNetwork}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{GetDestNetwork()}{GetDestNetwork()}}
+{\footnotesize\ttfamily Ipv4\+Address ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Get\+Dest\+Network (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The IPv4 network number of the destination of this route 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00159}{159}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+
+
+References \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source_l00194}{m\+\_\+dest}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00271}{ns3\+::operator$<$$<$()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry_ab440baa28d8c334cf44b8e419c3227f4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_a94dc61bd7b6b0688689a52536382a7b4}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_a94dc61bd7b6b0688689a52536382a7b4} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!GetDestNetworkMask@{GetDestNetworkMask}}
+\index{GetDestNetworkMask@{GetDestNetworkMask}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{GetDestNetworkMask()}{GetDestNetworkMask()}}
+{\footnotesize\ttfamily Ipv4\+Mask ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Get\+Dest\+Network\+Mask (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The IPv4 network mask of the destination of this route 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00165}{165}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+
+
+References \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source_l00195}{m\+\_\+dest\+Network\+Mask}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00271}{ns3\+::operator$<$$<$()}}, and \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00315}{ns3\+::operator==()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry_a94dc61bd7b6b0688689a52536382a7b4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_ad6b6cd8c1a98ab084553075f284de1b4}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_ad6b6cd8c1a98ab084553075f284de1b4} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!GetDistance@{GetDistance}}
+\index{GetDistance@{GetDistance}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{GetDistance()}{GetDistance()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Get\+Distance (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+the distance 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00205}{205}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+
+
+References \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source_l00199}{m\+\_\+distance}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00253}{ns3\+::\+Ipv4\+DGRRouting\+::\+Lookup\+DGRRoute()}}, and \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00970}{ns3\+::\+Ipv4\+DGRRouting\+::\+Print\+Routing\+Table()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry_ad6b6cd8c1a98ab084553075f284de1b4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_a19708a359b875e0b8986ff99f80c159c}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_a19708a359b875e0b8986ff99f80c159c} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!GetGateway@{GetGateway}}
+\index{GetGateway@{GetGateway}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{GetGateway()}{GetGateway()}}
+{\footnotesize\ttfamily Ipv4\+Address ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Get\+Gateway (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+address of the gateway stored in this entry 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00184}{184}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+
+
+References \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source_l00196}{m\+\_\+gateway}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00253}{ns3\+::\+Ipv4\+DGRRouting\+::\+Lookup\+DGRRoute()}}, \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00189}{ns3\+::\+Ipv4\+DGRRouting\+::\+Lookup\+Uni\+Route()}}, \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00271}{ns3\+::operator$<$$<$()}}, \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00315}{ns3\+::operator==()}}, and \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00970}{ns3\+::\+Ipv4\+DGRRouting\+::\+Print\+Routing\+Table()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry_a19708a359b875e0b8986ff99f80c159c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_a2b9549ad4a8d225b40c3f7dcd2c29c25}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_a2b9549ad4a8d225b40c3f7dcd2c29c25} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!GetInterface@{GetInterface}}
+\index{GetInterface@{GetInterface}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{GetInterface()}{GetInterface()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Get\+Interface (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The Ipv4 interface number used for sending outgoing packets 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00191}{191}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+
+
+References \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source_l00197}{m\+\_\+interface}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00253}{ns3\+::\+Ipv4\+DGRRouting\+::\+Lookup\+DGRRoute()}}, \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00189}{ns3\+::\+Ipv4\+DGRRouting\+::\+Lookup\+Uni\+Route()}}, \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00271}{ns3\+::operator$<$$<$()}}, \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00315}{ns3\+::operator==()}}, and \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00970}{ns3\+::\+Ipv4\+DGRRouting\+::\+Print\+Routing\+Table()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry_a2b9549ad4a8d225b40c3f7dcd2c29c25_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_a327e4e2e11fd01986fc128e9ee8e90bc}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_a327e4e2e11fd01986fc128e9ee8e90bc} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!GetNextInterface@{GetNextInterface}}
+\index{GetNextInterface@{GetNextInterface}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{GetNextInterface()}{GetNextInterface()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Get\+Next\+Interface (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The Ipv4 interface number used for sending outgoing packets in the next hop 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00198}{198}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+
+
+References \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source_l00198}{m\+\_\+next\+Interface}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00970}{ns3\+::\+Ipv4\+DGRRouting\+::\+Print\+Routing\+Table()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry_a327e4e2e11fd01986fc128e9ee8e90bc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_a6f7e61e1bc9f78bd06f1637ba6629cf0}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_a6f7e61e1bc9f78bd06f1637ba6629cf0} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!IsDefault@{IsDefault}}
+\index{IsDefault@{IsDefault}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{IsDefault()}{IsDefault()}}
+{\footnotesize\ttfamily bool ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Is\+Default (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+True if this route is a default route; false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00146}{146}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+
+
+References \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source_l00194}{m\+\_\+dest}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00271}{ns3\+::operator$<$$<$()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry_a6f7e61e1bc9f78bd06f1637ba6629cf0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_ace7333037444806516277fc945e43c69}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_ace7333037444806516277fc945e43c69} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!IsGateway@{IsGateway}}
+\index{IsGateway@{IsGateway}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{IsGateway()}{IsGateway()}}
+{\footnotesize\ttfamily bool ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Is\+Gateway (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+True if this route is a gateway route; false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00171}{171}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+
+
+References \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source_l00196}{m\+\_\+gateway}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00271}{ns3\+::operator$<$$<$()}}, and \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00970}{ns3\+::\+Ipv4\+DGRRouting\+::\+Print\+Routing\+Table()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry_ace7333037444806516277fc945e43c69_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_aae4aa136bdffbf9f64f756fec615ecbb}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_aae4aa136bdffbf9f64f756fec615ecbb} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!IsHost@{IsHost}}
+\index{IsHost@{IsHost}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{IsHost()}{IsHost()}}
+{\footnotesize\ttfamily bool ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Is\+Host (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+True if this route is a host route (mask of all ones); false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00121}{121}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+
+
+References \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source_l00195}{m\+\_\+dest\+Network\+Mask}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00140}{Is\+Network()}}, \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00271}{ns3\+::operator$<$$<$()}}, and \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00970}{ns3\+::\+Ipv4\+DGRRouting\+::\+Print\+Routing\+Table()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry_aae4aa136bdffbf9f64f756fec615ecbb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_a825aa473e191b77f4b1a4ca0329ce589}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_a825aa473e191b77f4b1a4ca0329ce589} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!IsNetwork@{IsNetwork}}
+\index{IsNetwork@{IsNetwork}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{IsNetwork()}{IsNetwork()}}
+{\footnotesize\ttfamily bool ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::\+Is\+Network (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+True if this route is not a host route (mask is not all ones); false otherwise
+\end{DoxyReturn}
+This method is implemented as !\+Is\+Host (). 
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00140}{140}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}.
+
+
+
+References \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00121}{Is\+Host()}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00271}{ns3\+::operator$<$$<$()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry_a825aa473e191b77f4b1a4ca0329ce589_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d84/classns3_1_1_ipv4_d_g_r_routing_table_entry_a825aa473e191b77f4b1a4ca0329ce589_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_a83f300dcc9098cf426a1d3578ee270a6}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_a83f300dcc9098cf426a1d3578ee270a6} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!m\_dest@{m\_dest}}
+\index{m\_dest@{m\_dest}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{m\_dest}{m\_dest}}
+{\footnotesize\ttfamily Ipv4\+Address ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::m\+\_\+dest\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+destination address 
+
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source_l00194}{194}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00134}{Get\+Dest()}}, \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00159}{Get\+Dest\+Network()}}, and \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00146}{Is\+Default()}}.
+
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_a0e259e9a9de7934e536226ece9ec73d6}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_a0e259e9a9de7934e536226ece9ec73d6} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!m\_destNetworkMask@{m\_destNetworkMask}}
+\index{m\_destNetworkMask@{m\_destNetworkMask}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{m\_destNetworkMask}{m\_destNetworkMask}}
+{\footnotesize\ttfamily Ipv4\+Mask ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::m\+\_\+dest\+Network\+Mask\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+destination network mask 
+
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source_l00195}{195}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00165}{Get\+Dest\+Network\+Mask()}}, and \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00121}{Is\+Host()}}.
+
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_a0bb39e5764002439e5d2cbb2540f6471}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_a0bb39e5764002439e5d2cbb2540f6471} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!m\_distance@{m\_distance}}
+\index{m\_distance@{m\_distance}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{m\_distance}{m\_distance}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::m\+\_\+distance\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the distance between root and destination 
+
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source_l00199}{199}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00205}{Get\+Distance()}}.
+
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_a436f0a10e8074828b5dbc54b2100c7b8}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_a436f0a10e8074828b5dbc54b2100c7b8} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!m\_gateway@{m\_gateway}}
+\index{m\_gateway@{m\_gateway}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{m\_gateway}{m\_gateway}}
+{\footnotesize\ttfamily Ipv4\+Address ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::m\+\_\+gateway\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+gateway 
+
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source_l00196}{196}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00184}{Get\+Gateway()}}, and \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00171}{Is\+Gateway()}}.
+
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_af52773f5998ee60462a7a3c4815f5aa3}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_af52773f5998ee60462a7a3c4815f5aa3} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!m\_interface@{m\_interface}}
+\index{m\_interface@{m\_interface}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{m\_interface}{m\_interface}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::m\+\_\+interface\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+output interface 
+
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source_l00197}{197}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00191}{Get\+Interface()}}.
+
+\Hypertarget{classns3_1_1_ipv4_d_g_r_routing_table_entry_a8f17a3a13464b14f862a92702be6fbd1}\label{classns3_1_1_ipv4_d_g_r_routing_table_entry_a8f17a3a13464b14f862a92702be6fbd1} 
+\index{ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}!m\_nextInterface@{m\_nextInterface}}
+\index{m\_nextInterface@{m\_nextInterface}!ns3::Ipv4DGRRoutingTableEntry@{ns3::Ipv4DGRRoutingTableEntry}}
+\doxyparagraph{\texorpdfstring{m\_nextInterface}{m\_nextInterface}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+Ipv4\+DGRRouting\+Table\+Entry\+::m\+\_\+next\+Interface\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+output interface in next hop 
+
+
+
+Definition at line \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source_l00198}{198}} of file \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h_source}{ipv4-\/dgr-\/routing-\/table-\/entry.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc_source_l00198}{Get\+Next\+Interface()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h}{ipv4-\/dgr-\/routing-\/table-\/entry.\+h}}\item 
+model/\mbox{\hyperlink{ipv4-dgr-routing-table-entry_8cc}{ipv4-\/dgr-\/routing-\/table-\/entry.\+cc}}\end{DoxyCompactItemize}

@@ -1,0 +1,19 @@
+<map id="ns3::DGRRoutingLSA::CopyLinkRecords" name="ns3::DGRRoutingLSA::CopyLinkRecords">
+<area shape="rect" id="Node000001" title="Copy any Global Routing Link Records in a given Global Routing Link State Advertisement to the curren..." alt="" coords="5,229,163,269"/>
+<area shape="rect" id="Node000002" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#a97080a8409f77898f4485230be0be5e4" title="Get the Link Data field of the Global Routing Link Record." alt="" coords="211,5,415,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,228,107,191,132,145,167,97,209,55,217,50,220,54,212,59,171,100,137,148,112,194,95,230"/>
+<area shape="rect" id="Node000003" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#a9fe6e135674ef321bc11b48f90071857" title="Get the Link ID field of the Global Routing Link Record." alt="" coords="211,69,415,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="98,227,144,174,175,144,209,119,221,113,223,117,212,124,178,148,148,177,102,231"/>
+<area shape="rect" id="Node000004" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#ab9148eaf7a9d088a397e66164c1f30b9" title="Get the Link Type field of the Global Routing Link Record." alt="" coords="211,133,415,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="120,227,210,183,229,175,231,180,212,188,122,232"/>
+<area shape="rect" id="Node000005" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#af96cb9a05b3d95d14b6af29e058e3712" title="Get the Metric Data field of the Global Routing Link Record." alt="" coords="211,197,415,237"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="163,236,197,231,198,236,163,241"/>
+<area shape="rect" id="Node000006" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#a06083e776955f21fe1fd4e4927cf0b24" title="Set the Link Data field of the Global Routing Link Record." alt="" coords="211,261,415,301"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="163,258,198,263,197,268,163,263"/>
+<area shape="rect" id="Node000007" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#a203541f10ca13f9cfb1987fbbff4416b" title="Set the Link ID field of the Global Routing Link Record." alt="" coords="211,325,415,365"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="122,267,212,311,231,318,229,323,210,316,120,272"/>
+<area shape="rect" id="Node000008" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#aacc16a8566cd389fd974cbeb8dde6ddd" title="Set the Link Type field of the Global Routing Link Record." alt="" coords="211,389,415,429"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="102,268,148,321,178,350,212,375,223,381,221,386,209,380,175,354,144,325,98,271"/>
+<area shape="rect" id="Node000009" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#ac6b9632b024b3799a25209f1392c1ab8" title="Set the Metric Data field of the Global Routing Link Record." alt="" coords="211,453,415,493"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="95,268,112,305,137,351,171,399,212,439,220,444,217,449,209,443,167,402,132,354,107,307,91,271"/>
+</map>

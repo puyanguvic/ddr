@@ -1,0 +1,24 @@
+<map id="model/dgr&#45;route&#45;manager.h" name="model/dgr&#45;route&#45;manager.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="307,5,508,31"/>
+<area shape="rect" id="Node000002" href="$db/db2/dgr-route-manager_8cc.html" title=" " alt="" coords="5,247,212,273"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="368,39,331,57,293,81,238,125,188,173,120,249,116,245,185,170,235,121,290,76,328,53,366,34"/>
+<area shape="rect" id="Node000003" href="$df/d96/dgr-router-interface_8h.html" title=" " alt="" coords="304,79,511,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="410,44,410,79,405,79,405,44"/>
+<area shape="rect" id="Node000009" href="$d2/dc4/ipv4-dgr-routing_8cc.html" title=" " alt="" coords="687,335,877,361"/>
+<area shape="poly" id="edge13_Node000001_Node000009" title=" " alt="" coords="452,33,554,79,612,112,666,150,708,190,740,239,766,291,781,334,776,336,761,293,736,241,704,193,663,154,609,116,552,84,450,38"/>
+<area shape="rect" id="Node000004" href="$d3/d4c/dgr-route-manager-impl_8cc.html" title=" " alt="" coords="205,328,396,368"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="354,111,325,129,302,153,292,175,286,199,283,247,289,292,297,327,292,328,284,293,278,247,280,198,287,173,297,151,321,124,352,107"/>
+<area shape="rect" id="Node000005" href="$d5/d9c/dgr-route-manager-impl_8h.html" title=" " alt="" coords="312,152,503,192"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="410,118,410,152,405,152,405,118"/>
+<area shape="rect" id="Node000008" href="$de/d42/dgr-router-interface_8cc.html" title=" " alt="" coords="439,335,653,361"/>
+<area shape="poly" id="edge12_Node000003_Node000008" title=" " alt="" coords="491,105,551,122,613,149,672,187,697,211,718,239,725,257,722,275,711,290,695,303,651,324,603,338,601,333,649,319,692,298,707,286,717,273,719,258,713,241,693,214,668,191,611,153,549,127,490,110"/>
+<area shape="poly" id="edge7_Node000005_Node000002" title=" " alt="" coords="330,198,149,250,148,245,328,193"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="366,202,345,220,328,241,318,263,311,286,304,328,299,328,305,285,313,261,324,239,342,216,363,198"/>
+<area shape="rect" id="Node000006" href="$da/d53/dgr-candidate-queue_8cc.html" title=" " alt="" coords="546,240,703,280"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="469,195,578,238,576,242,467,200"/>
+<area shape="rect" id="Node000007" href="$dd/d5c/ipv4-dgr-routing_8h.html" title=" " alt="" coords="338,247,522,273"/>
+<area shape="poly" id="edge8_Node000005_Node000007" title=" " alt="" coords="418,205,429,246,424,248,413,206"/>
+<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="402,283,331,330,328,326,399,278"/>
+<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="458,279,532,333,529,337,455,283"/>
+<area shape="poly" id="edge11_Node000007_Node000009" title=" " alt="" coords="491,273,736,333,735,338,490,279"/>
+</map>

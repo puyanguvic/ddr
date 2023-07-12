@@ -1,0 +1,5 @@
+<map id="ns3::DGRSinkHelper::Install" name="ns3::DGRSinkHelper::Install">
+<area shape="rect" id="Node000001" title="Install an ns3::PacketSinkApplication on each node of the input container configured with all the att..." alt="" coords="5,5,159,45"/>
+<area shape="rect" id="Node000002" href="$d1/d9a/classns3_1_1_d_g_r_sink_helper.html#aa6283f4ef52325361ad04b282368050f" title="Install an ns3::PacketSink on the node configured with all the attributes set with SetAttribute." alt="" coords="207,5,360,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,23,193,23,193,28,159,28"/>
+</map>

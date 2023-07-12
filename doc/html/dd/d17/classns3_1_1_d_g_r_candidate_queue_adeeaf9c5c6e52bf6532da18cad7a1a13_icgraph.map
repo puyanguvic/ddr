@@ -1,0 +1,5 @@
+<map id="ns3::DGRCandidateQueue::Clear" name="ns3::DGRCandidateQueue::Clear">
+<area shape="rect" id="Node000001" title="Empty the Candidate Queue and release all of the resources associated with the Shortest Path First Ve..." alt="" coords="244,5,435,45"/>
+<area shape="rect" id="Node000002" href="$dd/d17/classns3_1_1_d_g_r_candidate_queue.html#a781c132e67fec6534adb3e588e938034" title="Destroy an SPF Candidate Queue and release any resources held by the contents." alt="" coords="5,5,196,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,28,196,28,196,23,230,23"/>
+</map>

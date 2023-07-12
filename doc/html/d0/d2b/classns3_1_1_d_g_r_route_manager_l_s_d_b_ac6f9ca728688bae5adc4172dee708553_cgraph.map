@@ -1,0 +1,11 @@
+<map id="ns3::DGRRouteManagerLSDB::GetLSAByLinkData" name="ns3::DGRRouteManagerLSDB::GetLSAByLinkData">
+<area shape="rect" id="Node000001" title="Look up the Link State Advertisement associated with the given link state ID (address)." alt="" coords="5,101,216,141"/>
+<area shape="rect" id="Node000002" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#a97080a8409f77898f4485230be0be5e4" title="Get the Link Data field of the Global Routing Link Record." alt="" coords="264,5,468,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,99,263,55,284,47,286,52,265,60,158,104"/>
+<area shape="rect" id="Node000003" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#acb5df9fec863df510911aa3e64d4aa04" title="Return a pointer to the specified Global Routing Link Record." alt="" coords="287,69,445,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="216,105,274,98,274,103,217,111"/>
+<area shape="rect" id="Node000004" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#ab9148eaf7a9d088a397e66164c1f30b9" title="Get the Link Type field of the Global Routing Link Record." alt="" coords="264,133,468,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="217,132,251,136,250,142,216,137"/>
+<area shape="rect" id="Node000005" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a882a042d18bcbdea3bc1a3eb55dcfe58" title="Return the number of Global Routing Link Records in the LSA." alt="" coords="287,197,445,237"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="158,139,265,183,286,190,284,195,263,188,156,144"/>
+</map>

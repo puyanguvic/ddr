@@ -1,0 +1,41 @@
+\doxysubsection{dgr-\/application-\/helper.h}
+\hypertarget{dgr-application-helper_8h_source}{}\label{dgr-application-helper_8h_source}\index{helper/dgr-\/application-\/helper.h@{helper/dgr-\/application-\/helper.h}}
+\mbox{\hyperlink{dgr-application-helper_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00001}00001\ \textcolor{comment}{/*\ -\/*-\/\ Mode:C++;\ c-\/file-\/style:"{}gnu"{};\ indent-\/tabs-\/mode:nil;\ -\/*-\/\ */}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00003}00003\ \textcolor{preprocessor}{\#ifndef\ DGR\_APPLICATION\_HELPER\_H}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00004}00004\ \textcolor{preprocessor}{\#define\ DGR\_APPLICATION\_HELPER\_H}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}ns3/object-\/factory.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}ns3/ipv4-\/address.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}ns3/node-\/container.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}ns3/application-\/container.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00011}00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacens3}{ns3}}\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00018}\mbox{\hyperlink{classns3_1_1_d_g_r_application_helper}{00018}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_d_g_r_application_helper}{DGRApplicationHelper}}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00019}00019\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00020}00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00031}00031\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_application_helper}{DGRApplicationHelper}}\ (std::string\ protocol,\ Address\ address);}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00033}00033\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_application_helper_a59df0621ae2d978da879d7b46d79c184}{\string~DGRApplicationHelper}}();}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00041}00041\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_application_helper_a7c49d8026f27143b11673d3999f4d62c}{SetAttribute}}\ (std::string\ name,\ \textcolor{keyword}{const}\ AttributeValue\ \&value);}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00051}00051\ \ \ ApplicationContainer\ \mbox{\hyperlink{classns3_1_1_d_g_r_application_helper_a27f1ac918f96c2c698210f84a34d4462}{Install}}\ (NodeContainer\ c)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00060}00060\ \ \ ApplicationContainer\ \mbox{\hyperlink{classns3_1_1_d_g_r_application_helper_a27f1ac918f96c2c698210f84a34d4462}{Install}}\ (Ptr<Node>\ node)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00069}00069\ \ \ ApplicationContainer\ \mbox{\hyperlink{classns3_1_1_d_g_r_application_helper_a27f1ac918f96c2c698210f84a34d4462}{Install}}\ (std::string\ nodeName)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00071}00071\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00079}00079\ \ \ Ptr<Application>\ \mbox{\hyperlink{classns3_1_1_d_g_r_application_helper_a980128be53078a138a85281640df4725}{InstallPriv}}\ (Ptr<Node>\ node)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00080}\mbox{\hyperlink{classns3_1_1_d_g_r_application_helper_a73e561acf0002c919bf00f982a079d4b}{00080}}\ \ \ ObjectFactory\ \mbox{\hyperlink{classns3_1_1_d_g_r_application_helper_a73e561acf0002c919bf00f982a079d4b}{m\_factory}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00081}00081\ \};}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00083}00083\ \}\ \textcolor{comment}{//\ namespace\ ns3}}
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{dgr-application-helper_8h_source_l00085}00085\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ DGR\_APPLICATION\_HELPER\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

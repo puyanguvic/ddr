@@ -1,0 +1,5 @@
+<map id="ns3::DGRRouter::BuildNetworkLSAs" name="ns3::DGRRouter::BuildNetworkLSAs">
+<area shape="rect" id="Node000001" title="Build one NetworkLSA for each net device talking to a network that we are the designated router for." alt="" coords="276,5,529,31"/>
+<area shape="rect" id="Node000002" href="$d0/d56/classns3_1_1_d_g_r_router.html#ac119cda89d816da90186bb617c710c25" title="Walk the connected channels, discover the adjacent routers and build the associated number of Global ..." alt="" coords="5,5,228,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="262,21,228,21,228,15,262,15"/>
+</map>

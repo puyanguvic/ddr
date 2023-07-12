@@ -1,0 +1,7 @@
+<map id="ns3::DGRCandidateQueue::~DGRCandidateQueue" name="ns3::DGRCandidateQueue::~DGRCandidateQueue">
+<area shape="rect" id="Node000001" title="Destroy an SPF Candidate Queue and release any resources held by the contents." alt="" coords="5,5,196,45"/>
+<area shape="rect" id="Node000002" href="$dd/d17/classns3_1_1_d_g_r_candidate_queue.html#adeeaf9c5c6e52bf6532da18cad7a1a13" title="Empty the Candidate Queue and release all of the resources associated with the Shortest Path First Ve..." alt="" coords="244,5,435,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,23,230,23,230,28,196,28"/>
+<area shape="rect" id="Node000003" href="$dd/d17/classns3_1_1_d_g_r_candidate_queue.html#a278c16f4c6de3e85aa9268215a6e95db" title="Pop the Shortest Path First Vertex pointer at the top of the queue." alt="" coords="483,13,705,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="435,23,469,23,469,28,435,28"/>
+</map>

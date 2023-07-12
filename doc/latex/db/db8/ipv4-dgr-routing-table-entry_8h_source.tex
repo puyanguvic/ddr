@@ -1,0 +1,90 @@
+\doxysubsection{ipv4-\/dgr-\/routing-\/table-\/entry.h}
+\hypertarget{ipv4-dgr-routing-table-entry_8h_source}{}\label{ipv4-dgr-routing-table-entry_8h_source}\index{model/ipv4-\/dgr-\/routing-\/table-\/entry.h@{model/ipv4-\/dgr-\/routing-\/table-\/entry.h}}
+\mbox{\hyperlink{ipv4-dgr-routing-table-entry_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00001}00001\ \textcolor{comment}{/*\ -\/*-\/\ Mode:C++;\ c-\/file-\/style:"{}gnu"{};\ indent-\/tabs-\/mode:nil;\ -\/*-\/\ */}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00002}00002\ \textcolor{preprocessor}{\#ifndef\ IPV4\_DGR\_ROUTING\_TABLE\_ENTRY\_H}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00003}00003\ \textcolor{preprocessor}{\#define\ IPV4\_DGR\_ROUTING\_TABLE\_ENTRY\_H}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}ns3/ipv4-\/address.h"{}}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00011}00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacens3}{ns3}}\ \{}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00019}\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{00019}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4DGRRoutingTableEntry}}\ \{}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00020}00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00024}00024\ \ \ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a08c459157d5b8556f84e72cc5b1598eb}{Ipv4DGRRoutingTableEntry}}\ ();}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00029}00029\ \ \ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a08c459157d5b8556f84e72cc5b1598eb}{Ipv4DGRRoutingTableEntry}}\ (\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4DGRRoutingTableEntry}}\ \textcolor{keyword}{const}\ \&route);}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00034}00034\ \ \ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a08c459157d5b8556f84e72cc5b1598eb}{Ipv4DGRRoutingTableEntry}}\ (\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4DGRRoutingTableEntry}}\ \textcolor{keyword}{const}\ *route);}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00038}00038\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_aae4aa136bdffbf9f64f756fec615ecbb}{IsHost}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00044}00044\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a825aa473e191b77f4b1a4ca0329ce589}{IsNetwork}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00048}00048\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a6f7e61e1bc9f78bd06f1637ba6629cf0}{IsDefault}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00052}00052\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_ace7333037444806516277fc945e43c69}{IsGateway}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00056}00056\ \ \ Ipv4Address\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a19708a359b875e0b8986ff99f80c159c}{GetGateway}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00060}00060\ \ \ Ipv4Address\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a69ebd01d00df5465ad4d720baf20aac5}{GetDest}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00064}00064\ \ \ Ipv4Address\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_ab440baa28d8c334cf44b8e419c3227f4}{GetDestNetwork}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00068}00068\ \ \ Ipv4Mask\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a94dc61bd7b6b0688689a52536382a7b4}{GetDestNetworkMask}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00072}00072\ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a2b9549ad4a8d225b40c3f7dcd2c29c25}{GetInterface}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00076}00076\ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_ad6b6cd8c1a98ab084553075f284de1b4}{GetDistance}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00080}00080\ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a327e4e2e11fd01986fc128e9ee8e90bc}{GetNextInterface}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00087}00087\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4DGRRoutingTableEntry}}\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a757bd4b15ca66094c58f9c8045b24015}{CreateHostRouteTo}}\ (Ipv4Address\ dest,\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Ipv4Address\ nextHop,}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ interface);}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00095}00095\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4DGRRoutingTableEntry}}\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a757bd4b15ca66094c58f9c8045b24015}{CreateHostRouteTo}}\ (Ipv4Address\ dest,\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ interface);}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00107}00107\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4DGRRoutingTableEntry}}\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a757bd4b15ca66094c58f9c8045b24015}{CreateHostRouteTo}}\ (Ipv4Address\ dest,\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Ipv4Address\ nextHop,}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ interface,}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ nextInterface,}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ distance);}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00119}00119\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4DGRRoutingTableEntry}}\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_ac251919954195223794f62f921d9708b}{CreateNetworkRouteTo}}\ (Ipv4Address\ network,\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Ipv4Mask\ networkMask,}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Ipv4Address\ nextHop,}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ interface);}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00129}00129\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4DGRRoutingTableEntry}}\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_ac251919954195223794f62f921d9708b}{CreateNetworkRouteTo}}\ (Ipv4Address\ network,\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Ipv4Mask\ networkMask,}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ interface);}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00139}00139\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4DGRRoutingTableEntry}}\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a22ea568034b4a90eec3ed464dc829809}{CreateDefaultRoute}}\ (Ipv4Address\ nextHop,\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ interface);}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00142}00142\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00150}00150\ \ \ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a08c459157d5b8556f84e72cc5b1598eb}{Ipv4DGRRoutingTableEntry}}\ (Ipv4Address\ network,}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Ipv4Mask\ mask,}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Ipv4Address\ gateway,}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ interface);}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00160}00160\ \ \ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a08c459157d5b8556f84e72cc5b1598eb}{Ipv4DGRRoutingTableEntry}}\ (Ipv4Address\ dest,}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Ipv4Mask\ mask,}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ interface);}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00169}00169\ \ \ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a08c459157d5b8556f84e72cc5b1598eb}{Ipv4DGRRoutingTableEntry}}\ (Ipv4Address\ dest,}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Ipv4Address\ gateway,}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ interface);}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00177}00177\ \ \ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a08c459157d5b8556f84e72cc5b1598eb}{Ipv4DGRRoutingTableEntry}}\ (Ipv4Address\ dest,}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ interface);}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00179}00179\ \ \ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00188}00188\ \ \ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a08c459157d5b8556f84e72cc5b1598eb}{Ipv4DGRRoutingTableEntry}}\ (Ipv4Address\ dest,}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Ipv4Address\ gateway,}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ interface,}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ nextInterface,}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ distance);}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00194}\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a83f300dcc9098cf426a1d3578ee270a6}{00194}}\ \ \ Ipv4Address\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a83f300dcc9098cf426a1d3578ee270a6}{m\_dest}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00195}\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a0e259e9a9de7934e536226ece9ec73d6}{00195}}\ \ \ Ipv4Mask\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a0e259e9a9de7934e536226ece9ec73d6}{m\_destNetworkMask}};\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00196}\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a436f0a10e8074828b5dbc54b2100c7b8}{00196}}\ \ \ Ipv4Address\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a436f0a10e8074828b5dbc54b2100c7b8}{m\_gateway}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00197}\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_af52773f5998ee60462a7a3c4815f5aa3}{00197}}\ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_af52773f5998ee60462a7a3c4815f5aa3}{m\_interface}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00198}\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a8f17a3a13464b14f862a92702be6fbd1}{00198}}\ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a8f17a3a13464b14f862a92702be6fbd1}{m\_nextInterface}};\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00199}\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a0bb39e5764002439e5d2cbb2540f6471}{00199}}\ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry_a0bb39e5764002439e5d2cbb2540f6471}{m\_distance}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00200}00200\ \};}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00209}00209\ std::ostream\&\ \mbox{\hyperlink{namespacens3_a7c0f3fcc4f4363c5458911cded1af4b6}{operator<<\ }}(std::ostream\&\ os,\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4DGRRoutingTableEntry}}\ \textcolor{keyword}{const}\&\ route);}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00218}00218\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacens3_a31be9c355502d5d92cd252ad21233aeb}{operator==\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4DGRRoutingTableEntry}}\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4DGRRoutingTableEntry}}\ b);}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00220}00220\ \}\ \textcolor{comment}{//\ namespace\ ns3}}
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{ipv4-dgr-routing-table-entry_8h_source_l00222}00222\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ IPV4\_DSR\_ROUTING\_TABLE\_ENTRY\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

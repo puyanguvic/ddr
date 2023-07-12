@@ -1,0 +1,29 @@
+<map id="ns3::DGRRouter::GetRoutingProtocol" name="ns3::DGRRouter::GetRoutingProtocol">
+<area shape="rect" id="Node000001" title="Get the specific Global Routing Protocol used." alt="" coords="1024,208,1231,248"/>
+<area shape="rect" id="Node000002" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a033d120271836b470fecfe120c6fdbc8" title="Build the routing database by gathering Link State Advertisements from each node exporting a DGRRoute..." alt="" coords="769,5,976,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1104,198,1051,128,1015,91,975,60,952,48,955,43,977,55,1018,87,1055,125,1108,195"/>
+<area shape="rect" id="Node000003" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#acfff2ecbb8d0d59a980f3876f1603aea" title="Delete all static routes on all nodes that have a DGRRouterInterface." alt="" coords="769,69,976,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1087,202,1035,166,975,130,933,112,935,107,977,126,1038,161,1090,197"/>
+<area shape="rect" id="Node000004" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a3b798959aeda8a76373705151497692e" title="Compute routes using a Dijkstra SPF computation and populate per&#45;node forwarding tables." alt="" coords="5,200,212,240"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1027,208,976,199,847,180,746,170,645,169,515,175,356,189,213,207,212,202,355,184,514,169,645,164,746,165,847,175,976,193,1028,203"/>
+<area shape="rect" id="Node000005" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a4169b90db3aa5437191ecf42e484f567" title="Add an external route to the routing tables." alt="" coords="769,208,976,248"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1011,231,976,231,976,225,1011,225"/>
+<area shape="rect" id="Node000008" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a58756bc6216f5ebe1941a2102ae4cdf9" title="Add a host route to the routing tables." alt="" coords="515,272,721,312"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="1028,253,976,263,844,279,722,289,721,283,843,273,976,257,1027,248"/>
+<area shape="rect" id="Node000009" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a403b832078dcb8a4facb2ae6c7b2ce15" title="Add a stub to the routing tables." alt="" coords="769,336,976,376"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="1078,257,977,309,918,338,915,334,975,304,1075,252"/>
+<area shape="rect" id="Node000011" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a80ce56eb81842ac31afccfdd698d1d73" title="Add a transit to the routing tables." alt="" coords="515,424,721,464"/>
+<area shape="poly" id="edge15_Node000001_Node000011" title=" " alt="" coords="1108,261,1085,293,1055,328,1019,362,977,390,914,417,848,434,782,444,722,448,722,443,782,438,847,429,913,412,975,386,1015,358,1051,324,1081,289,1104,258"/>
+<area shape="rect" id="Node000006" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#ad51d5dbbd85120ad79227351fc16c9f4" title="Process Autonomous Systems (AS) External LSA." alt="" coords="515,208,721,248"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="756,231,722,231,722,225,756,225"/>
+<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="661,196,646,189,618,187,593,189,579,193,573,199,576,207,571,208,568,198,576,189,592,183,618,181,647,184,663,191"/>
+<area shape="rect" id="Node000007" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a910c2efcc40a79d4c062eb08ceb11522" title="Calculate the shortest path first (SPF) tree." alt="" coords="260,272,467,312"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="525,254,444,275,443,269,524,249"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="278,271,180,243,181,238,280,266"/>
+<area shape="poly" id="edge10_Node000008_Node000007" title=" " alt="" coords="501,295,467,295,467,289,501,289"/>
+<area shape="rect" id="Node000010" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a71dd2f4c78a96ecb7d86dd75fd6f78bd" title="Process Stub nodes." alt="" coords="515,360,721,400"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="756,370,722,373,721,368,756,364"/>
+<area shape="poly" id="edge13_Node000010_Node000007" title=" " alt="" coords="545,358,421,315,423,310,547,353"/>
+<area shape="poly" id="edge14_Node000010_Node000010" title=" " alt="" coords="661,348,646,341,618,339,593,341,579,345,573,351,576,359,571,360,568,350,576,341,592,335,618,333,647,336,663,343"/>
+<area shape="poly" id="edge16_Node000011_Node000007" title=" " alt="" coords="527,421,513,414,475,391,439,364,383,314,387,310,442,360,478,386,516,410,530,416"/>
+</map>

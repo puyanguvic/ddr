@@ -1,0 +1,21 @@
+<map id="model/dgr&#45;sink.h" name="model/dgr&#45;sink.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="611,5,743,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,139,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="611,29,153,81,152,76,611,23"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="163,79,331,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="611,33,330,79,329,74,611,28"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="355,79,469,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="635,33,469,78,468,72,634,28"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="494,79,573,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="655,33,570,75,568,70,653,28"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="597,79,758,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="680,31,680,65,675,65,675,31"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="783,79,895,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="704,28,801,71,799,75,702,33"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="919,79,1108,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="732,28,946,73,945,78,731,33"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="1132,79,1313,104"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="744,25,1122,74,1121,80,743,31"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="1338,79,1462,104"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="744,21,994,42,1324,76,1324,81,994,47,743,27"/>
+</map>

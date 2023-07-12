@@ -1,0 +1,5 @@
+<map id="ns3::DGRTcpAppHelper::Install" name="ns3::DGRTcpAppHelper::Install">
+<area shape="rect" id="Node000001" title="Install an ns3::BulkSendApplication on the node configured with all the attributes set with SetAttrib..." alt="" coords="5,5,176,45"/>
+<area shape="rect" id="Node000002" href="$d2/d74/classns3_1_1_d_g_r_tcp_app_helper.html#a63d0f9d738361206fb091e66795142e9" title="Install an ns3::BulkSendApplication on the node configured with all the attributes set with SetAttrib..." alt="" coords="224,5,395,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,23,210,23,210,28,176,28"/>
+</map>

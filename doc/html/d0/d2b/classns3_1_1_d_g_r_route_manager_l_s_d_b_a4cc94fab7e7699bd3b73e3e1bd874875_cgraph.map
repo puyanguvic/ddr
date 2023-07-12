@@ -1,0 +1,5 @@
+<map id="ns3::DGRRouteManagerLSDB::Initialize" name="ns3::DGRRouteManagerLSDB::Initialize">
+<area shape="rect" id="Node000001" title="Set all LSA flags to an initialized state, for SPF computation." alt="" coords="5,5,216,45"/>
+<area shape="rect" id="Node000002" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a497453d1271c0020968487ec8ead99c5" title="Set the SPF status of the advertisement." alt="" coords="264,5,421,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,23,250,23,250,28,216,28"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="ns3::Ipv4DGRRoutingHelper::Install" name="ns3::Ipv4DGRRoutingHelper::Install">
+<area shape="rect" id="Node000001" title="This method create the DGRv2 QueueDisc (along with it&#39;s internal queues, classes) configured with the..." alt="" coords="256,29,459,69"/>
+<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="400,18,385,11,357,8,333,10,318,15,313,21,316,28,311,30,308,20,315,10,332,5,357,3,386,6,402,13"/>
+<area shape="rect" id="Node000002" href="$d8/d5a/classns3_1_1_ipv4_d_g_r_routing_helper.html#a1ad5852bdf59c5b42cf3d2e8c3e7c9a4" title="This method create the DGRv2 QueueDisc (along with it&#39;s internal queues, classes) configured with the..." alt="" coords="5,29,208,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,52,208,52,208,47,242,47"/>
+</map>

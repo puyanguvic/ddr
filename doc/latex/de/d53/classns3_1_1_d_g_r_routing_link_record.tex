@@ -1,0 +1,598 @@
+\doxysubsection{ns3\+::DGRRouting\+Link\+Record Class Reference}
+\hypertarget{classns3_1_1_d_g_r_routing_link_record}{}\label{classns3_1_1_d_g_r_routing_link_record}\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}
+
+
+A single link record for a link state advertisement.  
+
+
+
+
+{\ttfamily \#include $<$dgr-\/router-\/interface.\+h$>$}
+
+
+
+Collaboration diagram for ns3\+::DGRRouting\+Link\+Record\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{d5/dec/classns3_1_1_d_g_r_routing_link_record__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4b}{Link\+Type}} \{ \newline
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4ba78859ac25ae88fd715dc691e1fcea4f2}{Unknown}} = 0
+, \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4bac9c0a2d3da9eb9fdafee93e52a498c84}{Point\+To\+Point}}
+, \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4baa0b0a272a289d2f1fcafdfedcde669b7}{Transit\+Network}}
+, \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4ba31c95bb0542fb4fab6cb056f88eea561}{Stub\+Network}}
+, \newline
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4ba02196af5dc5bdbe7b6da0e1e8082640b}{Virtual\+Link}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the possible types of Global Routing Link Records. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_ac9084e29ac639975a3e265cdd618d2c2}{DGRRouting\+Link\+Record}} ()
+\begin{DoxyCompactList}\small\item\em Construct an empty (\"{}uninitialized\"{}) Global Routing Link Record. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_aa2d023b51b9299b5e20fccd6e518c672}{DGRRouting\+Link\+Record}} (\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4b}{Link\+Type}} link\+Type, Ipv4\+Address link\+Id, Ipv4\+Address link\+Data, uint16\+\_\+t metric)
+\begin{DoxyCompactList}\small\item\em Construct an initialized Global Routing Link Record. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_ad42c3b86dbd2e8716653a004dafd515b}{\texorpdfstring{$\sim$}{\string~}\+DGRRouting\+Link\+Record}} ()
+\begin{DoxyCompactList}\small\item\em Destroy a Global Routing Link Record. \end{DoxyCompactList}\item 
+Ipv4\+Address \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a97080a8409f77898f4485230be0be5e4}{Get\+Link\+Data}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the Link Data field of the Global Routing Link Record. \end{DoxyCompactList}\item 
+Ipv4\+Address \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a9fe6e135674ef321bc11b48f90071857}{Get\+Link\+Id}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the Link ID field of the Global Routing Link Record. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4b}{Link\+Type}} \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_ab9148eaf7a9d088a397e66164c1f30b9}{Get\+Link\+Type}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the Link Type field of the Global Routing Link Record. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_af96cb9a05b3d95d14b6af29e058e3712}{Get\+Metric}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the Metric Data field of the Global Routing Link Record. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a06083e776955f21fe1fd4e4927cf0b24}{Set\+Link\+Data}} (Ipv4\+Address addr)
+\begin{DoxyCompactList}\small\item\em Set the Link Data field of the Global Routing Link Record. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a203541f10ca13f9cfb1987fbbff4416b}{Set\+Link\+Id}} (Ipv4\+Address addr)
+\begin{DoxyCompactList}\small\item\em Set the Link ID field of the Global Routing Link Record. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_aacc16a8566cd389fd974cbeb8dde6ddd}{Set\+Link\+Type}} (\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4b}{Link\+Type}} link\+Type)
+\begin{DoxyCompactList}\small\item\em Set the Link Type field of the Global Routing Link Record. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_ac6b9632b024b3799a25209f1392c1ab8}{Set\+Metric}} (uint16\+\_\+t metric)
+\begin{DoxyCompactList}\small\item\em Set the Metric Data field of the Global Routing Link Record. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ipv4\+Address \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a90859ad36a2936e26b9e933a323e35df}{m\+\_\+link\+Data}}
+\begin{DoxyCompactList}\small\item\em m\+\_\+link\+Id and m\+\_\+link\+Data are defined by OSPF to have different meanings depending on the type of link a given link records represents. \end{DoxyCompactList}\item 
+Ipv4\+Address \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a19605f0540a6904bd5801a7e1bd07895}{m\+\_\+link\+Id}}
+\begin{DoxyCompactList}\small\item\em m\+\_\+link\+Id and m\+\_\+link\+Data are defined by OSPF to have different meanings depending on the type of link a given link records represents. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4b}{Link\+Type}} \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_ae33ce84e5118670a92ec8253b4e35a6e}{m\+\_\+link\+Type}}
+\begin{DoxyCompactList}\small\item\em The type of the Global Routing Link Record. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_ad36a9c3468f8ca6ef6335eff2dfca4fe}{m\+\_\+metric}}
+\begin{DoxyCompactList}\small\item\em The metric for a given link. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_ad6d7a02de74a135f5d909dcc2a7be8e7}{DGRRouting\+LSA}}
+\begin{DoxyCompactList}\small\item\em Friend class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+A single link record for a link state advertisement. 
+
+The Global\+Routing\+Link\+Record is modeled after the OSPF link record field of a Link State Advertisement. Right now we will only see two types of link records corresponding to a stub network and a point-\/to-\/point link (channel). 
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00051}{51}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+\doxysubsubsection{Member Enumeration Documentation}
+\Hypertarget{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4b}\label{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4b} 
+\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}!LinkType@{LinkType}}
+\index{LinkType@{LinkType}!ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}
+\doxyparagraph{\texorpdfstring{LinkType}{LinkType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4b}{ns3\+::\+DGRRouting\+Link\+Record\+::\+Link\+Type}}}
+
+
+
+Enumeration of the possible types of Global Routing Link Records. 
+
+These values are defined in the OSPF spec. We currently only use Point\+To\+Point and Stub\+Network types. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unknown@{Unknown}!ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}!Unknown@{Unknown}}}\Hypertarget{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4ba78859ac25ae88fd715dc691e1fcea4f2}\label{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4ba78859ac25ae88fd715dc691e1fcea4f2} 
+Unknown&Uninitialized Link Record. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PointToPoint@{PointToPoint}!ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}!PointToPoint@{PointToPoint}}}\Hypertarget{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4bac9c0a2d3da9eb9fdafee93e52a498c84}\label{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4bac9c0a2d3da9eb9fdafee93e52a498c84} 
+Point\+To\+Point&Record representing a point to point channel. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TransitNetwork@{TransitNetwork}!ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}!TransitNetwork@{TransitNetwork}}}\Hypertarget{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4baa0b0a272a289d2f1fcafdfedcde669b7}\label{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4baa0b0a272a289d2f1fcafdfedcde669b7} 
+Transit\+Network&Unused -- for future OSPF compatibility ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{StubNetwork@{StubNetwork}!ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}!StubNetwork@{StubNetwork}}}\Hypertarget{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4ba31c95bb0542fb4fab6cb056f88eea561}\label{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4ba31c95bb0542fb4fab6cb056f88eea561} 
+Stub\+Network&Record represents a leaf node network. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VirtualLink@{VirtualLink}!ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}!VirtualLink@{VirtualLink}}}\Hypertarget{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4ba02196af5dc5bdbe7b6da0e1e8082640b}\label{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4ba02196af5dc5bdbe7b6da0e1e8082640b} 
+Virtual\+Link&Unused -- for future OSPF compatibility ~\newline
+ \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00062}{62}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_d_g_r_routing_link_record_ac9084e29ac639975a3e265cdd618d2c2}\label{classns3_1_1_d_g_r_routing_link_record_ac9084e29ac639975a3e265cdd618d2c2} 
+\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}!DGRRoutingLinkRecord@{DGRRoutingLinkRecord}}
+\index{DGRRoutingLinkRecord@{DGRRoutingLinkRecord}!ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}
+\doxyparagraph{\texorpdfstring{DGRRoutingLinkRecord()}{DGRRoutingLinkRecord()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ns3\+::\+DGRRouting\+Link\+Record\+::\+DGRRouting\+Link\+Record (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct an empty (\"{}uninitialized\"{}) Global Routing Link Record. 
+
+The Link ID and Link Data Ipv4 addresses are set to \"{}0.\+0.\+0.\+0\"{}; The Link Type is set to Unknown; The metric is set to 0. 
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00045}{45}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+\Hypertarget{classns3_1_1_d_g_r_routing_link_record_aa2d023b51b9299b5e20fccd6e518c672}\label{classns3_1_1_d_g_r_routing_link_record_aa2d023b51b9299b5e20fccd6e518c672} 
+\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}!DGRRoutingLinkRecord@{DGRRoutingLinkRecord}}
+\index{DGRRoutingLinkRecord@{DGRRoutingLinkRecord}!ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}
+\doxyparagraph{\texorpdfstring{DGRRoutingLinkRecord()}{DGRRoutingLinkRecord()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ns3\+::\+DGRRouting\+Link\+Record\+::\+DGRRouting\+Link\+Record (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4b}{Link\+Type}}}]{link\+Type,  }\item[{Ipv4\+Address}]{link\+Id,  }\item[{Ipv4\+Address}]{link\+Data,  }\item[{uint16\+\_\+t}]{metric }\end{DoxyParamCaption})}
+
+
+
+Construct an initialized Global Routing Link Record. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em link\+Type} & The type of link record to construct. \\
+\hline
+{\em link\+Id} & The link ID for the record. \\
+\hline
+{\em link\+Data} & The link data field for the record. \\
+\hline
+{\em metric} & The metric field for the record. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4b}{Link\+Type} 
+
+\doxylink{classns3_1_1_d_g_r_routing_link_record_a203541f10ca13f9cfb1987fbbff4416b}{Set\+Link\+Id} 
+
+\doxylink{classns3_1_1_d_g_r_routing_link_record_a06083e776955f21fe1fd4e4927cf0b24}{Set\+Link\+Data} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00055}{55}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+\Hypertarget{classns3_1_1_d_g_r_routing_link_record_ad42c3b86dbd2e8716653a004dafd515b}\label{classns3_1_1_d_g_r_routing_link_record_ad42c3b86dbd2e8716653a004dafd515b} 
+\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}!````~DGRRoutingLinkRecord@{\texorpdfstring{$\sim$}{\string~}DGRRoutingLinkRecord}}
+\index{````~DGRRoutingLinkRecord@{\texorpdfstring{$\sim$}{\string~}DGRRoutingLinkRecord}!ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DGRRoutingLinkRecord()}{\string~DGRRoutingLinkRecord()}}
+{\footnotesize\ttfamily ns3\+::\+DGRRouting\+Link\+Record\+::\texorpdfstring{$\sim$}{\string~}\+DGRRouting\+Link\+Record (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy a Global Routing Link Record. 
+
+Currently does nothing. Here as a placeholder only. 
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00069}{69}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_d_g_r_routing_link_record_a97080a8409f77898f4485230be0be5e4}\label{classns3_1_1_d_g_r_routing_link_record_a97080a8409f77898f4485230be0be5e4} 
+\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}!GetLinkData@{GetLinkData}}
+\index{GetLinkData@{GetLinkData}!ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}
+\doxyparagraph{\texorpdfstring{GetLinkData()}{GetLinkData()}}
+{\footnotesize\ttfamily Ipv4\+Address ns3\+::\+DGRRouting\+Link\+Record\+::\+Get\+Link\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Link Data field of the Global Routing Link Record. 
+
+For an OSPF type 1 link (Point\+To\+Point) the Link Data will be the IP address of the node of the local side of the link.
+
+For an OSPF type 3 link (Stub\+Network), the Link Data will be the network mask
+
+\begin{DoxyReturn}{Returns}
+The Ipv4\+Address corresponding to the Link Data field of the record. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00089}{89}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00225}{m\+\_\+link\+Data}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01374}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Check\+For\+Stub\+Node()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00198}{ns3\+::\+DGRRouting\+LSA\+::\+Copy\+Link\+Records()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00511}{ns3\+::\+DGRRoute\+Manager\+LSDB\+::\+Get\+LSABy\+Link\+Data()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00696}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Initialize\+Routes()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01456}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFCalculate()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01283}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFGet\+Next\+Link()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l02059}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Router()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01832}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Stub()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01095}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNexthop\+Calculation()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d53/classns3_1_1_d_g_r_routing_link_record_a97080a8409f77898f4485230be0be5e4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_link_record_a9fe6e135674ef321bc11b48f90071857}\label{classns3_1_1_d_g_r_routing_link_record_a9fe6e135674ef321bc11b48f90071857} 
+\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}!GetLinkId@{GetLinkId}}
+\index{GetLinkId@{GetLinkId}!ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}
+\doxyparagraph{\texorpdfstring{GetLinkId()}{GetLinkId()}}
+{\footnotesize\ttfamily Ipv4\+Address ns3\+::\+DGRRouting\+Link\+Record\+::\+Get\+Link\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Link ID field of the Global Routing Link Record. 
+
+For an OSPF type 1 link (Point\+To\+Point) the Link ID will be the Router ID of the neighboring router.
+
+For an OSPF type 3 link (Stub\+Network), the Link ID will be the adjacent neighbor\textquotesingle{}s IP address
+
+\begin{DoxyReturn}{Returns}
+The Ipv4\+Address corresponding to the Link ID field of the record. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00075}{75}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00214}{m\+\_\+link\+Id}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01374}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Check\+For\+Stub\+Node()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00198}{ns3\+::\+DGRRouting\+LSA\+::\+Copy\+Link\+Records()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00696}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Initialize\+Routes()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01283}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFGet\+Next\+Link()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01832}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Stub()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00861}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNext()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01798}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFProcess\+Stubs()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d53/classns3_1_1_d_g_r_routing_link_record_a9fe6e135674ef321bc11b48f90071857_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_link_record_ab9148eaf7a9d088a397e66164c1f30b9}\label{classns3_1_1_d_g_r_routing_link_record_ab9148eaf7a9d088a397e66164c1f30b9} 
+\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}!GetLinkType@{GetLinkType}}
+\index{GetLinkType@{GetLinkType}!ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}
+\doxyparagraph{\texorpdfstring{GetLinkType()}{GetLinkType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4b}{DGRRouting\+Link\+Record\+::\+Link\+Type}} ns3\+::\+DGRRouting\+Link\+Record\+::\+Get\+Link\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Link Type field of the Global Routing Link Record. 
+
+The Link Type describes the kind of link a given record represents. The values are defined by OSPF.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4b}{Link\+Type} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The Link\+Type of the current Global Routing Link Record. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00103}{103}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00231}{m\+\_\+link\+Type}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01374}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Check\+For\+Stub\+Node()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00198}{ns3\+::\+DGRRouting\+LSA\+::\+Copy\+Link\+Records()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00511}{ns3\+::\+DGRRoute\+Manager\+LSDB\+::\+Get\+LSABy\+Link\+Data()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00696}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Initialize\+Routes()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l02059}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Router()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00861}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNext()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01798}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFProcess\+Stubs()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d53/classns3_1_1_d_g_r_routing_link_record_ab9148eaf7a9d088a397e66164c1f30b9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_link_record_af96cb9a05b3d95d14b6af29e058e3712}\label{classns3_1_1_d_g_r_routing_link_record_af96cb9a05b3d95d14b6af29e058e3712} 
+\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}!GetMetric@{GetMetric}}
+\index{GetMetric@{GetMetric}!ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}
+\doxyparagraph{\texorpdfstring{GetMetric()}{GetMetric()}}
+{\footnotesize\ttfamily uint16\+\_\+t ns3\+::\+DGRRouting\+Link\+Record\+::\+Get\+Metric (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Metric Data field of the Global Routing Link Record. 
+
+The metric is an abstract cost associated with forwarding a packet across a link. A sum of metrics must have a well-\/defined meaning. That is, you shouldn\textquotesingle{}t use bandwidth as a metric (how does the sum of the bandwidth of two hops relate to the cost of sending a packet); rather you should use something like delay.
+
+\begin{DoxyReturn}{Returns}
+The metric field of the Global Routing Link Record. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00118}{118}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00242}{m\+\_\+metric}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00198}{ns3\+::\+DGRRouting\+LSA\+::\+Copy\+Link\+Records()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00696}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Initialize\+Routes()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01456}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFCalculate()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00861}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNext()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d53/classns3_1_1_d_g_r_routing_link_record_af96cb9a05b3d95d14b6af29e058e3712_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_link_record_a06083e776955f21fe1fd4e4927cf0b24}\label{classns3_1_1_d_g_r_routing_link_record_a06083e776955f21fe1fd4e4927cf0b24} 
+\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}!SetLinkData@{SetLinkData}}
+\index{SetLinkData@{SetLinkData}!ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}
+\doxyparagraph{\texorpdfstring{SetLinkData()}{SetLinkData()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouting\+Link\+Record\+::\+Set\+Link\+Data (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{addr }\end{DoxyParamCaption})}
+
+
+
+Set the Link Data field of the Global Routing Link Record. 
+
+For an OSPF type 1 link (Point\+To\+Point) the Link Data must be the IP address of the node of the local side of the link.
+
+For an OSPF type 3 link (Stub\+Network), the Link Data must be set to the network mask
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & An Ipv4\+Address to store in the Link Data field of the record. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00096}{96}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00225}{m\+\_\+link\+Data}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00198}{ns3\+::\+DGRRouting\+LSA\+::\+Copy\+Link\+Records()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00875}{ns3\+::\+DGRRouter\+::\+Process\+Bridged\+Broadcast\+Link()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01040}{ns3\+::\+DGRRouter\+::\+Process\+Point\+To\+Point\+Link()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00761}{ns3\+::\+DGRRouter\+::\+Process\+Single\+Broadcast\+Link()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d53/classns3_1_1_d_g_r_routing_link_record_a06083e776955f21fe1fd4e4927cf0b24_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_link_record_a203541f10ca13f9cfb1987fbbff4416b}\label{classns3_1_1_d_g_r_routing_link_record_a203541f10ca13f9cfb1987fbbff4416b} 
+\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}!SetLinkId@{SetLinkId}}
+\index{SetLinkId@{SetLinkId}!ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}
+\doxyparagraph{\texorpdfstring{SetLinkId()}{SetLinkId()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouting\+Link\+Record\+::\+Set\+Link\+Id (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{addr }\end{DoxyParamCaption})}
+
+
+
+Set the Link ID field of the Global Routing Link Record. 
+
+For an OSPF type 1 link (Point\+To\+Point) the Link ID must be the Router ID of the neighboring router.
+
+For an OSPF type 3 link (Stub\+Network), the Link ID must be the adjacent neighbor\textquotesingle{}s IP address
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & An Ipv4\+Address to store in the Link ID field of the record. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00082}{82}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00214}{m\+\_\+link\+Id}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00198}{ns3\+::\+DGRRouting\+LSA\+::\+Copy\+Link\+Records()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00875}{ns3\+::\+DGRRouter\+::\+Process\+Bridged\+Broadcast\+Link()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01040}{ns3\+::\+DGRRouter\+::\+Process\+Point\+To\+Point\+Link()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00761}{ns3\+::\+DGRRouter\+::\+Process\+Single\+Broadcast\+Link()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d53/classns3_1_1_d_g_r_routing_link_record_a203541f10ca13f9cfb1987fbbff4416b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_link_record_aacc16a8566cd389fd974cbeb8dde6ddd}\label{classns3_1_1_d_g_r_routing_link_record_aacc16a8566cd389fd974cbeb8dde6ddd} 
+\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}!SetLinkType@{SetLinkType}}
+\index{SetLinkType@{SetLinkType}!ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}
+\doxyparagraph{\texorpdfstring{SetLinkType()}{SetLinkType()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouting\+Link\+Record\+::\+Set\+Link\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4b}{DGRRouting\+Link\+Record\+::\+Link\+Type}}}]{link\+Type }\end{DoxyParamCaption})}
+
+
+
+Set the Link Type field of the Global Routing Link Record. 
+
+The Link Type describes the kind of link a given record represents. The values are defined by OSPF.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4b}{Link\+Type} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em link\+Type} & The new Link\+Type for the current Global Routing Link Record. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00110}{110}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00231}{m\+\_\+link\+Type}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00198}{ns3\+::\+DGRRouting\+LSA\+::\+Copy\+Link\+Records()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00875}{ns3\+::\+DGRRouter\+::\+Process\+Bridged\+Broadcast\+Link()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01040}{ns3\+::\+DGRRouter\+::\+Process\+Point\+To\+Point\+Link()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00761}{ns3\+::\+DGRRouter\+::\+Process\+Single\+Broadcast\+Link()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d53/classns3_1_1_d_g_r_routing_link_record_aacc16a8566cd389fd974cbeb8dde6ddd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_routing_link_record_ac6b9632b024b3799a25209f1392c1ab8}\label{classns3_1_1_d_g_r_routing_link_record_ac6b9632b024b3799a25209f1392c1ab8} 
+\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}!SetMetric@{SetMetric}}
+\index{SetMetric@{SetMetric}!ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}
+\doxyparagraph{\texorpdfstring{SetMetric()}{SetMetric()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRRouting\+Link\+Record\+::\+Set\+Metric (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{metric }\end{DoxyParamCaption})}
+
+
+
+Set the Metric Data field of the Global Routing Link Record. 
+
+The metric is an abstract cost associated with forwarding a packet across a link. A sum of metrics must have a well-\/defined meaning. That is, you shouldn\textquotesingle{}t use bandwidth as a metric (how does the sum of the bandwidth of two hops relate to the cost of sending a packet); rather you should use something like delay.
+
+
+\begin{DoxyParams}{Parameters}
+{\em metric} & The new metric for the current Global Routing Link Record. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8cc_source_l00125}{125}} of file \mbox{\hyperlink{dgr-router-interface_8cc_source}{dgr-\/router-\/interface.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8h_source_l00242}{m\+\_\+metric}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00198}{ns3\+::\+DGRRouting\+LSA\+::\+Copy\+Link\+Records()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00875}{ns3\+::\+DGRRouter\+::\+Process\+Bridged\+Broadcast\+Link()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l01040}{ns3\+::\+DGRRouter\+::\+Process\+Point\+To\+Point\+Link()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00761}{ns3\+::\+DGRRouter\+::\+Process\+Single\+Broadcast\+Link()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d53/classns3_1_1_d_g_r_routing_link_record_ac6b9632b024b3799a25209f1392c1ab8_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classns3_1_1_d_g_r_routing_link_record_ad6d7a02de74a135f5d909dcc2a7be8e7}\label{classns3_1_1_d_g_r_routing_link_record_ad6d7a02de74a135f5d909dcc2a7be8e7} 
+\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}!DGRRoutingLSA@{DGRRoutingLSA}}
+\index{DGRRoutingLSA@{DGRRoutingLSA}!ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}
+\doxyparagraph{\texorpdfstring{DGRRoutingLSA}{DGRRoutingLSA}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Friend class. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00054}{54}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{classns3_1_1_d_g_r_routing_link_record_a90859ad36a2936e26b9e933a323e35df}\label{classns3_1_1_d_g_r_routing_link_record_a90859ad36a2936e26b9e933a323e35df} 
+\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}!m\_linkData@{m\_linkData}}
+\index{m\_linkData@{m\_linkData}!ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}
+\doxyparagraph{\texorpdfstring{m\_linkData}{m\_linkData}}
+{\footnotesize\ttfamily Ipv4\+Address ns3\+::\+DGRRouting\+Link\+Record\+::m\+\_\+link\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+m\+\_\+link\+Id and m\+\_\+link\+Data are defined by OSPF to have different meanings depending on the type of link a given link records represents. 
+
+They work together.
+
+For Type 1 link (Point\+To\+Point), set m\+\_\+link\+Data to local IP address
+
+For Type 3 link (Stub), set m\+\_\+link\+Data to mask 
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00225}{225}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00089}{Get\+Link\+Data()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00404}{ns3\+::\+DGRRouting\+LSA\+::\+Print()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00096}{Set\+Link\+Data()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_routing_link_record_a19605f0540a6904bd5801a7e1bd07895}\label{classns3_1_1_d_g_r_routing_link_record_a19605f0540a6904bd5801a7e1bd07895} 
+\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}!m\_linkId@{m\_linkId}}
+\index{m\_linkId@{m\_linkId}!ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}
+\doxyparagraph{\texorpdfstring{m\_linkId}{m\_linkId}}
+{\footnotesize\ttfamily Ipv4\+Address ns3\+::\+DGRRouting\+Link\+Record\+::m\+\_\+link\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+m\+\_\+link\+Id and m\+\_\+link\+Data are defined by OSPF to have different meanings depending on the type of link a given link records represents. 
+
+They work together.
+
+For Type 1 link (Point\+To\+Point), set m\+\_\+link\+Id to Router ID of neighboring router.
+
+For Type 3 link (Stub), set m\+\_\+link\+Id to neighbor\textquotesingle{}s IP address 
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00214}{214}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00075}{Get\+Link\+Id()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00404}{ns3\+::\+DGRRouting\+LSA\+::\+Print()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00082}{Set\+Link\+Id()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_routing_link_record_ae33ce84e5118670a92ec8253b4e35a6e}\label{classns3_1_1_d_g_r_routing_link_record_ae33ce84e5118670a92ec8253b4e35a6e} 
+\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}!m\_linkType@{m\_linkType}}
+\index{m\_linkType@{m\_linkType}!ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}
+\doxyparagraph{\texorpdfstring{m\_linkType}{m\_linkType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4b}{Link\+Type}} ns3\+::\+DGRRouting\+Link\+Record\+::m\+\_\+link\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The type of the Global Routing Link Record. 
+
+Defined in the OSPF spec. We currently only use Point\+To\+Point and Stub\+Network types. 
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00231}{231}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00103}{Get\+Link\+Type()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00404}{ns3\+::\+DGRRouting\+LSA\+::\+Print()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00110}{Set\+Link\+Type()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_routing_link_record_ad36a9c3468f8ca6ef6335eff2dfca4fe}\label{classns3_1_1_d_g_r_routing_link_record_ad36a9c3468f8ca6ef6335eff2dfca4fe} 
+\index{ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}!m\_metric@{m\_metric}}
+\index{m\_metric@{m\_metric}!ns3::DGRRoutingLinkRecord@{ns3::DGRRoutingLinkRecord}}
+\doxyparagraph{\texorpdfstring{m\_metric}{m\_metric}}
+{\footnotesize\ttfamily uint16\+\_\+t ns3\+::\+DGRRouting\+Link\+Record\+::m\+\_\+metric\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The metric for a given link. 
+
+A metric is abstract cost associated with forwarding a packet across a link. A sum of metrics must have a well-\/defined meaning. That is, you shouldn\textquotesingle{}t use bandwidth as a metric (how does the sum of the bandwidth of two hops relate to the cost of sending a packet); rather you should use something like delay. 
+
+Definition at line \mbox{\hyperlink{dgr-router-interface_8h_source_l00242}{242}} of file \mbox{\hyperlink{dgr-router-interface_8h_source}{dgr-\/router-\/interface.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-router-interface_8cc_source_l00118}{Get\+Metric()}}, \mbox{\hyperlink{dgr-router-interface_8cc_source_l00404}{ns3\+::\+DGRRouting\+LSA\+::\+Print()}}, and \mbox{\hyperlink{dgr-router-interface_8cc_source_l00125}{Set\+Metric()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{dgr-router-interface_8h}{dgr-\/router-\/interface.\+h}}\item 
+model/\mbox{\hyperlink{dgr-router-interface_8cc}{dgr-\/router-\/interface.\+cc}}\end{DoxyCompactItemize}

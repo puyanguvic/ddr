@@ -1,0 +1,214 @@
+\doxysubsection{dgr-\/route-\/manager-\/impl.h}
+\hypertarget{dgr-route-manager-impl_8h_source}{}\label{dgr-route-manager-impl_8h_source}\index{model/dgr-\/route-\/manager-\/impl.h@{model/dgr-\/route-\/manager-\/impl.h}}
+\mbox{\hyperlink{dgr-route-manager-impl_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00001}00001\ \textcolor{comment}{/*\ -\/*-\/\ Mode:C++;\ c-\/file-\/style:"{}gnu"{};\ indent-\/tabs-\/mode:nil;\ -\/*-\/\ */}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00002}00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00003}00003\ \textcolor{comment}{\ *\ Copyright\ 2007\ University\ of\ Washington}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00004}00004\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00005}00005\ \textcolor{comment}{\ *\ This\ program\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00006}00006\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ version\ 2\ as}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00007}00007\ \textcolor{comment}{\ *\ published\ by\ the\ Free\ Software\ Foundation;}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00008}00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00009}00009\ \textcolor{comment}{\ *\ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00010}00010\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00011}00011\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00012}00012\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00013}00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00014}00014\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00015}00015\ \textcolor{comment}{\ *\ along\ with\ this\ program;\ if\ not,\ write\ to\ the\ Free\ Software}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00016}00016\ \textcolor{comment}{\ *\ Foundation,\ Inc.,\ 59\ Temple\ Place,\ Suite\ 330,\ Boston,\ MA\ \ 02111-\/1307\ \ USA}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00018}00018\ \textcolor{comment}{\ *\ Authors:\ \ Craig\ Dowell\ (craigdo@ee.washington.edu)}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ Tom\ Henderson\ (tomhend@u.washington.edu)}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00020}00020\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00022}00022\ \textcolor{preprocessor}{\#ifndef\ DGR\_ROUTE\_MANAGER\_IMPL\_H}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00023}00023\ \textcolor{preprocessor}{\#define\ DGR\_ROUTE\_MANAGER\_IMPL\_H}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00025}00025\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00026}00026\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00027}00027\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00028}00028\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00029}00029\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}ns3/object.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}ns3/ptr.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00032}00032\ \textcolor{preprocessor}{\#include\ "{}ns3/ipv4-\/address.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00033}00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dgr-router-interface_8h}{dgr-\/router-\/interface.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00034}00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dgr-candidate-queue_8h}{dgr-\/candidate-\/queue.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00036}00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacens3}{ns3}}\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00038}\mbox{\hyperlink{namespacens3_aa8c7346d1a02c40c94ad465301e57ef8}{00038}}\ \textcolor{keyword}{const}\ uint32\_t\ \mbox{\hyperlink{namespacens3_aa8c7346d1a02c40c94ad465301e57ef8}{DISTINFINITY}}\ =\ 0xffffffff;\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00040}00040\ \textcolor{keyword}{class\ }DgrCandidateQueue;}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00041}00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing}{Ipv4DGRRouting}};}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00069}\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{00069}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00070}00070\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00071}00071\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00079}\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96cce}{00079}}\ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96cce}{VertexType}}\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00080}\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96ccea785713b988d629e961f52bd09521764b}{00080}}\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96ccea785713b988d629e961f52bd09521764b}{VertexUnknown}}\ =\ 0,\ \ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00081}\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96ccea0d137433dfa77b24862a5f2c116da286}{00081}}\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96ccea0d137433dfa77b24862a5f2c116da286}{VertexRouter}},\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00082}00082\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96ccea4cb6ddc9d2395166b87840984bc01880}{VertexNetwork}}\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00083}\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96ccea4cb6ddc9d2395166b87840984bc01880}{00083}}\ \ \ \};}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00098}00098\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_acf173c7ca9af5a3b19a0ec90c00a0253}{DGRVertex}}();}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00115}00115\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_acf173c7ca9af5a3b19a0ec90c00a0253}{DGRVertex}}(\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRoutingLSA}}*\ lsa);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00124}00124\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aab7d474354c078ab96afd48ec1ed5fa6}{\string~DGRVertex}}();}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00135}00135\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96cce}{VertexType}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a5999846daefbeb25a5265e80e3f3a078}{GetVertexType}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00146}00146\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a7d8e5d27954333a239893ec0a30b6486}{SetVertexType}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96cce}{VertexType}}\ type);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00161}00161\ \ \ Ipv4Address\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a83acd923d19102c507faadb2f4e68f56}{GetVertexId}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00177}00177\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a9dbfca905e6a1a00be1d1e5fb0d65051}{SetVertexId}}\ (Ipv4Address\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00190}00190\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRoutingLSA}}*\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a5f9422d4f1f9df2f301cbd578e29ae7b}{GetLSA}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00205}00205\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a2285ab6067cd3294e32134b1bc5651dd}{SetLSA}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRoutingLSA}}*\ lsa);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00227}00227\ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a307ee8139d815f7f26b8cf01e6885b53}{GetDistanceFromRoot}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00228}00228\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00247}00247\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4b5aa6f4683f8736530d15c60f2538a5}{SetDistanceFromRoot}}\ (uint32\_t\ distance);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00248}00248\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00290}00290\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_ae9023c5885bfce6327e2f8f1f360e961}{SetRootExitDirection}}\ (Ipv4Address\ nextHop,\ int32\_t\ \textcolor{keywordtype}{id}\ =\ \mbox{\hyperlink{namespacens3_aa8c7346d1a02c40c94ad465301e57ef8}{DISTINFINITY}});}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00291}00291\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00292}\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aace20b0a545f431fbc5e3d6a2c149d44}{00292}}\ \ \ \textcolor{keyword}{typedef}\ std::pair<Ipv4Address,\ int32\_t>\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aace20b0a545f431fbc5e3d6a2c149d44}{NodeExit\_t}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00293}00293\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00333}00333\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_ae9023c5885bfce6327e2f8f1f360e961}{SetRootExitDirection}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aace20b0a545f431fbc5e3d6a2c149d44}{DGRVertex::NodeExit\_t}}\ exit);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00342}00342\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aace20b0a545f431fbc5e3d6a2c149d44}{NodeExit\_t}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a01db4520491672c7d666377aeb95b390}{GetRootExitDirection}}\ (uint32\_t\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00352}00352\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aace20b0a545f431fbc5e3d6a2c149d44}{NodeExit\_t}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a01db4520491672c7d666377aeb95b390}{GetRootExitDirection}}\ ()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00362}00362\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_abfd711c43e166fc59f65235af75c4c07}{MergeRootExitDirections}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}*\ vertex);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00370}00370\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aacb7dfc43225f6d7eca87f103c40c526}{InheritAllRootExitDirections}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}*\ vertex);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00375}00375\ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a691c41409919639a4aaea1443fa26ed5}{GetNRootExitDirections}}\ ()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00376}00376\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00396}00396\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}*\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a6937ca725aa1a7f5284d1b75a5dfb9f8}{GetParent}}\ (uint32\_t\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}\ =\ 0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00397}00397\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00416}00416\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a8ce35999d67d3028792f043c1efdf075}{SetParent}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}*\ parent);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00424}00424\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aa8a039e85d0a64c8451a8ea69ddd3fc0}{MergeParent}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}*\ v);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00425}00425\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00445}00445\ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a504717b90b3fad088d133c2e71836eaf}{GetNChildren}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00446}00446\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00473}00473\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}*\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aea98bf4a660837344a4c802546249a21}{GetChild}}\ (uint32\_t\ n)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00474}00474\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00501}00501\ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_af0c852bbf364e527e6f7b1c34105a06e}{AddChild}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}*\ child);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00502}00502\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00510}00510\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aa1718a99ec16d3ebf25949e3edac9168}{SetVertexProcessed}}\ (\textcolor{keywordtype}{bool}\ value);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00511}00511\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00519}00519\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a6afcdedc8616fc035f8c9736d5679cd4}{IsVertexProcessed}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00520}00520\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00527}00527\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_adedcbcf4b3fd8a7db8a086d5beefc1d2}{ClearVertexProcessed}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00528}00528\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00529}00529\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00530}\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a378091a34909a44b8fae1e25d6f8e8e1}{00530}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96cce}{VertexType}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a378091a34909a44b8fae1e25d6f8e8e1}{m\_vertexType}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00531}\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_af327951c82d95adf7bc570bae0ee6536}{00531}}\ \ \ Ipv4Address\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_af327951c82d95adf7bc570bae0ee6536}{m\_vertexId}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00532}\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_ac159aa73dc98d368d334b4d3c01c6eb8}{00532}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRoutingLSA}}*\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_ac159aa73dc98d368d334b4d3c01c6eb8}{m\_lsa}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00533}\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a6c0dd738fc7761774349eb65f80ac63b}{00533}}\ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a6c0dd738fc7761774349eb65f80ac63b}{m\_distanceFromRoot}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00534}\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a1bd3092c87612d18910764ad9469975b}{00534}}\ \ \ int32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a1bd3092c87612d18910764ad9469975b}{m\_rootOif}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00535}\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a21155cece0079523ede5b6a3e94d4d6c}{00535}}\ \ \ Ipv4Address\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a21155cece0079523ede5b6a3e94d4d6c}{m\_nextHop}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00536}\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a329d5add3e0fd627f1e3eb536a49199e}{00536}}\ \ \ \textcolor{keyword}{typedef}\ std::list<\ NodeExit\_t\ >\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a329d5add3e0fd627f1e3eb536a49199e}{ListOfNodeExit\_t}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00537}\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a2e1e0e41f8fbb8ed3972197642674d88}{00537}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a329d5add3e0fd627f1e3eb536a49199e}{ListOfNodeExit\_t}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a2e1e0e41f8fbb8ed3972197642674d88}{m\_ecmpRootExits}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00538}\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aa78a926a5b354a145d0164a164057a53}{00538}}\ \ \ \textcolor{keyword}{typedef}\ std::list<DGRVertex*>\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aa78a926a5b354a145d0164a164057a53}{ListOfDGRVertex\_t}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00539}\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_ad50ca09919dbd3f7b07252d0028623c2}{00539}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aa78a926a5b354a145d0164a164057a53}{ListOfDGRVertex\_t}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_ad50ca09919dbd3f7b07252d0028623c2}{m\_parents}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00540}\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a00201704c3afe974f06e06d5611c863b}{00540}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aa78a926a5b354a145d0164a164057a53}{ListOfDGRVertex\_t}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a00201704c3afe974f06e06d5611c863b}{m\_children}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00541}\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_acccf543804229747db8e14bcde5cefbd}{00541}}\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_acccf543804229747db8e14bcde5cefbd}{m\_vertexProcessed}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00542}00542\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00548}\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a820fb1d53eddf6cc040ccf2211b01363}{00548}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a820fb1d53eddf6cc040ccf2211b01363}{DGRVertex}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}\&\ v);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00549}00549\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00556}\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a67a1d6f70983bc342c9c540514c85726}{00556}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}\&\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a67a1d6f70983bc342c9c540514c85726}{operator=\ }}(\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}\&\ v);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00557}00557\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00565}00565\ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_af3ae1cd4e8023f9cf058b8c291748f38}{operator<<\ }}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aa78a926a5b354a145d0164a164057a53}{DGRVertex::ListOfDGRVertex\_t}}\&\ vs);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00566}00566\ \};}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00567}00567\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00581}\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b}{00581}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b}{DGRRouteManagerLSDB}}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00582}00582\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00583}00583\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00590}00590\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a44ed1e3d6976c509795b69ef3c5e1109}{DGRRouteManagerLSDB}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00591}00591\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00599}00599\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a5e87f265311abd433c6816ffd5799b05}{\string~DGRRouteManagerLSDB}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00600}00600\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00614}00614\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_aef58a243bb62466470166e11cb165b97}{Insert}}\ (Ipv4Address\ addr,\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRoutingLSA}}*\ lsa);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00615}00615\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00630}00630\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRoutingLSA}}*\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a232013c41890eb75496e0201fd0689d2}{GetLSA}}\ (Ipv4Address\ addr)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00643}00643\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRoutingLSA}}*\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_ac6f9ca728688bae5adc4172dee708553}{GetLSAByLinkData}}\ (Ipv4Address\ addr)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00644}00644\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00656}00656\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a4cc94fab7e7699bd3b73e3e1bd874875}{Initialize}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00657}00657\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00669}00669\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRoutingLSA}}*\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a4eccf46bb836fc866adeb57b38d6a493}{GetExtLSA}}\ (uint32\_t\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00676}00676\ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a5ceebeea8595e2788e490c2e56cc3405}{GetNumExtLSAs}}\ ()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00677}00677\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00678}00678\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00679}00679\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00680}\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_aa73b59efc39f26442ff7f28fb1a9bb1b}{00680}}\ \ \ \textcolor{keyword}{typedef}\ std::map<Ipv4Address,\ DGRRoutingLSA*>\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_aa73b59efc39f26442ff7f28fb1a9bb1b}{LSDBMap\_t}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00681}\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a549df0eab868504027879ddf77bda6dc}{00681}}\ \ \ \textcolor{keyword}{typedef}\ std::pair<Ipv4Address,\ DGRRoutingLSA*>\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a549df0eab868504027879ddf77bda6dc}{LSDBPair\_t}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00682}00682\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00683}\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a93d1000c04198cf2a7df2b93b54d0ff5}{00683}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_aa73b59efc39f26442ff7f28fb1a9bb1b}{LSDBMap\_t}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a93d1000c04198cf2a7df2b93b54d0ff5}{m\_database}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00684}\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a9620420bf4e991b6cbbaeca0c71098e0}{00684}}\ \ \ std::vector<DGRRoutingLSA*>\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a9620420bf4e991b6cbbaeca0c71098e0}{m\_extdatabase}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00685}00685\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00691}\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_ab7a2ab96f46da49e7e847551a5f284b7}{00691}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_ab7a2ab96f46da49e7e847551a5f284b7}{DGRRouteManagerLSDB}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b}{DGRRouteManagerLSDB}}\&\ lsdb);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00692}00692\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00699}\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a0e78f7dc350622ace72700dfa71dec54}{00699}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b}{DGRRouteManagerLSDB}}\&\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b_a0e78f7dc350622ace72700dfa71dec54}{operator=\ }}(\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b}{DGRRouteManagerLSDB}}\&\ lsdb);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00700}00700\ \};}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00701}00701\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00713}\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl}{00713}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl}{DGRRouteManagerImpl}}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00714}00714\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00715}00715\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00716}00716\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a13039dc3ca88e01a6f543a3bb97a53e7}{DGRRouteManagerImpl}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00717}00717\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a9c43604c3d2a66a108fa96faf7505b9f}{\string~DGRRouteManagerImpl}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00725}00725\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_acfff2ecbb8d0d59a980f3876f1603aea}{DeleteDGRRoutes}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00726}00726\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00731}00731\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a033d120271836b470fecfe120c6fdbc8}{BuildDGRRoutingDatabase}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00732}00732\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00737}00737\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a3b798959aeda8a76373705151497692e}{InitializeRoutes}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00738}00738\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00742}00742\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a7a59fdbaae988b5c5f8ac71e4d650143}{DebugUseLsdb}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b}{DGRRouteManagerLSDB}}*);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00743}00743\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00748}00748\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a14aed0c12cb59dcdc7eaaf14c8b54ea4}{DebugSPFCalculate}}\ (Ipv4Address\ root);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00749}00749\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00750}00750\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00758}\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a56e6c18aed764302f344f362a820ff10}{00758}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a56e6c18aed764302f344f362a820ff10}{DGRRouteManagerImpl}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl}{DGRRouteManagerImpl}}\&\ srmi);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00759}00759\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00768}\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a19946c6a8826f5d8d9987244bcfdb4d7}{00768}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl}{DGRRouteManagerImpl}}\&\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a19946c6a8826f5d8d9987244bcfdb4d7}{operator=\ }}(\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl}{DGRRouteManagerImpl}}\&\ srmi);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00769}00769\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00770}\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a51238c1122fc794564a658bf852d6910}{00770}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}*\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a51238c1122fc794564a658bf852d6910}{m\_spfroot}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00771}\mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a466e6a4182a792e33610a1a1e7a6b990}{00771}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_l_s_d_b}{DGRRouteManagerLSDB}}*\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a466e6a4182a792e33610a1a1e7a6b990}{m\_lsdb}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00772}00772\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00783}00783\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a1f608c8ac5a62f915208141c2d7bea22}{CheckForStubNode}}\ (Ipv4Address\ root);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00784}00784\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00791}00791\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a910c2efcc40a79d4c062eb08ceb11522}{SPFCalculate}}\ (Ipv4Address\ root,\ Ipv4Address\ initroot,\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record}{DGRRoutingLinkRecord}}\ *l,\ uint32\_t\ Iface);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00792}00792\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00802}00802\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a71dd2f4c78a96ecb7d86dd75fd6f78bd}{SPFProcessStubs}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}*\ v);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00803}00803\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00810}00810\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_ad51d5dbbd85120ad79227351fc16c9f4}{ProcessASExternals}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}*\ v,\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRoutingLSA}}*\ extlsa);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00811}00811\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00833}00833\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_ab573904f9f357e2b802b1bbdcdc3247d}{SPFNext}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}*\ v,\ \mbox{\hyperlink{classns3_1_1_d_g_r_candidate_queue}{DGRCandidateQueue}}\&\ candidate);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00834}00834\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00848}00848\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_aa10b6b58af69a3da1d8478d50e78bef8}{SPFNexthopCalculation}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}*\ v,\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}*\ w,\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00849}00849\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record}{DGRRoutingLinkRecord}}*\ l,\ uint32\_t\ distance);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00850}00850\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00865}00865\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a98dcc2494c9f368e4cfed15ead8a2990}{DGRVertexAddParent}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}*\ v);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00866}00866\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00886}00886\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record}{DGRRoutingLinkRecord}}*\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a1ac857e005409b302b1bd2fb1180af0a}{SPFGetNextLink}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}*\ v,\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}*\ w,\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00887}00887\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record}{DGRRoutingLinkRecord}}*\ prev\_link);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00888}00888\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00911}00911\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a58756bc6216f5ebe1941a2102ae4cdf9}{SPFIntraAddRouter}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}*\ v,\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}*\ v\_init,\ Ipv4Address\ nextHop,\ \ uint32\_t\ Iface);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00912}00912\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00918}00918\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a80ce56eb81842ac31afccfdd698d1d73}{SPFIntraAddTransit}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}*\ v);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00919}00919\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00926}00926\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a403b832078dcb8a4facb2ae6c7b2ce15}{SPFIntraAddStub}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record}{DGRRoutingLinkRecord}}\ *l,\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}*\ v);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00927}00927\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00934}00934\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a4169b90db3aa5437191ecf42e484f567}{SPFAddASExternal}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRoutingLSA}}\ *extlsa,\ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}\ *v);}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00935}00935\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00948}00948\ \ \ int32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_r_route_manager_impl_a017c230a5a38bc81243ebf39e94bd36b}{FindOutgoingInterfaceId}}\ (Ipv4Address\ a,\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00949}00949\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Ipv4Mask\ amask\ =\ Ipv4Mask\ (\textcolor{stringliteral}{"{}255.255.255.255"{}}));}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00950}00950\ \};}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00951}00951\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00952}00952\ \}\ \textcolor{comment}{//\ namespace\ ns3}}
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00953}00953\ }
+\DoxyCodeLine{\Hypertarget{dgr-route-manager-impl_8h_source_l00954}00954\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ GLOBAL\_ROUTE\_MANAGER\_IMPL\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

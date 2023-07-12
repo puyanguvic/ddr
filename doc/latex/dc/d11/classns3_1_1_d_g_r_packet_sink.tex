@@ -1,0 +1,725 @@
+\doxysubsection{ns3\+::DGRPacket\+Sink Class Reference}
+\hypertarget{classns3_1_1_d_g_r_packet_sink}{}\label{classns3_1_1_d_g_r_packet_sink}\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+
+
+Receive and consume traffic generated to an IP address and port.  
+
+
+
+
+{\ttfamily \#include $<$dgr-\/sink.\+h$>$}
+
+
+
+Inheritance diagram for ns3\+::DGRPacket\+Sink\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{db/d21/classns3_1_1_d_g_r_packet_sink__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns3\+::DGRPacket\+Sink\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d24/classns3_1_1_d_g_r_packet_sink__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structns3_1_1_d_g_r_packet_sink_1_1_address_hash}{Address\+Hash}}
+\begin{DoxyCompactList}\small\item\em Hashing for the Address class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_aaaeda043e3212ff79237c9eb7f7afa6d}{Seq\+Ts\+Size\+Callback}}) (Ptr$<$ const Packet $>$ p, const Address \&from, const Address \&to, const Seq\+Ts\+Size\+Header \&header)
+\begin{DoxyCompactList}\small\item\em Traced\+Callback signature for a reception with addresses and Seq\+Ts\+Size\+Header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a3aecd00e57b3a656096239773f304c9f}{DGRPacket\+Sink}} ()
+\item 
+virtual \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a605c00d50c8640e3dfbbdc517771aec6}{\texorpdfstring{$\sim$}{\string~}\+DGRPacket\+Sink}} ()
+\item 
+std\+::list$<$ Ptr$<$ Socket $>$ $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a2a9115096ef93e8b69846aaca86973f6}{Get\+Accepted\+Sockets}} (void) const
+\item 
+Time \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a01e725bd9c630ab59e304d7ed5acf8d4}{Get\+Delay}} (const Ptr$<$ Packet $>$ \&p) const
+\item 
+Ptr$<$ Socket $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_ac98581dc7987443224fd7237a12eb006}{Get\+Listening\+Socket}} (void) const
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a69231f2139fbdd7948cff8c9edccdca4}{Get\+Total\+Rx}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Type\+Id \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a558f3df30ebf65ef9ce9d22106fbd8bc}{Get\+Type\+Id}} (void)
+\begin{DoxyCompactList}\small\item\em Get the type ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_adf51db7e24937d3c73a6669de841d61f}{Do\+Dispose}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a60bdb8ea5bb655c1b77220963b2531d7}{Handle\+Accept}} (Ptr$<$ Socket $>$ socket, const Address \&from)
+\begin{DoxyCompactList}\small\item\em Handle an incoming connection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a4cdd5cf57dd8475e5d6656bf877dc220}{Handle\+Peer\+Close}} (Ptr$<$ Socket $>$ socket)
+\begin{DoxyCompactList}\small\item\em Handle an connection close. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_ae1f5b327422a264e50a57a45010c5b95}{Handle\+Peer\+Error}} (Ptr$<$ Socket $>$ socket)
+\begin{DoxyCompactList}\small\item\em Handle an connection error. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a5bc1c04b2b572ae2197853efeceb650e}{Handle\+Read}} (Ptr$<$ Socket $>$ socket)
+\begin{DoxyCompactList}\small\item\em Handle a packet received by the application. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_ac45b59904bfc3ab8c3beeafa3b66abfb}{Packet\+Received}} (const Ptr$<$ Packet $>$ \&p, const Address \&from, const Address \&local\+Address)
+\begin{DoxyCompactList}\small\item\em Packet received\+: assemble byte stream to extract Seq\+Ts\+Size\+Header. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_abe7e96a9e41ed5e769ffc06a20cc775f}{Start\+Application}} (void)
+\item 
+virtual void \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_aeb7f67c80886d5d2f24c23878f632508}{Stop\+Application}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ Address, Ptr$<$ Packet $>$, \mbox{\hyperlink{structns3_1_1_d_g_r_packet_sink_1_1_address_hash}{Address\+Hash}} $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a50309ac35d6ee3c3bf8ed1aac032b18c}{m\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em Buffer for received packets. \end{DoxyCompactList}\item 
+Ptr$<$ Output\+Stream\+Wrapper $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a2c42e5892ce165db37a2bd47436e4fb8}{m\+\_\+delay\+Stream}}
+\item 
+bool \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_ac803f6a1d59503d2a5914f3c9a7f33ec}{m\+\_\+enable\+Seq\+Ts\+Size\+Header}} \{false\}
+\begin{DoxyCompactList}\small\item\em Enable or disable the export of Seq\+Ts\+Size header. \end{DoxyCompactList}\item 
+Address \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a7f9d4d540e2faa7004c3047913a29f09}{m\+\_\+local}}
+\begin{DoxyCompactList}\small\item\em Local address to bind to. \end{DoxyCompactList}\item 
+Traced\+Callback$<$ Ptr$<$ const Packet $>$, const Address \& $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_aca03544d5c0deea1c5f900d89037e8ed}{m\+\_\+rx\+Trace}}
+\begin{DoxyCompactList}\small\item\em Traced Callback\+: received packets, source address. \end{DoxyCompactList}\item 
+Traced\+Callback$<$ Ptr$<$ const Packet $>$, const Address \&, const Address \& $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a79fa3105c5e8709d6d2619a7665ce751}{m\+\_\+rx\+Trace\+With\+Addresses}}
+\begin{DoxyCompactList}\small\item\em Callback for tracing the packet Rx events, includes source and destination addresses. \end{DoxyCompactList}\item 
+Traced\+Callback$<$ Ptr$<$ const Packet $>$, const Address \&, const Address \&, const Seq\+Ts\+Size\+Header \& $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a2d3c05d2d32ce064ce1ad0b46564bcfb}{m\+\_\+rx\+Trace\+With\+Seq\+Ts\+Size}}
+\begin{DoxyCompactList}\small\item\em Callbacks for tracing the packet Rx events, includes source, destination addresses, and headers. \end{DoxyCompactList}\item 
+Ptr$<$ Socket $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a253617e51eb9048d70dca28e2cb2806b}{m\+\_\+socket}}
+\begin{DoxyCompactList}\small\item\em Listening socket. \end{DoxyCompactList}\item 
+std\+::list$<$ Ptr$<$ Socket $>$ $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a1d21d3eae077fdf088eda04bf2652d97}{m\+\_\+socket\+List}}
+\begin{DoxyCompactList}\small\item\em the accepted sockets \end{DoxyCompactList}\item 
+Type\+Id \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_a5df24d6eacd919ec2f0f944d520cb535}{m\+\_\+tid}}
+\begin{DoxyCompactList}\small\item\em Protocol Type\+Id. \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_packet_sink_aa1eed0d34ee99dbaea2af47a795b70ca}{m\+\_\+total\+Rx}}
+\begin{DoxyCompactList}\small\item\em Total bytes received. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Receive and consume traffic generated to an IP address and port. 
+
+This application was written to complement On\+Off\+Application, but it is more general so a Packet\+Sink name was selected. Functionally it is important to use in multicast situations, so that reception of the layer-\/2 multicast frames of interest are enabled, but it is also useful for unicast as an example of how you can write something simple to receive packets at the application layer. Also, if an IP stack generates ICMP Port Unreachable errors, receiving applications will be needed.
+
+The constructor specifies the Address (IP address and port) and the transport protocol to use. A virtual Receive () method is installed as a callback on the receiving socket. By default, when logging is enabled, it prints out the size of packets and their address. A tracing source to Receive() is also available. 
+
+Definition at line \mbox{\hyperlink{dgr-sink_8h_source_l00054}{54}} of file \mbox{\hyperlink{dgr-sink_8h_source}{dgr-\/sink.\+h}}.
+
+
+
+\doxysubsubsection{Member Typedef Documentation}
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_aaaeda043e3212ff79237c9eb7f7afa6d}\label{classns3_1_1_d_g_r_packet_sink_aaaeda043e3212ff79237c9eb7f7afa6d} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!SeqTsSizeCallback@{SeqTsSizeCallback}}
+\index{SeqTsSizeCallback@{SeqTsSizeCallback}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{SeqTsSizeCallback}{SeqTsSizeCallback}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} ns3\+::\+DGRPacket\+Sink\+::\+Seq\+Ts\+Size\+Callback) (Ptr$<$ const Packet $>$ p, const Address \&from, const Address \&to, const Seq\+Ts\+Size\+Header \&header)}
+
+
+
+Traced\+Callback signature for a reception with addresses and Seq\+Ts\+Size\+Header. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The packet received (without the Seq\+Ts\+Size header) \\
+\hline
+{\em from} & From address \\
+\hline
+{\em to} & Local address \\
+\hline
+{\em header} & The Seq\+Ts\+Size header \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8h_source_l00095}{95}} of file \mbox{\hyperlink{dgr-sink_8h_source}{dgr-\/sink.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_a3aecd00e57b3a656096239773f304c9f}\label{classns3_1_1_d_g_r_packet_sink_a3aecd00e57b3a656096239773f304c9f} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!DGRPacketSink@{DGRPacketSink}}
+\index{DGRPacketSink@{DGRPacketSink}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{DGRPacketSink()}{DGRPacketSink()}}
+{\footnotesize\ttfamily ns3\+::\+DGRPacket\+Sink\+::\+DGRPacket\+Sink (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8cc_source_l00063}{63}} of file \mbox{\hyperlink{dgr-sink_8cc_source}{dgr-\/sink.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8h_source_l00165}{m\+\_\+socket}}, and \mbox{\hyperlink{dgr-sink_8h_source_l00169}{m\+\_\+total\+Rx}}.
+
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_a605c00d50c8640e3dfbbdc517771aec6}\label{classns3_1_1_d_g_r_packet_sink_a605c00d50c8640e3dfbbdc517771aec6} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!````~DGRPacketSink@{\texorpdfstring{$\sim$}{\string~}DGRPacketSink}}
+\index{````~DGRPacketSink@{\texorpdfstring{$\sim$}{\string~}DGRPacketSink}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DGRPacketSink()}{\string~DGRPacketSink()}}
+{\footnotesize\ttfamily ns3\+::\+DGRPacket\+Sink\+::\texorpdfstring{$\sim$}{\string~}\+DGRPacket\+Sink (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8cc_source_l00070}{70}} of file \mbox{\hyperlink{dgr-sink_8cc_source}{dgr-\/sink.\+cc}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_adf51db7e24937d3c73a6669de841d61f}\label{classns3_1_1_d_g_r_packet_sink_adf51db7e24937d3c73a6669de841d61f} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!DoDispose@{DoDispose}}
+\index{DoDispose@{DoDispose}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{DoDispose()}{DoDispose()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRPacket\+Sink\+::\+Do\+Dispose (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8cc_source_l00105}{105}} of file \mbox{\hyperlink{dgr-sink_8cc_source}{dgr-\/sink.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8h_source_l00165}{m\+\_\+socket}}, and \mbox{\hyperlink{dgr-sink_8h_source_l00166}{m\+\_\+socket\+List}}.
+
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_a2a9115096ef93e8b69846aaca86973f6}\label{classns3_1_1_d_g_r_packet_sink_a2a9115096ef93e8b69846aaca86973f6} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!GetAcceptedSockets@{GetAcceptedSockets}}
+\index{GetAcceptedSockets@{GetAcceptedSockets}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{GetAcceptedSockets()}{GetAcceptedSockets()}}
+{\footnotesize\ttfamily std\+::list$<$ Ptr$<$ Socket $>$ $>$ ns3\+::\+DGRPacket\+Sink\+::\+Get\+Accepted\+Sockets (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+list of pointers to accepted sockets 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8cc_source_l00089}{89}} of file \mbox{\hyperlink{dgr-sink_8cc_source}{dgr-\/sink.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8h_source_l00166}{m\+\_\+socket\+List}}.
+
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_a01e725bd9c630ab59e304d7ed5acf8d4}\label{classns3_1_1_d_g_r_packet_sink_a01e725bd9c630ab59e304d7ed5acf8d4} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!GetDelay@{GetDelay}}
+\index{GetDelay@{GetDelay}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{GetDelay()}{GetDelay()}}
+{\footnotesize\ttfamily Time ns3\+::\+DGRPacket\+Sink\+::\+Get\+Delay (\begin{DoxyParamCaption}\item[{const Ptr$<$ Packet $>$ \&}]{p }\end{DoxyParamCaption}) const}
+
+\begin{DoxyAuthor}{Author}
+Pu Yang 
+\end{DoxyAuthor}
+\begin{DoxyReturn}{Returns}
+the delay information 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8cc_source_l00095}{95}} of file \mbox{\hyperlink{dgr-sink_8cc_source}{dgr-\/sink.\+cc}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-sink_8cc_source_l00170}{Handle\+Read()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d11/classns3_1_1_d_g_r_packet_sink_a01e725bd9c630ab59e304d7ed5acf8d4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_ac98581dc7987443224fd7237a12eb006}\label{classns3_1_1_d_g_r_packet_sink_ac98581dc7987443224fd7237a12eb006} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!GetListeningSocket@{GetListeningSocket}}
+\index{GetListeningSocket@{GetListeningSocket}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{GetListeningSocket()}{GetListeningSocket()}}
+{\footnotesize\ttfamily Ptr$<$ Socket $>$ ns3\+::\+DGRPacket\+Sink\+::\+Get\+Listening\+Socket (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+pointer to listening socket 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8cc_source_l00082}{82}} of file \mbox{\hyperlink{dgr-sink_8cc_source}{dgr-\/sink.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8h_source_l00165}{m\+\_\+socket}}.
+
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_a69231f2139fbdd7948cff8c9edccdca4}\label{classns3_1_1_d_g_r_packet_sink_a69231f2139fbdd7948cff8c9edccdca4} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!GetTotalRx@{GetTotalRx}}
+\index{GetTotalRx@{GetTotalRx}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{GetTotalRx()}{GetTotalRx()}}
+{\footnotesize\ttfamily uint64\+\_\+t ns3\+::\+DGRPacket\+Sink\+::\+Get\+Total\+Rx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+the total bytes received in this sink app 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8cc_source_l00075}{75}} of file \mbox{\hyperlink{dgr-sink_8cc_source}{dgr-\/sink.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8h_source_l00169}{m\+\_\+total\+Rx}}.
+
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_a558f3df30ebf65ef9ce9d22106fbd8bc}\label{classns3_1_1_d_g_r_packet_sink_a558f3df30ebf65ef9ce9d22106fbd8bc} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!GetTypeId@{GetTypeId}}
+\index{GetTypeId@{GetTypeId}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{GetTypeId()}{GetTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+DGRPacket\+Sink\+::\+Get\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the type ID. 
+
+\begin{DoxyReturn}{Returns}
+the object Type\+Id 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8cc_source_l00027}{27}} of file \mbox{\hyperlink{dgr-sink_8cc_source}{dgr-\/sink.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8h_source_l00175}{m\+\_\+enable\+Seq\+Ts\+Size\+Header}}, \mbox{\hyperlink{dgr-sink_8h_source_l00168}{m\+\_\+local}}, \mbox{\hyperlink{dgr-sink_8h_source_l00178}{m\+\_\+rx\+Trace}}, \mbox{\hyperlink{dgr-sink_8h_source_l00180}{m\+\_\+rx\+Trace\+With\+Addresses}}, \mbox{\hyperlink{dgr-sink_8h_source_l00182}{m\+\_\+rx\+Trace\+With\+Seq\+Ts\+Size}}, and \mbox{\hyperlink{dgr-sink_8h_source_l00170}{m\+\_\+tid}}.
+
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_a60bdb8ea5bb655c1b77220963b2531d7}\label{classns3_1_1_d_g_r_packet_sink_a60bdb8ea5bb655c1b77220963b2531d7} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!HandleAccept@{HandleAccept}}
+\index{HandleAccept@{HandleAccept}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{HandleAccept()}{HandleAccept()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRPacket\+Sink\+::\+Handle\+Accept (\begin{DoxyParamCaption}\item[{Ptr$<$ Socket $>$}]{socket,  }\item[{const Address \&}]{from }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handle an incoming connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & the incoming connection socket \\
+\hline
+{\em from} & the address the connection is from \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8cc_source_l00293}{293}} of file \mbox{\hyperlink{dgr-sink_8cc_source}{dgr-\/sink.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00170}{Handle\+Read()}}, and \mbox{\hyperlink{dgr-sink_8h_source_l00166}{m\+\_\+socket\+List}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-sink_8cc_source_l00116}{Start\+Application()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d11/classns3_1_1_d_g_r_packet_sink_a60bdb8ea5bb655c1b77220963b2531d7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{dc/d11/classns3_1_1_d_g_r_packet_sink_a60bdb8ea5bb655c1b77220963b2531d7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_a4cdd5cf57dd8475e5d6656bf877dc220}\label{classns3_1_1_d_g_r_packet_sink_a4cdd5cf57dd8475e5d6656bf877dc220} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!HandlePeerClose@{HandlePeerClose}}
+\index{HandlePeerClose@{HandlePeerClose}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{HandlePeerClose()}{HandlePeerClose()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRPacket\+Sink\+::\+Handle\+Peer\+Close (\begin{DoxyParamCaption}\item[{Ptr$<$ Socket $>$}]{socket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handle an connection close. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & the connected socket \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8cc_source_l00283}{283}} of file \mbox{\hyperlink{dgr-sink_8cc_source}{dgr-\/sink.\+cc}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-sink_8cc_source_l00116}{Start\+Application()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{dc/d11/classns3_1_1_d_g_r_packet_sink_a4cdd5cf57dd8475e5d6656bf877dc220_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_ae1f5b327422a264e50a57a45010c5b95}\label{classns3_1_1_d_g_r_packet_sink_ae1f5b327422a264e50a57a45010c5b95} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!HandlePeerError@{HandlePeerError}}
+\index{HandlePeerError@{HandlePeerError}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{HandlePeerError()}{HandlePeerError()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRPacket\+Sink\+::\+Handle\+Peer\+Error (\begin{DoxyParamCaption}\item[{Ptr$<$ Socket $>$}]{socket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handle an connection error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & the connected socket \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8cc_source_l00288}{288}} of file \mbox{\hyperlink{dgr-sink_8cc_source}{dgr-\/sink.\+cc}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-sink_8cc_source_l00116}{Start\+Application()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{dc/d11/classns3_1_1_d_g_r_packet_sink_ae1f5b327422a264e50a57a45010c5b95_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_a5bc1c04b2b572ae2197853efeceb650e}\label{classns3_1_1_d_g_r_packet_sink_a5bc1c04b2b572ae2197853efeceb650e} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!HandleRead@{HandleRead}}
+\index{HandleRead@{HandleRead}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{HandleRead()}{HandleRead()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRPacket\+Sink\+::\+Handle\+Read (\begin{DoxyParamCaption}\item[{Ptr$<$ Socket $>$}]{socket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handle a packet received by the application. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & the receiving socket \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8cc_source_l00170}{170}} of file \mbox{\hyperlink{dgr-sink_8cc_source}{dgr-\/sink.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00095}{Get\+Delay()}}, \mbox{\hyperlink{dgr-tags_8cc_source_l00177}{ns3\+::\+Flag\+Tag\+::\+Get\+Flag()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, \mbox{\hyperlink{dgr-sink_8h_source_l00172}{m\+\_\+delay\+Stream}}, \mbox{\hyperlink{dgr-sink_8h_source_l00175}{m\+\_\+enable\+Seq\+Ts\+Size\+Header}}, \mbox{\hyperlink{dgr-sink_8h_source_l00178}{m\+\_\+rx\+Trace}}, \mbox{\hyperlink{dgr-sink_8h_source_l00180}{m\+\_\+rx\+Trace\+With\+Addresses}}, \mbox{\hyperlink{dgr-sink_8h_source_l00169}{m\+\_\+total\+Rx}}, and \mbox{\hyperlink{dgr-sink_8cc_source_l00244}{Packet\+Received()}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-sink_8cc_source_l00293}{Handle\+Accept()}}, and \mbox{\hyperlink{dgr-sink_8cc_source_l00116}{Start\+Application()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d11/classns3_1_1_d_g_r_packet_sink_a5bc1c04b2b572ae2197853efeceb650e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d11/classns3_1_1_d_g_r_packet_sink_a5bc1c04b2b572ae2197853efeceb650e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_ac45b59904bfc3ab8c3beeafa3b66abfb}\label{classns3_1_1_d_g_r_packet_sink_ac45b59904bfc3ab8c3beeafa3b66abfb} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!PacketReceived@{PacketReceived}}
+\index{PacketReceived@{PacketReceived}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{PacketReceived()}{PacketReceived()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRPacket\+Sink\+::\+Packet\+Received (\begin{DoxyParamCaption}\item[{const Ptr$<$ Packet $>$ \&}]{p,  }\item[{const Address \&}]{from,  }\item[{const Address \&}]{local\+Address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Packet received\+: assemble byte stream to extract Seq\+Ts\+Size\+Header. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & received packet \\
+\hline
+{\em from} & from address \\
+\hline
+{\em local\+Address} & local address\\
+\hline
+\end{DoxyParams}
+The method assembles a received byte stream and extracts Seq\+Ts\+Size\+Header instances from the stream to export in a trace source. 
+
+Definition at line \mbox{\hyperlink{dgr-sink_8cc_source_l00244}{244}} of file \mbox{\hyperlink{dgr-sink_8cc_source}{dgr-\/sink.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8h_source_l00161}{m\+\_\+buffer}}, and \mbox{\hyperlink{dgr-sink_8h_source_l00182}{m\+\_\+rx\+Trace\+With\+Seq\+Ts\+Size}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-sink_8cc_source_l00170}{Handle\+Read()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d11/classns3_1_1_d_g_r_packet_sink_ac45b59904bfc3ab8c3beeafa3b66abfb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_abe7e96a9e41ed5e769ffc06a20cc775f}\label{classns3_1_1_d_g_r_packet_sink_abe7e96a9e41ed5e769ffc06a20cc775f} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!StartApplication@{StartApplication}}
+\index{StartApplication@{StartApplication}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{StartApplication()}{StartApplication()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRPacket\+Sink\+::\+Start\+Application (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8cc_source_l00116}{116}} of file \mbox{\hyperlink{dgr-sink_8cc_source}{dgr-\/sink.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00293}{Handle\+Accept()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00283}{Handle\+Peer\+Close()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00288}{Handle\+Peer\+Error()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00170}{Handle\+Read()}}, \mbox{\hyperlink{dgr-sink_8h_source_l00168}{m\+\_\+local}}, \mbox{\hyperlink{dgr-sink_8h_source_l00165}{m\+\_\+socket}}, and \mbox{\hyperlink{dgr-sink_8h_source_l00170}{m\+\_\+tid}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d11/classns3_1_1_d_g_r_packet_sink_abe7e96a9e41ed5e769ffc06a20cc775f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_aeb7f67c80886d5d2f24c23878f632508}\label{classns3_1_1_d_g_r_packet_sink_aeb7f67c80886d5d2f24c23878f632508} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!StopApplication@{StopApplication}}
+\index{StopApplication@{StopApplication}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{StopApplication()}{StopApplication()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRPacket\+Sink\+::\+Stop\+Application (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8cc_source_l00153}{153}} of file \mbox{\hyperlink{dgr-sink_8cc_source}{dgr-\/sink.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8h_source_l00165}{m\+\_\+socket}}, and \mbox{\hyperlink{dgr-sink_8h_source_l00166}{m\+\_\+socket\+List}}.
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_a50309ac35d6ee3c3bf8ed1aac032b18c}\label{classns3_1_1_d_g_r_packet_sink_a50309ac35d6ee3c3bf8ed1aac032b18c} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!m\_buffer@{m\_buffer}}
+\index{m\_buffer@{m\_buffer}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{m\_buffer}{m\_buffer}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$Address, Ptr$<$Packet$>$, \mbox{\hyperlink{structns3_1_1_d_g_r_packet_sink_1_1_address_hash}{Address\+Hash}}$>$ ns3\+::\+DGRPacket\+Sink\+::m\+\_\+buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Buffer for received packets. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8h_source_l00161}{161}} of file \mbox{\hyperlink{dgr-sink_8h_source}{dgr-\/sink.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-sink_8cc_source_l00244}{Packet\+Received()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_a2c42e5892ce165db37a2bd47436e4fb8}\label{classns3_1_1_d_g_r_packet_sink_a2c42e5892ce165db37a2bd47436e4fb8} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!m\_delayStream@{m\_delayStream}}
+\index{m\_delayStream@{m\_delayStream}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{m\_delayStream}{m\_delayStream}}
+{\footnotesize\ttfamily Ptr$<$Output\+Stream\+Wrapper$>$ ns3\+::\+DGRPacket\+Sink\+::m\+\_\+delay\+Stream\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ Create<OutputStreamWrapper>}
+\DoxyCodeLine{\ \ (\textcolor{stringliteral}{"{}dgr-\/packet.delay"{}},\ std::ios::out)}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8h_source_l00172}{172}} of file \mbox{\hyperlink{dgr-sink_8h_source}{dgr-\/sink.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-sink_8cc_source_l00170}{Handle\+Read()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_ac803f6a1d59503d2a5914f3c9a7f33ec}\label{classns3_1_1_d_g_r_packet_sink_ac803f6a1d59503d2a5914f3c9a7f33ec} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!m\_enableSeqTsSizeHeader@{m\_enableSeqTsSizeHeader}}
+\index{m\_enableSeqTsSizeHeader@{m\_enableSeqTsSizeHeader}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{m\_enableSeqTsSizeHeader}{m\_enableSeqTsSizeHeader}}
+{\footnotesize\ttfamily bool ns3\+::\+DGRPacket\+Sink\+::m\+\_\+enable\+Seq\+Ts\+Size\+Header \{false\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Enable or disable the export of Seq\+Ts\+Size header. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8h_source_l00175}{175}} of file \mbox{\hyperlink{dgr-sink_8h_source}{dgr-\/sink.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-sink_8cc_source_l00027}{Get\+Type\+Id()}}, and \mbox{\hyperlink{dgr-sink_8cc_source_l00170}{Handle\+Read()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_a7f9d4d540e2faa7004c3047913a29f09}\label{classns3_1_1_d_g_r_packet_sink_a7f9d4d540e2faa7004c3047913a29f09} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!m\_local@{m\_local}}
+\index{m\_local@{m\_local}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{m\_local}{m\_local}}
+{\footnotesize\ttfamily Address ns3\+::\+DGRPacket\+Sink\+::m\+\_\+local\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Local address to bind to. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8h_source_l00168}{168}} of file \mbox{\hyperlink{dgr-sink_8h_source}{dgr-\/sink.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-sink_8cc_source_l00027}{Get\+Type\+Id()}}, and \mbox{\hyperlink{dgr-sink_8cc_source_l00116}{Start\+Application()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_aca03544d5c0deea1c5f900d89037e8ed}\label{classns3_1_1_d_g_r_packet_sink_aca03544d5c0deea1c5f900d89037e8ed} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!m\_rxTrace@{m\_rxTrace}}
+\index{m\_rxTrace@{m\_rxTrace}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{m\_rxTrace}{m\_rxTrace}}
+{\footnotesize\ttfamily Traced\+Callback$<$Ptr$<$const Packet$>$, const Address \&$>$ ns3\+::\+DGRPacket\+Sink\+::m\+\_\+rx\+Trace\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Traced Callback\+: received packets, source address. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8h_source_l00178}{178}} of file \mbox{\hyperlink{dgr-sink_8h_source}{dgr-\/sink.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-sink_8cc_source_l00027}{Get\+Type\+Id()}}, and \mbox{\hyperlink{dgr-sink_8cc_source_l00170}{Handle\+Read()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_a79fa3105c5e8709d6d2619a7665ce751}\label{classns3_1_1_d_g_r_packet_sink_a79fa3105c5e8709d6d2619a7665ce751} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!m\_rxTraceWithAddresses@{m\_rxTraceWithAddresses}}
+\index{m\_rxTraceWithAddresses@{m\_rxTraceWithAddresses}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{m\_rxTraceWithAddresses}{m\_rxTraceWithAddresses}}
+{\footnotesize\ttfamily Traced\+Callback$<$Ptr$<$const Packet$>$, const Address \&, const Address \&$>$ ns3\+::\+DGRPacket\+Sink\+::m\+\_\+rx\+Trace\+With\+Addresses\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Callback for tracing the packet Rx events, includes source and destination addresses. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8h_source_l00180}{180}} of file \mbox{\hyperlink{dgr-sink_8h_source}{dgr-\/sink.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-sink_8cc_source_l00027}{Get\+Type\+Id()}}, and \mbox{\hyperlink{dgr-sink_8cc_source_l00170}{Handle\+Read()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_a2d3c05d2d32ce064ce1ad0b46564bcfb}\label{classns3_1_1_d_g_r_packet_sink_a2d3c05d2d32ce064ce1ad0b46564bcfb} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!m\_rxTraceWithSeqTsSize@{m\_rxTraceWithSeqTsSize}}
+\index{m\_rxTraceWithSeqTsSize@{m\_rxTraceWithSeqTsSize}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{m\_rxTraceWithSeqTsSize}{m\_rxTraceWithSeqTsSize}}
+{\footnotesize\ttfamily Traced\+Callback$<$Ptr$<$const Packet$>$, const Address \&, const Address \&, const Seq\+Ts\+Size\+Header\&$>$ ns3\+::\+DGRPacket\+Sink\+::m\+\_\+rx\+Trace\+With\+Seq\+Ts\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Callbacks for tracing the packet Rx events, includes source, destination addresses, and headers. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8h_source_l00182}{182}} of file \mbox{\hyperlink{dgr-sink_8h_source}{dgr-\/sink.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-sink_8cc_source_l00027}{Get\+Type\+Id()}}, and \mbox{\hyperlink{dgr-sink_8cc_source_l00244}{Packet\+Received()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_a253617e51eb9048d70dca28e2cb2806b}\label{classns3_1_1_d_g_r_packet_sink_a253617e51eb9048d70dca28e2cb2806b} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!m\_socket@{m\_socket}}
+\index{m\_socket@{m\_socket}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{m\_socket}{m\_socket}}
+{\footnotesize\ttfamily Ptr$<$Socket$>$ ns3\+::\+DGRPacket\+Sink\+::m\+\_\+socket\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Listening socket. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8h_source_l00165}{165}} of file \mbox{\hyperlink{dgr-sink_8h_source}{dgr-\/sink.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-sink_8cc_source_l00063}{DGRPacket\+Sink()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00105}{Do\+Dispose()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00082}{Get\+Listening\+Socket()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00116}{Start\+Application()}}, and \mbox{\hyperlink{dgr-sink_8cc_source_l00153}{Stop\+Application()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_a1d21d3eae077fdf088eda04bf2652d97}\label{classns3_1_1_d_g_r_packet_sink_a1d21d3eae077fdf088eda04bf2652d97} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!m\_socketList@{m\_socketList}}
+\index{m\_socketList@{m\_socketList}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{m\_socketList}{m\_socketList}}
+{\footnotesize\ttfamily std\+::list$<$Ptr$<$Socket$>$ $>$ ns3\+::\+DGRPacket\+Sink\+::m\+\_\+socket\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the accepted sockets 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8h_source_l00166}{166}} of file \mbox{\hyperlink{dgr-sink_8h_source}{dgr-\/sink.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-sink_8cc_source_l00105}{Do\+Dispose()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00089}{Get\+Accepted\+Sockets()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00293}{Handle\+Accept()}}, and \mbox{\hyperlink{dgr-sink_8cc_source_l00153}{Stop\+Application()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_a5df24d6eacd919ec2f0f944d520cb535}\label{classns3_1_1_d_g_r_packet_sink_a5df24d6eacd919ec2f0f944d520cb535} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!m\_tid@{m\_tid}}
+\index{m\_tid@{m\_tid}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{m\_tid}{m\_tid}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+DGRPacket\+Sink\+::m\+\_\+tid\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Protocol Type\+Id. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8h_source_l00170}{170}} of file \mbox{\hyperlink{dgr-sink_8h_source}{dgr-\/sink.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-sink_8cc_source_l00027}{Get\+Type\+Id()}}, and \mbox{\hyperlink{dgr-sink_8cc_source_l00116}{Start\+Application()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_packet_sink_aa1eed0d34ee99dbaea2af47a795b70ca}\label{classns3_1_1_d_g_r_packet_sink_aa1eed0d34ee99dbaea2af47a795b70ca} 
+\index{ns3::DGRPacketSink@{ns3::DGRPacketSink}!m\_totalRx@{m\_totalRx}}
+\index{m\_totalRx@{m\_totalRx}!ns3::DGRPacketSink@{ns3::DGRPacketSink}}
+\doxyparagraph{\texorpdfstring{m\_totalRx}{m\_totalRx}}
+{\footnotesize\ttfamily uint64\+\_\+t ns3\+::\+DGRPacket\+Sink\+::m\+\_\+total\+Rx\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Total bytes received. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-sink_8h_source_l00169}{169}} of file \mbox{\hyperlink{dgr-sink_8h_source}{dgr-\/sink.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-sink_8cc_source_l00063}{DGRPacket\+Sink()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00075}{Get\+Total\+Rx()}}, and \mbox{\hyperlink{dgr-sink_8cc_source_l00170}{Handle\+Read()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{dgr-sink_8h}{dgr-\/sink.\+h}}\item 
+model/\mbox{\hyperlink{dgr-sink_8cc}{dgr-\/sink.\+cc}}\end{DoxyCompactItemize}

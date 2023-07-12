@@ -1,0 +1,46 @@
+<map id="ns3::Ipv4DGRRouting::DoInitialize" name="ns3::Ipv4DGRRouting::DoInitialize">
+<area shape="rect" id="Node000001" title="Start protocol operation." alt="" coords="5,399,165,439"/>
+<area shape="rect" id="Node000002" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#a2eb8a683180ce3d3726767f5b986e3d8" title="Receive an DGR message." alt="" coords="225,241,385,281"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,396,263,287,266,292,116,401"/>
+<area shape="rect" id="Node000014" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#a238052760f17cb9a493e98ef38b6de8f" title="Send Unsolicited neighbor status information Updates on all interfaces." alt="" coords="213,443,396,483"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="166,432,201,439,200,444,165,437"/>
+<area shape="rect" id="Node000003" href="$d1/de8/classns3_1_1_dgr_header.html#a75a9665a3108d89e19891e73b0f51251" title="Get the command." alt="" coords="447,191,668,217"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="384,240,443,227,486,217,487,222,445,232,385,246"/>
+<area shape="rect" id="Node000004" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#aa29a1573985386ddcc0c9616ab524836" title="Handle DGR responses." alt="" coords="477,241,637,281"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="385,259,464,259,464,264,385,264"/>
+<area shape="rect" id="Node000005" href="$d4/dba/classns3_1_1_status_unit.html#a165815e13c7cda840f5e77961f412b8d" title=" " alt="" coords="741,5,941,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="637,246,654,238,669,226,684,206,691,185,692,142,693,99,700,77,717,55,728,46,731,50,721,59,705,79,698,100,697,142,696,186,689,208,673,230,657,242,639,251"/>
+<area shape="rect" id="Node000006" href="$d1/de8/classns3_1_1_dgr_header.html#ad28f3042c3a7579cf82d7debfab3ff94" title="Get the list of NSEs included in the message." alt="" coords="740,70,943,95"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="636,245,669,226,681,212,687,197,691,167,696,136,704,121,717,106,726,100,729,104,720,110,708,124,701,138,697,168,692,199,685,215,672,230,639,250"/>
+<area shape="rect" id="Node000007" href="$d1/de8/classns3_1_1_dgr_header.html#a2fcef3eb0f76c33b6d7c151dc4b939e3" title="Get the serialized size of the packet." alt="" coords="719,413,964,438"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="577,280,636,340,676,372,720,399,736,406,734,411,717,404,673,377,633,344,574,284"/>
+<area shape="rect" id="Node000009" href="$dc/d3f/classns3_1_1_neighbor_status_entry.html#a247a7c414ca757992904f162888375d9" title=" " alt="" coords="748,120,935,160"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="637,242,669,226,684,212,692,198,701,184,717,170,734,161,736,166,720,174,705,187,697,201,688,216,672,230,639,246"/>
+<area shape="rect" id="Node000010" href="$dd/d41/classns3_1_1_dgr_n_s_d_b.html#afab689a2b1bf8ec2af909d5d05ab26a6" title="Handle the NeighborStatusEntry of a Interface." alt="" coords="728,184,955,224"/>
+<area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="637,243,728,224,729,229,638,248"/>
+<area shape="rect" id="Node000011" href="$dd/d41/classns3_1_1_dgr_n_s_d_b.html#a0eabfc389423b0b694d6f30cb1b773f5" title="Insert an &lt;interface, Neighbor Status Entry&gt; into the NSDB." alt="" coords="762,249,921,274"/>
+<area shape="poly" id="edge10_Node000004_Node000011" title=" " alt="" coords="637,259,748,259,748,264,637,264"/>
+<area shape="rect" id="Node000012" href="$dc/d3f/classns3_1_1_neighbor_status_entry.html#ad12f02c2d3a0eb4ec1f838adbc93961e" title=" " alt="" coords="748,299,935,339"/>
+<area shape="poly" id="edge11_Node000004_Node000012" title=" " alt="" coords="638,275,735,295,734,300,637,280"/>
+<area shape="rect" id="Node000013" href="$d4/dba/classns3_1_1_status_unit.html#a6e3953db49c443f23281dec449661d39" title=" " alt="" coords="753,363,929,389"/>
+<area shape="poly" id="edge12_Node000004_Node000013" title=" " alt="" coords="590,279,649,315,720,348,749,357,747,362,718,353,646,319,587,284"/>
+<area shape="rect" id="Node000008" href="$de/d1d/classns3_1_1_dgr_nse.html#a2b24a215ee38cb8ec0e5a8c6f5247e01" title="Get the serialized size of the packet." alt="" coords="1012,438,1235,463"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="965,434,998,437,998,442,964,439"/>
+<area shape="poly" id="edge23_Node000014_Node000014" title=" " alt="" coords="264,443,261,433,268,424,282,418,305,416,330,419,344,426,342,431,329,424,305,421,284,423,271,428,266,434,269,442"/>
+<area shape="rect" id="Node000015" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#aff694e326df155e5a99a85d805b7d172" title="Sending Neighbor Status Updates on all interfaces." alt="" coords="444,556,671,596"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="351,480,500,548,498,553,349,485"/>
+<area shape="poly" id="edge19_Node000015_Node000007" title=" " alt="" coords="579,554,638,504,677,478,718,455,760,439,761,444,720,460,680,482,642,509,582,558"/>
+<area shape="poly" id="edge18_Node000015_Node000008" title=" " alt="" coords="593,553,651,525,718,500,789,483,862,470,998,454,998,460,863,475,790,488,719,505,653,530,595,558"/>
+<area shape="rect" id="Node000016" href="$d1/de8/classns3_1_1_dgr_header.html#a6004075aa81cee64dbf96c03e548f41e" title="Add a DGR Neighbor Status Entry (NSE) to the message." alt="" coords="751,514,932,539"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="671,554,754,539,754,544,672,559"/>
+<area shape="rect" id="Node000017" href="$d1/de8/classns3_1_1_dgr_header.html#a930203fc0319f7d6f2119079096168dc" title="Clear all the NSEs from the header." alt="" coords="743,563,940,589"/>
+<area shape="poly" id="edge16_Node000015_Node000017" title=" " alt="" coords="671,573,729,573,729,579,671,579"/>
+<area shape="rect" id="Node000018" href="$d1/de8/classns3_1_1_dgr_header.html#ae7b3e6830add872de26fc78b1af52372" title="Get the number of NSEs includes in the message." alt="" coords="726,613,957,638"/>
+<area shape="poly" id="edge17_Node000015_Node000018" title=" " alt="" coords="672,593,754,608,754,613,671,598"/>
+<area shape="rect" id="Node000019" href="$d1/de8/classns3_1_1_dgr_header.html#ae6c91c53e2bf12faf7f315e55a103412" title="Set the command." alt="" coords="732,662,951,687"/>
+<area shape="poly" id="edge20_Node000015_Node000019" title=" " alt="" coords="596,594,653,622,720,648,749,656,747,661,718,653,651,627,594,599"/>
+<area shape="rect" id="Node000020" href="$de/d1d/classns3_1_1_dgr_nse.html#a2e993c84f83ec1bddf787351c5c41401" title="Set the interface." alt="" coords="747,711,935,737"/>
+<area shape="poly" id="edge21_Node000015_Node000020" title=" " alt="" coords="580,594,639,647,678,675,720,698,738,705,736,710,718,702,675,679,636,651,577,598"/>
+<area shape="rect" id="Node000021" href="$de/d1d/classns3_1_1_dgr_nse.html#afed23298399afb86ba0bdf1f6ea19b7d" title=" " alt="" coords="759,761,923,786"/>
+<area shape="poly" id="edge22_Node000015_Node000021" title=" " alt="" coords="573,595,597,629,630,671,672,712,720,747,747,759,745,763,717,752,668,717,626,674,593,632,569,598"/>
+</map>

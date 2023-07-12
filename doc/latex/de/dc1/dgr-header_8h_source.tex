@@ -1,0 +1,106 @@
+\doxysubsection{dgr-\/header.h}
+\hypertarget{dgr-header_8h_source}{}\label{dgr-header_8h_source}\index{model/dgr-\/header.h@{model/dgr-\/header.h}}
+\mbox{\hyperlink{dgr-header_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00001}00001\ \textcolor{comment}{/*\ -\/*-\/\ Mode:C++;\ c-\/file-\/style:"{}gnu"{};\ indent-\/tabs-\/mode:nil;\ -\/*-\/\ */}}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00003}00003\ \textcolor{preprocessor}{\#ifndef\ DGR\_HEADER\_H}}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00004}00004\ \textcolor{preprocessor}{\#define\ DGR\_HEADER\_H}}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}ns3/header.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}ns3/ipv4-\/address.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}ns3/packet.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00012}00012\ \textcolor{comment}{//\ -\/-\/-\/Delay\ Guaranteed\ Routing\ Packet\ Header-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00013}00013\ \textcolor{comment}{//\ \ \ |\ 8\ bite\ \ |\ 8\ bite\ \ |\ 8\ bite\ \ |\ 8\ bite\ \ |}}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00014}00014\ \textcolor{comment}{//\ \ \ |\ version\ |\ commond\ |\ \ \ \ \ \ \ Empty\ \ \ \ \ \ \ |}}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00015}00015\ \textcolor{comment}{//\ \ \ |\ Interface\ ID\ \ \ \ \ \ |\ \ \ \ \ \ States\ \ \ \ \ \ \ |}}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00016}00016\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ...}}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00017}00017\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ...}}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00019}00019\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacens3}{ns3}}\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00025}\mbox{\hyperlink{classns3_1_1_dgr_nse}{00025}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_dgr_nse}{DgrNse}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_header}{Header}}}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00026}00026\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00027}00027\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_dgr_nse_a26065a66a4af1b5b6a0962976a0fd9bb}{DgrNse}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00029}00029\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{static}\ TypeId\ \mbox{\hyperlink{classns3_1_1_dgr_nse_ac4b6f6d618c616b20f336b4838de4f16}{GetTypeId}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00040}00040\ \ \ \ \ TypeId\ \mbox{\hyperlink{classns3_1_1_dgr_nse_a4fe0f2b082a77e690de20f8e51f4f03c}{GetInstanceTypeId}}\ ()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_dgr_nse_af663ace163675839ec0b9a7944a0d514}{Print}}\ (std::ostream\&\ os)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00048}00048\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_dgr_nse_a2b24a215ee38cb8ec0e5a8c6f5247e01}{GetSerializedSize}}\ ()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_dgr_nse_abf6e89d3cc954ee666bafc8c65433161}{Serialize}}\ (Buffer::Iterator\ start)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00061}00061\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_dgr_nse_ac07423ad134e176d78257b014d307e78}{Deserialize}}\ (Buffer::Iterator\ start)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00067}00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_dgr_nse_a2e993c84f83ec1bddf787351c5c41401}{SetInterface}}\ (uint32\_t\ iface);}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00073}00073\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_dgr_nse_a8bec3d3ec3349e0396c141a0a0d0fb48}{GetInterface}}\ ()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_dgr_nse_afed23298399afb86ba0bdf1f6ea19b7d}{SetState}}\ (uint32\_t\ state);}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00076}00076\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_dgr_nse_a438c105a750d6d764be284388ba56c3a}{GetState}}\ ()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00077}00077\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00078}\mbox{\hyperlink{classns3_1_1_dgr_nse_ad5d302e27f2b5ee40ed20500790ad3ea}{00078}}\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_dgr_nse_ad5d302e27f2b5ee40ed20500790ad3ea}{m\_iface}};}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00079}\mbox{\hyperlink{classns3_1_1_dgr_nse_a7d2879fac256bf8d75a48075381434b6}{00079}}\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_dgr_nse_a7d2879fac256bf8d75a48075381434b6}{m\_state}};}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00080}00080\ \};}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00089}00089\ std::ostream\&\ \mbox{\hyperlink{namespacens3_a7c0f3fcc4f4363c5458911cded1af4b6}{operator<<}}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classns3_1_1_dgr_nse}{DgrNse}}\ \&\ h);}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00095}\mbox{\hyperlink{classns3_1_1_dgr_header}{00095}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_dgr_header}{DgrHeader}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_header}{Header}}}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00096}00096\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00097}00097\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_dgr_header_a92be687ce1e22b5ecfc104c55397e97a}{DgrHeader}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00099}00099\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00104}00104\ \ \ \ \ \textcolor{keyword}{static}\ TypeId\ \mbox{\hyperlink{classns3_1_1_dgr_header_a31749d9e94fa05433769aefdc48b99ee}{GetTypeId}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00110}00110\ \ \ \ \ TypeId\ \mbox{\hyperlink{classns3_1_1_dgr_header_a9d4e033c4a315e17b242421856447aad}{GetInstanceTypeId}}\ ()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00112}00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_dgr_header_afc60d4b57c29b89faf44e8db2bc223a9}{Print}}\ (std::ostream\ \&os)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00118}00118\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_dgr_header_a2fcef3eb0f76c33b6d7c151dc4b939e3}{GetSerializedSize}}\ ()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00124}00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_dgr_header_a21bd3c98f0c1c2a7110e24bbd2258737}{Serialize}}\ (Buffer::Iterator\ start)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00131}00131\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_dgr_header_a972cb695337832c59fe1f8475c33d902}{Deserialize}}\ (Buffer::Iterator\ start)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00136}\mbox{\hyperlink{classns3_1_1_dgr_header_ab21f647781eecc35e6b201178915de4c}{00136}}\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classns3_1_1_dgr_header_ab21f647781eecc35e6b201178915de4c}{Command\_e}}}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00137}00137\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00138}\mbox{\hyperlink{classns3_1_1_dgr_header_ab21f647781eecc35e6b201178915de4cacc2d402a1af70c8265edf152551e1fb0}{00138}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_dgr_header_ab21f647781eecc35e6b201178915de4cacc2d402a1af70c8265edf152551e1fb0}{REQUEST}}\ =\ 0x1,}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00139}\mbox{\hyperlink{classns3_1_1_dgr_header_ab21f647781eecc35e6b201178915de4ca8d8894292f7def51be8e3f118f7c1e08}{00139}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_dgr_header_ab21f647781eecc35e6b201178915de4ca8d8894292f7def51be8e3f118f7c1e08}{RESPONSE}}\ =\ 0x2,}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00140}00140\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00146}00146\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_dgr_header_ae6c91c53e2bf12faf7f315e55a103412}{SetCommand}}\ (\mbox{\hyperlink{classns3_1_1_dgr_header_ab21f647781eecc35e6b201178915de4c}{Command\_e}}\ command);}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00152}00152\ \ \ \ \mbox{\hyperlink{classns3_1_1_dgr_header_ab21f647781eecc35e6b201178915de4c}{Command\_e}}\ \mbox{\hyperlink{classns3_1_1_dgr_header_a75a9665a3108d89e19891e73b0f51251}{GetCommand}}\ ()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00158}00158\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_dgr_header_a6004075aa81cee64dbf96c03e548f41e}{AddNse}}\ (\mbox{\hyperlink{classns3_1_1_dgr_nse}{DgrNse}}\ nse);}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00163}00163\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_dgr_header_a930203fc0319f7d6f2119079096168dc}{ClearNses}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00169}00169\ \ \ \ uint16\_t\ \mbox{\hyperlink{classns3_1_1_dgr_header_ae7b3e6830add872de26fc78b1af52372}{GetNseNumber}}\ ()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00175}00175\ \ \ \ std::list<DgrNse>\ \mbox{\hyperlink{classns3_1_1_dgr_header_ad28f3042c3a7579cf82d7debfab3ff94}{GetNseList}}\ ()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00177}00177\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00178}\mbox{\hyperlink{classns3_1_1_dgr_header_a26054c79e83d831602dadf1671bb41d3}{00178}}\ \ \ \ uint8\_t\ \mbox{\hyperlink{classns3_1_1_dgr_header_a26054c79e83d831602dadf1671bb41d3}{m\_command}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00179}\mbox{\hyperlink{classns3_1_1_dgr_header_a61847b86fd5fb5a94a1c3e81fae0b446}{00179}}\ \ \ \ std::list<DgrNse>\ \mbox{\hyperlink{classns3_1_1_dgr_header_a61847b86fd5fb5a94a1c3e81fae0b446}{m\_nseList}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00180}00180\ \};}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00189}00189\ std::ostream\&\ \mbox{\hyperlink{namespacens3_a7c0f3fcc4f4363c5458911cded1af4b6}{operator<<\ }}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classns3_1_1_dgr_header}{DgrHeader}}\&\ h);}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00191}00191\ \}}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00193}00193\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ DGR\_HEADER\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{dgr-header_8h_source_l00198}00198\ }
+
+\end{DoxyCode}

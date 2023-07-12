@@ -1,0 +1,9 @@
+<map id="ns3::DGRRoutingLinkRecord" name="ns3::DGRRoutingLinkRecord">
+<area shape="rect" id="Node000001" title="A single link record for a link state advertisement." alt="" coords="69,108,273,133"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,108,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,43,74,64,88,82,106,96,128,105,125,110,104,100,84,86,70,66,61,45"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="132,5,211,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="174,45,174,108,169,108,169,45"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="243,5,318,31"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="277,45,268,66,253,86,234,100,213,110,211,105,232,96,249,82,263,63,272,43"/>
+</map>

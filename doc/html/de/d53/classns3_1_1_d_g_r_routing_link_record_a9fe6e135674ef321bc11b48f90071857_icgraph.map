@@ -1,0 +1,32 @@
+<map id="ns3::DGRRoutingLinkRecord::GetLinkId" name="ns3::DGRRoutingLinkRecord::GetLinkId">
+<area shape="rect" id="Node000001" title="Get the Link ID field of the Global Routing Link Record." alt="" coords="1279,151,1483,191"/>
+<area shape="rect" id="Node000002" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a1f608c8ac5a62f915208141c2d7bea22" title="Test if a node is a stub, from an OSPF sense." alt="" coords="515,185,721,225"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1265,179,722,203,722,197,1265,174"/>
+<area shape="rect" id="Node000004" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a3b798959aeda8a76373705151497692e" title="Compute routes using a Dijkstra SPF computation and populate per&#45;node forwarding tables." alt="" coords="5,185,212,225"/>
+<area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="1348,144,1296,99,1264,78,1230,60,1134,26,1057,11,976,8,874,9,617,9,544,14,471,29,401,52,334,79,219,138,140,187,137,182,216,133,332,74,399,47,470,24,543,9,617,3,874,3,977,3,1057,6,1136,21,1232,56,1266,73,1299,95,1352,139"/>
+<area shape="rect" id="Node000005" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a206ff392d0561c4b244a8c6fe8d824ab" title="Copy any Global Routing Link Records in a given Global Routing Link State Advertisement to the curren..." alt="" coords="1049,374,1206,414"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1351,203,1232,313,1156,376,1153,372,1229,309,1347,199"/>
+<area shape="rect" id="Node000008" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a1ac857e005409b302b1bd2fb1180af0a" title="Search for a link between two vertices." alt="" coords="1024,259,1231,299"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="1327,200,1232,243,1185,262,1183,257,1230,238,1325,195"/>
+<area shape="rect" id="Node000010" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#ab573904f9f357e2b802b1bbdcdc3247d" title="Examine the links in v&#39;s LSA and update the list of candidates with any vertices not already on the l..." alt="" coords="515,249,721,289"/>
+<area shape="poly" id="edge17_Node000001_Node000010" title=" " alt="" coords="1265,188,770,250,722,257,721,251,769,245,1265,182"/>
+<area shape="rect" id="Node000011" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a403b832078dcb8a4facb2ae6c7b2ce15" title="Add a stub to the routing tables." alt="" coords="1024,94,1231,134"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="1278,151,1216,137,1217,131,1279,146"/>
+<area shape="rect" id="Node000012" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a71dd2f4c78a96ecb7d86dd75fd6f78bd" title="Process Stub nodes." alt="" coords="769,94,976,134"/>
+<area shape="poly" id="edge18_Node000001_Node000012" title=" " alt="" coords="1343,145,1292,111,1261,96,1230,85,1193,77,1154,72,1077,73,1004,83,942,97,941,91,1003,78,1076,68,1154,67,1193,71,1231,79,1264,91,1294,107,1346,141"/>
+<area shape="rect" id="Node000003" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a910c2efcc40a79d4c062eb08ceb11522" title="Calculate the shortest path first (SPF) tree." alt="" coords="260,185,467,225"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="501,207,467,207,467,202,501,202"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="247,207,212,207,212,202,247,202"/>
+<area shape="rect" id="Node000006" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a042cca1bebf1189a3e40f0c3abcd5937" title="Copy constructor for a Global Routing Link State Advertisement." alt="" coords="794,374,951,414"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1035,397,951,397,951,391,1035,391"/>
+<area shape="rect" id="Node000007" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#af09c521adba74e1538773cebf14b3929" title="Assignment operator for a Global Routing Link State Advertisement." alt="" coords="794,438,951,478"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="1036,420,952,441,951,436,1034,414"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="1034,305,976,314,847,325,745,327,644,320,514,303,422,288,330,268,176,227,178,222,331,262,423,282,515,298,644,315,745,322,846,320,976,309,1033,300"/>
+<area shape="rect" id="Node000009" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#aa10b6b58af69a3da1d8478d50e78bef8" title="Calculate nexthop from root through V (parent) to vertex W (destination) with given distance from roo..." alt="" coords="769,259,976,299"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="1011,282,976,282,976,277,1011,277"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="756,277,722,276,722,270,756,272"/>
+<area shape="poly" id="edge12_Node000010_Node000003" title=" " alt="" coords="524,248,443,227,444,222,525,243"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="1011,117,976,117,976,111,1011,111"/>
+<area shape="poly" id="edge15_Node000012_Node000003" title=" " alt="" coords="756,134,515,175,456,187,455,182,514,170,756,129"/>
+<area shape="poly" id="edge16_Node000012_Node000012" title=" " alt="" coords="916,82,901,75,873,73,848,75,833,79,828,85,831,93,826,94,823,84,830,75,847,69,873,67,902,70,918,77"/>
+</map>

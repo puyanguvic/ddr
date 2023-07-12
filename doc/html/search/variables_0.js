@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['expname_0',['expName',['../d9/d39/dgr__demo_8cc.html#adf12170ede4e9e3a5cc1339bfd5809e0',1,'dgr_demo.cc']]]
+  ['distinfinity_0',['DISTINFINITY',['../d7/d2e/namespacens3.html#aa8c7346d1a02c40c94ad465301e57ef8',1,'ns3']]]
 ];

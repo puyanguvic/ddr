@@ -1,0 +1,7 @@
+<map id="ns3::DGRRouter::GetRouterId" name="ns3::DGRRouter::GetRouterId">
+<area shape="rect" id="Node000001" title="Get the Router ID associated with this Global Router." alt="" coords="540,13,751,38"/>
+<area shape="rect" id="Node000002" href="$d0/d56/classns3_1_1_d_g_r_router.html#aac014913150c42a93cecbc6a9daf7552" title="Process a point to point link." alt="" coords="276,5,492,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="527,28,492,28,492,23,527,23"/>
+<area shape="rect" id="Node000003" href="$d0/d56/classns3_1_1_d_g_r_router.html#ac119cda89d816da90186bb617c710c25" title="Walk the connected channels, discover the adjacent routers and build the associated number of Global ..." alt="" coords="5,13,228,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="262,28,228,28,228,23,262,23"/>
+</map>

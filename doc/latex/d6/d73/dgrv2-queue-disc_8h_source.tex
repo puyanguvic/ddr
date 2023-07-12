@@ -1,0 +1,64 @@
+\doxysubsection{dgrv2-\/queue-\/disc.h}
+\hypertarget{dgrv2-queue-disc_8h_source}{}\label{dgrv2-queue-disc_8h_source}\index{model/dgrv2-\/queue-\/disc.h@{model/dgrv2-\/queue-\/disc.h}}
+\mbox{\hyperlink{dgrv2-queue-disc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00001}00001\ \textcolor{comment}{/*\ -\/*-\/\ Mode:C++;\ c-\/file-\/style:"{}gnu"{};\ indent-\/tabs-\/mode:nil;\ -\/*-\/\ */}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00002}00002\ \textcolor{preprocessor}{\#ifndef\ DGR\_v2\_QUEUE\_DISC\_H}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00003}00003\ \textcolor{preprocessor}{\#define\ DGR\_v2\_QUEUE\_DISC\_H}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}ns3/queue-\/disc.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}ns3/object.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}ns3/packet-\/filter.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dgr-header_8h}{dgr-\/header.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00010}00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacens3}{ns3}}\ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00012}\mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc}{00012}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc}{DGRv2QueueDisc}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_queue_disc}{QueueDisc}}\ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00013}00013\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{static}\ TypeId\ \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a72756e5a2ef0aa214ff90813cb7a9d0a}{GetTypeId}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a577832ddbed27a0e6e732064dc550ae6}{DGRv2QueueDisc}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a684b376fae1037a8f355d1dc66a7fdcd}{\string~DGRv2QueueDisc}}();}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//\ Reasons\ for\ dropping\ packets}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00029}\mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a3c5f6b8b3b3262ba736e1e5f01f4fbd0}{00029}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a3c5f6b8b3b3262ba736e1e5f01f4fbd0}{LIMIT\_EXCEEDED\_DROP}}\ =\ \textcolor{stringliteral}{"{}Queue\ disc\ limit\ exceeded"{}};\ \ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//\ Get\ current\ queue\ state}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00032}00032\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a0776911f2905bb3beb1c661ef4dffae6}{GetQueueStatus}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_af24edcb8e345da5aa062f462329c006d}{CheckConfig}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00035}00035\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00036}00036\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00037}\mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a8c4ebeeeb845bcf635db7bb929cf2035}{00037}}\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a8c4ebeeeb845bcf635db7bb929cf2035}{m\_fastWeight}};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00038}\mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a4cc480a47b078a6618069471ec6c62bb}{00038}}\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a4cc480a47b078a6618069471ec6c62bb}{m\_normalWeight}};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00039}\mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a6da48e3757bac9a55a2f20cc2672c0d0}{00039}}\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a6da48e3757bac9a55a2f20cc2672c0d0}{m\_slowWeight}};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00040}\mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a78d8252d17d17673cf61e84e5dda263b}{00040}}\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a78d8252d17d17673cf61e84e5dda263b}{m\_currentFastWeight}};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00041}\mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_ae4c72dc910b3b43b761e6d06f411cc5f}{00041}}\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_ae4c72dc910b3b43b761e6d06f411cc5f}{m\_currentNormalWeight}};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00042}\mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a74aa4b447126656e2f3b413396f428fb}{00042}}\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a74aa4b447126656e2f3b413396f428fb}{m\_currentSlowWeight}};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00043}00043\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_ab0e7d910d34bed359c34f03bbf3de5e2}{DoEnqueue}}\ (Ptr<QueueDiscItem>\ item)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00045}00045\ \ \ \ \ Ptr<QueueDiscItem>\ \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a11b483d3b91143d0bbf8ac85071d29e1}{DoDequeue}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00046}00046\ \ \ \ \ Ptr<const\ QueueDiscItem>\ \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_ac88b22362bd8121ae94c0897f74686c9}{DoPeek}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00047}00047\ \ \ \ \ \textcolor{comment}{//\ bool\ CheckConfig\ (void)\ override;}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00048}00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a44ed011e5ef9846e8275daf601e212d7}{InitializeParams}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00050}00050\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_rv2_queue_disc_a292613ff9d5c2be9fb20e6d9b1c3c472}{EnqueueClassify}}\ (Ptr<QueueDiscItem>\ item);}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00051}00051\ \};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00053}\mbox{\hyperlink{classns3_1_1_d_g_rv2_packet_filter}{00053}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_d_g_rv2_packet_filter}{DGRv2PacketFilter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_packet_filter}{PacketFilter}}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00054}00054\ \{}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00055}00055\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{static}\ TypeId\ \mbox{\hyperlink{classns3_1_1_d_g_rv2_packet_filter_a9d0d348af26423eacee7db1c1affe755}{GetTypeId}}();}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00062}00062\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_rv2_packet_filter_a7709f877e4c75cc39373c34a06108913}{DGRv2PacketFilter}}();}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_rv2_packet_filter_af413df63f91dfa61214b4f75e5f12c4f}{\string~DGRv2PacketFilter}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00065}00065\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classns3_1_1_d_g_rv2_packet_filter_aa290811d7bcc806f641e774cdb3aaeff}{CheckProtocol}}(Ptr<QueueDiscItem>\ item)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00067}00067\ \ \ \ \ int32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_rv2_packet_filter_a2e48e3d4ceebcf15bfe95658b6510a0a}{DoClassify}}(Ptr<QueueDiscItem>\ item)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00068}00068\ \};}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00070}00070\ \}}
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{dgrv2-queue-disc_8h_source_l00072}00072\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ DGRv2\_QUEUE\_DISC\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -17,8 +17,8 @@
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}ns3/tcp-\/socket-\/factory.h"{}}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}ns3/boolean.h"{}}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}ns3/network-\/module.h"{}}}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}dgr-\/tcp-\/application.h"{}}}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}dgr-\/tags.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dgr-tcp-application_8h}{dgr-\/tcp-\/application.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dgr-tags_8h}{dgr-\/tags.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00018}00018\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00019}\mbox{\hyperlink{dgr-tcp-application_8cc_a40760e9f2359c35da6f29e0a8fafb9ca}{00019}}\ \textcolor{preprocessor}{\#define\ MAX\_UINT\_32\ 0xffffffff}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00020}00020\ }
@@ -26,27 +26,27 @@
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00022}00022\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00023}\mbox{\hyperlink{namespacens3_a62c7b851c919a4bf38ff4c90bc35c1bd}{00023}}\ \mbox{\hyperlink{namespacens3_adde9ed23eff577cdfec10d85035e32eb}{NS\_LOG\_COMPONENT\_DEFINE}}\ (\textcolor{stringliteral}{"{}DGRTcpApplication"{}});}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00024}00024\ }
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00025}\mbox{\hyperlink{namespacens3_a7d75a13496cf6686e812474262191226}{00025}}\ \mbox{\hyperlink{namespacens3_aef8bf32b4f2f98d854532bfb36d47a7c}{NS\_OBJECT\_ENSURE\_REGISTERED}}\ (DGRTcpApplication);}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00025}\mbox{\hyperlink{namespacens3_a7d75a13496cf6686e812474262191226}{00025}}\ \mbox{\hyperlink{namespacens3_aef8bf32b4f2f98d854532bfb36d47a7c}{NS\_OBJECT\_ENSURE\_REGISTERED}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application}{DGRTcpApplication}});}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00026}00026\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00027}00027\ TypeId}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00028}00028\ DGRTcpApplication::GetTypeId\ (\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00028}\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a88ded51d43467ff95d97c02b8cfe16bb}{00028}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a88ded51d43467ff95d97c02b8cfe16bb}{DGRTcpApplication::GetTypeId}}\ (\textcolor{keywordtype}{void})}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00029}00029\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00030}00030\ \ \ \textcolor{keyword}{static}\ TypeId\ tid\ =\ TypeId\ (\textcolor{stringliteral}{"{}ns3::DGRTcpApplication"{}})}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00031}00031\ \ \ \ \ .SetParent<Application>\ ()}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00031}00031\ \ \ \ \ .SetParent<\mbox{\hyperlink{class_application}{Application}}>\ ()}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00032}00032\ \ \ \ \ .SetGroupName(\textcolor{stringliteral}{"{}Applications"{}})\ }
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00033}00033\ \ \ \ \ .AddConstructor<DGRTcpApplication>\ ()}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00033}00033\ \ \ \ \ .AddConstructor<\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application}{DGRTcpApplication}}>\ ()}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00034}00034\ \ \ \ \ .AddAttribute\ (\textcolor{stringliteral}{"{}SendSize"{}},\ \textcolor{stringliteral}{"{}The\ amount\ of\ data\ to\ send\ each\ time."{}},}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UintegerValue\ (512),}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeUintegerAccessor\ (\&DGRTcpApplication::m\_sendSize),}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeUintegerAccessor\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ac9d6793547c0b63e06c57c60a98950f5}{DGRTcpApplication::m\_sendSize}}),}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeUintegerChecker<uint32\_t>\ (1))}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00038}00038\ \ \ \ \ .AddAttribute\ (\textcolor{stringliteral}{"{}Remote"{}},\ \textcolor{stringliteral}{"{}The\ address\ of\ the\ destination"{}},}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AddressValue\ (),}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeAddressAccessor\ (\&DGRTcpApplication::m\_peer),}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeAddressAccessor\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a2bb9a7886237a94c209af01fd2835176}{DGRTcpApplication::m\_peer}}),}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeAddressChecker\ ())}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00042}00042\ \ \ \ \ .AddAttribute\ (\textcolor{stringliteral}{"{}Local"{}},}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}The\ Address\ on\ which\ to\ bind\ the\ socket.\ If\ not\ set,\ it\ is\ generated\ automatically."{}},}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AddressValue\ (),}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeAddressAccessor\ (\&DGRTcpApplication::m\_local),}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeAddressAccessor\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a8ec3f328863fe6fb94692268ba859359}{DGRTcpApplication::m\_local}}),}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeAddressChecker\ ())}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00047}00047\ \ \ \ \ .AddAttribute\ (\textcolor{stringliteral}{"{}MaxBytes"{}},}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}The\ total\ number\ of\ bytes\ to\ send.\ "{}}}
@@ -54,30 +54,30 @@
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}no\ data\ \ is\ sent\ again.\ The\ value\ zero\ means\ "{}}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}that\ there\ is\ no\ limit."{}},}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UintegerValue\ (0),}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeUintegerAccessor\ (\&DGRTcpApplication::m\_maxBytes),}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeUintegerAccessor\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a1b7cdb5af21ab280cb0851a088a996ef}{DGRTcpApplication::m\_maxBytes}}),}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeUintegerChecker<uint64\_t>\ ())}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00055}00055\ \ \ \ \ .AddAttribute\ (\textcolor{stringliteral}{"{}Protocol"{}},\ \textcolor{stringliteral}{"{}The\ type\ of\ protocol\ to\ use."{}},}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TypeIdValue\ (TcpSocketFactory::GetTypeId\ ()),}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeTypeIdAccessor\ (\&DGRTcpApplication::m\_tid),}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeTypeIdAccessor\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a62988e671dfa974811f37d898b8be226}{DGRTcpApplication::m\_tid}}),}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeTypeIdChecker\ ())}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00059}00059\ \ \ \ \ .AddAttribute\ (\textcolor{stringliteral}{"{}Budget"{}},\ \textcolor{stringliteral}{"{}The\ budget\ of\ certain\ packet."{}},}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UintegerValue\ (\mbox{\hyperlink{dgr-tcp-application_8cc_a40760e9f2359c35da6f29e0a8fafb9ca}{MAX\_UINT\_32}}),}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeUintegerAccessor\ (\&DGRTcpApplication::m\_budget),}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeUintegerAccessor\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a56acd6cac80df3f97b8eeaae6fd3a01c}{DGRTcpApplication::m\_budget}}),}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeUintegerChecker<uint32\_t>\ ())}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00063}00063\ \ \ \ \ .AddAttribute\ (\textcolor{stringliteral}{"{}EnableFlag"{}},}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}EnableFalg\ in\ DGR\ header\ for\ test"{}},}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BooleanValue\ (\textcolor{keyword}{false}),}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeBooleanAccessor\ (\&DGRTcpApplication::m\_flag),}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeBooleanAccessor\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a15de77be23dd9fac37c72dbee6e64049}{DGRTcpApplication::m\_flag}}),}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeBooleanChecker\ ())}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00068}00068\ \ \ \ \ .AddTraceSource\ (\textcolor{stringliteral}{"{}Tx"{}},\ \textcolor{stringliteral}{"{}A\ new\ packet\ is\ sent"{}},}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeTraceSourceAccessor\ (\&DGRTcpApplication::m\_txTrace),}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MakeTraceSourceAccessor\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ad414778df2751fc0d7574a50cb7cafb2}{DGRTcpApplication::m\_txTrace}}),}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ns3::Packet::TracedCallback"{}})}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00071}00071\ \ \ ;}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00072}00072\ \ \ \textcolor{keywordflow}{return}\ tid;}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00073}00073\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00074}00074\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00075}00075\ }
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00076}00076\ DGRTcpApplication::DGRTcpApplication\ ()}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00076}\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_afbb5a3b78bd1e3ef24d5d16b7ec787f8}{00076}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_afbb5a3b78bd1e3ef24d5d16b7ec787f8}{DGRTcpApplication::DGRTcpApplication}}\ ()}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00077}00077\ \ \ :\ m\_socket\ (0),}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00078}00078\ \ \ \ \ m\_connected\ (false),}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00079}00079\ \ \ \ \ m\_totBytes\ (0),}
@@ -88,97 +88,97 @@
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00084}00084\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00085}00085\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00086}00086\ }
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00087}00087\ DGRTcpApplication::\string~DGRTcpApplication\ ()}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00087}\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ac219762c67ff6b442ba12801a80b85ec}{00087}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ac219762c67ff6b442ba12801a80b85ec}{DGRTcpApplication::\string~DGRTcpApplication}}\ ()}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00088}00088\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00089}00089\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00090}00090\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00091}00091\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00092}00092\ \textcolor{keywordtype}{void}}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00093}00093\ DGRTcpApplication::SetMaxBytes\ (uint64\_t\ maxBytes)}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00093}\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a53de82871f6985b8f9134be7fe44132b}{00093}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a53de82871f6985b8f9134be7fe44132b}{DGRTcpApplication::SetMaxBytes}}\ (uint64\_t\ maxBytes)}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00094}00094\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00095}00095\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this}\ <<\ maxBytes);}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00096}00096\ \ \ m\_maxBytes\ =\ maxBytes;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00096}00096\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a1b7cdb5af21ab280cb0851a088a996ef}{m\_maxBytes}}\ =\ maxBytes;}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00097}00097\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00098}00098\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00099}00099\ \textcolor{keywordtype}{void}\ }
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00100}00100\ DGRTcpApplication::SetFlag\ (\textcolor{keywordtype}{bool}\ flag)}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00100}\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a38da0549e1824f6df93438967f401590}{00100}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a38da0549e1824f6df93438967f401590}{DGRTcpApplication::SetFlag}}\ (\textcolor{keywordtype}{bool}\ flag)}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00101}00101\ \{}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00102}00102\ \ \ m\_flag\ =\ flag;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00102}00102\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a15de77be23dd9fac37c72dbee6e64049}{m\_flag}}\ =\ flag;}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00103}00103\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00104}00104\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00105}00105\ \textcolor{keywordtype}{void}}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00106}00106\ DGRTcpApplication::Setup\ (Ptr<Socket>\ socket,\ Address\ sinkAddress,\ uint64\_t\ maxBytes,\ uint32\_t\ budget,\ \textcolor{keywordtype}{bool}\ flag)}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00106}\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ac70dce4689a9be6573b6e0ec78684cf2}{00106}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ac70dce4689a9be6573b6e0ec78684cf2}{DGRTcpApplication::Setup}}\ (Ptr<Socket>\ socket,\ Address\ sinkAddress,\ uint64\_t\ maxBytes,\ uint32\_t\ budget,\ \textcolor{keywordtype}{bool}\ flag)}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00107}00107\ \{}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00108}00108\ \ \ m\_socket\ =\ socket;}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00109}00109\ \ \ m\_peer\ =\ sinkAddress;}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00110}00110\ \ \ m\_maxBytes\ =\ maxBytes;}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00111}00111\ \ \ m\_budget\ =\ budget;}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00112}00112\ \ \ m\_flag\ =\ flag;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00108}00108\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a}{m\_socket}}\ =\ socket;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00109}00109\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a2bb9a7886237a94c209af01fd2835176}{m\_peer}}\ =\ sinkAddress;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00110}00110\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a1b7cdb5af21ab280cb0851a088a996ef}{m\_maxBytes}}\ =\ maxBytes;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00111}00111\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a56acd6cac80df3f97b8eeaae6fd3a01c}{m\_budget}}\ =\ budget;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00112}00112\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a15de77be23dd9fac37c72dbee6e64049}{m\_flag}}\ =\ flag;}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00113}00113\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00114}00114\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00115}00115\ \textcolor{keywordtype}{void}}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00116}00116\ DGRTcpApplication::Setup\ (Ptr<Socket>\ socket,\ Address\ sinkAddress,\ uint64\_t\ maxBytes,\ \textcolor{keywordtype}{bool}\ flag)}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00116}\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a00e523f844693760a1f767266e516dad}{00116}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ac70dce4689a9be6573b6e0ec78684cf2}{DGRTcpApplication::Setup}}\ (Ptr<Socket>\ socket,\ Address\ sinkAddress,\ uint64\_t\ maxBytes,\ \textcolor{keywordtype}{bool}\ flag)}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00117}00117\ \{}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00118}00118\ \ \ m\_socket\ =\ socket;}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00119}00119\ \ \ m\_peer\ =\ sinkAddress;}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00120}00120\ \ \ m\_maxBytes\ =\ maxBytes;}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00121}00121\ \ \ m\_flag\ =\ flag;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00118}00118\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a}{m\_socket}}\ =\ socket;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00119}00119\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a2bb9a7886237a94c209af01fd2835176}{m\_peer}}\ =\ sinkAddress;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00120}00120\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a1b7cdb5af21ab280cb0851a088a996ef}{m\_maxBytes}}\ =\ maxBytes;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00121}00121\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a15de77be23dd9fac37c72dbee6e64049}{m\_flag}}\ =\ flag;}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00122}00122\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00123}00123\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00124}00124\ Ptr<Socket>}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00125}00125\ DGRTcpApplication::GetSocket\ (\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00125}\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a100d0d42cd494d29080f9b5c7b7f2d90}{00125}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a100d0d42cd494d29080f9b5c7b7f2d90}{DGRTcpApplication::GetSocket}}\ (\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00126}00126\ \textcolor{keyword}{}\{}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00127}00127\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00128}00128\ \ \ \textcolor{keywordflow}{return}\ m\_socket;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00128}00128\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a}{m\_socket}};}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00129}00129\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00130}00130\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00131}00131\ \textcolor{keywordtype}{void}}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00132}00132\ DGRTcpApplication::DoDispose\ (\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00132}\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a312417a478c3b5a00ef3c316bb5e7f44}{00132}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a312417a478c3b5a00ef3c316bb5e7f44}{DGRTcpApplication::DoDispose}}\ (\textcolor{keywordtype}{void})}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00133}00133\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00134}00134\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00135}00135\ }
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00136}00136\ \ \ m\_socket\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00137}00137\ \ \ m\_unsentPacket\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00136}00136\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a}{m\_socket}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00137}00137\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_aa0cd91f1b931e1c5f3a94d5a785a1dff}{m\_unsentPacket}}\ =\ 0;}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00138}00138\ \ \ \textcolor{comment}{//\ chain\ up}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00139}00139\ \ \ Application::DoDispose\ ();}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00140}00140\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00141}00141\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00142}00142\ \textcolor{comment}{//\ Application\ Methods}}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00143}00143\ \textcolor{keywordtype}{void}\ DGRTcpApplication::StartApplication\ (\textcolor{keywordtype}{void})\ \textcolor{comment}{//\ Called\ at\ time\ specified\ by\ Start}}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00143}\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ad3f18ec72baf186800e72eed654eac2c}{00143}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ad3f18ec72baf186800e72eed654eac2c}{DGRTcpApplication::StartApplication}}\ (\textcolor{keywordtype}{void})\ \textcolor{comment}{//\ Called\ at\ time\ specified\ by\ Start}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00144}00144\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00145}00145\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00146}00146\ \ \ Address\ from;}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00147}00147\ \ \ \textcolor{comment}{//\ Create\ the\ socket\ if\ not\ already}}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00148}00148\ \ \ \textcolor{keywordflow}{if}\ (!m\_socket)}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00148}00148\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a}{m\_socket}})}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00149}00149\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00150}00150\ \ \ \ \ \ \ m\_socket\ =\ Socket::CreateSocket\ (GetNode\ (),\ m\_tid);}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00150}00150\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a}{m\_socket}}\ =\ Socket::CreateSocket\ (GetNode\ (),\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a62988e671dfa974811f37d898b8be226}{m\_tid}});}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00151}00151\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ret\ =\ -\/1;}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00152}00152\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00153}00153\ \ \ \ \ \ \ \textcolor{comment}{//\ Fatal\ error\ if\ socket\ type\ is\ not\ NS3\_SOCK\_STREAM\ or\ NS3\_SOCK\_SEQPACKET}}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00154}00154\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_socket-\/>GetSocketType\ ()\ !=\ Socket::NS3\_SOCK\_STREAM\ \&\&}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ m\_socket-\/>GetSocketType\ ()\ !=\ Socket::NS3\_SOCK\_SEQPACKET)}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00154}00154\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a}{m\_socket}}-\/>GetSocketType\ ()\ !=\ Socket::NS3\_SOCK\_STREAM\ \&\&}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a}{m\_socket}}-\/>GetSocketType\ ()\ !=\ Socket::NS3\_SOCK\_SEQPACKET)}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00156}00156\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ NS\_FATAL\_ERROR\ (\textcolor{stringliteral}{"{}Using\ BulkSend\ with\ an\ incompatible\ socket\ type.\ "{}}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}BulkSend\ requires\ SOCK\_STREAM\ or\ SOCK\_SEQPACKET.\ "{}}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}In\ other\ words,\ use\ TCP\ instead\ of\ UDP."{}});}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00160}00160\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00161}00161\ }
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00162}00162\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\ m\_local.IsInvalid())}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00162}00162\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a8ec3f328863fe6fb94692268ba859359}{m\_local}}.IsInvalid())}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00163}00163\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ NS\_ABORT\_MSG\_IF\ ((Inet6SocketAddress::IsMatchingType\ (m\_peer)\ \&\&\ InetSocketAddress::IsMatchingType\ (m\_local))\ ||}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (InetSocketAddress::IsMatchingType\ (m\_peer)\ \&\&\ Inet6SocketAddress::IsMatchingType\ (m\_local)),}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ NS\_ABORT\_MSG\_IF\ ((Inet6SocketAddress::IsMatchingType\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a2bb9a7886237a94c209af01fd2835176}{m\_peer}})\ \&\&\ InetSocketAddress::IsMatchingType\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a8ec3f328863fe6fb94692268ba859359}{m\_local}}))\ ||}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (InetSocketAddress::IsMatchingType\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a2bb9a7886237a94c209af01fd2835176}{m\_peer}})\ \&\&\ Inet6SocketAddress::IsMatchingType\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a8ec3f328863fe6fb94692268ba859359}{m\_local}})),}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Incompatible\ peer\ and\ local\ address\ IP\ version"{}});}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ ret\ =\ m\_socket-\/>Bind\ (m\_local);}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ ret\ =\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a}{m\_socket}}-\/>Bind\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a8ec3f328863fe6fb94692268ba859359}{m\_local}});}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00168}00168\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00169}00169\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00170}00170\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Inet6SocketAddress::IsMatchingType\ (m\_peer))}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Inet6SocketAddress::IsMatchingType\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a2bb9a7886237a94c209af01fd2835176}{m\_peer}}))}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ret\ =\ m\_socket-\/>Bind6\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ret\ =\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a}{m\_socket}}-\/>Bind6\ ();}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (InetSocketAddress::IsMatchingType\ (m\_peer))}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (InetSocketAddress::IsMatchingType\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a2bb9a7886237a94c209af01fd2835176}{m\_peer}}))}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ret\ =\ m\_socket-\/>Bind\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ret\ =\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a}{m\_socket}}-\/>Bind\ ();}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00179}00179\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00180}00180\ }
@@ -187,29 +187,29 @@
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ NS\_FATAL\_ERROR\ (\textcolor{stringliteral}{"{}Failed\ to\ bind\ socket"{}});}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00184}00184\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00185}00185\ }
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00186}00186\ \ \ \ \ \ \ m\_socket-\/>Connect\ (m\_peer);}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00187}00187\ \ \ \ \ \ \ m\_socket-\/>ShutdownRecv\ ();}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00188}00188\ \ \ \ \ \ \ m\_socket-\/>SetConnectCallback\ (}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00189}00189\ \ \ \ \ \ \ \ \ MakeCallback\ (\&DGRTcpApplication::ConnectionSucceeded,\ \textcolor{keyword}{this}),}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00190}00190\ \ \ \ \ \ \ \ \ MakeCallback\ (\&DGRTcpApplication::ConnectionFailed,\ \textcolor{keyword}{this}));}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00191}00191\ \ \ \ \ \ \ m\_socket-\/>SetSendCallback\ (}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00192}00192\ \ \ \ \ \ \ \ \ MakeCallback\ (\&DGRTcpApplication::DataSend,\ \textcolor{keyword}{this}));}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00186}00186\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a}{m\_socket}}-\/>Connect\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a2bb9a7886237a94c209af01fd2835176}{m\_peer}});}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00187}00187\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a}{m\_socket}}-\/>ShutdownRecv\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00188}00188\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a}{m\_socket}}-\/>SetConnectCallback\ (}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00189}00189\ \ \ \ \ \ \ \ \ MakeCallback\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a240d181619fe26fa934e3e152c153696}{DGRTcpApplication::ConnectionSucceeded}},\ \textcolor{keyword}{this}),}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00190}00190\ \ \ \ \ \ \ \ \ MakeCallback\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a9a1ef27f22bee68f71fbd609695a4037}{DGRTcpApplication::ConnectionFailed}},\ \textcolor{keyword}{this}));}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00191}00191\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a}{m\_socket}}-\/>SetSendCallback\ (}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00192}00192\ \ \ \ \ \ \ \ \ MakeCallback\ (\&\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ad6e628629f8e191964b873fed001a902}{DGRTcpApplication::DataSend}},\ \textcolor{keyword}{this}));}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00193}00193\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00194}00194\ \ \ \textcolor{keywordflow}{if}\ (m\_connected)}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00194}00194\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ac69ff120417cd0a01d75479b292084c3}{m\_connected}})}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00195}00195\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00196}00196\ \ \ \ \ \ \ m\_socket-\/>GetSockName\ (from);}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00197}00197\ \ \ \ \ \ \ SendData\ (from,\ m\_peer);}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00196}00196\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a}{m\_socket}}-\/>GetSockName\ (from);}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00197}00197\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a5d97018a7a55030432c7bd4941439224}{SendData}}\ (from,\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a2bb9a7886237a94c209af01fd2835176}{m\_peer}});}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00198}00198\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00199}00199\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00200}00200\ }
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00201}00201\ \textcolor{keywordtype}{void}\ DGRTcpApplication::StopApplication\ (\textcolor{keywordtype}{void})\ \textcolor{comment}{//\ Called\ at\ time\ specified\ by\ Stop}}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00201}\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a50b822663c8dfd33f8d1001a499d2412}{00201}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a50b822663c8dfd33f8d1001a499d2412}{DGRTcpApplication::StopApplication}}\ (\textcolor{keywordtype}{void})\ \textcolor{comment}{//\ Called\ at\ time\ specified\ by\ Stop}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00202}00202\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00203}00203\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00204}00204\ }
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00205}00205\ \ \ \textcolor{keywordflow}{if}\ (m\_socket)}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00205}00205\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a}{m\_socket}})}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00206}00206\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00207}00207\ \ \ \ \ \ \ m\_socket-\/>Close\ ();}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00208}00208\ \ \ \ \ \ \ m\_connected\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00207}00207\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a}{m\_socket}}-\/>Close\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00208}00208\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ac69ff120417cd0a01d75479b292084c3}{m\_connected}}\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00209}00209\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00210}00210\ \ \ \textcolor{keywordflow}{else}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00211}00211\ \ \ \ \ \{}
@@ -220,36 +220,36 @@
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00216}00216\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00217}00217\ \textcolor{comment}{//\ Private\ helpers}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00218}00218\ }
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00219}00219\ \textcolor{keywordtype}{void}\ DGRTcpApplication::SendData\ (\textcolor{keyword}{const}\ Address\ \&from,\ \textcolor{keyword}{const}\ Address\ \&to)}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00219}\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a5d97018a7a55030432c7bd4941439224}{00219}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a5d97018a7a55030432c7bd4941439224}{DGRTcpApplication::SendData}}\ (\textcolor{keyword}{const}\ Address\ \&from,\ \textcolor{keyword}{const}\ Address\ \&to)}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00220}00220\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00221}00221\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00222}00222\ }
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00223}00223\ \ \ \textcolor{keywordflow}{while}\ (m\_maxBytes\ ==\ 0\ ||\ m\_totBytes\ <\ m\_maxBytes)}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00223}00223\ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a1b7cdb5af21ab280cb0851a088a996ef}{m\_maxBytes}}\ ==\ 0\ ||\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a7ed974b02f36e99bb1b49eb54876b4f7}{m\_totBytes}}\ <\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a1b7cdb5af21ab280cb0851a088a996ef}{m\_maxBytes}})}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00224}00224\ \ \ \ \ \{\ \textcolor{comment}{//\ Time\ to\ send\ more}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00225}00225\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00226}00226\ \ \ \ \ \ \ \textcolor{comment}{//\ uint64\_t\ to\ allow\ the\ comparison\ later.}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00227}00227\ \ \ \ \ \ \ \textcolor{comment}{//\ the\ result\ is\ in\ a\ uint32\_t\ range\ anyway,\ because}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00228}00228\ \ \ \ \ \ \ \textcolor{comment}{//\ m\_sendSize\ is\ uint32\_t.}}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00229}00229\ \ \ \ \ \ \ uint64\_t\ toSend\ =\ m\_sendSize;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00229}00229\ \ \ \ \ \ \ uint64\_t\ toSend\ =\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ac9d6793547c0b63e06c57c60a98950f5}{m\_sendSize}};}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00230}00230\ \ \ \ \ \ \ \textcolor{comment}{//\ Make\ sure\ we\ don't\ send\ too\ many}}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00231}00231\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_maxBytes\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00231}00231\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a1b7cdb5af21ab280cb0851a088a996ef}{m\_maxBytes}}\ >\ 0)}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00232}00232\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ toSend\ =\ std::min\ (toSend,\ m\_maxBytes\ -\/\ m\_totBytes);}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ toSend\ =\ std::min\ (toSend,\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a1b7cdb5af21ab280cb0851a088a996ef}{m\_maxBytes}}\ -\/\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a7ed974b02f36e99bb1b49eb54876b4f7}{m\_totBytes}});}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00234}00234\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00235}00235\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00236}00236\ \ \ \ \ \ \ NS\_LOG\_LOGIC\ (\textcolor{stringliteral}{"{}sending\ packet\ at\ "{}}\ <<\ Simulator::Now\ ());}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00237}00237\ \ \ \ \ \ \ Ptr<Packet>\ packet;}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00238}00238\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00239}00239\ \ \ \ \ \ \ TimestampTag\ txTimeTag;}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00240}00240\ \ \ \ \ \ \ FlagTag\ flagTag;}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00241}00241\ \ \ \ \ \ \ BudgetTag\ budgetTag;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00240}00240\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_flag_tag}{FlagTag}}\ flagTag;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00241}00241\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_budget_tag}{BudgetTag}}\ budgetTag;}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00242}00242\ \ \ \ \ \ \ txTimeTag.SetTimestamp\ (Simulator::Now\ ());}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00243}00243\ \ \ \ \ \ \ flagTag.SetFlag\ (m\_flag);}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00243}00243\ \ \ \ \ \ \ flagTag.\mbox{\hyperlink{classns3_1_1_flag_tag_a92c961c9c9e46744bf73cf82399e68df}{SetFlag}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a15de77be23dd9fac37c72dbee6e64049}{m\_flag}});}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00244}00244\ \ \ \ \ \ \ \textcolor{comment}{//\ flagTag.Print\ (std::cout);}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00245}00245\ }
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00246}00246\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_unsentPacket)}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00246}00246\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_aa0cd91f1b931e1c5f3a94d5a785a1dff}{m\_unsentPacket}})}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00247}00247\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ packet\ =\ m\_unsentPacket;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ packet\ =\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_aa0cd91f1b931e1c5f3a94d5a785a1dff}{m\_unsentPacket}};}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ toSend\ =\ packet-\/>GetSize\ ();}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00250}00250\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00251}00251\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
@@ -257,18 +257,18 @@
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ packet\ =\ Create<Packet>\ (toSend);}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ packet-\/>AddPacketTag\ (txTimeTag);}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ packet-\/>AddPacketTag\ (flagTag);}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_budget\ !=\ \mbox{\hyperlink{dgr-tcp-application_8cc_a40760e9f2359c35da6f29e0a8fafb9ca}{MAX\_UINT\_32}})}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a56acd6cac80df3f97b8eeaae6fd3a01c}{m\_budget}}\ !=\ \mbox{\hyperlink{dgr-tcp-application_8cc_a40760e9f2359c35da6f29e0a8fafb9ca}{MAX\_UINT\_32}})}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ budgetTag.SetBudget\ (m\_budget);}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ budgetTag.\mbox{\hyperlink{classns3_1_1_budget_tag_a42dfab1331f4f1bb1953c1ec972ab0bb}{SetBudget}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a56acd6cac80df3f97b8eeaae6fd3a01c}{m\_budget}});}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ packet-\/>AddPacketTag\ (budgetTag);}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00261}00261\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00262}00262\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ actual\ =\ m\_socket-\/>Send\ (packet);}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00262}00262\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ actual\ =\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a}{m\_socket}}-\/>Send\ (packet);}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00263}00263\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((\textcolor{keywordtype}{unsigned})\ actual\ ==\ toSend)}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00264}00264\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ m\_totBytes\ +=\ actual;}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ m\_txTrace\ (packet);}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ m\_unsentPacket\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a7ed974b02f36e99bb1b49eb54876b4f7}{m\_totBytes}}\ +=\ actual;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ad414778df2751fc0d7574a50cb7cafb2}{m\_txTrace}}\ (packet);}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_aa0cd91f1b931e1c5f3a94d5a785a1dff}{m\_unsentPacket}}\ =\ 0;}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00268}00268\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00269}00269\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (actual\ ==\ -\/1)}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00270}00270\ \ \ \ \ \ \ \ \ \{}
@@ -276,7 +276,7 @@
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ buffer\ is\ full.\ The\ "{}DataSent"{}\ callback\ will\ pop\ when}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ some\ buffer\ space\ has\ freed\ up.}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ NS\_LOG\_DEBUG\ (\textcolor{stringliteral}{"{}Unable\ to\ send\ packet;\ caching\ for\ later\ attempt"{}});}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ m\_unsentPacket\ =\ packet;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_aa0cd91f1b931e1c5f3a94d5a785a1dff}{m\_unsentPacket}}\ =\ packet;}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00277}00277\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00278}00278\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (actual\ >\ 0\ \&\&\ (\textcolor{keywordtype}{unsigned})\ actual\ <\ toSend)}
@@ -287,9 +287,9 @@
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ NS\_LOG\_DEBUG\ (\textcolor{stringliteral}{"{}Packet\ size:\ "{}}\ <<\ packet-\/>GetSize\ ()\ <<\ \textcolor{stringliteral}{"{};\ sent:\ "{}}\ <<\ actual\ <<\ \textcolor{stringliteral}{"{};\ fragment\ saved:\ "{}}\ <<\ toSend\ -\/\ (\textcolor{keywordtype}{unsigned})\ actual);}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ Ptr<Packet>\ sent\ =\ packet-\/>CreateFragment\ (0,\ actual);}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ Ptr<Packet>\ unsent\ =\ packet-\/>CreateFragment\ (actual,\ (toSend\ -\/\ (\textcolor{keywordtype}{unsigned})\ actual));}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ m\_totBytes\ +=\ actual;}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ m\_txTrace\ (sent);}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ m\_unsentPacket\ =\ unsent;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a7ed974b02f36e99bb1b49eb54876b4f7}{m\_totBytes}}\ +=\ actual;}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ad414778df2751fc0d7574a50cb7cafb2}{m\_txTrace}}\ (sent);}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_aa0cd91f1b931e1c5f3a94d5a785a1dff}{m\_unsentPacket}}\ =\ unsent;}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00290}00290\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00291}00291\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
@@ -298,40 +298,40 @@
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00294}00294\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00295}00295\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00296}00296\ \ \ \textcolor{comment}{//\ Check\ if\ time\ to\ close\ (all\ sent)}}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00297}00297\ \ \ \textcolor{keywordflow}{if}\ (m\_totBytes\ ==\ m\_maxBytes\ \&\&\ m\_connected)}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00297}00297\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a7ed974b02f36e99bb1b49eb54876b4f7}{m\_totBytes}}\ ==\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a1b7cdb5af21ab280cb0851a088a996ef}{m\_maxBytes}}\ \&\&\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ac69ff120417cd0a01d75479b292084c3}{m\_connected}})}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00298}00298\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00299}00299\ \ \ \ \ \ \ m\_socket-\/>Close\ ();}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00300}00300\ \ \ \ \ \ \ m\_connected\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00299}00299\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_adc5e7c4e810093018464aa7fd2d42f3a}{m\_socket}}-\/>Close\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00300}00300\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ac69ff120417cd0a01d75479b292084c3}{m\_connected}}\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00301}00301\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00302}00302\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00303}00303\ }
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00304}00304\ \textcolor{keywordtype}{void}\ DGRTcpApplication::ConnectionSucceeded\ (Ptr<Socket>\ socket)}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00304}\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a240d181619fe26fa934e3e152c153696}{00304}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a240d181619fe26fa934e3e152c153696}{DGRTcpApplication::ConnectionSucceeded}}\ (Ptr<Socket>\ socket)}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00305}00305\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00306}00306\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this}\ <<\ socket);}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00307}00307\ \ \ NS\_LOG\_LOGIC\ (\textcolor{stringliteral}{"{}DGRTcpApplication\ Connection\ succeeded"{}});}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00308}00308\ \ \ m\_connected\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00308}00308\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ac69ff120417cd0a01d75479b292084c3}{m\_connected}}\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00309}00309\ \ \ Address\ from,\ to;}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00310}00310\ \ \ socket-\/>GetSockName\ (from);}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00311}00311\ \ \ socket-\/>GetPeerName\ (to);}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00312}00312\ \ \ SendData\ (from,\ to);}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00312}00312\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a5d97018a7a55030432c7bd4941439224}{SendData}}\ (from,\ to);}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00313}00313\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00314}00314\ }
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00315}00315\ \textcolor{keywordtype}{void}\ DGRTcpApplication::ConnectionFailed\ (Ptr<Socket>\ socket)}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00315}\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a9a1ef27f22bee68f71fbd609695a4037}{00315}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a9a1ef27f22bee68f71fbd609695a4037}{DGRTcpApplication::ConnectionFailed}}\ (Ptr<Socket>\ socket)}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00316}00316\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00317}00317\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this}\ <<\ socket);}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00318}00318\ \ \ NS\_LOG\_LOGIC\ (\textcolor{stringliteral}{"{}DGRTcpApplication,\ Connection\ Failed"{}});}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00319}00319\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00320}00320\ }
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00321}00321\ \textcolor{keywordtype}{void}\ DGRTcpApplication::DataSend\ (Ptr<Socket>\ socket,\ uint32\_t)}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00321}\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ad6e628629f8e191964b873fed001a902}{00321}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ad6e628629f8e191964b873fed001a902}{DGRTcpApplication::DataSend}}\ (Ptr<Socket>\ socket,\ uint32\_t)}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00322}00322\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00323}00323\ \ \ NS\_LOG\_FUNCTION\ (\textcolor{keyword}{this});}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00324}00324\ }
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00325}00325\ \ \ \textcolor{keywordflow}{if}\ (m\_connected)}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00325}00325\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_ac69ff120417cd0a01d75479b292084c3}{m\_connected}})}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00326}00326\ \ \ \ \ \{\ \textcolor{comment}{//\ Only\ send\ new\ data\ if\ the\ connection\ has\ completed}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00327}00327\ \ \ \ \ \ \ Address\ from,\ to;}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00328}00328\ \ \ \ \ \ \ socket-\/>GetSockName\ (from);}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00329}00329\ \ \ \ \ \ \ socket-\/>GetPeerName\ (to);}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00330}00330\ \ \ \ \ \ \ SendData\ (from,\ to);}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00330}00330\ \ \ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_application_a5d97018a7a55030432c7bd4941439224}{SendData}}\ (from,\ to);}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00331}00331\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00332}00332\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application_8cc_source_l00333}00333\ }

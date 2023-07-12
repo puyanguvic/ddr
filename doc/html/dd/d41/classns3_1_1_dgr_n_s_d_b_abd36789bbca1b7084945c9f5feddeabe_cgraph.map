@@ -1,0 +1,5 @@
+<map id="ns3::DgrNSDB::~DgrNSDB" name="ns3::DgrNSDB::~DgrNSDB">
+<area shape="rect" id="Node000001" title="Destroy an empty Neighbor Status Database." alt="" coords="5,5,197,31"/>
+<area shape="rect" id="Node000002" href="$dd/d41/classns3_1_1_dgr_n_s_d_b.html#a491a9d6eaee9df761ef36423c7a92732" title="Set NSDB to empty." alt="" coords="245,5,423,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,15,231,15,231,21,198,21"/>
+</map>

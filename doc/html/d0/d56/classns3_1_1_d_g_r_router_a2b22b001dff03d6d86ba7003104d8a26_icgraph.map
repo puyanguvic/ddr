@@ -1,0 +1,7 @@
+<map id="ns3::DGRRouter::ClearLSAs" name="ns3::DGRRouter::ClearLSAs">
+<area shape="rect" id="Node000001" title="Clear list of LSAs." alt="" coords="276,31,475,56"/>
+<area shape="rect" id="Node000002" href="$d0/d56/classns3_1_1_d_g_r_router.html#af0515aa6e787213f0d24aeae066261e7" title=" " alt="" coords="9,5,225,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="262,35,225,31,225,26,263,30"/>
+<area shape="rect" id="Node000003" href="$d0/d56/classns3_1_1_d_g_r_router.html#ac119cda89d816da90186bb617c710c25" title="Walk the connected channels, discover the adjacent routers and build the associated number of Global ..." alt="" coords="5,55,228,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="262,56,229,60,228,54,262,51"/>
+</map>

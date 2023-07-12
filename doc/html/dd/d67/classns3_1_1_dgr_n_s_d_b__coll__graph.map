@@ -1,0 +1,25 @@
+<map id="ns3::DgrNSDB" name="ns3::DgrNSDB">
+<area shape="rect" id="Node000001" title="The DGR neighbor status database." alt="" coords="5,504,119,529"/>
+<area shape="rect" id="Node000002" href="$d8/d83/class_object.html" title=" " alt="" coords="9,409,73,434"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="49,447,62,503,57,504,44,448"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="97,401,283,441"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="155,451,79,506,76,502,152,447"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="22,108,97,133"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="59,147,57,186,59,236,68,288,87,337,101,356,117,373,154,399,151,403,114,377,96,360,82,340,62,289,53,236,51,186,54,147"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="105,196,256,236"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="86,139,158,194,154,198,83,144"/>
+<area shape="rect" id="Node000005" href="$dc/d3f/classns3_1_1_neighbor_status_entry.html" title=" " alt="" coords="97,313,283,339"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="193,352,193,401,187,401,187,352"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="186,250,192,313,186,313,181,250"/>
+<area shape="rect" id="Node000007" href="$d4/dba/classns3_1_1_status_unit.html" title=" " alt="" coords="121,108,243,133"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="181,147,181,157,181,195,176,196,175,157,176,147"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="163,5,201,31"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="185,45,185,108,179,108,179,45"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="285,108,420,133"/>
+<area shape="poly" id="edge12_Node000003_Node000009" title=" " alt="" coords="432,137,450,151,453,161,451,173,431,213,406,251,376,286,344,317,280,368,225,404,222,399,276,364,341,313,372,282,402,248,427,211,446,171,448,162,445,154,429,141"/>
+<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="314,141,275,160,210,198,208,194,273,155,311,136"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="288,5,327,31"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="312,44,323,83,341,106,337,109,318,85,307,45"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="353,5,392,31"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="370,45,358,109,352,107,365,44"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="ns3::DGRRouteManagerImpl::BuildDGRRoutingDatabase" name="ns3::DGRRouteManagerImpl::BuildDGRRoutingDatabase">
+<area shape="rect" id="Node000001" title="Build the routing database by gathering Link State Advertisements from each node exporting a DGRRoute..." alt="" coords="5,69,212,109"/>
+<area shape="rect" id="Node000002" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a0ec746b926044a548e4f3a09309322ce" title="Get the Link State ID as defined by the OSPF spec." alt="" coords="287,5,444,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,67,273,46,274,51,190,72"/>
+<area shape="rect" id="Node000003" href="$d0/d56/classns3_1_1_d_g_r_router.html#a87f63cac54a25accafa7c849a9aa0dbc" title="Get the specific Global Routing Protocol used." alt="" coords="262,69,469,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="212,87,248,87,248,92,212,92"/>
+<area shape="rect" id="Node000004" href="$d0/d2b/classns3_1_1_d_g_r_route_manager_l_s_d_b.html#aef58a243bb62466470166e11cb165b97" title="Insert an IP address / Link State Advertisement pair into the Link State Database." alt="" coords="260,133,471,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="190,107,272,127,271,133,189,112"/>
+<area shape="rect" id="Node000005" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#aa00b07a4d8639539e94817f98905ef19" title="Return the LSType field of the LSA." alt="" coords="519,133,676,173"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="471,151,505,151,505,156,471,156"/>
+</map>

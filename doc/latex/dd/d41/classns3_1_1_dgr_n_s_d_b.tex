@@ -1,0 +1,382 @@
+\doxysubsection{ns3\+::Dgr\+NSDB Class Reference}
+\hypertarget{classns3_1_1_dgr_n_s_d_b}{}\label{classns3_1_1_dgr_n_s_d_b}\index{ns3::DgrNSDB@{ns3::DgrNSDB}}
+
+
+The DGR neighbor status database.  
+
+
+
+
+{\ttfamily \#include $<$neighbor-\/status-\/database.\+h$>$}
+
+
+
+Inheritance diagram for ns3\+::Dgr\+NSDB\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{df/de3/classns3_1_1_dgr_n_s_d_b__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns3\+::Dgr\+NSDB\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d67/classns3_1_1_dgr_n_s_d_b__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_a1067b6357fb7165760e60b83a2d8297a}{Dgr\+NSDB}} ()
+\begin{DoxyCompactList}\small\item\em Construct an empty Neighbor Status Database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_ab21f90d847d334f7aaffac8de0087a91}{Dgr\+NSDB}} (const \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b}{Dgr\+NSDB}} \&)=delete
+\item 
+\mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_abd36789bbca1b7084945c9f5feddeabe}{\texorpdfstring{$\sim$}{\string~}\+Dgr\+NSDB}} ()
+\begin{DoxyCompactList}\small\item\em Destroy an empty Neighbor Status Database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_a0d9ea8c82a764230832d72825bce2fce}{Get\+Neighbor\+Status\+Entry}} (uint32\+\_\+t iface) const
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry} of a Interface. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_afab689a2b1bf8ec2af909d5d05ab26a6}{Handle\+Neighbor\+Status\+Entry}} (uint32\+\_\+t iface)
+\begin{DoxyCompactList}\small\item\em Handle the \doxylink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry} of a Interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_a491a9d6eaee9df761ef36423c7a92732}{Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Set NSDB to empty. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_a0eabfc389423b0b694d6f30cb1b773f5}{Insert}} (uint32\+\_\+t iface, \mbox{\hyperlink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry}} \texorpdfstring{$\ast$}{*}nse)
+\begin{DoxyCompactList}\small\item\em Insert an \texorpdfstring{$<$}{<}interface, Neighbor Status Entry\texorpdfstring{$>$}{>} into the NSDB. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b}{Dgr\+NSDB}} \& \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_ac951d65c2f4a7b44498c0d2f8eca1542}{operator=}} (const \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b}{Dgr\+NSDB}} \&)=delete
+\item 
+void \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_af2879e59ab61f81cf5c0b0b42b600e33}{Print}} (std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em Print the database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ uint32\+\_\+t, \mbox{\hyperlink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry}} \texorpdfstring{$\ast$}{*} $>$\+::const\+\_\+iterator \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_a2e27030bc02bb9df806e028b73e9df2c}{Neighbor\+Status\+Map\+CI}}
+\begin{DoxyCompactList}\small\item\em NSE type const iterator. \end{DoxyCompactList}\item 
+typedef std\+::map$<$ uint32\+\_\+t, \mbox{\hyperlink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry}} \texorpdfstring{$\ast$}{*} $>$\+::iterator \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_a53e62331816ce1939693079d07be80a6}{Neighbor\+Status\+MapI}}
+\begin{DoxyCompactList}\small\item\em NSE type iterator. \end{DoxyCompactList}\item 
+typedef std\+::map$<$ uint32\+\_\+t, \mbox{\hyperlink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_ab8350d5acc594332013bc0ad920b4246}{NSDBMap\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em container of \texorpdfstring{$<$}{<}interface, \doxylink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry}\texorpdfstring{$>$}{>} \end{DoxyCompactList}\item 
+typedef std\+::pair$<$ uint32\+\_\+t, \mbox{\hyperlink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_ad861c4cffa334c7a3e294a35da8fa1b7}{NSDBPair\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em pair of \texorpdfstring{$<$}{<}interface, \doxylink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry}\texorpdfstring{$>$}{>} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_ab8350d5acc594332013bc0ad920b4246}{NSDBMap\+\_\+t}} \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_ad9111a256a70e9f8ca23127ec1eb7b7f}{m\+\_\+database}}
+\begin{DoxyCompactList}\small\item\em database of \texorpdfstring{$<$}{<}interface, \doxylink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry}\texorpdfstring{$>$}{>} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+The DGR neighbor status database. 
+
+Each node in DGR maintains a neighbor status data base. 
+
+Definition at line \mbox{\hyperlink{neighbor-status-database_8h_source_l00051}{51}} of file \mbox{\hyperlink{neighbor-status-database_8h_source}{neighbor-\/status-\/database.\+h}}.
+
+
+
+\doxysubsubsection{Member Typedef Documentation}
+\Hypertarget{classns3_1_1_dgr_n_s_d_b_a2e27030bc02bb9df806e028b73e9df2c}\label{classns3_1_1_dgr_n_s_d_b_a2e27030bc02bb9df806e028b73e9df2c} 
+\index{ns3::DgrNSDB@{ns3::DgrNSDB}!NeighborStatusMapCI@{NeighborStatusMapCI}}
+\index{NeighborStatusMapCI@{NeighborStatusMapCI}!ns3::DgrNSDB@{ns3::DgrNSDB}}
+\doxyparagraph{\texorpdfstring{NeighborStatusMapCI}{NeighborStatusMapCI}}
+{\footnotesize\ttfamily typedef std\+::map$<$uint32\+\_\+t,\mbox{\hyperlink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry}}\texorpdfstring{$\ast$}{*}$>$\+::const\+\_\+iterator \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_a2e27030bc02bb9df806e028b73e9df2c}{ns3\+::\+Dgr\+NSDB\+::\+Neighbor\+Status\+Map\+CI}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+NSE type const iterator. 
+
+
+
+Definition at line \mbox{\hyperlink{neighbor-status-database_8h_source_l00118}{118}} of file \mbox{\hyperlink{neighbor-status-database_8h_source}{neighbor-\/status-\/database.\+h}}.
+
+\Hypertarget{classns3_1_1_dgr_n_s_d_b_a53e62331816ce1939693079d07be80a6}\label{classns3_1_1_dgr_n_s_d_b_a53e62331816ce1939693079d07be80a6} 
+\index{ns3::DgrNSDB@{ns3::DgrNSDB}!NeighborStatusMapI@{NeighborStatusMapI}}
+\index{NeighborStatusMapI@{NeighborStatusMapI}!ns3::DgrNSDB@{ns3::DgrNSDB}}
+\doxyparagraph{\texorpdfstring{NeighborStatusMapI}{NeighborStatusMapI}}
+{\footnotesize\ttfamily typedef std\+::map$<$uint32\+\_\+t,\mbox{\hyperlink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry}}\texorpdfstring{$\ast$}{*}$>$\+::iterator \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_a53e62331816ce1939693079d07be80a6}{ns3\+::\+Dgr\+NSDB\+::\+Neighbor\+Status\+MapI}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+NSE type iterator. 
+
+
+
+Definition at line \mbox{\hyperlink{neighbor-status-database_8h_source_l00116}{116}} of file \mbox{\hyperlink{neighbor-status-database_8h_source}{neighbor-\/status-\/database.\+h}}.
+
+\Hypertarget{classns3_1_1_dgr_n_s_d_b_ab8350d5acc594332013bc0ad920b4246}\label{classns3_1_1_dgr_n_s_d_b_ab8350d5acc594332013bc0ad920b4246} 
+\index{ns3::DgrNSDB@{ns3::DgrNSDB}!NSDBMap\_t@{NSDBMap\_t}}
+\index{NSDBMap\_t@{NSDBMap\_t}!ns3::DgrNSDB@{ns3::DgrNSDB}}
+\doxyparagraph{\texorpdfstring{NSDBMap\_t}{NSDBMap\_t}}
+{\footnotesize\ttfamily typedef std\+::map$<$uint32\+\_\+t, \mbox{\hyperlink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry}}\texorpdfstring{$\ast$}{*}$>$ \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_ab8350d5acc594332013bc0ad920b4246}{ns3\+::\+Dgr\+NSDB\+::\+NSDBMap\+\_\+t}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+container of \texorpdfstring{$<$}{<}interface, \doxylink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry}\texorpdfstring{$>$}{>} 
+
+
+
+Definition at line \mbox{\hyperlink{neighbor-status-database_8h_source_l00112}{112}} of file \mbox{\hyperlink{neighbor-status-database_8h_source}{neighbor-\/status-\/database.\+h}}.
+
+\Hypertarget{classns3_1_1_dgr_n_s_d_b_ad861c4cffa334c7a3e294a35da8fa1b7}\label{classns3_1_1_dgr_n_s_d_b_ad861c4cffa334c7a3e294a35da8fa1b7} 
+\index{ns3::DgrNSDB@{ns3::DgrNSDB}!NSDBPair\_t@{NSDBPair\_t}}
+\index{NSDBPair\_t@{NSDBPair\_t}!ns3::DgrNSDB@{ns3::DgrNSDB}}
+\doxyparagraph{\texorpdfstring{NSDBPair\_t}{NSDBPair\_t}}
+{\footnotesize\ttfamily typedef std\+::pair$<$uint32\+\_\+t, \mbox{\hyperlink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry}}\texorpdfstring{$\ast$}{*}$>$ \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_ad861c4cffa334c7a3e294a35da8fa1b7}{ns3\+::\+Dgr\+NSDB\+::\+NSDBPair\+\_\+t}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+pair of \texorpdfstring{$<$}{<}interface, \doxylink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry}\texorpdfstring{$>$}{>} 
+
+
+
+Definition at line \mbox{\hyperlink{neighbor-status-database_8h_source_l00114}{114}} of file \mbox{\hyperlink{neighbor-status-database_8h_source}{neighbor-\/status-\/database.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_dgr_n_s_d_b_a1067b6357fb7165760e60b83a2d8297a}\label{classns3_1_1_dgr_n_s_d_b_a1067b6357fb7165760e60b83a2d8297a} 
+\index{ns3::DgrNSDB@{ns3::DgrNSDB}!DgrNSDB@{DgrNSDB}}
+\index{DgrNSDB@{DgrNSDB}!ns3::DgrNSDB@{ns3::DgrNSDB}}
+\doxyparagraph{\texorpdfstring{DgrNSDB()}{DgrNSDB()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ns3\+::\+Dgr\+NSDB\+::\+Dgr\+NSDB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct an empty Neighbor Status Database. 
+
+The database map composing the Neighbor Status Database in initilaized in this constructor. 
+
+Definition at line \mbox{\hyperlink{neighbor-status-database_8cc_source_l00134}{134}} of file \mbox{\hyperlink{neighbor-status-database_8cc_source}{neighbor-\/status-\/database.\+cc}}.
+
+\Hypertarget{classns3_1_1_dgr_n_s_d_b_abd36789bbca1b7084945c9f5feddeabe}\label{classns3_1_1_dgr_n_s_d_b_abd36789bbca1b7084945c9f5feddeabe} 
+\index{ns3::DgrNSDB@{ns3::DgrNSDB}!````~DgrNSDB@{\texorpdfstring{$\sim$}{\string~}DgrNSDB}}
+\index{````~DgrNSDB@{\texorpdfstring{$\sim$}{\string~}DgrNSDB}!ns3::DgrNSDB@{ns3::DgrNSDB}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DgrNSDB()}{\string~DgrNSDB()}}
+{\footnotesize\ttfamily ns3\+::\+Dgr\+NSDB\+::\texorpdfstring{$\sim$}{\string~}\+Dgr\+NSDB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy an empty Neighbor Status Database. 
+
+Before distroy the database, resources should be release by clear () 
+
+Definition at line \mbox{\hyperlink{neighbor-status-database_8cc_source_l00140}{140}} of file \mbox{\hyperlink{neighbor-status-database_8cc_source}{neighbor-\/status-\/database.\+cc}}.
+
+
+
+References \mbox{\hyperlink{neighbor-status-database_8cc_source_l00155}{Initialize()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d41/classns3_1_1_dgr_n_s_d_b_abd36789bbca1b7084945c9f5feddeabe_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_dgr_n_s_d_b_ab21f90d847d334f7aaffac8de0087a91}\label{classns3_1_1_dgr_n_s_d_b_ab21f90d847d334f7aaffac8de0087a91} 
+\index{ns3::DgrNSDB@{ns3::DgrNSDB}!DgrNSDB@{DgrNSDB}}
+\index{DgrNSDB@{DgrNSDB}!ns3::DgrNSDB@{ns3::DgrNSDB}}
+\doxyparagraph{\texorpdfstring{DgrNSDB()}{DgrNSDB()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ns3\+::\+Dgr\+NSDB\+::\+Dgr\+NSDB (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b}{Dgr\+NSDB}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_dgr_n_s_d_b_a0d9ea8c82a764230832d72825bce2fce}\label{classns3_1_1_dgr_n_s_d_b_a0d9ea8c82a764230832d72825bce2fce} 
+\index{ns3::DgrNSDB@{ns3::DgrNSDB}!GetNeighborStatusEntry@{GetNeighborStatusEntry}}
+\index{GetNeighborStatusEntry@{GetNeighborStatusEntry}!ns3::DgrNSDB@{ns3::DgrNSDB}}
+\doxyparagraph{\texorpdfstring{GetNeighborStatusEntry()}{GetNeighborStatusEntry()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry}} \texorpdfstring{$\ast$}{*} ns3\+::\+Dgr\+NSDB\+::\+Get\+Neighbor\+Status\+Entry (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{iface }\end{DoxyParamCaption}) const}
+
+
+
+Get the \doxylink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry} of a Interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iface} & The interface number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Neighbor\+Status\+Entry\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{neighbor-status-database_8cc_source_l00162}{162}} of file \mbox{\hyperlink{neighbor-status-database_8cc_source}{neighbor-\/status-\/database.\+cc}}.
+
+
+
+References \mbox{\hyperlink{neighbor-status-database_8h_source_l00119}{m\+\_\+database}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l00253}{ns3\+::\+Ipv4\+DGRRouting\+::\+Lookup\+DGRRoute()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d41/classns3_1_1_dgr_n_s_d_b_a0d9ea8c82a764230832d72825bce2fce_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_dgr_n_s_d_b_afab689a2b1bf8ec2af909d5d05ab26a6}\label{classns3_1_1_dgr_n_s_d_b_afab689a2b1bf8ec2af909d5d05ab26a6} 
+\index{ns3::DgrNSDB@{ns3::DgrNSDB}!HandleNeighborStatusEntry@{HandleNeighborStatusEntry}}
+\index{HandleNeighborStatusEntry@{HandleNeighborStatusEntry}!ns3::DgrNSDB@{ns3::DgrNSDB}}
+\doxyparagraph{\texorpdfstring{HandleNeighborStatusEntry()}{HandleNeighborStatusEntry()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry}} \texorpdfstring{$\ast$}{*} ns3\+::\+Dgr\+NSDB\+::\+Handle\+Neighbor\+Status\+Entry (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{iface }\end{DoxyParamCaption})}
+
+
+
+Handle the \doxylink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry} of a Interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iface} & The interface number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Neighbor\+Status\+Entry\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{neighbor-status-database_8cc_source_l00177}{177}} of file \mbox{\hyperlink{neighbor-status-database_8cc_source}{neighbor-\/status-\/database.\+cc}}.
+
+
+
+References \mbox{\hyperlink{neighbor-status-database_8h_source_l00119}{m\+\_\+database}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l01432}{ns3\+::\+Ipv4\+DGRRouting\+::\+Handle\+Responses()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d41/classns3_1_1_dgr_n_s_d_b_afab689a2b1bf8ec2af909d5d05ab26a6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_dgr_n_s_d_b_a491a9d6eaee9df761ef36423c7a92732}\label{classns3_1_1_dgr_n_s_d_b_a491a9d6eaee9df761ef36423c7a92732} 
+\index{ns3::DgrNSDB@{ns3::DgrNSDB}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!ns3::DgrNSDB@{ns3::DgrNSDB}}
+\doxyparagraph{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void ns3\+::\+Dgr\+NSDB\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set NSDB to empty. 
+
+
+
+Definition at line \mbox{\hyperlink{neighbor-status-database_8cc_source_l00155}{155}} of file \mbox{\hyperlink{neighbor-status-database_8cc_source}{neighbor-\/status-\/database.\+cc}}.
+
+
+
+References \mbox{\hyperlink{neighbor-status-database_8h_source_l00119}{m\+\_\+database}}.
+
+
+
+Referenced by \mbox{\hyperlink{neighbor-status-database_8cc_source_l00140}{\texorpdfstring{$\sim$}{\string~}\+Dgr\+NSDB()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d41/classns3_1_1_dgr_n_s_d_b_a491a9d6eaee9df761ef36423c7a92732_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_dgr_n_s_d_b_a0eabfc389423b0b694d6f30cb1b773f5}\label{classns3_1_1_dgr_n_s_d_b_a0eabfc389423b0b694d6f30cb1b773f5} 
+\index{ns3::DgrNSDB@{ns3::DgrNSDB}!Insert@{Insert}}
+\index{Insert@{Insert}!ns3::DgrNSDB@{ns3::DgrNSDB}}
+\doxyparagraph{\texorpdfstring{Insert()}{Insert()}}
+{\footnotesize\ttfamily void ns3\+::\+Dgr\+NSDB\+::\+Insert (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{iface,  }\item[{\mbox{\hyperlink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry}} \texorpdfstring{$\ast$}{*}}]{nse }\end{DoxyParamCaption})}
+
+
+
+Insert an \texorpdfstring{$<$}{<}interface, Neighbor Status Entry\texorpdfstring{$>$}{>} into the NSDB. 
+
+The interface and \doxylink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry} given as parameters are converted to an STL pair and insert into the database map. 
+\begin{DoxyParams}{Parameters}
+{\em iface} & interface number \\
+\hline
+{\em nse} & the neighbor status entry \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{neighbor-status-database_8cc_source_l00193}{193}} of file \mbox{\hyperlink{neighbor-status-database_8cc_source}{neighbor-\/status-\/database.\+cc}}.
+
+
+
+References \mbox{\hyperlink{neighbor-status-database_8h_source_l00119}{m\+\_\+database}}.
+
+
+
+Referenced by \mbox{\hyperlink{ipv4-dgr-routing_8cc_source_l01432}{ns3\+::\+Ipv4\+DGRRouting\+::\+Handle\+Responses()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d41/classns3_1_1_dgr_n_s_d_b_a0eabfc389423b0b694d6f30cb1b773f5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_dgr_n_s_d_b_ac951d65c2f4a7b44498c0d2f8eca1542}\label{classns3_1_1_dgr_n_s_d_b_ac951d65c2f4a7b44498c0d2f8eca1542} 
+\index{ns3::DgrNSDB@{ns3::DgrNSDB}!operator=@{operator=}}
+\index{operator=@{operator=}!ns3::DgrNSDB@{ns3::DgrNSDB}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b}{Dgr\+NSDB}} \& ns3\+::\+Dgr\+NSDB\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b}{Dgr\+NSDB}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{classns3_1_1_dgr_n_s_d_b_af2879e59ab61f81cf5c0b0b42b600e33}\label{classns3_1_1_dgr_n_s_d_b_af2879e59ab61f81cf5c0b0b42b600e33} 
+\index{ns3::DgrNSDB@{ns3::DgrNSDB}!Print@{Print}}
+\index{Print@{Print}!ns3::DgrNSDB@{ns3::DgrNSDB}}
+\doxyparagraph{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void ns3\+::\+Dgr\+NSDB\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const}
+
+
+
+Print the database. 
+
+
+
+Definition at line \mbox{\hyperlink{neighbor-status-database_8cc_source_l00210}{210}} of file \mbox{\hyperlink{neighbor-status-database_8cc_source}{neighbor-\/status-\/database.\+cc}}.
+
+
+
+References \mbox{\hyperlink{neighbor-status-database_8h_source_l00119}{m\+\_\+database}}.
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{classns3_1_1_dgr_n_s_d_b_ad9111a256a70e9f8ca23127ec1eb7b7f}\label{classns3_1_1_dgr_n_s_d_b_ad9111a256a70e9f8ca23127ec1eb7b7f} 
+\index{ns3::DgrNSDB@{ns3::DgrNSDB}!m\_database@{m\_database}}
+\index{m\_database@{m\_database}!ns3::DgrNSDB@{ns3::DgrNSDB}}
+\doxyparagraph{\texorpdfstring{m\_database}{m\_database}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_dgr_n_s_d_b_ab8350d5acc594332013bc0ad920b4246}{NSDBMap\+\_\+t}} ns3\+::\+Dgr\+NSDB\+::m\+\_\+database\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+database of \texorpdfstring{$<$}{<}interface, \doxylink{classns3_1_1_neighbor_status_entry}{Neighbor\+Status\+Entry}\texorpdfstring{$>$}{>} 
+
+
+
+Definition at line \mbox{\hyperlink{neighbor-status-database_8h_source_l00119}{119}} of file \mbox{\hyperlink{neighbor-status-database_8h_source}{neighbor-\/status-\/database.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{neighbor-status-database_8cc_source_l00162}{Get\+Neighbor\+Status\+Entry()}}, \mbox{\hyperlink{neighbor-status-database_8cc_source_l00177}{Handle\+Neighbor\+Status\+Entry()}}, \mbox{\hyperlink{neighbor-status-database_8cc_source_l00155}{Initialize()}}, \mbox{\hyperlink{neighbor-status-database_8cc_source_l00193}{Insert()}}, and \mbox{\hyperlink{neighbor-status-database_8cc_source_l00210}{Print()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{neighbor-status-database_8h}{neighbor-\/status-\/database.\+h}}\item 
+model/\mbox{\hyperlink{neighbor-status-database_8cc}{neighbor-\/status-\/database.\+cc}}\end{DoxyCompactItemize}

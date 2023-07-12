@@ -1,0 +1,5 @@
+<map id="ns3::DGRRouteManagerLSDB::Insert" name="ns3::DGRRouteManagerLSDB::Insert">
+<area shape="rect" id="Node000001" title="Insert an IP address / Link State Advertisement pair into the Link State Database." alt="" coords="260,5,471,45"/>
+<area shape="rect" id="Node000002" href="$da/d20/classns3_1_1_d_g_r_route_manager_impl.html#a033d120271836b470fecfe120c6fdbc8" title="Build the routing database by gathering Link State Advertisements from each node exporting a DGRRoute..." alt="" coords="5,5,212,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,28,212,28,212,23,247,23"/>
+</map>

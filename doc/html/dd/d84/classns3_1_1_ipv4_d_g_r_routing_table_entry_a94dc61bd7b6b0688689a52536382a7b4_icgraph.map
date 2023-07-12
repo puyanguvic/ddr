@@ -1,0 +1,7 @@
+<map id="ns3::Ipv4DGRRoutingTableEntry::GetDestNetworkMask" name="ns3::Ipv4DGRRoutingTableEntry::GetDestNetworkMask">
+<area shape="rect" id="Node000001" title=" " alt="" coords="184,23,391,63"/>
+<area shape="rect" id="Node000002" href="$d7/d2e/namespacens3.html#a2a7b22d2382111fb3a765552a9d286f4" title="Stream insertion operator." alt="" coords="5,5,136,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,32,136,28,136,23,170,27"/>
+<area shape="rect" id="Node000003" href="$d7/d2e/namespacens3.html#a31be9c355502d5d92cd252ad21233aeb" title="Equality operator." alt="" coords="5,55,136,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,59,136,63,136,57,170,54"/>
+</map>

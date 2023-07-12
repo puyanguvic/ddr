@@ -1,0 +1,8 @@
+<map id="ns3::DGRUdpApplication::ScheduleTx" name="ns3::DGRUdpApplication::ScheduleTx">
+<area shape="rect" id="Node000001" title="Schedule a new transmission." alt="" coords="464,5,645,45"/>
+<area shape="rect" id="Node000002" href="$d5/dbe/classns3_1_1_d_g_r_udp_application.html#a844392732fe5f6e197992c862c4151db" title="Send a packet" alt="" coords="235,5,416,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="450,37,416,37,416,31,450,32"/>
+<area shape="poly" id="edge2_Node000002_Node000001" title=" " alt="" coords="430,14,464,14,464,19,430,19"/>
+<area shape="rect" id="Node000003" href="$d5/dbe/classns3_1_1_d_g_r_udp_application.html#ada9c016c08e91a65da084c790acd4618" title=" " alt="" coords="5,5,187,45"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="221,28,187,28,187,23,221,23"/>
+</map>

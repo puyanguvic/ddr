@@ -25,12 +25,28 @@
 var NAVTREE =
 [
   [ "DGRv2", "index.html", [
+    [ "Todo List", "dd/da0/todo.html", null ],
+    [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
         [ "Functions", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", null ]
+      ] ]
+    ] ],
+    [ "Classes", "annotated.html", [
+      [ "Class List", "annotated.html", "annotated_dup" ],
+      [ "Class Index", "classes.html", null ],
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
+      [ "Class Members", "functions.html", [
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Functions", "functions_func.html", "functions_func" ],
+        [ "Variables", "functions_vars.html", null ],
+        [ "Typedefs", "functions_type.html", null ],
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Enumerator", "functions_eval.html", null ],
+        [ "Related Symbols", "functions_rela.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -47,7 +63,12 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"d0/dbf/dgr-tcp-application_8cc.html"
+"annotated.html",
+"d1/de8/classns3_1_1_dgr_header.html#a31749d9e94fa05433769aefdc48b99ee",
+"d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a2d6cf227cde572e9c99d273a0e0fa5f7",
+"d8/d5a/classns3_1_1_ipv4_d_g_r_routing_helper.html#a749c1c4035138cb915e0a2e83c614355",
+"dc/d43/classns3_1_1_d_g_r_vertex.html#a6afcdedc8616fc035f8c9736d5679cd4",
+"de/d53/classns3_1_1_d_g_r_routing_link_record.html#a9fe6e135674ef321bc11b48f90071857"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,0 +1,25 @@
+<map id="ns3::DGRRouteManagerImpl::SPFIntraAddRouter" name="ns3::DGRRouteManagerImpl::SPFIntraAddRouter">
+<area shape="rect" id="Node000001" title="Add a host route to the routing tables." alt="" coords="5,319,212,359"/>
+<area shape="rect" id="Node000002" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a307ee8139d815f7f26b8cf01e6885b53" title="Get the distance from the root vertex to &quot;this&quot; DGRVertex object." alt="" coords="260,5,472,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,318,129,265,157,195,200,120,227,85,258,55,265,50,268,55,262,59,231,89,204,123,162,197,134,267,118,319"/>
+<area shape="rect" id="Node000003" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#a97080a8409f77898f4485230be0be5e4" title="Get the Link Data field of the Global Routing Link Record." alt="" coords="264,69,468,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="116,317,136,276,166,222,208,167,232,141,258,119,267,113,270,118,262,123,235,145,212,170,171,225,140,278,121,320"/>
+<area shape="rect" id="Node000004" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#acb5df9fec863df510911aa3e64d4aa04" title="Return a pointer to the specified Global Routing Link Record." alt="" coords="287,133,445,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="122,317,177,251,216,215,259,183,274,175,276,180,261,188,219,219,181,255,126,320"/>
+<area shape="rect" id="Node000005" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a0ec746b926044a548e4f3a09309322ce" title="Get the Link State ID as defined by the OSPF spec." alt="" coords="287,197,445,237"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="138,316,193,281,259,247,277,240,279,245,261,252,195,286,141,321"/>
+<area shape="rect" id="Node000006" href="$de/d53/classns3_1_1_d_g_r_routing_link_record.html#ab9148eaf7a9d088a397e66164c1f30b9" title="Get the Link Type field of the Global Routing Link Record." alt="" coords="264,261,468,301"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="198,316,262,302,263,307,200,321"/>
+<area shape="rect" id="Node000007" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a5f9422d4f1f9df2f301cbd578e29ae7b" title="Get the Global Router Link State Advertisement returned by the Global Router represented by this DGRV..." alt="" coords="276,326,456,351"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="212,336,262,336,262,341,212,341"/>
+<area shape="rect" id="Node000008" href="$d5/d4d/classns3_1_1_d_g_r_routing_l_s_a.html#a882a042d18bcbdea3bc1a3eb55dcfe58" title="Return the number of Global Routing Link Records in the LSA." alt="" coords="287,376,445,416"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="200,356,274,373,273,378,198,361"/>
+<area shape="rect" id="Node000009" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a691c41409919639a4aaea1443fa26ed5" title="Get the number of exit directions from root for reaching &#39;this&#39; vertex." alt="" coords="269,440,463,480"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="141,357,195,391,261,426,279,433,277,438,259,430,193,396,138,361"/>
+<area shape="rect" id="Node000010" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a9e66f0b2ee7432156046e75672968138" title="Obtain a pair indicating the exit direction from the root." alt="" coords="261,504,471,544"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="126,357,181,422,219,459,261,490,273,496,270,501,259,494,216,463,177,426,122,360"/>
+<area shape="rect" id="Node000011" href="$d0/d56/classns3_1_1_d_g_r_router.html#a87f63cac54a25accafa7c849a9aa0dbc" title="Get the specific Global Routing Protocol used." alt="" coords="263,568,469,608"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="121,358,140,399,171,452,212,507,235,532,262,554,270,559,267,564,258,558,232,536,208,510,166,455,136,401,116,360"/>
+<area shape="rect" id="Node000012" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a83acd923d19102c507faadb2f4e68f56" title="Get the Vertex ID field of a DGRVertex object." alt="" coords="261,633,471,658"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="117,358,133,411,161,481,180,519,203,555,230,589,262,618,271,624,268,629,258,622,226,593,199,559,176,522,156,484,128,412,112,359"/>
+</map>

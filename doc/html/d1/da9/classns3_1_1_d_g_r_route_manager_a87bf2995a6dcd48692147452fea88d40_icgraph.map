@@ -1,0 +1,5 @@
+<map id="ns3::DGRRouteManager::AllocateRouterId" name="ns3::DGRRouteManager::AllocateRouterId">
+<area shape="rect" id="Node000001" title="Allocate a 32&#45;bit router ID from monotonically increasing counter." alt="" coords="259,5,436,45"/>
+<area shape="rect" id="Node000002" href="$d0/d56/classns3_1_1_d_g_r_router.html#a0bd2dfa51885b1dc89d7dfcb88435803" title="Create a Global Router class." alt="" coords="5,13,211,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,28,211,28,211,23,245,23"/>
+</map>

@@ -4,7 +4,7 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00001}00001\ \textcolor{comment}{/*\ -\/*-\/\ Mode:C++;\ c-\/file-\/style:"{}gnu"{};\ indent-\/tabs-\/mode:nil;\ -\/*-\/\ */}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00002}00002\ }
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}dgr-\/tcp-\/application-\/helper.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dgr-tcp-application-helper_8h}{dgr-\/tcp-\/application-\/helper.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}ns3/inet-\/socket-\/address.h"{}}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}ns3/packet-\/socket-\/address.h"{}}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}ns3/string.h"{}}}
@@ -12,48 +12,48 @@
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00008}00008\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00009}00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacens3}{ns3}}\ \{}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00010}00010\ }
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00011}00011\ DGRTcpAppHelper::DGRTcpAppHelper\ (std::string\ protocol,\ Address\ address)}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00011}\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_aad85c16ff200bdde6abd8c14ee787c72}{00011}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_aad85c16ff200bdde6abd8c14ee787c72}{DGRTcpAppHelper::DGRTcpAppHelper}}\ (std::string\ protocol,\ Address\ address)}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00012}00012\ \{}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00013}00013\ \ \ m\_factory.SetTypeId\ (\textcolor{stringliteral}{"{}ns3::DGRTcpApplication"{}});}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00014}00014\ \ \ m\_factory.Set\ (\textcolor{stringliteral}{"{}Protocol"{}},\ StringValue\ (protocol));}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00015}00015\ \ \ m\_factory.Set\ (\textcolor{stringliteral}{"{}Remote"{}},\ AddressValue\ (address));}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00013}00013\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_af2ed4227d123d8957f3aa6b6e3710dfd}{m\_factory}}.SetTypeId\ (\textcolor{stringliteral}{"{}ns3::DGRTcpApplication"{}});}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00014}00014\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_af2ed4227d123d8957f3aa6b6e3710dfd}{m\_factory}}.Set\ (\textcolor{stringliteral}{"{}Protocol"{}},\ StringValue\ (protocol));}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00015}00015\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_af2ed4227d123d8957f3aa6b6e3710dfd}{m\_factory}}.Set\ (\textcolor{stringliteral}{"{}Remote"{}},\ AddressValue\ (address));}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00016}00016\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00017}00017\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00018}00018\ \textcolor{keywordtype}{void}}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00019}00019\ DGRTcpAppHelper::SetAttribute\ (std::string\ name,\ \textcolor{keyword}{const}\ AttributeValue\ \&value)}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00019}\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_a539f8b98bfc4abea9cf3ad81eefe9808}{00019}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_a539f8b98bfc4abea9cf3ad81eefe9808}{DGRTcpAppHelper::SetAttribute}}\ (std::string\ name,\ \textcolor{keyword}{const}\ AttributeValue\ \&value)}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00020}00020\ \{}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00021}00021\ \ \ m\_factory.Set\ (name,\ value);}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00021}00021\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_af2ed4227d123d8957f3aa6b6e3710dfd}{m\_factory}}.Set\ (name,\ value);}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00022}00022\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00023}00023\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00024}00024\ ApplicationContainer}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00025}00025\ DGRTcpAppHelper::Install\ (Ptr<Node>\ node)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00025}\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_abae05b9b0d562e6674b924431f9231ec}{00025}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_a91b669aff39a474e9c269dcf5a9818bd}{DGRTcpAppHelper::Install}}\ (Ptr<Node>\ node)\textcolor{keyword}{\ const}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00026}00026\ \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00027}00027\ \ \ \textcolor{keywordflow}{return}\ ApplicationContainer\ (InstallPriv\ (node));}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00027}00027\ \ \ \textcolor{keywordflow}{return}\ ApplicationContainer\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_a63d0f9d738361206fb091e66795142e9}{InstallPriv}}\ (node));}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00028}00028\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00029}00029\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00030}00030\ ApplicationContainer}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00031}00031\ DGRTcpAppHelper::Install\ (std::string\ nodeName)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00031}\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_a6406ac7cf428b0b70a0098b1a01f420b}{00031}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_a91b669aff39a474e9c269dcf5a9818bd}{DGRTcpAppHelper::Install}}\ (std::string\ nodeName)\textcolor{keyword}{\ const}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00032}00032\ \textcolor{keyword}{}\{}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00033}00033\ \ \ Ptr<Node>\ node\ =\ Names::Find<Node>\ (nodeName);}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00034}00034\ \ \ \textcolor{keywordflow}{return}\ ApplicationContainer\ (InstallPriv\ (node));}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00034}00034\ \ \ \textcolor{keywordflow}{return}\ ApplicationContainer\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_a63d0f9d738361206fb091e66795142e9}{InstallPriv}}\ (node));}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00035}00035\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00036}00036\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00037}00037\ ApplicationContainer}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00038}00038\ DGRTcpAppHelper::Install\ (NodeContainer\ c)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00038}\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_a91b669aff39a474e9c269dcf5a9818bd}{00038}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_a91b669aff39a474e9c269dcf5a9818bd}{DGRTcpAppHelper::Install}}\ (NodeContainer\ c)\textcolor{keyword}{\ const}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00039}00039\ \textcolor{keyword}{}\{}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00040}00040\ \ \ ApplicationContainer\ apps;}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00041}00041\ \ \ \textcolor{keywordflow}{for}\ (NodeContainer::Iterator\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}\ =\ c.Begin\ ();\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}\ !=\ c.End\ ();\ ++\mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}})}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00042}00042\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00043}00043\ \ \ \ \ \ \ apps.Add\ (InstallPriv\ (*\mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}));}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00043}00043\ \ \ \ \ \ \ apps.Add\ (\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_a63d0f9d738361206fb091e66795142e9}{InstallPriv}}\ (*\mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}));}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00044}00044\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00045}00045\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00046}00046\ \ \ \textcolor{keywordflow}{return}\ apps;}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00047}00047\ \}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00048}00048\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00049}00049\ Ptr<Application>}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00050}00050\ DGRTcpAppHelper::InstallPriv\ (Ptr<Node>\ node)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00050}\mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_a63d0f9d738361206fb091e66795142e9}{00050}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_a63d0f9d738361206fb091e66795142e9}{DGRTcpAppHelper::InstallPriv}}\ (Ptr<Node>\ node)\textcolor{keyword}{\ const}}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00051}00051\ \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00052}00052\ \ \ Ptr<Application>\ app\ =\ m\_factory.Create<Application>\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00052}00052\ \ \ Ptr<Application>\ app\ =\ \mbox{\hyperlink{classns3_1_1_d_g_r_tcp_app_helper_af2ed4227d123d8957f3aa6b6e3710dfd}{m\_factory}}.Create<\mbox{\hyperlink{class_application}{Application}}>\ ();}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00053}00053\ \ \ node-\/>AddApplication\ (app);}
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00054}00054\ }
 \DoxyCodeLine{\Hypertarget{dgr-tcp-application-helper_8cc_source_l00055}00055\ \ \ \textcolor{keywordflow}{return}\ app;}

@@ -1,0 +1,9 @@
+<map id="ns3::NeighborStatusEntry::Insert" name="ns3::NeighborStatusEntry::Insert">
+<area shape="rect" id="Node000001" title=" " alt="" coords="629,5,816,45"/>
+<area shape="rect" id="Node000002" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#aa29a1573985386ddcc0c9616ab524836" title="Handle DGR responses." alt="" coords="421,5,581,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="616,28,582,28,582,23,616,23"/>
+<area shape="rect" id="Node000003" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#a2eb8a683180ce3d3726767f5b986e3d8" title="Receive an DGR message." alt="" coords="213,5,373,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="408,28,374,28,374,23,408,23"/>
+<area shape="rect" id="Node000004" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html#a0bb01e6d6468d3c42a989434c193b372" title="Start protocol operation." alt="" coords="5,5,165,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="200,28,166,28,166,23,200,23"/>
+</map>

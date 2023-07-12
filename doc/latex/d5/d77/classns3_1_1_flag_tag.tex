@@ -1,0 +1,277 @@
+\doxysubsection{ns3\+::Flag\+Tag Class Reference}
+\hypertarget{classns3_1_1_flag_tag}{}\label{classns3_1_1_flag_tag}\index{ns3::FlagTag@{ns3::FlagTag}}
+
+
+This class implements a tag that carries a flag to the application layer.  
+
+
+
+
+{\ttfamily \#include $<$dgr-\/tags.\+h$>$}
+
+
+
+Inheritance diagram for ns3\+::Flag\+Tag\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{d8/d1a/classns3_1_1_flag_tag__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns3\+::Flag\+Tag\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{d9/d16/classns3_1_1_flag_tag__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_flag_tag_a5ab5aac189eb7786f73a1e4d9356db88}{Flag\+Tag}} ()
+\item 
+void \mbox{\hyperlink{classns3_1_1_flag_tag_a11e898ed3ab9f24bf6eed35ec5e46ed7}{Deserialize}} (Tag\+Buffer \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}) override
+\item 
+bool \mbox{\hyperlink{classns3_1_1_flag_tag_a1af1deae4da34eb465dd0d18acad52a6}{Get\+Flag}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the tag\textquotesingle{}s flag. \end{DoxyCompactList}\item 
+Type\+Id \mbox{\hyperlink{classns3_1_1_flag_tag_a4dc1f450efbd7a4bfabe02314a96ba40}{Get\+Instance\+Type\+Id}} (void) const override
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_flag_tag_a26f8c3fb4074289dd309456fb2b45ef0}{Get\+Serialized\+Size}} (void) const override
+\item 
+void \mbox{\hyperlink{classns3_1_1_flag_tag_a03888da6210e8342f231b99942e29747}{Print}} (std\+::ostream \&os) const override
+\item 
+void \mbox{\hyperlink{classns3_1_1_flag_tag_a0891649d6ff04fc214a7e7bc65b79765}{Serialize}} (Tag\+Buffer \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}) const override
+\item 
+void \mbox{\hyperlink{classns3_1_1_flag_tag_a92c961c9c9e46744bf73cf82399e68df}{Set\+Flag}} (bool flag)
+\begin{DoxyCompactList}\small\item\em Set the tag\textquotesingle{}s flag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Type\+Id \mbox{\hyperlink{classns3_1_1_flag_tag_a24c18b7b220e710f507bf4aa537ee653}{Get\+Type\+Id}} (void)
+\begin{DoxyCompactList}\small\item\em Get the Type ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classns3_1_1_flag_tag_af7137d5a0b5e197f3be0a4033a987c17}{m\+\_\+flag}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+This class implements a tag that carries a flag to the application layer. 
+
+Definition at line \mbox{\hyperlink{dgr-tags_8h_source_l00108}{108}} of file \mbox{\hyperlink{dgr-tags_8h_source}{dgr-\/tags.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_flag_tag_a5ab5aac189eb7786f73a1e4d9356db88}\label{classns3_1_1_flag_tag_a5ab5aac189eb7786f73a1e4d9356db88} 
+\index{ns3::FlagTag@{ns3::FlagTag}!FlagTag@{FlagTag}}
+\index{FlagTag@{FlagTag}!ns3::FlagTag@{ns3::FlagTag}}
+\doxyparagraph{\texorpdfstring{FlagTag()}{FlagTag()}}
+{\footnotesize\ttfamily ns3\+::\+Flag\+Tag\+::\+Flag\+Tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00164}{164}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_flag_tag_a11e898ed3ab9f24bf6eed35ec5e46ed7}\label{classns3_1_1_flag_tag_a11e898ed3ab9f24bf6eed35ec5e46ed7} 
+\index{ns3::FlagTag@{ns3::FlagTag}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!ns3::FlagTag@{ns3::FlagTag}}
+\doxyparagraph{\texorpdfstring{Deserialize()}{Deserialize()}}
+{\footnotesize\ttfamily void ns3\+::\+Flag\+Tag\+::\+Deserialize (\begin{DoxyParamCaption}\item[{Tag\+Buffer}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00215}{215}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-tags_8h_source_l00147}{m\+\_\+flag}}.
+
+\Hypertarget{classns3_1_1_flag_tag_a1af1deae4da34eb465dd0d18acad52a6}\label{classns3_1_1_flag_tag_a1af1deae4da34eb465dd0d18acad52a6} 
+\index{ns3::FlagTag@{ns3::FlagTag}!GetFlag@{GetFlag}}
+\index{GetFlag@{GetFlag}!ns3::FlagTag@{ns3::FlagTag}}
+\doxyparagraph{\texorpdfstring{GetFlag()}{GetFlag()}}
+{\footnotesize\ttfamily bool ns3\+::\+Flag\+Tag\+::\+Get\+Flag (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the tag\textquotesingle{}s flag. 
+
+\begin{DoxyReturn}{Returns}
+the flag 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00177}{177}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tags_8h_source_l00147}{m\+\_\+flag}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-sink_8cc_source_l00170}{ns3\+::\+DGRPacket\+Sink\+::\+Handle\+Read()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d77/classns3_1_1_flag_tag_a1af1deae4da34eb465dd0d18acad52a6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_flag_tag_a4dc1f450efbd7a4bfabe02314a96ba40}\label{classns3_1_1_flag_tag_a4dc1f450efbd7a4bfabe02314a96ba40} 
+\index{ns3::FlagTag@{ns3::FlagTag}!GetInstanceTypeId@{GetInstanceTypeId}}
+\index{GetInstanceTypeId@{GetInstanceTypeId}!ns3::FlagTag@{ns3::FlagTag}}
+\doxyparagraph{\texorpdfstring{GetInstanceTypeId()}{GetInstanceTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+Flag\+Tag\+::\+Get\+Instance\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00194}{194}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tags_8cc_source_l00184}{Get\+Type\+Id()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d77/classns3_1_1_flag_tag_a4dc1f450efbd7a4bfabe02314a96ba40_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_flag_tag_a26f8c3fb4074289dd309456fb2b45ef0}\label{classns3_1_1_flag_tag_a26f8c3fb4074289dd309456fb2b45ef0} 
+\index{ns3::FlagTag@{ns3::FlagTag}!GetSerializedSize@{GetSerializedSize}}
+\index{GetSerializedSize@{GetSerializedSize}!ns3::FlagTag@{ns3::FlagTag}}
+\doxyparagraph{\texorpdfstring{GetSerializedSize()}{GetSerializedSize()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+Flag\+Tag\+::\+Get\+Serialized\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00200}{200}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+\Hypertarget{classns3_1_1_flag_tag_a24c18b7b220e710f507bf4aa537ee653}\label{classns3_1_1_flag_tag_a24c18b7b220e710f507bf4aa537ee653} 
+\index{ns3::FlagTag@{ns3::FlagTag}!GetTypeId@{GetTypeId}}
+\index{GetTypeId@{GetTypeId}!ns3::FlagTag@{ns3::FlagTag}}
+\doxyparagraph{\texorpdfstring{GetTypeId()}{GetTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+Flag\+Tag\+::\+Get\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the Type ID. 
+
+\begin{DoxyReturn}{Returns}
+the object Type\+Id 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00184}{184}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tags_8cc_source_l00194}{Get\+Instance\+Type\+Id()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d77/classns3_1_1_flag_tag_a24c18b7b220e710f507bf4aa537ee653_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_flag_tag_a03888da6210e8342f231b99942e29747}\label{classns3_1_1_flag_tag_a03888da6210e8342f231b99942e29747} 
+\index{ns3::FlagTag@{ns3::FlagTag}!Print@{Print}}
+\index{Print@{Print}!ns3::FlagTag@{ns3::FlagTag}}
+\doxyparagraph{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void ns3\+::\+Flag\+Tag\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00224}{224}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tags_8h_source_l00147}{m\+\_\+flag}}.
+
+\Hypertarget{classns3_1_1_flag_tag_a0891649d6ff04fc214a7e7bc65b79765}\label{classns3_1_1_flag_tag_a0891649d6ff04fc214a7e7bc65b79765} 
+\index{ns3::FlagTag@{ns3::FlagTag}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!ns3::FlagTag@{ns3::FlagTag}}
+\doxyparagraph{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily void ns3\+::\+Flag\+Tag\+::\+Serialize (\begin{DoxyParamCaption}\item[{Tag\+Buffer}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00207}{207}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-tags_8h_source_l00147}{m\+\_\+flag}}.
+
+\Hypertarget{classns3_1_1_flag_tag_a92c961c9c9e46744bf73cf82399e68df}\label{classns3_1_1_flag_tag_a92c961c9c9e46744bf73cf82399e68df} 
+\index{ns3::FlagTag@{ns3::FlagTag}!SetFlag@{SetFlag}}
+\index{SetFlag@{SetFlag}!ns3::FlagTag@{ns3::FlagTag}}
+\doxyparagraph{\texorpdfstring{SetFlag()}{SetFlag()}}
+{\footnotesize\ttfamily void ns3\+::\+Flag\+Tag\+::\+Set\+Flag (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+
+
+Set the tag\textquotesingle{}s flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & the flag \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8cc_source_l00170}{170}} of file \mbox{\hyperlink{dgr-tags_8cc_source}{dgr-\/tags.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-tags_8h_source_l00147}{m\+\_\+flag}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tcp-application_8cc_source_l00219}{ns3\+::\+DGRTcp\+Application\+::\+Send\+Data()}}, and \mbox{\hyperlink{dgr-udp-application_8cc_source_l00121}{ns3\+::\+DGRUdp\+Application\+::\+Send\+Packet()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d77/classns3_1_1_flag_tag_a92c961c9c9e46744bf73cf82399e68df_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{classns3_1_1_flag_tag_af7137d5a0b5e197f3be0a4033a987c17}\label{classns3_1_1_flag_tag_af7137d5a0b5e197f3be0a4033a987c17} 
+\index{ns3::FlagTag@{ns3::FlagTag}!m\_flag@{m\_flag}}
+\index{m\_flag@{m\_flag}!ns3::FlagTag@{ns3::FlagTag}}
+\doxyparagraph{\texorpdfstring{m\_flag}{m\_flag}}
+{\footnotesize\ttfamily bool ns3\+::\+Flag\+Tag\+::m\+\_\+flag\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{dgr-tags_8h_source_l00147}{147}} of file \mbox{\hyperlink{dgr-tags_8h_source}{dgr-\/tags.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-tags_8cc_source_l00215}{Deserialize()}}, \mbox{\hyperlink{dgr-tags_8cc_source_l00177}{Get\+Flag()}}, \mbox{\hyperlink{dgr-tags_8cc_source_l00224}{Print()}}, \mbox{\hyperlink{dgr-tags_8cc_source_l00207}{Serialize()}}, and \mbox{\hyperlink{dgr-tags_8cc_source_l00170}{Set\+Flag()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{dgr-tags_8h}{dgr-\/tags.\+h}}\item 
+model/\mbox{\hyperlink{dgr-tags_8cc}{dgr-\/tags.\+cc}}\end{DoxyCompactItemize}

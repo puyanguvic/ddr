@@ -1,0 +1,12 @@
+<map id="ns3::DGRRouter::FindDesignatedRouterForLink" name="ns3::DGRRouter::FindDesignatedRouterForLink">
+<area shape="rect" id="Node000001" title="Finds a designated router." alt="" coords="5,101,240,141"/>
+<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="72,102,69,92,77,82,95,77,123,75,154,77,172,85,170,90,153,83,123,80,96,82,80,87,74,93,77,100"/>
+<area shape="rect" id="Node000002" href="$d0/d56/classns3_1_1_d_g_r_router.html#a12f7423d137d6716fc597ee947173c41" title="When recursively checking for devices on the link, check whether a given device has already been visi..." alt="" coords="297,5,497,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,99,287,55,311,47,313,52,289,60,173,104"/>
+<area shape="rect" id="Node000003" href="$d0/d56/classns3_1_1_d_g_r_router.html#a817add200a30892091534c2d42fa43e5" title="Given a node and a net device, find an IPV4 interface index that corresponds to that net device." alt="" coords="288,69,507,109"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="240,105,274,101,275,106,240,110"/>
+<area shape="rect" id="Node000004" href="$d0/d56/classns3_1_1_d_g_r_router.html#ac62c957b71fbe4ce12586c380dbfceeb" title="When recursively checking for devices on the link, mark a given device as having been visited." alt="" coords="293,133,501,173"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="240,132,280,137,279,142,240,138"/>
+<area shape="rect" id="Node000005" href="$d0/d56/classns3_1_1_d_g_r_router.html#a53fdf9c96432439b34d091da6050890b" title="Decide whether or not a given net device is being bridged by a BridgeNetDevice." alt="" coords="297,197,498,237"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="173,139,289,183,313,191,311,196,287,188,171,144"/>
+</map>

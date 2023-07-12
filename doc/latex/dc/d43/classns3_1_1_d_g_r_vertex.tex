@@ -1,0 +1,1498 @@
+\doxysubsection{ns3\+::DGRVertex Class Reference}
+\hypertarget{classns3_1_1_d_g_r_vertex}{}\label{classns3_1_1_d_g_r_vertex}\index{ns3::DGRVertex@{ns3::DGRVertex}}
+
+
+Vertex used in shortest path first (SPF) computations.  
+
+
+
+
+{\ttfamily \#include $<$dgr-\/route-\/manager-\/impl.\+h$>$}
+
+
+
+Collaboration diagram for ns3\+::DGRVertex\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/df2/classns3_1_1_d_g_r_vertex__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::pair$<$ Ipv4\+Address, int32\+\_\+t $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aace20b0a545f431fbc5e3d6a2c149d44}{Node\+Exit\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em IPv4 / interface container for exit nodes. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96cce}{Vertex\+Type}} \{ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96ccea785713b988d629e961f52bd09521764b}{Vertex\+Unknown}} = 0
+, \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96ccea0d137433dfa77b24862a5f2c116da286}{Vertex\+Router}}
+, \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96ccea4cb6ddc9d2395166b87840984bc01880}{Vertex\+Network}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the possible types of \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_acf173c7ca9af5a3b19a0ec90c00a0253}{DGRVertex}} ()
+\begin{DoxyCompactList}\small\item\em Construct an empty (\"{}uninitialized\"{}) \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} (Shortest Path First Vertex). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aae74c2feb5e7323b1902202f10f93c03}{DGRVertex}} (\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*}lsa)
+\begin{DoxyCompactList}\small\item\em Construct an initialized \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} (Shortest Path First Vertex). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aab7d474354c078ab96afd48ec1ed5fa6}{\texorpdfstring{$\sim$}{\string~}\+DGRVertex}} ()
+\begin{DoxyCompactList}\small\item\em Destroy an \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} (Shortest Path First Vertex). \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_af0c852bbf364e527e6f7b1c34105a06e}{Add\+Child}} (\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*}child)
+\begin{DoxyCompactList}\small\item\em Get a borrowed \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} pointer to the specified child of \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_adedcbcf4b3fd8a7db8a086d5beefc1d2}{Clear\+Vertex\+Processed}} (void)
+\begin{DoxyCompactList}\small\item\em Clear the value of the Vertex\+Processed flag. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aea98bf4a660837344a4c802546249a21}{Get\+Child}} (uint32\+\_\+t n) const
+\begin{DoxyCompactList}\small\item\em Get a borrowed \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} pointer to the specified child of \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a307ee8139d815f7f26b8cf01e6885b53}{Get\+Distance\+From\+Root}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the distance from the root vertex to \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a5f9422d4f1f9df2f301cbd578e29ae7b}{Get\+LSA}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the Global Router Link State Advertisement returned by the Global Router represented by this \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} during the route discovery process. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a504717b90b3fad088d133c2e71836eaf}{Get\+NChildren}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the number of children of \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a691c41409919639a4aaea1443fa26ed5}{Get\+NRoot\+Exit\+Directions}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of exit directions from root for reaching \textquotesingle{}this\textquotesingle{} vertex. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a6937ca725aa1a7f5284d1b75a5dfb9f8}{Get\+Parent}} (uint32\+\_\+t \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}=0) const
+\begin{DoxyCompactList}\small\item\em Get a pointer to the SPFVector that is the parent of \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aace20b0a545f431fbc5e3d6a2c149d44}{Node\+Exit\+\_\+t}} \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a01db4520491672c7d666377aeb95b390}{Get\+Root\+Exit\+Direction}} () const
+\begin{DoxyCompactList}\small\item\em Obtain a pair indicating the exit direction from the root. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aace20b0a545f431fbc5e3d6a2c149d44}{Node\+Exit\+\_\+t}} \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a9e66f0b2ee7432156046e75672968138}{Get\+Root\+Exit\+Direction}} (uint32\+\_\+t \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}}) const
+\begin{DoxyCompactList}\small\item\em Obtain a pair indicating the exit direction from the root. \end{DoxyCompactList}\item 
+Ipv4\+Address \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a83acd923d19102c507faadb2f4e68f56}{Get\+Vertex\+Id}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the Vertex ID field of a \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96cce}{Vertex\+Type}} \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a5999846daefbeb25a5265e80e3f3a078}{Get\+Vertex\+Type}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the Vertex Type field of a \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aacb7dfc43225f6d7eca87f103c40c526}{Inherit\+All\+Root\+Exit\+Directions}} (const \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*}vertex)
+\begin{DoxyCompactList}\small\item\em Inherit all root exit directions from a given vertex to \textquotesingle{}this\textquotesingle{} vertex. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a6afcdedc8616fc035f8c9736d5679cd4}{Is\+Vertex\+Processed}} (void) const
+\begin{DoxyCompactList}\small\item\em Check the value of the Vertex\+Processed flag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aa8a039e85d0a64c8451a8ea69ddd3fc0}{Merge\+Parent}} (const \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*}v)
+\begin{DoxyCompactList}\small\item\em Merge the Parent list from the v into this vertex. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_abfd711c43e166fc59f65235af75c4c07}{Merge\+Root\+Exit\+Directions}} (const \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*}vertex)
+\begin{DoxyCompactList}\small\item\em Merge into \textquotesingle{}this\textquotesingle{} vertex the list of exit directions from another vertex. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4b5aa6f4683f8736530d15c60f2538a5}{Set\+Distance\+From\+Root}} (uint32\+\_\+t distance)
+\begin{DoxyCompactList}\small\item\em Set the distance from the root vertex to \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a2285ab6067cd3294e32134b1bc5651dd}{Set\+LSA}} (\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*}lsa)
+\begin{DoxyCompactList}\small\item\em Set the Global Router Link State Advertisement returned by the Global Router represented by this \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} during the route discovery process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a8ce35999d67d3028792f043c1efdf075}{Set\+Parent}} (\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*}parent)
+\begin{DoxyCompactList}\small\item\em Set the pointer to the SPFVector that is the parent of \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a65c6e670181e6f0bc8d1fb7468b13041}{Set\+Root\+Exit\+Direction}} (\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aace20b0a545f431fbc5e3d6a2c149d44}{DGRVertex\+::\+Node\+Exit\+\_\+t}} exit)
+\begin{DoxyCompactList}\small\item\em Set the IP address and outgoing interface index that should be used to begin forwarding packets from the root \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} to \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_ae9023c5885bfce6327e2f8f1f360e961}{Set\+Root\+Exit\+Direction}} (Ipv4\+Address next\+Hop, int32\+\_\+t id=\mbox{\hyperlink{namespacens3_aa8c7346d1a02c40c94ad465301e57ef8}{DISTINFINITY}})
+\begin{DoxyCompactList}\small\item\em Set the IP address and outgoing interface index that should be used to begin forwarding packets from the root \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} to \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a9dbfca905e6a1a00be1d1e5fb0d65051}{Set\+Vertex\+Id}} (Ipv4\+Address id)
+\begin{DoxyCompactList}\small\item\em Set the Vertex ID field of a \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aa1718a99ec16d3ebf25949e3edac9168}{Set\+Vertex\+Processed}} (bool value)
+\begin{DoxyCompactList}\small\item\em Set the value of the Vertex\+Processed flag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a7d8e5d27954333a239893ec0a30b6486}{Set\+Vertex\+Type}} (\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96cce}{Vertex\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Set the Vertex Type field of a \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::list$<$ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aa78a926a5b354a145d0164a164057a53}{List\+Of\+DGRVertex\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em container of DGRVertexes \end{DoxyCompactList}\item 
+typedef std\+::list$<$ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aace20b0a545f431fbc5e3d6a2c149d44}{Node\+Exit\+\_\+t}} $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a329d5add3e0fd627f1e3eb536a49199e}{List\+Of\+Node\+Exit\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em container of Exit nodes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a820fb1d53eddf6cc040ccf2211b01363}{DGRVertex}} (\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \&v)
+\begin{DoxyCompactList}\small\item\em The \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} copy construction is disallowed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \& \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a67a1d6f70983bc342c9c540514c85726}{operator=}} (\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \&v)
+\begin{DoxyCompactList}\small\item\em The \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} copy assignment operator is disallowed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aa78a926a5b354a145d0164a164057a53}{List\+Of\+DGRVertex\+\_\+t}} \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a00201704c3afe974f06e06d5611c863b}{m\+\_\+children}}
+\begin{DoxyCompactList}\small\item\em Children list. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a6c0dd738fc7761774349eb65f80ac63b}{m\+\_\+distance\+From\+Root}}
+\begin{DoxyCompactList}\small\item\em Distance from root node. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a329d5add3e0fd627f1e3eb536a49199e}{List\+Of\+Node\+Exit\+\_\+t}} \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a2e1e0e41f8fbb8ed3972197642674d88}{m\+\_\+ecmp\+Root\+Exits}}
+\begin{DoxyCompactList}\small\item\em store the multiple root\textquotesingle{}s exits for supporting ECMP \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_ac159aa73dc98d368d334b4d3c01c6eb8}{m\+\_\+lsa}}
+\begin{DoxyCompactList}\small\item\em Link State Advertisement. \end{DoxyCompactList}\item 
+Ipv4\+Address \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a21155cece0079523ede5b6a3e94d4d6c}{m\+\_\+next\+Hop}}
+\begin{DoxyCompactList}\small\item\em next hop \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aa78a926a5b354a145d0164a164057a53}{List\+Of\+DGRVertex\+\_\+t}} \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_ad50ca09919dbd3f7b07252d0028623c2}{m\+\_\+parents}}
+\begin{DoxyCompactList}\small\item\em parent list \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a1bd3092c87612d18910764ad9469975b}{m\+\_\+root\+Oif}}
+\begin{DoxyCompactList}\small\item\em root Output Interface \end{DoxyCompactList}\item 
+Ipv4\+Address \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_af327951c82d95adf7bc570bae0ee6536}{m\+\_\+vertex\+Id}}
+\begin{DoxyCompactList}\small\item\em Vertex ID. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_acccf543804229747db8e14bcde5cefbd}{m\+\_\+vertex\+Processed}}
+\begin{DoxyCompactList}\small\item\em Flag to note whether vertex has been processed in stage two of SPF computation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96cce}{Vertex\+Type}} \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a378091a34909a44b8fae1e25d6f8e8e1}{m\+\_\+vertex\+Type}}
+\begin{DoxyCompactList}\small\item\em Vertex type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_af3ae1cd4e8023f9cf058b8c291748f38}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aa78a926a5b354a145d0164a164057a53}{DGRVertex\+::\+List\+Of\+DGRVertex\+\_\+t}} \&vs)
+\begin{DoxyCompactList}\small\item\em Stream insertion operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Vertex used in shortest path first (SPF) computations. 
+
+See \textbackslash{}\+RFC\{2328\}, Section 16.
+
+Each router in the simulation is associated with an \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. When calculating routes, each of these routers is, in turn, chosen as the \"{}root\"{} of the calculation and routes to all of the other routers are eventually saved in the routing tables of each of the chosen nodes. Each of these routers in the calculation has an associated \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}.
+
+The \"{}\+Root\"{} vertex is the \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} representing the router that is having its routing tables set. The \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} objects representing other routers or networks in the simulation are arranged in the SPF tree. It is this tree that represents the Shortest Paths to the other networks.
+
+Each \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} has a pointer to the Global Router Link State Advertisement (LSA) that its underlying router has exported. Within these LSAs are Global Router Link Records that describe the point to point links from the underlying router to other nodes (represented by other \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} objects) in the simulation topology. The combination of the arrangement of the \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} objects in the SPF tree, along with the details of the link records that connect them provide the information required to construct the required routes. 
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00069}{69}} of file \mbox{\hyperlink{dgr-route-manager-impl_8h_source}{dgr-\/route-\/manager-\/impl.\+h}}.
+
+
+
+\doxysubsubsection{Member Typedef Documentation}
+\Hypertarget{classns3_1_1_d_g_r_vertex_aa78a926a5b354a145d0164a164057a53}\label{classns3_1_1_d_g_r_vertex_aa78a926a5b354a145d0164a164057a53} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!ListOfDGRVertex\_t@{ListOfDGRVertex\_t}}
+\index{ListOfDGRVertex\_t@{ListOfDGRVertex\_t}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{ListOfDGRVertex\_t}{ListOfDGRVertex\_t}}
+{\footnotesize\ttfamily typedef std\+::list$<$\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}}\texorpdfstring{$\ast$}{*}$>$ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aa78a926a5b354a145d0164a164057a53}{ns3\+::\+DGRVertex\+::\+List\+Of\+DGRVertex\+\_\+t}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+container of DGRVertexes 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00538}{538}} of file \mbox{\hyperlink{dgr-route-manager-impl_8h_source}{dgr-\/route-\/manager-\/impl.\+h}}.
+
+\Hypertarget{classns3_1_1_d_g_r_vertex_a329d5add3e0fd627f1e3eb536a49199e}\label{classns3_1_1_d_g_r_vertex_a329d5add3e0fd627f1e3eb536a49199e} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!ListOfNodeExit\_t@{ListOfNodeExit\_t}}
+\index{ListOfNodeExit\_t@{ListOfNodeExit\_t}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{ListOfNodeExit\_t}{ListOfNodeExit\_t}}
+{\footnotesize\ttfamily typedef std\+::list$<$ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aace20b0a545f431fbc5e3d6a2c149d44}{Node\+Exit\+\_\+t}} $>$ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a329d5add3e0fd627f1e3eb536a49199e}{ns3\+::\+DGRVertex\+::\+List\+Of\+Node\+Exit\+\_\+t}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+container of Exit nodes 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00536}{536}} of file \mbox{\hyperlink{dgr-route-manager-impl_8h_source}{dgr-\/route-\/manager-\/impl.\+h}}.
+
+\Hypertarget{classns3_1_1_d_g_r_vertex_aace20b0a545f431fbc5e3d6a2c149d44}\label{classns3_1_1_d_g_r_vertex_aace20b0a545f431fbc5e3d6a2c149d44} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!NodeExit\_t@{NodeExit\_t}}
+\index{NodeExit\_t@{NodeExit\_t}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{NodeExit\_t}{NodeExit\_t}}
+{\footnotesize\ttfamily typedef std\+::pair$<$Ipv4\+Address, int32\+\_\+t$>$ \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aace20b0a545f431fbc5e3d6a2c149d44}{ns3\+::\+DGRVertex\+::\+Node\+Exit\+\_\+t}}}
+
+
+
+IPv4 / interface container for exit nodes. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00292}{292}} of file \mbox{\hyperlink{dgr-route-manager-impl_8h_source}{dgr-\/route-\/manager-\/impl.\+h}}.
+
+
+
+\doxysubsubsection{Member Enumeration Documentation}
+\Hypertarget{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96cce}\label{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96cce} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!VertexType@{VertexType}}
+\index{VertexType@{VertexType}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{VertexType}{VertexType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96cce}{ns3\+::\+DGRVertex\+::\+Vertex\+Type}}}
+
+
+
+Enumeration of the possible types of \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} objects. 
+
+Currently we use Vertex\+Router to identify objects that represent a router in the simulation topology, and Vertex\+Network to identify objects that represent a network. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VertexUnknown@{VertexUnknown}!ns3::DGRVertex@{ns3::DGRVertex}}\index{ns3::DGRVertex@{ns3::DGRVertex}!VertexUnknown@{VertexUnknown}}}\Hypertarget{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96ccea785713b988d629e961f52bd09521764b}\label{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96ccea785713b988d629e961f52bd09521764b} 
+Vertex\+Unknown&Uninitialized Link Record. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VertexRouter@{VertexRouter}!ns3::DGRVertex@{ns3::DGRVertex}}\index{ns3::DGRVertex@{ns3::DGRVertex}!VertexRouter@{VertexRouter}}}\Hypertarget{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96ccea0d137433dfa77b24862a5f2c116da286}\label{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96ccea0d137433dfa77b24862a5f2c116da286} 
+Vertex\+Router&Vertex representing a router in the topology. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VertexNetwork@{VertexNetwork}!ns3::DGRVertex@{ns3::DGRVertex}}\index{ns3::DGRVertex@{ns3::DGRVertex}!VertexNetwork@{VertexNetwork}}}\Hypertarget{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96ccea4cb6ddc9d2395166b87840984bc01880}\label{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96ccea4cb6ddc9d2395166b87840984bc01880} 
+Vertex\+Network&Vertex representing a network in the topology. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00079}{79}} of file \mbox{\hyperlink{dgr-route-manager-impl_8h_source}{dgr-\/route-\/manager-\/impl.\+h}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classns3_1_1_d_g_r_vertex_acf173c7ca9af5a3b19a0ec90c00a0253}\label{classns3_1_1_d_g_r_vertex_acf173c7ca9af5a3b19a0ec90c00a0253} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!DGRVertex@{DGRVertex}}
+\index{DGRVertex@{DGRVertex}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{DGRVertex()}{DGRVertex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily ns3\+::\+DGRVertex\+::\+DGRVertex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct an empty (\"{}uninitialized\"{}) \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} (Shortest Path First Vertex). 
+
+The Vertex Type is set to Vertex\+Unknown, the Vertex ID is set to 255.\+255.\+255.\+255, and the distance from root is set to infinity (UINT32\+\_\+\+MAX). The referenced Link State Advertisement (LSA) is set to null as is the parent \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. The outgoing interface index is set to infinity, the next hop address is set to 0.\+0.\+0.\+0 and the list of children of the \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} is initialized to empty.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96cce}{Vertex\+Type} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00089}{89}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+\Hypertarget{classns3_1_1_d_g_r_vertex_aae74c2feb5e7323b1902202f10f93c03}\label{classns3_1_1_d_g_r_vertex_aae74c2feb5e7323b1902202f10f93c03} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!DGRVertex@{DGRVertex}}
+\index{DGRVertex@{DGRVertex}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{DGRVertex()}{DGRVertex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily ns3\+::\+DGRVertex\+::\+DGRVertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*}}]{lsa }\end{DoxyParamCaption})}
+
+
+
+Construct an initialized \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} (Shortest Path First Vertex). 
+
+The Vertex Type is initialized to Vertex\+Router and the Vertex ID is found from the Link State ID of the Link State Advertisement (LSA) passed as a parameter. The Link State ID is set to the Router ID of the advertising router. The referenced LSA (m\+\_\+lsa) is set to the given LSA. Other than these members, initialization is as in the default constructor. of the \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} is initialized to empty.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_vertex_acf173c7ca9af5a3b19a0ec90c00a0253}{DGRVertex\+::\+DGRVertex} () 
+
+\doxylink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96cce}{Vertex\+Type} 
+
+Global\+Routing\+LSA 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em lsa} & The Link State Advertisement used for finding initial values. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00103}{103}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-router-interface_8cc_source_l00287}{ns3\+::\+DGRRouting\+LSA\+::\+Get\+LSType()}}, \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00530}{m\+\_\+vertex\+Type}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00263}{ns3\+::\+DGRRouting\+LSA\+::\+Network\+LSA}}, \mbox{\hyperlink{dgr-router-interface_8h_source_l00262}{ns3\+::\+DGRRouting\+LSA\+::\+Router\+LSA}}, \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00082}{Vertex\+Network}}, and \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00081}{Vertex\+Router}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_aae74c2feb5e7323b1902202f10f93c03_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_aab7d474354c078ab96afd48ec1ed5fa6}\label{classns3_1_1_d_g_r_vertex_aab7d474354c078ab96afd48ec1ed5fa6} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!````~DGRVertex@{\texorpdfstring{$\sim$}{\string~}DGRVertex}}
+\index{````~DGRVertex@{\texorpdfstring{$\sim$}{\string~}DGRVertex}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DGRVertex()}{\string~DGRVertex()}}
+{\footnotesize\ttfamily ns3\+::\+DGRVertex\+::\texorpdfstring{$\sim$}{\string~}\+DGRVertex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy an \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} (Shortest Path First Vertex). 
+
+The children vertices of the \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} are recursively deleted.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_vertex_acf173c7ca9af5a3b19a0ec90c00a0253}{DGRVertex\+::\+DGRVertex} () 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00127}{127}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00200}{Get\+Vertex\+Id()}}, \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00540}{m\+\_\+children}}, \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00537}{m\+\_\+ecmp\+Root\+Exits}}, \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00539}{m\+\_\+parents}}, and \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00531}{m\+\_\+vertex\+Id}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_aab7d474354c078ab96afd48ec1ed5fa6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_a820fb1d53eddf6cc040ccf2211b01363}\label{classns3_1_1_d_g_r_vertex_a820fb1d53eddf6cc040ccf2211b01363} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!DGRVertex@{DGRVertex}}
+\index{DGRVertex@{DGRVertex}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{DGRVertex()}{DGRVertex()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily ns3\+::\+DGRVertex\+::\+DGRVertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} copy construction is disallowed. 
+
+There\textquotesingle{}s no need for it and a compiler provided shallow copy would be wrong. 
+\begin{DoxyParams}{Parameters}
+{\em v} & object to copy from \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{classns3_1_1_d_g_r_vertex_af0c852bbf364e527e6f7b1c34105a06e}\label{classns3_1_1_d_g_r_vertex_af0c852bbf364e527e6f7b1c34105a06e} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!AddChild@{AddChild}}
+\index{AddChild@{AddChild}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{AddChild()}{AddChild()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRVertex\+::\+Add\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*}}]{child }\end{DoxyParamCaption})}
+
+
+
+Get a borrowed \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} pointer to the specified child of \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. 
+
+Each router node in the simulation is associated with an \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. When calculating routes, each of these routers is, in turn, chosen as the \"{}root\"{} of the calculation and routes to all of the other routers are eventually saved in the routing tables of each of the chosen nodes.
+
+The \"{}\+Root\"{} vertex is then the \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} representing the router that is having its routing tables set and is the root of the SPF tree. Each vertex in the SPF tree can have a number of children that represent host or network routes available via that vertex.
+
+This method the number of children of \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} (which reside in the SPF tree.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_vertex_a504717b90b3fad088d133c2e71836eaf}{DGRVertex\+::\+Get\+NChildren} 
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+Ownership of the pointer added to the children of \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} is transferred to the \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. You must not delete the (now) child \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} after calling this method. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A pointer to the \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} (which resides in the SPF tree) to be added to the list of children of \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of children of \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} after the addition of the new child. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00386}{386}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00540}{m\+\_\+children}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l02299}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+DGRVertex\+Add\+Parent()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_af0c852bbf364e527e6f7b1c34105a06e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_adedcbcf4b3fd8a7db8a086d5beefc1d2}\label{classns3_1_1_d_g_r_vertex_adedcbcf4b3fd8a7db8a086d5beefc1d2} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!ClearVertexProcessed@{ClearVertexProcessed}}
+\index{ClearVertexProcessed@{ClearVertexProcessed}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{ClearVertexProcessed()}{ClearVertexProcessed()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRVertex\+::\+Clear\+Vertex\+Processed (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Clear the value of the Vertex\+Processed flag. 
+
+Flag to note whether vertex has been processed in stage two of SPF computation 
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00408}{408}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00408}{Clear\+Vertex\+Processed()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00367}{Get\+Child()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00360}{Get\+NChildren()}}, \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00394}{Set\+Vertex\+Processed()}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00408}{Clear\+Vertex\+Processed()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01456}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFCalculate()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_adedcbcf4b3fd8a7db8a086d5beefc1d2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_adedcbcf4b3fd8a7db8a086d5beefc1d2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_aea98bf4a660837344a4c802546249a21}\label{classns3_1_1_d_g_r_vertex_aea98bf4a660837344a4c802546249a21} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!GetChild@{GetChild}}
+\index{GetChild@{GetChild}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{GetChild()}{GetChild()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*} ns3\+::\+DGRVertex\+::\+Get\+Child (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{n }\end{DoxyParamCaption}) const}
+
+
+
+Get a borrowed \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} pointer to the specified child of \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. 
+
+Each router node in the simulation is associated with an \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. When calculating routes, each of these routers is, in turn, chosen as the \"{}root\"{} of the calculation and routes to all of the other routers are eventually saved in the routing tables of each of the chosen nodes.
+
+The \"{}\+Root\"{} vertex is then the \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} representing the router that is having its routing tables set and is the root of the SPF tree. Each vertex in the SPF tree can have a number of children that represent host or network routes available via that vertex.
+
+This method the number of children of \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} (which reside in the SPF tree.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_vertex_a504717b90b3fad088d133c2e71836eaf}{DGRVertex\+::\+Get\+NChildren} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The index (from 0 to the number of children minus 1) of the child \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} to return. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+The pointer returned by Get\+Child () is a borrowed pointer. You do not have any ownership of the underlying object and must not delete that object. 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+A pointer to the specified child \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} (which resides in the SPF tree). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00367}{367}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00540}{m\+\_\+children}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00408}{Clear\+Vertex\+Processed()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01630}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Process\+ASExternals()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01798}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFProcess\+Stubs()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_aea98bf4a660837344a4c802546249a21_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_a307ee8139d815f7f26b8cf01e6885b53}\label{classns3_1_1_d_g_r_vertex_a307ee8139d815f7f26b8cf01e6885b53} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!GetDistanceFromRoot@{GetDistanceFromRoot}}
+\index{GetDistanceFromRoot@{GetDistanceFromRoot}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{GetDistanceFromRoot()}{GetDistanceFromRoot()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRVertex\+::\+Get\+Distance\+From\+Root (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the distance from the root vertex to \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. 
+
+Each router in the simulation is associated with an \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. When calculating routes, each of these routers is, in turn, chosen as the \"{}root\"{} of the calculation and routes to all of the other routers are eventually saved in the routing tables of each of the chosen nodes. Each of these routers in the calculation has an associated \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}.
+
+The \"{}\+Root\"{} vertex is then the \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} representing the router that is having its routing tables set. The \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} is the vertex to which a route is being calculated from the root. The distance from the root that we\textquotesingle{}re asking for is the number of hops from the root vertex to the vertex in question.
+
+The distance is calculated during route discovery and is stored in a member variable. This method simply fetches that value.
+
+\begin{DoxyReturn}{Returns}
+The distance, in hops, from the root \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} to \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00228}{228}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00533}{m\+\_\+distance\+From\+Root}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00180}{ns3\+::\+DGRCandidate\+Queue\+::\+Compare\+DGRVertex()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l02059}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Router()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00861}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNext()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_a307ee8139d815f7f26b8cf01e6885b53_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_a5f9422d4f1f9df2f301cbd578e29ae7b}\label{classns3_1_1_d_g_r_vertex_a5f9422d4f1f9df2f301cbd578e29ae7b} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!GetLSA@{GetLSA}}
+\index{GetLSA@{GetLSA}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{GetLSA()}{GetLSA()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*} ns3\+::\+DGRVertex\+::\+Get\+LSA (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Global Router Link State Advertisement returned by the Global Router represented by this \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} during the route discovery process. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_router}{DGRRouter} 
+
+\doxylink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA} 
+
+\doxylink{classns3_1_1_d_g_r_router_ac119cda89d816da90186bb617c710c25}{DGRRouter\+::\+Discover\+LSAs} () 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+A pointer to the \doxylink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA} found by the router represented by this \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00214}{214}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00532}{m\+\_\+lsa}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00696}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Initialize\+Routes()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01630}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Process\+ASExternals()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01664}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFAdd\+ASExternal()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01456}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFCalculate()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01283}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFGet\+Next\+Link()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l02059}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Router()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01832}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Stub()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l02181}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Transit()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00861}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNext()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01095}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNexthop\+Calculation()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01798}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFProcess\+Stubs()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_a5f9422d4f1f9df2f301cbd578e29ae7b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_a504717b90b3fad088d133c2e71836eaf}\label{classns3_1_1_d_g_r_vertex_a504717b90b3fad088d133c2e71836eaf} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!GetNChildren@{GetNChildren}}
+\index{GetNChildren@{GetNChildren}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{GetNChildren()}{GetNChildren()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRVertex\+::\+Get\+NChildren (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of children of \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. 
+
+Each router node in the simulation is associated with an \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. When calculating routes, each of these routers is, in turn, chosen as the \"{}root\"{} of the calculation and routes to all of the other routers are eventually saved in the routing tables of each of the chosen nodes.
+
+The \"{}\+Root\"{} vertex is then the \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} representing the router that is having its routing tables set and is the root of the SPF tree. Each vertex in the SPF tree can have a number of children that represent host or network routes available via that vertex.
+
+This method returns the number of children of \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} (which reside in the SPF tree).
+
+\begin{DoxyReturn}{Returns}
+The number of children of \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} (which reside in the SPF tree). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00360}{360}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00540}{m\+\_\+children}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00408}{Clear\+Vertex\+Processed()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01630}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Process\+ASExternals()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01798}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFProcess\+Stubs()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_a504717b90b3fad088d133c2e71836eaf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_a691c41409919639a4aaea1443fa26ed5}\label{classns3_1_1_d_g_r_vertex_a691c41409919639a4aaea1443fa26ed5} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!GetNRootExitDirections@{GetNRootExitDirections}}
+\index{GetNRootExitDirections@{GetNRootExitDirections}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{GetNRootExitDirections()}{GetNRootExitDirections()}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRVertex\+::\+Get\+NRoot\+Exit\+Directions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of exit directions from root for reaching \textquotesingle{}this\textquotesingle{} vertex. 
+
+\begin{DoxyReturn}{Returns}
+The number of exit directions from root 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00353}{353}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00537}{m\+\_\+ecmp\+Root\+Exits}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01664}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFAdd\+ASExternal()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l02059}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Router()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01832}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Stub()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l02181}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Transit()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_a691c41409919639a4aaea1443fa26ed5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_a6937ca725aa1a7f5284d1b75a5dfb9f8}\label{classns3_1_1_d_g_r_vertex_a6937ca725aa1a7f5284d1b75a5dfb9f8} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!GetParent@{GetParent}}
+\index{GetParent@{GetParent}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{GetParent()}{GetParent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*} ns3\+::\+DGRVertex\+::\+Get\+Parent (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{i = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+
+
+Get a pointer to the SPFVector that is the parent of \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. 
+
+Each router node in the simulation is associated with an \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. When calculating routes, each of these routers is, in turn, chosen as the \"{}root\"{} of the calculation and routes to all of the other routers are eventually saved in the routing tables of each of the chosen nodes.
+
+The \"{}\+Root\"{} vertex is then the \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} representing the router that is having its routing tables set and is the root of the SPF tree.
+
+This method returns a pointer to the parent node of \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} (both of which reside in that SPF tree).
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The index to one of the parents \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} that is the parent of \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} in the SPF tree. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00245}{245}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00539}{m\+\_\+parents}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l02299}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+DGRVertex\+Add\+Parent()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01095}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNexthop\+Calculation()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_a6937ca725aa1a7f5284d1b75a5dfb9f8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_a01db4520491672c7d666377aeb95b390}\label{classns3_1_1_d_g_r_vertex_a01db4520491672c7d666377aeb95b390} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!GetRootExitDirection@{GetRootExitDirection}}
+\index{GetRootExitDirection@{GetRootExitDirection}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{GetRootExitDirection()}{GetRootExitDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aace20b0a545f431fbc5e3d6a2c149d44}{DGRVertex\+::\+Node\+Exit\+\_\+t}} ns3\+::\+DGRVertex\+::\+Get\+Root\+Exit\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Obtain a pair indicating the exit direction from the root. 
+
+This method assumes there is only a single exit direction from the root. Error occur if this assumption is invalid.
+
+\begin{DoxyReturn}{Returns}
+The pair of next-\/hop-\/\+IP and outgoing-\/interface-\/index for reaching \textquotesingle{}this\textquotesingle{} vertex from the root 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00313}{313}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00313}{Get\+Root\+Exit\+Direction()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00537}{m\+\_\+ecmp\+Root\+Exits}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00313}{Get\+Root\+Exit\+Direction()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{dc/d43/classns3_1_1_d_g_r_vertex_a01db4520491672c7d666377aeb95b390_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{dc/d43/classns3_1_1_d_g_r_vertex_a01db4520491672c7d666377aeb95b390_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_a9e66f0b2ee7432156046e75672968138}\label{classns3_1_1_d_g_r_vertex_a9e66f0b2ee7432156046e75672968138} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!GetRootExitDirection@{GetRootExitDirection}}
+\index{GetRootExitDirection@{GetRootExitDirection}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{GetRootExitDirection()}{GetRootExitDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aace20b0a545f431fbc5e3d6a2c149d44}{DGRVertex\+::\+Node\+Exit\+\_\+t}} ns3\+::\+DGRVertex\+::\+Get\+Root\+Exit\+Direction (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Obtain a pair indicating the exit direction from the root. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & An index to a pair \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pair of next-\/hop-\/\+IP and outgoing-\/interface-\/index for indicating an exit direction from the root. It is 0 if the index \textquotesingle{}i\textquotesingle{} is out-\/of-\/range 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00300}{300}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-sink_8cc_source_l00169}{ns3\+::i}}, and \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00537}{m\+\_\+ecmp\+Root\+Exits}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01664}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFAdd\+ASExternal()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l02059}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Router()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01832}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Stub()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l02181}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Transit()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01095}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNexthop\+Calculation()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_a9e66f0b2ee7432156046e75672968138_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_a83acd923d19102c507faadb2f4e68f56}\label{classns3_1_1_d_g_r_vertex_a83acd923d19102c507faadb2f4e68f56} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!GetVertexId@{GetVertexId}}
+\index{GetVertexId@{GetVertexId}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{GetVertexId()}{GetVertexId()}}
+{\footnotesize\ttfamily Ipv4\+Address ns3\+::\+DGRVertex\+::\+Get\+Vertex\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Vertex ID field of a \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. 
+
+The Vertex ID uniquely identifies the simulation object a given \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} represents. Typically, this is the Router ID for \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} objects representing routers, and comes from the Link State Advertisement of a router aggregated to a node in the simulation. These IDs are allocated automatically by the routing environment and look like IP addresses beginning at 0.\+0.\+0.\+0 and monotonically increasing as new routers are instantiated.
+
+\begin{DoxyReturn}{Returns}
+The Ipv4\+Address Vertex ID of the current \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00200}{200}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00531}{m\+\_\+vertex\+Id}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00127}{\texorpdfstring{$\sim$}{\string~}\+DGRVertex()}}, \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00145}{ns3\+::\+DGRCandidate\+Queue\+::\+Find()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01972}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Find\+Outgoing\+Interface\+Id()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00696}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Initialize\+Routes()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01630}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Process\+ASExternals()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01664}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFAdd\+ASExternal()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01456}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFCalculate()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01283}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFGet\+Next\+Link()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l02059}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Router()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01832}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Stub()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l02181}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFIntra\+Add\+Transit()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00861}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNext()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01095}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNexthop\+Calculation()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01798}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFProcess\+Stubs()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_a83acd923d19102c507faadb2f4e68f56_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_a5999846daefbeb25a5265e80e3f3a078}\label{classns3_1_1_d_g_r_vertex_a5999846daefbeb25a5265e80e3f3a078} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!GetVertexType@{GetVertexType}}
+\index{GetVertexType@{GetVertexType}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{GetVertexType()}{GetVertexType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96cce}{DGRVertex\+::\+Vertex\+Type}} ns3\+::\+DGRVertex\+::\+Get\+Vertex\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Vertex Type field of a \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. 
+
+The Vertex Type describes the kind of simulation object a given \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} represents.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96cce}{Vertex\+Type} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The Vertex\+Type of the current \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00186}{186}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00530}{m\+\_\+vertex\+Type}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-candidate-queue_8cc_source_l00180}{ns3\+::\+DGRCandidate\+Queue\+::\+Compare\+DGRVertex()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00696}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Initialize\+Routes()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01630}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Process\+ASExternals()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01456}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFCalculate()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00861}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNext()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01095}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNexthop\+Calculation()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01798}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFProcess\+Stubs()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_a5999846daefbeb25a5265e80e3f3a078_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_aacb7dfc43225f6d7eca87f103c40c526}\label{classns3_1_1_d_g_r_vertex_aacb7dfc43225f6d7eca87f103c40c526} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!InheritAllRootExitDirections@{InheritAllRootExitDirections}}
+\index{InheritAllRootExitDirections@{InheritAllRootExitDirections}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{InheritAllRootExitDirections()}{InheritAllRootExitDirections()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRVertex\+::\+Inherit\+All\+Root\+Exit\+Directions (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*}}]{vertex }\end{DoxyParamCaption})}
+
+
+
+Inherit all root exit directions from a given vertex to \textquotesingle{}this\textquotesingle{} vertex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex} & The vertex from which all root exit directions are to be inherited\\
+\hline
+\end{DoxyParams}
+After the call of this method, the original root exit directions in \textquotesingle{}this\textquotesingle{} vertex are all lost. 
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00337}{337}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00537}{m\+\_\+ecmp\+Root\+Exits}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01095}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNexthop\+Calculation()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_aacb7dfc43225f6d7eca87f103c40c526_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_a6afcdedc8616fc035f8c9736d5679cd4}\label{classns3_1_1_d_g_r_vertex_a6afcdedc8616fc035f8c9736d5679cd4} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!IsVertexProcessed@{IsVertexProcessed}}
+\index{IsVertexProcessed@{IsVertexProcessed}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{IsVertexProcessed()}{IsVertexProcessed()}}
+{\footnotesize\ttfamily bool ns3\+::\+DGRVertex\+::\+Is\+Vertex\+Processed (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Check the value of the Vertex\+Processed flag. 
+
+Flag to note whether vertex has been processed in stage two of SPF computation \begin{DoxyReturn}{Returns}
+value of underlying flag 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00401}{401}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00541}{m\+\_\+vertex\+Processed}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01630}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Process\+ASExternals()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01798}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFProcess\+Stubs()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_a6afcdedc8616fc035f8c9736d5679cd4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_aa8a039e85d0a64c8451a8ea69ddd3fc0}\label{classns3_1_1_d_g_r_vertex_aa8a039e85d0a64c8451a8ea69ddd3fc0} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!MergeParent@{MergeParent}}
+\index{MergeParent@{MergeParent}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{MergeParent()}{MergeParent()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRVertex\+::\+Merge\+Parent (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*}}]{v }\end{DoxyParamCaption})}
+
+
+
+Merge the Parent list from the v into this vertex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vertex from which its list of Parent is read and then merged into the list of Parent of {\itshape this} vertex. Note that the list in v remains intact \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00264}{264}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00539}{m\+\_\+parents}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00861}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNext()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_aa8a039e85d0a64c8451a8ea69ddd3fc0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_abfd711c43e166fc59f65235af75c4c07}\label{classns3_1_1_d_g_r_vertex_abfd711c43e166fc59f65235af75c4c07} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!MergeRootExitDirections@{MergeRootExitDirections}}
+\index{MergeRootExitDirections@{MergeRootExitDirections}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{MergeRootExitDirections()}{MergeRootExitDirections()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRVertex\+::\+Merge\+Root\+Exit\+Directions (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*}}]{vertex }\end{DoxyParamCaption})}
+
+
+
+Merge into \textquotesingle{}this\textquotesingle{} vertex the list of exit directions from another vertex. 
+
+This merge is necessary when ECMP are found.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex} & From which the list of exit directions are obtain and are merged into \textquotesingle{}this\textquotesingle{} vertex \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00322}{322}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00537}{m\+\_\+ecmp\+Root\+Exits}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00861}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNext()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_abfd711c43e166fc59f65235af75c4c07_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_a67a1d6f70983bc342c9c540514c85726}\label{classns3_1_1_d_g_r_vertex_a67a1d6f70983bc342c9c540514c85726} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!operator=@{operator=}}
+\index{operator=@{operator=}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \& ns3\+::\+DGRVertex\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} copy assignment operator is disallowed. 
+
+There\textquotesingle{}s no need for it and a compiler provided shallow copy would be wrong. 
+\begin{DoxyParams}{Parameters}
+{\em v} & object to copy from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the copied object 
+\end{DoxyReturn}
+\Hypertarget{classns3_1_1_d_g_r_vertex_a4b5aa6f4683f8736530d15c60f2538a5}\label{classns3_1_1_d_g_r_vertex_a4b5aa6f4683f8736530d15c60f2538a5} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!SetDistanceFromRoot@{SetDistanceFromRoot}}
+\index{SetDistanceFromRoot@{SetDistanceFromRoot}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{SetDistanceFromRoot()}{SetDistanceFromRoot()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRVertex\+::\+Set\+Distance\+From\+Root (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{distance }\end{DoxyParamCaption})}
+
+
+
+Set the distance from the root vertex to \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. 
+
+Each router in the simulation is associated with an \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. When calculating routes, each of these routers is, in turn, chosen as the \"{}root\"{} of the calculation and routes to all of the other routers are eventually saved in the routing tables of each of the chosen nodes. Each of these routers in the calculation has an associated \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}.
+
+The \"{}\+Root\"{} vertex is then the \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} representing the router that is having its routing tables set. The \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} is the vertex to which a route is being calculated from the root. The distance from the root that we\textquotesingle{}re asking for is the number of hops from the root vertex to the vertex in question.
+
+
+\begin{DoxyParams}{Parameters}
+{\em distance} & The distance, in hops, from the root \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} to \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00221}{221}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00533}{m\+\_\+distance\+From\+Root}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01456}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFCalculate()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01095}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNexthop\+Calculation()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_a4b5aa6f4683f8736530d15c60f2538a5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_a2285ab6067cd3294e32134b1bc5651dd}\label{classns3_1_1_d_g_r_vertex_a2285ab6067cd3294e32134b1bc5651dd} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!SetLSA@{SetLSA}}
+\index{SetLSA@{SetLSA}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{SetLSA()}{SetLSA()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRVertex\+::\+Set\+LSA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}} \texorpdfstring{$\ast$}{*}}]{lsa }\end{DoxyParamCaption})}
+
+
+
+Set the Global Router Link State Advertisement returned by the Global Router represented by this \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} during the route discovery process. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_vertex_a5f9422d4f1f9df2f301cbd578e29ae7b}{DGRVertex\+::\+Get\+LSA} () 
+
+\doxylink{classns3_1_1_d_g_r_router}{DGRRouter} 
+
+\doxylink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA} 
+
+\doxylink{classns3_1_1_d_g_r_router_ac119cda89d816da90186bb617c710c25}{DGRRouter\+::\+Discover\+LSAs} () 
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+Ownership of the LSA is transferred to the \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. You must not delete the LSA after calling this method. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em lsa} & A pointer to the \doxylink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00207}{207}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00532}{m\+\_\+lsa}}.
+
+\Hypertarget{classns3_1_1_d_g_r_vertex_a8ce35999d67d3028792f043c1efdf075}\label{classns3_1_1_d_g_r_vertex_a8ce35999d67d3028792f043c1efdf075} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!SetParent@{SetParent}}
+\index{SetParent@{SetParent}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{SetParent()}{SetParent()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRVertex\+::\+Set\+Parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_vertex}{DGRVertex}} \texorpdfstring{$\ast$}{*}}]{parent }\end{DoxyParamCaption})}
+
+
+
+Set the pointer to the SPFVector that is the parent of \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. 
+
+Each router node in the simulation is associated with an \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. When calculating routes, each of these routers is, in turn, chosen as the \"{}root\"{} of the calculation and routes to all of the other routers are eventually saved in the routing tables of each of the chosen nodes.
+
+The \"{}\+Root\"{} vertex is then the \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} representing the router that is having its routing tables set and is the root of the SPF tree.
+
+This method sets the parent pointer of \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} (both of which reside in that SPF tree).
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & A pointer to the \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} that is the parent of \"{}this\"{} DGRVertex\texorpdfstring{$\ast$}{*} in the SPF tree. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00235}{235}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00539}{m\+\_\+parents}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01095}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNexthop\+Calculation()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_a8ce35999d67d3028792f043c1efdf075_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_a65c6e670181e6f0bc8d1fb7468b13041}\label{classns3_1_1_d_g_r_vertex_a65c6e670181e6f0bc8d1fb7468b13041} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!SetRootExitDirection@{SetRootExitDirection}}
+\index{SetRootExitDirection@{SetRootExitDirection}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{SetRootExitDirection()}{SetRootExitDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ns3\+::\+DGRVertex\+::\+Set\+Root\+Exit\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aace20b0a545f431fbc5e3d6a2c149d44}{DGRVertex\+::\+Node\+Exit\+\_\+t}}}]{exit }\end{DoxyParamCaption})}
+
+
+
+Set the IP address and outgoing interface index that should be used to begin forwarding packets from the root \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} to \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. 
+
+Each router node in the simulation is associated with an \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. When calculating routes, each of these routers is, in turn, chosen as the \"{}root\"{} of the calculation and routes to all of the other routers are eventually saved in the routing tables of each of the chosen nodes.
+
+The \"{}\+Root\"{} vertex is then the \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} representing the router that is having its routing tables set. The \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} is the vertex that represents the host or network to which a route is being calculated from the root. The IP address that we\textquotesingle{}re asking for is the address on the remote side of a link off of the root node that should be used as the destination for packets along the path to \"{}this\"{} vertex.
+
+When initializing the root \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}, the IP address used when forwarding packets is determined by examining the Global Router Link Records of the Link State Advertisement generated by the root node\textquotesingle{}s \doxylink{classns3_1_1_d_g_r_router}{DGRRouter}. This address is used to forward packets off of the root\textquotesingle{}s network down those links. As other vertices / nodes are discovered which are further away from the root, they will be accessible down one of the paths via a link described by one of these Global Router Link Records.
+
+To forward packets to these hosts or networks, the root node must begin the forwarding process by sending the packets to a first hop router down an interface. This means that the first hop address and interface ID must be the same for all downstream SPFVertices. We call this \"{}inheriting\"{} the interface and next hop.
+
+In this method we are telling the root node which exit direction it should send should I send a packet to the network or host represented by \textquotesingle{}this\textquotesingle{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_router}{DGRRouter} 
+
+\doxylink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA} 
+
+\doxylink{classns3_1_1_d_g_r_routing_link_record}{DGRRouting\+Link\+Record} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em exit} & The pair of next-\/hop-\/\+IP and outgoing-\/interface-\/index to use when forwarding packets to the host or network represented by \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00293}{293}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00279}{Set\+Root\+Exit\+Direction()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_a65c6e670181e6f0bc8d1fb7468b13041_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_ae9023c5885bfce6327e2f8f1f360e961}\label{classns3_1_1_d_g_r_vertex_ae9023c5885bfce6327e2f8f1f360e961} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!SetRootExitDirection@{SetRootExitDirection}}
+\index{SetRootExitDirection@{SetRootExitDirection}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{SetRootExitDirection()}{SetRootExitDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ns3\+::\+DGRVertex\+::\+Set\+Root\+Exit\+Direction (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{next\+Hop,  }\item[{int32\+\_\+t}]{id = {\ttfamily \mbox{\hyperlink{namespacens3_aa8c7346d1a02c40c94ad465301e57ef8}{DISTINFINITY}}} }\end{DoxyParamCaption})}
+
+
+
+Set the IP address and outgoing interface index that should be used to begin forwarding packets from the root \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} to \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. 
+
+Each router node in the simulation is associated with an \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. When calculating routes, each of these routers is, in turn, chosen as the \"{}root\"{} of the calculation and routes to all of the other routers are eventually saved in the routing tables of each of the chosen nodes.
+
+The \"{}\+Root\"{} vertex is then the \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} representing the router that is having its routing tables set. The \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} is the vertex that represents the host or network to which a route is being calculated from the root. The IP address that we\textquotesingle{}re asking for is the address on the remote side of a link off of the root node that should be used as the destination for packets along the path to \"{}this\"{} vertex.
+
+When initializing the root \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}, the IP address used when forwarding packets is determined by examining the Global Router Link Records of the Link State Advertisement generated by the root node\textquotesingle{}s \doxylink{classns3_1_1_d_g_r_router}{DGRRouter}. This address is used to forward packets off of the root\textquotesingle{}s network down those links. As other vertices / nodes are discovered which are further away from the root, they will be accessible down one of the paths via a link described by one of these Global Router Link Records.
+
+To forward packets to these hosts or networks, the root node must begin the forwarding process by sending the packets to a first hop router down an interface. This means that the first hop address and interface ID must be the same for all downstream SPFVertices. We call this \"{}inheriting\"{} the interface and next hop.
+
+In this method we are telling the root node which exit direction it should send should I send a packet to the network or host represented by \textquotesingle{}this\textquotesingle{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_router}{DGRRouter} 
+
+\doxylink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA} 
+
+\doxylink{classns3_1_1_d_g_r_routing_link_record}{DGRRouting\+Link\+Record} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em next\+Hop} & The IP address to use when forwarding packets to the host or network represented by \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. \\
+\hline
+{\em id} & The interface index to use when forwarding packets to the host or network represented by \"{}this\"{} \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00279}{279}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00537}{m\+\_\+ecmp\+Root\+Exits}}, \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00535}{m\+\_\+next\+Hop}}, and \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00534}{m\+\_\+root\+Oif}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00293}{Set\+Root\+Exit\+Direction()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01095}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFNexthop\+Calculation()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_ae9023c5885bfce6327e2f8f1f360e961_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_a9dbfca905e6a1a00be1d1e5fb0d65051}\label{classns3_1_1_d_g_r_vertex_a9dbfca905e6a1a00be1d1e5fb0d65051} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!SetVertexId@{SetVertexId}}
+\index{SetVertexId@{SetVertexId}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{SetVertexId()}{SetVertexId()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRVertex\+::\+Set\+Vertex\+Id (\begin{DoxyParamCaption}\item[{Ipv4\+Address}]{id }\end{DoxyParamCaption})}
+
+
+
+Set the Vertex ID field of a \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. 
+
+The Vertex ID uniquely identifies the simulation object a given \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} represents. Typically, this is the Router ID for \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} objects representing routers, and comes from the Link State Advertisement of a router aggregated to a node in the simulation. These IDs are allocated automatically by the routing environment and look like IP addresses beginning at 0.\+0.\+0.\+0 and monotonically increase as new routers are instantiated. This method is an explicit override of the automatically generated value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The new Ipv4\+Address Vertex ID for the current \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00193}{193}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00531}{m\+\_\+vertex\+Id}}.
+
+\Hypertarget{classns3_1_1_d_g_r_vertex_aa1718a99ec16d3ebf25949e3edac9168}\label{classns3_1_1_d_g_r_vertex_aa1718a99ec16d3ebf25949e3edac9168} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!SetVertexProcessed@{SetVertexProcessed}}
+\index{SetVertexProcessed@{SetVertexProcessed}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{SetVertexProcessed()}{SetVertexProcessed()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRVertex\+::\+Set\+Vertex\+Processed (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the value of the Vertex\+Processed flag. 
+
+Flag to note whether vertex has been processed in stage two of SPF computation 
+\begin{DoxyParams}{Parameters}
+{\em value} & boolean value to set the flag \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00394}{394}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00541}{m\+\_\+vertex\+Processed}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00408}{Clear\+Vertex\+Processed()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01630}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+Process\+ASExternals()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l01798}{ns3\+::\+DGRRoute\+Manager\+Impl\+::\+SPFProcess\+Stubs()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d43/classns3_1_1_d_g_r_vertex_aa1718a99ec16d3ebf25949e3edac9168_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classns3_1_1_d_g_r_vertex_a7d8e5d27954333a239893ec0a30b6486}\label{classns3_1_1_d_g_r_vertex_a7d8e5d27954333a239893ec0a30b6486} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!SetVertexType@{SetVertexType}}
+\index{SetVertexType@{SetVertexType}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{SetVertexType()}{SetVertexType()}}
+{\footnotesize\ttfamily void ns3\+::\+DGRVertex\+::\+Set\+Vertex\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96cce}{DGRVertex\+::\+Vertex\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Set the Vertex Type field of a \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. 
+
+The Vertex Type describes the kind of simulation object a given \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} represents.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96cce}{Vertex\+Type} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The new Vertex\+Type for the current \doxylink{classns3_1_1_d_g_r_vertex}{DGRVertex} object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00179}{179}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+References \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00530}{m\+\_\+vertex\+Type}}.
+
+
+
+\doxysubsubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classns3_1_1_d_g_r_vertex_af3ae1cd4e8023f9cf058b8c291748f38}\label{classns3_1_1_d_g_r_vertex_af3ae1cd4e8023f9cf058b8c291748f38} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aa78a926a5b354a145d0164a164057a53}{DGRVertex\+::\+List\+Of\+DGRVertex\+\_\+t}} \&}]{vs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Stream insertion operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & the reference to the output stream \\
+\hline
+{\em vs} & a list of DGRVertexes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the reference to the output stream 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00062}{62}} of file \mbox{\hyperlink{dgr-route-manager-impl_8cc_source}{dgr-\/route-\/manager-\/impl.\+cc}}.
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{classns3_1_1_d_g_r_vertex_a00201704c3afe974f06e06d5611c863b}\label{classns3_1_1_d_g_r_vertex_a00201704c3afe974f06e06d5611c863b} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!m\_children@{m\_children}}
+\index{m\_children@{m\_children}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{m\_children}{m\_children}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aa78a926a5b354a145d0164a164057a53}{List\+Of\+DGRVertex\+\_\+t}} ns3\+::\+DGRVertex\+::m\+\_\+children\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Children list. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00540}{540}} of file \mbox{\hyperlink{dgr-route-manager-impl_8h_source}{dgr-\/route-\/manager-\/impl.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00127}{\texorpdfstring{$\sim$}{\string~}\+DGRVertex()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00386}{Add\+Child()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00367}{Get\+Child()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00360}{Get\+NChildren()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_vertex_a6c0dd738fc7761774349eb65f80ac63b}\label{classns3_1_1_d_g_r_vertex_a6c0dd738fc7761774349eb65f80ac63b} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!m\_distanceFromRoot@{m\_distanceFromRoot}}
+\index{m\_distanceFromRoot@{m\_distanceFromRoot}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{m\_distanceFromRoot}{m\_distanceFromRoot}}
+{\footnotesize\ttfamily uint32\+\_\+t ns3\+::\+DGRVertex\+::m\+\_\+distance\+From\+Root\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Distance from root node. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00533}{533}} of file \mbox{\hyperlink{dgr-route-manager-impl_8h_source}{dgr-\/route-\/manager-\/impl.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00228}{Get\+Distance\+From\+Root()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00221}{Set\+Distance\+From\+Root()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_vertex_a2e1e0e41f8fbb8ed3972197642674d88}\label{classns3_1_1_d_g_r_vertex_a2e1e0e41f8fbb8ed3972197642674d88} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!m\_ecmpRootExits@{m\_ecmpRootExits}}
+\index{m\_ecmpRootExits@{m\_ecmpRootExits}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{m\_ecmpRootExits}{m\_ecmpRootExits}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a329d5add3e0fd627f1e3eb536a49199e}{List\+Of\+Node\+Exit\+\_\+t}} ns3\+::\+DGRVertex\+::m\+\_\+ecmp\+Root\+Exits\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+store the multiple root\textquotesingle{}s exits for supporting ECMP 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00537}{537}} of file \mbox{\hyperlink{dgr-route-manager-impl_8h_source}{dgr-\/route-\/manager-\/impl.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00127}{\texorpdfstring{$\sim$}{\string~}\+DGRVertex()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00353}{Get\+NRoot\+Exit\+Directions()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00313}{Get\+Root\+Exit\+Direction()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00300}{Get\+Root\+Exit\+Direction()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00337}{Inherit\+All\+Root\+Exit\+Directions()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00322}{Merge\+Root\+Exit\+Directions()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00279}{Set\+Root\+Exit\+Direction()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_vertex_ac159aa73dc98d368d334b4d3c01c6eb8}\label{classns3_1_1_d_g_r_vertex_ac159aa73dc98d368d334b4d3c01c6eb8} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!m\_lsa@{m\_lsa}}
+\index{m\_lsa@{m\_lsa}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{m\_lsa}{m\_lsa}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRouting\+LSA}}\texorpdfstring{$\ast$}{*} ns3\+::\+DGRVertex\+::m\+\_\+lsa\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Link State Advertisement. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00532}{532}} of file \mbox{\hyperlink{dgr-route-manager-impl_8h_source}{dgr-\/route-\/manager-\/impl.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00214}{Get\+LSA()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00207}{Set\+LSA()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_vertex_a21155cece0079523ede5b6a3e94d4d6c}\label{classns3_1_1_d_g_r_vertex_a21155cece0079523ede5b6a3e94d4d6c} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!m\_nextHop@{m\_nextHop}}
+\index{m\_nextHop@{m\_nextHop}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{m\_nextHop}{m\_nextHop}}
+{\footnotesize\ttfamily Ipv4\+Address ns3\+::\+DGRVertex\+::m\+\_\+next\+Hop\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+next hop 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00535}{535}} of file \mbox{\hyperlink{dgr-route-manager-impl_8h_source}{dgr-\/route-\/manager-\/impl.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00279}{Set\+Root\+Exit\+Direction()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_vertex_ad50ca09919dbd3f7b07252d0028623c2}\label{classns3_1_1_d_g_r_vertex_ad50ca09919dbd3f7b07252d0028623c2} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!m\_parents@{m\_parents}}
+\index{m\_parents@{m\_parents}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{m\_parents}{m\_parents}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_aa78a926a5b354a145d0164a164057a53}{List\+Of\+DGRVertex\+\_\+t}} ns3\+::\+DGRVertex\+::m\+\_\+parents\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+parent list 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00539}{539}} of file \mbox{\hyperlink{dgr-route-manager-impl_8h_source}{dgr-\/route-\/manager-\/impl.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00127}{\texorpdfstring{$\sim$}{\string~}\+DGRVertex()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00245}{Get\+Parent()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00264}{Merge\+Parent()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00235}{Set\+Parent()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_vertex_a1bd3092c87612d18910764ad9469975b}\label{classns3_1_1_d_g_r_vertex_a1bd3092c87612d18910764ad9469975b} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!m\_rootOif@{m\_rootOif}}
+\index{m\_rootOif@{m\_rootOif}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{m\_rootOif}{m\_rootOif}}
+{\footnotesize\ttfamily int32\+\_\+t ns3\+::\+DGRVertex\+::m\+\_\+root\+Oif\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+root Output Interface 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00534}{534}} of file \mbox{\hyperlink{dgr-route-manager-impl_8h_source}{dgr-\/route-\/manager-\/impl.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00279}{Set\+Root\+Exit\+Direction()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_vertex_af327951c82d95adf7bc570bae0ee6536}\label{classns3_1_1_d_g_r_vertex_af327951c82d95adf7bc570bae0ee6536} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!m\_vertexId@{m\_vertexId}}
+\index{m\_vertexId@{m\_vertexId}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{m\_vertexId}{m\_vertexId}}
+{\footnotesize\ttfamily Ipv4\+Address ns3\+::\+DGRVertex\+::m\+\_\+vertex\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vertex ID. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00531}{531}} of file \mbox{\hyperlink{dgr-route-manager-impl_8h_source}{dgr-\/route-\/manager-\/impl.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00127}{\texorpdfstring{$\sim$}{\string~}\+DGRVertex()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00200}{Get\+Vertex\+Id()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00193}{Set\+Vertex\+Id()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_vertex_acccf543804229747db8e14bcde5cefbd}\label{classns3_1_1_d_g_r_vertex_acccf543804229747db8e14bcde5cefbd} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!m\_vertexProcessed@{m\_vertexProcessed}}
+\index{m\_vertexProcessed@{m\_vertexProcessed}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{m\_vertexProcessed}{m\_vertexProcessed}}
+{\footnotesize\ttfamily bool ns3\+::\+DGRVertex\+::m\+\_\+vertex\+Processed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag to note whether vertex has been processed in stage two of SPF computation. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00541}{541}} of file \mbox{\hyperlink{dgr-route-manager-impl_8h_source}{dgr-\/route-\/manager-\/impl.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00401}{Is\+Vertex\+Processed()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00394}{Set\+Vertex\+Processed()}}.
+
+\Hypertarget{classns3_1_1_d_g_r_vertex_a378091a34909a44b8fae1e25d6f8e8e1}\label{classns3_1_1_d_g_r_vertex_a378091a34909a44b8fae1e25d6f8e8e1} 
+\index{ns3::DGRVertex@{ns3::DGRVertex}!m\_vertexType@{m\_vertexType}}
+\index{m\_vertexType@{m\_vertexType}!ns3::DGRVertex@{ns3::DGRVertex}}
+\doxyparagraph{\texorpdfstring{m\_vertexType}{m\_vertexType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1_d_g_r_vertex_a4e2ae872c20a6e44e2c53087a4e96cce}{Vertex\+Type}} ns3\+::\+DGRVertex\+::m\+\_\+vertex\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vertex type. 
+
+
+
+Definition at line \mbox{\hyperlink{dgr-route-manager-impl_8h_source_l00530}{530}} of file \mbox{\hyperlink{dgr-route-manager-impl_8h_source}{dgr-\/route-\/manager-\/impl.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00103}{DGRVertex()}}, \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00186}{Get\+Vertex\+Type()}}, and \mbox{\hyperlink{dgr-route-manager-impl_8cc_source_l00179}{Set\+Vertex\+Type()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{dgr-route-manager-impl_8h}{dgr-\/route-\/manager-\/impl.\+h}}\item 
+model/\mbox{\hyperlink{dgr-route-manager-impl_8cc}{dgr-\/route-\/manager-\/impl.\+cc}}\end{DoxyCompactItemize}

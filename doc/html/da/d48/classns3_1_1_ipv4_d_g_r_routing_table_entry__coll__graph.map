@@ -1,0 +1,9 @@
+<map id="ns3::Ipv4DGRRoutingTableEntry" name="ns3::Ipv4DGRRoutingTableEntry">
+<area shape="rect" id="Node000001" title="A record of an IPv4 routing table entry for Ipv4GlobalRouting and Ipv4StaticRouting." alt="" coords="78,123,273,163"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,108,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="66,43,77,71,95,97,127,120,124,125,91,101,72,73,61,45"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="133,5,218,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="178,44,178,122,173,122,173,44"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="311,5,386,31"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="348,45,339,74,321,101,299,117,274,128,272,123,296,112,317,97,334,71,343,43"/>
+</map>

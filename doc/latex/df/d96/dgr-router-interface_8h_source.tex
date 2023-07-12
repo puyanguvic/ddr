@@ -1,0 +1,273 @@
+\doxysubsection{dgr-\/router-\/interface.h}
+\hypertarget{dgr-router-interface_8h_source}{}\label{dgr-router-interface_8h_source}\index{model/dgr-\/router-\/interface.h@{model/dgr-\/router-\/interface.h}}
+\mbox{\hyperlink{dgr-router-interface_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00001}00001\ \textcolor{comment}{/*\ -\/*-\/\ Mode:C++;\ c-\/file-\/style:"{}gnu"{};\ indent-\/tabs-\/mode:nil;\ -\/*-\/\ */}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00002}00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00003}00003\ \textcolor{comment}{\ *\ Copyright\ 2007\ University\ of\ Washington}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00004}00004\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00005}00005\ \textcolor{comment}{\ *\ This\ program\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00006}00006\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ version\ 2\ as}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00007}00007\ \textcolor{comment}{\ *\ published\ by\ the\ Free\ Software\ Foundation;}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00008}00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00009}00009\ \textcolor{comment}{\ *\ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00010}00010\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00011}00011\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00012}00012\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00013}00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00014}00014\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00015}00015\ \textcolor{comment}{\ *\ along\ with\ this\ program;\ if\ not,\ write\ to\ the\ Free\ Software}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00016}00016\ \textcolor{comment}{\ *\ Foundation,\ Inc.,\ 59\ Temple\ Place,\ Suite\ 330,\ Boston,\ MA\ \ 02111-\/1307\ \ USA}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00018}00018\ \textcolor{comment}{\ *\ Authors:\ \ Craig\ Dowell\ (craigdo@ee.washington.edu)}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ Tom\ Henderson\ (tomhend@u.washington.edu)}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00020}00020\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00022}00022\ \textcolor{preprocessor}{\#ifndef\ DGR\_ROUTER\_INTERFACE\_H}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00023}00023\ \textcolor{preprocessor}{\#define\ DGR\_ROUTER\_INTERFACE\_H}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00025}00025\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00026}00026\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}ns3/object.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}ns3/ptr.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}ns3/node.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}ns3/channel.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}ns3/ipv4-\/address.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00032}00032\ \textcolor{preprocessor}{\#include\ "{}ns3/net-\/device-\/container.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00033}00033\ \textcolor{preprocessor}{\#include\ "{}ns3/bridge-\/net-\/device.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00034}00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dgr-route-manager_8h}{dgr-\/route-\/manager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00035}00035\ \textcolor{preprocessor}{\#include\ "{}ns3/ipv4-\/dgr-\/routing-\/table-\/entry.h"{}}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00037}00037\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacens3}{ns3}}\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00039}00039\ \textcolor{keyword}{class\ }DGRRouter;}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00040}00040\ \textcolor{keyword}{class\ }Ipv4DGRRouting;}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00051}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record}{00051}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record}{DGRRoutingLinkRecord}}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00052}00052\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00053}00053\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00054}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_ad6d7a02de74a135f5d909dcc2a7be8e7}{00054}}\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRoutingLSA}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00062}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4b}{00062}}\ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4b}{LinkType}}\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00063}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4ba78859ac25ae88fd715dc691e1fcea4f2}{00063}}\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4ba78859ac25ae88fd715dc691e1fcea4f2}{Unknown}}\ =\ 0,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00064}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4bac9c0a2d3da9eb9fdafee93e52a498c84}{00064}}\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4bac9c0a2d3da9eb9fdafee93e52a498c84}{PointToPoint}},\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00065}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4baa0b0a272a289d2f1fcafdfedcde669b7}{00065}}\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4baa0b0a272a289d2f1fcafdfedcde669b7}{TransitNetwork}},\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00066}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4ba31c95bb0542fb4fab6cb056f88eea561}{00066}}\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4ba31c95bb0542fb4fab6cb056f88eea561}{StubNetwork}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00067}00067\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4ba02196af5dc5bdbe7b6da0e1e8082640b}{VirtualLink}}\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00068}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4ba02196af5dc5bdbe7b6da0e1e8082640b}{00068}}\ \ \ \};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00077}00077\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_ac9084e29ac639975a3e265cdd618d2c2}{DGRRoutingLinkRecord}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00090}00090\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_ac9084e29ac639975a3e265cdd618d2c2}{DGRRoutingLinkRecord}}\ (}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00091}00091\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4b}{LinkType}}\ \ \ \ linkType,\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00092}00092\ \ \ \ \ Ipv4Address\ linkId,\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00093}00093\ \ \ \ \ Ipv4Address\ linkData,\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00094}00094\ \ \ \ \ uint16\_t\ \ \ \ metric);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00101}00101\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_ad42c3b86dbd2e8716653a004dafd515b}{\string~DGRRoutingLinkRecord}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00114}00114\ \ \ Ipv4Address\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a9fe6e135674ef321bc11b48f90071857}{GetLinkId}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00127}00127\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a203541f10ca13f9cfb1987fbbff4416b}{SetLinkId}}\ (Ipv4Address\ addr);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00140}00140\ \ \ Ipv4Address\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a97080a8409f77898f4485230be0be5e4}{GetLinkData}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00153}00153\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a06083e776955f21fe1fd4e4927cf0b24}{SetLinkData}}\ (Ipv4Address\ addr);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00164}00164\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4b}{LinkType}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_ab9148eaf7a9d088a397e66164c1f30b9}{GetLinkType}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00175}00175\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_aacc16a8566cd389fd974cbeb8dde6ddd}{SetLinkType}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4b}{LinkType}}\ linkType);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00188}00188\ \ \ uint16\_t\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_af96cb9a05b3d95d14b6af29e058e3712}{GetMetric}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00201}00201\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_ac6b9632b024b3799a25209f1392c1ab8}{SetMetric}}\ (uint16\_t\ metric);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00203}00203\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00214}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a19605f0540a6904bd5801a7e1bd07895}{00214}}\ \ \ Ipv4Address\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a19605f0540a6904bd5801a7e1bd07895}{m\_linkId}};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00225}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a90859ad36a2936e26b9e933a323e35df}{00225}}\ \ \ Ipv4Address\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a90859ad36a2936e26b9e933a323e35df}{m\_linkData}};\ \ \ \ \textcolor{comment}{//\ for\ links\ to\ RouterLSA,\ }}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00231}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_ae33ce84e5118670a92ec8253b4e35a6e}{00231}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_a93b89b9f89407a39712186911ad12a4b}{LinkType}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_ae33ce84e5118670a92ec8253b4e35a6e}{m\_linkType}};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00232}00232\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00242}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_ad36a9c3468f8ca6ef6335eff2dfca4fe}{00242}}\ \ \ uint16\_t\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record_ad36a9c3468f8ca6ef6335eff2dfca4fe}{m\_metric}};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00243}00243\ \};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00244}00244\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00253}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{00253}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRoutingLSA}}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00254}00254\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00255}00255\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00260}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694}{00260}}\ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694}{LSType}}\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00261}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694ae9b9b7d77d4f86bc2b56fd908ab29069}{00261}}\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694ae9b9b7d77d4f86bc2b56fd908ab29069}{Unknown}}\ =\ 0,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00262}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694a0322ce07c2b94cdb14163bbe04cb9674}{00262}}\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694a0322ce07c2b94cdb14163bbe04cb9674}{RouterLSA}},}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00263}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694a5d51f5653b9ddf1d8bf640932068cb85}{00263}}\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694a5d51f5653b9ddf1d8bf640932068cb85}{NetworkLSA}},}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00264}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694a4c90feb1f4a656a0eb5043c8866eebc0}{00264}}\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694a4c90feb1f4a656a0eb5043c8866eebc0}{SummaryLSA}},}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00265}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694ad978391efe3a9c2e66f450bbb1642d4a}{00265}}\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694ad978391efe3a9c2e66f450bbb1642d4a}{SummaryLSA\_ASBR}},}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00266}00266\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694aca69c3cdc30b0ddcb8dd1dd95f79065a}{ASExternalLSAs}}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00267}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694aca69c3cdc30b0ddcb8dd1dd95f79065a}{00267}}\ \ \ \};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00273}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7}{00273}}\ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7}{SPFStatus}}\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00274}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7ac563232b34162339268c7804c93765ad}{00274}}\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7ac563232b34162339268c7804c93765ad}{LSA\_SPF\_NOT\_EXPLORED}}\ =\ 0,\ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00275}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7a196d95882ef494ff03d1549a998ba12c}{00275}}\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7a196d95882ef494ff03d1549a998ba12c}{LSA\_SPF\_CANDIDATE}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00276}00276\ \ \ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7a0f88fe6c9e38275dc638a9ebb26018a2}{LSA\_SPF\_IN\_SPFTREE}}\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00277}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7a0f88fe6c9e38275dc638a9ebb26018a2}{00277}}\ \ \ \};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00284}00284\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a42a5782aad1a9ced94e817f8139bec4e}{DGRRoutingLSA}}();}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00285}00285\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00295}00295\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a42a5782aad1a9ced94e817f8139bec4e}{DGRRoutingLSA}}(\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7}{SPFStatus}}\ status,\ Ipv4Address\ linkStateId,\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Ipv4Address\ advertisingRtr);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00297}00297\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00306}00306\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a42a5782aad1a9ced94e817f8139bec4e}{DGRRoutingLSA}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRoutingLSA}}\&\ lsa);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00307}00307\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00313}00313\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a20b74180087d2bace3c3196dd112bb9f}{\string~DGRRoutingLSA}}();}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00314}00314\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00327}00327\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRoutingLSA}}\&\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_af09c521adba74e1538773cebf14b3929}{operator=\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRoutingLSA}}\&\ lsa);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00328}00328\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00339}00339\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a206ff392d0561c4b244a8c6fe8d824ab}{CopyLinkRecords}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRoutingLSA}}\&\ lsa);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00340}00340\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00347}00347\ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a4b21b880eb8b7b733039d0dfaa8b48a4}{AddLinkRecord}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record}{DGRRoutingLinkRecord}}*\ lr);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00348}00348\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00354}00354\ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a882a042d18bcbdea3bc1a3eb55dcfe58}{GetNLinkRecords}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00355}00355\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00362}00362\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_link_record}{DGRRoutingLinkRecord}}*\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_acb5df9fec863df510911aa3e64d4aa04}{GetLinkRecord}}\ (uint32\_t\ n)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00363}00363\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00368}00368\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_add7dc495e6a10547b0045aab19ea9bcc}{ClearLinkRecords}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00369}00369\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00376}00376\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a658f443f5c9022b0e979b70076dd3b16}{IsEmpty}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00377}00377\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00383}00383\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a46f99ef0058670ce83157f4ab482aaee}{Print}}\ (std::ostream\ \&os)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00384}00384\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00389}00389\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694}{LSType}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_aa00b07a4d8639539e94817f98905ef19}{GetLSType}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00394}00394\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a898720f0e7c926c4ecd2ca89d09363dd}{SetLSType}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694}{LSType}}\ typ);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00395}00395\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00404}00404\ \ \ Ipv4Address\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a0ec746b926044a548e4f3a09309322ce}{GetLinkStateId}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00405}00405\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00413}00413\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a382594771f20561edde6e6b53d3bd982}{SetLinkStateId}}\ (Ipv4Address\ addr);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00414}00414\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00423}00423\ \ \ Ipv4Address\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_aa16092b325a84e50b90fcc5dd4e5bab2}{GetAdvertisingRouter}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00424}00424\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00433}00433\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a5f36eb9409d5d6532b9bd267e8d90f61}{SetAdvertisingRouter}}\ (Ipv4Address\ \ rtr);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00434}00434\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00440}00440\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a1d60ee05ffc0dd4d434fb12917f6c83e}{SetNetworkLSANetworkMask}}\ (Ipv4Mask\ mask);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00441}00441\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00448}00448\ \ \ Ipv4Mask\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a3e3b9552f26b930f47dd069eaf0f3950}{GetNetworkLSANetworkMask}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00449}00449\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00456}00456\ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a945e5e3081dc4463d6335cf40d81b192}{AddAttachedRouter}}\ (Ipv4Address\ addr);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00457}00457\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00463}00463\ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_ae7e796f5d4860d2236bef31d74364c91}{GetNAttachedRouters}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00464}00464\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00471}00471\ \ \ Ipv4Address\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a1b5e5fa81d0506983a0755787a8d2d62}{GetAttachedRouter}}\ (uint32\_t\ n)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00472}00472\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00479}00479\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7}{SPFStatus}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_afd80a2583858e08b8b3877a5401bf072}{GetStatus}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00480}00480\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00486}00486\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a497453d1271c0020968487ec8ead99c5}{SetStatus}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7}{SPFStatus}}\ status);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00487}00487\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00492}00492\ \ \ Ptr<Node>\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a5000c59488a04e9b809574c93624d3ce}{GetNode}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00493}00493\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00498}00498\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a5fb6e248545fbd3d50b34429e4780746}{SetNode}}\ (Ptr<Node>\ node);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00499}00499\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00500}00500\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00505}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_ae6c045e56d285913bdc92870f0e0ce45}{00505}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a38d676a01a677ff003f198d454cf0694}{LSType}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_ae6c045e56d285913bdc92870f0e0ce45}{m\_lsType}};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00513}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a7934180d82eeada95c7c0918438f8f54}{00513}}\ \ \ Ipv4Address\ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a7934180d82eeada95c7c0918438f8f54}{m\_linkStateId}};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00514}00514\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00522}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_ae081e96bb7f72467f7bc7d3b6cab2548}{00522}}\ \ \ Ipv4Address\ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_ae081e96bb7f72467f7bc7d3b6cab2548}{m\_advertisingRtr}};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00523}00523\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00527}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_aef9fd2089bc114e9b2ff86acff4482f5}{00527}}\ \ \ \textcolor{keyword}{typedef}\ std::list<DGRRoutingLinkRecord*>\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_aef9fd2089bc114e9b2ff86acff4482f5}{ListOfLinkRecords\_t}};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00528}00528\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00539}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a05d8ade21d0728b6a2de9e3d3bd4f154}{00539}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_aef9fd2089bc114e9b2ff86acff4482f5}{ListOfLinkRecords\_t}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a05d8ade21d0728b6a2de9e3d3bd4f154}{m\_linkRecords}};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00540}00540\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00544}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a96b6a315aabd6e6067d627a47f755d39}{00544}}\ \ \ Ipv4Mask\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a96b6a315aabd6e6067d627a47f755d39}{m\_networkLSANetworkMask}};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00545}00545\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00549}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_ad79473dcd06399d8065d1810c74ab6f3}{00549}}\ \ \ \textcolor{keyword}{typedef}\ std::list<Ipv4Address>\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_ad79473dcd06399d8065d1810c74ab6f3}{ListOfAttachedRouters\_t}};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00550}00550\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00559}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a41531661fa28a374064823c36171ae0b}{00559}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_ad79473dcd06399d8065d1810c74ab6f3}{ListOfAttachedRouters\_t}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a41531661fa28a374064823c36171ae0b}{m\_attachedRouters}};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00560}00560\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00567}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a81565148817b697f3aa67ee29aec1c34}{00567}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a2d6cf227cde572e9c99d273a0e0fa5f7}{SPFStatus}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_a81565148817b697f3aa67ee29aec1c34}{m\_status}};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00568}\mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_afbc01e04115a275765d9336f3e388fc8}{00568}}\ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a_afbc01e04115a275765d9336f3e388fc8}{m\_node\_id}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00569}00569\ \};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00570}00570\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00578}00578\ std::ostream\&\ \mbox{\hyperlink{namespacens3_a7c0f3fcc4f4363c5458911cded1af4b6}{operator<<\ }}(std::ostream\&\ os,\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRoutingLSA}}\&\ lsa);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00579}00579\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00589}\mbox{\hyperlink{classns3_1_1_d_g_r_router}{00589}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classns3_1_1_d_g_r_router}{DGRRouter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_object}{Object}}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00590}00590\ \{}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00591}00591\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00596}00596\ \ \ \textcolor{keyword}{static}\ TypeId\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a5e4510d23ed9e20780dc25f60e8fc6e4}{GetTypeId}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00597}00597\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00601}00601\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a0bd2dfa51885b1dc89d7dfcb88435803}{DGRRouter}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00602}00602\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00607}00607\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_ad311356106cc37bb8b0c140e42a8102c}{SetRoutingProtocol}}\ (Ptr<Ipv4DGRRouting>\ routing);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00608}00608\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00613}00613\ \ \ Ptr<Ipv4DGRRouting>\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a87f63cac54a25accafa7c849a9aa0dbc}{GetRoutingProtocol}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00614}00614\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00624}00624\ \ \ Ipv4Address\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_ad8375eec1264922d460ba8a5978f4ace}{GetRouterId}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00625}00625\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00643}00643\ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_ac119cda89d816da90186bb617c710c25}{DiscoverLSAs}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00644}00644\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00658}00658\ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a3021e686d8c500dbecdb4685c6a8e9f1}{GetNumLSAs}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00659}00659\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00680}00680\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a4ade1b0b9aa88148e3fb7366a29cb01f}{GetLSA}}\ (uint32\_t\ n,\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRoutingLSA}}\ \&lsa)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00681}00681\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00689}00689\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a2ee18787000708d7c125fc228b405d43}{InjectRoute}}\ (Ipv4Address\ network,\ Ipv4Mask\ networkMask);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00690}00690\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00696}00696\ \ \ uint32\_t\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a438d464b3b2402bf8f7cc9e383542ae7}{GetNInjectedRoutes}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00697}00697\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00704}00704\ \ \ \mbox{\hyperlink{classns3_1_1_ipv4_d_g_r_routing_table_entry}{Ipv4DGRRoutingTableEntry}}\ *\mbox{\hyperlink{classns3_1_1_d_g_r_router_aed205a6c27d00eb8a5e3283969809829}{GetInjectedRoute}}\ (uint32\_t\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}});}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00705}00705\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00717}00717\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a2a9290440b576b8a32c3a944409cc38f}{RemoveInjectedRoute}}\ (uint32\_t\ \mbox{\hyperlink{namespacens3_aa5e169e2453984d2f21c0d5cec9e907b}{i}});}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00718}00718\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00728}00728\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_af299a2048022a7a4f360e40d4b787eb8}{WithdrawRoute}}\ (Ipv4Address\ network,\ Ipv4Mask\ networkMask);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00729}00729\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00730}00730\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00731}00731\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_af0515aa6e787213f0d24aeae066261e7}{\string~DGRRouter}}\ ();}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00732}00732\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00736}00736\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a2b22b001dff03d6d86ba7003104d8a26}{ClearLSAs}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00737}00737\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00747}00747\ \ \ Ptr<NetDevice>\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_adc8946ca6068b51f7de5935696047a94}{GetAdjacent}}\ (Ptr<NetDevice>\ nd,\ Ptr<Channel>\ ch)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00748}00748\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00763}00763\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a817add200a30892091534c2d42fa43e5}{FindInterfaceForDevice}}\ (Ptr<Node>\ node,\ Ptr<NetDevice>\ nd,\ uint32\_t\ \&index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00764}00764\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00776}00776\ \ \ Ipv4Address\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a4878eacca3b0a943b4e7e49d25dd8e1b}{FindDesignatedRouterForLink}}\ (Ptr<NetDevice>\ ndLocal)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00777}00777\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00788}00788\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_ad1f4d3739e9972e6126b4f3c61b48cc3}{AnotherRouterOnLink}}\ (Ptr<NetDevice>\ nd)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00789}00789\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00797}00797\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_aa562c84d9a117e26103ac8338ec8094f}{ProcessBroadcastLink}}\ (Ptr<NetDevice>\ nd,\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRoutingLSA}}\ *pLSA,\ NetDeviceContainer\ \&c);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00798}00798\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00806}00806\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a920b7e48d18135f51a66b010b6d730cc}{ProcessSingleBroadcastLink}}\ (Ptr<NetDevice>\ nd,\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRoutingLSA}}\ *pLSA,\ NetDeviceContainer\ \&c);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00807}00807\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00815}00815\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_ac1075dd7ea9735e489838a39e29f6597}{ProcessBridgedBroadcastLink}}\ (Ptr<NetDevice>\ nd,\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRoutingLSA}}\ *pLSA,\ NetDeviceContainer\ \&c);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00816}00816\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00823}00823\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_aac014913150c42a93cecbc6a9daf7552}{ProcessPointToPointLink}}\ (Ptr<NetDevice>\ ndLocal,\ \mbox{\hyperlink{classns3_1_1_d_g_r_routing_l_s_a}{DGRRoutingLSA}}\ *pLSA);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00824}00824\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00831}00831\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a045a362fddd31a11a9c777bb64c889f7}{BuildNetworkLSAs}}\ (NetDeviceContainer\ c);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00832}00832\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00847}00847\ \ \ NetDeviceContainer\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a82bb020047d97bca36f66ab9c8eeb20a}{FindAllNonBridgedDevicesOnLink}}\ (Ptr<Channel>\ ch)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00848}00848\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00855}00855\ \ \ Ptr<BridgeNetDevice>\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a53fdf9c96432439b34d091da6050890b}{NetDeviceIsBridged}}\ (Ptr<NetDevice>\ nd)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00856}00856\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00857}00857\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00858}\mbox{\hyperlink{classns3_1_1_d_g_r_router_ac35345e38e068c7f0f3c1193d32ea80d}{00858}}\ \ \ \textcolor{keyword}{typedef}\ std::list<DGRRoutingLSA*>\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_ac35345e38e068c7f0f3c1193d32ea80d}{ListOfLSAs\_t}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00859}\mbox{\hyperlink{classns3_1_1_d_g_r_router_aa839f56748d61a63ad55c0db58ddd07f}{00859}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_router_ac35345e38e068c7f0f3c1193d32ea80d}{ListOfLSAs\_t}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_aa839f56748d61a63ad55c0db58ddd07f}{m\_LSAs}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00860}00860\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00861}\mbox{\hyperlink{classns3_1_1_d_g_r_router_ad5a4a0b95c697c5121ee5096dfb1da61}{00861}}\ \ \ Ipv4Address\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_ad5a4a0b95c697c5121ee5096dfb1da61}{m\_routerId}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00862}\mbox{\hyperlink{classns3_1_1_d_g_r_router_aa705acbc7504f36647b15d3771ec7a5c}{00862}}\ \ \ Ptr<Ipv4DGRRouting>\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_aa705acbc7504f36647b15d3771ec7a5c}{m\_routingProtocol}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00863}00863\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00864}\mbox{\hyperlink{classns3_1_1_d_g_r_router_a9f0ef594d1a61e21ef32e53fd1537428}{00864}}\ \ \ \textcolor{keyword}{typedef}\ std::list<Ipv4DGRRoutingTableEntry\ *>\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a9f0ef594d1a61e21ef32e53fd1537428}{InjectedRoutes}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00865}\mbox{\hyperlink{classns3_1_1_d_g_r_router_a45ba88a691f800f523041ad82ce36f91}{00865}}\ \ \ \textcolor{keyword}{typedef}\ std::list<Ipv4DGRRoutingTableEntry\ *>::const\_iterator\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a45ba88a691f800f523041ad82ce36f91}{InjectedRoutesCI}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00866}\mbox{\hyperlink{classns3_1_1_d_g_r_router_a225672861cc79568c5c6c231b45951fd}{00866}}\ \ \ \textcolor{keyword}{typedef}\ std::list<Ipv4DGRRoutingTableEntry\ *>::iterator\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a225672861cc79568c5c6c231b45951fd}{InjectedRoutesI}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00867}\mbox{\hyperlink{classns3_1_1_d_g_r_router_a44d220216aad103c57fbd253f80df2b2}{00867}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a9f0ef594d1a61e21ef32e53fd1537428}{InjectedRoutes}}\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a44d220216aad103c57fbd253f80df2b2}{m\_injectedRoutes}};\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00868}00868\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00869}00869\ \ \ \textcolor{comment}{//\ Declared\ mutable\ so\ that\ const\ member\ functions\ can\ clear\ it}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00870}00870\ \ \ \textcolor{comment}{//\ (supporting\ the\ logical\ constness\ of\ the\ search\ methods\ of\ this\ class)\ }}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00874}\mbox{\hyperlink{classns3_1_1_d_g_r_router_a3a387b1e294fec2c8ab1e3b81e1a3a47}{00874}}\ \textcolor{comment}{}\ \ \textcolor{keyword}{mutable}\ std::vector<Ptr<BridgeNetDevice>\ >\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a3a387b1e294fec2c8ab1e3b81e1a3a47}{m\_bridgesVisited}};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00878}00878\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a9c480fca2799ed5e445820561087500e}{ClearBridgesVisited}}\ (\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00886}00886\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a12f7423d137d6716fc597ee947173c41}{BridgeHasAlreadyBeenVisited}}\ (Ptr<BridgeNetDevice>\ device)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00893}00893\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_ac62c957b71fbe4ce12586c380dbfceeb}{MarkBridgeAsVisited}}\ (Ptr<BridgeNetDevice>\ device)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00894}00894\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00895}00895\ \ \ \textcolor{comment}{//\ inherited\ from\ Object}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00896}00896\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a344e058e98819ba13be13741adaddc27}{DoDispose}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00897}00897\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00902}\mbox{\hyperlink{classns3_1_1_d_g_r_router_a8d1e4d9118fff9950f64bb55ce8e7d7c}{00902}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a8d1e4d9118fff9950f64bb55ce8e7d7c}{DGRRouter}}\ (\mbox{\hyperlink{classns3_1_1_d_g_r_router}{DGRRouter}}\&\ sr);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00903}00903\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00909}\mbox{\hyperlink{classns3_1_1_d_g_r_router_a7a59aa3e98d5a9cbff973b0165608eed}{00909}}\ \ \ \mbox{\hyperlink{classns3_1_1_d_g_r_router}{DGRRouter}}\&\ \mbox{\hyperlink{classns3_1_1_d_g_r_router_a7a59aa3e98d5a9cbff973b0165608eed}{operator=\ }}(\mbox{\hyperlink{classns3_1_1_d_g_r_router}{DGRRouter}}\&\ sr);}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00910}00910\ \};}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00911}00911\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00912}00912\ \}\ \textcolor{comment}{//\ namespace\ ns3}}
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00913}00913\ }
+\DoxyCodeLine{\Hypertarget{dgr-router-interface_8h_source_l00914}00914\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ DGR\_ROUTER\_INTERFACE\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

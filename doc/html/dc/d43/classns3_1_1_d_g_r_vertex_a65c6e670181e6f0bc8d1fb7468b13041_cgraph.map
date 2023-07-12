@@ -1,0 +1,5 @@
+<map id="ns3::DGRVertex::SetRootExitDirection" name="ns3::DGRVertex::SetRootExitDirection">
+<area shape="rect" id="Node000001" title="Set the IP address and outgoing interface index that should be used to begin forwarding packets from ..." alt="" coords="5,5,213,45"/>
+<area shape="rect" id="Node000002" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#ae9023c5885bfce6327e2f8f1f360e961" title="Set the IP address and outgoing interface index that should be used to begin forwarding packets from ..." alt="" coords="261,5,469,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,23,248,23,248,28,213,28"/>
+</map>

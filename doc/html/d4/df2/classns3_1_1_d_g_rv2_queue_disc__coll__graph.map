@@ -1,0 +1,9 @@
+<map id="ns3::DGRv2QueueDisc" name="ns3::DGRv2QueueDisc">
+<area shape="rect" id="Node000001" title=" " alt="" coords="121,181,289,207"/>
+<area shape="rect" id="Node000002" href="$de/dde/class_queue_disc.html" title=" " alt="" coords="5,13,97,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,46,196,179,192,183,69,50"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="122,5,287,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="207,59,207,181,202,181,202,59"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="358,13,433,38"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="400,52,395,106,385,134,368,159,336,175,289,185,288,180,335,170,364,155,380,132,390,105,394,52"/>
+</map>

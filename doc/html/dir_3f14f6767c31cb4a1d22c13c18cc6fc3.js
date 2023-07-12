@@ -1,16 +1,29 @@
 var dir_3f14f6767c31cb4a1d22c13c18cc6fc3 =
 [
     [ "dgr-candidate-queue.cc", "da/d53/dgr-candidate-queue_8cc.html", "da/d53/dgr-candidate-queue_8cc" ],
+    [ "dgr-candidate-queue.h", "df/d86/dgr-candidate-queue_8h.html", "df/d86/dgr-candidate-queue_8h" ],
     [ "dgr-header.cc", "d8/d9d/dgr-header_8cc.html", "d8/d9d/dgr-header_8cc" ],
+    [ "dgr-header.h", "de/dc1/dgr-header_8h.html", "de/dc1/dgr-header_8h" ],
     [ "dgr-route-manager-impl.cc", "d3/d4c/dgr-route-manager-impl_8cc.html", "d3/d4c/dgr-route-manager-impl_8cc" ],
+    [ "dgr-route-manager-impl.h", "d5/d9c/dgr-route-manager-impl_8h.html", "d5/d9c/dgr-route-manager-impl_8h" ],
     [ "dgr-route-manager.cc", "db/db2/dgr-route-manager_8cc.html", "db/db2/dgr-route-manager_8cc" ],
+    [ "dgr-route-manager.h", "dc/dd8/dgr-route-manager_8h.html", "dc/dd8/dgr-route-manager_8h" ],
     [ "dgr-router-interface.cc", "de/d42/dgr-router-interface_8cc.html", "de/d42/dgr-router-interface_8cc" ],
+    [ "dgr-router-interface.h", "df/d96/dgr-router-interface_8h.html", "df/d96/dgr-router-interface_8h" ],
     [ "dgr-sink.cc", "d3/d89/dgr-sink_8cc.html", "d3/d89/dgr-sink_8cc" ],
+    [ "dgr-sink.h", "df/d56/dgr-sink_8h.html", "df/d56/dgr-sink_8h" ],
     [ "dgr-tags.cc", "d1/d14/dgr-tags_8cc.html", "d1/d14/dgr-tags_8cc" ],
+    [ "dgr-tags.h", "dc/ded/dgr-tags_8h.html", "dc/ded/dgr-tags_8h" ],
     [ "dgr-tcp-application.cc", "d0/dbf/dgr-tcp-application_8cc.html", "d0/dbf/dgr-tcp-application_8cc" ],
+    [ "dgr-tcp-application.h", "d7/d06/dgr-tcp-application_8h.html", "d7/d06/dgr-tcp-application_8h" ],
     [ "dgr-udp-application.cc", "d0/ded/dgr-udp-application_8cc.html", "d0/ded/dgr-udp-application_8cc" ],
+    [ "dgr-udp-application.h", "dc/d8d/dgr-udp-application_8h.html", "dc/d8d/dgr-udp-application_8h" ],
     [ "dgrv2-queue-disc.cc", "d6/da6/dgrv2-queue-disc_8cc.html", "d6/da6/dgrv2-queue-disc_8cc" ],
+    [ "dgrv2-queue-disc.h", "d6/d73/dgrv2-queue-disc_8h.html", "d6/d73/dgrv2-queue-disc_8h" ],
     [ "ipv4-dgr-routing-table-entry.cc", "dc/d27/ipv4-dgr-routing-table-entry_8cc.html", "dc/d27/ipv4-dgr-routing-table-entry_8cc" ],
+    [ "ipv4-dgr-routing-table-entry.h", "db/db8/ipv4-dgr-routing-table-entry_8h.html", "db/db8/ipv4-dgr-routing-table-entry_8h" ],
     [ "ipv4-dgr-routing.cc", "d2/dc4/ipv4-dgr-routing_8cc.html", "d2/dc4/ipv4-dgr-routing_8cc" ],
-    [ "neighbor-status-database.cc", "db/d9d/neighbor-status-database_8cc.html", "db/d9d/neighbor-status-database_8cc" ]
+    [ "ipv4-dgr-routing.h", "dd/d5c/ipv4-dgr-routing_8h.html", "dd/d5c/ipv4-dgr-routing_8h" ],
+    [ "neighbor-status-database.cc", "db/d9d/neighbor-status-database_8cc.html", "db/d9d/neighbor-status-database_8cc" ],
+    [ "neighbor-status-database.h", "d1/daf/neighbor-status-database_8h.html", "d1/daf/neighbor-status-database_8h" ]
 ];

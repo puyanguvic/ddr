@@ -1,0 +1,9 @@
+<map id="ns3::DGRCandidateQueue::Reorder" name="ns3::DGRCandidateQueue::Reorder">
+<area shape="rect" id="Node000001" title="Reorders the Candidate Queue according to the priority scheme." alt="" coords="5,35,196,75"/>
+<area shape="rect" id="Node000002" href="$dd/d17/classns3_1_1_d_g_r_candidate_queue.html#aff4da36dc33f48b29a1ac3cedaaca635" title="return true if v1 &lt; v2" alt="" coords="244,35,435,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,52,230,52,230,57,196,57"/>
+<area shape="rect" id="Node000003" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a307ee8139d815f7f26b8cf01e6885b53" title="Get the distance from the root vertex to &quot;this&quot; DGRVertex object." alt="" coords="490,5,702,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="435,41,476,36,477,42,435,46"/>
+<area shape="rect" id="Node000004" href="$dc/d43/classns3_1_1_d_g_r_vertex.html#a5999846daefbeb25a5265e80e3f3a078" title="Get the Vertex Type field of a DGRVertex object." alt="" coords="483,70,709,95"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="435,62,469,66,469,71,435,68"/>
+</map>

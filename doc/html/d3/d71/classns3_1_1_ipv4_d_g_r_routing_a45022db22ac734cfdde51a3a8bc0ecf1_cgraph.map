@@ -1,0 +1,12 @@
+<map id="ns3::Ipv4DGRRouting::NotifyRemoveAddress" name="ns3::Ipv4DGRRouting::NotifyRemoveAddress">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,117,180,157"/>
+<area shape="rect" id="Node000002" href="$d1/da9/classns3_1_1_d_g_r_route_manager.html#a62b76ca8cab68a61efd72c5fe5d092dc" title="Build the routing database by gathering Link State Advertisements from each node exporting a DGRRoute..." alt="" coords="228,29,432,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,115,227,79,248,71,250,76,229,84,140,120"/>
+<area shape="rect" id="Node000003" href="$d1/da9/classns3_1_1_d_g_r_route_manager.html#acea317a83af55525aa4453f33839db3a" title="Delete all static routes on all nodes that have a DGRRouterInterface." alt="" coords="241,117,419,157"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="180,135,227,135,227,140,180,140"/>
+<area shape="rect" id="Node000004" href="$d1/da9/classns3_1_1_d_g_r_route_manager.html#ad637a566676faf22176f66f1afdb8c3c" title="Compute routes using a Dijkstra SPF computation and populate per&#45;node forwarding tables." alt="" coords="241,205,419,245"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="149,155,263,198,261,203,147,160"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="286,30,283,20,290,10,306,5,330,3,358,6,373,13,370,18,356,11,330,8,307,10,293,15,288,21,291,28"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="286,118,283,108,290,98,306,93,330,91,358,94,373,101,370,106,356,99,330,96,307,98,293,103,288,109,291,116"/>
+<area shape="poly" id="edge6_Node000004_Node000004" title=" " alt="" coords="286,206,283,196,290,186,306,181,330,179,358,182,373,189,370,194,356,187,330,184,307,186,293,191,288,197,291,204"/>
+</map>

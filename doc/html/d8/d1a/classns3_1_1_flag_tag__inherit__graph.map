@@ -1,0 +1,5 @@
+<map id="ns3::FlagTag" name="ns3::FlagTag">
+<area shape="rect" id="Node000001" title="This class implements a tag that carries a flag to the application layer." alt="" coords="5,79,108,104"/>
+<area shape="rect" id="Node000002" href="$d0/d57/class_tag.html" title=" " alt="" coords="35,5,79,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,44,59,79,54,79,54,44"/>
+</map>

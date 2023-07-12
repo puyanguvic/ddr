@@ -1,0 +1,13 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$d0/d57/class_tag.html" title=" " alt="" coords="5,104,49,129"/>
+<area shape="rect" id="Node000001" href="$d0/db3/classns3_1_1_budget_tag.html" title="This class implements a tag that carries the budget time of a packet to the IP layer." alt="" coords="98,5,219,31"/>
+<area shape="poly" id="edge12_Node000000_Node000001" title=" " alt="" coords="44,91,67,65,96,40,117,28,119,33,99,44,71,69,48,95"/>
+<area shape="rect" id="Node000002" href="$d1/def/classns3_1_1_dist_tag.html" title="This class implements a tag that carries the distance to destination node of a packet to the IP layer..." alt="" coords="108,55,209,80"/>
+<area shape="poly" id="edge13_Node000000_Node000002" title=" " alt="" coords="61,101,123,78,125,83,63,106"/>
+<area shape="rect" id="Node000003" href="$d5/d77/classns3_1_1_flag_tag.html" title="This class implements a tag that carries a flag to the application layer." alt="" coords="107,104,210,129"/>
+<area shape="poly" id="edge14_Node000000_Node000003" title=" " alt="" coords="63,114,107,114,107,119,63,119"/>
+<area shape="rect" id="Node000004" href="$d7/d58/classns3_1_1_n_s_tag.html" title="This class implements a tag used to mark the neighbor state broadcast packet." alt="" coords="112,153,205,179"/>
+<area shape="poly" id="edge15_Node000000_Node000004" title=" " alt="" coords="63,127,125,151,123,156,61,132"/>
+<area shape="rect" id="Node000005" href="$da/df9/classns3_1_1_priority_tag.html" title=" " alt="" coords="97,203,220,228"/>
+<area shape="poly" id="edge16_Node000000_Node000005" title=" " alt="" coords="48,138,71,164,99,188,122,200,119,205,96,192,67,168,44,142"/>
+</map>

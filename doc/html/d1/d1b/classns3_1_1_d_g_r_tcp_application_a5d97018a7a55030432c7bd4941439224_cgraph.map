@@ -1,0 +1,7 @@
+<map id="ns3::DGRTcpApplication::SendData" name="ns3::DGRTcpApplication::SendData">
+<area shape="rect" id="Node000001" title="Send data until the L4 transmission buffer is full." alt="" coords="5,23,180,63"/>
+<area shape="rect" id="Node000002" href="$d0/db3/classns3_1_1_budget_tag.html#a42dfab1331f4f1bb1953c1ec972ab0bb" title="Set the tag&#39;s budget." alt="" coords="228,5,424,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,31,214,27,215,33,181,36"/>
+<area shape="rect" id="Node000003" href="$d5/d77/classns3_1_1_flag_tag.html#a92c961c9c9e46744bf73cf82399e68df" title="Set the tag&#39;s flag." alt="" coords="246,55,406,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="181,50,233,55,232,60,180,55"/>
+</map>

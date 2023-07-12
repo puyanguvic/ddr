@@ -1,0 +1,5 @@
+<map id="Ipv4RoutingProtocol" name="Ipv4RoutingProtocol">
+<area shape="rect" id="Node000001" title=" " alt="" coords="9,5,162,31"/>
+<area shape="rect" id="Node000002" href="$d3/d71/classns3_1_1_ipv4_d_g_r_routing.html" title="Global routing protocol for IPv4 stacks." alt="" coords="5,79,165,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,44,88,79,83,79,83,44"/>
+</map>
