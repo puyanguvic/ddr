@@ -145,9 +145,9 @@ void
 DgrHeader::Serialize (Buffer::Iterator start) const
 {
   Buffer::Iterator i = start;
-  i.WriteU8 (uint8_t(m_command));
-  i.WriteU8 (2);
-  i.WriteU16 (0);
+  i.WriteU8 (uint8_t(m_command)); // command : request and respond
+  i.WriteU8 (2);  // version 2
+  i.WriteU16 (0); // blank
 
   for (std::list<DgrNse>::const_iterator iter = m_nseList.begin ();
        iter != m_nseList.end ();
