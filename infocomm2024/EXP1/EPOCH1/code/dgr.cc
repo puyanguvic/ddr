@@ -120,6 +120,8 @@ main(int argc, char* argv[])
       ndc[i] = p2p.Install (nc[i]);
       tch.Install (ndc[i]);
       ipic[i] = address.Assign (ndc[i]);
+      ipic[i].SetMetric (0, metric);
+      ipic[i].SetMetric (1, metric);
       address.NewNetwork ();
     }
   

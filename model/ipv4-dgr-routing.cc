@@ -272,13 +272,14 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
   
   // budget in microseconds
   uint32_t bgt;
-  if (bgtTag.GetBudget ()*1000 + timeTag.GetTimestamp ().GetMicroSeconds () < Simulator::Now ().GetMicroSeconds ())
+  if (bgtTag.GetBudget () + timeTag.GetTimestamp ().GetMicroSeconds () < Simulator::Now ().GetMicroSeconds ())
     {
       bgt = 0;
     }
   else
-    bgt = (bgtTag.GetBudget ()*1000 + timeTag.GetTimestamp ().GetMicroSeconds () - Simulator::Now ().GetMicroSeconds ());
-
+    {
+      bgt = (bgtTag.GetBudget () + timeTag.GetTimestamp ().GetMicroSeconds () - Simulator::Now ().GetMicroSeconds ());
+    }
   NS_LOG_FUNCTION (this << dest << idev);
   NS_LOG_LOGIC ("Looking for route for destination " << dest);
   Ptr<Ipv4Route> rtentry = 0;
@@ -324,8 +325,9 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
               StatusUnit *su = entry->GetStatusUnit (niface);
               status_1_hop = su->GetCurrentState ();
             }
-          // in millisecond
+          // in microsecond
           uint32_t estimate_delay = (*i)->GetDistance () + (status_local + status_1_hop)*2;
+          uint32_t estimate_delay = estimate_delay*1000;
           if (estimate_delay > bgt)
             {
               NS_LOG_LOGIC ("Too far to the destination, skipping");
@@ -616,8 +618,9 @@ Ipv4DGRRouting::LookupDDRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
               StatusUnit *su = entry->GetStatusUnit (niface);
               status_1_hop = su->GetCurrentState ();
             }
-          // in millisecond
+          // in microsecond
           uint32_t estimate_delay = (*i)->GetDistance () + (status_local + status_1_hop)*2;
+          uint32_t estimate_delay = estimate_delay * 1000;
           if (estimate_delay > bgt)
             {
               NS_LOG_LOGIC ("Too far to the destination, skipping");
