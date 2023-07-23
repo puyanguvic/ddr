@@ -473,7 +473,7 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
     }
   else 
     {
-      return 0;
+      return LookupECMPRoute (dest);
     }
 }
 
@@ -766,7 +766,7 @@ Ipv4DGRRouting::LookupDDRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
     }
   else 
     {
-      return 0;
+      return LookupECMPRoute (dest);
     }
 }
 
