@@ -934,8 +934,9 @@ Ipv4DGRRouting::DoInitialize ()
   std::stringstream ss;
   ss << nodeId;
   std::string strNodeId = ss.str();
-  // std::string node = "Node " + (std::string)nodeId;
-  m_outStream = Create<OutputStreamWrapper> ("Node" + strNodeId + "queueStatusErr.txt", std::ios::out);
+
+  // // std::string node = "Node " + (std::string)nodeId;
+  // m_outStream = Create<OutputStreamWrapper> ("Node" + strNodeId + "queueStatusErr.txt", std::ios::out);
 
 
   // m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedUpdate, this);
@@ -1470,8 +1471,8 @@ Ipv4DGRRouting::HandleResponses (DgrHeader hdr,
           entry->Insert (n_iface, su);
         }
       su->Update (n_state);
-      std::ostream* os = m_outStream->GetStream ();
-      *os << "Iface: " << n_iface << " Predict Err: " << abs(n_state - su->GetCurrentState ()) << std::endl;
+      // std::ostream* os = m_outStream->GetStream ();
+      // *os << "Iface: " << n_iface << " Predict Err: " << abs(n_state - su->GetCurrentState ()) << std::endl;
       // Print the su
       // su->Print (std::cout);     
     }

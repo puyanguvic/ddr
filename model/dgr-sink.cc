@@ -197,15 +197,17 @@ void DGRPacketSink::HandleRead (Ptr<Socket> socket)
         BudgetTag bgtTag;
         packet->PeekPacketTag (bgtTag);
               
-        // if (GetDelay (packet).GetMicroSeconds () < bgtTag.GetBudget ())
-        //   {
-        //     *os << "True" << std::endl;
-        //   } 
-        // else
-        //   {
-        //     *os << "False" << std::endl;
-        //   }
-        *os << GetDelay (packet).GetMicroSeconds ()/1000.0 << std::endl;
+        *os << bgtTag.GetBudget () << std::endl;
+        if (GetDelay (packet).GetMicroSeconds () < bgtTag.GetBudget ())
+          {
+            *os << "1" << std::endl;
+          } 
+        else
+          {
+            *os << "0" << std::endl;
+          }
+
+        // *os << GetDelay (packet).GetMicroSeconds ()/1000.0 << std::endl;
       }
       // get delay
       m_totalRx += packet->GetSize ();
