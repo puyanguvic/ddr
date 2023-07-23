@@ -327,7 +327,7 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
             }
           // in microsecond
           uint32_t estimate_delay = (*i)->GetDistance () + (status_local + status_1_hop)*2;
-          uint32_t estimate_delay = estimate_delay*1000;
+          estimate_delay = estimate_delay*1000;
           if (estimate_delay > bgt)
             {
               NS_LOG_LOGIC ("Too far to the destination, skipping");
@@ -620,7 +620,7 @@ Ipv4DGRRouting::LookupDDRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
             }
           // in microsecond
           uint32_t estimate_delay = (*i)->GetDistance () + (status_local + status_1_hop)*2;
-          uint32_t estimate_delay = estimate_delay * 1000;
+          estimate_delay = estimate_delay * 1000;
           if (estimate_delay > bgt)
             {
               NS_LOG_LOGIC ("Too far to the destination, skipping");
