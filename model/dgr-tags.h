@@ -21,13 +21,13 @@ public:
 
     /**
      * \brief Set the tag's budget
-     * \param budget the delay budget in millisecond
+     * \param budget the delay budget in microsecond
     */
     void SetBudget (uint32_t m_budget);
 
     /**
      * \brief Get the tag's budget
-     * \return the budget in millisecond
+     * \return the budget in microsecond
     */
     uint32_t GetBudget (void) const;
     
@@ -53,7 +53,7 @@ public:
     void Print (std::ostream &os) const override;
 
 private:
-    uint32_t m_budget; // in millisecond  
+    uint32_t m_budget; // in microsecond  
 };
 
 /**

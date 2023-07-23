@@ -16,6 +16,7 @@ class StatusUnit
     ~StatusUnit ();
     int GetLastState () const;
     int GetCurrentState () const;
+    int GetEstimateState () const;
     void Update (int state);
     void Print (std::ostream &os) const;
   private:

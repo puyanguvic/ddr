@@ -18,6 +18,22 @@ StatusUnit::~StatusUnit ()
 }
 
 int
+StatusUnit::GetEstimateState () const
+{
+  int counter = m_matrix[m_state][m_state];
+  int ret = m_state;
+  for (int i = 0; i < 10; i ++)
+    {
+      if (m_matrix[m_state][i] > counter)
+        {
+          counter = m_matrix[m_state][i];
+          ret = i;
+        }
+    }
+  return ret;
+}
+
+int
 StatusUnit::GetCurrentState () const
 {
   int counter = m_matrix[m_state][m_state];
@@ -50,7 +66,7 @@ void
 StatusUnit::Print (std::ostream &os) const
 {
   os << "Last state = " << GetLastState ()
-     << ", Current State = " << GetCurrentState ()
+     << ", Current State = " << GetEstimateState ()
      << std::endl;
   os << "current Markov Transition Probability Matrix: "
      << std::endl;

@@ -95,7 +95,6 @@ DGRUdpApplication::Setup (Ptr<Socket> socket,
 void
 DGRUdpApplication::StartApplication (void)
 {
-    std::cout << "?????????????";
     m_running = true;
     m_packetSent = 0;
     m_socket->Bind ();
@@ -123,16 +122,13 @@ DGRUdpApplication::SendPacket()
     TimestampTag txTimeTag;
     FlagTag flagTag;
     BudgetTag budgetTag;
-    PriorityTag priorityTag;
     
     Ptr<Packet> packet = Create <Packet> (m_packetSize);
     Time txTime = Simulator::Now ();
     if (m_budget != MAX_UINT_32)
     {
         budgetTag.SetBudget (m_budget);
-        priorityTag.SetPriority (1);
         packet->AddPacketTag (budgetTag);
-        packet->AddPacketTag (priorityTag);
     }
     flagTag.SetFlag (m_flag);
     txTimeTag.SetTimestamp (txTime);

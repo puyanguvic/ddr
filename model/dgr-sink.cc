@@ -195,7 +195,8 @@ void DGRPacketSink::HandleRead (Ptr<Socket> socket)
         std::ostream* os = m_delayStream->GetStream ();
         // timeTag.GetSeconds () << " " 
         BudgetTag bgtTag;
-        packet->PeekPacketTag (bgtTag);      
+        packet->PeekPacketTag (bgtTag);
+              
         // if (GetDelay (packet).GetMicroSeconds () < bgtTag.GetBudget ())
         //   {
         //     *os << "True" << std::endl;

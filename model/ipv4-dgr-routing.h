@@ -49,6 +49,14 @@ class Ipv4DGRRoutingTableEntry;
 class Ipv4MulticastRoutingTableEntry;
 class Node;
 
+typedef enum
+{
+  NONE,
+  KSHORT,
+  DGR,
+  DDR
+}RouteSelectMode_t;
+
 /**
  * \ingroup ipv4
  *
@@ -266,8 +274,11 @@ public:
    * \param oif output interface if any (put 0 otherwise)
    * \return Ipv4Route to route the packet to reach dest address
    */
-  Ptr<Ipv4Route> LookupUniRoute (Ipv4Address dest, Ptr<NetDevice> oif = 0);
-  Ptr<Ipv4Route> LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDevice> idev = 0); // budget in microsecond
+  Ptr<Ipv4Route> LookupECMPRoute (Ipv4Address dest, Ptr<NetDevice> oif = 0);
+  Ptr<Ipv4Route> LookupKShortRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDevice> idev = 0);
+  Ptr<Ipv4Route> LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDevice> idev = 0);
+  Ptr<Ipv4Route> LookupDDRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDevice> idev = 0);
+  
   /**
    * Start protocol operation
   */
@@ -313,6 +324,7 @@ private:
   ASExternalRoutes m_ASexternalRoutes; //!< External routes imported
   Ptr<Ipv4> m_ipv4; //!< associated IPv4 instance
   
+  RouteSelectMode_t m_routeSelectMode; //!< route select mode
   DgrNSDB m_nsdb; //!< the Neighbor State DataBase (NSDB) of the DGR Rout
 
   // use a socket list neighbors
