@@ -181,8 +181,8 @@ DGRv2QueueDisc::InitializeParams (void)
 uint32_t
 DGRv2QueueDisc::EnqueueClassify (Ptr<QueueDiscItem> item)
 {
-  BudgetTag budgetTag;
-  if (item->GetPacket ()->PeekPacketTag (budgetTag))
+  PriorityTag priorityTag;
+  if (item->GetPacket ()->PeekPacketTag (priorityTag))
     {
       return DELAY_SENSITIVE;
     }

@@ -32,7 +32,8 @@ DGRUdpApplication::DGRUdpApplication ()
     m_packetSent (0),
     m_budget (MAX_UINT_32),
     m_flag (false),
-    m_vbr (false)
+    m_vbr (false),
+    m_priority (false)
 {
 }
 
@@ -75,8 +76,8 @@ DGRUdpApplication::Setup (Ptr<Socket> socket,
     m_flag = flag;
  }
 
- void
- DGRUdpApplication::Setup (Ptr<Socket> socket,
+void
+DGRUdpApplication::Setup (Ptr<Socket> socket,
                            Address sinkAddress,
                            uint32_t packetSize,
                            uint32_t nPackets,
@@ -91,6 +92,11 @@ DGRUdpApplication::Setup (Ptr<Socket> socket,
     m_flag = flag;
  }
  
+void
+DGRUdpApplication::SetPriority (bool priority)
+{
+    m_priority = priority;
+}
 
 void
 DGRUdpApplication::StartApplication (void)
@@ -124,6 +130,12 @@ DGRUdpApplication::SendPacket()
     BudgetTag budgetTag;
     
     Ptr<Packet> packet = Create <Packet> (m_packetSize);
+    if (m_priority)
+        {
+            PriorityTag priorityTag;
+            priorityTag.SetPriority (true);
+            packet->AddPacketTag (priorityTag);
+        }
     Time txTime = Simulator::Now ();
     if (m_budget != MAX_UINT_32)
     {

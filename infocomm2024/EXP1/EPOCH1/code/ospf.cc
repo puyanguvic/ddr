@@ -114,7 +114,7 @@ main(int argc, char* argv[])
                             InetSocketAddress (Ipv4Address::GetAny (), udpPort));
     ApplicationContainer sinkApp = sinkHelper.Install (nodes.Get (sink));
     sinkApp.Start (Seconds (0.0));
-    sinkApp.Stop (Seconds (11.0));
+    sinkApp.Stop (Seconds (1.0));
 
     // udp sender
     Ptr<Socket> udpSocket = Socket::CreateSocket (nodes.Get (sender), UdpSocketFactory::GetTypeId ());
@@ -122,7 +122,7 @@ main(int argc, char* argv[])
     app->Setup (udpSocket, InetSocketAddress (ipv4AddrUdpSink, udpPort), packetSize, nPacket, DataRate ("10Mbps"), budget, true);
     nodes.Get (sender)->AddApplication (app);
     app->SetStartTime (Seconds (1.0));
-    app->SetStopTime (Seconds (10.0));
+    app->SetStopTime (Seconds (1.0));
 
     // // --------------- Net Anim ---------------------
     // AnimationInterface anim (topo + expName + ".xml");

@@ -66,6 +66,12 @@ public:
   */
   void ChangeRate (DataRate newDataRate);
 
+  /**
+   * Set the priority tag.
+   * \param priority 
+  */
+  void SetPriority (bool priority);
+
 private:
 
   void StartApplication (void) override;
@@ -87,6 +93,7 @@ private:
   uint32_t m_budget;      //!< The budget time in millisecond
   bool m_flag;            //!< The packet flag
   bool m_vbr;             //!< true meanse VBR
+  bool m_priority;        //!< priority
 };
 
 } // namespace ns3

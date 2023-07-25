@@ -238,13 +238,13 @@ PriorityTag::PriorityTag ()
 }
 
 void
-PriorityTag::SetPriority (uint32_t priority)
+PriorityTag::SetPriority (bool priority)
 {
   NS_LOG_FUNCTION (this << priority);
   m_priority = priority;
 }
 
-uint32_t
+bool
 PriorityTag::GetPriority () const
 {
   NS_LOG_FUNCTION (this);
@@ -256,7 +256,7 @@ PriorityTag::GetTypeId (void)
 {
   static TypeId tid = TypeId ("PriorityTag")
     .SetParent<Tag> ()
-    .SetGroupName ("dgr-rl")
+    .SetGroupName ("dgrv2")
     .AddConstructor<PriorityTag> ();
   return tid;
 }
@@ -271,7 +271,7 @@ uint32_t
 PriorityTag::GetSerializedSize (void) const
 {
   NS_LOG_FUNCTION (this);
-  return 4;     // 4 bytes
+  return 1;     // 1 bytes
 }
 
 void
@@ -279,7 +279,7 @@ PriorityTag::Serialize (TagBuffer i) const
 {
   NS_LOG_FUNCTION (this << &i);
   uint32_t t = m_priority;
-  i.Write ((const uint8_t *)&t, 4);
+  i.Write ((const uint8_t *)&t, 1);
 }
 
 void
@@ -287,7 +287,7 @@ PriorityTag::Deserialize (TagBuffer i)
 {
   NS_LOG_FUNCTION (this << &i);
   uint32_t t;
-  i.Read ((uint8_t *)&t, 4);
+  i.Read ((uint8_t *)&t, 1);
   m_priority = t;
 }
 

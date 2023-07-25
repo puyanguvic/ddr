@@ -156,13 +156,13 @@ public:
      * \brief Set the tag's priority
      * \param priority the priority
     */
-    void SetPriority (uint32_t priority);
+    void SetPriority (bool priority);
     
     /**
      * \brief Get the tag's priority
      * \returns the priority
     */
-    uint32_t GetPriority (void) const;
+    bool GetPriority (void) const;
 
     /**
      * \brief Get the Type ID
@@ -186,9 +186,8 @@ public:
     void Print (std::ostream &os) const override;
 
 private:
-    uint32_t m_priority; // 0-fast, 1-slow, 2-best effort
+    bool m_priority;
 };
-
 
 // class TimestampTag : public Tag
 // {

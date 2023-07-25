@@ -8,12 +8,12 @@ FILE="dgr-packet.delay"
 
 cp "${DIR}code/ddr.cc" "scratch/EPOCH1_ddr.cc"
 
-# abilene 0 --> 10
+# abilene 3 --> 0
 TOPO="abilene"
-SINK="10"
-SENDER="0"
-BEGIN=2000
-STEP=1000
+SINK="0"
+SENDER="3"
+BEGIN=19500
+STEP=500
 for i in {1..50}
 do
 TIME=$(($i*$STEP))
@@ -23,12 +23,12 @@ echo "${TOPO}${DATARATE}"
 cp $FILE "${DIR}result/${TOPO}/DDR-${i}.txt"
 done
 
-# att 20 --> 14
+# att 0 --> 17
 TOPO="att"
-SINK="14"
-SENDER="20"
-BEGIN=2000
-STEP=1000
+SINK="17"
+SENDER="0"
+BEGIN=5000
+STEP=700
 for i in {1..50}
 do
 TIME=$(($i*$STEP))
@@ -38,12 +38,12 @@ echo "${TOPO}${DATARATE}"
 cp $FILE "${DIR}result/${TOPO}/DDR-${i}.txt"
 done
 
-# cernet 7 --> 13
+# cernet 7 --> 15
 TOPO="cernet"
 SINK="13"
 SENDER="7"
-BEGIN=2000
-STEP=1000
+BEGIN=5000
+STEP=600
 for i in {1..50}
 do
 TIME=$(($i*$STEP))
@@ -53,12 +53,12 @@ echo "${TOPO}${DATARATE}"
 cp $FILE "${DIR}result/${TOPO}/DDR-${i}.txt"
 done
 
-# geant 16 --> 14
+# geant 19 --> 8
 TOPO="geant"
-SINK="14"
-SENDER="16"
-BEGIN=2000
-STEP=1000
+SINK="8"
+SENDER="19"
+BEGIN=24500
+STEP=500
 for i in {1..50}
 do
 TIME=$(($i*$STEP))
