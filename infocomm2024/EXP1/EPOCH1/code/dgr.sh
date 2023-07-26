@@ -23,10 +23,10 @@ echo "${TOPO}${DATARATE}"
 cp $FILE "${DIR}result/${TOPO}/DGR-${i}.txt"
 done
 
-# att 0 --> 17
+# att 20 --> 14
 TOPO="att"
-SINK="17"
-SENDER="0"
+SINK="14"
+SENDER="20"
 BEGIN=5000
 STEP=700
 for i in {1..50}
@@ -38,9 +38,9 @@ echo "${TOPO}${DATARATE}"
 cp $FILE "${DIR}result/${TOPO}/DGR-${i}.txt"
 done
 
-# cernet 7 --> 15
+# cernet 7 --> 13
 TOPO="cernet"
-SINK="15"
+SINK="13"
 SENDER="7"
 BEGIN=5000
 STEP=600
@@ -53,10 +53,10 @@ echo "${TOPO}${DATARATE}"
 cp $FILE "${DIR}result/${TOPO}/DGR-${i}.txt"
 done
 
-# geant 19 --> 8
+# geant 16 --> 14
 TOPO="geant"
-SINK="8"
-SENDER="19"
+SINK="16"
+SENDER="14"
 BEGIN=24500
 STEP=500
 for i in {1..50}

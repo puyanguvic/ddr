@@ -106,7 +106,7 @@ main(int argc, char* argv[])
   tch.SetRootQueueDisc ("ns3::DGRv2QueueDisc");
   NS_LOG_INFO ("creating ipv4 interfaces");
   Ipv4InterfaceContainer* ipic = new Ipv4InterfaceContainer[totlinks];
-  std::cout << "totlinks number: " << totlinks << std::endl;
+  // std::cout << "totlinks number: " << totlinks << std::endl;
   TopologyReader::ConstLinksIterator iter;
   int i = 0;
   for ( iter = inFile->LinksBegin (); iter != inFile->LinksEnd (); iter++, i++)

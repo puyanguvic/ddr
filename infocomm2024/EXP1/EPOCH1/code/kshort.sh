@@ -55,8 +55,8 @@ done
 
 # geant 19 --> 8
 TOPO="geant"
-SINK="8"
-SENDER="19"
+SINK="7"
+SENDER="21"
 BEGIN=24500
 STEP=500
 for i in {1..50}
