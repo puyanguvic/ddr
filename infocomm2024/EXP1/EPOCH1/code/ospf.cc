@@ -29,15 +29,15 @@ NS_LOG_COMPONENT_DEFINE(expName);
 int
 main(int argc, char* argv[])
 {
-    std::string topo ("geant");
+    std::string topo ("abilene");
     std::string format ("Inet");
-    uint32_t budget (0);
-    uint32_t sink = 14;
-    uint32_t sender = 16;
+    uint32_t budget (20000); // in microsecond
+    uint32_t sink = 10;
+    uint32_t sender = 0;
     uint16_t udpPort = 9;
     uint32_t nPacket = 1000;
     uint32_t packetSize = 1400; // bytes
-
+    
     // Set up command line parameters used to control the experiment
     CommandLine cmd(__FILE__);
     cmd.AddValue ("format", "Format to use for data input [Orbis|Inet|Rocketfuel].",
@@ -46,10 +46,11 @@ main(int argc, char* argv[])
     cmd.AddValue ("budget", "budget", budget);
     cmd.AddValue ("sender", "Node # of sender", sender);
     cmd.AddValue ("sink", "Node # of sink", sink);
+
     cmd.Parse(argc, argv);
-    std::string input ("contrib/dgrv2/topo/Inet_" + topo + "_topo.txt");
 
     // ------------- Read topology data-------------------
+    std::string input ("contrib/dgrv2/topo/Inet_" + topo + "_topo.txt");
     TopologyReaderHelper topoHelp;
     topoHelp.SetFileName (input);
     topoHelp.SetFileType (format);
@@ -80,10 +81,12 @@ main(int argc, char* argv[])
     NodeContainer* nc = new NodeContainer[totlinks];
     NetDeviceContainer* ndc = new NetDeviceContainer[totlinks];
     PointToPointHelper p2p;
+    TrafficControlHelper tch;
+    tch.SetRootQueueDisc ("ns3::DGRv2QueueDisc");
 
     NS_LOG_INFO ("creating ipv4 interfaces");
     Ipv4InterfaceContainer* ipic = new Ipv4InterfaceContainer[totlinks];
-    std::cout << "totlinks number: " << totlinks << std::endl;
+    // std::cout << "totlinks number: " << totlinks << std::endl;
     TopologyReader::ConstLinksIterator iter;
     int i = 0;
     for ( iter = inFile->LinksBegin (); iter != inFile->LinksEnd (); iter++, i++)
@@ -97,6 +100,7 @@ main(int argc, char* argv[])
         p2p.SetChannelAttribute ("Delay", StringValue (delay + "ms"));
         p2p.SetDeviceAttribute ("DataRate", StringValue ("100Mbps"));
         ndc[i] = p2p.Install (nc[i]);
+        tch.Install (ndc[i]);
         ipic[i] = address.Assign (ndc[i]);
         address.NewNetwork ();
         }
@@ -111,10 +115,10 @@ main(int argc, char* argv[])
     Ipv4Address ipv4AddrUdpSink = iaddrUdpSink.GetLocal ();
 
     DGRSinkHelper sinkHelper ("ns3::UdpSocketFactory",
-                            InetSocketAddress (Ipv4Address::GetAny (), udpPort));
+                                InetSocketAddress (Ipv4Address::GetAny (), udpPort));
     ApplicationContainer sinkApp = sinkHelper.Install (nodes.Get (sink));
     sinkApp.Start (Seconds (0.0));
-    sinkApp.Stop (Seconds (1.0));
+    sinkApp.Stop (Seconds (4.0));
 
     // udp sender
     Ptr<Socket> udpSocket = Socket::CreateSocket (nodes.Get (sender), UdpSocketFactory::GetTypeId ());
@@ -122,7 +126,7 @@ main(int argc, char* argv[])
     app->Setup (udpSocket, InetSocketAddress (ipv4AddrUdpSink, udpPort), packetSize, nPacket, DataRate ("10Mbps"), budget, true);
     nodes.Get (sender)->AddApplication (app);
     app->SetStartTime (Seconds (1.0));
-    app->SetStopTime (Seconds (1.0));
+    app->SetStopTime (Seconds (3.0));
 
     // // --------------- Net Anim ---------------------
     // AnimationInterface anim (topo + expName + ".xml");

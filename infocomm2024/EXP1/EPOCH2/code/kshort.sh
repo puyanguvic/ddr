@@ -8,13 +8,13 @@ FILE="dgr-packet.delay"
 
 cp "${DIR}code/kshort.cc" "scratch/EPOCH2_kshort.cc"
 
-# abilene 3 --> 0
-# back traffic 6 --> 7
+# abilene 0 --> 10
+# back traffic 2 --> 5
 TOPO="abilene"
-SINK="0"
-SENDER="3"
-TCPSINK="7"
-TCPSENDER="6"
+SINK="10"
+SENDER="0"
+TCPSINK="5"
+TCPSENDER="2"
 BEGIN=19500
 STEP=500
 for i in {1..50}

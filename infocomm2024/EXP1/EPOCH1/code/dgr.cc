@@ -33,7 +33,9 @@ main(int argc, char* argv[])
   uint16_t udpPort = 9;
   uint32_t nPacket = 1000;
   uint32_t packetSize = 1400; // bytes
+
   uint32_t routeSelectMode = 2;
+
   // Set up command line parameters used to control the experiment
   CommandLine cmd(__FILE__);
   cmd.AddValue ("format", "Format to use for data input [Orbis|Inet|Rocketfuel].",
@@ -42,9 +44,11 @@ main(int argc, char* argv[])
   cmd.AddValue ("budget", "budget", budget);
   cmd.AddValue ("sender", "Node # of sender", sender);
   cmd.AddValue ("sink", "Node # of sink", sink);
-  cmd.AddValue ("EcmpMode", "EcmpMode: (0 none, 1 KShort, 2 DGR, 3 DDR)", routeSelectMode);
-  cmd.Parse(argc, argv);
 
+  cmd.AddValue ("EcmpMode", "EcmpMode: (0 none, 1 KShort, 2 DGR, 3 DDR)", routeSelectMode);
+
+  cmd.Parse(argc, argv);
+ 
   switch (routeSelectMode)
     {
       case 0:
@@ -61,8 +65,6 @@ main(int argc, char* argv[])
       default:
         break;
     }
-
-
 
   // ------------- Read topology data-------------------
   std::string input ("contrib/dgrv2/topo/Inet_" + topo + "_topo.txt");
@@ -134,18 +136,18 @@ main(int argc, char* argv[])
   Ipv4Address ipv4AddrUdpSink = iaddrUdpSink.GetLocal ();
 
   DGRSinkHelper sinkHelper ("ns3::UdpSocketFactory",
-                            InetSocketAddress (Ipv4Address::GetAny (), udpPort));
+                              InetSocketAddress (Ipv4Address::GetAny (), udpPort));
   ApplicationContainer sinkApp = sinkHelper.Install (nodes.Get (sink));
   sinkApp.Start (Seconds (0.0));
-  sinkApp.Stop (Seconds (1.0));
+  sinkApp.Stop (Seconds (4.0));
 
   // udp sender
   Ptr<Socket> udpSocket = Socket::CreateSocket (nodes.Get (sender), UdpSocketFactory::GetTypeId ());
   Ptr<DGRUdpApplication> app = CreateObject<DGRUdpApplication> ();
   app->Setup (udpSocket, InetSocketAddress (ipv4AddrUdpSink, udpPort), packetSize, nPacket, DataRate ("10Mbps"), budget, true);
   nodes.Get (sender)->AddApplication (app);
-  app->SetStartTime (Seconds (0.0));
-  app->SetStopTime (Seconds (1.0));
+  app->SetStartTime (Seconds (1.0));
+  app->SetStopTime (Seconds (3.0));
 
   // // --------------- Net Anim ---------------------
   // AnimationInterface anim (topo + expName + ".xml");

@@ -8,10 +8,10 @@ FILE="dgr-packet.delay"
 
 cp "${DIR}code/ddr.cc" "scratch/EPOCH1_ddr.cc"
 
-# abilene 3 --> 0
+# abilene 0 --> 10
 TOPO="abilene"
-SINK="0"
-SENDER="3"
+SINK="10"
+SENDER="0"
 BEGIN=19500
 STEP=500
 for i in {1..50}

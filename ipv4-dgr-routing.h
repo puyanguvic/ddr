@@ -409,8 +409,8 @@ private:
                        uint32_t incomingInterface,
                        uint8_t hopLimit);
 
-  Ptr<OutputStreamWrapper> m_outStream = Create<OutputStreamWrapper>
-  ("queueStatusErr.txt", std::ios::out);
+  // Ptr<OutputStreamWrapper> m_outStream = Create<OutputStreamWrapper>
+  // ("queueStatusErr.txt", std::ios::out);
 
   bool m_initialized; //!< flag to allow socket's late-creation.
 };

@@ -93,7 +93,7 @@ main(int argc, char* argv[])
 
     NS_LOG_INFO ("creating ipv4 interfaces");
     Ipv4InterfaceContainer* ipic = new Ipv4InterfaceContainer[totlinks];
-    std::cout << "totlinks number: " << totlinks << std::endl;
+    // std::cout << "totlinks number: " << totlinks << std::endl;
     TopologyReader::ConstLinksIterator iter;
     int i = 0;
     for ( iter = inFile->LinksBegin (); iter != inFile->LinksEnd (); iter++, i++)
@@ -122,18 +122,18 @@ main(int argc, char* argv[])
     Ipv4Address ipv4AddrUdpSink = iaddrUdpSink.GetLocal ();
 
     DGRSinkHelper sinkHelper ("ns3::UdpSocketFactory",
-                            InetSocketAddress (Ipv4Address::GetAny (), udpPort));
+                                InetSocketAddress (Ipv4Address::GetAny (), udpPort));
     ApplicationContainer sinkApp = sinkHelper.Install (nodes.Get (sink));
     sinkApp.Start (Seconds (0.0));
-    sinkApp.Stop (Seconds (3.0));
+    sinkApp.Stop (Seconds (4.0));
 
     // udp sender
     Ptr<Socket> udpSocket = Socket::CreateSocket (nodes.Get (sender), UdpSocketFactory::GetTypeId ());
     Ptr<DGRUdpApplication> app = CreateObject<DGRUdpApplication> ();
     app->Setup (udpSocket, InetSocketAddress (ipv4AddrUdpSink, udpPort), packetSize, nPacket, DataRate ("10Mbps"), budget, true);
     nodes.Get (sender)->AddApplication (app);
-    app->SetStartTime (Seconds (0.0));
-    app->SetStopTime (Seconds (2.0));
+    app->SetStartTime (Seconds (1.0));
+    app->SetStopTime (Seconds (3.0));
 
     // ------------------------ TCP background traffic ------------------------
     Ptr<Node> tcpSinkNode = nodes.Get (tcpSink);
@@ -141,13 +141,12 @@ main(int argc, char* argv[])
     Ipv4InterfaceAddress iaddrTcpSink = ipv4TcpSink->GetAddress (1,0);
     Ipv4Address ipv4AddrTcpSink = iaddrTcpSink.GetLocal ();
 
-
     // Create a PacketSinkApplication and install it on node 5
     PacketSinkHelper tcpSinkHelper("ns3::TcpSocketFactory", 
-                             InetSocketAddress(Ipv4Address::GetAny(), tcp_port));
+                                InetSocketAddress(Ipv4Address::GetAny(), tcp_port));
     ApplicationContainer tcpSinkApps = tcpSinkHelper.Install(nodes.Get(tcpSink));
     tcpSinkApps.Start(Seconds(0.0));
-    tcpSinkApps.Stop(Seconds(3.0));
+    tcpSinkApps.Stop(Seconds(4.0));
 
     // Create a BulkSendApplication and install it on node 2
     BulkSendHelper source("ns3::TcpSocketFactory", 
@@ -157,7 +156,7 @@ main(int argc, char* argv[])
     // source.SetAttribute("MaxBytes", UintegerValue(maxBytes));
     ApplicationContainer sourceApps = source.Install(nodes.Get(tcpSender));
     sourceApps.Start(Seconds(0.0));
-    sourceApps.Stop(Seconds(2.0));
+    sourceApps.Stop(Seconds(3.0));
 
     // // --------------- Net Anim ---------------------
     // AnimationInterface anim (topo + expName + ".xml");
