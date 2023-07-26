@@ -26,7 +26,7 @@ echo "${TOPO}${DATARATE}"
 cp $FILE "${DIR}result/${TOPO}/OSPF-${i}.txt"
 done
 
-# att 0 --> 17
+# att 20 --> 14
 # back traffic 2 --> 11
 TOPO="att"
 SINK="17"
@@ -44,7 +44,7 @@ echo "${TOPO}${DATARATE}"
 cp $FILE "${DIR}result/${TOPO}/OSPF-${i}.txt"
 done
 
-# cernet 7 --> 15
+# cernet 7 --> 13
 # back traffic 2 --> 21
 TOPO="cernet"
 SINK="15"
@@ -62,7 +62,7 @@ echo "${TOPO}${DATARATE}"
 cp $FILE "${DIR}result/${TOPO}/OSPF-${i}.txt"
 done
 
-# geant 19 --> 8
+# geant 16 --> 14
 # back traffic 5 --> 4
 TOPO="geant"
 SINK="8"

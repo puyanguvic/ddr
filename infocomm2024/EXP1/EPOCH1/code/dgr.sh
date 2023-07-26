@@ -57,7 +57,7 @@ done
 TOPO="geant"
 SINK="16"
 SENDER="14"
-BEGIN=24500
+BEGIN=20000
 STEP=500
 for i in {1..50}
 do
