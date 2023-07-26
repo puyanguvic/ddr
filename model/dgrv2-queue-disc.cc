@@ -25,7 +25,7 @@ TypeId DGRv2QueueDisc::GetTypeId (void)
     .AddConstructor<DGRv2QueueDisc> ()
     .AddAttribute ("MaxSize",
                    "The maximum size accepted by this queue disc.",
-                   QueueSizeValue (QueueSize ("125KiB")),
+                   QueueSizeValue (QueueSize ("3MB")),
                    MakeQueueSizeAccessor (&QueueDisc::SetMaxSize,
                                           &QueueDisc::GetMaxSize),
                    MakeQueueSizeChecker ())

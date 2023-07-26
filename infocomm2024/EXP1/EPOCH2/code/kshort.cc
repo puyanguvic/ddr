@@ -34,7 +34,7 @@ main(int argc, char* argv[])
   uint32_t nPacket = 1000;
   uint32_t packetSize = 1400; // bytes
 
-  uint32_t routeSelectMode = 2;
+  uint32_t routeSelectMode = 1;
   
   uint32_t tcpSink = 5;
   uint32_t tcpSender = 2;
