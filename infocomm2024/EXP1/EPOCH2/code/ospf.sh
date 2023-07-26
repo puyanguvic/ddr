@@ -62,14 +62,15 @@ echo "${TOPO}${DATARATE}"
 cp $FILE "${DIR}result/${TOPO}/OSPF-${i}.txt"
 done
 
-# geant 16 --> 14
-# back traffic 5 --> 4
+
+# geant 14 --> 16
+# back traffic 3 --> 0
 TOPO="geant"
-SINK="8"
-SENDER="19"
-TCPSINK="4"
-TCPSENDER="5"
-BEGIN=24500
+SINK="16"
+SENDER="14"
+TCPSINK="0"
+TCPSENDER="3"
+BEGIN=20000
 STEP=500
 for i in {1..50}
 do

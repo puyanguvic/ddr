@@ -53,7 +53,7 @@ echo "${TOPO}${DATARATE}"
 cp $FILE "${DIR}result/${TOPO}/DGR-${i}.txt"
 done
 
-# geant 16 --> 14
+# geant 14 --> 16
 TOPO="geant"
 SINK="16"
 SENDER="14"

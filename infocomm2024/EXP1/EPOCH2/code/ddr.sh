@@ -26,7 +26,7 @@ echo "${TOPO}${DATARATE}"
 cp $FILE "${DIR}result/${TOPO}/DDR-${i}.txt"
 done
 
-# att 0 --> 17
+# att 20 --> 14
 # back traffic 2 --> 11
 TOPO="att"
 SINK="17"
@@ -44,7 +44,7 @@ echo "${TOPO}${DATARATE}"
 cp $FILE "${DIR}result/${TOPO}/DDR-${i}.txt"
 done
 
-# cernet 7 --> 15
+# cernet 7 --> 13
 # back traffic 2 --> 21
 TOPO="cernet"
 SINK="15"
@@ -62,14 +62,14 @@ echo "${TOPO}${DATARATE}"
 cp $FILE "${DIR}result/${TOPO}/DDR-${i}.txt"
 done
 
-# geant 19 --> 8
-# back traffic 5 --> 4
+# geant 14 --> 16
+# back traffic 3 --> 0
 TOPO="geant"
-SINK="8"
-SENDER="19"
-TCPSINK="4"
-TCPSENDER="5"
-BEGIN=24500
+SINK="16"
+SENDER="14"
+TCPSINK="0"
+TCPSENDER="3"
+BEGIN=20000
 STEP=500
 for i in {1..50}
 do
