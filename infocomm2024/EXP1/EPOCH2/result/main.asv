@@ -24,9 +24,6 @@ for i = 1:length(topos)
     budget = [budget; topo_budget];
 end
 
-% add(0,0) to third subfig
-rate(551) = 0;
-
 % output data
 fileoutput = fopen('data.txt', 'w');
 formatSpec = '%f\t';
@@ -51,17 +48,13 @@ for i = 1:50:800
     newbudget(i:i+49) = data(2*i+49:2*i+49+49);
 end
 
-newrate = newrate' ;
-newbudget = newbudget' ;
+result = isequal(nwe, B);
 
-% result = isequal(newrate, rate);
-% 
-% if result
-%     disp('A = B');
-% else
-%     disp('A NOT = B');
-% end
-
+if result
+    disp('数组A和B相同');
+else
+    disp('数组A和B不相同');
+end
 
 figure;
 for i = 1:length(topos)
