@@ -33,6 +33,24 @@ StatusUnit::GetEstimateState () const
   return ret;
 }
 
+uint32_t
+StatusUnit::GetEstimateDelayDDR () const
+{
+  uint32_t ret = 0;
+  int counter = 0;
+  for (int i = 0; i < STATESIZE; i ++)
+    {
+      ret += m_matrix[m_state][i]* (i+1);
+      counter += m_matrix[m_state][i];
+    }
+  return ret*2000/counter;
+}
+uint32_t
+StatusUnit::GetEstimateDelayDGR () const
+{
+  return (m_state+1)*2000;
+}
+
 int
 StatusUnit::GetCurrentState () const
 {

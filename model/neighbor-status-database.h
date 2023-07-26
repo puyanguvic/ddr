@@ -17,6 +17,8 @@ class StatusUnit
     int GetLastState () const;
     int GetCurrentState () const;
     int GetEstimateState () const;
+    uint32_t GetEstimateDelayDGR () const;  // in microsecond
+    uint32_t GetEstimateDelayDDR () const;   // in microsecond
     void Update (int state);
     void Print (std::ostream &os) const;
   private:

@@ -316,18 +316,17 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
           uint32_t status_local = dvq->GetQueueStatus ();
 
           // Get the next hop queue status of this route
-          uint32_t status_1_hop = 0;
+          uint32_t queue_delay = 0;
           if ((*i)->GetNextInterface () != 0xffffffff)
             {
               uint32_t iface = (*i)->GetInterface ();
               uint32_t niface = (*i)->GetNextInterface ();
               NeighborStatusEntry *entry = m_nsdb.GetNeighborStatusEntry (iface);
               StatusUnit *su = entry->GetStatusUnit (niface);
-              status_1_hop = su->GetCurrentState ();
+              queue_delay = su->GetEstimateDelayDGR ();
             }
           // in microsecond
-          uint32_t estimate_delay = (*i)->GetDistance () + (status_local + status_1_hop)*2 + 1;
-          estimate_delay = estimate_delay*1000;
+          uint32_t estimate_delay = (*i)->GetDistance () * 1000 + queue_delay;
           if (estimate_delay > bgt)
             {
               NS_LOG_LOGIC ("Too far to the destination, skipping");
@@ -473,7 +472,7 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
     }
   else 
     {
-      return LookupECMPRoute (dest);
+      return 0;
     }
 }
 
@@ -609,18 +608,18 @@ Ipv4DGRRouting::LookupDDRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
           uint32_t status_local = dvq->GetQueueStatus ();
 
           // Get the next hop queue status of this route
-          uint32_t status_1_hop = 0;
+          uint32_t queue_delay = 0;
           if ((*i)->GetNextInterface () != 0xffffffff)
             {
               uint32_t iface = (*i)->GetInterface ();
               uint32_t niface = (*i)->GetNextInterface ();
               NeighborStatusEntry *entry = m_nsdb.GetNeighborStatusEntry (iface);
               StatusUnit *su = entry->GetStatusUnit (niface);
-              status_1_hop = su->GetCurrentState ();
+              queue_delay = su->GetEstimateDelayDDR ();
             }
           // in microsecond
-          uint32_t estimate_delay = (*i)->GetDistance () + (status_local + status_1_hop)*2;
-          estimate_delay = estimate_delay * 1000;
+          uint32_t local_delay = ((*i)->GetDistance () + status_local)*2000;
+          uint32_t estimate_delay = local_delay + estimate_delay;
           if (estimate_delay > bgt)
             {
               NS_LOG_LOGIC ("Too far to the destination, skipping");
