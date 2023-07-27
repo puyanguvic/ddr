@@ -433,8 +433,9 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
           //get the queue disc on the device
           Ptr<QueueDisc> disc = m_ipv4->GetObject<Node> ()->GetObject<TrafficControlLayer> ()->GetRootQueueDiscOnDevice (dev_local);
           Ptr<DGRv2QueueDisc> dvq = DynamicCast <DGRv2QueueDisc> (disc);
-          uint32_t status_local = dvq->GetQueueStatus ();
-          uint32_t delay_local = status_local * 2000;
+          // uint32_t status_local = dvq->GetQueueStatus ();
+          // uint32_t delay_local = status_local * 2000;
+          uint32_t delay_local = dvq->GetQueueDelay ();
 
           // Get the neighbor queue status in microsecond
           uint32_t delay_neighbor = 0;
