@@ -52,6 +52,14 @@ DGRv2QueueDisc::GetQueueStatus ()
   return currentSize * 10 / maxSize;
 }
 
+uint32_t
+DGRv2QueueDisc::GetQueueDelay ()
+{
+  // in microsecond
+  uint32_t currentSize = GetInternalQueue (0)->GetCurrentSize ().GetValue ();
+  uint32_t maxSize = GetInternalQueue (0)->GetMaxSize ().GetValue ();
+  return currentSize * 10 * 2000 / maxSize;
+}
 
 bool
 DGRv2QueueDisc::DoEnqueue (Ptr<QueueDiscItem> item)

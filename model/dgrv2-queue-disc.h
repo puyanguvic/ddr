@@ -30,6 +30,7 @@ class DGRv2QueueDisc : public QueueDisc {
 
     // Get current queue state
     uint32_t GetQueueStatus ();
+    uint32_t GetQueueDelay ();
     bool CheckConfig (void) override;
 
     
