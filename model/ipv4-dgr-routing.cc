@@ -308,25 +308,27 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
           // if interface is down, continue
           if (!m_ipv4->IsUp ((*i)->GetInterface ())) continue;
 
-          // get the output device
+          // get the local queue delay in microsecond
           Ptr <NetDevice> dev_local = m_ipv4->GetNetDevice ((*i)->GetInterface ());
           //get the queue disc on the device
           Ptr<QueueDisc> disc = m_ipv4->GetObject<Node> ()->GetObject<TrafficControlLayer> ()->GetRootQueueDiscOnDevice (dev_local);
           Ptr<DGRv2QueueDisc> dvq = DynamicCast <DGRv2QueueDisc> (disc);
           uint32_t status_local = dvq->GetQueueStatus ();
+          uint32_t delay_local = status_local * 2000;
 
-          // Get the next hop queue status of this route
-          uint32_t queue_delay = 0;
+          // Get the neighbor queue status in microsecond
+          uint32_t delay_neighbor = 0;
           if ((*i)->GetNextInterface () != 0xffffffff)
             {
               uint32_t iface = (*i)->GetInterface ();
               uint32_t niface = (*i)->GetNextInterface ();
               NeighborStatusEntry *entry = m_nsdb.GetNeighborStatusEntry (iface);
               StatusUnit *su = entry->GetStatusUnit (niface);
-              queue_delay = su->GetEstimateDelayDGR ();
+              delay_neighbor = su->GetEstimateDelayDGR ();
             }
           // in microsecond
-          uint32_t estimate_delay = ((*i)->GetDistance () + status_local + 1) * 1000 + queue_delay;
+          uint32_t estimate_delay = ((*i)->GetDistance () + 1) * 1000 + delay_local + delay_neighbor;
+
           if (estimate_delay > bgt)
             {
               NS_LOG_LOGIC ("Too far to the destination, skipping");
@@ -600,27 +602,27 @@ Ipv4DGRRouting::LookupDDRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
           // if interface is down, continue
           if (!m_ipv4->IsUp ((*i)->GetInterface ())) continue;
 
-          // get the output device
+          // get the local queue delay in microsecond
           Ptr <NetDevice> dev_local = m_ipv4->GetNetDevice ((*i)->GetInterface ());
           //get the queue disc on the device
           Ptr<QueueDisc> disc = m_ipv4->GetObject<Node> ()->GetObject<TrafficControlLayer> ()->GetRootQueueDiscOnDevice (dev_local);
           Ptr<DGRv2QueueDisc> dvq = DynamicCast <DGRv2QueueDisc> (disc);
-          uint32_t status_local = dvq->GetQueueDelay ();
+          uint32_t status_local = dvq->GetQueueStatus ();
+          uint32_t delay_local = dvq->GetQueueDelay ();
 
-          // Get the next hop queue status of this route
-          uint32_t queue_delay = 0;
-          uint32_t transmission_delay = 1;
+          // Get the neighbor queue status in microsecond
+          uint32_t delay_neighbor = 0;
           if ((*i)->GetNextInterface () != 0xffffffff)
             {
               uint32_t iface = (*i)->GetInterface ();
               uint32_t niface = (*i)->GetNextInterface ();
               NeighborStatusEntry *entry = m_nsdb.GetNeighborStatusEntry (iface);
               StatusUnit *su = entry->GetStatusUnit (niface);
-              queue_delay = su->GetEstimateDelayDDR ();
+              delay_neighbor = su->GetEstimateDelayDDR ();
             }
           // in microsecond
-          uint32_t local_delay = ((*i)->GetDistance () + transmission_delay)*2000 +  status_local;
-          uint32_t estimate_delay = local_delay + queue_delay ; // estimation delay in microseconds
+          uint32_t estimate_delay = ((*i)->GetDistance () + 1) * 1000 + delay_local + delay_neighbor;
+
           if (estimate_delay > bgt)
             {
               NS_LOG_LOGIC ("Too far to the destination, skipping");
