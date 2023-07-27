@@ -27,7 +27,7 @@ done
 TOPO="att"
 SINK="17"
 SENDER="0"
-BEGIN=5000
+BEGIN=20000
 STEP=700
 for i in {1..50}
 do
@@ -43,7 +43,7 @@ TOPO="cernet"
 SINK="15"
 SENDER="7"
 BEGIN=5000
-STEP=600
+STEP=700
 for i in {1..50}
 do
 TIME=$(($i*$STEP))
@@ -58,7 +58,7 @@ TOPO="geant"
 SINK="16"
 SENDER="14"
 BEGIN=20000
-STEP=700
+STEP=800
 for i in {1..50}
 do
 TIME=$(($i*$STEP))
