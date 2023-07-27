@@ -1131,7 +1131,7 @@ Ipv4DGRRouting::RouteOutput (Ptr<Packet> p,
           default:
             rtentry = LookupECMPRoute (header.GetDestination (), oif);
         }
-      rtentry = LookupDGRRoute (header.GetDestination (), p, oif);
+      // rtentry = LookupDGRRoute (header.GetDestination (), p, oif);
     }
   else
     {
@@ -1212,7 +1212,7 @@ Ipv4DGRRouting::RouteInput  (Ptr<const Packet> p, const Ipv4Header &header, Ptr<
         default:
           rtentry = LookupECMPRoute (header.GetDestination ());
      }
-    rtentry = LookupDGRRoute (header.GetDestination (), p_copy, idev); 
+    // rtentry = LookupDGRRoute (header.GetDestination (), p_copy, idev); 
   }
   else
   {

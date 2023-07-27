@@ -18,7 +18,7 @@
 
 using namespace ns3;
 
-std::string expName = "dgr";
+std::string expName = "kshort";
 NS_LOG_COMPONENT_DEFINE(expName);
 
 int
