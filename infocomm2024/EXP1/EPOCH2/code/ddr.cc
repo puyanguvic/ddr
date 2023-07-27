@@ -157,28 +157,28 @@ main(int argc, char* argv[])
   app->SetStartTime (Seconds (1.0));
   app->SetStopTime (Seconds (3.0));
 
-  // // ------------------------ TCP background traffic ------------------------
-  // Ptr<Node> tcpSinkNode = nodes.Get (tcpSink);
-  // Ptr<Ipv4> ipv4TcpSink = tcpSinkNode->GetObject<Ipv4> ();
-  // Ipv4InterfaceAddress iaddrTcpSink = ipv4TcpSink->GetAddress (1,0);
-  // Ipv4Address ipv4AddrTcpSink = iaddrTcpSink.GetLocal ();
+  // ------------------------ TCP background traffic ------------------------
+  Ptr<Node> tcpSinkNode = nodes.Get (tcpSink);
+  Ptr<Ipv4> ipv4TcpSink = tcpSinkNode->GetObject<Ipv4> ();
+  Ipv4InterfaceAddress iaddrTcpSink = ipv4TcpSink->GetAddress (1,0);
+  Ipv4Address ipv4AddrTcpSink = iaddrTcpSink.GetLocal ();
 
-  // // Create a PacketSinkApplication and install it on node 5
-  // PacketSinkHelper tcpSinkHelper("ns3::TcpSocketFactory", 
-  //                             InetSocketAddress(Ipv4Address::GetAny(), tcp_port));
-  // ApplicationContainer tcpSinkApps = tcpSinkHelper.Install(nodes.Get(tcpSink));
-  // tcpSinkApps.Start(Seconds(0.0));
-  // tcpSinkApps.Stop(Seconds(4.0));
+  // Create a PacketSinkApplication and install it on node 5
+  PacketSinkHelper tcpSinkHelper("ns3::TcpSocketFactory", 
+                              InetSocketAddress(Ipv4Address::GetAny(), tcp_port));
+  ApplicationContainer tcpSinkApps = tcpSinkHelper.Install(nodes.Get(tcpSink));
+  tcpSinkApps.Start(Seconds(0.0));
+  tcpSinkApps.Stop(Seconds(4.0));
 
-  // // Create a BulkSendApplication and install it on node 2
-  // BulkSendHelper source("ns3::TcpSocketFactory", 
-  //                     InetSocketAddress(ipv4AddrTcpSink, tcp_port));
-  // // Set the amount of data to send in bytes.  Zero is unlimited.
-  // // uint64_t maxBytes = 4000000;
-  // // source.SetAttribute("MaxBytes", UintegerValue(maxBytes));
-  // ApplicationContainer sourceApps = source.Install(nodes.Get(tcpSender));
-  // sourceApps.Start(Seconds(0.0));
-  // sourceApps.Stop(Seconds(3.0));
+  // Create a BulkSendApplication and install it on node 2
+  BulkSendHelper source("ns3::TcpSocketFactory", 
+                      InetSocketAddress(ipv4AddrTcpSink, tcp_port));
+  // Set the amount of data to send in bytes.  Zero is unlimited.
+  // uint64_t maxBytes = 4000000;
+  // source.SetAttribute("MaxBytes", UintegerValue(maxBytes));
+  ApplicationContainer sourceApps = source.Install(nodes.Get(tcpSender));
+  sourceApps.Start(Seconds(0.0));
+  sourceApps.Stop(Seconds(3.0));
 
   // // --------------- Net Anim ---------------------
   // AnimationInterface anim (topo + expName + ".xml");
