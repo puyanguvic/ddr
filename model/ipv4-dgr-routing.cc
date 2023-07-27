@@ -609,6 +609,7 @@ Ipv4DGRRouting::LookupDDRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
 
           // Get the next hop queue status of this route
           uint32_t queue_delay = 0;
+          uint32_t transmission_delay = 1;
           if ((*i)->GetNextInterface () != 0xffffffff)
             {
               uint32_t iface = (*i)->GetInterface ();
@@ -618,8 +619,8 @@ Ipv4DGRRouting::LookupDDRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
               queue_delay = su->GetEstimateDelayDDR ();
             }
           // in microsecond
-          uint32_t local_delay = ((*i)->GetDistance () + status_local)*2000;
-          uint32_t estimate_delay = local_delay + estimate_delay;
+          uint32_t local_delay = ((*i)->GetDistance () + transmission_delay + status_local)*2000;
+          uint32_t estimate_delay = local_delay + queue_delay ; // estimation delay in microseconds
           if (estimate_delay > bgt)
             {
               NS_LOG_LOGIC ("Too far to the destination, skipping");
