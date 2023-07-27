@@ -12,7 +12,7 @@ cp "${DIR}code/ddr.cc" "scratch/EPOCH1_ddr.cc"
 TOPO="abilene"
 SINK="10"
 SENDER="0"
-BEGIN=20000
+BEGIN=19500
 STEP=500
 for i in {1..50}
 do
@@ -57,7 +57,7 @@ done
 TOPO="geant"
 SINK="16"
 SENDER="14"
-BEGIN=24500
+BEGIN=20000
 STEP=700
 for i in {1..50}
 do
