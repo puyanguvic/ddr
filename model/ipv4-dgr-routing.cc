@@ -447,7 +447,7 @@ Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
               delay_neighbor = su->GetEstimateDelayDGR ();
             }
           // in microsecond
-          uint32_t estimate_delay = ((*i)->GetDistance () + 1) * 1000 + delay_local + delay_neighbor;
+          uint32_t estimate_delay = (*i)->GetDistance () * 1000 + delay_local + delay_neighbor;
 
           if (estimate_delay > bgt)
             {
