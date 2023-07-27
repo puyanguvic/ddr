@@ -79,14 +79,7 @@ int main (int argc, char *argv[])
   // -- Create nodes and network stacks
   // --------------------------------------------
   NS_LOG_INFO ("creating internet stack");
-  InternetStackHelper stack;
-
-  // Setup Routing algorithm
-  Ipv4GlobalRoutingHelper global;
-  Ipv4ListRoutingHelper list;
-  list.Add (global, 10);
   InternetStackHelper internet;
-  internet.SetRoutingHelper (list);
   internet.Install (nodes);
 
   NS_LOG_INFO ("creating ipv4 addresses");

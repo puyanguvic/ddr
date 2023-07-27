@@ -66,9 +66,9 @@ DGRv2QueueDisc::DoEnqueue (Ptr<QueueDiscItem> item)
 {
   NS_LOG_FUNCTION (this << item);
   uint32_t band = EnqueueClassify (item);
-  // if (band == 1)
+  // if (band == 0)
   //   {
-  //     std::cout << "slow lane" << std::endl;
+  //     std::cout << "fast lane" << std::endl;
   //   }
   // uint32_t itemSize = item->GetSize ();
   // uint32_t currentQueueSize = GetInternalQueue (band)->GetCurrentSize ().GetValue ();
@@ -99,6 +99,7 @@ DGRv2QueueDisc::DoDequeue (void)
     {
       if (item = GetInternalQueue (i)->Dequeue ())
         {
+          // if (i == 0) std::cout << "Popped from band" << i << std::endl;
           NS_LOG_LOGIC ("Popped from band " << i << ": " << item);
           NS_LOG_LOGIC ("Number packets band " << i << ": " << GetInternalQueue (i)->GetNPackets ());
           return item;
