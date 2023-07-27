@@ -23,10 +23,10 @@ echo "${TOPO}${DATARATE}"
 cp $FILE "${DIR}result/${TOPO}/KSHORT-${i}.txt"
 done
 
-# att 0 --> 17
+# att 20 --> 14
 TOPO="att"
-SINK="17"
-SENDER="0"
+SINK="14"
+SENDER="20"
 BEGIN=5000
 STEP=700
 for i in {1..50}
@@ -38,9 +38,9 @@ echo "${TOPO}${DATARATE}"
 cp $FILE "${DIR}result/${TOPO}/KSHORT-${i}.txt"
 done
 
-# cernet 7 --> 15
+# cernet 7 --> 13
 TOPO="cernet"
-SINK="15"
+SINK="13"
 SENDER="7"
 BEGIN=5000
 STEP=600

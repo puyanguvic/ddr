@@ -26,11 +26,11 @@ echo "${TOPO}${DATARATE}"
 cp $FILE "${DIR}result/${TOPO}/KSHORT-${i}.txt"
 done
 
-# att 0 --> 17
+# att 20 --> 14
 # back traffic 2 --> 11
 TOPO="att"
-SINK="17"
-SENDER="0"
+SINK="14"
+SENDER="20"
 TCPSINK="11"
 TCPSENDER="2"
 BEGIN=5000
