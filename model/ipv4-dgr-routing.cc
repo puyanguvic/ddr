@@ -257,6 +257,7 @@ Ipv4DGRRouting::LookupECMPRoute (Ipv4Address dest, Ptr<NetDevice> oif)
 Ptr<Ipv4Route>
 Ipv4DGRRouting::LookupDGRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDevice> idev)
 {
+  // std::cout <<"DGR routing" << std::endl;
   BudgetTag bgtTag;
   TimestampTag timeTag;
   p->PeekPacketTag (bgtTag);
@@ -552,6 +553,7 @@ Ipv4DGRRouting::LookupKShortRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const Ne
 Ptr<Ipv4Route>
 Ipv4DGRRouting::LookupDDRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDevice> idev)
 {
+  // std::cout << "DDR routing" << std::endl;
   BudgetTag bgtTag;
   TimestampTag timeTag;
   p->PeekPacketTag (bgtTag);
@@ -602,13 +604,35 @@ Ipv4DGRRouting::LookupDDRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
           // if interface is down, continue
           if (!m_ipv4->IsUp ((*i)->GetInterface ())) continue;
 
+          // // get the local queue delay in microsecond
+          // Ptr <NetDevice> dev_local = m_ipv4->GetNetDevice ((*i)->GetInterface ());
+          // //get the queue disc on the device
+          // Ptr<QueueDisc> disc = m_ipv4->GetObject<Node> ()->GetObject<TrafficControlLayer> ()->GetRootQueueDiscOnDevice (dev_local);
+          // Ptr<DGRv2QueueDisc> dvq = DynamicCast <DGRv2QueueDisc> (disc);
+          // uint32_t status_local = dvq->GetQueueStatus ();
+          // uint32_t delay_local = dvq->GetQueueDelay ();
+
+          // // Get the neighbor queue status in microsecond
+          // uint32_t delay_neighbor = 0;
+          // if ((*i)->GetNextInterface () != 0xffffffff)
+          //   {
+          //     uint32_t iface = (*i)->GetInterface ();
+          //     uint32_t niface = (*i)->GetNextInterface ();
+          //     NeighborStatusEntry *entry = m_nsdb.GetNeighborStatusEntry (iface);
+          //     StatusUnit *su = entry->GetStatusUnit (niface);
+          //     delay_neighbor = su->GetEstimateDelayDDR ();
+          //   }
+          // // in microsecond
+          // uint32_t estimate_delay = ((*i)->GetDistance () + 1) * 1000 + delay_local + delay_neighbor;
+
+
           // get the local queue delay in microsecond
           Ptr <NetDevice> dev_local = m_ipv4->GetNetDevice ((*i)->GetInterface ());
           //get the queue disc on the device
           Ptr<QueueDisc> disc = m_ipv4->GetObject<Node> ()->GetObject<TrafficControlLayer> ()->GetRootQueueDiscOnDevice (dev_local);
           Ptr<DGRv2QueueDisc> dvq = DynamicCast <DGRv2QueueDisc> (disc);
           uint32_t status_local = dvq->GetQueueStatus ();
-          uint32_t delay_local = dvq->GetQueueDelay ();
+          uint32_t delay_local = status_local * 2000;
 
           // Get the neighbor queue status in microsecond
           uint32_t delay_neighbor = 0;
@@ -618,7 +642,7 @@ Ipv4DGRRouting::LookupDDRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
               uint32_t niface = (*i)->GetNextInterface ();
               NeighborStatusEntry *entry = m_nsdb.GetNeighborStatusEntry (iface);
               StatusUnit *su = entry->GetStatusUnit (niface);
-              delay_neighbor = su->GetEstimateDelayDDR ();
+              delay_neighbor = su->GetEstimateDelayDGR ();
             }
           // in microsecond
           uint32_t estimate_delay = ((*i)->GetDistance () + 1) * 1000 + delay_local + delay_neighbor;
