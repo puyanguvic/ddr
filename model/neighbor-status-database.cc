@@ -48,7 +48,7 @@ StatusUnit::GetEstimateDelayDDR () const
 uint32_t
 StatusUnit::GetEstimateDelayDGR () const
 {
-  return (m_state+1)*2000;
+  return 1000 + m_state*2000;
 }
 
 int
