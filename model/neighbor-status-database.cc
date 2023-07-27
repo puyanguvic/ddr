@@ -36,11 +36,13 @@ StatusUnit::GetEstimateState () const
 uint32_t
 StatusUnit::GetEstimateDelayDDR () const
 {
+  // std::cout << "current delay: " << GetEstimateDelayDGR () << std::endl;
+  // Print (std::cout);
   uint32_t ret = 0;
   int counter = 0;
   for (int i = 0; i < STATESIZE; i ++)
     {
-      ret += m_matrix[m_state][i]* (i+1);
+      ret += m_matrix[m_state][i]* (i);
       counter += m_matrix[m_state][i];
     }
   return ret*2000/counter;

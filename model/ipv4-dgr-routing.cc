@@ -327,6 +327,7 @@ Ipv4DGRRouting::LookupDDRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
               NeighborStatusEntry *entry = m_nsdb.GetNeighborStatusEntry (iface);
               StatusUnit *su = entry->GetStatusUnit (niface);
               delay_neighbor = su->GetEstimateDelayDDR ();
+              // std::cout << "Neighbor delay: " << delay_neighbor << std::endl;
             }
           // in microsecond
           uint32_t estimate_delay = ((*i)->GetDistance () + 1) * 1000 + delay_local + delay_neighbor;
