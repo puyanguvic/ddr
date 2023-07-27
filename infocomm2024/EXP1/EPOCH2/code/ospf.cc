@@ -112,7 +112,7 @@ main(int argc, char* argv[])
         address.NewNetwork ();
         }
     // Config::SetDefault ("ns3::Ipv4GlobalRouting::RespondToInterfaceEvents", BooleanValue (true));
-    Config::SetDefault("ns3::Ipv4GlobalRouting::RandomEcmpRouting",     BooleanValue(true));
+    // Config::SetDefault("ns3::Ipv4GlobalRouting::RandomEcmpRouting",     BooleanValue(true));
     Ipv4GlobalRoutingHelper::PopulateRoutingTables();
 
     // -------------------- UDP traffic -----------------
