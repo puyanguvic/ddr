@@ -124,16 +124,16 @@ main(int argc, char* argv[])
     DGRSinkHelper sinkHelper ("ns3::UdpSocketFactory",
                                 InetSocketAddress (Ipv4Address::GetAny (), udpPort));
     ApplicationContainer sinkApp = sinkHelper.Install (nodes.Get (sink));
-    sinkApp.Start (Seconds (0.0));
-    sinkApp.Stop (Seconds (4.0));
+    sinkApp.Start (Seconds (10.0));
+    sinkApp.Stop (Seconds (13.0));
 
     // udp sender
     Ptr<Socket> udpSocket = Socket::CreateSocket (nodes.Get (sender), UdpSocketFactory::GetTypeId ());
     Ptr<DGRUdpApplication> app = CreateObject<DGRUdpApplication> ();
     app->Setup (udpSocket, InetSocketAddress (ipv4AddrUdpSink, udpPort), packetSize, nPacket, DataRate ("10Mbps"), budget, true);
     nodes.Get (sender)->AddApplication (app);
-    app->SetStartTime (Seconds (1.0));
-    app->SetStopTime (Seconds (3.0));
+    app->SetStartTime (Seconds (10.0));
+    app->SetStopTime (Seconds (12.0));
 
     // ------------------------ TCP background traffic ------------------------
     Ptr<Node> tcpSinkNode = nodes.Get (tcpSink);
@@ -146,7 +146,7 @@ main(int argc, char* argv[])
                                 InetSocketAddress(Ipv4Address::GetAny(), tcp_port));
     ApplicationContainer tcpSinkApps = tcpSinkHelper.Install(nodes.Get(tcpSink));
     tcpSinkApps.Start(Seconds(0.0));
-    tcpSinkApps.Stop(Seconds(4.0));
+    tcpSinkApps.Stop(Seconds(20.0));
 
     // Create a BulkSendApplication and install it on node 2
     BulkSendHelper source("ns3::TcpSocketFactory", 
@@ -156,7 +156,7 @@ main(int argc, char* argv[])
     // source.SetAttribute("MaxBytes", UintegerValue(maxBytes));
     ApplicationContainer sourceApps = source.Install(nodes.Get(tcpSender));
     sourceApps.Start(Seconds(0.0));
-    sourceApps.Stop(Seconds(3.0));
+    sourceApps.Stop(Seconds(19.0));
 
     // // --------------- Net Anim ---------------------
     // AnimationInterface anim (topo + expName + ".xml");
