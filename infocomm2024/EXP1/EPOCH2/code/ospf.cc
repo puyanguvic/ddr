@@ -132,7 +132,7 @@ main(int argc, char* argv[])
     Ptr<DGRUdpApplication> app = CreateObject<DGRUdpApplication> ();
     app->Setup (udpSocket, InetSocketAddress (ipv4AddrUdpSink, udpPort), packetSize, nPacket, DataRate ("10Mbps"), budget, true);
     nodes.Get (sender)->AddApplication (app);
-    app->SetStartTime (Seconds (0.0));
+    app->SetStartTime (Seconds (1.0));
     app->SetStopTime (Seconds (3.0));
 
     // // ------------------------ TCP background traffic ------------------------
