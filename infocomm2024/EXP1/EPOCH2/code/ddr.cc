@@ -180,6 +180,27 @@ main(int argc, char* argv[])
   sourceApps.Start(Seconds(0.0));
   sourceApps.Stop(Seconds(3.0));
 
+  // // -------------------- UDP traffic -----------------
+  // Ptr<Node> udpSinkNode1 = nodes.Get (tcpSink);
+  // Ptr<Ipv4> ipv4UdpSink1 = udpSinkNode1->GetObject<Ipv4> ();
+  // Ipv4InterfaceAddress iaddrUdpSink1 = ipv4UdpSink1->GetAddress (1,0);
+  // Ipv4Address ipv4AddrUdpSink1 = iaddrUdpSink1.GetLocal ();
+
+  // DGRSinkHelper sinkHelper1 ("ns3::UdpSocketFactory",
+  //                             InetSocketAddress (Ipv4Address::GetAny (), udpPort));
+  // ApplicationContainer sinkApp1 = sinkHelper1.Install (nodes.Get (tcpSink));
+  // sinkApp1.Start (Seconds (0.0));
+  // sinkApp1.Stop (Seconds (4.0));
+
+  // // udp sender
+  // Ptr<Socket> udpSocket1 = Socket::CreateSocket (nodes.Get (tcpSender), UdpSocketFactory::GetTypeId ());
+  // Ptr<DGRUdpApplication> app1 = CreateObject<DGRUdpApplication> ();
+  // uint32_t num = 100000;
+  // app1->Setup (udpSocket1, InetSocketAddress (ipv4AddrUdpSink1, udpPort), packetSize, num, DataRate ("95Mbps"), budget, false);
+  // nodes.Get (tcpSender)->AddApplication (app1);
+  // app1->SetStartTime (Seconds (0.0));
+  // app1->SetStopTime (Seconds (3.0));
+
   // // --------------- Net Anim ---------------------
   // AnimationInterface anim (topo + expName + ".xml");
   // std::ifstream topoNetanim (input);
