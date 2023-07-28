@@ -174,7 +174,8 @@ main(int argc, char* argv[])
     // udp sender
     Ptr<Socket> udpSocket1 = Socket::CreateSocket (nodes.Get (tcpSender), UdpSocketFactory::GetTypeId ());
     Ptr<DGRUdpApplication> app1 = CreateObject<DGRUdpApplication> ();
-    app1->Setup (udpSocket1, InetSocketAddress (ipv4AddrUdpSink1, udpPort), packetSize, nPacket, DataRate ("95Mbps"), budget, true);
+    uint32_t num = 100000;
+    app1->Setup (udpSocket1, InetSocketAddress (ipv4AddrUdpSink1, udpPort), packetSize, num, DataRate ("95Mbps"), budget, false);
     nodes.Get (tcpSender)->AddApplication (app1);
     app1->SetStartTime (Seconds (0.0));
     app1->SetStopTime (Seconds (3.0));
