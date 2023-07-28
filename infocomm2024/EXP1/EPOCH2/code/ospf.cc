@@ -124,39 +124,60 @@ main(int argc, char* argv[])
     DGRSinkHelper sinkHelper ("ns3::UdpSocketFactory",
                                 InetSocketAddress (Ipv4Address::GetAny (), udpPort));
     ApplicationContainer sinkApp = sinkHelper.Install (nodes.Get (sink));
-    sinkApp.Start (Seconds (10.0));
-    sinkApp.Stop (Seconds (13.0));
+    sinkApp.Start (Seconds (0.0));
+    sinkApp.Stop (Seconds (4.0));
 
     // udp sender
     Ptr<Socket> udpSocket = Socket::CreateSocket (nodes.Get (sender), UdpSocketFactory::GetTypeId ());
     Ptr<DGRUdpApplication> app = CreateObject<DGRUdpApplication> ();
     app->Setup (udpSocket, InetSocketAddress (ipv4AddrUdpSink, udpPort), packetSize, nPacket, DataRate ("10Mbps"), budget, true);
     nodes.Get (sender)->AddApplication (app);
-    app->SetStartTime (Seconds (10.0));
-    app->SetStopTime (Seconds (12.0));
+    app->SetStartTime (Seconds (0.0));
+    app->SetStopTime (Seconds (3.0));
 
-    // ------------------------ TCP background traffic ------------------------
-    Ptr<Node> tcpSinkNode = nodes.Get (tcpSink);
-    Ptr<Ipv4> ipv4TcpSink = tcpSinkNode->GetObject<Ipv4> ();
-    Ipv4InterfaceAddress iaddrTcpSink = ipv4TcpSink->GetAddress (1,0);
-    Ipv4Address ipv4AddrTcpSink = iaddrTcpSink.GetLocal ();
+    // // ------------------------ TCP background traffic ------------------------
+    // Ptr<Node> tcpSinkNode = nodes.Get (tcpSink);
+    // Ptr<Ipv4> ipv4TcpSink = tcpSinkNode->GetObject<Ipv4> ();
+    // Ipv4InterfaceAddress iaddrTcpSink = ipv4TcpSink->GetAddress (1,0);
+    // Ipv4Address ipv4AddrTcpSink = iaddrTcpSink.GetLocal ();
 
-    // Create a PacketSinkApplication and install it on node 5
-    PacketSinkHelper tcpSinkHelper("ns3::TcpSocketFactory", 
-                                InetSocketAddress(Ipv4Address::GetAny(), tcp_port));
-    ApplicationContainer tcpSinkApps = tcpSinkHelper.Install(nodes.Get(tcpSink));
-    tcpSinkApps.Start(Seconds(0.0));
-    tcpSinkApps.Stop(Seconds(20.0));
+    // // Create a PacketSinkApplication and install it on node 5
+    // PacketSinkHelper tcpSinkHelper("ns3::TcpSocketFactory", 
+    //                             InetSocketAddress(Ipv4Address::GetAny(), tcp_port));
+    // ApplicationContainer tcpSinkApps = tcpSinkHelper.Install(nodes.Get(tcpSink));
+    // tcpSinkApps.Start(Seconds(0.0));
+    // tcpSinkApps.Stop(Seconds(20.0));
 
-    // Create a BulkSendApplication and install it on node 2
-    BulkSendHelper source("ns3::TcpSocketFactory", 
-                        InetSocketAddress(ipv4AddrTcpSink, tcp_port));
-    // Set the amount of data to send in bytes.  Zero is unlimited.
-    // uint64_t maxBytes = 4000000;
-    // source.SetAttribute("MaxBytes", UintegerValue(maxBytes));
-    ApplicationContainer sourceApps = source.Install(nodes.Get(tcpSender));
-    sourceApps.Start(Seconds(0.0));
-    sourceApps.Stop(Seconds(19.0));
+    // // Create a BulkSendApplication and install it on node 2
+    // BulkSendHelper source("ns3::TcpSocketFactory", 
+    //                     InetSocketAddress(ipv4AddrTcpSink, tcp_port));
+    // // Set the amount of data to send in bytes.  Zero is unlimited.
+    // // uint64_t maxBytes = 4000000;
+    // // source.SetAttribute("MaxBytes", UintegerValue(maxBytes));
+    // ApplicationContainer sourceApps = source.Install(nodes.Get(tcpSender));
+    // sourceApps.Start(Seconds(0.0));
+    // sourceApps.Stop(Seconds(19.0));
+
+
+    // -------------------- UDP traffic -----------------
+    Ptr<Node> udpSinkNode1 = nodes.Get (tcpSink);
+    Ptr<Ipv4> ipv4UdpSink1 = udpSinkNode1->GetObject<Ipv4> ();
+    Ipv4InterfaceAddress iaddrUdpSink1 = ipv4UdpSink1->GetAddress (1,0);
+    Ipv4Address ipv4AddrUdpSink1 = iaddrUdpSink1.GetLocal ();
+
+    DGRSinkHelper sinkHelper1 ("ns3::UdpSocketFactory",
+                                InetSocketAddress (Ipv4Address::GetAny (), udpPort));
+    ApplicationContainer sinkApp1 = sinkHelper1.Install (nodes.Get (tcpSink));
+    sinkApp1.Start (Seconds (0.0));
+    sinkApp1.Stop (Seconds (4.0));
+
+    // udp sender
+    Ptr<Socket> udpSocket1 = Socket::CreateSocket (nodes.Get (tcpSender), UdpSocketFactory::GetTypeId ());
+    Ptr<DGRUdpApplication> app1 = CreateObject<DGRUdpApplication> ();
+    app1->Setup (udpSocket1, InetSocketAddress (ipv4AddrUdpSink1, udpPort), packetSize, nPacket, DataRate ("95Mbps"), budget, true);
+    nodes.Get (tcpSender)->AddApplication (app1);
+    app1->SetStartTime (Seconds (0.0));
+    app1->SetStopTime (Seconds (3.0));
 
     // // --------------- Net Anim ---------------------
     // AnimationInterface anim (topo + expName + ".xml");
