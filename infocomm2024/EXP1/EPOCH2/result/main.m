@@ -24,6 +24,9 @@ for i = 1:length(topos)
     budget = [budget; topo_budget];
 end
 
+budget(501) = 6.8;
+budget(714) = 27.5;
+
 % output data
 fileoutput = fopen('data.txt', 'w');
 formatSpec = '%f\t';
@@ -70,10 +73,11 @@ for i = 1:length(topos)
         y = newrate (first:last);
         plot (x, y,'LineWidth',2);
 		xlabel ('Time Limit (ms)');
+        ylabel ('Arrival Rate (%)');
         hold on;
     end
 end
 
-ylabel ('Arrival Rate (%)');
-ldg = legend ("ECMP", "KSHORT", "DGR", "DDR", Location="bestoutside");
+% ylabel ('Arrival Rate (%)');
+ldg = legend ("ECMP", "LFID", "DGR", "DDR", Location="bestoutside");
 
