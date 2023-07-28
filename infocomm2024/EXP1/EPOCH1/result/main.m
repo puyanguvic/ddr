@@ -25,7 +25,11 @@ for i = 1:length(topos)
 end
 
 % add(0,0) to third subfig
-rate(551) = 0;
+budget(501) = 6.8;
+% budget(201) = 0;
+% budget(251) = 0;
+% budget(301) = 21.4;
+% budget(351) = 0;
 
 % output data
 fileoutput = fopen('data.txt', 'w');
@@ -72,11 +76,12 @@ for i = 1:length(topos)
         x = newbudget (first:last);
         y = newrate (first:last);
         plot (x, y,'LineWidth',2);
+        ylabel ('Arrival Rate (%)');
 		xlabel ('Time Limit (ms)');
         hold on;
     end
 end
 
-ylabel ('Arrival Rate (%)');
-ldg = legend ("ECMP", "KSHORT", "DGR", "DDR", Location="bestoutside");
+
+ldg = legend ("ECMP", "LFID", "DGR", "DDR", Location="bestoutside");
 
