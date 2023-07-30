@@ -211,7 +211,7 @@ main(int argc, char* argv[])
       uint16_t metric;  //!< metric in milliseconds
       ss >> metric;
       p2p.SetChannelAttribute ("Delay", StringValue (delay + "ms"));
-      p2p.SetDeviceAttribute ("DataRate", StringValue ("100Mbps"));
+      p2p.SetDeviceAttribute ("DataRate", StringValue ("10Mbps"));
       ndc[i] = p2p.Install (nc[i]);
       tch.Install (ndc[i]);
       ipic[i] = address.Assign (ndc[i]);
