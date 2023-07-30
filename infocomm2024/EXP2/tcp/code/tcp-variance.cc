@@ -34,11 +34,11 @@ TraceThroughput(Ptr<FlowMonitor> monitor)
     Time curTime = Now();
     std::ofstream thr(dir + "/throughput.txt", std::ios::out | std::ios::app);
     thr << curTime << " "
-        << 8 * (itr->second.txBytes - prev) /
+        << 8 * (itr->second.rxBytes - prev) /
                (1000 * 1000 * (curTime.GetSeconds() - prevTime.GetSeconds()))
         << std::endl;
     prevTime = curTime;
-    prev = itr->second.txBytes;
+    prev = itr->second.rxBytes;
     Simulator::Schedule(Seconds(0.2), &TraceThroughput, monitor);
 }
 
@@ -78,9 +78,9 @@ main(int argc, char* argv[])
   std::string topo ("abilene");
   std::string format ("Inet");
 
-  uint32_t budget (30000);
+  uint32_t budget (300000);
 
-  uint32_t routeSelectMode = 3;
+  uint32_t routeSelectMode = 1;
   
   uint32_t tcpSink = 10;
   uint32_t tcpSender = 0;
@@ -234,7 +234,7 @@ main(int argc, char* argv[])
   Ipv4Address ipv4AddrTcpSink = iaddrTcpSink.GetLocal ();
 
   // Create a PacketSinkApplication and install it on node 5
-  PacketSinkHelper tcpSinkHelper("ns3::TcpSocketFactory", 
+  DGRSinkHelper tcpSinkHelper("ns3::TcpSocketFactory", 
                             InetSocketAddress(Ipv4Address::GetAny(), tcp_port));
   ApplicationContainer tcpSinkApps = tcpSinkHelper.Install(nodes.Get(tcpSink));
   tcpSinkApps.Start(Seconds(0.0));

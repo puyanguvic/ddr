@@ -26,3 +26,4 @@ cp $FILE "${DIR}result/${TCP_PROT}-throughput.txt"
 TCP_PROT="TcpDctcp"
 ./ns3 run "scratch/EXP2-tcp-variance.cc --transport_prot=${TCP_PROT}"
 cp $FILE "${DIR}result/${TCP_PROT}-throughput.txt"
+
