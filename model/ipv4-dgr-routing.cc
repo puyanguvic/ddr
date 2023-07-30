@@ -874,7 +874,7 @@ Ipv4DGRRouting::DoInitialize ()
   // m_outStream = Create<OutputStreamWrapper> ("Node" + strNodeId + "queueStatusErr.txt", std::ios::out);
 
 
-  // m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedUpdate, this);
+  m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedUpdate, this);
   
   // Initialize the sockets for every netdevice
   for (uint32_t i = 0; i < m_ipv4->GetNInterfaces (); i ++)
