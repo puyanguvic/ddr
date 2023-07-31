@@ -72,15 +72,17 @@ for i = 1:length(topos)
         x = newbudget (first:last);
         y = newrate (first:last);
         plot (x, y,'LineWidth',2);
+        ylabel ('On-time Arrival Rate (%)');
 		xlabel ('Time Limit (ms)');
-        ylabel ('Arrival Rate (%)');
-        hold on;
         ylim([-0.05 1.05])
         grid on;
+        hold on;
     end
 end
 
 % ylabel ('Arrival Rate (%)');
-legend('Orientation','horizontal');
 ldg = legend ("ECMP", "LFID", "DGR", "DDR", Location="north");
+set(ldg,'Orientation','horizon')
+set(ldg,'Box','off');
+set(gca, 'FontSize',11);
 
