@@ -67,8 +67,8 @@ Ipv4DGRRoutingHelper::PopulateRoutingTables (void)
   t = clock();
   DGRRouteManager::BuildDGRRoutingDatabase ();
   DGRRouteManager::InitializeRoutes ();
+  
   t = clock() - t;
-
   uint32_t time_init_ms = 1000000.0 * t / CLOCKS_PER_SEC;
   std::cout << "CPU time used for DGR Init: " << time_init_ms << " ms\n";
 }

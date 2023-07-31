@@ -1,0 +1,5 @@
+TOPO OSPF DGR
+abilene 54.7kB 79.7kB
+att 612.2kB 1.5MB
+cernet 545.4kB 1.1MB
+geant 324.3kB 591.2kB

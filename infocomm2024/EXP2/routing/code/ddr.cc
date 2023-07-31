@@ -129,33 +129,25 @@ main(int argc, char* argv[])
   
   Ipv4DGRRoutingHelper::PopulateRoutingTables ();
 
-      // ------------------------------------------------------------
-    // -- Print routing table
-    // ---------------------------------------------
-    Ipv4DGRRoutingHelper d;
-    Ptr<OutputStreamWrapper> routingStream = Create<OutputStreamWrapper>
-    (topo + "_" + expName + ".routes", std::ios::out);
-    d.PrintRoutingTableAllAt (Seconds (0), routingStream);
+  // -------------------- UDP traffic -----------------
+  Ptr<Node> udpSinkNode = nodes.Get (sink);
+  Ptr<Ipv4> ipv4UdpSink = udpSinkNode->GetObject<Ipv4> ();
+  Ipv4InterfaceAddress iaddrUdpSink = ipv4UdpSink->GetAddress (1,0);
+  Ipv4Address ipv4AddrUdpSink = iaddrUdpSink.GetLocal ();
 
-  // // -------------------- UDP traffic -----------------
-  // Ptr<Node> udpSinkNode = nodes.Get (sink);
-  // Ptr<Ipv4> ipv4UdpSink = udpSinkNode->GetObject<Ipv4> ();
-  // Ipv4InterfaceAddress iaddrUdpSink = ipv4UdpSink->GetAddress (1,0);
-  // Ipv4Address ipv4AddrUdpSink = iaddrUdpSink.GetLocal ();
+  DGRSinkHelper sinkHelper ("ns3::UdpSocketFactory",
+                              InetSocketAddress (Ipv4Address::GetAny (), udpPort));
+  ApplicationContainer sinkApp = sinkHelper.Install (nodes.Get (sink));
+  sinkApp.Start (Seconds (0.0));
+  sinkApp.Stop (Seconds (4.0));
 
-  // DGRSinkHelper sinkHelper ("ns3::UdpSocketFactory",
-  //                             InetSocketAddress (Ipv4Address::GetAny (), udpPort));
-  // ApplicationContainer sinkApp = sinkHelper.Install (nodes.Get (sink));
-  // sinkApp.Start (Seconds (0.0));
-  // sinkApp.Stop (Seconds (4.0));
-
-  // // udp sender
-  // Ptr<Socket> udpSocket = Socket::CreateSocket (nodes.Get (sender), UdpSocketFactory::GetTypeId ());
-  // Ptr<DGRUdpApplication> app = CreateObject<DGRUdpApplication> ();
-  // app->Setup (udpSocket, InetSocketAddress (ipv4AddrUdpSink, udpPort), packetSize, nPacket, DataRate ("10Mbps"), budget, true);
-  // nodes.Get (sender)->AddApplication (app);
-  // app->SetStartTime (Seconds (1.0));
-  // app->SetStopTime (Seconds (3.0));
+  // udp sender
+  Ptr<Socket> udpSocket = Socket::CreateSocket (nodes.Get (sender), UdpSocketFactory::GetTypeId ());
+  Ptr<DGRUdpApplication> app = CreateObject<DGRUdpApplication> ();
+  app->Setup (udpSocket, InetSocketAddress (ipv4AddrUdpSink, udpPort), packetSize, nPacket, DataRate ("10Mbps"), budget, true);
+  nodes.Get (sender)->AddApplication (app);
+  app->SetStartTime (Seconds (1.0));
+  app->SetStopTime (Seconds (3.0));
 
   // // --------------- Net Anim ---------------------
   // AnimationInterface anim (topo + expName + ".xml");
