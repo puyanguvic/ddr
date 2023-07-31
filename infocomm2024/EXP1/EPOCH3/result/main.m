@@ -75,9 +75,12 @@ for i = 1:length(topos)
 		xlabel ('Time Limit (ms)');
         ylabel ('Arrival Rate (%)');
         hold on;
+        ylim([-0.05 1.05])
+        grid on;
     end
 end
 
 % ylabel ('Arrival Rate (%)');
-ldg = legend ("ECMP", "LFID", "DGR", "DDR", Location="bestoutside");
+legend('Orientation','horizontal');
+ldg = legend ("ECMP", "LFID", "DGR", "DDR", Location="north");
 
