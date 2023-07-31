@@ -238,7 +238,7 @@ main(int argc, char* argv[])
                             InetSocketAddress(Ipv4Address::GetAny(), tcp_port));
   ApplicationContainer tcpSinkApps = tcpSinkHelper.Install(nodes.Get(tcpSink));
   tcpSinkApps.Start(Seconds(0.0));
-  tcpSinkApps.Stop(Seconds(20.0));
+  tcpSinkApps.Stop(Seconds(11.0));
 
   // tcp send
   DGRTcpAppHelper sourceHelper ("ns3::TcpSocketFactory",
@@ -252,7 +252,7 @@ main(int argc, char* argv[])
   sourceApp.Start (Seconds (0.0));
   // Hook trace source after application starts
   Simulator::Schedule(Seconds(0.1) + MilliSeconds(1), &TraceCwnd, tcpSender, 0);
-  sourceApp.Stop (Seconds (20.0));
+  sourceApp.Stop (Seconds (10.0));
 
   // // --------------- Net Anim ---------------------
   // AnimationInterface anim (topo + expName + ".xml");
