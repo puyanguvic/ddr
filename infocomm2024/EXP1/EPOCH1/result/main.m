@@ -1,6 +1,7 @@
 clc
 clear
 close all
+set(gca, 'FontSize',11);
 topos = ["abilene" "att" "cernet" "geant"];
 prots = ["OSPF" "KSHORT" "DGR" "DDR"];
 rate = [];
@@ -35,6 +36,8 @@ budget(501) = 6.8;
 fileoutput = fopen('data1.txt', 'w');
 formatSpec = '%f\t';
 
+
+
 for i = 1:50:800
     fprintf(fileoutput, formatSpec, rate(i:i+49));
     fprintf(fileoutput, '\n');
@@ -66,10 +69,11 @@ newbudget = newbudget' ;
 %     disp('A NOT = B');
 % end
 
-
+toponame = ["Abilene" "AT&T" "CERNET" "GEANT"];
 figure;
 for i = 1:length(topos)
-    subplot (1, length(topos),i)
+%     title(toponame(i));
+    subplot (1, length(topos),i);
     for k = 1:length(prots)
         first = (i-1)*200 + (k-1)*50 + 1;
         last = first + 49;
@@ -82,13 +86,14 @@ for i = 1:length(topos)
         grid on;
         hold on;
     end
+    title(toponame(i));
 end
 
 
 % legend('Orientation','horizontal');
-ldg = legend ("ECMP", "LFID", "DGR", "DDR", Location="north");
+ldg = legend ("ECMP", "LFID", "DGR", "DDR", Location="east");
 set(ldg,'Orientation','horizon')
 set(ldg,'Box','off');
-set(gca, 'FontSize',11);
+
 
 

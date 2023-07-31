@@ -10,7 +10,7 @@ Y = [1 2.8; 1 4.17; 1 3.21; 1 3.02]
 b = bar (X, Y);
 hold on
 
-ylabel ('CPU Normalized Cost');
+ylabel ('Normalized Cost - CPU');
 ylim([0 4.5])
 
 % xtips1 = b(1).XEndPoints;
@@ -27,6 +27,6 @@ text(xtips2,ytips2,labels2,'HorizontalAlignment','center',...
 
 ldg = legend ("OSPF", "DDR");
 set(ldg,'Box','off');
-set(gca, 'FontSize',11);
+set(gca, 'FontSize',14);
 
 grid on;

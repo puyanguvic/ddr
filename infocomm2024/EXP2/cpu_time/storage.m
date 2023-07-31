@@ -10,8 +10,8 @@ Y = [1 1.46; 1 2.45; 1 2.02; 1 1.82]
 b = bar (X, Y);
 hold on
 
-ylabel ('Storage Normalized Cost');
-ylim([0 2.7])
+ylabel ('Normalized Cost - Storage');
+ylim([0 3])
 
 
 % xtips1 = b(1).XEndPoints;
@@ -28,7 +28,7 @@ text(xtips2,ytips2,labels2,'HorizontalAlignment','center',...
 
 ldg = legend ("OSPF", "DDR");
 set(ldg,'Box','off');
-set(gca, 'FontSize',11);
+set(gca, 'FontSize',14);
 
 grid on;
 

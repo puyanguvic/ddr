@@ -1,6 +1,7 @@
 clc
 clear
 close all
+set(gca, 'FontSize',11);
 topos = ["abilene" "att" "cernet" "geant"];
 prots = ["OSPF" "KSHORT" "DGR" "DDR"];
 rate = [];
@@ -63,9 +64,11 @@ newbudget = newbudget' ;
 % end
 
 
+toponame = ["Abilene" "AT&T" "CERNET" "GEANT"];
 figure;
 for i = 1:length(topos)
-    subplot (1, length(topos),i)
+%     title(toponame(i));
+    subplot (1, length(topos),i);
     for k = 1:length(prots)
         first = (i-1)*200 + (k-1)*50 + 1;
         last = first + 49;
@@ -78,11 +81,12 @@ for i = 1:length(topos)
         grid on;
         hold on;
     end
+    title(toponame(i));
 end
 
 % ylabel ('Arrival Rate (%)');
 ldg = legend ("ECMP", "LFID", "DGR", "DDR", Location="north");
 set(ldg,'Orientation','horizon')
 set(ldg,'Box','off');
-set(gca, 'FontSize',11);
+
 
