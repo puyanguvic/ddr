@@ -351,7 +351,16 @@ Ipv4DGRRouting::LookupDDRRoute (Ipv4Address dest, Ptr<Packet> p, Ptr<const NetDe
   if (allRoutes.size () > 0 ) // if route(s) is found
     {
       // random select
-      uint32_t selectIndex = m_rand->GetInteger (0, allRoutes.size ()-1);
+      uint32_t selectIndex = 0;
+      uint32_t shortestDist = allRoutes.at(0)->GetDistance ();
+      for (uint32_t i = 0; i < allRoutes.size (); i ++)
+      {
+        if (allRoutes.at (i)->GetDistance () <  shortestDist)
+        {
+          selectIndex = i;
+          shortestDist = allRoutes.at (i)->GetDistance ();
+        }
+      }
 
       Ipv4DGRRoutingTableEntry* route = allRoutes.at (selectIndex);
       uint32_t interfaceIdx = route->GetInterface ();
@@ -861,9 +870,9 @@ Ipv4DGRRouting::DoInitialize ()
   // bool addedGlobal = false;
   m_initialized = true;
 
-  // // To Check: An random value is needed to initialize the protocol?
-  // Time delay = m_unsolicitedUpdate;
-  // m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedUpdate, this);
+  // To Check: An random value is needed to initialize the protocol?
+  Time delay = m_unsolicitedUpdate;
+  m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedUpdate, this);
 
   uint32_t nodeId = m_ipv4->GetNetDevice (1)->GetNode ()->GetId ();
   std::stringstream ss;
@@ -874,7 +883,7 @@ Ipv4DGRRouting::DoInitialize ()
   // m_outStream = Create<OutputStreamWrapper> ("Node" + strNodeId + "queueStatusErr.txt", std::ios::out);
 
 
-  // m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedUpdate, this);
+  m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedUpdate, this);
   
   // Initialize the sockets for every netdevice
   for (uint32_t i = 0; i < m_ipv4->GetNInterfaces (); i ++)
@@ -1305,7 +1314,7 @@ Ipv4DGRRouting:: SendUnsolicitedUpdate ()
   DoSendNeighborStatusUpdate (true);
   // todo : update the delay, do we need some random in the delay
   Time delay = m_unsolicitedUpdate;
-  // m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedUpdate, this);
+  m_nextUnsolicitedUpdate = Simulator::Schedule (delay, &Ipv4DGRRouting::SendUnsolicitedUpdate, this);
 }
 
 void

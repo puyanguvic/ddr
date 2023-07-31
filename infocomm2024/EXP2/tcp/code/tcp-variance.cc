@@ -276,7 +276,7 @@ main(int argc, char* argv[])
   // Check for dropped packets using Flow Monitor
   FlowMonitorHelper flowmon;
   Ptr<FlowMonitor> monitor = flowmon.InstallAll();
-  Simulator::Schedule(Seconds(0 + 0.2), &TraceThroughput, monitor);
+  Simulator::Schedule(Seconds(0.2), &TraceThroughput, monitor);
   
   // -------- Run the simulation --------------------------
   NS_LOG_INFO ("Run Simulation.");
