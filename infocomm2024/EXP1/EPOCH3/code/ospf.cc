@@ -154,7 +154,7 @@ main(int argc, char* argv[])
                                     "VrAppName", StringValue(vrAppName));
 
     // Install bursty application
-    ApplicationContainer serverApps = burstyHelper.Install (nodes.Get (1));
+    ApplicationContainer serverApps = burstyHelper.Install (nodes.Get (tcpSender));
     serverApps.Start (Seconds (0.0));
     serverApps.Stop (Seconds (4.0));
     // Ptr<BurstyApplication> burstyApp = serverApps.Get (0)->GetObject<BurstyApplication> ();
@@ -164,7 +164,7 @@ main(int argc, char* argv[])
                                     InetSocketAddress (Ipv4Address::GetAny (), tcp_port));
 
     // Install HTTP client
-    ApplicationContainer clientApps = burstSinkHelper.Install (nodes.Get (0));
+    ApplicationContainer clientApps = burstSinkHelper.Install (nodes.Get (tcpSink));
     clientApps.Start (Seconds (0.0));
     clientApps.Stop (Seconds (5.0));
     // Ptr<BurstSink> burstSink = clientApps.Get (0)->GetObject<BurstSink> ();
