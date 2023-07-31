@@ -63,8 +63,14 @@ Ipv4DGRRoutingHelper::Create (Ptr<Node> node) const
 void 
 Ipv4DGRRoutingHelper::PopulateRoutingTables (void)
 {
+  std::clock_t t;
+  t = clock();
   DGRRouteManager::BuildDGRRoutingDatabase ();
   DGRRouteManager::InitializeRoutes ();
+  t = clock() - t;
+
+  uint32_t time_init_ms = 1000000.0 * t / CLOCKS_PER_SEC;
+  std::cout << "CPU time used for DGR Init: " << time_init_ms << " ms\n";
 }
 void 
 Ipv4DGRRoutingHelper::RecomputeRoutingTables (void)

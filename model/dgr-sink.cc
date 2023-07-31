@@ -65,12 +65,27 @@ DGRPacketSink::DGRPacketSink ()
   NS_LOG_FUNCTION (this);
   m_socket = 0;
   m_totalRx = 0;
+  m_old = 0;
+  // uint32_t interval = 10;
+  // Simulator::Schedule (MilliSeconds (interval), &MonitorThroughput, interval);
 }
 
 DGRPacketSink::~DGRPacketSink()
 {
   NS_LOG_FUNCTION (this);
 }
+
+// void
+// DGRPacketSink::MonitorThroughput (uint32_t interval)
+// {
+//   uint64_t value_new = GetTotalRx ();
+//   Time curTime = Now ();
+//   std::ostream* os = m_throughputStream->GetStream ();
+//   * os << curTime.GetMilliSeconds () << ""
+//        << 8 * (value_new - m_old)/ (1000 * 1000 * interval / 100)
+//        << std::endl;
+//   Simulator::Schedule (MilliSeconds (interval), &MonitorThroughput, interval);
+// }
 
 uint64_t DGRPacketSink::GetTotalRx () const
 {

@@ -1,0 +1,5 @@
+TOPO OSPF DGR
+abilene 326 914
+att 2845 11866
+cernet 3303 10618
+geant 1720 5197

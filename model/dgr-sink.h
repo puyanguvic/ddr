@@ -95,6 +95,8 @@ public:
   typedef void (* SeqTsSizeCallback)(Ptr<const Packet> p, const Address &from, const Address & to,
                                    const SeqTsSizeHeader &header);
 
+  void MonitorThroughput(uint32_t interval);
+   
 protected:
   virtual void DoDispose (void);
 private:
@@ -169,8 +171,12 @@ private:
   uint64_t        m_totalRx;      //!< Total bytes received
   TypeId          m_tid;          //!< Protocol TypeId
 
+  uint64_t m_old;
   Ptr<OutputStreamWrapper> m_delayStream = Create<OutputStreamWrapper>
   ("dgr-packet.delay", std::ios::out);
+
+  Ptr<OutputStreamWrapper> m_throughputStream = Create<OutputStreamWrapper>
+  ("throughput.txt", std::ios::out);
 
   bool            m_enableSeqTsSizeHeader {false}; //!< Enable or disable the export of SeqTsSize header 
 
