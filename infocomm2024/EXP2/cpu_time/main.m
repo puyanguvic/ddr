@@ -4,11 +4,19 @@ y = [326 2845 3303 1720;
      914 11866 10618 5197];
 y = y';
 Y = y./1000;
-bar (X, Y);
+
+h = bar (X, Y);
 hold on
 
-
 ylabel ('CPU time (ms)');
-% xlabel ('Topology name');
+ylim([0 13])
 
 legend('OSPF','DDR');
+
+for i = 1:numel(Y)
+    for j = 1:size(Y, 2)
+        text(X(i), Y(i, j) + 0.5, num2str(Y(i, j)), ...
+            'HorizontalAlignment', 'center', 'VerticalAlignment', 'bottom');
+    end
+end
+

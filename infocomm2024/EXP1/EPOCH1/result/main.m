@@ -32,7 +32,7 @@ budget(501) = 6.8;
 % budget(351) = 0;
 
 % output data
-fileoutput = fopen('data.txt', 'w');
+fileoutput = fopen('data1.txt', 'w');
 formatSpec = '%f\t';
 
 for i = 1:50:800
@@ -76,12 +76,19 @@ for i = 1:length(topos)
         x = newbudget (first:last);
         y = newrate (first:last);
         plot (x, y,'LineWidth',2);
-        ylabel ('Arrival Rate (%)');
+        ylabel ('On-time Arrival Rate (%)');
 		xlabel ('Time Limit (ms)');
+        ylim([-0.05 1.05])
+        grid on;
         hold on;
     end
 end
 
 
-ldg = legend ("ECMP", "LFID", "DGR", "DDR", Location="bestoutside");
+% legend('Orientation','horizontal');
+ldg = legend ("ECMP", "LFID", "DGR", "DDR", Location="north");
+set(ldg,'Orientation','horizon')
+set(ldg,'Box','off');
+set(gca, 'FontSize',11);
+
 
