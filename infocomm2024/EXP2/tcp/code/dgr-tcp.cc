@@ -35,7 +35,7 @@ TraceThroughput(Ptr<FlowMonitor> monitor)
     auto itr = stats.begin();
     Time curTime = Now();
     std::ofstream thr(dir + "/throughput.txt", std::ios::out | std::ios::app);
-    thr << curTime << " "
+    thr << curTime.GetSeconds () << " "
         << 8 * (itr->second.rxBytes - prev) /
                (1000 * 1000 * (curTime.GetSeconds() - prevTime.GetSeconds()))
         << std::endl;
