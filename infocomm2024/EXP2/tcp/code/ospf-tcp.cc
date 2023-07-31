@@ -18,7 +18,7 @@
 
 using namespace ns3;
 
-std::string expName = "DGRv2";
+std::string expName = "OSPF";
 NS_LOG_COMPONENT_DEFINE(expName);
 
 std::string dir;
@@ -179,10 +179,6 @@ main(int argc, char* argv[])
   // -------- Create nodes and network stacks ---------------
   NS_LOG_INFO ("creating internet stack");
   InternetStackHelper stack;
-  Ipv4DGRRoutingHelper dgr;
-  Ipv4ListRoutingHelper list;
-  list.Add (dgr, 10);
-  stack.SetRoutingHelper (list);
   stack.Install (nodes);
 
   NS_LOG_INFO ("creating ipv4 addresses");
@@ -218,7 +214,7 @@ main(int argc, char* argv[])
       address.NewNetwork ();
     }
   
-  Ipv4DGRRoutingHelper::PopulateRoutingTables ();
+  Ipv4GlobalRoutingHelper::PopulateRoutingTables ();
 
   dir = "exp2-results/";
   std::string dirToSave = "mkdir -p " + dir;

@@ -20,7 +20,7 @@
 
 using namespace ns3;
 
-std::string expName = "dgrv2_demo";
+std::string expName = "DGRv2";
 std::string dir;
 uint32_t prev = 0;
 Time prevTime = Seconds(0);
