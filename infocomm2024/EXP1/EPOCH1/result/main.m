@@ -69,8 +69,13 @@ newbudget = newbudget' ;
 %     disp('A NOT = B');
 % end
 
+topo_label = ["Abilene - Basic route delay 23ms" "AT&T - Basic route delay 20ms" "CERNET - Basic route delay 5ms" "GEANT - Basic route delay 25ms"];
+
 toponame = ["Abilene" "AT&T" "CERNET" "GEANT"];
 figure;
+
+
+
 for i = 1:length(topos)
 %     title(toponame(i));
     subplot (1, length(topos),i);
@@ -79,19 +84,19 @@ for i = 1:length(topos)
         last = first + 49;
         x = newbudget (first:last);
         y = newrate (first:last);
-        plot (x, y,'LineWidth',2);
-        ylabel ('On-time Arrival Rate (%)');
-		xlabel ('Time Limit (ms)');
+        plot (x, y,'LineWidth',2);		
         ylim([-0.05 1.05])
         grid on;
         hold on;
     end
-    title(toponame(i));
+%     title(toponame(i));
+xlabel ({'Delay requirements (ms)', topo_label(i)});
+
 end
 
-
+ylabel ('On-time delivery ratio (%)');
 % legend('Orientation','horizontal');
-ldg = legend ("ECMP", "LFID", "DGR", "DDR", Location="east");
+ldg = legend ("ECMP", "LFID", "TOR", "DDR", Location="east");
 set(ldg,'Orientation','horizon')
 set(ldg,'Box','off');
 

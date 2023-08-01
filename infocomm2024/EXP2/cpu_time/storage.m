@@ -10,7 +10,7 @@ Y = [1 1.46; 1 2.45; 1 2.02; 1 1.82]
 b = bar (X, Y);
 hold on
 
-ylabel ('Normalized Cost - Storage');
+ylabel ('Normalized cost - Storage');
 ylim([0 3])
 
 
