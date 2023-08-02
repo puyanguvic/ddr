@@ -10,7 +10,7 @@ Y = [1 2.8; 1 4.17; 1 3.21; 1 3.02]
 b = bar (X, Y);
 hold on
 
-ylabel ('Normalized cost - CPU');
+ylabel ('Normalized cost - CPU time');
 ylim([0 4.5])
 
 % xtips1 = b(1).XEndPoints;

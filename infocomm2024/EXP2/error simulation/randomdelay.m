@@ -89,10 +89,13 @@ hold on
 plot(min_X4, min_Y4, 'o','MarkerSize',10);
 hold on
 
-legend('delay = 4', 'delay = 6',  'delay = 8', 'delay = 10')
+ldg = legend('delay = 4ms', 'delay = 6ms',  'delay = 8ms', 'delay = 10ms')
+% set(ldg,'Box','off');
 
 set(gca,'FontSize',12);
 set(gca,'XTick',0:2:20)
 
 xlabel ('Scale (ms)')
 ylabel ('Error (ms)')
+
+grid on;
