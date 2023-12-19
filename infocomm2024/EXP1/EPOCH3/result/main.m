@@ -1,7 +1,8 @@
 clc
 clear
 close all
-set(gca, 'FontSize',11);
+% set(gca, 'FontSize',11);
+% set(gca, 'linewidth',1.5);
 topos = ["abilene" "att" "cernet" "geant"];
 prots = ["OSPF" "KSHORT" "DGR" "DDR"];
 rate = [];
@@ -66,7 +67,8 @@ newbudget = newbudget' ;
 
 topo_label = ["Abilene - Basic route delay 23ms" "AT&T - Basic route delay 20ms" "CERNET - Basic route delay 5ms" "GEANT - Basic route delay 25ms"];
 toponame = ["Abilene" "AT&T" "CERNET" "GEANT"];
-figure;
+% figure;
+
 
 for i = 1:length(topos)
 %     title(toponame(i));
@@ -88,6 +90,7 @@ end
 
 ylabel ('On-time delivery ratio (%)');
 % legend('Orientation','horizontal');
-ldg = legend ("ECMP", "LFID", "TOR", "DDR", Location="east");
+ldg = legend ("ECMP", "LFID", "DGRP", "DDR", Location="east");
 set(ldg,'Orientation','horizon')
 set(ldg,'Box','off');
+

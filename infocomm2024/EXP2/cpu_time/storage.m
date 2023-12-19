@@ -1,5 +1,5 @@
-X = categorical({'Abliene', 'AT&T', 'CERNET', 'GEANT'});
-X = reordercats(X,{'Abliene', 'AT&T', 'CERNET', 'GEANT'});
+X = categorical({'Abilene', 'AT&T', 'CERNET', 'GEANT'});
+X = reordercats(X,{'Abilene', 'AT&T', 'CERNET', 'GEANT'});
 % y = [326 2845 3303 1720;
 %      914 11866 10618 5197];
 % y = y';

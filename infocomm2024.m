@@ -1,7 +1,7 @@
 clc
 clear
 close all
-
+set(gca, 'FontSize',11);
 topos = ["abilene" "att" "cernet" "geant"];
 prots = ["OSPF" "KSHORT" "DGR" "DDR"];
 rate = [];
@@ -87,7 +87,6 @@ end
 
 ylabel ('On-time delivery ratio (%)');
 % legend('Orientation','horizontal');
-ldg = legend ("ECMP", "LFID", "DGRP", "DDR", Location="east");
+ldg = legend ("ECMP", "LFID", "TOR", "DDR", Location="east");
 set(ldg,'Orientation','horizon')
 set(ldg,'Box','off');
-% set(gca, 'FontSize',15);
