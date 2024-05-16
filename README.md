@@ -7,10 +7,6 @@ This repository contains the implementation of DDR, a Deadline-Driven Routing Pr
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Modules](#modules)
-- [Configuration](#configuration)
-- [Examples](#examples)
-- [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
 
@@ -55,12 +51,20 @@ To install the necessary dependencies and set up the environment for DDR, follow
 
 ### Running the Simulation
 
-To run a basic simulation using DDR:
+To run a demo of DDR:
 
 ```bash
 cp contrib/ddr/examples/ddr-demo.cc scratch/ddr-demo.cc
 ./ns3 --run "scratch/ddr-demo.cc"
+```
 
+To reproduce the experimental results:
+```bash
+cd ns-3.38
+bash contrib/ddr/infocomm2024/EXP1/EPOCH1/code/exp1-1.sh
+bash contrib/ddr/infocomm2024/EXP1/EPOCH2/code/exp1-2.sh
+bash contrib/ddr/infocomm2024/EXP1/EPOCH3/code/exp1-3.sh
+```
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.

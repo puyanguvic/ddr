@@ -3,7 +3,7 @@
 echo "EXP_1 burst traffic"
 echo ""
 
-DIR="contrib/dgrv2/infocomm2024/EXP1/EPOCH3/"
+DIR="contrib/ddr/infocomm2024/EXP1/EPOCH3/"
 FILE="dgr-packet.delay"
 
 cp "${DIR}code/ospf.cc" "scratch/EPOCH3_ospf.cc"

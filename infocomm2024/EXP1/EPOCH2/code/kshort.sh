@@ -3,7 +3,7 @@
 echo "EXP_1 empty network"
 echo ""
 
-DIR="contrib/dgrv2/infocomm2024/EXP1/EPOCH2/"
+DIR="contrib/ddr/infocomm2024/EXP1/EPOCH2/"
 FILE="dgr-packet.delay"
 
 cp "${DIR}code/kshort.cc" "scratch/EPOCH2_kshort.cc"
