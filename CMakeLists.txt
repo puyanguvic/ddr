@@ -11,7 +11,7 @@ if(${ENABLE_EXAMPLES})
 endif()
 
 build_lib(
-    LIBNAME dgrv2
+    LIBNAME ddr
     SOURCE_FILES
         model/dgr-tags.cc
         model/dgr-header.cc

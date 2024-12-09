@@ -19,62 +19,64 @@
  */
 
 #include "dgr-sink-helper.h"
-#include "ns3/string.h"
+
+#include "ns3/ddr-module.h"
 #include "ns3/inet-socket-address.h"
 #include "ns3/names.h"
-#include "ns3/dgrv2-module.h"
+#include "ns3/string.h"
 
-namespace ns3 {
-
-DGRSinkHelper::DGRSinkHelper (std::string protocol, Address address)
+namespace ns3
 {
-  m_factory.SetTypeId ("ns3::DGRPacketSink");
-  m_factory.Set ("Protocol", StringValue (protocol));
-  m_factory.Set ("Local", AddressValue (address));
+
+DGRSinkHelper::DGRSinkHelper(std::string protocol, Address address)
+{
+    m_factory.SetTypeId("ns3::DGRPacketSink");
+    m_factory.Set("Protocol", StringValue(protocol));
+    m_factory.Set("Local", AddressValue(address));
 }
 
 DGRSinkHelper::~DGRSinkHelper()
 {
 }
 
-void 
-DGRSinkHelper::SetAttribute (std::string name, const AttributeValue &value)
+void
+DGRSinkHelper::SetAttribute(std::string name, const AttributeValue& value)
 {
-  m_factory.Set (name, value);
+    m_factory.Set(name, value);
 }
 
 ApplicationContainer
-DGRSinkHelper::Install (Ptr<Node> node) const
+DGRSinkHelper::Install(Ptr<Node> node) const
 {
-  return ApplicationContainer (InstallPriv (node));
+    return ApplicationContainer(InstallPriv(node));
 }
 
 ApplicationContainer
-DGRSinkHelper::Install (std::string nodeName) const
+DGRSinkHelper::Install(std::string nodeName) const
 {
-  Ptr<Node> node = Names::Find<Node> (nodeName);
-  return ApplicationContainer (InstallPriv (node));
+    Ptr<Node> node = Names::Find<Node>(nodeName);
+    return ApplicationContainer(InstallPriv(node));
 }
 
 ApplicationContainer
-DGRSinkHelper::Install (NodeContainer c) const
+DGRSinkHelper::Install(NodeContainer c) const
 {
-  ApplicationContainer apps;
-  for (NodeContainer::Iterator i = c.Begin (); i != c.End (); ++i)
+    ApplicationContainer apps;
+    for (NodeContainer::Iterator i = c.Begin(); i != c.End(); ++i)
     {
-      apps.Add (InstallPriv (*i));
+        apps.Add(InstallPriv(*i));
     }
 
-  return apps;
+    return apps;
 }
 
 Ptr<Application>
-DGRSinkHelper::InstallPriv (Ptr<Node> node) const
+DGRSinkHelper::InstallPriv(Ptr<Node> node) const
 {
-  Ptr<Application> app = m_factory.Create<Application> ();
-  node->AddApplication (app);
+    Ptr<Application> app = m_factory.Create<Application>();
+    node->AddApplication(app);
 
-  return app;
+    return app;
 }
 
 } // namespace ns3
